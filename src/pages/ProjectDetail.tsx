@@ -1,20 +1,42 @@
-import { useParams } from "react-router-dom";
-import { Projects } from "../data/projects";
+import { useParams, Link } from "react-router-dom";
+import { getProjectById } from "../services/projectService";
 
 export default function ProjectDetail() {
   const { id } = useParams();
-  const project = Projects.find((p) => p.id === id);
+  const project = getProjectById(id || "");
 
   if (!project) {
-    return <p>Projet introuvable.</p>;
+    return (
+      <main className="page">
+        <h1>Projet introuvable</h1>
+        <Link to="/projects">← Retour</Link>
+      </main>
+    );
   }
 
   return (
-    <section>
+    <main className="page">
+      <Link to="/projects">← Retour aux projets</Link>
+
       <h1>{project.title}</h1>
-      <p><strong>Client :</strong> {project.client}</p>
-      <p><strong>Année :</strong> {project.year}</p>
-      <p><strong>Description :</strong> {project.description}</p>
-    </section>
+      <p className="meta">
+        {project.client} • {project.year}
+      </p>
+
+      <img src={project.image} alt={project.title} className="detail-image" />
+
+      <h2>Description</h2>
+      <p>{project.description}</p>
+
+      <h2>Missions</h2>
+      <ul>
+        {project.missions.map((m) => (
+          <li key={m}>{m}</li>
+        ))}
+      </ul>
+
+      <h2>Technologies</h2>
+      <p>{project.technologies.join(", ")}</p>
+    </main>
   );
 }

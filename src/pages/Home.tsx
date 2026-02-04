@@ -1,11 +1,17 @@
+import { Link } from "react-router-dom";
+
 export default function Home() {
   return (
-    <section>
-      <h1>Portfolio Web</h1>
+    <main className="page">
+      <h1>Portfolio Vincent Lepretre</h1>
       <p>
-        Présentation de projets web : CMS, plateformes, sites
-        corporate et applications.
+        Développeur Web / Chef de projet digital — spécialisé en interfaces
+        sobres et efficaces.
       </p>
-    </section>
+
+      <Link to="/projects" className="btn">
+        Voir mes projets →
+      </Link>
+    </main>
   );
 }

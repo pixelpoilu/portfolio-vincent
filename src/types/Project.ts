@@ -3,10 +3,14 @@ export type Project = {
   title: string;
   client: string;
   year: string;
+
+  role: string;
+  type: string;
+
   description: string;
   missions: string[];
   technologies: string[];
-  type: string;
-  role: string;
+
+  image: string;
   link?: string;
 };
