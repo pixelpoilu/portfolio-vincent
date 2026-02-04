@@ -3,7 +3,7 @@ import Layout from "./components/Layout";
 import Home from "./pages/Home";
 import Projects from "./pages/Projects";
 import ProjectDetail from "./pages/ProjectDetail";
-import "./styles.css";
+import "./styles/main.css";
 function App() {
   return (
     <Layout>

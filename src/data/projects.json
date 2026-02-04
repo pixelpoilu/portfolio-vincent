@@ -33,7 +33,7 @@
     ],
     "technologies": ["PHP", "MySQL", "Flash", "JavaScript", "Bootstrap"],
     "role": "Optimisation SEO",
-    "type":"cms",
+    "type":"ecommerce",
     "image": "/images/penichettes.jpg",
     "link": ""
   },
@@ -54,7 +54,7 @@
     ],
     "technologies": ["Joomla", "PHP", "SQL", "jQuery", "LESS"],
     "role": "Optimisation SEO",
-    "type":"cms",
+    "type":"plateforme",
     "image": "/images/domuss.jpg",
     "link": ""
   },
@@ -73,7 +73,7 @@
     ],
     "technologies": ["PHP", "Joomla", "SQL", "Bootstrap", "Pardot"],
     "role": "Optimisation SEO",
-    "type":"cms",
+    "type":"site",
     "image": "/images/wefeed.jpg",
     "link": ""
   },
