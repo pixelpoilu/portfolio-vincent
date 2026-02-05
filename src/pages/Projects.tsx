@@ -2,9 +2,9 @@
 import { useState } from "react";
 // import { Link } from "react-router-dom";
 import projects from "../data/projects.json";
-import { ProjectCard } from "../components/ProjectCard";
+import ProjectCard from "../components/ProjectCard";
 import FilterBar from "../components/FilterBar";
-import { getAllProjects } from "../services/projectService";
+//import { getAllProjects } from "../services/projectService";
 
 function Projects() {
   const [selectedType, setSelectedType] = useState("all");

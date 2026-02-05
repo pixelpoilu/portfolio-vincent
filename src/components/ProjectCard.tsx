@@ -5,29 +5,27 @@ import TechBadge from "./TechBadge";
 type Props = {
   project: Project;
 };
-export function ProjectCard({ project }: Props) {
+
+export default function ProjectCard({ project }: { project: Project }) {
   return (
     <article className="project-card">
-      <img src={project.image} alt={project.title} />
+      <h2>{project.title}</h2>
 
-      <div className="project-content">
-        <h2>{project.title}</h2>
-        <p className="meta">
-          {project.client} • {project.year}
-        </p>
+      <p className="meta">
+        {project.client} • {project.year}
+      </p>
 
-        <p>{project.description}</p>
+      <p>{project.description}</p>
 
-        <div className="badges">
-          {project.technologies.map((tech) => (
-            <TechBadge key={tech} label={tech} />
-          ))}
-        </div>
-
-        <Link to={`/projects/${project.id}`} className="btn">
-          Voir le projet →
-        </Link>
+      <div className="badges">
+        {project.technologies.map((tech) => (
+          <TechBadge key={tech} label={tech} />
+        ))}
       </div>
+
+      <Link className="card-btn" to={`/projects/${project.id}`}>
+        Voir le projet →
+      </Link>
     </article>
   );
 }
