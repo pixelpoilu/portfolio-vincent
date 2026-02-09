@@ -3,7 +3,7 @@ import { getProjectById } from "../services/projectService";
 
 export default function ProjectDetail() {
   const { id } = useParams();
-  const project = getProjectById(id || "");
+const project = id ? getProjectById(id) : null;
 
   if (!project) {
     return (

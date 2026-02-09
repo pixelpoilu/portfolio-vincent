@@ -3,7 +3,11 @@
   --color-text: #222;
   --color-muted: #666;
   --color-primary: #0a3d62;
-
+  --bg: #f4f6f8;
+  --card-bg: #ffffff;
+  --text: #0f172a;
+  --muted: #64748b;
+  --accent: #2563eb;
   --radius: 12px;
   --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }

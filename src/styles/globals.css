@@ -1,63 +1,19 @@
-/* ---------------------------- */
-/*        RESET + BASE          */
-/* ---------------------------- */
+
 
 body {
+  font-family: Inter, system-ui, Arial, sans-serif;
   margin: 0;
-  font-family: "Inter", Arial, sans-serif;
-  background: radial-gradient(circle at top, #f5f7ff, #ffffff);
-  color: #1f2937;
+  background: var(--bg);
+  color: var(--text);
 }
 
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-.page {
+section {
   max-width: 1100px;
-  margin: auto;
-  padding: 60px 20px;
-}
-
-/* ---------------------------- */
-/*        HEADER NAVBAR         */
-/* ---------------------------- */
-
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 25px 60px;
-}
-
-.navbar h2 {
-  font-size: 1.4rem;
-  font-weight: 700;
-}
-
-.nav-links {
-  display: flex;
-  gap: 25px;
-  align-items: center;
-}
-
-.nav-links a {
-  font-weight: 500;
-  color: #334155;
-}
-
-.nav-btn {
-  padding: 10px 18px;
-  border-radius: 999px;
-  border: 1px solid #c7d2fe;
-  background: white;
-  font-weight: 600;
-  transition: 0.2s;
-}
-
-.nav-btn:hover {
-  background: #eef2ff;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2rem;
 }
 
 /* ---------------------------- */
@@ -98,78 +54,93 @@ a {
 .hero-btn:hover {
   opacity: 0.9;
 }
-
-/* ---------------------------- */
-/*        PROJECT CARDS         */
-/* ---------------------------- */
-
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 30px;
-  margin-top: 40px;
-}
-
+/* PROJECT CARD */
 .project-card {
-  padding: 30px;
-  border-radius: 22px;
-  background: rgba(255, 255, 255, 0.75);
-  backdrop-filter: blur(15px);
-  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
-  transition: transform 0.2s ease;
+  background: var(--card-bg);
+  border-radius: 16px;
+  padding: 1.75rem;
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project-card:hover {
   transform: translateY(-6px);
+  box-shadow: 0 30px 60px rgba(15, 23, 42, 0.12);
 }
 
-.project-card h2 {
-  font-size: 1.6rem;
-  margin-bottom: 5px;
-}
-
-.meta {
-  font-size: 0.95rem;
-  color: #64748b;
-  margin-bottom: 15px;
-}
-
-.project-card p {
-  color: #475569;
-  line-height: 1.4;
-}
-
-/* ---------------------------- */
-/*           BADGES             */
-/* ---------------------------- */
-
-.badges {
-  margin-top: 15px;
+.project-header {
   display: flex;
-  gap: 10px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.project-header h3 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.project-year {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.project-description {
+  margin: 1rem 0;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.project-meta {
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+/* TECH BADGES */
+.project-tech {
+  display: flex;
   flex-wrap: wrap;
+  gap: 0.5rem;
 }
 
 .tech-badge {
-  padding: 6px 14px;
+  background: rgba(37, 99, 235, 0.1);
+  color: var(--accent);
+  padding: 0.35rem 0.7rem;
   border-radius: 999px;
-  font-size: 0.85rem;
-  font-weight: 600;
-  background: #eef2ff;
-  color: #4338ca;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+.project-link {
+  text-decoration: none;
+  color: inherit;
 }
 
-/* ---------------------------- */
-/*           BUTTON             */
-/* ---------------------------- */
+.project-link:hover {
+  cursor: pointer;
+}
 
-.card-btn {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 10px 18px;
-  border-radius: 999px;
-  background: linear-gradient(90deg, #6366f1, #ec4899);
-  color: white;
-  font-weight: 600;
-  box-shadow: 0 8px 20px rgba(99, 102, 241, 0.25);
+h1 {
+  margin-top: 1rem;
+}
+/* FOOTER */
+.site-footer {
+  background: #0f172a;
+  color: #cbd5f5;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  margin-top: 4rem;
+}
+
+.site-footer a {
+  color: #93c5fd;
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  text-decoration: underline;
+}
+
+.footer-links {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
 }
