@@ -1,0 +1,172 @@
+
+
+/*
+import { useState } from "react";
+// import { Link } from "react-router-dom";
+import projects from "../data/projects.json";
+import FilterBar from "../components/FilterBar";
+import TechnologyFilter from "../components/TechnologyFilter";
+//import { getAllProjects } from "../services/projectService";
+import ProjectCard from "../components/ProjectCard";
+
+function Projects() {
+  const [selectedType, setSelectedType] = useState("all");
+  const [activeTech, setActiveTech] = useState<string | null>(null);
+  const allTechnologies = Array.from(
+    new Set(projects.flatMap((p) => p.technologies))
+  ).sort();
+  const filteredProjects =
+    selectedType === "all"
+      ? projects
+      : projects.filter(
+          (project) => project.type === selectedType
+        );
+
+  const filteredProjects = activeTech
+    ? projects.filter((p) => p.technologies.includes(activeTech))
+    : projects;
+
+
+
+  const allprojects = getAllProjects();
+      {allprojects.map((project) => (
+        <ProjectCard key={project.id} project={project} />
+      ))}
+
+<section className="section">
+  <header className="section-header">
+    <h2 className="section-title">Projets sélectionnés</h2>
+    <p className="section-subtitle">
+      Applications web, interfaces et expériences utilisateur
+    </p>
+  </header>
+
+  return (
+    <section className="section">
+      <TechnologyFilter
+        technologies={allTechnologies}
+        activeTech={activeTech}
+        onChange={setActiveTech}
+      />
+
+      <div className="projects-grid">
+        {filteredProjects.map((project) => (
+          <ProjectCard key={project.id} project={project} />
+        ))}
+      </div>
+    </section>
+  );
+
+
+  return (
+    <section className="section">
+  <header className="section-header">
+    <h2 className="section-title">Projets</h2>
+    <p className="section-subtitle">
+      Applications web, interfaces et expériences utilisateur
+    </p>
+  </header>
+      <FilterBar
+        selectedType={selectedType}
+        onSelectType={setSelectedType}
+      />
+
+
+
+      <div className="project-grid">
+        {filteredProjects.map((project) => (
+          <ProjectCard
+            key={project.id}
+            project={project}
+          />
+        ))}
+      </div>
+    </section>
+
+    
+  );
+
+
+}
+export default Projects;
+  */
+ import { AnimatePresence, motion } from "framer-motion";
+import { useSearchParams } from "react-router-dom";
+import projects from "../data/projects.json";
+import TechnologyFilter from "../components/TechnologyFilter";
+import ProjectCard from "../components/ProjectCard";
+import ProjectsHeader from "../components/ProjectsHeader";
+
+export default function Projects() {
+  const [searchParams, setSearchParams] = useSearchParams();
+  const activeTech = searchParams.get("tech");
+
+  const allTechnologies = Array.from(
+    new Set(projects.flatMap((p) => p.technologies))
+  ).sort();
+
+  const filteredProjects = activeTech
+    ? projects.filter((p) => p.technologies.includes(activeTech))
+    : projects;
+
+  const handleFilterChange = (tech: string | null) => {
+    if (tech) {
+      setSearchParams({ tech });
+    } else {
+      setSearchParams({});
+    }
+  };
+
+<section className="section">
+  <ProjectsHeader
+    technologies={allTechnologies}
+    activeTech={activeTech}
+    projectsCount={filteredProjects.length}
+    onFilterChange={handleFilterChange}
+  />
+
+<div className="projects-grid">
+  <AnimatePresence>
+    {filteredProjects.map((project) => (
+      <motion.div
+        key={project.id}
+        layout
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: -20 }}
+        transition={{ duration: 0.25, ease: "easeOut" }}
+      >
+        <ProjectCard project={project} />
+      </motion.div>
+    ))}
+  </AnimatePresence>
+</div>
+</section>
+
+/*
+
+
+
+
+  return (
+    <section className="section">
+      <TechnologyFilter
+        technologies={allTechnologies}
+        activeTech={activeTech}
+        onChange={handleFilterChange}
+      />
+<p className="projects-count">
+  {filteredProjects.length} projet
+  {filteredProjects.length > 1 ? "s" : ""}
+</p>
+
+      <div className="projects-grid">
+        {filteredProjects.map((project) => (
+          <ProjectCard key={project.id} project={project} />
+        ))}
+      </div>
+    </section>
+  );
+*/
+  
+}

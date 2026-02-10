@@ -3,11 +3,92 @@
   --color-text: #222;
   --color-muted: #666;
   --color-primary: #0a3d62;
+  --color-active: #64748b;
+  --filter-btn-over-border: #cbd5e1;
+  --filter-btn-over-bg: #f1f5f9;
+  --filter-btn-bg: #ffffff;
   --bg: #f4f6f8;
-  --card-bg: #ffffff;
   --text: #0f172a;
   --muted: #64748b;
   --accent: #2563eb;
   --radius: 12px;
   --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --bg: #f4f6f8;
+  --card-bg: #ffffff;
+  --text: #0f172a;
+  --muted: #64748b;
+  --accent: #2563eb;
+  --nav-links:#334155;
+  --nav-btn-border:#c7d2fe;
+  --nav-btn-bg:white;
+  --nav-btn-bg-over:#eef2ff;
+  --borders:#ddd;
+  --footer-bg:#ddd;
+  --footer-txt:#ddd;
+  --gradient-start:#6366f1;
+  --gradient-end:#a855f7;
+  --card-btn-txt :  white;
+  --hero-txt : #475569;
+  --card-bg: #ffffff;
+  --gradient-card-start:#6366f1;
+  --gradient-card-end:#ec4899;
+  --box-shadow :rgba(99, 102, 241, 0.25);
+  --tech-badge-bg:rgba(37, 99, 235, 0.1);
+  --footer-bg:#0f172a;
+  --footer-txt :  #cbd5f5;
+  --footer-a :  #93c5fd;
+  --meta-txt : #64748b;
+  --project-card-txt : #475569;
+  --projects-count-txt : #64748b;
+  --section-divider-bg : #e2e8f0;
+  --section--muted-bg : #f8fafc;
+  --read-the-docs-txt : #888; 
+  --section-title-txt : #0f172a;
+  --section-subtitle-txt : #64748b;
 }
+/*
+64748b
+
+.site-footer {
+  background: #0f172a;
+  color: #cbd5f5;
+var(--gradient-card-start)
+var(--gradient-card-end)
+.tech-badge {
+  background: rgba(37, 99, 235, 0.1);
+
+
+
+rgba(99, 102, 241, 0.25);
+  --footer-bg:#ddd;
+  --footer-txt:#ddd;
+border-color: var(--borders);
+#ddd
+.filter-btn {
+  border-radius: 999px;
+  border: 1px solid #e2e8f0;
+  color: #334155;
+}
+--filter-btn-bg
+--filter-btn-over
+
+
+.filter-btn.active {
+  background: #0f172a;
+  color: #ffffff;
+  border-color: #0f172a;
+}
+
+.filter-btn:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px #93c5fd;
+}
+
+var(--color-active)
+
+
+var(--nav-links)
+
+
+
+*/

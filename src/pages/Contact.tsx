@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import React, { useState } from 'react';
 
+/*
 export default function Contact() {
     const [formData, setFormData] = useState({
         name: '',
@@ -62,7 +62,7 @@ export default function Contact() {
                     <input
                         type="text"
                         ```typescriptreact
-
+*/
 export default function Contact() {
     const [formData, setFormData] = useState({
         name: '',
