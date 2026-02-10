@@ -6,28 +6,46 @@ import projects from "../data/projects.json";
 import ProjectCard from "../components/ProjectCard";
 import ProjectsHeader from "../components/ProjectsHeader";
 
+
+
+
 export default function Projects() {
   // ------------------------------
   // Gestion du filtre via l’URL
   // ------------------------------
   const [searchParams, setSearchParams] = useSearchParams();
-  const activeTech = searchParams.get("tech");
+const activeTech = searchParams.get("tech");
+const activeType = searchParams.get("type");
 
   // ------------------------------
   // Liste unique des technologies
   // ------------------------------
-  const allTechnologies = Array.from(
-    new Set(projects.flatMap((project) => project.technologies))
-  ).sort();
+const allTechnologies = Array.from(
+  new Set(projects.flatMap((p) => p.technologies))
+).sort();
+  // ------------------------------
+  // Liste unique des types
+  // ------------------------------
+const allTypes = Array.from(
+  new Set(projects.map((p) => p.type))
+).sort();
+
 
   // ------------------------------
   // Filtrage des projets
   // ------------------------------
-  const filteredProjects = activeTech
-    ? projects.filter((project) =>
-        project.technologies.includes(activeTech)
-      )
-    : projects;
+const filteredProjects = projects.filter((project) => {
+  const techMatch = activeTech
+    ? project.technologies.includes(activeTech)
+    : true;
+
+  const typeMatch = activeType
+    ? project.type === activeType
+    : true;
+
+  return techMatch && typeMatch;
+});
+
 
   // ------------------------------
   // Changement de filtre
@@ -39,19 +57,27 @@ export default function Projects() {
       setSearchParams({});
     }
   };
-
+const updateFilters = (tech: string | null, type: string | null) => {
+  const params: Record<string, string> = {};
+  if (tech) params.tech = tech;
+  if (type) params.type = type;
+  setSearchParams(params);
+};
   // ------------------------------
   // Rendu
   // ------------------------------
   return (
     <section className="section">
       {/* Header : filtres + compteur */}
-      <ProjectsHeader
-        technologies={allTechnologies}
-        activeTech={activeTech}
-        projectsCount={filteredProjects.length}
-        onFilterChange={handleFilterChange}
-      />
+<ProjectsHeader
+  technologies={allTechnologies}
+  types={allTypes}
+  activeTech={activeTech}
+  activeType={activeType}
+  projectsCount={filteredProjects.length}
+  onTechChange={(tech) => updateFilters(tech, activeType)}
+  onTypeChange={(type) => updateFilters(activeTech, type)}
+/>
 
       {/* Grille de projets animée */}
       <div className="projects-grid">
