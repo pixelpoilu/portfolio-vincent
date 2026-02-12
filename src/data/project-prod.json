@@ -1,0 +1,100 @@
+[
+  {
+    "id": "doc-biker",
+    "title": "DOC BIKER – Réseau national 2 roues",
+    "client": "DOC BIKER",
+    "year": "2008–2022",
+    "description": "Création et accompagnement du site de l’enseigne DOC BIKER, depuis les premiers centres parisiens jusqu’à une franchise nationale.",
+    "missions": [
+      "Conception UX/UI",
+      "Développement front-end et back-end",
+      "Intégration CMS Joomla",
+      "Maintenance évolutive",
+      "Optimisation SEO"
+    ],
+    "technologies": ["Joomla", "PHP", "MySQL", "JavaScript", "CSS3"],
+   "role": "Optimisation SEO",
+    "type":"cms",
+    "image": "/images/docbiker.jpg",
+    "link": "https://www.docbiker.com"
+  },
+
+  {
+    "id": "penichettes",
+    "title": "Pénichettes – Plateforme touristique multilingue",
+    "client": "Locaboat / Pénichettes",
+    "year": "2009–2015",
+    "description": "Refonte complète d’un site de réservation touristique : plus de 300 pages, 180 circuits animés, catalogue interactif et réservation en ligne.",
+    "missions": [
+      "Refonte globale du site",
+      "Développement d’un système de réservation",
+      "Gestion multilingue",
+      "Animations interactives"
+    ],
+    "technologies": ["PHP", "MySQL", "Flash", "JavaScript", "Bootstrap"],
+    "role": "Optimisation SEO",
+    "type":"ecommerce",
+    "image": "/images/penichettes.jpg",
+    "link": ""
+  },
+
+  {
+    "id": "domusspro",
+    "title": "Domuss.pro – Plateforme bâtiment & services",
+    "client": "Startup Domuss.pro",
+    "year": "2018–2020",
+    "description": "Création d’une plateforme de mise en relation entre particuliers et professionnels du bâtiment et des espaces verts.",
+    "missions": [
+      "Cahier des charges",
+      "Architecture UX",
+      "Développement modules sur mesure",
+      "Espace membre",
+      "Système de crédits",
+      "SEO et maintenance"
+    ],
+    "technologies": ["Joomla", "PHP", "SQL", "jQuery", "LESS"],
+    "role": "Optimisation SEO",
+    "type":"plateforme",
+    "image": "/images/domuss.jpg",
+    "link": ""
+  },
+
+  {
+    "id": "wefeed",
+    "title": "We-Feed – Chef de projet technique",
+    "client": "Agence We-Feed",
+    "year": "2019–2021",
+    "description": "Conception, développement et maintenance de projets web multi-utilisateurs et systèmes intranet/extranet.",
+    "missions": [
+      "Développement full stack",
+      "Administration serveurs (Plesk)",
+      "Campagnes emailing Pardot",
+      "Création de sites responsive"
+    ],
+    "technologies": ["PHP", "Joomla", "SQL", "Bootstrap", "Pardot"],
+    "role": "Optimisation SEO",
+    "type":"site",
+    "image": "/images/wefeed.jpg",
+    "link": ""
+  },
+
+  {
+    "id": "dilitrust",
+    "title": "Dilitrust – Webmaster Corporate International",
+    "client": "Dilitrust",
+    "year": "2020–2025",
+    "description": "Gestion complète des sites corporate, création de landing pages, SEO technique et marketing automation.",
+    "missions": [
+      "Administration WordPress",
+      "Création de templates et mockups",
+      "SEO technique et éditorial",
+      "Marketing automation (Pardot)",
+      "Formation et documentation interne"
+    ],
+    "technologies": ["WordPress", "PHP", "CSS3", "HTML5", "Pardot"],
+    "role": "Optimisation SEO",
+    "type":"cms",
+    "image": "/images/dilitrust.jpg",
+    "link": "https://www.dilitrust.com"
+  }
+]

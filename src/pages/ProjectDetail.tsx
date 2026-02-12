@@ -1,9 +1,16 @@
 import { useParams, Link } from "react-router-dom";
-import { getProjectById } from "../services/projectService";
+//import { getProjectById } from "../services/projectService";
+import projects from "../data/projects.json";
+
 
 export default function ProjectDetail() {
   const { id } = useParams();
-const project = id ? getProjectById(id) : null;
+
+  const projectId = Number(id);
+
+  const project = projects.find(
+    (p) => p.id === projectId
+  );
 
   if (!project) {
     return (
@@ -13,8 +20,7 @@ const project = id ? getProjectById(id) : null;
       </main>
     );
   }
-
-  return (
+return (
     <main className="page">
       <Link to="/projects">← Retour aux projets</Link>
 
@@ -40,3 +46,11 @@ const project = id ? getProjectById(id) : null;
     </main>
   );
 }
+/*
+
+
+export default function ProjectDetail() {
+  const { id } = useParams();
+const project = id ? getProjectById(id) : null;
+}
+*/

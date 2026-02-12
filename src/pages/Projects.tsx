@@ -1,87 +1,83 @@
-import { useSearchParams } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
-
-//import { projects } from "../data/projects.json";
+import { useState } from "react";
 import projects from "../data/projects.json";
-import ProjectCard from "../components/ProjectCard";
 import ProjectsHeader from "../components/ProjectsHeader";
-
-
-
+import ProjectCard from "../components/ProjectCard";
+import { useEffect } from "react";
 
 export default function Projects() {
-  // ------------------------------
-  // Gestion du filtre via l’URL
-  // ------------------------------
-  const [searchParams, setSearchParams] = useSearchParams();
-const activeTech = searchParams.get("tech");
-const activeType = searchParams.get("type");
 
-  // ------------------------------
-  // Liste unique des technologies
-  // ------------------------------
+
+
+
+  // 🔹 State
+  const [selectedTechnologies, setSelectedTechnologies] = useState<string[]>([]);
+  const [selectedType, setSelectedType] = useState<string | null>(null);
+
+// 🔹 Projets filtrés uniquement par type (pour recalculer les technos visibles)
+const projectsFilteredByType =
+  selectedType !== null
+    ? projects.filter((p) => p.type === selectedType)
+    : projects;
+
+// 🔹 Technologies dynamiques basées sur le type sélectionné
 const allTechnologies = Array.from(
-  new Set(projects.flatMap((p) => p.technologies))
-).sort();
-  // ------------------------------
-  // Liste unique des types
-  // ------------------------------
-const allTypes = Array.from(
-  new Set(projects.map((p) => p.type))
+  new Set(
+    projectsFilteredByType.flatMap((p) => p.technologies ?? [])
+  )
 ).sort();
 
 
-  // ------------------------------
-  // Filtrage des projets
-  // ------------------------------
-const filteredProjects = projects.filter((project) => {
-  const techMatch = activeTech
-    ? project.technologies.includes(activeTech)
-    : true;
+  // 🔹 Liste unique des types
+  const allTypes = Array.from(
+    new Set(projects.map((p) => p.type))
+  ).sort();
 
-  const typeMatch = activeType
-    ? project.type === activeType
-    : true;
+useEffect(() => {
+  if (selectedType !== null) {
+    setSelectedTechnologies((prev) =>
+      prev.filter((tech) =>
+        allTechnologies.includes(tech)
+      )
+    );
+  }
+}, [selectedType]);
 
-  return techMatch && typeMatch;
-});
+  // 🔹 Filtrage croisé
+  const filteredProjects = projects.filter((project) => {
+    const techMatch =
+      selectedTechnologies.length > 0
+        ? selectedTechnologies.every((tech) =>
+            (project.technologies ?? []).includes(tech)
+          )
+        : true;
 
+    const typeMatch =
+      selectedType !== null
+        ? project.type === selectedType
+        : true;
 
-  // ------------------------------
-  // Changement de filtre
-  // ------------------------------
-  const handleFilterChange = (tech: string | null) => {
-    if (tech) {
-      setSearchParams({ tech });
-    } else {
-      setSearchParams({});
-    }
-  };
-const updateFilters = (tech: string | null, type: string | null) => {
-  const params: Record<string, string> = {};
-  if (tech) params.tech = tech;
-  if (type) params.type = type;
-  setSearchParams(params);
-};
-  // ------------------------------
-  // Rendu
-  // ------------------------------
+    return techMatch && typeMatch;
+  });
+
   return (
     <section className="section">
-      {/* Header : filtres + compteur */}
-<ProjectsHeader
-  technologies={allTechnologies}
-  types={allTypes}
-  activeTech={activeTech}
-  activeType={activeType}
-  projectsCount={filteredProjects.length}
-  onTechChange={(tech) => updateFilters(tech, activeType)}
-  onTypeChange={(type) => updateFilters(activeTech, type)}
-/>
+      {/* Header avec filtres */}
+      <ProjectsHeader
+        technologies={allTechnologies}
+        types={allTypes}
+        activeTechs={selectedTechnologies}
+        activeType={selectedType}
+        projectsCount={filteredProjects.length}
+        onTechChange={setSelectedTechnologies}
+        onTypeChange={setSelectedType}
+      />
 
-      {/* Grille de projets animée */}
+      <hr className="separator" />
+
+      {/* Grille projets */}
       <div className="projects-grid">
-        <AnimatePresence>
+        <AnimatePresence mode="popLayout">
           {filteredProjects.map((project) => (
             <motion.div
               key={project.id}
@@ -89,7 +85,7 @@ const updateFilters = (tech: string | null, type: string | null) => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.25, ease: "easeOut" }}
+              transition={{ duration: 0.25 }}
             >
               <ProjectCard project={project} />
             </motion.div>

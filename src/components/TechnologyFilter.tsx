@@ -1,35 +1,65 @@
-import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
-type Props = {
+interface TechnologyFilterProps {
   technologies: string[];
-  activeTech: string | null;
-  onChange: (tech: string | null) => void;
-};
+  activeTechs: string[];
+  onChange: (techs: string[]) => void;
+}
 
 export default function TechnologyFilter({
   technologies,
-  activeTech,
+  activeTechs = [],
   onChange,
-}: Props) {
+}: TechnologyFilterProps) {
+  const toggleTech = (tech: string) => {
+    if (activeTechs.includes(tech)) {
+      onChange(activeTechs.filter((t) => t !== tech));
+    } else {
+      onChange([...activeTechs, tech]);
+    }
+  };
+
+  const removeTech = (tech: string) => {
+    onChange(activeTechs.filter((t) => t !== tech));
+  };
+
   return (
     <div className="filter-bar">
-      
-      <button
-        className={`filter-btn ${activeTech === null ? "active" : ""}`}
-        onClick={() => onChange(null)}
-      >
-        Tous
-      </button>
+      {technologies.map((tech) => {
+        const isActive = activeTechs.includes(tech);
 
-      {technologies.map((tech) => (
-        <button
-          key={tech}
-          className={`filter-btn ${activeTech === tech ? "active" : ""}`}
-          onClick={() => onChange(tech)}
-        >
-          {tech}
-        </button>
-      ))}
+        return (
+          <button
+            key={tech}
+            className={`chip ${isActive ? "active" : ""}`}
+            onClick={() => toggleTech(tech)}
+          >
+            <span className="chip-label">{tech}</span>
+
+<AnimatePresence>
+  {isActive && (
+    <motion.span
+      className="chip-remove"
+      initial={{ opacity: 0, scale: 0.6 }}
+      animate={{ opacity: 1, scale: 1 }}
+      exit={{ opacity: 0, scale: 0.6 }}
+      transition={{ duration: 0.15 }}
+      onClick={(e) => {
+        e.stopPropagation();
+        removeTech(tech);
+      }}
+      whileHover={{ scale: 1.15 }}
+      whileTap={{ scale: 0.9 }}
+      aria-label={`Retirer ${tech}`}
+    >
+      ✕
+    </motion.span>
+  )}
+</AnimatePresence>
+
+          </button>
+        );
+      })}
     </div>
   );
 }

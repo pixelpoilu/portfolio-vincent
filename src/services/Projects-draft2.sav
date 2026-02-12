@@ -101,9 +101,13 @@ export default function Projects() {
   const [searchParams, setSearchParams] = useSearchParams();
   const activeTech = searchParams.get("tech");
 
-  const allTechnologies = Array.from(
-    new Set(projects.flatMap((p) => p.technologies))
-  ).sort();
+const allTechnologies = Array.from(
+  new Set(
+    (projects ?? []).flatMap((p) => p.technologies ?? [])
+  )
+).sort();
+
+
 
   const filteredProjects = activeTech
     ? projects.filter((p) => p.technologies.includes(activeTech))

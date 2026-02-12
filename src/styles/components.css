@@ -99,9 +99,88 @@
   cursor: pointer;
 }
 /* PROJECT CARD */
+/* ---------------------------- */
+/*            CHIP              */
+/* ---------------------------- */
+.chip {
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid var(--chip-border);
+  background: var(--chip-bg);
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
 
 
+.chip:hover {
+  border-color: var(--chip-hover-border);
+}
 
+.chip.active {
+  background: var(--chip-active-bg);
+  color: var(--chip-active-txt);
+  border-color: var(--chip-active-border);
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.45rem 0.8rem;
+  border-radius: 999px;
+  border: 1px solid #e2e8f0;
+  background: #fff;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.chip:hover {
+  border-color: #2563eb;
+}
+
+.chip.active {
+  background: #2563eb;
+  color: #fff;
+  border-color: #2563eb;
+}
+
+.chip-label {
+  line-height: 1;
+}
+
+.chip-remove {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  font-size: 0.7rem;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.25);
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.chip-remove:hover {
+  background: rgba(255, 255, 255, 0.45);
+}
+.reset-button {
+  background: transparent;
+  border: 1px solid #ccc;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.reset-button:hover {
+  background: #111;
+  color: white;
+  border-color: #111;
+}
 
 /* ---------------------------- */
 /*            HERO              */
@@ -151,6 +230,7 @@
   margin-top: 20px;
   padding: 10px 18px;
   border-radius: 999px;
+  border-color: var(--card-btn-border);
   background: linear-gradient(90deg, var(--gradient-card-start), var(--gradient-card-end));
   color:var(--card-btn-txt);
   font-weight: 600;

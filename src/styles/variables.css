@@ -28,6 +28,7 @@
   --gradient-start:#6366f1;
   --gradient-end:#a855f7;
   --card-btn-txt :  white;
+    --card-btn-border :  white;
   --hero-txt : #475569;
   --card-bg: #ffffff;
   --gradient-card-start:#6366f1;
@@ -45,6 +46,12 @@
   --read-the-docs-txt : #888; 
   --section-title-txt : #0f172a;
   --section-subtitle-txt : #64748b;
+--chip-border: #e2e8f0;
+--chip-bg: #fff;
+--chip-hover-border: #2563eb;
+--chip-active-bg:#2563eb;
+--chip-active-txt: #fff;
+--chip-active-border: #2563eb;
 }
 /*
 64748b

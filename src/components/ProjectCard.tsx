@@ -24,22 +24,10 @@ export default function ProjectCard({ project }: { project: Project }) {
           <TechBadge key={tech} label={tech} />
         ))}
       </div>
-
-      <Link className="card-btn" to={`/projects/${project.id}`}>
+      <button className="card-btn" to={`/projects/${project.id}`}>
         Voir le projet →
-      </Link>
+      </button>
     </article>
 </Link>
   );
 }
-
-
-
-
-
-
-      
-
-
-
-
