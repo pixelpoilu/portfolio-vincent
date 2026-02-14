@@ -4,9 +4,7 @@
   --color-muted: #666;
   --color-primary: #0a3d62;
   --color-active: #64748b;
-  --filter-btn-over-border: #cbd5e1;
-  --filter-btn-over-bg: #f1f5f9;
-  --filter-btn-bg: #ffffff;
+
   --bg: #f4f6f8;
   --text: #0f172a;
   --muted: #64748b;
@@ -18,40 +16,57 @@
   --text: #0f172a;
   --muted: #64748b;
   --accent: #2563eb;
+  --borders:#ddd;
+
   --nav-links:#334155;
   --nav-btn-border:#c7d2fe;
   --nav-btn-bg:white;
   --nav-btn-bg-over:#eef2ff;
-  --borders:#ddd;
-  --footer-bg:#ddd;
-  --footer-txt:#ddd;
+
+  --footer-bg:#f8f9fb;
+  --footer-txt:#0f172a;
+  --footer-a :  #203246;
+
+  --meta-txt : #64748b;
+
+
+  --filter-btn-over-border: #cbd5e1;
+  --filter-btn-over-bg: #f1f5f9;
+  --filter-btn-bg: #ffffff;
+
   --gradient-start:#6366f1;
   --gradient-end:#a855f7;
-  --card-btn-txt :  white;
-    --card-btn-border :  white;
-  --hero-txt : #475569;
-  --card-bg: #ffffff;
-  --gradient-card-start:#6366f1;
-  --gradient-card-end:#ec4899;
-  --box-shadow :rgba(99, 102, 241, 0.25);
-  --tech-badge-bg:rgba(37, 99, 235, 0.1);
-  --footer-bg:#0f172a;
-  --footer-txt :  #cbd5f5;
-  --footer-a :  #93c5fd;
-  --meta-txt : #64748b;
-  --project-card-txt : #475569;
-  --projects-count-txt : #64748b;
-  --section-divider-bg : #e2e8f0;
-  --section--muted-bg : #f8fafc;
-  --read-the-docs-txt : #888; 
-  --section-title-txt : #0f172a;
-  --section-subtitle-txt : #64748b;
+
 --chip-border: #e2e8f0;
 --chip-bg: #fff;
 --chip-hover-border: #2563eb;
 --chip-active-bg:#2563eb;
 --chip-active-txt: #fff;
 --chip-active-border: #2563eb;
+
+
+  --hero-txt : #475569;
+
+  --box-shadow :rgba(99, 102, 241, 0.25);
+  --tech-badge-bg:rgba(37, 99, 235, 0.1);
+
+  --project-card-txt : #475569;
+  --card-bg: #ffffff;
+  --gradient-card-start:#6366f1;
+  --gradient-card-end:#ec4899;
+  --card-btn-txt :  white;
+  --card-btn-border :  white;
+
+
+
+  --projects-count-txt : #64748b;
+  --section-divider-bg : #e2e8f0;
+  --section--muted-bg : #f8fafc;
+  --read-the-docs-txt : #888; 
+  --section-title-txt : #0f172a;
+  --section-subtitle-txt : #64748b;
+
+
 }
 /*
 64748b

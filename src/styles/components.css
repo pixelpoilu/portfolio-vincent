@@ -136,16 +136,6 @@
   transition: all 0.2s ease;
 }
 
-.chip:hover {
-  border-color: #2563eb;
-}
-
-.chip.active {
-  background: #2563eb;
-  color: #fff;
-  border-color: #2563eb;
-}
-
 .chip-label {
   line-height: 1;
 }
@@ -221,7 +211,58 @@
   opacity: 0.9;
 }
 
+.tech-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
 
+.tech-pill {
+  position: relative;
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  border: 1px solid #2a2a2a;
+  background: #151515;
+  color: #aaa;
+  font-size: 0.85rem;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.25s ease;
+}
+
+.tech-pill:hover {
+  border-color: #444;
+}
+
+.tech-pill.active {
+  color: white;
+  border-color: transparent;
+}
+
+.tech-pill:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.active-highlight {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #6c5ce7, #00cec9);
+  border-radius: 999px;
+  z-index: 0;
+}
+
+.tech-label,
+.tech-count {
+  position: relative;
+  z-index: 1;
+}
+
+.tech-count {
+  margin-left: 0.5rem;
+  opacity: 0.7;
+  font-size: 0.75rem;
+}
 /* ---------------------------- */
 /*           BUTTON             */
 /* ---------------------------- */

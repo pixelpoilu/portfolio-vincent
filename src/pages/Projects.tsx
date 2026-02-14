@@ -1,82 +1,83 @@
-import { AnimatePresence, motion } from "framer-motion";
-import { useState } from "react";
-import projects from "../data/projects.json";
+import { useMemo, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import ProjectsHeader from "../components/ProjectsHeader";
-import ProjectCard from "../components/ProjectCard";
-import { useEffect } from "react";
+import projectsData from "../data/projects.json";
 
 export default function Projects() {
-
-
-
-
-  // 🔹 State
-  const [selectedTechnologies, setSelectedTechnologies] = useState<string[]>([]);
+  const [selectedTechnology, setSelectedTechnology] = useState<string | null>(null);
   const [selectedType, setSelectedType] = useState<string | null>(null);
 
-// 🔹 Projets filtrés uniquement par type (pour recalculer les technos visibles)
-const projectsFilteredByType =
-  selectedType !== null
-    ? projects.filter((p) => p.type === selectedType)
-    : projects;
+  // 🔎 Liste unique des technos
+  const allTechnologies = useMemo(() => {
+    const techSet = new Set<string>();
+    projectsData.forEach((project) => {
+      project.technologies.forEach((tech) => techSet.add(tech));
+    });
+    return Array.from(techSet);
+  }, []);
 
-// 🔹 Technologies dynamiques basées sur le type sélectionné
-const allTechnologies = Array.from(
-  new Set(
-    projectsFilteredByType.flatMap((p) => p.technologies ?? [])
-  )
-).sort();
+  // 🔎 Liste unique des types
+  const allTypes = useMemo(() => {
+    const typeSet = new Set<string>();
+    projectsData.forEach((project) => {
+      typeSet.add(project.type);
+    });
+    return Array.from(typeSet);
+  }, []);
 
+  // 🎯 Filtrage
+  const filteredProjects = useMemo(() => {
+    return projectsData.filter((project) => {
+      const matchesTech =
+        !selectedTechnology ||
+        project.technologies.includes(selectedTechnology);
 
-  // 🔹 Liste unique des types
-  const allTypes = Array.from(
-    new Set(projects.map((p) => p.type))
-  ).sort();
+      const matchesType =
+        !selectedType ||
+        project.type === selectedType;
 
-useEffect(() => {
-  if (selectedType !== null) {
-    setSelectedTechnologies((prev) =>
-      prev.filter((tech) =>
-        allTechnologies.includes(tech)
-      )
-    );
-  }
-}, [selectedType]);
+      return matchesTech && matchesType;
+    });
+  }, [selectedTechnology, selectedType]);
 
-  // 🔹 Filtrage croisé
-  const filteredProjects = projects.filter((project) => {
-    const techMatch =
-      selectedTechnologies.length > 0
-        ? selectedTechnologies.every((tech) =>
-            (project.technologies ?? []).includes(tech)
-          )
-        : true;
+  // 📊 Compteur par techno
+  const technologiesCount = useMemo(() => {
+    const count: Record<string, number> = {};
 
-    const typeMatch =
-      selectedType !== null
-        ? project.type === selectedType
-        : true;
+    allTechnologies.forEach((tech) => {
+      count[tech] = projectsData.filter((project) => {
+        const matchesType =
+          !selectedType || project.type === selectedType;
 
-    return techMatch && typeMatch;
-  });
+        return (
+          matchesType &&
+          project.technologies.includes(tech)
+        );
+      }).length;
+    });
+
+    return count;
+  }, [allTechnologies, selectedType]);
 
   return (
-    <section className="section">
-      {/* Header avec filtres */}
+    <section className="projects-section">
       <ProjectsHeader
         technologies={allTechnologies}
         types={allTypes}
-        activeTechs={selectedTechnologies}
+        activeTech={selectedTechnology}
         activeType={selectedType}
         projectsCount={filteredProjects.length}
-        onTechChange={setSelectedTechnologies}
+        technologiesCount={technologiesCount}
+        onTechSelect={(tech) =>
+          setSelectedTechnology((prev) =>
+            prev === tech ? null : tech
+          )
+        }
+        onResetTech={() => setSelectedTechnology(null)}
         onTypeChange={setSelectedType}
       />
 
-      <hr className="separator" />
-
-      {/* Grille projets */}
-      <div className="projects-grid">
+      <motion.div layout className="projects-grid">
         <AnimatePresence mode="popLayout">
           {filteredProjects.map((project) => (
             <motion.div
@@ -85,13 +86,15 @@ useEffect(() => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.25 }}
+              transition={{ duration: 0.3 }}
+              className="project-card"
             >
-              <ProjectCard project={project} />
+              <h3>{project.title}</h3>
+              <p>{project.description}</p>
             </motion.div>
           ))}
         </AnimatePresence>
-      </div>
+      </motion.div>
     </section>
   );
 }

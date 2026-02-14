@@ -1,78 +1,81 @@
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import TechnologyFilter from "./TechnologyFilter";
 import TypeFilter from "./TypeFilter";
 
 interface ProjectsHeaderProps {
   technologies: string[];
   types: string[];
-  activeTechs: string[];
+  activeTech: string | null;     // 👈 plus un array
   activeType: string | null;
   projectsCount: number;
-  onTechChange: (techs: string[]) => void;
+  technologiesCount: Record<string, number>;
+  onTechSelect: (tech: string) => void;
+  onResetTech: () => void;
   onTypeChange: (type: string | null) => void;
 }
 
 export default function ProjectsHeader({
   technologies,
   types,
-  activeTechs,
+  activeTech,
   activeType,
   projectsCount,
-  onTechChange,
+  technologiesCount,
+  onTechSelect,
+  onResetTech,
   onTypeChange,
 }: ProjectsHeaderProps) {
-  const hasActiveFilters =
-    activeTechs.length > 0 || activeType !== null;
 
-  const resetFilters = () => {
-    onTechChange([]);
-    onTypeChange(null);
-  };
+const hasActiveFilters =
+  activeTech !== null || activeType !== null;
+
+const resetFilters = () => {
+  onResetTech();
+  onTypeChange(null);
+};
+
 
   return (
     <header className="projects-header">
-      {/* Filtres */}
       <div className="filters-wrapper">
-      <p className="projects-count" style={{ textAlign: "left", marginBottom: 8 }}>
-        Types de projets:
-      </p>
+
+<TechnologyFilter
+  technologies={technologies}
+  activeTech={activeTech}
+  onSelect={onTechSelect}
+  technologiesCount={technologiesCount}
+/>
+
         <TypeFilter
           types={types}
           activeType={activeType}
           onChange={onTypeChange}
         />
-      <p className="projects-count" style={{ textAlign: "left", marginBottom: 8 }}>
-        Technologies utilisées :
-      </p>
-        <TechnologyFilter
-          technologies={technologies}
-          activeTechs={activeTechs}
-          onChange={onTechChange}
-        />
+
       </div>
 
-      {/* Reset animé */}
-      <AnimatePresence>
-        {hasActiveFilters && (
-          <motion.button
-            className="reset-button"
-            onClick={resetFilters}
-            initial={{ opacity: 0, y: -8 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -8 }}
-            transition={{ duration: 0.2 }}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            Reset filters
-          </motion.button>
-        )}
-      </AnimatePresence>
+      <div className="projects-meta">
+        <AnimatePresence>
+          {hasActiveFilters && (
+            <motion.button
+              className="reset-button"
+              onClick={resetFilters}
+              initial={{ opacity: 0, y: -6 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -6 }}
+              transition={{ duration: 0.2 }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Reset filters
+            </motion.button>
+          )}
+        </AnimatePresence>
 
-      {/* Compteur */}
-      <p className="projects-count">
-        {projectsCount} projet{projectsCount > 1 ? "s" : ""}
-      </p>
+        <p className="projects-count">
+          {projectsCount} projet{projectsCount > 1 ? "s" : ""}
+        </p>
+      </div>
     </header>
   );
 }
