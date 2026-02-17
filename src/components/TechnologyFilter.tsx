@@ -26,7 +26,7 @@ export default function TechnologyFilter({
             type="button"
             onClick={() => onSelect(tech)}
             disabled={isDisabled}
-            className={`tech-button ${isActive ? "active" : ""}`}
+            className={`tech-button chip ${isActive ? "active" : ""}`}
             whileTap={!isDisabled ? { scale: 0.94 } : {}}
             whileHover={!isDisabled ? { scale: 1.05 } : {}}
             layout

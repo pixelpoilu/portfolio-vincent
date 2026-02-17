@@ -1,17 +1,30 @@
+
+import { NavLink } from "react-router-dom";
+import logo from "../assets/logo.svg";
+
 export default function Navbar() {
   return (
     <header className="navbar">
-      <h2>Vincent Lepretre</h2>
+      <div className="nav-container">
+        <NavLink to="/" className="logo">
+          <img src={logo} alt="Logo Vincent Lepret" />
+        </NavLink>
+        <nav className="nav-links">
+          <NavLink to="/" end>
+            Accueil
+          </NavLink>
+          <NavLink to="/projects">
+            Projets
+          </NavLink>
+          <NavLink to="/contact">
+            Contact
+          </NavLink>
+        </nav>
 
-      <nav className="nav-links">
-        <a href="/">Accueil</a>
-        <a href="/projects">Projets</a>
-        <a href="/contact">Contact</a>
-
-        <a className="nav-btn" href="/contact">
+        <NavLink to="/contact" className="nav-cta">
           Contactez-moi
-        </a>
-      </nav>
+        </NavLink>
+      </div>
     </header>
   );
 }

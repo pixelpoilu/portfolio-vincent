@@ -38,7 +38,11 @@ const resetFilters = () => {
   return (
     <header className="projects-header">
       <div className="filters-wrapper">
-
+        <TypeFilter
+          types={types}
+          activeType={activeType}
+          onChange={onTypeChange}
+        />
 <TechnologyFilter
   technologies={technologies}
   activeTech={activeTech}
@@ -46,11 +50,7 @@ const resetFilters = () => {
   technologiesCount={technologiesCount}
 />
 
-        <TypeFilter
-          types={types}
-          activeType={activeType}
-          onChange={onTypeChange}
-        />
+
 
       </div>
 

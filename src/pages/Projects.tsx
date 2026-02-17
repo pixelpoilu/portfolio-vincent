@@ -2,7 +2,7 @@ import { useMemo, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import ProjectsHeader from "../components/ProjectsHeader";
 import projectsData from "../data/projects.json";
-
+import PageTransition from "../components/PageTransition";
 export default function Projects() {
   const [selectedTechnology, setSelectedTechnology] = useState<string | null>(null);
   const [selectedType, setSelectedType] = useState<string | null>(null);
@@ -59,7 +59,7 @@ export default function Projects() {
     return count;
   }, [allTechnologies, selectedType]);
 
-  return (
+  return (<PageTransition>
     <section className="projects-section">
       <ProjectsHeader
         technologies={allTechnologies}
@@ -96,5 +96,6 @@ export default function Projects() {
         </AnimatePresence>
       </motion.div>
     </section>
+  </PageTransition>
   );
 }

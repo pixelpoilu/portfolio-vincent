@@ -1,31 +1,33 @@
 import { Link } from "react-router-dom";
-
+import PageTransition from "../components/PageTransition";
 export default function Home() {
   return (
-    <main className="page">
-      <section className="hero">
-        {/* Texte */}
-        <div>
-          <h1>
-            Bienvenue sur mon <br /> Portfolio
-          </h1>
+    <PageTransition>
+      <main className="page">
+        <section className="hero">
+          {/* Texte */}
+          <div>
+            <h1>
+              Bienvenue sur mon <br /> Portfolio
+            </h1>
 
-          <p>Développeur Web & Chef de projet digital</p>
+            <p>Développeur Web & Chef de projet digital</p>
 
-          <Link to="/projects" className="hero-btn">
-            Voir mes projets
-          </Link>
-        </div>
+            <Link to="/projects" className="hero-btn">
+              Voir mes projets
+            </Link>
+          </div>
 
-        {/* Illustration */}
-        <div>
-          <img
-            src="/images/hero.png"
-            alt="Illustration développeur"
-            style={{ width: "100%", borderRadius: "20px" }}
-          />
-        </div>
-      </section>
-    </main>
+          {/* Illustration */}
+          <div>
+            <img
+              src="/images/hero.png"
+              alt="Illustration développeur"
+              style={{ width: "100%", borderRadius: "20px" }}
+            />
+          </div>
+        </section>
+      </main>
+    </PageTransition>
   );
 }

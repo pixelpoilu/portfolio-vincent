@@ -1,0 +1,38 @@
+/* ---------------------------- */
+/*            HERO              */
+/* ---------------------------- */
+
+.hero {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  align-items: center;
+  gap: 50px;
+  margin-top: 60px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-top: 15px;
+  color: var(--hero-txt);
+}
+
+.hero-btn {
+  margin-top: 30px;
+  display: inline-block;
+  padding: 14px 22px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
+  color: white;
+  font-weight: 600;
+  box-shadow: 0 10px 25px var(--box-shadow);
+}
+
+.hero-btn:hover {
+  opacity: 0.9;
+}
