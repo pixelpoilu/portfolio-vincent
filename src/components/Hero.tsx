@@ -1,6 +1,6 @@
 import "../styles/Hero.css";
 import portrait from "../assets/images/hero/portrait-bw.png"; // ton image HD
-
+import Footer from "./Footer";
 export default function Home() {
     return (
         <main className="home">
@@ -17,14 +17,12 @@ export default function Home() {
                 {/* Colonne gauche */}
                 <div className="hero-left">
                     <h1>Vincent Leprêtre</h1>
-
                     <span className="hero-role">WEBMASTER</span>
-
                     <div className="hero-divider" />
 
                     <p className="hero-description">
-                        Je conçois des expériences digitales performantes
-                        depuis plus de 15 ans.
+                        Développeur frontend orienté UX/UI
+                        Je conçois des interfaces claires, structurées et pensées comme des produits.
                     </p>
 
                     <div className="hero-buttons">
@@ -42,8 +40,9 @@ export default function Home() {
                 <div className="hero-right">
                     <img src={portrait} alt="Vincent Leprêtre" />
                 </div>
-
+                <Footer />
             </section>
+
         </main>
     );
 }
