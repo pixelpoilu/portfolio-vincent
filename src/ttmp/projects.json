@@ -1,0 +1,19 @@
+  {
+    "id": "doc-biker",
+    "title": "DOC BIKER – Réseau national 2 roues",
+    "client": "DOC BIKER",
+    "year": "2008–2022",
+    "description": "Création et accompagnement du site de l’enseigne DOC BIKER, depuis les premiers centres parisiens jusqu’à une franchise nationale.",
+    "missions": [
+      "Conception UX/UI",
+      "Développement front-end et back-end",
+      "Intégration CMS Joomla",
+      "Maintenance évolutive",
+      "Optimisation SEO"
+    ],
+    "technologies": ["Joomla", "PHP", "MySQL", "JavaScript", "CSS3"],
+   "role": "Optimisation SEO",
+    "type":"cms",
+    "image": "/images/docbiker.jpg",
+    "link": "https://www.docbiker.com"
+  },

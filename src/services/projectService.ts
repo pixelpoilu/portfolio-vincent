@@ -1,4 +1,4 @@
-import projectsData from "../data/projects.json";
+import projectsData from "../data/project-prod.json";
 import type { Project } from "../types/Project";
 
 /**

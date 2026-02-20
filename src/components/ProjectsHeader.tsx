@@ -1,39 +1,51 @@
 import { AnimatePresence, motion } from "framer-motion";
 import TechnologyFilter from "./TechnologyFilter";
 import TypeFilter from "./TypeFilter";
+import SectorFilter from "./SectorFilter"; // ✅ NEW
 
 interface ProjectsHeaderProps {
   technologies: string[];
   types: string[];
-  activeTech: string | null;     // 👈 plus un array
+  sectors: string[]; // ✅ NEW
+
+  activeTech: string | null;
   activeType: string | null;
+  activeSector: string | null; // ✅ NEW
+
   projectsCount: number;
   technologiesCount: Record<string, number>;
+
   onTechSelect: (tech: string) => void;
   onResetTech: () => void;
   onTypeChange: (type: string | null) => void;
+  onSectorChange: (sector: string | null) => void; // ✅ NEW
 }
 
 export default function ProjectsHeader({
   technologies,
   types,
+  sectors, // ✅ NEW
   activeTech,
   activeType,
+  activeSector, // ✅ NEW
   projectsCount,
   technologiesCount,
   onTechSelect,
   onResetTech,
   onTypeChange,
+  onSectorChange, // ✅ NEW
 }: ProjectsHeaderProps) {
 
-const hasActiveFilters =
-  activeTech !== null || activeType !== null;
+  const hasActiveFilters =
+    activeTech !== null ||
+    activeType !== null ||
+    activeSector !== null; // ✅ NEW
 
-const resetFilters = () => {
-  onResetTech();
-  onTypeChange(null);
-};
-
+  const resetFilters = () => {
+    onResetTech();
+    onTypeChange(null);
+    onSectorChange(null); // ✅ NEW
+  };
 
   return (
     <header className="projects-header">
@@ -43,15 +55,20 @@ const resetFilters = () => {
           activeType={activeType}
           onChange={onTypeChange}
         />
-<TechnologyFilter
-  technologies={technologies}
-  activeTech={activeTech}
-  onSelect={onTechSelect}
-  technologiesCount={technologiesCount}
-/>
 
+        {/* ✅ NEW */}
+        <SectorFilter
+          sectors={sectors}
+          activeSector={activeSector}
+          onChange={onSectorChange}
+        />
 
-
+        <TechnologyFilter
+          technologies={technologies}
+          activeTech={activeTech}
+          onSelect={onTechSelect}
+          technologiesCount={technologiesCount}
+        />
       </div>
 
       <div className="projects-meta">

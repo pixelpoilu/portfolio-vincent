@@ -1,11 +1,14 @@
 import { useMemo, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import ProjectsHeader from "../components/ProjectsHeader";
-import projectsData from "../data/projects.json";
+import projectsData from "../data/project-prod.json";
 import PageTransition from "../components/PageTransition";
+import ProjectCard from "../components/ProjectCard";
+
 export default function Projects() {
   const [selectedTechnology, setSelectedTechnology] = useState<string | null>(null);
   const [selectedType, setSelectedType] = useState<string | null>(null);
+  const [selectedSector, setSelectedSector] = useState<string | null>(null); // ✅ NEW
 
   // 🔎 Liste unique des technos
   const allTechnologies = useMemo(() => {
@@ -25,6 +28,15 @@ export default function Projects() {
     return Array.from(typeSet);
   }, []);
 
+  // 🔎 Liste unique des secteurs ✅ NEW
+  const allSectors = useMemo(() => {
+    const sectorSet = new Set<string>();
+    projectsData.forEach((project) => {
+      sectorSet.add(project.secteur);
+    });
+    return Array.from(sectorSet);
+  }, []);
+
   // 🎯 Filtrage
   const filteredProjects = useMemo(() => {
     return projectsData.filter((project) => {
@@ -36,9 +48,16 @@ export default function Projects() {
         !selectedType ||
         project.type === selectedType;
 
-      return matchesTech && matchesType;
+      const matchesSector =
+        !selectedSector ||
+        project.secteur === selectedSector;
+
+      const isPublished =
+        project.status === "published";
+
+      return matchesTech && matchesType && matchesSector && isPublished;
     });
-  }, [selectedTechnology, selectedType]);
+  }, [selectedTechnology, selectedType, selectedSector]);
 
   // 📊 Compteur par techno
   const technologiesCount = useMemo(() => {
@@ -49,53 +68,60 @@ export default function Projects() {
         const matchesType =
           !selectedType || project.type === selectedType;
 
+        const matchesSector =
+          !selectedSector || project.secteur === selectedSector;
+
         return (
+          project.status === "published" &&
           matchesType &&
+          matchesSector &&
           project.technologies.includes(tech)
         );
       }).length;
     });
 
     return count;
-  }, [allTechnologies, selectedType]);
+  }, [allTechnologies, selectedType, selectedSector]);
 
-  return (<PageTransition>
-    <section className="projects-section">
-      <ProjectsHeader
-        technologies={allTechnologies}
-        types={allTypes}
-        activeTech={selectedTechnology}
-        activeType={selectedType}
-        projectsCount={filteredProjects.length}
-        technologiesCount={technologiesCount}
-        onTechSelect={(tech) =>
-          setSelectedTechnology((prev) =>
-            prev === tech ? null : tech
-          )
-        }
-        onResetTech={() => setSelectedTechnology(null)}
-        onTypeChange={setSelectedType}
-      />
+  return (
+    <PageTransition>
+      <section className="projects-section">
+        <ProjectsHeader
+          technologies={allTechnologies}
+          types={allTypes}
+          sectors={allSectors} // ✅ NEW
+          activeTech={selectedTechnology}
+          activeType={selectedType}
+          activeSector={selectedSector} // ✅ NEW
+          projectsCount={filteredProjects.length}
+          technologiesCount={technologiesCount}
+          onTechSelect={(tech) =>
+            setSelectedTechnology((prev) =>
+              prev === tech ? null : tech
+            )
+          }
+          onResetTech={() => setSelectedTechnology(null)}
+          onTypeChange={setSelectedType}
+          onSectorChange={setSelectedSector} // ✅ NEW
+        />
 
-      <motion.div layout className="projects-grid">
-        <AnimatePresence mode="popLayout">
-          {filteredProjects.map((project) => (
-            <motion.div
-              key={project.id}
-              layout
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.3 }}
-              className="project-card"
-            >
-              <h3>{project.title}</h3>
-              <p>{project.description}</p>
-            </motion.div>
-          ))}
-        </AnimatePresence>
-      </motion.div>
-    </section>
-  </PageTransition>
+        <motion.div layout className="projects-grid">
+          <AnimatePresence mode="popLayout">
+            {filteredProjects.map((project) => (
+              <motion.div
+                key={project.id}
+                layout
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.25, ease: "easeOut" }}
+              >
+                <ProjectCard project={project} />
+              </motion.div>
+            ))}
+          </AnimatePresence>
+        </motion.div>
+      </section>
+    </PageTransition>
   );
 }

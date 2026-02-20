@@ -1,5 +1,9 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+const images = import.meta.glob<{ default: string }>(
+    "../assets/images/projects/**/*.{jpg,png,webp}",
+    { eager: true }
+);
 
 interface Project {
     id: number;
@@ -15,6 +19,9 @@ interface ProjectCardProps {
 }
 
 export default function ProjectCard({ project }: ProjectCardProps) {
+    const thumbnailPath = `../assets/images/projects/vignettes/${project.image}`;
+    const thumbnail = images[thumbnailPath]?.default;
+
     return (
         <motion.article
             className="project-card"
@@ -25,12 +32,13 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             <Link to={`/projects/${project.id}`} className="card-link">
                 <div className="card-image-wrapper">
                     <img
-                        src={project.image}
+                        src={thumbnail}
                         alt={project.title}
                         className="card-image"
                         loading="lazy"
                     />
                 </div>
+
 
                 <div className="card-content">
                     <span className="card-type">

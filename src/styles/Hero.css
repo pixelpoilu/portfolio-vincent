@@ -1,0 +1,121 @@
+/* ===== HOME ===== */
+
+.home {
+  height: 100vh;
+  background: #f1efee;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Header minimal */
+.home-top {
+  position: absolute;
+  top: 40px;
+  left: 60px;
+  right: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.home-logo {
+  font-size: 28px;
+  font-weight: 500;
+}
+
+.home-year {
+  font-size: 16px;
+  color: #666;
+}
+
+/* Layout principal */
+.home-hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 100%;
+}
+
+/* Colonne gauche */
+.hero-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 120px;
+  max-width: 600px;
+}
+
+.hero-left h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 64px;
+  font-weight: 500;
+  margin: 0;
+  letter-spacing: -1px;
+}
+
+.hero-role {
+  margin-top: 20px;
+  letter-spacing: 4px;
+  font-size: 14px;
+  color: #6d7b8a;
+}
+
+.hero-divider {
+  width: 80px;
+  height: 2px;
+  background: #222;
+  margin: 30px 0;
+}
+
+.hero-description {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #555;
+  max-width: 420px;
+}
+
+.hero-buttons {
+  margin-top: 40px;
+  display: flex;
+  gap: 20px;
+}
+
+.btn {
+  padding: 14px 28px;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-decoration: none;
+  border: 1px solid #222;
+  transition: all 0.3s ease;
+}
+
+.btn.primary {
+  background: #222;
+  color: white;
+}
+
+.btn.primary:hover {
+  background: black;
+}
+
+.btn.secondary {
+  background: transparent;
+  color: #222;
+}
+
+.btn.secondary:hover {
+  background: #222;
+  color: white;
+}
+
+/* Colonne droite */
+.hero-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.hero-right img {
+  height: 90vh;
+  object-fit: cover;
+}

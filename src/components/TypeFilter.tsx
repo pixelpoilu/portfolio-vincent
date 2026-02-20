@@ -10,7 +10,7 @@ export default function TypeFilter({
   onChange,
 }: TypeFilterProps) {
   return (
-    <div className="filter-bar">
+    <div className="filter-bar ">
       <button
         className={!activeType ? "active" : ""}
         onClick={() => onChange(null)}
