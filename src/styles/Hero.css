@@ -146,3 +146,34 @@ section.home-hero {
   padding: 0%;
   width: 100%;
 }
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-height: 560px) {
+  .hero-left h1 {
+    font-size: 44px;
+  }
+
+  .hero-description {
+    font-size: 18px;
+    line-height: normal;
+    color: #555;
+    max-width: 420px;
+  }
+
+  .hero-buttons {
+    margin-top: 20px;
+    display: flex;
+    gap: 20px;
+  }
+
+  .btn {
+    padding: 10px 14px;
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    border: 1px solid #222;
+    transition: all 0.3s ease;
+  }
+
+}

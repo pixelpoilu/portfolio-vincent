@@ -26,6 +26,7 @@ import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import Projects from "./pages/Projects";
 import ProjectDetail from "./pages/ProjectDetail";
+import Contact from "./pages/Contact";
 
 function Layout() {
   const location = useLocation();
@@ -39,6 +40,7 @@ function Layout() {
         <Route path="/" element={<Home />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/projects/:id" element={<ProjectDetail />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
     </>
   );

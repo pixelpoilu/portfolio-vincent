@@ -4,7 +4,7 @@ import ProjectsHeader from "../components/ProjectsHeader";
 import projectsData from "../data/project-prod.json";
 import PageTransition from "../components/PageTransition";
 import ProjectCard from "../components/ProjectCard";
-
+import Footer from "../components/Footer";
 export default function Projects() {
   const [selectedTechnology, setSelectedTechnology] = useState<string | null>(null);
   const [selectedType, setSelectedType] = useState<string | null>(null);
@@ -122,6 +122,7 @@ export default function Projects() {
           </AnimatePresence>
         </motion.div>
       </section>
+      <Footer />
     </PageTransition>
   );
 }
