@@ -1,14 +1,15 @@
 import "../styles/Hero.css";
 import portrait from "../assets/images/hero/portrait-bw.png"; // ton image HD
 import Footer from "./Footer";
+import logo from "../assets/logo.svg";
 export default function Home() {
     return (
         <main className="home">
 
             {/* Header minimal */}
             <div className="home-top">
-                <div className="home-logo">V</div>
-                <div className="home-year">2024</div>
+                <div className="logo"><img src={logo} alt="Logo Vincent Lepretre" /></div>
+                <div className="home-year">2026</div>
             </div>
 
             {/* Hero principal */}
@@ -30,7 +31,7 @@ export default function Home() {
                             Télécharger mon CV
                         </a>
 
-                        <a href="/projects" className="btn secondary">
+                        <a href="/portfolio" className="btn secondary">
                             Voir les projets
                         </a>
                     </div>

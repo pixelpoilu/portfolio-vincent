@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { slugifyTitle } from "../utils/slug";
 const images = import.meta.glob<{ default: string }>(
     "../assets/images/projects/**/*.{jpg,png,webp}",
     { eager: true }
@@ -11,7 +12,6 @@ interface Project {
     description: string;
     image: string;
     type: string;
-    technologies?: string[];
 }
 
 interface ProjectCardProps {
@@ -21,6 +21,7 @@ interface ProjectCardProps {
 export default function ProjectCard({ project }: ProjectCardProps) {
     const thumbnailPath = `../assets/images/projects/vignettes/${project.image}`;
     const thumbnail = images[thumbnailPath]?.default;
+    const projectSlug = slugifyTitle(project.title);
 
     return (
         <motion.article
@@ -29,7 +30,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             whileHover={{ y: -6 }}
             transition={{ type: "spring", stiffness: 260, damping: 18 }}
         >
-            <Link to={`/projects/${project.id}`} className="card-link">
+            <Link to={`/portfolio/${projectSlug}`} className="card-link">
                 <div className="card-image-wrapper">
                     <img
                         src={thumbnail}
@@ -52,16 +53,6 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                     <p className="card-description">
                         {project.description}
                     </p>
-
-                    {project.technologies && (
-                        <div className="card-technologies">
-                            {project.technologies.map((tech) => (
-                                <span key={tech} className="tech-badge">
-                                    {tech}
-                                </span>
-                            ))}
-                        </div>
-                    )}
                 </div>
             </Link>
         </motion.article>

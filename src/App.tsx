@@ -38,8 +38,8 @@ function Layout() {
       {!hideNavbar && <Navbar />}
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/projects/:id" element={<ProjectDetail />} />
+        <Route path="/portfolio" element={<Projects />} />
+        <Route path="/portfolio/:slug" element={<ProjectDetail />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
     </>

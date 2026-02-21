@@ -1,66 +1,59 @@
-import { AnimatePresence, motion } from "framer-motion";
-import TechnologyFilter from "./TechnologyFilter";
+﻿import { AnimatePresence, motion } from "framer-motion";
+import SectorFilter from "./SectorFilter";
 import TypeFilter from "./TypeFilter";
-import SectorFilter from "./SectorFilter"; // ✅ NEW
+import TechnologyFilter from "./TechnologyFilter";
 
 interface ProjectsHeaderProps {
   technologies: string[];
   types: string[];
-  sectors: string[]; // ✅ NEW
-
+  sectors: string[];
   activeTech: string | null;
   activeType: string | null;
-  activeSector: string | null; // ✅ NEW
-
+  activeSector: string | null;
   projectsCount: number;
   technologiesCount: Record<string, number>;
-
   onTechSelect: (tech: string) => void;
   onResetTech: () => void;
   onTypeChange: (type: string | null) => void;
-  onSectorChange: (sector: string | null) => void; // ✅ NEW
+  onSectorChange: (sector: string | null) => void;
 }
 
 export default function ProjectsHeader({
   technologies,
   types,
-  sectors, // ✅ NEW
+  sectors,
   activeTech,
   activeType,
-  activeSector, // ✅ NEW
+  activeSector,
   projectsCount,
   technologiesCount,
   onTechSelect,
   onResetTech,
   onTypeChange,
-  onSectorChange, // ✅ NEW
+  onSectorChange,
 }: ProjectsHeaderProps) {
-
   const hasActiveFilters =
-    activeTech !== null ||
-    activeType !== null ||
-    activeSector !== null; // ✅ NEW
+    activeTech !== null || activeType !== null || activeSector !== null;
 
   const resetFilters = () => {
     onResetTech();
     onTypeChange(null);
-    onSectorChange(null); // ✅ NEW
+    onSectorChange(null);
   };
 
   return (
     <header className="projects-header">
       <div className="filters-wrapper">
-        <TypeFilter
-          types={types}
-          activeType={activeType}
-          onChange={onTypeChange}
-        />
-
-        {/* ✅ NEW */}
         <SectorFilter
           sectors={sectors}
           activeSector={activeSector}
           onChange={onSectorChange}
+        />
+
+        <TypeFilter
+          types={types}
+          activeType={activeType}
+          onChange={onTypeChange}
         />
 
         <TechnologyFilter

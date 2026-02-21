@@ -10,7 +10,7 @@ export default function Layout({ children }: Props) {
       <header>
         <nav>
           <Link to="/">Accueil</Link> |{" "}
-          <Link to="/projects">Projets</Link>
+          <Link to="/portfolio">Projets</Link>
         </nav>
       </header>
 

@@ -18,17 +18,16 @@ export default function TechnologyFilter({
       {technologies.map((tech) => {
         const count = technologiesCount?.[tech] ?? 0;
         const isActive = activeTech === tech;
-        const isDisabled = count === 0;
+        if (count === 0) return null;
 
         return (
           <motion.button
             key={tech}
             type="button"
             onClick={() => onSelect(tech)}
-            disabled={isDisabled}
             className={`tech-button chip ${isActive ? "active" : ""}`}
-            whileTap={!isDisabled ? { scale: 0.94 } : {}}
-            whileHover={!isDisabled ? { scale: 1.05 } : {}}
+            whileTap={{ scale: 0.94 }}
+            whileHover={{ scale: 1.05 }}
             layout
             transition={{ duration: 0.2 }}
           >

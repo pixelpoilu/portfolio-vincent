@@ -1,45 +1,85 @@
-import { useMemo, useState } from "react";
+﻿import { useEffect, useMemo, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import ProjectsHeader from "../components/ProjectsHeader";
 import projectsData from "../data/project-prod.json";
 import PageTransition from "../components/PageTransition";
 import ProjectCard from "../components/ProjectCard";
 import Footer from "../components/Footer";
+
 export default function Projects() {
   const [selectedTechnology, setSelectedTechnology] = useState<string | null>(null);
   const [selectedType, setSelectedType] = useState<string | null>(null);
-  const [selectedSector, setSelectedSector] = useState<string | null>(null); // ✅ NEW
+  const [selectedSector, setSelectedSector] = useState<string | null>(null);
 
-  // 🔎 Liste unique des technos
+  const publishedProjects = useMemo(
+    () => projectsData.filter((project) => project.status === "published"),
+    []
+  );
+
   const allTechnologies = useMemo(() => {
     const techSet = new Set<string>();
-    projectsData.forEach((project) => {
+    publishedProjects.forEach((project) => {
       project.technologies.forEach((tech) => techSet.add(tech));
     });
     return Array.from(techSet);
-  }, []);
+  }, [publishedProjects]);
 
-  // 🔎 Liste unique des types
   const allTypes = useMemo(() => {
     const typeSet = new Set<string>();
-    projectsData.forEach((project) => {
+    publishedProjects.forEach((project) => {
       typeSet.add(project.type);
     });
     return Array.from(typeSet);
-  }, []);
+  }, [publishedProjects]);
 
-  // 🔎 Liste unique des secteurs ✅ NEW
   const allSectors = useMemo(() => {
     const sectorSet = new Set<string>();
-    projectsData.forEach((project) => {
+    publishedProjects.forEach((project) => {
       sectorSet.add(project.secteur);
     });
     return Array.from(sectorSet);
-  }, []);
+  }, [publishedProjects]);
 
-  // 🎯 Filtrage
+  const availableTypes = useMemo(
+    () =>
+      allTypes.filter((type) =>
+        publishedProjects.some((project) => {
+          const matchesTech =
+            !selectedTechnology || project.technologies.includes(selectedTechnology);
+          const matchesSector = !selectedSector || project.secteur === selectedSector;
+          return matchesTech && matchesSector && project.type === type;
+        })
+      ),
+    [allTypes, publishedProjects, selectedTechnology, selectedSector]
+  );
+
+  const availableSectors = useMemo(
+    () =>
+      allSectors.filter((sector) =>
+        publishedProjects.some((project) => {
+          const matchesTech =
+            !selectedTechnology || project.technologies.includes(selectedTechnology);
+          const matchesType = !selectedType || project.type === selectedType;
+          return matchesTech && matchesType && project.secteur === sector;
+        })
+      ),
+    [allSectors, publishedProjects, selectedTechnology, selectedType]
+  );
+
+  useEffect(() => {
+    if (selectedType && !availableTypes.includes(selectedType)) {
+      setSelectedType(null);
+    }
+  }, [selectedType, availableTypes]);
+
+  useEffect(() => {
+    if (selectedSector && !availableSectors.includes(selectedSector)) {
+      setSelectedSector(null);
+    }
+  }, [selectedSector, availableSectors]);
+
   const filteredProjects = useMemo(() => {
-    return projectsData.filter((project) => {
+    return publishedProjects.filter((project) => {
       const matchesTech =
         !selectedTechnology ||
         project.technologies.includes(selectedTechnology);
@@ -52,47 +92,35 @@ export default function Projects() {
         !selectedSector ||
         project.secteur === selectedSector;
 
-      const isPublished =
-        project.status === "published";
-
-      return matchesTech && matchesType && matchesSector && isPublished;
+      return matchesTech && matchesType && matchesSector;
     });
-  }, [selectedTechnology, selectedType, selectedSector]);
+  }, [publishedProjects, selectedTechnology, selectedType, selectedSector]);
 
-  // 📊 Compteur par techno
   const technologiesCount = useMemo(() => {
     const count: Record<string, number> = {};
 
     allTechnologies.forEach((tech) => {
-      count[tech] = projectsData.filter((project) => {
-        const matchesType =
-          !selectedType || project.type === selectedType;
+      count[tech] = publishedProjects.filter((project) => {
+        const matchesType = !selectedType || project.type === selectedType;
+        const matchesSector = !selectedSector || project.secteur === selectedSector;
 
-        const matchesSector =
-          !selectedSector || project.secteur === selectedSector;
-
-        return (
-          project.status === "published" &&
-          matchesType &&
-          matchesSector &&
-          project.technologies.includes(tech)
-        );
+        return matchesType && matchesSector && project.technologies.includes(tech);
       }).length;
     });
 
     return count;
-  }, [allTechnologies, selectedType, selectedSector]);
+  }, [allTechnologies, publishedProjects, selectedType, selectedSector]);
 
   return (
     <PageTransition>
       <section className="projects-section">
         <ProjectsHeader
           technologies={allTechnologies}
-          types={allTypes}
-          sectors={allSectors} // ✅ NEW
+          types={availableTypes}
+          sectors={availableSectors}
           activeTech={selectedTechnology}
           activeType={selectedType}
-          activeSector={selectedSector} // ✅ NEW
+          activeSector={selectedSector}
           projectsCount={filteredProjects.length}
           technologiesCount={technologiesCount}
           onTechSelect={(tech) =>
@@ -102,7 +130,7 @@ export default function Projects() {
           }
           onResetTech={() => setSelectedTechnology(null)}
           onTypeChange={setSelectedType}
-          onSectorChange={setSelectedSector} // ✅ NEW
+          onSectorChange={setSelectedSector}
         />
 
         <motion.div layout className="projects-grid">

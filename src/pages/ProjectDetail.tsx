@@ -1,12 +1,10 @@
-import { useParams, Link } from "react-router-dom";
+﻿import { useState } from "react";
+import { Link, Navigate, useParams } from "react-router-dom";
+import Footer from "../components/Footer";
+import PageTransition from "../components/PageTransition";
 import projectsData from "../data/project-prod.json";
 import type { Project } from "../types/Project";
-import { useState } from "react";
-import PageTransition from "../components/PageTransition";
-import Footer from "../components/Footer";
-/* =========================
-   IMPORT IMAGES DYNAMIQUES
-========================= */
+import { slugifyTitle } from "../utils/slug";
 
 const images = import.meta.glob<{ default: string }>(
   "../assets/images/projects/**/*.{jpg,png,webp}",
@@ -14,30 +12,38 @@ const images = import.meta.glob<{ default: string }>(
 );
 
 export default function ProjectDetail() {
-  const { id } = useParams();
-  const projectId = Number(id);
-
-  // 👇 CAST IMPORTANT
+  const { slug } = useParams();
   const projects = projectsData as Project[];
 
-  const project = projects.find((p) => p.id === projectId);
+  const projectBySlug = projects.find((p) => slugifyTitle(p.title) === slug);
+  const legacyId = Number(slug);
+  const projectByLegacyId =
+    Number.isInteger(legacyId) && legacyId > 0
+      ? projects.find((p) => p.id === legacyId)
+      : undefined;
+  const project = projectBySlug ?? projectByLegacyId;
+
   const [currentIndex, setCurrentIndex] = useState(0);
+
+  if (projectByLegacyId && !projectBySlug) {
+    return (
+      <Navigate
+        to={`/portfolio/${slugifyTitle(projectByLegacyId.title)}`}
+        replace
+      />
+    );
+  }
 
   if (!project) {
     return (
       <PageTransition>
         <main className="page">
           <h1>Projet introuvable</h1>
-          <Link to="/projects">← Retour</Link>
+          <Link to="/portfolio">← Retour</Link>
         </main>
       </PageTransition>
     );
   }
-
-  /* =========================
-     GALERIE DYNAMIQUE
-  ========================= */
-
 
   const galleryImages: string[] = project.medias
     .map((media) => {
@@ -47,23 +53,19 @@ export default function ProjectDetail() {
     .filter((img): img is string => Boolean(img));
 
   const nextSlide = () =>
-    setCurrentIndex((prev) =>
-      prev === galleryImages.length - 1 ? 0 : prev + 1
-    );
+    setCurrentIndex((prev) => (prev === galleryImages.length - 1 ? 0 : prev + 1));
 
   const prevSlide = () =>
-    setCurrentIndex((prev) =>
-      prev === 0 ? galleryImages.length - 1 : prev - 1
-    );
+    setCurrentIndex((prev) => (prev === 0 ? galleryImages.length - 1 : prev - 1));
+
   return (
     <PageTransition>
       <main className="project-detail">
-        <Link to="/projects" className="back-link">
+        <Link to="/portfolio" className="back-link">
           ← Retour aux projets
         </Link>
 
         <div className="project-layout">
-          {/* ================= LEFT : SLIDER ================= */}
           <div className="project-slider">
             {galleryImages.length > 0 && (
               <>
@@ -83,7 +85,6 @@ export default function ProjectDetail() {
             )}
           </div>
 
-          {/* ================= RIGHT : INFOS ================= */}
           <div className="project-info">
             <h1>{project.title}</h1>
 

@@ -93,21 +93,37 @@ section.home-hero {
   letter-spacing: 1px;
   text-decoration: none;
   border: 1px solid #222;
+  font-family: "Roboto Condensed", Inter, system-ui, Arial, sans-serif;
   transition: all 0.3s ease;
+  text-transform: uppercase;
 }
 
 .btn.primary {
   background: #222;
   color: white;
+  transform: translateY(0);
+  transition:
+    background-color 0.32s cubic-bezier(.22, 1, .36, 1),
+    color 0.32s cubic-bezier(.22, 1, .36, 1),
+    border-color 0.32s cubic-bezier(.22, 1, .36, 1);
+  text-transform: uppercase;
 }
 
 .btn.primary:hover {
-  background: black;
+  background: #fff;
+  color: #111;
+  border-color: #111;
+}
+
+.btn.primary:active {
+  background: #f4f4f4;
+  color: #111;
 }
 
 .btn.secondary {
   background: transparent;
   color: #222;
+  text-transform: uppercase;
 }
 
 .btn.secondary:hover {
@@ -174,6 +190,7 @@ section.home-hero {
     text-decoration: none;
     border: 1px solid #222;
     transition: all 0.3s ease;
+    text-transform: uppercase;
   }
 
 }

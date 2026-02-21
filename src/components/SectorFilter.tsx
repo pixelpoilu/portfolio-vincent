@@ -11,6 +11,12 @@ export default function SectorFilter({
 }: SectorFilterProps) {
   return (
     <div className="sector-filter filter-bar">
+      <button
+        className={activeSector === null ? "active" : ""}
+        onClick={() => onChange(null)}
+      >
+        Tous les secteurs
+      </button>
       {sectors.map((sector) => (
         <button
           key={sector}
