@@ -26,6 +26,7 @@ export default function ContactForm() {
 
     return (
         <PageTransition>
+            <div className="site-page">
             <main className="contact-minimal">
                 <div className="contact-wrapper">
 
@@ -74,7 +75,9 @@ export default function ContactForm() {
                 </div>
 
             </main>
+            
             <Footer />
+            </div>
         </PageTransition>
     );
 }

@@ -4,12 +4,12 @@
     "title": "MINI-SITE OT - FINLANDE",
     "client": "OT - FINLANDE",
     "year": 2002,
-    "type": "MINI-SITE",
-    "description": "Interface de Préseantation pour l'Office de Tourisme de Finlande",
+    "type": "Mini-site",
+    "description": "Interface de Présentation pour l'Office de Tourisme de Finlande",
     "link": "www.finland-tourism.com",
     "secteur": "Tourisme",
     "Contexte": "",
-    "Reponse": "Interface Flash,Animation Flash,ActionScript,Site Vitrine,Maquette-prospection",
+    "Reponse": "",
     "outils": [
       "Flash",
       "Director"
@@ -56,7 +56,31 @@
     "image": "rea_cd_gauloises_diapo.jpg",
     "mediapath": "rea_webcat_gauloises",
     "medias": [
-      ""
+      "01.jpg",
+      "02.jpg",
+      "03.jpg",
+      "04.jpg",
+      "06.jpg",
+      "07.jpg",
+      "08.jpg",
+      "09.jpg",
+      "10.jpg",
+      "11.jpg",
+      "12.jpg",
+      "13.jpg",
+      "21.jpg",
+      "22.jpg",
+      "23.jpg",
+      "24.jpg",
+      "26.jpg",
+      "27.jpg",
+      "28.jpg",
+      "29.jpg",
+      "30.jpg",
+      "31.jpg",
+      "32.jpg",
+      "33.jpg"
+
     ],
     "missions": [
       "Proposer un outil de présentation interactif des objets Matpub, permettant également une gestion des commandes."
@@ -69,7 +93,7 @@
     "title": "MINI-SITE MARMARA",
     "client": "MARMARA",
     "year": 2004,
-    "type": "MINI-SITE",
+    "type": "Mini-site",
     "description": "Réalisation Interface Interactive Commerciale pour le Tour Opérator MARMARA.",
     "link": "www.marmara.com",
     "secteur": "Tourisme",
@@ -85,7 +109,7 @@
       "HTML",
       "CSS",
       "ActionScript",
-      "Javascript",
+      "Javascript / JQuery",
       "XML"
     ],
     "image": "rea_cd_marmara_diapo.jpg",
@@ -104,7 +128,7 @@
     "title": "MINI-SITE MEDICIS",
     "client": "MEDICIS",
     "year": 2002,
-    "type": "MINI-SITE",
+    "type": "Mini-site",
     "description": "Réalisation d'une carte de visite virtuelle de l'agence de communication Médicis",
     "link": "www.agence-medicis.com",
     "secteur": "Communication",
@@ -120,7 +144,7 @@
       "HTML",
       "CSS",
       "ActionScript",
-      "Javascript",
+      "Javascript / JQuery",
       "XML"
     ],
     "image": "rea_cd_medicis_diapo.jpg",
@@ -268,7 +292,7 @@
       "ActionScript",
       "HTML",
       "CSS",
-      "Javascript"
+      "Javascript / JQuery"
     ],
     "image": "rea_pub_esselte_diapo.jpg",
     "mediapath": "rea_pub_esselte",
@@ -500,12 +524,23 @@
     "technologies": [
       "ActionScript","HTML",
       "CSS",
-      "Javascript"
+      "Javascript / JQuery"
     ],
     "image": "rea_webcat_gauloises_diapo.jpg",
     "mediapath": "rea_cd_gauloises",
     "medias": [
-      ""
+      "01.jpg",
+      "02.jpg",
+      "03.jpg",
+      "04.jpg",
+      "06.jpg",
+      "07.jpg",
+      "08.jpg",
+      "09.jpg",
+      "10.jpg",
+      "11.jpg",
+      "12.jpg",
+      "13.jpg"
     ],
     "missions": [
       "Proposer un outil de présentation interactif des PLV Gauloises. Intégrer un outil d'update des objets."
@@ -533,9 +568,9 @@
     "technologies": [
       "ActionScript",
       "PHP",
-      "SQL",
+      "MySQL",
       "HTML",
-      "CSS","Javascript"
+      "CSS","Javascript / JQuery"
     ],
     "image": "rea_web_1018_diapo.jpg",
     "mediapath": "rea_web_1018",
@@ -564,14 +599,14 @@
       "HTML",
       "CSS",
       "PHP",
-      "Javascript"
+      "Javascript / JQuery"
     ],
     "technologies": [
       "ActionScript",
       "HTML",
       "CSS",
       "PHP",
-      "Javascript"
+      "Javascript / JQuery"
     ],
     "image": "rea_web_ads_diapo.jpg",
     "mediapath": "rea_web_ads",
@@ -629,7 +664,7 @@
     "technologies": [
       "ActionScript",
       "HTML",
-      "CSS","Javascript",
+      "CSS","Javascript / JQuery",
       "XML"
     ],
     "image": "rea_web_carresenart_diapo.jpg",
@@ -665,7 +700,7 @@
     "technologies": [
       "HTML",
       "CSS",
-      "JQuery",
+      "Javascript / JQuery",
       "MySQL",
       "PHP",
       "ActionScript"
@@ -708,7 +743,7 @@
       "CSS",
       "PHP",
       ",Flash",
-      "Javascript",
+      "Javascript / JQuery",
       "MySQL"
     ],
     "technologies": [
@@ -716,13 +751,20 @@
       "CSS",
       "PHP",
       "ActionScript",
-      "Javascript",
+      "Javascript / JQuery",
       "MySQL"
     ],
     "image": "rea_web_clozeau_diapo.jpg",
     "mediapath": "rea_web_clozeau",
     "medias": [
-      ""
+      "01.jpg",
+      "02.jpg",
+      "03.jpg",
+      "04.jpg",
+      "05.jpg",
+      "06.jpg",
+      "07.jpg",
+      "08.jpg"
     ],
     "missions": [
       "Fond Sonore,Interface,Animations,ActionScript,Site Dynamique,Site Institutionnel"
@@ -748,17 +790,20 @@
     "technologies": [
       "HTML",
       "CSS",
-      "Javascript"
+      "Javascript / JQuery"
     ],
     "image": "rea_web_croatie_diapo.jpg",
     "mediapath": "rea_web_croatie",
     "medias": [
-      ""
+      "croatie_site_01.jpg",
+      "croatie_site_02.jpg",
+      "croatie_site_03.jpg",
+      "croatie_site_04.jpg"
     ],
     "missions": [
-      ""
+      "Conception", "Réalisation", "suivi technique du site."
     ],
-    "status": "draft",
+    "status": "published",
     "order": 24
   },
   {
@@ -803,7 +848,7 @@
     "outils": [
       "HTML",
       "CSS",
-      "JQuery",
+      "Javascript / JQuery",
       "MySQL",
       "PHP",
       "Back Office dédié"
@@ -811,7 +856,7 @@
     "technologies": [
       "HTML",
       "CSS",
-      "JQuery",
+      "Javascript / JQuery",
       "MySQL",
       "PHP"
     ],
@@ -843,7 +888,7 @@
     "technologies": [
       "HTML",
       "CSS",
-      "Javascript"
+      "Javascript / JQuery"
     ],
     "image": "rea_web_ecosse_diapo.jpg",
     "mediapath": "rea_web_ecosse",
@@ -876,7 +921,7 @@
       "HTML",
       "CSS",
       "ActionScript",
-      "Javascript"
+      "Javascript / JQuery"
     ],
     "image": "rea_web_egypte_diapo.jpg",
     "mediapath": "rea_web_egypte",
@@ -904,14 +949,14 @@
       "HTML",
       "CSS",
       "PHP",
-      "Javascript",
+      "Javascript / JQuery",
       "XML"
     ],
     "technologies": [
       "HTML",
       "CSS",
       "PHP",
-      "Javascript",
+      "Javascript / JQuery",
       "XML"
     ],
     "image": "rea_web_eif_diapo.jpg",
@@ -945,7 +990,7 @@
       "HTML",
       "CSS",
       "ActionScript",
-      "Javascript"
+      "Javascript / JQuery"
     ],
     "image": "rea_web_esra_diapo.jpg",
     "mediapath": "rea_web_esra",
@@ -978,10 +1023,10 @@
     "technologies": [
       "ActionScript",
       "PHP",
-      "SQL",
+      "MySQL",
       "HTML",
       "CSS",
-      "Javascript"
+      "Javascript / JQuery"
     ],
     "image": "rea_web_frigos_diapo.jpg",
     "mediapath": "rea_web_frigos",
@@ -989,7 +1034,7 @@
       ""
     ],
     "missions": [
-      "Mise en valeur de ses réalisations et projets. VERSION FLASH / HTML\nGALERIE ADMINISTRABLE"
+      "Mise en valeur de ses réalisations et projets. VERSION FLASH / HTML","GALERIE ADMINISTRABLE"
     ],
     "status": "published",
     "order": 31
@@ -1015,7 +1060,7 @@
       "HTML",
       "CSS",
       "ActionScript",
-      "Javascript",
+      "Javascript / JQuery",
       "XML",
       "PHP",
       "MySQL "
@@ -1023,12 +1068,14 @@
     "image": "rea_web_hongrie_diapo.jpg",
     "mediapath": "rea_web_hongrie",
     "medias": [
-      ""
+      "01.jpg",
+      "02.jpg",
+      "03.jpg"
     ],
     "missions": [
-      ""
+      "Réalisation d'un site dynamique, doté d'un back office propriétaire permettant la mise à jour du contenu et des médias."
     ],
-    "status": "draft",
+    "status": "published",
     "order": 32
   },
   {
@@ -1037,11 +1084,11 @@
     "client": "LA FABRIQUE DU DESIGN",
     "year": 2010,
     "type": "Site Internet",
-    "description": "Création et réalisation du site de l'agence de communication la fabrique du design.\n",
+    "description": "Création et réalisation du site de l'agence de communication la fabrique du design.",
     "link": "www.lafabriquedudesign.com",
     "secteur": "Communication",
-    "Contexte": "L'agence LFDD souhaite mettre en place un site vitrine valorisant son activié",
-    "Reponse": "Site animé en Flash en harmonie graphique avec la charte de l'agence",
+    "Contexte": "L'agence LFDD souhaite mettre en place un site vitrine pour renforcer sa visibilité et présenter ses réalisations. Le site doit être en harmonie graphique avec la charte de l'agence.",
+    "Reponse": "Réalisation d'un un site vitrine fluide et animé en Flash, intégrant une galerie de réalisations administrable via XML.",
     "outils": [
       "Flash",
       "Pack Adobe",
@@ -1061,8 +1108,8 @@
       "05.jpg"
     ],
     "missions": [
-      "- Administration via XML,- Animation et chargement d'images dynamiques"
-    ],
+      "Administration via XML","Animation et chargement d'images dynamiques","Connexion aux modules existants de service (Espace client, Espace presse, Newsletter)","Formation à la mise à jour"
+    ],   
     "status": "published",
     "order": 33
   },
@@ -1084,7 +1131,7 @@
     "technologies": [
       "HTML",
       "CSS",
-      "Javascript"
+      "Javascript / JQuery"
     ],
     "image": "rea_web_lgi_diapo.jpg",
     "mediapath": "rea_web_lgi",
@@ -1117,7 +1164,7 @@
       "HTML",
       "CSS",
       "ActionScript",
-      "Javascript",
+      "Javascript / JQuery",
       "XML"
     ],
     "image": "rea_web_liban_diapo.jpg",
@@ -1242,7 +1289,7 @@
       "HTML",
       "CSS",
       "ActionScript",
-      "Javascript"
+      "Javascript / JQuery"
     ],
     "image": "rea_web_maaf_diapo.jpg",
     "mediapath": "rea_web_maaf",
@@ -1298,14 +1345,14 @@
       "HTML",
       "CSS",
       "PHP",
-      "Javascript",
+      "Javascript / JQuery",
       "MySQL"
     ],
     "technologies": [
       "HTML",
       "CSS",
       "PHP",
-      "Javascript",
+      "Javascript / JQuery",
       "MySQL"
     ],
     "image": "rea_web_marsans_diapo.jpg",
@@ -1336,14 +1383,26 @@
     "technologies": [
       "HTML",
       "CSS",
-      "Javascript",
+      "Javascript / JQuery",
       "PHP",
       "XML"
     ],
     "image": "rea_web_mrl_diapo.jpg",
     "mediapath": "rea_web_mrl",
     "medias": [
-      ""
+      "01.jpg",
+      "02.jpg",
+      "03.jpg",
+      "04.jpg",
+      "06.jpg",
+      "07.jpg",
+      "08.jpg",
+      "09.jpg",
+      "10.jpg",
+      "11.jpg",
+      "12.jpg",
+      "13.jpg",
+      "14.jpg"
     ],
     "missions": [
       "Design - Réalisation - développement - PluXML - Prestashop"
@@ -1372,7 +1431,7 @@
       "ActionScript",
       "HTML",
       "CSS",
-      "Javascript",
+      "Javascript / JQuery",
       "XML"
     ],
     "image": "rea_web_premaman_diapo.jpg",
@@ -1427,18 +1486,18 @@
     "Reponse": "Site Dynamique,Back Office",
     "outils": [
       "Joomla",
-      "HTML5",
-      "CSS3",
+      "HTML",
+      "CSS",
       "PHP",
-      "Javascript",
+      "Javascript / JQuery",
       "MySQL"
     ],
     "technologies": [
       "Joomla",
-      "HTML5",
-      "CSS3",
+      "HTML",
+      "CSS",
       "PHP",
-      "Javascript",
+      "Javascript / JQuery",
       "MySQL"
     ],
     "image": "rea_web_services2it_diapo.jpg",
@@ -1472,7 +1531,7 @@
       "HTML",
       "CSS",
       "ActionScript",
-      "Javascript",
+      "Javascript / JQuery",
       "XML"
     ],
     "image": "rea_web_skillmen_diapo.jpg",
@@ -1500,7 +1559,7 @@
     "outils": [
       "HTML",
       "CSS",
-      "JQuery",
+      "Javascript / JQuery",
       "MySQL",
       "PHP",
       "Back Office dédié"
@@ -1508,7 +1567,7 @@
     "technologies": [
       "HTML",
       "CSS",
-      "JQuery",
+      "Javascript / JQuery",
       "MySQL",
       "PHP"
     ],
@@ -1568,7 +1627,7 @@
     "technologies": [
       "HTML",
       "CSS",
-      "Javascript"
+      "Javascript / JQuery"
     ],
     "image": "rea_web_tpv_diapo.jpg",
     "mediapath": "rea_web_tpv",
@@ -1601,9 +1660,9 @@
     "technologies": [
       "ActionScript",
       "PHP",
-      "SQL",
+      "MySQL",
       "HTML",
-      "CSS,Javascript"
+      "CSS","Javascript / JQuery"
     ],
     "image": "rea_web_ventilo_diapo.jpg",
     "mediapath": "rea_web_ventilo",
@@ -1638,7 +1697,7 @@
       "ActionScript",
       "HTML",
       "CSS",
-      "Javascript",
+      "Javascript / JQuery",
       "Tween Zigo",
       "XML\n"
     ],
@@ -1675,7 +1734,7 @@
       "HTML",
       "CSS",
       "PHP",
-      "Javascript",
+      "Javascript / JQuery",
       "MySQL"
     ],
     "image": "rea_web_vu_diapo.jpg",
@@ -1735,7 +1794,7 @@
       "ActionScript",
       "HTML",
       "CSS",
-      "Javascript",
+      "Javascript / JQuery",
       "XML"
     ],
     "image": "rea_web_tour66_diapo.jpg",
@@ -1770,7 +1829,7 @@
       "ActionScript",
       "HTML",
       "CSS",
-      "Javascript",
+      "Javascript / JQuery",
       "XML"
     ],
     "image": "rea_bol_locaboat_diapo.jpg",
@@ -1799,10 +1858,11 @@
       "Joomla 3 + Composants sur mesure"
     ],
     "technologies": [
+      "Joomla",
       "PHP",
-      "SQL",
+      "MySQL",
       "CSS",
-      "Jquery",
+      "Javascript / JQuery",
       "Jacacript",
       "HTML",
       "XML"
@@ -1828,11 +1888,11 @@
     "link": "www.youzikme.com",
     "secteur": "Loisirs-Musique",
     "Contexte": "",
-    "Reponse": "Webdesign, Site Dynamique,Back Office",
+    "Reponse": "Webdesign, Site Dynamique, Back Office",
     "outils": [
       "HTML",
       "CSS",
-      "JQuery",
+      "Javascript / JQuery",
       "MySQL",
       "PHP",
       "Back Office dédié"
@@ -1840,14 +1900,18 @@
     "technologies": [
       "HTML",
       "CSS",
-      "JQuery",
+      "Javascript / JQuery",
       "MySQL",
       "PHP"
     ],
     "image": "rea_web_youzikme_diapo.jpg",
     "mediapath": "rea_web_youzikme",
     "medias": [
-      ""
+       "01.jpg",
+      "02.jpg",
+      "03.jpg",
+      "04.jpg",
+      "05.jpg"
     ],
     "missions": [
       "Création, Montage graphique, Adaptation du back office, optimisation SEO"
@@ -1867,17 +1931,16 @@
     "Contexte": "",
     "Reponse": "Webdesign, Site Dynamique,Back Office",
     "outils": [
-      "Bootstrap 3",
+      "Bootstrap",
       "PluXML",
-      "CSS3",
-      "HTML5",
+      "CSS",
+      "HTML",
       "Responsive design  "
     ],
     "technologies": [
-      "Bootstrap 3",
-      "PluXML",
-      "CSS3",
-      "HTML5"
+      "Bootstrap",
+      "CSS",
+      "HTML"
     ],
     "image": "rea_web_putainbd_diapo.jpg",
     "mediapath": "rea_web_putainbd",
@@ -1904,20 +1967,22 @@
     "outils": [
       "Jquery Mobile",
       "PluXML",
-      "CSS3",
-      "HTML5",
+      "CSS",
+      "HTML",
       "Responsive design  "
     ],
     "technologies": [
       "Jquery Mobile",
       "PluXML",
-      "CSS3",
-      "HTML5"
+      "CSS",
+      "HTML"
     ],
     "image": "rea_web_podcasts_diapo.jpg",
     "mediapath": "rea_web_podcasts",
     "medias": [
-      ""
+      "01.jpg",
+      "02.jpg",
+      "03.jpg"
     ],
     "missions": [
       "Interface optimisée pour tablettes (Jquery Mobile), Administration (PluXML)"
@@ -1937,17 +2002,17 @@
     "Contexte": "",
     "Reponse": "Webdesign, Site Dynamique,Back Office",
     "outils": [
-      "Bootstrap 3",
+      "Bootstrap",
       "PluXML",
-      "CSS3",
-      "HTML5",
+      "CSS",
+      "HTML",
       "Responsive design  "
     ],
     "technologies": [
-      "Bootstrap 3",
+      "Bootstrap",
       "PluXML",
-      "CSS3",
-      "HTML5"
+      "CSS",
+      "HTML"
     ],
     "image": "rea_web_rocksymbol_diapo.jpg",
     "mediapath": "rea_web_rocksymbol",
@@ -1978,7 +2043,7 @@
       "HTML",
       "CSS",
       "PHP",
-      "Javascript",
+      "Javascript / JQuery",
       "MySQL"
     ],
     "technologies": [
@@ -1988,7 +2053,7 @@
       "HTML",
       "CSS",
       "PHP",
-      "Javascript",
+      "Javascript / JQuery",
       "MySQL"
     ],
     "image": "rea_web_anarlf_diapo.jpg",
@@ -2014,17 +2079,17 @@
     "Contexte": "",
     "Reponse": "Site Dynamique",
     "outils": [
-      "Bootstrap 3",
-      "Joomla 3",
-      "CSS3",
-      "HTML5",
+      "Bootstrap",
+      "Joomla",
+      "CSS",
+      "HTML",
       "Responsive design  "
     ],
     "technologies": [
       "Bootstrap",
       "Joomla",
-      "CSS3",
-      "HTML5"
+      "CSS",
+      "HTML"
     ],
     "image": "rea_web_docbikerwd_diapo.jpg",
     "mediapath": "rea_web_docbikerwd",
@@ -2058,7 +2123,7 @@
     "technologies": [
       "HTML",
       "CSS",
-      "Javascript"
+      "Javascript / JQuery"
     ],
     "image": "rea_web_cuendet_diapo.jpg",
     "mediapath": "rea_web_cuendet",
@@ -2088,7 +2153,7 @@
     "technologies": [
       "HTML",
       "CSS",
-      "Jquery"
+      "Javascript / JQuery"
     ],
     "image": "rea_web_guadeloupe_diapo.jpg",
     "mediapath": "rea_web_guadeloupe",
@@ -2118,7 +2183,7 @@
     "technologies": [
       "HTML",
       "CSS",
-      "JQuery",
+      "Javascript / JQuery",
       "MySQL",
       "PHP"
     ],
@@ -2145,17 +2210,17 @@
     "Contexte": "",
     "Reponse": "Webdesign, Site Dynamique,Back Office",
     "outils": [
-      "Bootstrap 3",
+      "Bootstrap",
       "Joomla",
-      "CSS3",
-      "HTML5",
+      "CSS",
+      "HTML",
       "Responsive design"
     ],
     "technologies": [
-      "Bootstrap 3",
+      "Bootstrap",
       "Joomla",
-      "CSS3",
-      "HTML5"
+      "CSS",
+      "HTML"
     ],
     "image": "rea_web_bigmama_diapo.jpg",
     "mediapath": "rea_web_bigmama",

@@ -27,7 +27,6 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         <motion.article
             className="project-card"
             layout
-            whileHover={{ y: -6 }}
             transition={{ type: "spring", stiffness: 260, damping: 18 }}
         >
             <Link to={`/portfolio/${projectSlug}`} className="card-link">

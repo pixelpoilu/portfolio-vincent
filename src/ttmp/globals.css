@@ -46,6 +46,19 @@ section {
   margin-top: 4rem;
 }
 
+.site-footer {
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 15px;
+  font-size: 14px;
+
+}
+
+
+
 .site-footer a {
   color: var(--footer-a);
   text-decoration: none;

@@ -438,7 +438,6 @@ section {
   font-weight: 600;
   cursor: pointer;
   transition: all 0.25s ease;
-
 }
 
 /* Hover */
@@ -477,16 +476,12 @@ section {
 
 .tech-button {
   padding: 0.45rem 0.9rem;
-
   border-radius: 999px;
   border: 1px solid #e5e7eb;
-
   background: #f8fafc;
   color: #475569;
-
   font-size: 0.75rem;
   font-weight: 500;
-
   cursor: pointer;
   transition: all 0.2s ease;
 }

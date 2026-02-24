@@ -1,0 +1,244 @@
+.filter-wrapper {
+  margin-bottom: 40px;
+}
+
+.filter-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+  font-size: 14px;
+  color: #64748b;
+}
+
+.filter-top .projects-count {
+  letter-spacing: 0.2px;
+}
+
+.search-row {
+  margin-bottom: 10px;
+}
+
+.search-input {
+  width: 100%;
+  box-sizing: border-box;
+  min-height: 40px;
+  padding: 0 14px;
+  border: 1px solid #d6dee8;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #1e293b;
+  font-size: 14px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.search-input::placeholder {
+  color: #94a3b8;
+}
+
+.search-input:focus-visible {
+  outline: none;
+  border-color: #93c5fd;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.16);
+}
+
+.clear-filters {
+  border: 1px solid #d6dee8;
+  border-radius: 999px;
+  background: #fff;
+  color: #334155;
+  padding: 7px 13px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease, background-color 0.2s ease;
+}
+
+.clear-filters:hover {
+  border-color: #94a3b8;
+  color: #0f172a;
+  background: #f8fafc;
+}
+
+.filter-bar {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+  box-shadow: 0 14px 36px rgba(15, 23, 42, 0.08);
+}
+
+.filter-pill,
+.dropdown-trigger {
+  border: 1px solid #d6dee8;
+  background: #ffffff;
+  color: #334155;
+  border-radius: 999px;
+  font-size: 13px;
+  line-height: 1;
+  font-weight: 500;
+  cursor: pointer;
+  min-height: 36px;
+  transition: transform 0.15s ease, border-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.filter-pill {
+  padding: 0 14px;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 12px;
+}
+
+.dropdown-trigger:hover,
+.filter-pill:hover {
+  border-color: #9fb0c3;
+  color: #0f172a;
+}
+
+.dropdown-trigger.active,
+.filter-pill.active {
+  border-color: #2563eb;
+  background: #eff6ff;
+  color: #1d4ed8;
+  box-shadow: inset 0 0 0 1px rgba(37, 99, 235, 0.15);
+}
+
+.dropdown-trigger:focus-visible,
+.filter-pill:focus-visible,
+.clear-filters:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.22);
+}
+
+.trigger-label {
+  white-space: nowrap;
+}
+
+.trigger-caret {
+  display: inline-flex;
+  font-size: 19px;
+  line-height: 1;
+  opacity: 0.75;
+  transition: opacity 0.18s ease;
+}
+
+.menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  min-width: 220px;
+  max-width: min(70vw, 360px);
+  background: #ffffff;
+  border: 1px solid #dbe5f0;
+  border-radius: 12px;
+  padding: 6px;
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.16);
+  animation: dropdownFade 0.16s ease;
+  z-index: 20;
+}
+
+.menu-item {
+  display: grid;
+  grid-template-columns: 18px 1fr;
+  align-items: center;
+  gap: 9px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #1f2937;
+  font-size: 13px;
+  line-height: 1.2;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.menu-item:hover {
+  background: #f8fafc;
+}
+
+.menu-item.selected {
+  background: #eff6ff;
+  color: #1d4ed8;
+}
+
+.menu-label {
+  word-break: break-word;
+}
+
+.check {
+  display: inline-flex;
+  width: 18px;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 700;
+  color: #1d4ed8;
+}
+
+.menu.scroll {
+  max-height: 260px;
+  overflow-y: auto;
+}
+
+.menu.scroll::-webkit-scrollbar {
+  width: 8px;
+}
+
+.menu.scroll::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 999px;
+}
+
+@keyframes dropdownFade {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (max-width: 768px) {
+  .filter-top {
+    margin-bottom: 12px;
+  }
+
+  .search-row {
+    margin-bottom: 8px;
+  }
+
+  .search-input {
+    min-height: 38px;
+    font-size: 13px;
+  }
+
+  .filter-bar {
+    gap: 8px;
+    padding: 8px;
+    border-radius: 12px;
+  }
+
+  .filter-pill,
+  .dropdown-trigger {
+    min-height: 34px;
+    font-size: 12px;
+  }
+
+  .menu {
+    min-width: 180px;
+    max-width: 88vw;
+  }
+}

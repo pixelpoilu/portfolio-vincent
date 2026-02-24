@@ -1,15 +1,23 @@
-﻿import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import ProjectsHeader from "../components/ProjectsHeader";
+import FilterBar from "../components/FilterBar";
 import projectsData from "../data/project-prod.json";
 import PageTransition from "../components/PageTransition";
 import ProjectCard from "../components/ProjectCard";
 import Footer from "../components/Footer";
 
+const normalizeText = (value: string) =>
+  value
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .trim();
+
 export default function Projects() {
-  const [selectedTechnology, setSelectedTechnology] = useState<string | null>(null);
-  const [selectedType, setSelectedType] = useState<string | null>(null);
-  const [selectedSector, setSelectedSector] = useState<string | null>(null);
+  const [selectedTechnologies, setSelectedTechnologies] = useState<string[]>([]);
+  const [selectedTypes, setSelectedTypes] = useState<string[]>([]);
+  const [selectedSectors, setSelectedSectors] = useState<string[]>([]);
+  const [searchQuery, setSearchQuery] = useState("");
 
   const publishedProjects = useMemo(
     () => projectsData.filter((project) => project.status === "published"),
@@ -45,12 +53,14 @@ export default function Projects() {
       allTypes.filter((type) =>
         publishedProjects.some((project) => {
           const matchesTech =
-            !selectedTechnology || project.technologies.includes(selectedTechnology);
-          const matchesSector = !selectedSector || project.secteur === selectedSector;
+            selectedTechnologies.length === 0 ||
+            selectedTechnologies.some((tech) => project.technologies.includes(tech));
+          const matchesSector =
+            selectedSectors.length === 0 || selectedSectors.includes(project.secteur);
           return matchesTech && matchesSector && project.type === type;
         })
       ),
-    [allTypes, publishedProjects, selectedTechnology, selectedSector]
+    [allTypes, publishedProjects, selectedTechnologies, selectedSectors]
   );
 
   const availableSectors = useMemo(
@@ -58,99 +68,139 @@ export default function Projects() {
       allSectors.filter((sector) =>
         publishedProjects.some((project) => {
           const matchesTech =
-            !selectedTechnology || project.technologies.includes(selectedTechnology);
-          const matchesType = !selectedType || project.type === selectedType;
+            selectedTechnologies.length === 0 ||
+            selectedTechnologies.some((tech) => project.technologies.includes(tech));
+          const matchesType =
+            selectedTypes.length === 0 || selectedTypes.includes(project.type);
           return matchesTech && matchesType && project.secteur === sector;
         })
       ),
-    [allSectors, publishedProjects, selectedTechnology, selectedType]
+    [allSectors, publishedProjects, selectedTechnologies, selectedTypes]
+  );
+
+  const availableTechnologies = useMemo(
+    () =>
+      allTechnologies.filter((technology) =>
+        publishedProjects.some((project) => {
+          const matchesType =
+            selectedTypes.length === 0 || selectedTypes.includes(project.type);
+          const matchesSector =
+            selectedSectors.length === 0 || selectedSectors.includes(project.secteur);
+          return (
+            matchesType &&
+            matchesSector &&
+            project.technologies.includes(technology)
+          );
+        })
+      ),
+    [allTechnologies, publishedProjects, selectedTypes, selectedSectors]
   );
 
   useEffect(() => {
-    if (selectedType && !availableTypes.includes(selectedType)) {
-      setSelectedType(null);
-    }
-  }, [selectedType, availableTypes]);
+    setSelectedTypes((current) => {
+      const next = current.filter((type) => availableTypes.includes(type));
+      return next.length === current.length ? current : next;
+    });
+  }, [availableTypes]);
 
   useEffect(() => {
-    if (selectedSector && !availableSectors.includes(selectedSector)) {
-      setSelectedSector(null);
-    }
-  }, [selectedSector, availableSectors]);
+    setSelectedSectors((current) => {
+      const next = current.filter((sector) => availableSectors.includes(sector));
+      return next.length === current.length ? current : next;
+    });
+  }, [availableSectors]);
+
+  useEffect(() => {
+    setSelectedTechnologies((current) => {
+      const next = current.filter((technology) =>
+        availableTechnologies.includes(technology)
+      );
+      return next.length === current.length ? current : next;
+    });
+  }, [availableTechnologies]);
 
   const filteredProjects = useMemo(() => {
+    const normalizedQuery = normalizeText(searchQuery);
+
     return publishedProjects.filter((project) => {
       const matchesTech =
-        !selectedTechnology ||
-        project.technologies.includes(selectedTechnology);
+        selectedTechnologies.length === 0 ||
+        selectedTechnologies.some((tech) => project.technologies.includes(tech));
 
       const matchesType =
-        !selectedType ||
-        project.type === selectedType;
+        selectedTypes.length === 0 || selectedTypes.includes(project.type);
 
       const matchesSector =
-        !selectedSector ||
-        project.secteur === selectedSector;
+        selectedSectors.length === 0 || selectedSectors.includes(project.secteur);
 
-      return matchesTech && matchesType && matchesSector;
+      if (!matchesTech || !matchesType || !matchesSector) {
+        return false;
+      }
+
+      if (normalizedQuery === "") {
+        return true;
+      }
+
+      const searchableContent = [
+        project.title,
+        project.client,
+        project.type,
+        project.secteur,
+        project.description,
+        String(project.year),
+        project.technologies.join(" "),
+      ]
+        .filter(Boolean)
+        .join(" ");
+
+      return normalizeText(searchableContent).includes(normalizedQuery);
     });
-  }, [publishedProjects, selectedTechnology, selectedType, selectedSector]);
-
-  const technologiesCount = useMemo(() => {
-    const count: Record<string, number> = {};
-
-    allTechnologies.forEach((tech) => {
-      count[tech] = publishedProjects.filter((project) => {
-        const matchesType = !selectedType || project.type === selectedType;
-        const matchesSector = !selectedSector || project.secteur === selectedSector;
-
-        return matchesType && matchesSector && project.technologies.includes(tech);
-      }).length;
-    });
-
-    return count;
-  }, [allTechnologies, publishedProjects, selectedType, selectedSector]);
+  }, [
+    publishedProjects,
+    selectedTechnologies,
+    selectedTypes,
+    selectedSectors,
+    searchQuery,
+  ]);
 
   return (
     <PageTransition>
-      <section className="projects-section">
-        <ProjectsHeader
-          technologies={allTechnologies}
-          types={availableTypes}
-          sectors={availableSectors}
-          activeTech={selectedTechnology}
-          activeType={selectedType}
-          activeSector={selectedSector}
-          projectsCount={filteredProjects.length}
-          technologiesCount={technologiesCount}
-          onTechSelect={(tech) =>
-            setSelectedTechnology((prev) =>
-              prev === tech ? null : tech
-            )
-          }
-          onResetTech={() => setSelectedTechnology(null)}
-          onTypeChange={setSelectedType}
-          onSectorChange={setSelectedSector}
-        />
+      <div className="site-page">
+        <section className="projects-section">
+          <FilterBar
+            sectors={availableSectors}
+            types={availableTypes}
+            technologies={availableTechnologies}
+            activeSectors={selectedSectors}
+            activeTypes={selectedTypes}
+            activeTechs={selectedTechnologies}
+            searchQuery={searchQuery}
+            onSectorChange={setSelectedSectors}
+            onTypeChange={setSelectedTypes}
+            onTechChange={setSelectedTechnologies}
+            onSearchChange={setSearchQuery}
+            projectsCount={filteredProjects.length}
+          />
 
-        <motion.div layout className="projects-grid">
-          <AnimatePresence mode="popLayout">
-            {filteredProjects.map((project) => (
-              <motion.div
-                key={project.id}
-                layout
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-                transition={{ duration: 0.25, ease: "easeOut" }}
-              >
-                <ProjectCard project={project} />
-              </motion.div>
-            ))}
-          </AnimatePresence>
-        </motion.div>
-      </section>
-      <Footer />
+          <motion.div layout className="projects-grid">
+            <AnimatePresence mode="popLayout">
+              {filteredProjects.map((project) => (
+                <motion.div
+                  key={project.id}
+                  layout
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -20 }}
+                  transition={{ duration: 0.25, ease: "easeOut" }}
+                >
+                  <ProjectCard project={project} />
+                </motion.div>
+              ))}
+            </AnimatePresence>
+          </motion.div>
+        </section>
+        <Footer />
+      </div>
     </PageTransition>
   );
 }

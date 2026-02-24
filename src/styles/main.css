@@ -1,4 +1,4 @@
-/* ===================================================== */
+﻿/* ===================================================== */
 /*                     ROOT VARIABLES                    */
 /* ===================================================== */
 /*
@@ -575,6 +575,26 @@ section {
   margin-top: 4rem;
 }
 
+
+
+
+
+.site-footer p {
+  margin: 0%;
+  padding: 0%;
+  width: 100%;
+}
+
+.site-page .site-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0px;
+  font-size: 14px;
+}
+
+
 .site-footer a {
   color: var(--accent);
 }
@@ -626,13 +646,11 @@ section {
 .project-slider {
   position: relative;
   overflow: hidden;
-  border-radius: 20px;
 }
 
 .slider-image {
   width: 100%;
   display: block;
-  border-radius: 20px;
   transition: opacity 0.4s ease;
 }
 
@@ -663,8 +681,42 @@ section {
   background: rgba(0, 0, 0, 0.7);
 }
 
-/* ================= INFOS ================= */
+.slider-controls {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 14px;
+}
 
+.slider-control {
+  background: rgba(0, 0, 0, 0.55);
+  border: none;
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+}
+.slider-control:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.slider-control:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+/* ================= INFOS ================= */
+.card-image{
+  width: 300px;
+  height: 166px;
+  overflow: hidden;
+  background-size: cover;
+}
 .project-info {
   position: sticky;
   top: 120px;
@@ -1058,3 +1110,4 @@ section {
 .contact-form-minimal button:hover {
   opacity: 0.85;
 }
+

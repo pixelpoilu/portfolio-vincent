@@ -1,33 +1,218 @@
+import { useEffect, useRef, useState } from "react";
+import "../styles/FilterBar.css";
+
 interface Props {
-  selectedType: string;
-  onSelectType: (type: string) => void;
+  sectors: string[];
+  types: string[];
+  technologies: string[];
+  activeSectors: string[];
+  activeTypes: string[];
+  activeTechs: string[];
+  searchQuery: string;
+  onSectorChange: (value: string[]) => void;
+  onTypeChange: (value: string[]) => void;
+  onTechChange: (value: string[]) => void;
+  onSearchChange: (value: string) => void;
+  projectsCount: number;
 }
 
-const projectTypes = [
-  { label: "Tous", value: "all" },
-  { label: "Site", value: "site" },
-  { label: "Plateforme", value: "plateforme" },
-  { label: "CMS", value: "cms" },
-  { label: "E-commerce", value: "ecommerce" },
-];
-
 export default function FilterBar({
-  selectedType,
-  onSelectType,
+  sectors,
+  types,
+  technologies,
+  activeSectors,
+  activeTypes,
+  activeTechs,
+  searchQuery,
+  onSectorChange,
+  onTypeChange,
+  onTechChange,
+  onSearchChange,
+  projectsCount,
 }: Props) {
+  const [open, setOpen] = useState<string | null>(null);
+  const filterRef = useRef<HTMLDivElement | null>(null);
+
+  const toggle = (name: string) => {
+    setOpen((current) => (current === name ? null : name));
+  };
+
+  const toggleValue = (
+    currentValues: string[],
+    value: string,
+    onChange: (nextValues: string[]) => void
+  ) => {
+    if (currentValues.includes(value)) {
+      onChange(currentValues.filter((item) => item !== value));
+      return;
+    }
+    onChange([...currentValues, value]);
+  };
+
+  useEffect(() => {
+    const handleOutsideClick = (event: MouseEvent) => {
+      if (!filterRef.current?.contains(event.target as Node)) {
+        setOpen(null);
+      }
+    };
+
+    document.addEventListener("mousedown", handleOutsideClick);
+    return () => {
+      document.removeEventListener("mousedown", handleOutsideClick);
+    };
+  }, []);
+
   return (
-    <div className="filter-bar">
-      {projectTypes.map((type) => (
+    <div className="filter-wrapper" ref={filterRef}>
+      <div className="filter-top">
+        <span className="projects-count">
+          {projectsCount} projet{projectsCount > 1 ? "s" : ""}
+        </span>
+        {(activeSectors.length > 0 ||
+          activeTypes.length > 0 ||
+          activeTechs.length > 0 ||
+          searchQuery.trim() !== "") && (
+          <button
+            type="button"
+            className="clear-filters"
+            onClick={() => {
+              onSectorChange([]);
+              onTypeChange([]);
+              onTechChange([]);
+              onSearchChange("");
+              setOpen(null);
+            }}
+          >
+            Effacer
+          </button>
+        )}
+      </div>
+
+      <div className="search-row">
+        <input
+          type="text"
+          className="search-input"
+          placeholder="Rechercher un projet, client, techno..."
+          value={searchQuery}
+          onChange={(event) => onSearchChange(event.target.value)}
+        />
+      </div>
+
+      <div className="filter-bar">
         <button
-          key={type.value}
-          onClick={() => onSelectType(type.value)}
-          className={
-            selectedType === type.value ? "active" : ""
-          }
+          type="button"
+          className={`filter-pill ${
+            activeSectors.length === 0 &&
+            activeTypes.length === 0 &&
+            activeTechs.length === 0 &&
+            searchQuery.trim() === ""
+              ? "active"
+              : ""
+          }`}
+          onClick={() => {
+            onSectorChange([]);
+            onTypeChange([]);
+            onTechChange([]);
+            onSearchChange("");
+            setOpen(null);
+          }}
         >
-          {type.label}
+          Tous
         </button>
-      ))}
+
+        <div className="dropdown">
+          <button
+            type="button"
+            className={`dropdown-trigger ${activeSectors.length > 0 ? "active" : ""}`}
+            onClick={() => toggle("sector")}
+            aria-expanded={open === "sector"}
+          >
+            <span className="trigger-label">
+              Secteur {activeSectors.length > 0 ? `(${activeSectors.length})` : ""}
+            </span>
+            <span className="trigger-caret">{open === "sector" ? "▴" : "▾"}</span>
+          </button>
+
+          {open === "sector" && (
+            <div className="menu">
+              {sectors.map((sector) => (
+                <div
+                  key={sector}
+                  className={`menu-item ${activeSectors.includes(sector) ? "selected" : ""}`}
+                  onClick={() => {
+                    toggleValue(activeSectors, sector, onSectorChange);
+                  }}
+                >
+                  <span className="check">{activeSectors.includes(sector) ? "x" : ""}</span>
+                  <span className="menu-label">{sector}</span>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+
+        <div className="dropdown">
+          <button
+            type="button"
+            className={`dropdown-trigger ${activeTypes.length > 0 ? "active" : ""}`}
+            onClick={() => toggle("type")}
+            aria-expanded={open === "type"}
+          >
+            <span className="trigger-label">
+              Type {activeTypes.length > 0 ? `(${activeTypes.length})` : ""}
+            </span>
+            <span className="trigger-caret">{open === "type" ? "▴" : "▾"}</span>
+          </button>
+
+          {open === "type" && (
+            <div className="menu">
+              {types.map((type) => (
+                <div
+                  key={type}
+                  className={`menu-item ${activeTypes.includes(type) ? "selected" : ""}`}
+                  onClick={() => {
+                    toggleValue(activeTypes, type, onTypeChange);
+                  }}
+                >
+                  <span className="check">{activeTypes.includes(type) ? "x" : ""}</span>
+                  <span className="menu-label">{type}</span>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+
+        <div className="dropdown">
+          <button
+            type="button"
+            className={`dropdown-trigger ${activeTechs.length > 0 ? "active" : ""}`}
+            onClick={() => toggle("tech")}
+            aria-expanded={open === "tech"}
+          >
+            <span className="trigger-label">
+              Tech {activeTechs.length > 0 ? `(${activeTechs.length})` : ""}
+            </span>
+            <span className="trigger-caret">{open === "tech" ? "▴" : "▾"}</span>
+          </button>
+
+          {open === "tech" && (
+            <div className="menu scroll">
+              {technologies.map((tech) => (
+                <div
+                  key={tech}
+                  className={`menu-item ${activeTechs.includes(tech) ? "selected" : ""}`}
+                  onClick={() => {
+                    toggleValue(activeTechs, tech, onTechChange);
+                  }}
+                >
+                  <span className="check">{activeTechs.includes(tech) ? "x" : ""}</span>
+                  <span className="menu-label">{tech}</span>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+      </div>
     </div>
   );
 }

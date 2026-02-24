@@ -1,0 +1,53 @@
+@font-face {
+          font-family: 'Gotham Rounded';
+          src: url(./font/GothamRounded-Light.woff);
+          font-weight: 300;
+      }
+      @font-face {
+          font-family: 'Gotham Rounded';
+          src: url(./font/GothamRounded-LightItalic.woff);
+          font-weight: 300;
+          font-style: italic;
+      }
+      @font-face {
+          font-family: 'Gotham Rounded';
+          src: url(./font/GothamRounded-Book.woff);
+          font-weight: 400;
+      }
+      @font-face {
+          font-family: 'Gotham Rounded';
+          src: url(./font/GothamRounded-Medium.woff);
+          font-weight: 500;
+      }
+      @font-face {
+          font-family: 'Gotham Rounded';
+          src: url(./font/GothamRounded-Bold.woff);
+          font-weight: 600;
+      }
+
+/* Form Pardot sur Website */
+.custom-form.content {display:flex;flex-wrap:wrap;}
+@media screen and (max-width:450px){
+	.signup-header{
+		padding-top: 10% !important;
+    padding-left: 2% !important;
+    padding-right: 2% !important;
+	}
+}
+/** RGPD **/
+.RGPD_mention p {
+	margin : 0 !important;
+	padding : 0 !important;
+
+}
+
+.RGPD_mention {
+	font-size: 12px !important; 
+	color:#333333 !important;
+}
+
+.RGPD_mention a { 
+	color:#596063 !important
+}
+
+
