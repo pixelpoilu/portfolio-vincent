@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<contenu entries="1">
+	<entry>
+		<MainContent><![CDATA[
+<Arianne>
+	<a href="asfunction:CloseInterieur"> Accueil</a> &raquo;
+	<a href="asfunction:ShowInterieur,Presse"> Presse</a> &raquo;
+	<a href="asfunction:ShowInterieur,Presse_tour66"> Tour 66</a>
+</Arianne>
+<br>
+<h1>Dossier de presse du Tour 66</h1>
+<br><br>
+
+en cours de réalisation
+
+
+ 		]]></MainContent>
+	</entry>
+</contenu>

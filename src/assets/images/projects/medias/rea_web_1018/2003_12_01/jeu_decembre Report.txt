@@ -1,0 +1,328 @@
+Movie Report
+-------------
+FrameFrame #    Frame Bytes    Total Bytes    Page
+------------    -----------    -----------    ---------------
+    1         28778          28778        Scene 1
+    2             2          28780          2
+    3             2          28782          3
+    4             2          28784          4
+    5             2          28786          5
+    6             2          28788          6
+    7             2          28790          7
+    8             2          28792          8
+    9            10          28802          9
+   10        149688         178490          10
+   11             2         178492          11
+   12             2         178494          12
+   13             2         178496          13
+   14             2         178498          14
+   15             2         178500          15
+   16          1918         180418          16
+   17             2         180420          17
+   18             2         180422          18
+   19             2         180424          19
+   20             2         180426          20
+   21            15         180441          21
+   22             6         180447          22
+   23             2         180449          23
+   24             2         180451          24
+   25             2         180453          25
+   26             2         180455          26
+   27             2         180457          27
+   28             2         180459          28
+   29             2         180461          29
+   30             2         180463          30
+   31         99334         279797          31
+   32             2         279799          32
+   33             2         279801          33
+   34             2         279803          34
+   35             2         279805          35
+   36             2         279807          36
+   37           118         279925          37
+   38          5095         285020          38
+   39             2         285022          39
+   40             2         285024          40
+   41             2         285026          41
+   42         23103         308129          42
+   43            98         308227          43
+   44            98         308325          44
+   45            98         308423          45
+   46            58         308481          46
+   47             2         308483          47
+   48             2         308485          48
+   49             2         308487          49
+   50            13         308500          50
+   51             2         308502          51
+   52             2         308504          52
+   53             2         308506          53
+   54             2         308508          54
+   55             2         308510          55
+   56             2         308512          56
+   57             2         308514          57
+   58          4017         312531          58
+   59            98         312629          59
+   60            98         312727          60
+   61            98         312825          61
+   62            58         312883          62
+   63             2         312885          63
+   64             2         312887          64
+   65             2         312889          65
+   66             2         312891          66
+   67            14         312905          67
+   68             2         312907          68
+   69             2         312909          69
+   70             2         312911          70
+   71             2         312913          71
+   72             2         312915          72
+   73             2         312917          73
+   74           167         313084          74
+   75             6         313090          75
+   76            25         313115          76
+   77             2         313117          77
+   78             6         313123          78
+   79            25         313148          79
+   80             2         313150          80
+   81            10         313160          81
+   82         24175         337335          82
+   83             2         337337          83
+   84             2         337339          84
+   85             2         337341          85
+   86             2         337343          86
+   87             2         337345          87
+   88          4470         341815          88
+   89        359260         701075          89
+   90             2         701077          90
+   91             2         701079          91
+   92             2         701081          92
+   93             2         701083          93
+   94             2         701085          94
+   95          2009         703094          95
+   96          9369         712463          96
+   97             2         712465          97
+   98             2         712467          98
+   99             2         712469          99
+  100             2         712471          100
+  101             2         712473          101
+  102            63         712536          102
+  103             2         712538          103
+  104             2         712540          104
+  105             2         712542          105
+  106             2         712544          106
+  107             2         712546          107
+  108             2         712548          108
+  109             2         712550          109
+  110             2         712552          110
+  111             2         712554          111
+  112             2         712556          112
+  113             2         712558          113
+  114             2         712560          114
+  115             2         712562          115
+  116             2         712564          116
+  117             2         712566          117
+  118             2         712568          118
+  119             2         712570          119
+  120             2         712572          120
+  121             2         712574          121
+  122             2         712576          122
+  123             2         712578          123
+  124             2         712580          124
+  125             2         712582          125
+  126             2         712584          126
+  127             2         712586          127
+  128             2         712588          128
+  129             2         712590          129
+  130             2         712592          130
+  131             2         712594          131
+  132             2         712596          132
+  133             2         712598          133
+  134             2         712600          134
+  135             2         712602          135
+  136             2         712604          136
+  137             2         712606          137
+  138            10         712616          138
+  139            14         712630          139
+
+Page                       Shape Bytes    Text Bytes
+-----------------------    -----------    ----------
+Scene 1                         703          5060
+
+Embedded Objects               1281             0
+
+Page                       Symbol Bytes    Text Bytes
+-----------------------    ------------    ----------
+son_victoire                      0             0
+loupe                             0             0
+mouchaze                          0             0
+moche_bzz                         0             0
+shoot_mouche                  29772             0
+restore_mouche                14283             0
+Symbol 117                        0             0
+fl_back                          48             0
+mouchasse_bouge                   0             0
+mochevol                          0             0
+moche_ombre                       0             0
+moucheback                     2002             0
+Symbol 123                        0             0
+mouch_stop                        0             0
+mouchasse                         0             0
+bt_empreinte                     67             0
+empreinte17                   16982             0
+bt_next                         161            64
+preloader                        36            33
+progress_bar                      0             0
+barre                            35             0
+progress_fleche                  34            49
+message                           0           558
+postit_fond                     104             0
+bt_close                         40            64
+bt_soulignÈ                     107             0
+clikhere                          0             0
+emp1                             76           134
+empreintes                        0             0
+empreinte01                   16446             0
+empreinte02                   17273             0
+empreinte03                   17119             0
+empreinte04                   17102             0
+empreinte05                   18610             0
+empreinte06                   18521             0
+empreinte07                   17997             0
+empreinte08                   17483             0
+empreinte09                   17556             0
+empreinte10                   20495             0
+empreinte11                   17661             0
+empreinte12                   17285             0
+empreinte13                   19653             0
+empreinte14                   18823             0
+empreinte15                   18640             0
+empreinte16                   19782             0
+empreinteX                        0             0
+empreinte18                   19010             0
+empreinte19                   16860             0
+empreinte20                   17370             0
+messageaccuz                      0           657
+resultat                        329           222
+22                               45            44
+ombre_pola                      135             0
+fond_pola                        45             0
+emp_select                      152             0
+empX                              0             0
+reperes                         127             0
+help                            423          1403
+key - down                     2680             0
+key - left                     2681             0
+key - right                    2681             0
+key - PgUP                     2768             0
+key - up                       2682             0
+polaroid01                        0             0
+clikhere4                        48            90
+btaide                            0            76
+btrevenir                        43            38
+mov_coupe                         0           400
+silhouette                      179             0
+coupe                          2165             0
+logo_1018                       415             0
+Tween 5                           0            42
+Tween 4                           0            43
+Tween 3                           0            42
+Tween 2                           0            42
+Tween 1                           0            43
+eclat_mov                         0             0
+eclat                            62             0
+aide2                             0          1442
+20ans                            43             0
+logo_20ans                        0             0
+Symbol 102                      387             0
+papier35                        192             0
+Symbol 112                       54             0
+reflet_fond_page                108             0
+bt_valid                          0            49
+Symbol 172                       70             0
+bandeau_petit                     0             0
+bt_jouer                        378            55
+bt_log                            0            59
+fond_page                      1787             0
+manchettes_anim                  67           666
+journal01                         0             0
+fond_journal                    595             0
+manch_01_bt                       0            49
+manch_reflet                     79             0
+manch_hit                        72             0
+journal02                         0             0
+manch_02_bt                       0            49
+journal03                         0             0
+manch_03_bt                       0            44
+journal04                         0             0
+manch_04_bt                       0            45
+journal05                         0             0
+manch_05_bt                       0            41
+journal06                         0             0
+manch_06_bt                       0            42
+journal07                         0             0
+manch_07_bt                       0            49
+journal08                         0             0
+manch_08_bt                       0            42
+journal09                         0             0
+manch_09_bt                       0            53
+journal10                         0             0
+manch_10_bt                       0            49
+journal11                         0             0
+manch_11_bt                       0            51
+journal12                       144             0
+manch_12_bt                       0            51
+bt_onglet                        48             0
+empreinte17_mask               5474             0
+bt_retour                      2042             0
+sablier                         589             0
+sablier_verre                   266             0
+
+Bitmap                     Compressed    Compression
+-----------------------    ----------  --------  -----------
+menottes.png                    5705      118064   JPEG Quality=20
+pola02                          3786      163200   =20
+pola01                          4956      257024   =20
+12                              6168      172260   =20
+11                              7995      172260   =20
+10                              4887      172260   =20
+09                              7366      172260   =20
+08                              6326      172260   =20
+07                              5207      172260   =20
+05                              5946      172260   =20
+06                              6079      172260   =20
+0                               5849      172260   =20
+03                              6249      172260   =20
+02                              5187      172260   =20
+01                              5981      172260   =20
+mouche_calme.PNG                7287       94080   =9
+mouche_vol.PNG                 10629       94080   =9
+mouche_noailes.PNG              8623       94080   =9
+papier_rouge.jpg                2910      192072   =80
+papier                          2007       41760   =90
+loupe.png                          0       68440   =1
+20ans.PNG                          0       42400   =1
+
+Tweened Shapes: 327 bytes
+
+
+Sound name                 Bytes        Format    
+-----------------------    ---------    ----------
+HelveticaRounded BoldCond Bold   2304         !-FPSabcegilnorstuÈ
+HelveticaNeue ExtBlackCond Bold    548        !ABORV
+HelveticaNeue Condensed       549        !ABORV
+HelveticaNeue UltraLigCond    554        !ABORV
+Helvetica 95 Black Italic    1014        cefhilmnorÈ
+Helvetica Italic             1875         '-:?SVacdehilnoprstuvzÍ
+Helvetica Inserat             151        ?
+Helvetica ExtraCompressed     938         !ACDEIMNPRSTUVX
+Helvetica CondensedBlack     1201        0123456789
+Helvetica CondensedLight     2475         '-.Cabcdefghilmnopqrstuvz‡
+Courier New Bold              670        /01236
+Helvetica Bold               1088         "acdeilnorstuv
+HelveticaRounded BoldCond    3671         !,-EFMRVabcdegilmnoprstuvyz‡ÈÍ
+Helvetica Compressed          692         !ACDEIRSU
+Helvetica 95 Black           1395         ',.:?ACDEHILMNOPRSTUVZ
+Helvetica 55 Roman           5034         ',-.0123456789:;ABCDEGHPSTUabcdefghilmnopqrstuvxz‡ËÈÓÙ
+HelveticaRounded             1604         !?ABCDEILMNOPRSTUV
+Helvetica Condensed          4769         &',-023:?ABCDEFIJLMNOPRSTUVabcdefhijlmnopqrstuvxz∞ËÈ
+Arial Bold                  20115         !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~Åçèêù†°¢£§•¶ß®©™´¨≠ÆØ∞±≤≥¥µ∂∑∏π∫ªºΩæø¿¡¬√ƒ≈∆«»… ÀÃÕŒœ–—“”‘’÷◊ÿŸ⁄€‹›ﬁﬂ‡·‚„‰ÂÊÁËÈÍÎÏÌÓÔÒÚÛÙıˆ˜¯˘˙˚¸˝˛ˇåúäöüéûÉàòñóëíÇìîÑÜáïÖâãõÄô
+Helvetica                    4717         !"'(),-./01236:=ACDEFGHIJLMNOPRSTUVZabcdefghijlmnopqrstuvxyz∞‡‚ËÈÓí
+Arial                       20551         !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~Åçèêù†°¢£§•¶ß®©™´¨≠ÆØ∞±≤≥¥µ∂∑∏π∫ªºΩæø¿¡¬√ƒ≈∆«»… ÀÃÕŒœ–—“”‘’÷◊ÿŸ⁄€‹›ﬁﬂ‡·‚„‰ÂÊÁËÈÍÎÏÌÓÔÒÚÛÙıˆ˜¯˘˙˚¸˝˛ˇåúäöüéûÉàòñóëíÇìîÑÜáïÖâãõÄô

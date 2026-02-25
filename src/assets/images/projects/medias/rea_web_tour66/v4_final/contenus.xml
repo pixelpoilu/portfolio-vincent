@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+
+<contenu entries="1">
+<entry>
+	<id>1</id>
+	<name>Date Départ</name>
+	<anneeTop>2007</anneeTop>
+	<moisTop>12</moisTop>
+	<JouTop>3</JouTop>
+	<HeurTop>10</HeurTop>
+	<MessageTOP><![CDATA[Ouverture...]]></MessageTOP>
+	<MessageFORM><![CDATA[Pour accéder à la boutique, remplissez le formulaire ci-contre.]]></MessageFORM>	
+	<UrlSendForm><![CDATA[recordadh.php]]></UrlSendForm>
+	<coderetour0><![CDATA[Trop de connexions, merci de rééssayer plus tard.]]></coderetour0>
+	<coderetour1><![CDATA[votre Email est incorrect.]]></coderetour1>
+	<coderetour2><![CDATA[votre Email a déjà été enregistré.]]></coderetour2>
+	<coderetour3><![CDATA[Merci, votre demande a bien été envoyée, cliquez sur 'continuer' pour accéder à la boutique.]]></coderetour3>
+	<coderetour4><![CDATA[votre n° d'adhérent et votre nom ne sont pas reconnnus.]]></coderetour4>	
+	<coderetour5><![CDATA[votre n° d'adhérent ne correspond pas à votre nom]]></coderetour5>	
+	<coderetour6><![CDATA[---]]></coderetour6>
+	<coderetour7><![CDATA[---]]></coderetour7>
+	
+	<DossierPresseContLink><![CDATA[Presse.php]]></DossierPresseContLink>
+	<DossierPresseStatLink><![CDATA[javascript:ns_flashcounter('presse');]]></DossierPresseStatLink>
+	
+	<CareerContLink><![CDATA[Carriere.php]]></CareerContLink>
+	<CareerStatLink><![CDATA[javascript:ns_flashcounter('Carriere');]]></CareerStatLink>
+	
+	<MerchandContLink><![CDATA[Goodies.php]]></MerchandContLink>
+	<MerchandStatLink><![CDATA[javascript:ns_flashcounter('Goodies');]]></MerchandStatLink>
+	
+	<PlanningContLink><![CDATA[Planning.php]]></PlanningContLink>
+	<PlanningStatLink><![CDATA[javascript:ns_flashcounter('Planning');]]></PlanningStatLink>
+
+	<AlbumContLink><![CDATA[Album.php]]></AlbumContLink>
+	<AlbumStatLink><![CDATA[javascript:ns_flashcounter('Album');]]></AlbumStatLink>
+
+	<GrandpublicContLink><![CDATA[http://www.tour66.fr/billetterie]]></GrandpublicContLink>
+	<GrandpublicStatLink><![CDATA[javascript:ns_flashcounter('GrandPublic');]]></GrandpublicStatLink>
+
+	<PackvipContLink><![CDATA[http://www.packvip.com/johnny-hallyday-p-34.html]]></PackvipContLink>
+	<PackvipStatLink><![CDATA[javascript:ns_flashcounter('Packvip');]]></PackvipStatLink>
+
+	<BoutiqueLink><![CDATA[BoutiqueAccess.php]]></BoutiqueLink>
+	<BoutiqueGPLink><![CDATA[/index.php]]></BoutiqueGPLink>	
+
+</entry>
+</contenu>

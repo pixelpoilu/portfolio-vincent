@@ -1,0 +1,17 @@
+body {
+	font-family: "Times New Roman", Times, serif;
+	font-size: 14px;
+	background-position: 5px 5px;
+	text-align: justify;
+	background-color: #973E06;
+
+}
+
+td {
+	font-family: "Times New Roman", Times, serif;
+	font-size: 12px;
+	color: #000000;
+}
+table {
+	background-color: #F6EFDD;
+}

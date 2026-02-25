@@ -1,0 +1,64 @@
+.formula {
+
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #FFFFFF;
+}
+
+.popupstyle {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #333333;
+}
+.moyentext {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	color: #E9E9E9;
+}
+.formulaCopy {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #000000;
+
+}
+.champstyle {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	border: #CA5600;
+	background-color: #CA5600;
+
+}
+.chpa {
+background-color: #933F03; color: #FFFFFF; font-family: tahoma, Verdana, Arial, Helvetica, sans-serif; font-weight: normal; font-size: 12 px; border: 1 solid #FFFFFF
+
+}
+
+.chpb {
+background-color: #CA5600; color: #FFFFFF; font-family: tahoma, Verdana, Arial, Helvetica, sans-serif; font-weight: normal; font-size: 12 px; border: 1 solid #FFFFFF
+
+}
+.chpc {
+background-color: #933F03; color: #FFFFFF; font-family: tahoma, Verdana, Arial, Helvetica, sans-serif; font-weight: normal; font-size: 12 px; border: 1 solid #CA5600
+
+}
+a:link {
+	color: #000000;
+}
+a:visited {
+	color: #666666;
+}
+a:hover {
+	color: #990000;
+}
+a:active {
+	color: #FF0000;
+}
+.chpd {
+
+background-color: #933F03; color: #FFFFFF; font-family: tahoma, Verdana, Arial, Helvetica, sans-serif; font-weight: normal; font-size: 12 px; border: 1 solid #818181
+}
+.chpe {
+
+
+background-color: #933F03; font-family: tahoma, Verdana, Arial, Helvetica, sans-serif; font-weight: normal; border: 1 solid #CA5600
+}

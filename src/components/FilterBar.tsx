@@ -202,9 +202,8 @@ export default function FilterBar({
             <span className="trigger-label">
               Outils {activeTools.length > 0 ? `(${activeTools.length})` : ""}
             </span>
-            <span className="trigger-caret">{open === "tool" ? "â–´" : "â–¾"}</span>
+            <span className="trigger-caret">{open === "tool" ? "▴" : "▾"}</span>
           </button>
-
           {open === "tool" && (
             <div className="menu scroll">
               {tools.map((tool) => (

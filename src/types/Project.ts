@@ -22,5 +22,5 @@ export type Project = {
   missions: string[];
   status: "draft" | "published" | "archived";
   order: number;
+  collection: "portfolio" | "case-study";
 };
-

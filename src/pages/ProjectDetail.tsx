@@ -109,10 +109,11 @@ export default function ProjectDetail() {
     <PageTransition>
       <div className="site-page">
       <main className="project-detail">
+        <div className="filter-wrapper">
         <Link to="/portfolio" className="back-link">
-          ? Retour aux projets
+          ‹ Retour aux projets
         </Link>
-
+      </div>
         <div className="project-layout">
           <div
             className="project-slider"

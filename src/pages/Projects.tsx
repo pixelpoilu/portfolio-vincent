@@ -13,6 +13,9 @@ const normalizeText = (value: string) =>
     .toLowerCase()
     .trim();
 
+const sortAlphabetically = (values: string[]) =>
+  [...values].sort((a, b) => a.localeCompare(b, "fr", { sensitivity: "base" }));
+
 export default function Projects() {
   const [selectedTechnologies, setSelectedTechnologies] = useState<string[]>([]);
   const [selectedTools, setSelectedTools] = useState<string[]>([]);
@@ -30,7 +33,7 @@ export default function Projects() {
     publishedProjects.forEach((project) => {
       project.technologies.forEach((tech) => techSet.add(tech));
     });
-    return Array.from(techSet);
+    return sortAlphabetically(Array.from(techSet));
   }, [publishedProjects]);
 
   const allTools = useMemo(() => {
@@ -38,7 +41,7 @@ export default function Projects() {
     publishedProjects.forEach((project) => {
       project.outils.forEach((tool) => toolSet.add(tool));
     });
-    return Array.from(toolSet);
+    return sortAlphabetically(Array.from(toolSet));
   }, [publishedProjects]);
 
   const allTypes = useMemo(() => {
@@ -46,7 +49,7 @@ export default function Projects() {
     publishedProjects.forEach((project) => {
       typeSet.add(project.type);
     });
-    return Array.from(typeSet);
+    return sortAlphabetically(Array.from(typeSet));
   }, [publishedProjects]);
 
   const allSectors = useMemo(() => {
@@ -54,7 +57,7 @@ export default function Projects() {
     publishedProjects.forEach((project) => {
       sectorSet.add(project.secteur);
     });
-    return Array.from(sectorSet);
+    return sortAlphabetically(Array.from(sectorSet));
   }, [publishedProjects]);
 
   const availableTypes = useMemo(
@@ -165,44 +168,50 @@ export default function Projects() {
   const filteredProjects = useMemo(() => {
     const normalizedQuery = normalizeText(searchQuery);
 
-    return publishedProjects.filter((project) => {
-      const matchesTech =
-        selectedTechnologies.length === 0 ||
-        selectedTechnologies.some((tech) => project.technologies.includes(tech));
+    return publishedProjects
+      .filter((project) => {
+        const matchesTech =
+          selectedTechnologies.length === 0 ||
+          selectedTechnologies.some((tech) => project.technologies.includes(tech));
 
-      const matchesTool =
-        selectedTools.length === 0 ||
-        selectedTools.some((tool) => project.outils.includes(tool));
+        const matchesTool =
+          selectedTools.length === 0 ||
+          selectedTools.some((tool) => project.outils.includes(tool));
 
-      const matchesType =
-        selectedTypes.length === 0 || selectedTypes.includes(project.type);
+        const matchesType =
+          selectedTypes.length === 0 || selectedTypes.includes(project.type);
 
-      const matchesSector =
-        selectedSectors.length === 0 || selectedSectors.includes(project.secteur);
+        const matchesSector =
+          selectedSectors.length === 0 || selectedSectors.includes(project.secteur);
 
-      if (!matchesTech || !matchesTool || !matchesType || !matchesSector) {
-        return false;
-      }
+        if (!matchesTech || !matchesTool || !matchesType || !matchesSector) {
+          return false;
+        }
 
-      if (normalizedQuery === "") {
-        return true;
-      }
+        if (normalizedQuery === "") {
+          return true;
+        }
 
-      const searchableContent = [
-        project.title,
-        project.client,
-        project.type,
-        project.secteur,
-        project.description,
-        String(project.year),
-        project.outils.join(" "),
-        project.technologies.join(" "),
-      ]
-        .filter(Boolean)
-        .join(" ");
+        const searchableContent = [
+          project.title,
+          project.client,
+          project.type,
+          project.secteur,
+          project.description,
+          String(project.year),
+          project.outils.join(" "),
+          project.technologies.join(" "),
+        ]
+          .filter(Boolean)
+          .join(" ");
 
-      return normalizeText(searchableContent).includes(normalizedQuery);
-    });
+        return normalizeText(searchableContent).includes(normalizedQuery);
+      })
+      .sort((a, b) => {
+        const orderA = Number.isFinite(a.order) ? a.order : Number.NEGATIVE_INFINITY;
+        const orderB = Number.isFinite(b.order) ? b.order : Number.NEGATIVE_INFINITY;
+        return orderB - orderA;
+      });
   }, [
     publishedProjects,
     selectedTechnologies,

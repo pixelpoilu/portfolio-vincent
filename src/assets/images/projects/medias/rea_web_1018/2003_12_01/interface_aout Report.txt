@@ -1,0 +1,452 @@
+Movie Report
+-------------
+FrameFrame #    Frame Bytes    Total Bytes    Page
+------------    -----------    -----------    ---------------
+    1         51323          51323        Scene 1
+    2         58102         109425          2
+    3             2         109427          3
+    4             2         109429          4
+    5             2         109431          5
+    6             2         109433          6
+    7             2         109435          7
+    8             2         109437          8
+    9             2         109439          9
+   10         22449         131888          10
+   11          8936         140824          11
+   12          2247         143071          12
+   13          6611         149682          13
+   14          2085         151767          14
+   15          2217         153984          15
+   16          6226         160210          16
+   17         40288         200498          17
+   18          2188         202686          18
+   19            74         202760          19
+   20             2         202762          20
+   21             2         202764          21
+   22             2         202766          22
+   23             2         202768          23
+   24             2         202770          24
+   25             2         202772          25
+   26             2         202774          26
+   27             2         202776          27
+   28             2         202778          28
+   29             2         202780          29
+   30             2         202782          30
+   31             2         202784          31
+   32             2         202786          32
+   33             2         202788          33
+   34             2         202790          34
+   35             2         202792          35
+   36             2         202794          36
+   37             2         202796          37
+   38             2         202798          38
+   39             2         202800          39
+   40             2         202802          40
+   41             2         202804          41
+   42             2         202806          42
+   43             2         202808          43
+   44             2         202810          44
+   45             2         202812          45
+   46          5866         208678          46
+   47          3232         211910          47
+   48          3769         215679          48
+   49          7007         222686          49
+   50          1835         224521          50
+   51          2601         227122          51
+   52          4668         231790          52
+   53          4460         236250          53
+   54          3519         239769          54
+   55            70         239839          55
+   56             2         239841          56
+   57             2         239843          57
+   58             2         239845          58
+   59             2         239847          59
+   60             2         239849          60
+   61             2         239851          61
+   62             2         239853          62
+   63             2         239855          63
+   64             2         239857          64
+   65             2         239859          65
+   66             2         239861          66
+   67             2         239863          67
+   68             2         239865          68
+   69             2         239867          69
+   70             2         239869          70
+   71             2         239871          71
+   72             2         239873          72
+   73             2         239875          73
+   74             2         239877          74
+   75             2         239879          75
+   76             2         239881          76
+   77             2         239883          77
+   78             2         239885          78
+   79             2         239887          79
+   80             2         239889          80
+   81             2         239891          81
+   82             2         239893          82
+   83             2         239895          83
+   84          6668         246563          84
+   85          4853         251416          85
+   86          6896         258312          86
+   87          6460         264772          87
+   88          4440         269212          88
+   89          5896         275108          89
+   90          1762         276870          90
+   91          2964         279834          91
+   92          1935         281769          92
+   93          2933         284702          93
+   94          2999         287701          94
+   95            78         287779          95
+   96             2         287781          96
+   97             2         287783          97
+   98             2         287785          98
+   99             2         287787          99
+  100             2         287789          100
+  101             2         287791          101
+  102             2         287793          102
+  103             2         287795          103
+  104             2         287797          104
+  105             2         287799          105
+  106             2         287801          106
+  107             2         287803          107
+  108             2         287805          108
+  109             2         287807          109
+  110             2         287809          110
+  111             2         287811          111
+  112             2         287813          112
+  113             2         287815          113
+  114             2         287817          114
+  115             2         287819          115
+  116             2         287821          116
+  117             2         287823          117
+  118             2         287825          118
+  119             2         287827          119
+  120             2         287829          120
+  121             2         287831          121
+  122             2         287833          122
+  123             2         287835          123
+  124             2         287837          124
+  125             2         287839          125
+  126             2         287841          126
+  127             2         287843          127
+  128             2         287845          128
+  129             2         287847          129
+  130             2         287849          130
+  131             2         287851          131
+  132             2         287853          132
+  133             2         287855          133
+  134         23477         311332          134
+  135             2         311334          135
+  136             2         311336          136
+  137             2         311338          137
+  138             2         311340          138
+  139             2         311342          139
+  140         58527         369869          140
+  141             2         369871          141
+  142             2         369873          142
+  143             2         369875          143
+  144         13141         383016          144
+  145             2         383018          145
+  146             2         383020          146
+  147             2         383022          147
+  148          6199         389221          148
+  149             2         389223          149
+  150             2         389225          150
+  151             2         389227          151
+  152             2         389229          152
+  153             2         389231          153
+  154             2         389233          154
+  155             2         389235          155
+  156         45238         434473          156
+  157           114         434587          157
+  158             2         434589          158
+  159             2         434591          159
+  160             2         434593          160
+  161             2         434595          161
+  162             2         434597          162
+  163            22         434619          163
+  164             2         434621          164
+  165             2         434623          165
+  166            57         434680          166
+
+Page                       Shape Bytes    Text Bytes
+-----------------------    -----------    ----------
+Scene 1                         889         65386
+
+Embedded Objects               1727             0
+
+Page                       Symbol Bytes    Text Bytes
+-----------------------    ------------    ----------
+moteur_recherche                  0             0
+Symbol 214                        0             0
+mov_edito                         0             0
+font_page                       396             0
+font_pagesimple                  59             0
+edito_couv                      133           115
+Symbol 109                      302             0
+Symbol 108                      286             0
+Symbol 107                      327             0
+Symbol 106                      397             0
+Symbol 105                      400             0
+Symbol 104                      305             0
+Symbol 103                      317             0
+Symbol 102                      408             0
+Symbol 101                      200             0
+Symbol 100                      364             0
+Symbol 99                       364             0
+Symbol 98                       368             0
+Symbol 97                       436             0
+Symbol 96                       536             0
+Symbol 95                       539             0
+Symbol 94                       510             0
+Symbol 93                       330             0
+Symbol 92                       277             0
+Symbol 91                       532             0
+Symbol 90                       209             0
+Symbol 89                       199             0
+Symbol 88                       221             0
+Symbol 87                       185             0
+Symbol 86                       109             0
+change_page                       0             0
+fond_livre                      395             0
+pages_explik                      0             0
+corner                           72             0
+scrollhaut                        0             0
+scrolbas                         42             0
+mois                             74             0
+voyage_transtour                158            76
+logo_transtour                 1419             0
+20ans                            43             0
+logo_20ans                        0             0
+voyage_desc                      48           724
+triangle_rouge                   34             0
+bt_close                        161            64
+bandeau_petit                     0            55
+logo_1018                       415             0
+bt_base                          38             0
+bt_soulignÈ                     107             0
+new_pochette01                    0             0
+new_pochette02                    0             0
+new_pochette_mars01               0             0
+new_pochette_mai02                0             0
+new_pochette_mars02               0             0
+new_pochette_mai01                0             0
+lechat_alenvers                   0             0
+un_cadavre_de_trop                0             0
+silver_scene                      0             0
+new_pochette_avril01              0             0
+new_pochette_avril02              0             0
+new_pochette_mai03                0             0
+new_pochette_juin01               0             0
+new_pochette_juill01 copy         0             0
+boris akounine                    0             0
+Lilian JACKSON BRAUN              0             0
+Ellis Peter                       0             0
+Claude Izner                     38             0
+Claude Izner_01                   0             0
+Wentworth                         0             0
+Upfield                           0             0
+tourne_page                      95             0
+fleche                           33             0
+txtderoulant                     41             0
+a savoir                          0          4082
+voyage_danse                      0             0
+stpet_branche                    38             0
+bandeau_complet                   0             0
+bandeau_fond                     40             0
+fond˘arron                       39             0
+bandeau_gd_jeu                    0            89
+bsejour                          77           195
+bandeau_txt01                     0           264
+clikhere                        360           189
+details                           0          1334
+ombrage01                         0             0
+fond_passeport                   61             0
+rosace_outline                  114             0
+rosace_pleine                   194             0
+rosace_outline2                 190             0
+reflet01                         78             0
+libelles                        386           802
+no_indice                         0            72
+Inscription                      79           761
+menu_mois                         0             0
+Copie de liste2                 315             0
+roll_mois                       260             0
+mois01                            0            43
+mois02                            0            43
+mois03                            0            37
+mois04                            0            39
+mois05                            0            35
+mois06                            0            37
+mois07                            0            43
+mois08                            0            37
+mois09                            0            46
+mois10                            0            43
+mois11                            0            44
+mois12                            0            43
+over_menu                       100             0
+Copie de liste2 copy            123             0
+deadzone                         65             0
+mois copy                        74             0
+gab1                              0           163
+gab2                             33           329
+gab0                              0           133
+menu_auteurs                      0             0
+menu_destinations                 0             0
+menu_destinations copy            0             0
+liste_auteurs                   317             0
+roll_auteurs                    257             0
+ ListBox                          0             0
+FListBoxItem                      0             0
+FLabel                            0           109
+FSelectableItem                   0             0
+FHighlight                        0             0
+ Highlight                       37             0
+FScrollSelectList                 0             0
+ ScrollBar                        0             0
+fsb_DownArrow                     0             0
+fsb_downArrow                     0             0
+fsb_downArrow_face                0             0
+fsb_downArrow_arrow              46             0
+fsb_downArrow_leftIn              0             0
+fsb_downArrow_rightIn             0             0
+fsb_downArrow_rightOut            0             0
+fsb_downArrow_leftOut             0             0
+fsb_downArrow_press               0             0
+fsb_downArrow_press_leftOut        0             0
+fsb_downArrow_press_rightOut        0             0
+fsb_downArrow_press_rightIn        0             0
+fsb_downArrow_press_leftIn        0             0
+fsb_downArrow_press_face          0             0
+fsb_downArrow_press_arrow        50             0
+fsb_downArrow_disabled            0             0
+fsb_downArrow_disabled_leftOut        0             0
+fsb_downArrow_disabled_rightOut        0             0
+fsb_downArrow_disabled_leftIn        0             0
+fsb_downArrow_disabled_rightIn        0             0
+fsb_downArrow_disabled_face        0             0
+fsb_downArrow_disabled_arrow       47             0
+fsb_ScrollThumb                   0             0
+fsb_thumb_top                     0             0
+fsb_thumb_top_leftOut            37             0
+fsb_thumb_top_rightOut            0             0
+fsb_thumb_top_leftIn              0             0
+fsb_thumb_top_rightIn             0             0
+fsb_thumb_middle                  0             0
+fsb_thumb_mid_leftOut             0             0
+fsb_thumb_mid_rightOut            0             0
+fsb_thumb_mid_rightIn            36             0
+fsb_thumb_mid_face                0             0
+fsb_thumb_mid_leftIn              0             0
+fsb_thumb_bottom                  0             0
+fsb_thumb_bottom_rightIn          0             0
+fsb_thumb_bottom_rightOut        38             0
+fsb_thumb_bottom_leftOut         30             0
+fsb_UpArrow                       0             0
+fsb_upArrow                       0             0
+fsb_upArrow_face                  0             0
+fsb_upArrow_arrow                45             0
+fsb_upArrow_leftIn                0             0
+fsb_upArrow_rightIn               0             0
+fsb_upArrow_rightOut              0             0
+fsb_upArrow_leftOut               0             0
+fsb_upArrow_press                 0             0
+fsb_upArrow_press_leftOut         0             0
+fsb_upArrow_press_rightOut        0             0
+fsb_upArrow_press_rightIn        39             0
+fsb_upArrow_press_leftIn         38             0
+fsb_upArrow_press_face           34             0
+fsb_upArrow_press_arrow          50             0
+fsb_upArrow_disabled              0             0
+fsb_upArrow_disabled_leftOut       39             0
+fsb_upArrow_disabled_rightOut       39             0
+fsb_upArrow_disabled_leftIn       38             0
+fsb_upArrow_disabled_rightIn       39             0
+fsb_upArrow_disabled_face        42             0
+fsb_upArrow_disabled_arrow       47             0
+FUIComponent                      0             0
+Component Version                 0             0
+fsb_ScrollTrack                   0             0
+ scrollTrack                     37             0
+ FSelectableList                  0             0
+DataProvider                      0             0
+FBoundingBox                     39             0
+boundingBox                      38             0
+ListBox Name                    141             0
+voyage_pmaj                     433             0
+euro                             97             0
+bt_reglt                        465           130
+bt_charte                       277           114
+Symbol 231                       65             0
+voyafe_chateau                   38             0
+Symbol 228                        0             0
+Symbol 229                        0             0
+stpet_religion                    0             0
+ombrage02                       222             0
+postit04                          0            67
+ombre_postit                      0             0
+postit_fond                      86             0
+postit06                          0           118
+postit03                          0           116
+postit02                          0           120
+postit05                          0            78
+postit01                          0           138
+postit_search                     0             0
+passport_front                    0             0
+Search                            0             0
+loupe                             0             0
+
+Bitmap                     Compressed    Compression
+-----------------------    ----------  --------  -----------
+passeport_front.PNG            30921      761856   JPEG Quality=55
+Stpet_boite                     5990      158760   =55
+11h0978.jpg                     8941      141680   =60
+danse.jpg                       2670       42480   =70
+cv_russie.jpg                  16926      275440   =80
+stpet_bato2                    10745      237948   =55
+10a0978.jpg                     3693       38400   =80
+plume.png                       2238       41652   =9
+auteur_wentworth                1105       34748   =50
+auteur_izner                    3476      125488   =50
+auteur_peters                   1659       34748   =50
+auteur_liliambrawn              1429       34748   =50
+auteur_akounine                 1200       34748   =50
+Bitmap 37                       1899       34748   =50
+06.1.jpg                        1961       34748   =50
+05.3.jpg                        2372       34748   =50
+poch_04.2                       2120       34748   =50
+poch_04.1                       2016       34748   =50
+poch_03.3                       1634       34748   =50
+poch_02.1                       1629       35224   =50
+poch_01.3                       2039       34748   =50
+20ans.PNG                      12010       42400   
+05.1.jpg                        1962       34748   =50
+05.2.jpg                        1837       34748   =50
+poch_03.1                       1844       34748   =50
+poch_03.2                       1944       34748   =50
+poch_01.2                       1527       36176   =50
+poch_01.1                       2129       36176   =50
+
+Tweened Shapes: 683 bytes
+
+
+Sound name                 Bytes        Format    
+-----------------------    ---------    ----------
+_sans                          20        
+Garamond Bold                2825         :?MVabdeilmoprstuÈ
+Serif Gothic Light           1496        -PSabeginorstu
+Serif Gothic                 4919         "&',-.012345789AEGLOPSTabcdefghilmnopqrstuvy‡ÈÍ
+SF Scribbled Sans             850         Sdegiluvz
+Serif Gothic Bold            3747         '-ADEGHILNOPRSTUVYZacdefghiklmnoprstuvxzÈ
+Helvetica Condensed Bold      762        Tanorstu
+HelveticaNeue Condensed      1058         '/0123AJQSU
+HelveticaNeue LightCond      1321         EGJUacdeinrstvÈ
+Helvetica Condensed          5531         "&'()*,-./0123458:ADEFGHILNOPRSTUVabcdefghijlmnopqrstuvxyz‡ËÈÙ
+HelveticaRounded BoldCond    3192         '023:APacdefgilmnoprstu‡È
+HelveticaNeue MediumCond     2940         !',-DGMPSTabcdegijlmnoqrstuvz‡ÈÍ
+Arial Italic                21545         !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~Åçèêù†°¢£§•¶ß®©™´¨≠ÆØ∞±≤≥¥µ∂∑∏π∫ªºΩæø¿¡¬√ƒ≈∆«»… ÀÃÕŒœ–—“”‘’÷◊ÿŸ⁄€‹›ﬁﬂ‡·‚„‰ÂÊÁËÈÍÎÏÌÓÔÒÚÛÙıˆ˜¯˘˙˚¸˝˛ˇåúäöüéûÉàòñóëíÇìîÑÜáïÖâãõÄô
+Helvetica                    4821         !&',-./0123456789:ACDEFGIJLMNOPRSUVYZabcdefghijlmnoprstuvxz†‡ÈÍìî
+Helvetica CondensedLight     1449         ABCDEFIJLMNOPRSTUV
+SF Scribbled Sans Bold       2604        ACEJLNPSabcdegilnorstuvxÈ
+Arial Bold                  20817         !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~Åçèêù†°¢£§•¶ß®©™´¨≠ÆØ∞±≤≥¥µ∂∑∏π∫ªºΩæø¿¡¬√ƒ≈∆«»… ÀÃÕŒœ–—“”‘’÷◊ÿŸ⁄€‹›ﬁﬂ‡·‚„‰ÂÊÁËÈÍÎÏÌÓÔÒÚÛÙıˆ˜¯˘˙˚¸˝˛ˇåúäöüéûÉàòñóëíÇìîÑÜáïÖâãõÄô
+Arial                       21271         !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~Åçèêù†°¢£§•¶ß®©™´¨≠ÆØ∞±≤≥¥µ∂∑∏π∫ªºΩæø¿¡¬√ƒ≈∆«»… ÀÃÕŒœ–—“”‘’÷◊ÿŸ⁄€‹›ﬁﬂ‡·‚„‰ÂÊÁËÈÍÎÏÌÓÔÒÚÛÙıˆ˜¯˘˙˚¸˝˛ˇåúäöüéûÉàòñóëíÇìîÑÜáïÖâãõÄô

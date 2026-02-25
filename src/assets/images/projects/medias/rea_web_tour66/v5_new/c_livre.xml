@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<contenu entries="1">
+	<entry>
+		<MainContent><![CDATA[
+<Arianne>
+	<a href="asfunction:CloseInterieur"> Accueil</a> &raquo; 
+	<a href="asfunction:ShowInterieur,Carriere"> La carrière de Johnny</a> &raquo; 
+	<a href="asfunction:ShowInterieur,c_livre"> Johnny, les livres</a>
+</Arianne>
+<br>
+<h1>Johnny, les livres</h1>
+<br><br>
+
+<table border="0" cellspacing="0" cellpadding="5">
+  <br>
+    <span class="date"><p>1984</p></span>
+    <span><p>La derni&egrave;re idole</p></span>
+  <br>
+  <br>
+    <span class="date"><p>2003</p></span>
+    <span><p>Johnny Hallyday, le rebelle amoureux</p></span>
+  <br>
+  <br>
+    <span class="date"><p>1979</p></span>
+    <span><p>Johnny raconte Hallyday</p></span>
+  <br>
+  <br>
+    <span class="date"><p>1981</p></span>
+    <span><p>Johnny Hallyday</p></span>
+  <br>
+  <br>
+    <span class="date"><p>1986</p></span>
+    <span><p>Johnny, &agrave; la cour du roi</p></span>
+  <br>
+  <br>
+    <span class="date"><p>1987</p></span>
+    <span><p>Johnny, ses tendres ann&eacute;es</p></span>
+  <br>
+  <br>
+    <span class="date"><p>1992</p></span>
+    <span><p>Johnny, la derni&egrave;re des l&eacute;gendes</p></span>
+  <br>
+  <br>
+    <span class="date"><p>1999</p></span>
+    <span><p>Johnny</p></span>
+  <br>
+</table>
+		]]></MainContent>
+	</entry>
+</contenu>

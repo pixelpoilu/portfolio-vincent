@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<contenu entries="1">
+	<entry>
+		<MainContent><![CDATA[
+<Arianne>
+	<a href="asfunction:CloseInterieur"> Accueil</a> &raquo;
+	<a href="asfunction:ShowInterieur,Planning"> Planning</a>
+</Arianne>
+<br>
+<h1>Planning de la tournée</h1>
+<br><br>
+      <li type="square"><b>B&eacute;ziers</b> : 8 Juillet 2009 - Stade de la M&eacute;dit&eacute;rann&eacute;e</li>
+      <li type="square"><b>Bordeaux</b> : 20 Juin 2009 - Stade Chanban Delmas</li>
+      <li type="square"><b>Bruxelles</b> : 19 et 20 Mai 2009 - Forest National</li>
+      <li type="square"><b>Gen&egrave;ve</b> : 4 Juillet 2009 - Stade de Gen&egrave;ve</li>
+      <li type="square"><b>Grenoble</b> : 1 Juillet 2009 - Stade des Alpes</li>
+      <li type="square"><b>Le Havre</b> : 12 Juin 2009 - Stade Jules Deschaseaux</li>
+      <li type="square"><b>Lens</b> : 09 Juin 2009 - Stade Felix Bollaert</li>
+      <li type="square"><b>Lyon</b> : 24 Juin 2009 - Stade Gerland</li>
+      <li type="square"><b>Marseille</b> : 11 Juillet 2009 - Stade V&eacute;lodrome</li>
+      <li type="square"><b>Metz</b>: 06 Juin 2009 - Stade Saint Symphorien</li>
+      <li type="square"><b>Monte Carlo</b> : 18, 19, 21, 22 et 23 Juillet 2009 - Sporting Summer Festiva</li>
+      <li type="square"><b>Nantes</b> : 16 Juin 2009 - Stade de la Beaujoire</li>
+      <li type="square"><b>Paris</b> : 29, 30 et 31 Mai 2009 - Stade de France</li>
+      <li type="square"><b>Sochaux</b> : 3 Juin 2009 - Stade Bonal</li>
+      <li type="square"><b>Saint Etienne</b> : 10, 12, 13, 16 et 17 Mai 2009 - Zenith M&eacute;tropole</li>
+<br><br><br>
+<br>
+		]]></MainContent>
+	</entry>
+</contenu>

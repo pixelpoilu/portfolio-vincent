@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<contenu entries="1">
+	<entry>
+		<MainContent><![CDATA[
+<Arianne>
+	<a href="asfunction:CloseInterieur"> Accueil</a> &raquo; 
+	<a href="asfunction:ShowInterieur,Carriere"> La carrière de Johnny</a>
+</Arianne>
+<br>
+<h1>La carrière de Johnny</h1>
+<br><br>
+<b><li><a href="asfunction:ShowInterieur,c_epoque"> Johnny et son époque</a></li></b>
+<b><li><a href="asfunction:ShowInterieur,c_album">Les Albums</a></li></b>
+<b><li><a href="asfunction:ShowInterieur,c_film">Les films</a></li></b>
+<b><li><a href="asfunction:ShowInterieur,c_livre">Les livres</a></li></b>
+
+		]]></MainContent>
+	</entry>
+</contenu>
