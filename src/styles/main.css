@@ -654,6 +654,13 @@ section {
   transition: opacity 0.4s ease;
 }
 
+.slider-caption {
+  margin: 10px 0 0;
+  font-size: 14px;
+  color: var(--muted);
+  text-align: center;
+}
+
 .slider-btn {
   position: absolute;
   top: 50%;

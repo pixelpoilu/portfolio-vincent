@@ -15,6 +15,7 @@ const normalizeText = (value: string) =>
 
 export default function Projects() {
   const [selectedTechnologies, setSelectedTechnologies] = useState<string[]>([]);
+  const [selectedTools, setSelectedTools] = useState<string[]>([]);
   const [selectedTypes, setSelectedTypes] = useState<string[]>([]);
   const [selectedSectors, setSelectedSectors] = useState<string[]>([]);
   const [searchQuery, setSearchQuery] = useState("");
@@ -30,6 +31,14 @@ export default function Projects() {
       project.technologies.forEach((tech) => techSet.add(tech));
     });
     return Array.from(techSet);
+  }, [publishedProjects]);
+
+  const allTools = useMemo(() => {
+    const toolSet = new Set<string>();
+    publishedProjects.forEach((project) => {
+      project.outils.forEach((tool) => toolSet.add(tool));
+    });
+    return Array.from(toolSet);
   }, [publishedProjects]);
 
   const allTypes = useMemo(() => {
@@ -55,12 +64,15 @@ export default function Projects() {
           const matchesTech =
             selectedTechnologies.length === 0 ||
             selectedTechnologies.some((tech) => project.technologies.includes(tech));
+          const matchesTool =
+            selectedTools.length === 0 ||
+            selectedTools.some((tool) => project.outils.includes(tool));
           const matchesSector =
             selectedSectors.length === 0 || selectedSectors.includes(project.secteur);
-          return matchesTech && matchesSector && project.type === type;
+          return matchesTech && matchesTool && matchesSector && project.type === type;
         })
       ),
-    [allTypes, publishedProjects, selectedTechnologies, selectedSectors]
+    [allTypes, publishedProjects, selectedTechnologies, selectedTools, selectedSectors]
   );
 
   const availableSectors = useMemo(
@@ -70,30 +82,54 @@ export default function Projects() {
           const matchesTech =
             selectedTechnologies.length === 0 ||
             selectedTechnologies.some((tech) => project.technologies.includes(tech));
+          const matchesTool =
+            selectedTools.length === 0 ||
+            selectedTools.some((tool) => project.outils.includes(tool));
           const matchesType =
             selectedTypes.length === 0 || selectedTypes.includes(project.type);
-          return matchesTech && matchesType && project.secteur === sector;
+          return matchesTech && matchesTool && matchesType && project.secteur === sector;
         })
       ),
-    [allSectors, publishedProjects, selectedTechnologies, selectedTypes]
+    [allSectors, publishedProjects, selectedTechnologies, selectedTools, selectedTypes]
   );
 
   const availableTechnologies = useMemo(
     () =>
       allTechnologies.filter((technology) =>
         publishedProjects.some((project) => {
+          const matchesTool =
+            selectedTools.length === 0 ||
+            selectedTools.some((tool) => project.outils.includes(tool));
           const matchesType =
             selectedTypes.length === 0 || selectedTypes.includes(project.type);
           const matchesSector =
             selectedSectors.length === 0 || selectedSectors.includes(project.secteur);
           return (
+            matchesTool &&
             matchesType &&
             matchesSector &&
             project.technologies.includes(technology)
           );
         })
       ),
-    [allTechnologies, publishedProjects, selectedTypes, selectedSectors]
+    [allTechnologies, publishedProjects, selectedTools, selectedTypes, selectedSectors]
+  );
+
+  const availableTools = useMemo(
+    () =>
+      allTools.filter((tool) =>
+        publishedProjects.some((project) => {
+          const matchesTech =
+            selectedTechnologies.length === 0 ||
+            selectedTechnologies.some((tech) => project.technologies.includes(tech));
+          const matchesType =
+            selectedTypes.length === 0 || selectedTypes.includes(project.type);
+          const matchesSector =
+            selectedSectors.length === 0 || selectedSectors.includes(project.secteur);
+          return matchesTech && matchesType && matchesSector && project.outils.includes(tool);
+        })
+      ),
+    [allTools, publishedProjects, selectedTechnologies, selectedTypes, selectedSectors]
   );
 
   useEffect(() => {
@@ -119,6 +155,13 @@ export default function Projects() {
     });
   }, [availableTechnologies]);
 
+  useEffect(() => {
+    setSelectedTools((current) => {
+      const next = current.filter((tool) => availableTools.includes(tool));
+      return next.length === current.length ? current : next;
+    });
+  }, [availableTools]);
+
   const filteredProjects = useMemo(() => {
     const normalizedQuery = normalizeText(searchQuery);
 
@@ -127,13 +170,17 @@ export default function Projects() {
         selectedTechnologies.length === 0 ||
         selectedTechnologies.some((tech) => project.technologies.includes(tech));
 
+      const matchesTool =
+        selectedTools.length === 0 ||
+        selectedTools.some((tool) => project.outils.includes(tool));
+
       const matchesType =
         selectedTypes.length === 0 || selectedTypes.includes(project.type);
 
       const matchesSector =
         selectedSectors.length === 0 || selectedSectors.includes(project.secteur);
 
-      if (!matchesTech || !matchesType || !matchesSector) {
+      if (!matchesTech || !matchesTool || !matchesType || !matchesSector) {
         return false;
       }
 
@@ -148,6 +195,7 @@ export default function Projects() {
         project.secteur,
         project.description,
         String(project.year),
+        project.outils.join(" "),
         project.technologies.join(" "),
       ]
         .filter(Boolean)
@@ -158,6 +206,7 @@ export default function Projects() {
   }, [
     publishedProjects,
     selectedTechnologies,
+    selectedTools,
     selectedTypes,
     selectedSectors,
     searchQuery,
@@ -170,13 +219,16 @@ export default function Projects() {
           <FilterBar
             sectors={availableSectors}
             types={availableTypes}
+            tools={availableTools}
             technologies={availableTechnologies}
             activeSectors={selectedSectors}
             activeTypes={selectedTypes}
+            activeTools={selectedTools}
             activeTechs={selectedTechnologies}
             searchQuery={searchQuery}
             onSectorChange={setSelectedSectors}
             onTypeChange={setSelectedTypes}
+            onToolChange={setSelectedTools}
             onTechChange={setSelectedTechnologies}
             onSearchChange={setSearchQuery}
             projectsCount={filteredProjects.length}

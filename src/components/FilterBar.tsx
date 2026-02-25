@@ -4,13 +4,16 @@ import "../styles/FilterBar.css";
 interface Props {
   sectors: string[];
   types: string[];
+  tools: string[];
   technologies: string[];
   activeSectors: string[];
   activeTypes: string[];
+  activeTools: string[];
   activeTechs: string[];
   searchQuery: string;
   onSectorChange: (value: string[]) => void;
   onTypeChange: (value: string[]) => void;
+  onToolChange: (value: string[]) => void;
   onTechChange: (value: string[]) => void;
   onSearchChange: (value: string) => void;
   projectsCount: number;
@@ -19,13 +22,16 @@ interface Props {
 export default function FilterBar({
   sectors,
   types,
+  tools,
   technologies,
   activeSectors,
   activeTypes,
+  activeTools,
   activeTechs,
   searchQuery,
   onSectorChange,
   onTypeChange,
+  onToolChange,
   onTechChange,
   onSearchChange,
   projectsCount,
@@ -70,6 +76,7 @@ export default function FilterBar({
         </span>
         {(activeSectors.length > 0 ||
           activeTypes.length > 0 ||
+          activeTools.length > 0 ||
           activeTechs.length > 0 ||
           searchQuery.trim() !== "") && (
           <button
@@ -78,6 +85,7 @@ export default function FilterBar({
             onClick={() => {
               onSectorChange([]);
               onTypeChange([]);
+              onToolChange([]);
               onTechChange([]);
               onSearchChange("");
               setOpen(null);
@@ -104,6 +112,7 @@ export default function FilterBar({
           className={`filter-pill ${
             activeSectors.length === 0 &&
             activeTypes.length === 0 &&
+            activeTools.length === 0 &&
             activeTechs.length === 0 &&
             searchQuery.trim() === ""
               ? "active"
@@ -112,6 +121,7 @@ export default function FilterBar({
           onClick={() => {
             onSectorChange([]);
             onTypeChange([]);
+            onToolChange([]);
             onTechChange([]);
             onSearchChange("");
             setOpen(null);
@@ -176,6 +186,37 @@ export default function FilterBar({
                 >
                   <span className="check">{activeTypes.includes(type) ? "x" : ""}</span>
                   <span className="menu-label">{type}</span>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+
+        <div className="dropdown">
+          <button
+            type="button"
+            className={`dropdown-trigger ${activeTools.length > 0 ? "active" : ""}`}
+            onClick={() => toggle("tool")}
+            aria-expanded={open === "tool"}
+          >
+            <span className="trigger-label">
+              Outils {activeTools.length > 0 ? `(${activeTools.length})` : ""}
+            </span>
+            <span className="trigger-caret">{open === "tool" ? "â–´" : "â–¾"}</span>
+          </button>
+
+          {open === "tool" && (
+            <div className="menu scroll">
+              {tools.map((tool) => (
+                <div
+                  key={tool}
+                  className={`menu-item ${activeTools.includes(tool) ? "selected" : ""}`}
+                  onClick={() => {
+                    toggleValue(activeTools, tool, onToolChange);
+                  }}
+                >
+                  <span className="check">{activeTools.includes(tool) ? "x" : ""}</span>
+                  <span className="menu-label">{tool}</span>
                 </div>
               ))}
             </div>

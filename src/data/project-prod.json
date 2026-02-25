@@ -80,7 +80,6 @@
       "31.jpg",
       "32.jpg",
       "33.jpg"
-
     ],
     "missions": [
       "Proposer un outil de présentation interactif des objets Matpub, permettant également une gestion des commandes."
@@ -522,7 +521,8 @@
       "Fireworks"
     ],
     "technologies": [
-      "ActionScript","HTML",
+      "ActionScript",
+      "HTML",
       "CSS",
       "Javascript / JQuery"
     ],
@@ -570,7 +570,8 @@
       "PHP",
       "MySQL",
       "HTML",
-      "CSS","Javascript / JQuery"
+      "CSS",
+      "Javascript / JQuery"
     ],
     "image": "rea_web_1018_diapo.jpg",
     "mediapath": "rea_web_1018",
@@ -664,7 +665,8 @@
     "technologies": [
       "ActionScript",
       "HTML",
-      "CSS","Javascript / JQuery",
+      "CSS",
+      "Javascript / JQuery",
       "XML"
     ],
     "image": "rea_web_carresenart_diapo.jpg",
@@ -801,7 +803,9 @@
       "croatie_site_04.jpg"
     ],
     "missions": [
-      "Conception", "Réalisation", "suivi technique du site."
+      "Conception",
+      "Réalisation",
+      "suivi technique du site."
     ],
     "status": "published",
     "order": 24
@@ -926,12 +930,18 @@
     "image": "rea_web_egypte_diapo.jpg",
     "mediapath": "rea_web_egypte",
     "medias": [
-      ""
+      "01.jpg",
+      "02.jpg",
+      "03.jpg",
+      "04.jpg",
+      "05.jpg",
+      "06.jpg",
+      "07.jpg"
     ],
     "missions": [
       ""
     ],
-    "status": "draft",
+    "status": "published",
     "order": 28
   },
   {
@@ -1009,7 +1019,7 @@
     "client": "ALEX VAGNINI",
     "year": 2005,
     "type": "Site Internet",
-    "description": "Site Internet en Flash pour Alex Vagnini, créatrice - décoratrice d'intérieur. \n",
+    "description": "Site Internet en Flash pour Alex Vagnini, créatrice - décoratrice d'intérieur.",
     "link": "www.marredesfrigosblancs.fr",
     "secteur": "Portfolio",
     "Contexte": "",
@@ -1034,7 +1044,8 @@
       ""
     ],
     "missions": [
-      "Mise en valeur de ses réalisations et projets. VERSION FLASH / HTML","GALERIE ADMINISTRABLE"
+      "Mise en valeur de ses réalisations et projets. VERSION FLASH / HTML",
+      "GALERIE ADMINISTRABLE"
     ],
     "status": "published",
     "order": 31
@@ -1054,7 +1065,7 @@
       "Dreamweaver et Pack Macromedia",
       "Photoshop",
       "PHP",
-      "MySQL "
+      "MySQL"
     ],
     "technologies": [
       "HTML",
@@ -1063,14 +1074,22 @@
       "Javascript / JQuery",
       "XML",
       "PHP",
-      "MySQL "
+      "MySQL"
     ],
     "image": "rea_web_hongrie_diapo.jpg",
     "mediapath": "rea_web_hongrie",
     "medias": [
-      "01.jpg",
-      "02.jpg",
-      "03.jpg"
+      {
+        "file": "01.jpg",
+        "caption": "Accueil mobile"
+      },
+      {
+        "file": "02.jpg"
+      },
+      {
+        "file": "03.jpg",
+        "caption": "Page de lecture podcast"
+      }
     ],
     "missions": [
       "Réalisation d'un site dynamique, doté d'un back office propriétaire permettant la mise à jour du contenu et des médias."
@@ -1108,8 +1127,11 @@
       "05.jpg"
     ],
     "missions": [
-      "Administration via XML","Animation et chargement d'images dynamiques","Connexion aux modules existants de service (Espace client, Espace presse, Newsletter)","Formation à la mise à jour"
-    ],   
+      "Administration via XML",
+      "Animation et chargement d'images dynamiques",
+      "Connexion aux modules existants de service (Espace client, Espace presse, Newsletter)",
+      "Formation à la mise à jour"
+    ],
     "status": "published",
     "order": 33
   },
@@ -1136,7 +1158,10 @@
     "image": "rea_web_lgi_diapo.jpg",
     "mediapath": "rea_web_lgi",
     "medias": [
-      ""
+      "01.jpg",
+      "02.jpg",
+      "03.jpg",
+      "04.jpg"
     ],
     "missions": [
       "PHP / Flash / HTML"
@@ -1308,21 +1333,38 @@
     "client": "VISITMALTA",
     "year": 2005,
     "type": "Carte Interactive",
-    "description": "Réalisation d'une carte touristique Interactive comme module complémentaire au site de l'office de tourisme de Malte.\n",
+    "description": "Réalisation d'une carte touristique Interactive comme module complémentaire au site de l'office de tourisme de Malte.",
     "link": "www.visitmalta.com",
     "secteur": "Tourisme",
-    "Contexte": "",
-    "Reponse": " Interface Flash,Animation Flash,ActionScript,",
+    "Contexte": "L'office de tourisme de Malte souhaite proposer aux touristes souhaitant découvrir Malte, un outil pour explorer la particularité de chaque région du pays.",
+    "Reponse": " Proposition d'une carte interactive en Flash, intégrant des animations de transition et une navigation intuitive. Le module a été conçu pour être facilement mis à jour avec de nouvelles informations touristiques et des images, grâce à une structure basée sur XML.",
     "outils": [
-      "Montage graphique vectoriel (Illustrator + Flash). \nProgrammation en class ActionScript 1\nConception des animations de transition\nCompilation en Flash MX vers swf v8.\n\n"
+      "Flash MX",
+      "Illustrator",
+      "Dreamweaver"
     ],
     "technologies": [
       "ActionScript"
     ],
     "image": "rea_web_malte_diapo.jpg",
-    "mediapath": "rea_map_malte",
+    "mediapath": "rea_web_malte",
     "medias": [
-      ""
+      "01.jpg",
+      "02.jpg",
+      "03.jpg",
+      "04.jpg",
+      "05.jpg",
+      "06.jpg",
+      "07.jpg",
+      "08.jpg",
+      "09.jpg",
+      "10.jpg",
+
+      "11.jpg",
+      "12.jpg",
+      "13.jpg",
+      "14.jpg",
+      "15.jpg"
     ],
     "missions": [
       "Proposer aux touristes souhaitant découvrir Malte, un outil pour explorer la particularité de chaque région du pays."
@@ -1662,7 +1704,8 @@
       "PHP",
       "MySQL",
       "HTML",
-      "CSS","Javascript / JQuery"
+      "CSS",
+      "Javascript / JQuery"
     ],
     "image": "rea_web_ventilo_diapo.jpg",
     "mediapath": "rea_web_ventilo",
@@ -1907,7 +1950,7 @@
     "image": "rea_web_youzikme_diapo.jpg",
     "mediapath": "rea_web_youzikme",
     "medias": [
-       "01.jpg",
+      "01.jpg",
       "02.jpg",
       "03.jpg",
       "04.jpg",
@@ -2094,14 +2137,23 @@
     "image": "rea_web_docbikerwd_diapo.jpg",
     "mediapath": "rea_web_docbikerwd",
     "medias": [
-      ""
+      "doc_biker_home.png",
+      "doc_centres.png",
+      "forfaits.png",
+      "devis.png",
+      "mobile01.png",
+      "mobile02.png",
+      "slider.png",
+      "carte_centres.png",
+      "fiche_centre.png",
+      "admin.png"
     ],
     "missions": [
-      "Création du thème Joomla",
+      "Création du thème Joomla à partir du blank template T3",
       "Adaptation à Bootstrap 3",
       "Développement des extensions propriétaires",
       "Suivi et optimistations SEO",
-      "Mises à jour de contenus\n..."
+      "Mises à jour de contenus"
     ],
     "status": "published",
     "order": 62
@@ -2225,12 +2277,17 @@
     "image": "rea_web_bigmama_diapo.jpg",
     "mediapath": "rea_web_bigmama",
     "medias": [
-      ""
+      "01.jpg",
+      "02.jpg",
+      "03.jpg",
+      "04.jpg",
+      "05.jpg",
+      "06.jpg"
     ],
     "missions": [
       ""
     ],
-    "status": "draft",
+    "status": "published",
     "order": 66
   },
   {
@@ -2270,23 +2327,109 @@
     "description": "",
     "link": "",
     "secteur": "Juridique",
-    "Contexte": "",
-    "Reponse": "",
+    "Contexte": "Demande de création d'une identité numérique pour le cabinet d'avocats ILEXEN, spécialisé dans le droit de la propriété intellectuelle et des nouvelles technologies. Le client souhaite avoir une autonomie complète sur la gestion de son site internet, avec une interface conviviale et des fonctionnalités adaptées à ses besoins spécifiques.",
+    "Reponse": "Création d'un site internet 'One Page' pour le cabinet ILEXEN",
     "outils": [
-      ""
+      "Wordpress"
     ],
     "technologies": [
-      ""
+      "PHP",
+      "MySQL",
+      "HTML",
+      "CSS",
+      "Javascript / JQuery"
     ],
-    "image": "rea_web_ilexen_diapo.jpg",
+    "image": "rea_web_ilexen_diapo.png",
     "mediapath": "rea_web_ilexen",
     "medias": [
-      ""
+      "desktop_home.png",
+      "desktop_valeurs.png",
+      "desktop_fondateur.png",
+      "desktop_team.png",
+      "desktop_client.png",
+      "desktop_contact.png",
+      "desktop_footer.png",
+      "ilexen_mobile.png"
     ],
     "missions": [
-      ""
+      "Adaptation et intégration du gabarit 'One Page' sur Wordpress",
+      "Ajustements, création des gabarits mobiles et tablettes",
+      "Formation à la mise à jour",
+      "Création d'outils didactiques pour l'administration du site"
     ],
-    "status": "draft",
+    "status": "published",
+    "order": 68
+  },
+  {
+    "id": 71,
+    "title": "Application CMS propriétaire",
+    "client": "Divers clients",
+    "year": 2005,
+    "type": "CMS",
+    "description": "Réalisation d'une application CMS",
+    "link": "",
+    "secteur": "Communication",
+    "Contexte": "Dans le cadre de développement de site internet, un besoin de gestion des sites administrables s'est fait sentir.",
+    "Reponse": " J'ai donc développé une application de gestion de contenus (CMS) propriétaire, pour répondre à ce besoin. L'application a été conçue pour être flexible et adaptable à différents types de sites web, permettant aux utilisateurs de gérer facilement leurs contenus sans nécessiter de compétences techniques avancées.",
+    "outils": [
+      "Flex",
+      "Eclipse"
+    ],
+    "technologies": [
+      "ActionScript"
+    ],
+    "image": "rea_web_cms_diapo.jpg",
+    "mediapath": "rea_web_cms",
+    "medias": [
+      {
+        "file": "01.jpg",
+        "caption": "Accueil du CMS"
+      },
+      {
+        "file": "02",
+        "caption": "Réglage et administration du menu principal"
+      },
+      {
+        "file": "03",
+        "caption": "Contenus : Gestion des familles, sous-familles"
+      },
+      {
+        "file": "04.jpg",
+        "caption": "Contenus : Gestion des articles"
+      },
+      {
+        "file": "05.jpg",
+        "caption": "Contenus : Filtrage, organisation, classement des articles"
+      },
+      {
+        "file": "edit_article.png",
+        "caption": "Contenus : Edition d'un article"
+      },
+      {
+        "file": "edit_image.png",
+        "caption": "Contenus : Edition d'une image, didacticiel de gestion des images"
+      },
+      {
+        "file": "edit_objet.jpg",
+        "caption": "Contenus : Edition d'un objet, ajout de focus"
+      },
+      {
+        "file": "download_pdf.jpg",
+        "caption": "Contenus : gestion de supports téléchargeables"
+      },
+      {
+        "file": "arborescence.png",
+        "caption": "Strcture : Arborescence des contenus"
+      },
+      {
+        "file": "06.jpg",
+        "caption": "Contenus : Gestion des articles"
+      }
+    ],
+    "missions": [
+      "Développement d'une application CMS propriétaire pour la gestion de contenus de sites web administrables, offrant une interface conviviale et des fonctionnalités adaptées aux besoins des utilisateurs."
+    ],
+    "status": "published",
     "order": 68
   }
 ]

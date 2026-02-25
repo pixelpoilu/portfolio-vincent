@@ -1,3 +1,8 @@
+export type ProjectMedia = {
+  file: string;
+  caption?: string;
+};
+
 export type Project = {
   id: number;
   title: string;
@@ -13,7 +18,7 @@ export type Project = {
   technologies: string[];
   image: string;
   mediapath: string;
-  medias: string[];
+  medias: Array<string | ProjectMedia>;
   missions: string[];
   status: "draft" | "published" | "archived";
   order: number;

@@ -3,7 +3,7 @@ import { Link, Navigate, useParams } from "react-router-dom";
 import Footer from "../components/Footer";
 import PageTransition from "../components/PageTransition";
 import projectsData from "../data/project-prod.json";
-import type { Project } from "../types/Project";
+import type { Project, ProjectMedia } from "../types/Project";
 import { slugifyTitle } from "../utils/slug";
 
 const images = import.meta.glob<{ default: string }>(
@@ -25,6 +25,7 @@ export default function ProjectDetail() {
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(true);
+  const [isHovered, setIsHovered] = useState(false);
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   if (projectByLegacyId && !projectBySlug) {
@@ -47,16 +48,27 @@ export default function ProjectDetail() {
     );
   }
 
-  const galleryImages: string[] = project.medias
+  const galleryImages = project.medias
     .map((media) => {
-      const path = `../assets/images/projects/medias/${project.mediapath}/${media}`;
-      return images[path]?.default;
+      const mediaFile = typeof media === "string" ? media : media.file;
+      const caption =
+        typeof media === "string"
+          ? undefined
+          : (media as ProjectMedia).caption?.trim() || undefined;
+
+      const path = `../assets/images/projects/medias/${project.mediapath}/${mediaFile}`;
+      const src = images[path]?.default;
+
+      return src ? { src, caption } : null;
     })
-    .filter((img): img is string => Boolean(img));
+    .filter(
+      (media): media is { src: string; caption?: string } => Boolean(media?.src)
+    );
 
   useEffect(() => {
     setCurrentIndex(0);
     setIsPlaying(true);
+    setIsHovered(false);
   }, [project?.id]);
 
   useEffect(() => {
@@ -65,7 +77,7 @@ export default function ProjectDetail() {
       intervalRef.current = null;
     }
 
-    if (!isPlaying || galleryImages.length <= 1) {
+    if (!isPlaying || isHovered || galleryImages.length <= 1) {
       return;
     }
 
@@ -81,7 +93,7 @@ export default function ProjectDetail() {
         intervalRef.current = null;
       }
     };
-  }, [isPlaying, galleryImages.length]);
+  }, [isPlaying, isHovered, galleryImages.length]);
 
   const nextSlide = () =>
     setCurrentIndex((prev) => (prev === galleryImages.length - 1 ? 0 : prev + 1));
@@ -102,14 +114,21 @@ export default function ProjectDetail() {
         </Link>
 
         <div className="project-layout">
-          <div className="project-slider">
+          <div
+            className="project-slider"
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+          >
             {galleryImages.length > 0 && (
               <>
                 <img
-                  src={galleryImages[currentIndex]}
+                  src={galleryImages[currentIndex].src}
                   alt={project.title}
                   className="slider-image"
                 />
+                {galleryImages[currentIndex].caption && (
+                  <p className="slider-caption">{galleryImages[currentIndex].caption}</p>
+                )}
 
                 <button className="slider-btn left" onClick={prevSlide}>
                   ‹
@@ -185,8 +204,6 @@ export default function ProjectDetail() {
     </PageTransition>
   );
 }
-
-
 
 
 
