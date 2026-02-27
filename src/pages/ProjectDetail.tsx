@@ -1,10 +1,11 @@
 ﻿import { useEffect, useRef, useState } from "react";
-import { Link, Navigate, useParams } from "react-router-dom";
+import { Link, Navigate, useLocation, useParams } from "react-router-dom";
 import Footer from "../components/Footer";
 import PageTransition from "../components/PageTransition";
 import projectsData from "../data/project-prod.json";
 import type { Project, ProjectMedia } from "../types/Project";
 import { slugifyTitle } from "../utils/slug";
+import { hasCollection, type ProjectCollectionKey } from "../utils/projectCollection";
 
 const images = import.meta.glob<{ default: string }>(
   "../assets/images/projects/**/*.{jpg,png,webp}",
@@ -13,7 +14,15 @@ const images = import.meta.glob<{ default: string }>(
 
 export default function ProjectDetail() {
   const { slug } = useParams();
-  const projects = projectsData as Project[];
+  const location = useLocation();
+  const collectionKey: ProjectCollectionKey = location.pathname.startsWith("/etudes-de-cas")
+    ? "case-study"
+    : "portfolio";
+  const listingBasePath = collectionKey === "case-study" ? "/etudes-de-cas" : "/portfolio";
+  const backLabel = collectionKey === "case-study" ? "Retour aux etudes de cas" : "Retour aux projets";
+  const projects = (projectsData as Project[]).filter(
+    (project) => project.status === "published" && hasCollection(project, collectionKey)
+  );
 
   const projectBySlug = projects.find((p) => slugifyTitle(p.title) === slug);
   const legacyId = Number(slug);
@@ -31,7 +40,7 @@ export default function ProjectDetail() {
   if (projectByLegacyId && !projectBySlug) {
     return (
       <Navigate
-        to={`/portfolio/${slugifyTitle(projectByLegacyId.title)}`}
+        to={`${listingBasePath}/${slugifyTitle(projectByLegacyId.title)}`}
         replace
       />
     );
@@ -42,7 +51,7 @@ export default function ProjectDetail() {
       <PageTransition>
         <main className="page">
           <h1>Projet introuvable</h1>
-          <Link to="/portfolio">? Retour</Link>
+          <Link to={listingBasePath}>? Retour</Link>
         </main>
       </PageTransition>
     );
@@ -110,8 +119,8 @@ export default function ProjectDetail() {
       <div className="site-page">
         <div className="detail-wrapper">
           <div className="filter-top">
-            <Link to="/portfolio" className="btn secondary">
-             <span className="arrow">‹‹ </span>Retour aux projets
+            <Link to={listingBasePath} className="btn secondary">
+             <span className="arrow">‹‹ </span>{backLabel}
             </Link>
           </div>
 
@@ -209,7 +218,4 @@ export default function ProjectDetail() {
     </PageTransition>
   );
 }
-
-
-
 

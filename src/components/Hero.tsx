@@ -1,4 +1,3 @@
-import "../styles/Hero.css";
 import portrait from "../assets/images/hero/portrait-bw.png"; // ton image HD
 import Footer from "./Footer";
 import logo from "../assets/logo.svg";

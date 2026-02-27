@@ -16,9 +16,13 @@ interface Project {
 
 interface ProjectCardProps {
     project: Project;
+    detailBasePath?: "/portfolio" | "/etudes-de-cas";
 }
 
-export default function ProjectCard({ project }: ProjectCardProps) {
+export default function ProjectCard({
+    project,
+    detailBasePath = "/portfolio",
+}: ProjectCardProps) {
     const thumbnailPath = `../assets/images/projects/vignettes/${project.image}`;
     const thumbnail = images[thumbnailPath]?.default;
     const projectSlug = slugifyTitle(project.title);
@@ -29,7 +33,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             layout
             transition={{ type: "spring", stiffness: 260, damping: 18 }}
         >
-            <Link to={`/portfolio/${projectSlug}`} className="card-link">
+            <Link to={`${detailBasePath}/${projectSlug}`} className="card-link">
                 <div className="card-image-wrapper">
                     <img
                         src={thumbnail}

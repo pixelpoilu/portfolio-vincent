@@ -25,6 +25,7 @@ import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import Projects from "./pages/Projects";
+import CaseStudies from "./pages/CaseStudies";
 import ProjectDetail from "./pages/ProjectDetail";
 import Contact from "./pages/Contact";
 
@@ -40,6 +41,8 @@ function Layout() {
         <Route path="/" element={<Home />} />
         <Route path="/portfolio" element={<Projects />} />
         <Route path="/portfolio/:slug" element={<ProjectDetail />} />
+        <Route path="/etudes-de-cas" element={<CaseStudies />} />
+        <Route path="/etudes-de-cas/:slug" element={<ProjectDetail />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
     </>

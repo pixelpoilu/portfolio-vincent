@@ -1882,7 +1882,7 @@
         "description": "Site Internet en Flash pour Fabienne Faussillon, conceptrice - rédactrice - Freelance. \n",
         "link": "http://fabienne.faussillon.free.fr/",
         "secteur": "Portfolio",
-        "Contexte": "",
+        "Contexte": "Focus p",
         "Reponse": "Interface Flash,Site Vitrine,Site Institutionnel,Maquette-prospection",
         "outils": [
             "Flash",
@@ -1972,7 +1972,7 @@
         "description": "Réalisation et montage du site de l'agence Vu Integral. Déploiement d'un système 100% administrable.\n",
         "link": "www.vuintegral.com",
         "secteur": "Communication",
-        "Contexte": "",
+        "Contexte": "Focus p",
         "Reponse": "Animation Flash,Site Institutionnel",
         "outils": [
             "Flash",
@@ -2009,7 +2009,7 @@
         "year": 2010,
         "type": "Site Internet",
         "description": "Site Full Flash pour une agence de communication spécialisée dans le vin\n",
-        "link": "0",
+        "link": "Focus p",
         "secteur": "Communication",
         "Contexte": "",
         "Reponse": "Animation Flash,Site Institutionnel",
@@ -2029,7 +2029,7 @@
         ],
         "status": "draft",
         "order": 53,
-        "collection": []
+        "collection": ["portfolio"]
     },
     {
         "id": 38,
@@ -2038,7 +2038,7 @@
         "year": 2008,
         "type": "Site Internet",
         "description": "Site événementiel pour la tournée Tour66 de Johnny Hallyday ",
-        "link": "0",
+        "link": "Focus p",
         "secteur": "Loisirs-Musique",
         "Contexte": "L'agence Vu Intégral, souhaite un prendre en charge toute la partie communication numérique de la dernière tournée du chanteur",
         "Reponse": "Déploiement d'animations teaser, développement de mini-sites dédiés à chaque événement de la tournée, intégration de contenus multimédia et d'outils de partage sur les réseaux sociaux.",
@@ -2076,7 +2076,7 @@
         "description": "Conception / Réalisation du module de lecture en ligne de Brochure PDF. Flash pour Locaboat.",
         "link": "http://www.locaboat.com/73/lire-en-ligne.html",
         "secteur": "Nautique",
-        "Contexte": "",
+        "Contexte": "Focus p",
         "Reponse": "Interface Flash,Animation Flash,ActionScript",
         "outils": [
             "Flash",
@@ -2162,7 +2162,7 @@
         "description": "Réalisation d'un site communautaire destiné aux musiciens.",
         "link": "www.youzikme.com",
         "secteur": "Loisirs-Musique",
-        "Contexte": "",
+        "Contexte": "Focus p",
         "Reponse": "Webdesign, Site Dynamique, Back Office",
         "outils": [
             "HTML",
@@ -2206,7 +2206,7 @@
         "description": "Site dédié à la promotion de la sortie d'une BD",
         "link": "laputaindebd.mauriceradiolibre.com",
         "secteur": "Edition",
-        "Contexte": "",
+        "Contexte": "Focus p",
         "Reponse": "Webdesign, Site Dynamique,Back Office",
         "outils": [
             "Bootstrap",
@@ -2246,7 +2246,7 @@
         "description": "Site dédié à la réécoute des émissions de radio",
         "link": "podcasts.mauriceradiolibre.com",
         "secteur": "Loisirs-Musique",
-        "Contexte": "",
+        "Contexte": "Focus p",
         "Reponse": "Webdesign, Site Dynamique,Back Office",
         "outils": [
             "Jquery Mobile",
@@ -2286,7 +2286,7 @@
         "description": "Création du site Officiel de l'unique bateau Radio naviguant.",
         "link": "rock-symbol.mauriceradiolibre.com",
         "secteur": "Edition",
-        "Contexte": "",
+        "Contexte": "Focus p",
         "Reponse": "Webdesign, Site Dynamique,Back Office",
         "outils": [
             "Bootstrap",
@@ -2372,7 +2372,7 @@
         "description": "Refonte complète du Site Internet, optimisation et suivi SEO, Webmastering",
         "link": "www.docbiker.com",
         "secteur": "Auto-Moto",
-        "Contexte": "",
+        "Contexte": "Focus cs",
         "Reponse": "Site Dynamique",
         "outils": [
             "Bootstrap",
@@ -2521,7 +2521,7 @@
         "description": "Création du site Officiel de BIG MAMA, acteur majeur de la vidéo Broadcast et entreprises.",
         "link": "www.bigmama.fr",
         "secteur": "Audiovisuel",
-        "Contexte": "",
+        "Contexte": "Focus p",
         "Reponse": "Webdesign, Site Dynamique,Back Office",
         "outils": [
             "Bootstrap",
@@ -2592,7 +2592,7 @@
         "year": 2017,
         "type": "Site Internet",
         "description": "Site internet 'One Page' pour le cabinet d'avocats ILEXEN",
-        "link": "",
+       "link": "Focus p",
         "secteur": "Juridique",
         "Contexte": "Demande de création d'une identité numérique pour le cabinet d'avocats ILEXEN, spécialisé dans le droit de la propriété intellectuelle et des nouvelles technologies. Le client souhaite avoir une autonomie complète sur la gestion de son site internet, avec une interface conviviale et des fonctionnalités adaptées à ses besoins spécifiques.",
         "Reponse": "Création d'un site internet 'One Page' pour le cabinet ILEXEN",
@@ -2638,7 +2638,7 @@
         "year": 2005,
         "type": "Applicatif propriétaire",
         "description": "Réalisation d'une application CMS",
-        "link": "",
+       "link": "Focus CS",
         "secteur": "Communication",
         "Contexte": "Dans le cadre de développement de sites internets de tailles petites et moyennes, un besoin d'autonomie des clients dans la mise à jour et la gestion de leurs contenus s'est fait sentir.",
         "Reponse": "La complexité des CMS du marché m'ont amené à développer une application de gestion de contenus (CMS) propriétaire, plus intuitive et 'sur mesure'. L'application a été conçue pour être flexible et adaptable à différents types de sites web, permettant aux utilisateurs de gérer facilement leurs contenus sans nécessiter de compétences techniques avancées.",
@@ -2714,7 +2714,7 @@
         "year": 2005,
         "type": "Applicatif propriétaire",
         "description": "Réalisation d'une application de lecture de Brochure en ligne",
-        "link": "",
+        "link": "Focus CS",
         "secteur": "Communication",
         "Contexte": "Dans le cadre de développement de sites internets plaquettes, de nombreux projets nécéssitent une présentation de brochure à consulter en ligne.",
         "Reponse": "J'ai donc conçu un petit module de lecture de brochure en ligne, permettant d'afficher des PDF de manière interactive et conviviale. L'application a été développée en Flash, offrant une expérience utilisateur fluide et immersive pour la consultation de brochures en ligne.",

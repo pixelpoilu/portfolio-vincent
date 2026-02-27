@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from "react";
-import "../styles/FilterBar.css";
 
 interface Props {
   sectors: string[];
@@ -69,6 +68,7 @@ export default function FilterBar({
   }, []);
 
   return (
+    <div className="detail-wrapper">
     <div className="filter-wrapper" ref={filterRef}>
       <div className="filter-top">
         <span className="projects-count">
@@ -253,6 +253,7 @@ export default function FilterBar({
           )}
         </div>
       </div>
+    </div>
     </div>
   );
 }

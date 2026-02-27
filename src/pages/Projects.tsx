@@ -5,6 +5,8 @@ import projectsData from "../data/project-prod.json";
 import PageTransition from "../components/PageTransition";
 import ProjectCard from "../components/ProjectCard";
 import Footer from "../components/Footer";
+import type { Project } from "../types/Project";
+import { hasCollection, type ProjectCollectionKey } from "../utils/projectCollection";
 
 const normalizeText = (value: string) =>
   value
@@ -16,17 +18,28 @@ const normalizeText = (value: string) =>
 const sortAlphabetically = (values: string[]) =>
   [...values].sort((a, b) => a.localeCompare(b, "fr", { sensitivity: "base" }));
 
-export default function Projects() {
+interface ProjectsProps {
+  collectionKey?: ProjectCollectionKey;
+  detailBasePath?: "/portfolio" | "/etudes-de-cas";
+}
+
+export default function Projects({
+  collectionKey = "portfolio",
+  detailBasePath = "/portfolio",
+}: ProjectsProps) {
   const [selectedTechnologies, setSelectedTechnologies] = useState<string[]>([]);
   const [selectedTools, setSelectedTools] = useState<string[]>([]);
   const [selectedTypes, setSelectedTypes] = useState<string[]>([]);
   const [selectedSectors, setSelectedSectors] = useState<string[]>([]);
   const [searchQuery, setSearchQuery] = useState("");
 
-  const publishedProjects = useMemo(
-    () => projectsData.filter((project) => project.status === "published"),
-    []
-  );
+  const publishedProjects = useMemo(() => {
+    const projects = projectsData as Project[];
+    return projects.filter(
+      (project) =>
+        project.status === "published" && hasCollection(project, collectionKey)
+    );
+  }, [collectionKey]);
 
   const allTechnologies = useMemo(() => {
     const techSet = new Set<string>();
@@ -257,7 +270,7 @@ export default function Projects() {
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ duration: 0.25, ease: "easeOut" }}
                 >
-                  <ProjectCard project={project} />
+                  <ProjectCard project={project} detailBasePath={detailBasePath} />
                 </motion.div>
               ))}
             </AnimatePresence>

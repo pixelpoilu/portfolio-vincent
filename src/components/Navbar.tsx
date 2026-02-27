@@ -51,7 +51,10 @@ export default function Navbar() {
             Accueil
           </NavLink>
           <NavLink to="/portfolio">
-            Projets
+            Portfolio
+          </NavLink>
+          <NavLink to="/etudes-de-cas">
+            Etude de cas
           </NavLink>
           <NavLink to="/contact">
             Contact
