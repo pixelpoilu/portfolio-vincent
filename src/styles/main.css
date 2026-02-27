@@ -297,7 +297,7 @@ section {
 
 .project-card:hover {
   transform: translateY(-6px);
-  /*box-shadow: 0 20px 40px rgba(15, 23, 42, 0.12);*/
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.12);
 }
 
 .project-card h2 {
@@ -343,7 +343,34 @@ section {
 /* ===================================================== */
 /*                    FILTER BAR                         */
 /* ===================================================== */
-
+.detail-wrapper {
+  position: sticky;
+  top: 72px;
+  z-index: 900;
+  margin-bottom: 40px;
+  padding-top: 10px;
+  margin-left: auto;
+  margin-right:auto;
+  /*background: var(--bg, #ffffff);*/
+  width: 100%;
+  /*max-width: 1150px;*/
+  animation: fadeSlideDown 0.8s cubic-bezier(.22, 1, .36, 1);
+  background: rgba(255, 255, 255, var(--nav-bg-alpha, 0.3));
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow:
+    0 10px 40px rgba(0, 0, 0, var(--nav-shadow-opacity, 0)),
+    inset 0 1px 0 rgba(255, 255, 255, var(--nav-inset-opacity, 0));
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.2s ease,
+    background-color 0.2s ease;
+}
+.detail-wrapper .filter-top{
+  max-width: 1150px;
+  margin-left: auto;
+  margin-right: auto;
+}
 .projects-header {
   display: grid;
   gap: 1rem;

@@ -62,7 +62,7 @@ export default function ProjectDetail() {
       return src ? { src, caption } : null;
     })
     .filter(
-      (media): media is { src: string; caption?: string } => Boolean(media?.src)
+      (media): media is { src: string; caption: string | undefined } => Boolean(media?.src)
     );
 
   useEffect(() => {
@@ -108,99 +108,103 @@ export default function ProjectDetail() {
   return (
     <PageTransition>
       <div className="site-page">
-      <main className="project-detail">
-        <div className="filter-wrapper">
-        <Link to="/portfolio" className="back-link">
-          ‹ Retour aux projets
-        </Link>
-      </div>
-        <div className="project-layout">
-          <div
-            className="project-slider"
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
-          >
-            {galleryImages.length > 0 && (
-              <>
-                <img
-                  src={galleryImages[currentIndex].src}
-                  alt={project.title}
-                  className="slider-image"
-                />
-                {galleryImages[currentIndex].caption && (
-                  <p className="slider-caption">{galleryImages[currentIndex].caption}</p>
-                )}
-
-                <button className="slider-btn left" onClick={prevSlide}>
-                  ‹
-                </button>
-                <button className="slider-btn right" onClick={nextSlide}>
-                  ›
-                </button>
-
-                <div
-                  className="slider-controls"
-                  role="group"
-                  aria-label="Navigation du diaporama"
-                >
-                  <button
-                    className="slider-control"
-                    onClick={prevSlide}
-                    disabled={galleryImages.length <= 1}
-                    aria-label="Image ⏮e"
-                  >
-                    ⏮
-                  </button>
-                  <button
-                    className="slider-control"
-                    onClick={togglePlay}
-                    disabled={galleryImages.length <= 1}
-                    aria-label={isPlaying ? "Mettre en pause" : "Lire"}
-                  >
-                    {isPlaying ? "⏸" : "▶"}
-                  </button>
-                  <button
-                    className="slider-control"
-                    onClick={nextSlide}
-                    disabled={galleryImages.length <= 1}
-                    aria-label="Image ⏭e"
-                  >
-                    ⏭
-                  </button>
-                </div>
-              </>
-            )}
+        <div className="detail-wrapper">
+          <div className="filter-top">
+            <Link to="/portfolio" className="btn secondary">
+             <span className="arrow">‹‹ </span>Retour aux projets
+            </Link>
           </div>
 
-          <div className="project-info">
-            <h1>{project.title}</h1>
-
-            <p className="meta">
-              {project.client} • {project.year}
-            </p>
-
-            <h3>Description</h3>
-            <p>{project.description}</p>
-
-            <h3>Contexte</h3>
-            <p>{project.Contexte}</p>
-
-            <h3>Réponse</h3>
-            <p>{project.Reponse}</p>
-
-            <h3>Missions</h3>
-            <ul>
-              {project.missions.map((mission, index) => (
-                <li key={index}>{mission}</li>
-              ))}
-            </ul>
-
-            <h3>Technologies</h3>
-            <p>{project.technologies.join(", ")}</p>
-          </div>
         </div>
-      </main>
-      <Footer />
+        <main className="project-detail">
+
+          <div className="project-layout">
+            <div
+              className="project-slider"
+              onMouseEnter={() => setIsHovered(true)}
+              onMouseLeave={() => setIsHovered(false)}
+            >
+              {galleryImages.length > 0 && (
+                <>
+                  <img
+                    src={galleryImages[currentIndex].src}
+                    alt={project.title}
+                    className="slider-image"
+                  />
+                  {galleryImages[currentIndex].caption && (
+                    <p className="slider-caption">{galleryImages[currentIndex].caption}</p>
+                  )}
+
+                  <button className="slider-btn left" onClick={prevSlide}>
+                    ‹
+                  </button>
+                  <button className="slider-btn right" onClick={nextSlide}>
+                    ›
+                  </button>
+
+                  <div
+                    className="slider-controls"
+                    role="group"
+                    aria-label="Navigation du diaporama"
+                  >
+                    <button
+                      className="slider-control"
+                      onClick={prevSlide}
+                      disabled={galleryImages.length <= 1}
+                      aria-label="Image ⏮e"
+                    >
+                      ⏮
+                    </button>
+                    <button
+                      className="slider-control"
+                      onClick={togglePlay}
+                      disabled={galleryImages.length <= 1}
+                      aria-label={isPlaying ? "Mettre en pause" : "Lire"}
+                    >
+                      {isPlaying ? "⏸" : "▶"}
+                    </button>
+                    <button
+                      className="slider-control"
+                      onClick={nextSlide}
+                      disabled={galleryImages.length <= 1}
+                      aria-label="Image ⏭e"
+                    >
+                      ⏭
+                    </button>
+                  </div>
+                </>
+              )}
+            </div>
+
+            <div className="project-info">
+              <h1>{project.title}</h1>
+
+              <p className="meta">
+                {project.client} • {project.year}
+              </p>
+
+              <h3>Description</h3>
+              <p>{project.description}</p>
+
+              <h3>Contexte</h3>
+              <p>{project.Contexte}</p>
+
+              <h3>Réponse</h3>
+              <p>{project.Reponse}</p>
+
+              <h3>Missions</h3>
+              <ul>
+                {project.missions.map((mission, index) => (
+                  <li key={index}>{mission}</li>
+                ))}
+              </ul>
+
+              <h3>Technologies</h3>
+              <p>{project.technologies.join(", ")}</p>
+            </div>
+          </div>
+        </main>
+        <Footer />
       </div>
     </PageTransition>
   );

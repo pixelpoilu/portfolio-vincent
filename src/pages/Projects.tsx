@@ -224,7 +224,7 @@ export default function Projects() {
   return (
     <PageTransition>
       <div className="site-page">
-        <section className="projects-section">
+
           <FilterBar
             sectors={availableSectors}
             types={availableTypes}
@@ -242,6 +242,9 @@ export default function Projects() {
             onSearchChange={setSearchQuery}
             projectsCount={filteredProjects.length}
           />
+
+        <section className="projects-section">
+
 
           <motion.div layout className="projects-grid">
             <AnimatePresence mode="popLayout">

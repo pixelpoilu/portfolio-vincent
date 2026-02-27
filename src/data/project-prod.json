@@ -46,10 +46,10 @@
         "Contexte": "",
         "Reponse": "Interface Flash,Animation FlashActionScript,Site Dynamique",
         "outils": [
-            "ActionScript 2",
-            "Flash MX",
+            "ActionScript",
+            "Flash",
             "PHP",
-            "MySQL."
+            "MySQL"
         ],
         "technologies": [
             "ActionScript",
@@ -108,7 +108,7 @@
             "Flash 4",
             "DreamWeaver",
             "Développement XML",
-            "actionScript 2"
+            "ActionScript"
         ],
         "technologies": [
             "HTML",
@@ -536,7 +536,7 @@
         "missions": [
             "Réalisée en Flash, cette animation a été adaptée aux différents OS (Windows / Mac)"
         ],
-        "status": "published",
+        "status": "draft",
         "order": 16,
         "collection": [
             "portfolio"
@@ -711,17 +711,19 @@
     },
     {
         "id": 54,
-        "title": "Site Internet CARRE SENART",
+        "title": "Mini-jeux pour l'espace jeunesse Carré Sénart",
         "client": "CARRE SENART",
         "year": 2011,
         "type": "Site Internet",
         "description": "Jeux sur tablettes tactiles pour l'espace enfant du Carré Sénart - Centre Commercial de Melun Sénart.",
         "link": "",
         "secteur": "Loisirs-Musique",
-        "Contexte": "",
-        "Reponse": "Fond Sonore,Interface Flash,Animation Flash,ActionScript,Jeux en ligne,Back Office",
+        "Contexte": "Le centre commercial ouvre des consoles pour enfants, et souhaite proposer des jeux adaptés à ces supports, pour divertir les enfants pendant que les parents font leurs courses.",
+        "Reponse": "Mettre à disposition des jeux éducatifs adaptés à la tranche d'âge 3-6 ans",
         "outils": [
-            ""
+            "Flash",
+            "Illustrator",
+            "Photoshop"
         ],
         "technologies": [
             "ActionScript",
@@ -733,14 +735,30 @@
         "image": "rea_web_carresenart_diapo.jpg",
         "mediapath": "rea_web_carresenart",
         "medias": [
-            ""
+            "01.jpg",
+            "02.jpg",
+            "03.jpg",
+            "04.jpg",
+            "05.jpg",
+            "06.jpg",
+            "07.jpg",
+            "08.jpg",
+            "09.jpg",
+            "10.jpg",
+            "11.jpg",
+            "12.jpg",
+            "13.jpg"
         ],
         "missions": [
-            ""
+            "Conception Sonore",
+            "Interface, Animation, Conception des jeux, Programmation, Déploiement sur les consoles tactiles"
         ],
-        "status": "draft",
+        "status": "published",
         "order": 21,
-        "collection": []
+        "collection": [
+            "case-study",
+            "portfolio"
+        ]
     },
     {
         "id": 55,
@@ -803,13 +821,13 @@
         "description": "Création du site dédié au bijoutier",
         "link": "www.clozeau.fr",
         "secteur": "Luxe",
-        "Contexte": "",
-        "Reponse": "Fond Sonore,Interface Flash,Animation Flash,ActionScript,Site Dynamique,Site Institutionnel",
+        "Contexte": "Le client souhaite une présentation numérique mettant en valeur ses créations",
+        "Reponse": "Univers de la marque, Fond Sonore, Animations",
         "outils": [
             "HTML",
             "CSS",
             "PHP",
-            ",Flash",
+            "Flash",
             "Javascript / JQuery",
             "MySQL"
         ],
@@ -834,7 +852,10 @@
             "08.jpg"
         ],
         "missions": [
-            "Fond Sonore,Interface,Animations,ActionScript,Site Dynamique,Site Institutionnel"
+            "Création de fonds Sonores",
+            "Développement d'une interface",
+            "Présentation des bijoux sous forme d'animations",
+            "Déploiement d'un site Institutionnel en flash, accompagné d'un site HTML dédié aux moteurs de recherche"
         ],
         "status": "published",
         "order": 23,
@@ -939,7 +960,11 @@
         "image": "rea_web_docbiker_diapo.jpg",
         "mediapath": "rea_web_docbiker",
         "medias": [
-            ""
+            "01.jpg",
+            "02.jpg",
+            "03.jpg",
+            "04.jpg",
+            "05.jpg"
         ],
         "missions": [
             "Objectif : Effectuer une transition du site en flash vers un site visible par les moteurs de recherches."
@@ -1062,19 +1087,20 @@
     },
     {
         "id": 22,
-        "title": "Site Internet ESRA",
+        "title": "Site Internet pour l'établissement ESRA",
         "client": "ESRA",
         "year": 2005,
         "type": "Site Internet",
         "description": "0",
         "link": "0",
         "secteur": "Audiovisuel",
-        "Contexte": "",
-        "Reponse": "Site Vitrine,Site Institutionnel,Quitime VR",
+        "Contexte": "L'école d'audiovisuel ESRA souhaite une refonte de son site",
+        "Reponse": "Réalisation d'un site Vitrine",
         "outils": [
             "DreamWeaver",
             "Macromedia",
-            "Photoshop"
+            "Photoshop",
+            "Quitime VR"
         ],
         "technologies": [
             "HTML",
@@ -1085,7 +1111,7 @@
         "image": "rea_web_esra_diapo.jpg",
         "mediapath": "rea_web_esra",
         "medias": [
-            ""
+            "rea_web_esra_diapo.jpg"
         ],
         "missions": [
             ""
@@ -1122,7 +1148,11 @@
         "image": "rea_web_frigos_diapo.jpg",
         "mediapath": "rea_web_frigos",
         "medias": [
-            ""
+            "frigo01.jpg",
+            "frigo02.jpg",
+            "frigo03.jpg",
+            "frigo04.jpg",
+            "frigo05.jpg"
         ],
         "missions": [
             "Mise en valeur de ses réalisations et projets. VERSION FLASH / HTML",
@@ -1163,17 +1193,9 @@
         "image": "rea_web_hongrie_diapo.jpg",
         "mediapath": "rea_web_hongrie",
         "medias": [
-            {
-                "file": "01.jpg",
-                "caption": "Accueil mobile"
-            },
-            {
-                "file": "02.jpg"
-            },
-            {
-                "file": "03.jpg",
-                "caption": "Page de lecture podcast"
-            }
+            "01.jpg",
+            "02.jpg",
+            "03.jpg"
         ],
         "missions": [
             "Réalisation d'un site dynamique, doté d'un back office propriétaire permettant la mise à jour du contenu et des médias."
@@ -1306,25 +1328,60 @@
         "description": "Site Internet pour l'entreprise de fabrication de Pénichette(r) Locaboat",
         "link": "www.locaboat-industries.com",
         "secteur": "Nautique",
-        "Contexte": "",
+        "Contexte": "Le constructeur souhaite valoriser son activité de fabrication de pénichettes. Le site doit présenter les différents modèles de pénichettes, ainsi que les ports de plaisance partenaires de Locaboat.",
         "Reponse": "Site Dynamique,Back Office",
         "outils": [
             "Flash"
         ],
         "technologies": [
-            "ActionScript"
+            "ActionScript", "HTML", "CSS", "PHP", "MySQL"
         ],
         "image": "rea_web_locaboatindustries_diapo.jpg",
         "mediapath": "rea_web_locaboatindustries",
         "medias": [
-            ""
+            {
+                "file": "locaboat_ind_00.jpg",
+                "caption": "Home Page"
+            },
+            {
+                "file": "locaboat_ind_01.jpg"
+
+            },
+            {
+                "file": "locaboat_ind_04.jpg",
+                "caption": "Liste des Ports Locaboat"
+            },            {
+                "file": "locaboat_ind_03.jpg",
+                "caption": "Présentation de port Locaboat"
+            },
+
+            {
+                "file": "locaboat_ind_05.jpg",
+                "caption": "Page de présentation d'un modèle de pénichette"
+            },
+            {
+                "file": "locaboat_3D_07.jpg",
+                "caption": "Visite 3D d'une pénichette"
+            },
+            {
+                "file": "locaboat_3D_08.jpg",
+                "caption": "Détail des aménagements"
+            },
+            {
+                "file": "locaboat_3D_09.jpg",
+                "caption": "Aperçus de customisation d'intérieur"
+            },
+            {
+                "file": "locaboat_ind_admin_01.jpg",
+                "caption": "Interface d'administration"
+            }
         ],
         "missions": [
-            ""
+            "Création d'un site dynamique présentant les différents modèles de pénichettes, ainsi que les ports de plaisance partenaires de Locaboat.","Mise en place d'un back office propriétaire pour la mise à jour du contenu et des médias."
         ],
-        "status": "draft",
+        "status": "published",
         "order": 36,
-        "collection": []
+        "collection": ["case-study"]
     },
     {
         "id": 14,
@@ -1332,18 +1389,20 @@
         "client": "LOCABOAT",
         "year": 2010,
         "type": "Site Internet",
-        "description": "Site Internet pour l'entreprise de location de Pénichette(r) Locaboat.",
+        "description": "Gestion complète du site Internet pour l'entreprise de location de Pénichette(r) Locaboat.",
         "link": "http://www.locaboat.com",
         "secteur": "Tourisme",
-        "Contexte": "",
-        "Reponse": "Interface Flash,Animation Flash,ActionScript, Dynamique, Video en ligne, Quicktime VR,Back Office",
+        "Contexte": "La société Locaboat m'a confié la gestion complète de son site Internet, incluant la refonte graphique, la mise à jour du contenu, l'optimisation SEO et le suivi technique. L'objectif est de renforcer la visibilité en ligne de Locaboat et d'améliorer l'expérience utilisateur pour les clients potentiels.",
+        "Reponse": "Refonte de site, évolution graphique régulière, mise à jour du contenu, optimisation SEO, suivi technique et maintenance du site.",
         "outils": [
             "Flash",
             "ActionScript",
             "Dynamique",
-            "Dreamweaver","Pack Macromedia",
+            "Dreamweaver",
+            "Pack Macromedia",
             "Photoshop",
-            "Site Dynamique","Quicktime VR",
+            "Site Dynamique",
+            "Quicktime VR",
             "Back Office Edoo"
         ],
         "technologies": [
@@ -1354,21 +1413,27 @@
         "image": "rea_web_locaboat_diapo.jpg",
         "mediapath": "rea_web_locaboat",
         "medias": [
-
-"01.jpg",
-"02.jpg",
-"03.jpg",
-"04.png",
-"05.jpg","06.jpg","07.jpg"
-
+            "01.jpg",
+            "02.jpg",
+            "03.jpg",
+            "04.png",
+            "05.jpg",
+            "06.jpg",
+            "07.jpg"
         ],
         "missions": [
-            "http://www.locaboat.com "
+            "Mise en place d'une API de paiement",
+            "Création de contenus interactifs de promotion des séjours (visites 3D, parcours animés, carte des ports, contenus promotionnels)",
+            "Connexion au service de planning de la flotte",
+            "Optimisation des versions multilingues",
+            "Mise à jour régulière du contenu et des médias",
+            "Optimisation et suivi SEO",
+            "Gestion des prestataires techniques et de l'hébergement"
         ],
         "status": "published",
         "order": 37,
         "collection": [
-            "portfolio"
+            "portfolio","case-study"
         ]
     },
     {
@@ -1445,7 +1510,7 @@
         "Contexte": "L'office de tourisme de Malte souhaite proposer aux touristes souhaitant découvrir Malte, un outil pour explorer la particularité de chaque région du pays.",
         "Reponse": " Proposition d'une carte interactive en Flash, intégrant des animations de transition et une navigation intuitive. Le module a été conçu pour être facilement mis à jour avec de nouvelles informations touristiques et des images, grâce à une structure basée sur XML.",
         "outils": [
-            "Flash MX",
+            "Flash",
             "Illustrator",
             "Dreamweaver"
         ],
@@ -1576,10 +1641,10 @@
         "Contexte": "",
         "Reponse": "Interface Flash,Animation Flash,ActionScript",
         "outils": [
-            "Flash MX",
+            "Flash",
             "DreamWeaver",
             "Développement XML",
-            "actionScript 2"
+            "ActionScript"
         ],
         "technologies": [
             "ActionScript",
@@ -1589,9 +1654,14 @@
             "XML"
         ],
         "image": "rea_web_premaman_diapo.jpg",
-        "mediapath": "rea_web_premaman",
+        "mediapath": "rea_bol_premaman",
         "medias": [
-            ""
+            "01.jpg",
+            "02.jpg",
+            "03.jpg",
+            "04.jpg",
+            "06.jpg",
+            "07.jpg"
         ],
         "missions": [
             "Proposer au public online Premaman un outil de lecture PDF en ligne"
@@ -1831,7 +1901,12 @@
         "image": "rea_web_ventilo_diapo.jpg",
         "mediapath": "rea_web_ventilo",
         "medias": [
-            ""
+            "01.jpg",
+            "02.jpg",
+            "03.jpg",
+            "04.jpg",
+            "05.jpg",
+            "06.jpg"
         ],
         "missions": [
             "Mise en valeur de ses réalisations et projets. VERSION FLASH / FULL ADMINISTRABLE"
@@ -1848,11 +1923,11 @@
         "client": "VISITEUROPE",
         "year": 2005,
         "type": "Carte Interactive",
-        "description": "Réalisation d'une carte touristique Interactive l'office de tourisme européen.\n",
+        "description": "Réalisation d'une carte touristique Interactive l'office de tourisme européen.",
         "link": "www.visiteurope.com",
         "secteur": "Tourisme",
-        "Contexte": "",
-        "Reponse": "Montage graphique vectoriel (Illustrator + Flash). , Programmation en class ActionScript 2, Conception des animations de transition avec les classes Tween Zigo, Compilation en Flash MX vers swf v8., Chargement de contenus externes administrés en XML",
+        "Contexte": "Proposer aux touristes souhaitant découvrir l'Europe, un outil pour découvrir la particularité de chaque pays.",
+        "Reponse": "Création d'un applicatif animé et interactif en Flash, intégrant des animations de transition et une navigation intuitive. Le module a été conçu pour être facilement mis à jour avec de nouvelles informations touristiques et des images, grâce à une structure basée sur XML.",
         "outils": [
             "Flash",
             "Illustrator",
@@ -1866,15 +1941,21 @@
             "CSS",
             "Javascript / JQuery",
             "Tween Zigo",
-            "XML\n"
+            "XML"
         ],
         "image": "rea_web_visiteurope_diapo.jpg",
         "mediapath": "rea_web_visiteurope",
         "medias": [
-            ""
+            "01.jpg",
+            "02.jpg",
+            "03.jpg",
+            "04.jpg",   
+            "05.jpg",
+            "06.jpg",
+            "07.jpg"                      
         ],
         "missions": [
-            "Proposer aux touristes souhaitant découvrir l'Europe, un outil pour découvrir la particularité de chaque pays.\nMise à jour via XML"
+            "Montage graphique vectoriel (Illustrator + Flash)", "Programmation en class ActionScript 2", "Conception des animations de transition avec les classes Tween Zigo", "Compilation en Flash MX vers swf v8.", "Chargement de contenus externes administrés en XML","Mise à jour via XML"
         ],
         "status": "published",
         "order": 51,
@@ -1894,10 +1975,10 @@
         "Contexte": "",
         "Reponse": "Animation Flash,Site Institutionnel",
         "outils": [
-            "Flash MX",
+            "Flash",
             "DreamWeaver",
             "Développement XML",
-            "actionScript 2"
+            "ActionScript"
         ],
         "technologies": [
             "ActionScript",
@@ -1910,7 +1991,7 @@
         "image": "rea_web_vu_diapo.jpg",
         "mediapath": "rea_web_vu",
         "medias": [
-           "01.jpg"
+            "01.jpg"
         ],
         "missions": [
             "Site Full Flash + Full Administrable"
@@ -1977,7 +2058,7 @@
             "01.jpg",
             "02.jpg",
             "03.jpg",
-            "04.jpg"            
+            "04.jpg"
         ],
         "missions": [
             ""
@@ -1998,10 +2079,10 @@
         "Contexte": "",
         "Reponse": "Interface Flash,Animation Flash,ActionScript",
         "outils": [
-            "Flash MX",
+            "Flash",
             "DreamWeaver",
             "Développement XML",
-            "actionScript 2"
+            "ActionScript"
         ],
         "technologies": [
             "ActionScript",
@@ -2051,7 +2132,6 @@
             "MySQL",
             "CSS",
             "Javascript / JQuery",
-            "Jacacript",
             "HTML",
             "XML"
         ],
@@ -2068,7 +2148,10 @@
         ],
         "status": "published",
         "order": 56,
-        "collection": ["portfolio", "case-study"]
+        "collection": [
+            "portfolio",
+            "case-study"
+        ]
     },
     {
         "id": 59,
@@ -2140,14 +2223,19 @@
         "image": "rea_web_putainbd_diapo.jpg",
         "mediapath": "rea_web_putainbd",
         "medias": [
-            ""
+            "01.jpg",
+            "02.jpg",
+            "03.jpg",
+            "04.jpg"
         ],
         "missions": [
             ""
         ],
         "status": "published",
         "order": 58,
-        "collection": ["portfolio"]
+        "collection": [
+            "portfolio"
+        ]
     },
     {
         "id": 61,
@@ -2228,7 +2316,8 @@
         "status": "published",
         "order": 60,
         "collection": [
-            "portfolio","case-study"
+            "portfolio",
+            "case-study"
         ]
     },
     {
@@ -2322,7 +2411,8 @@
         "status": "published",
         "order": 62,
         "collection": [
-            "portfolio","case-study"
+            "portfolio",
+            "case-study"
         ]
     },
     {
@@ -2418,7 +2508,9 @@
         ],
         "status": "draft",
         "order": 65,
-        "collection": ["portfolio"]
+        "collection": [
+            "portfolio"
+        ]
     },
     {
         "id": 68,
@@ -2460,7 +2552,8 @@
         "status": "published",
         "order": 66,
         "collection": [
-            "portfolio","case-study"
+            "portfolio",
+            "case-study"
         ]
     },
     {
@@ -2534,7 +2627,8 @@
         "status": "published",
         "order": 68,
         "collection": [
-            "portfolio", "case-study"
+            "portfolio",
+            "case-study"
         ]
     },
     {
@@ -2542,12 +2636,12 @@
         "title": "Application CMS propriétaire",
         "client": "Divers clients",
         "year": 2005,
-        "type": "CMS",
+        "type": "Applicatif propriétaire",
         "description": "Réalisation d'une application CMS",
         "link": "",
         "secteur": "Communication",
-        "Contexte": "Dans le cadre de développement de site internet, un besoin de gestion des sites administrables s'est fait sentir.",
-        "Reponse": " J'ai donc développé une application de gestion de contenus (CMS) propriétaire, pour répondre à ce besoin. L'application a été conçue pour être flexible et adaptable à différents types de sites web, permettant aux utilisateurs de gérer facilement leurs contenus sans nécessiter de compétences techniques avancées.",
+        "Contexte": "Dans le cadre de développement de sites internets de tailles petites et moyennes, un besoin d'autonomie des clients dans la mise à jour et la gestion de leurs contenus s'est fait sentir.",
+        "Reponse": "La complexité des CMS du marché m'ont amené à développer une application de gestion de contenus (CMS) propriétaire, plus intuitive et 'sur mesure'. L'application a été conçue pour être flexible et adaptable à différents types de sites web, permettant aux utilisateurs de gérer facilement leurs contenus sans nécessiter de compétences techniques avancées.",
         "outils": [
             "Flex",
             "Eclipse"
@@ -2604,12 +2698,77 @@
             }
         ],
         "missions": [
-            "Développement d'une application CMS propriétaire pour la gestion de contenus de sites web administrables, offrant une interface conviviale et des fonctionnalités adaptées aux besoins des utilisateurs."
+            "Développement d'une application CMS propriétaire pour la gestion de contenus de sites web administrables",
+            "Interface conviviale et des fonctionnalités évolutives"
         ],
         "status": "published",
         "order": 68,
         "collection": [
             "case-study"
         ]
-    }
+    },
+    {
+        "id": 72,
+        "title": "Brochure interactive",
+        "client": "Divers clients",
+        "year": 2005,
+        "type": "Applicatif propriétaire",
+        "description": "Réalisation d'une application de lecture de Brochure en ligne",
+        "link": "",
+        "secteur": "Communication",
+        "Contexte": "Dans le cadre de développement de sites internets plaquettes, de nombreux projets nécéssitent une présentation de brochure à consulter en ligne.",
+        "Reponse": "J'ai donc conçu un petit module de lecture de brochure en ligne, permettant d'afficher des PDF de manière interactive et conviviale. L'application a été développée en Flash, offrant une expérience utilisateur fluide et immersive pour la consultation de brochures en ligne.",
+        "outils": [
+            "Flex",
+            "Eclipse"
+        ],
+        "technologies": [
+            "ActionScript"
+        ],
+        "image": "rea_web_bol_diapo.png",
+        "mediapath": "rea_web_bol",
+        "medias": [
+            {
+                "file": "brochure01.png",
+                "caption": "Première page"
+            },
+            {
+                "file": "brochure02.png",
+                "caption": "Animation de page, torsion, effets de profondeur, ombres portées"
+            },
+            {
+                "file": "brochure03.png",
+                "caption": "Animation de page, torsion, effets de profondeur, ombres portées"
+            },
+            {
+                "file": "brochure04.png",
+                "caption": "Animation de page, torsion, effets de profondeur, ombres portées"
+            },
+            {
+                "file": "brochure_outils.png",
+                "caption": "Outils d'aide à la lecture"
+            },
+            {
+                "file": "brochure05.png",
+                "caption": "Zoom"
+            },
+            {
+                "file": "brochure_menus.png",
+                "caption": "Mise en place de routines, permettant de générer un sommaire et un menu en XML à partir du PDF"
+            },
+            {
+                "file": "brochure_integration.png",
+                "caption": "Exemple d'intégration du module de lecture de brochure dans le site web"
+            }
+        ],
+        "missions": [
+            "Développement d'une application flash de lecture de brochure en ligne pour la présentation de PDF de manière interactive et conviviale",
+            "Réutilisation du principe sur plusieurs borchures et projets "
+        ],
+        "status": "published",
+        "order": 68,
+        "collection": [
+            "case-study", "portfolio"
+        ]
+    }    
 ]

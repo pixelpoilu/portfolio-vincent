@@ -4,8 +4,11 @@
   z-index: 900;
   margin-bottom: 40px;
   padding-top: 10px;
+  margin-left: auto;
+  margin-right:auto;
   /*background: var(--bg, #ffffff);*/
-
+  width: 100%;
+  max-width: 1150px;
   animation: fadeSlideDown 0.8s cubic-bezier(.22, 1, .36, 1);
   background: rgba(255, 255, 255, var(--nav-bg-alpha, 0.3));
   backdrop-filter: blur(20px);
@@ -17,10 +20,22 @@
     transform 0.4s ease,
     box-shadow 0.2s ease,
     background-color 0.2s ease;
-
-
 }
+/*
 
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  height: 72px;
+  padding: 0 2rem;
+
+  border-radius: 0px;
+filter-top
+search-row
+filter-bar
+*/
 .filter-top {
   display: flex;
   justify-content: space-between;
