@@ -8,6 +8,25 @@ import Footer from "../components/Footer";
 import type { Project } from "../types/Project";
 import { hasCollection, type ProjectCollectionKey } from "../utils/projectCollection";
 
+const masonryTestImageModules = import.meta.glob<{ default: string }>(
+  "../assets/images/mansonery_test/*.{jpg,jpeg,png,webp,avif}",
+  { eager: true }
+);
+const masonryTestImages = Object.entries(masonryTestImageModules)
+  .sort(([a], [b]) => a.localeCompare(b, "fr", { sensitivity: "base" }))
+  .map(([, image]) => image.default);
+
+const projectImageModules = import.meta.glob<{ default: string }>(
+  "../assets/images/projects/**/*.{jpg,jpeg,png,webp,avif}",
+  { eager: true }
+);
+const masonryImageByFilename = new Map(
+  Object.entries(projectImageModules).map(([path, image]) => [
+    path.split("/").pop()?.trim() ?? "",
+    image.default,
+  ])
+);
+
 const normalizeText = (value: string) =>
   value
     .normalize("NFD")
@@ -238,23 +257,23 @@ export default function Projects({
     <PageTransition>
       <div className="site-page">
 
-          <FilterBar
-            sectors={availableSectors}
-            types={availableTypes}
-            tools={availableTools}
-            technologies={availableTechnologies}
-            activeSectors={selectedSectors}
-            activeTypes={selectedTypes}
-            activeTools={selectedTools}
-            activeTechs={selectedTechnologies}
-            searchQuery={searchQuery}
-            onSectorChange={setSelectedSectors}
-            onTypeChange={setSelectedTypes}
-            onToolChange={setSelectedTools}
-            onTechChange={setSelectedTechnologies}
-            onSearchChange={setSearchQuery}
-            projectsCount={filteredProjects.length}
-          />
+        <FilterBar
+          sectors={availableSectors}
+          types={availableTypes}
+          tools={availableTools}
+          technologies={availableTechnologies}
+          activeSectors={selectedSectors}
+          activeTypes={selectedTypes}
+          activeTools={selectedTools}
+          activeTechs={selectedTechnologies}
+          searchQuery={searchQuery}
+          onSectorChange={setSelectedSectors}
+          onTypeChange={setSelectedTypes}
+          onToolChange={setSelectedTools}
+          onTechChange={setSelectedTechnologies}
+          onSearchChange={setSearchQuery}
+          projectsCount={filteredProjects.length}
+        />
 
         <section className="projects-section">
 
@@ -270,7 +289,23 @@ export default function Projects({
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ duration: 0.25, ease: "easeOut" }}
                 >
-                  <ProjectCard project={project} detailBasePath={detailBasePath} />
+                  <ProjectCard
+                    project={project}
+                    detailBasePath={detailBasePath}
+                    thumbnailOverride={(() => {
+                      const masonryFilename = project.masonry_1?.trim();
+                      if (masonryFilename) {
+                        const masonryImage = masonryImageByFilename.get(masonryFilename);
+                        if (masonryImage) {
+                          return masonryImage;
+                        }
+                      }
+
+                      return masonryTestImages.length > 0
+                        ? masonryTestImages[project.id % masonryTestImages.length]
+                        : undefined;
+                    })()}
+                  />
                 </motion.div>
               ))}
             </AnimatePresence>

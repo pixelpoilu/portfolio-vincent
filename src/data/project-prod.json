@@ -1,4 +1,4 @@
-[
+﻿[
     {
         "id": 4,
         "title": "MINI-SITE OT - FINLANDE",
@@ -18,6 +18,8 @@
             "ActionScript"
         ],
         "image": "rea_cd_finlande_diapo.jpg",
+        "masonry_0": "manson_0_finland.png",
+        "masonry_1": "manson_1_finland.png",
         "mediapath": "rea_cd_finlande",
         "medias": [
             "01.jpg",
@@ -57,6 +59,8 @@
             "MySQL."
         ],
         "image": "rea_cd_gauloises_diapo.jpg",
+        "masonry_0": "manson_0_gauloises.png",
+        "masonry_1": "manson_1_gauloises.png",
         "mediapath": "rea_webcat_gauloises",
         "medias": [
             "01.jpg",
@@ -118,6 +122,8 @@
             "XML"
         ],
         "image": "rea_cd_marmara_diapo.jpg",
+        "masonry_0": "manson_0_marmara.png",
+        "masonry_1": "manson_1_marmara.png",
         "mediapath": "rea_cd_marmara",
         "medias": [
             "01.jpg",
@@ -162,6 +168,8 @@
             "XML"
         ],
         "image": "rea_cd_medicis_diapo.jpg",
+        "masonry_0": "manson_0_medicis.png",
+        "masonry_1": "manson_1_medicis.png",
         "mediapath": "rea_cd_medicis",
         "medias": [
             "01.jpg",
@@ -200,6 +208,8 @@
             "ActionScript"
         ],
         "image": "rea_map_malte_diapo.jpg",
+        "masonry_0": "manson_0_malte.png",
+        "masonry_1": "manson_1_malte.png",
         "mediapath": "rea_web_malte",
         "medias": [
             ""
@@ -230,6 +240,8 @@
             "GIF Animé"
         ],
         "image": "rea_pub_camping_diapo.jpg",
+        "masonry_0": "",
+        "masonry_1": "",
         "mediapath": "rea_pub_camping",
         "medias": [
             ""
@@ -259,6 +271,8 @@
             "ActionScript"
         ],
         "image": "rea_pub_chevrolet_diapo.jpg",
+        "masonry_0": "",
+        "masonry_1": "",
         "mediapath": "rea_pub_chevrolet",
         "medias": [
             ""
@@ -288,6 +302,8 @@
             "ActionScript"
         ],
         "image": "rea_pub_daewoo_diapo.jpg",
+        "masonry_0": "",
+        "masonry_1": "",
         "mediapath": "rea_pub_daewoo",
         "medias": [
             ""
@@ -323,6 +339,8 @@
             "Javascript / JQuery"
         ],
         "image": "rea_pub_esselte_diapo.jpg",
+        "masonry_0": "",
+        "masonry_1": "",
         "mediapath": "rea_pub_esselte",
         "medias": [
             ""
@@ -353,6 +371,8 @@
             "GIF Animé"
         ],
         "image": "rea_pub_pacific_diapo.jpg",
+        "masonry_0": "",
+        "masonry_1": "",
         "mediapath": "rea_pub_pacific",
         "medias": [
             ""
@@ -383,6 +403,8 @@
             "GIF Animé"
         ],
         "image": "rea_pub_poker_diapo.jpg",
+        "masonry_0": "",
+        "masonry_1": "",
         "mediapath": "rea_pub_poker",
         "medias": [
             ""
@@ -412,6 +434,8 @@
             "ActionScript"
         ],
         "image": "rea_pub_tms_diapo.jpg",
+        "masonry_0": "",
+        "masonry_1": "",
         "mediapath": "rea_pub_tms",
         "medias": [
             ""
@@ -441,6 +465,8 @@
             "ActionScript"
         ],
         "image": "rea_pub_trainz_diapo.jpg",
+        "masonry_0": "",
+        "masonry_1": "",
         "mediapath": "rea_pub_trainz",
         "medias": [
             ""
@@ -470,6 +496,8 @@
             "ActionScript"
         ],
         "image": "rea_pub_wanadoo_diapo.jpg",
+        "masonry_0": "",
+        "masonry_1": "",
         "mediapath": "rea_pub_wanadoo",
         "medias": [
             ""
@@ -500,6 +528,8 @@
             "GIF Animé"
         ],
         "image": "rea_pub_wengo_diapo.jpg",
+        "masonry_0": "",
+        "masonry_1": "",
         "mediapath": "rea_pub_wengo",
         "medias": [
             ""
@@ -529,6 +559,8 @@
             "ActionScript"
         ],
         "image": "rea_screen_sacla_diapo.jpg",
+        "masonry_0": "",
+        "masonry_1": "",
         "mediapath": "rea_screen_sacla",
         "medias": [
             "rea_screen_sacla_diapo.jpg"
@@ -566,6 +598,8 @@
             "Javascript / JQuery"
         ],
         "image": "rea_webcat_gauloises_diapo.jpg",
+        "masonry_0": "",
+        "masonry_1": "",
         "mediapath": "rea_cd_gauloises",
         "medias": [
             "01.jpg",
@@ -617,6 +651,8 @@
             "Javascript / JQuery"
         ],
         "image": "rea_web_1018_diapo.jpg",
+        "masonry_0": "manson_0_1018.png",
+        "masonry_1": "manson_1_1018.png",
         "mediapath": "rea_web_1018",
         "medias": [
             "01.jpg",
@@ -665,6 +701,8 @@
             "Javascript / JQuery"
         ],
         "image": "rea_web_ads_diapo.jpg",
+        "masonry_0": "",
+        "masonry_1": "",
         "mediapath": "rea_web_ads",
         "medias": [
             ""
@@ -696,6 +734,8 @@
             "ActionScript"
         ],
         "image": "rea_web_artFenetres_diapo.jpg",
+        "masonry_0": "",
+        "masonry_1": "",
         "mediapath": "rea_web_artFenetres",
         "medias": [
             ""
@@ -733,6 +773,8 @@
             "XML"
         ],
         "image": "rea_web_carresenart_diapo.jpg",
+        "masonry_0": "manson_0_melun.png",
+        "masonry_1": "manson_1_melun.png",
         "mediapath": "rea_web_carresenart",
         "medias": [
             "01.jpg",
@@ -788,6 +830,8 @@
             "ActionScript"
         ],
         "image": "rea_web_clestra_diapo.jpg",
+        "masonry_0": "manson_0_clestra.png",
+        "masonry_1": "manson_1_clestra.png",
         "mediapath": "rea_web_clestra",
         "medias": [
             "01.jpg",
@@ -840,6 +884,8 @@
             "MySQL"
         ],
         "image": "rea_web_clozeau_diapo.jpg",
+        "masonry_0": "manson_0_clozeau.png",
+        "masonry_1": "manson_1_clozeau.png",
         "mediapath": "rea_web_clozeau",
         "medias": [
             "01.jpg",
@@ -884,6 +930,8 @@
             "Javascript / JQuery"
         ],
         "image": "rea_web_croatie_diapo.jpg",
+        "masonry_0": "manson_0_croatie.png",
+        "masonry_1": "manson_1_croatie.png",
         "mediapath": "rea_web_croatie",
         "medias": [
             "croatie_site_01.jpg",
@@ -920,6 +968,8 @@
             "ActionScript"
         ],
         "image": "rea_web_dargaud_diapo.jpg",
+        "masonry_0": "",
+        "masonry_1": "",
         "mediapath": "rea_web_dargaud",
         "medias": [
             ""
@@ -958,6 +1008,8 @@
             "PHP"
         ],
         "image": "rea_web_docbiker_diapo.jpg",
+        "masonry_0": "",
+        "masonry_1": "",
         "mediapath": "rea_web_docbiker",
         "medias": [
             "01.jpg",
@@ -995,6 +1047,8 @@
             "Javascript / JQuery"
         ],
         "image": "rea_web_ecosse_diapo.jpg",
+        "masonry_0": "",
+        "masonry_1": "",
         "mediapath": "rea_web_ecosse",
         "medias": [
             ""
@@ -1029,6 +1083,8 @@
             "Javascript / JQuery"
         ],
         "image": "rea_web_egypte_diapo.jpg",
+        "masonry_0": "mansonery_0_egypte.png",
+        "masonry_1": "mansonery_1_egypte.png",
         "mediapath": "rea_web_egypte",
         "medias": [
             "01.jpg",
@@ -1074,6 +1130,8 @@
             "XML"
         ],
         "image": "rea_web_eif_diapo.jpg",
+        "masonry_0": "",
+        "masonry_1": "",
         "mediapath": "rea_web_eif",
         "medias": [
             ""
@@ -1109,6 +1167,8 @@
             "Javascript / JQuery"
         ],
         "image": "rea_web_esra_diapo.jpg",
+        "masonry_0": "",
+        "masonry_1": "",
         "mediapath": "rea_web_esra",
         "medias": [
             "rea_web_esra_diapo.jpg"
@@ -1146,6 +1206,8 @@
             "Javascript / JQuery"
         ],
         "image": "rea_web_frigos_diapo.jpg",
+        "masonry_0": "manson_0_frigo.png",
+        "masonry_1": "manson_1_frigo.png",
         "mediapath": "rea_web_frigos",
         "medias": [
             "frigo01.jpg",
@@ -1176,7 +1238,7 @@
         "Contexte": "",
         "Reponse": "Site Dynamique,Site Institutionnel",
         "outils": [
-            "Dreamweaver et Pack Macromedia",
+            "DreamWeaver et Pack Macromedia",
             "Photoshop",
             "PHP",
             "MySQL"
@@ -1191,6 +1253,8 @@
             "MySQL"
         ],
         "image": "rea_web_hongrie_diapo.jpg",
+        "masonry_0": "manson_0_hongrie.png",
+        "masonry_1": "manson_1_hongrie.png",
         "mediapath": "rea_web_hongrie",
         "medias": [
             "01.jpg",
@@ -1227,6 +1291,8 @@
             "XML"
         ],
         "image": "rea_web_lfdd_diapo.jpg",
+        "masonry_0": "manson_0_lfdd.png",
+        "masonry_1": "manson_1_lfdd.png",
         "mediapath": "rea_web_lfdd",
         "medias": [
             "01.jpg",
@@ -1268,6 +1334,8 @@
             "Javascript / JQuery"
         ],
         "image": "rea_web_lgi_diapo.jpg",
+        "masonry_0": "manson_0_lgi.png",
+        "masonry_1": "manson_1 _lgi.png",
         "mediapath": "rea_web_lgi",
         "medias": [
             "01.jpg",
@@ -1308,16 +1376,20 @@
             "XML"
         ],
         "image": "rea_web_liban_diapo.jpg",
+        "masonry_0": "mansonery_0_liban.png",
+        "masonry_1": "mansonery_1_liban.png",
         "mediapath": "rea_web_liban",
         "medias": [
-            ""
+            "liban_site_00.jpg",
+            "liban_site_01.jpg",
+            "liban_site_03.jpg"
         ],
         "missions": [
             ""
         ],
-        "status": "draft",
+        "status": "published",
         "order": 35,
-        "collection": []
+        "collection": ["portfolio"]
     },
     {
         "id": 15,
@@ -1337,6 +1409,8 @@
             "ActionScript", "HTML", "CSS", "PHP", "MySQL"
         ],
         "image": "rea_web_locaboatindustries_diapo.jpg",
+        "masonry_0": "manson_0_locabindust.png",
+        "masonry_1": "manson_1_locabindust.png",
         "mediapath": "rea_web_locaboatindustries",
         "medias": [
             {
@@ -1398,7 +1472,7 @@
             "Flash",
             "ActionScript",
             "Dynamique",
-            "Dreamweaver",
+            "DreamWeaver",
             "Pack Macromedia",
             "Photoshop",
             "Site Dynamique",
@@ -1411,6 +1485,8 @@
             "MySQL"
         ],
         "image": "rea_web_locaboat_diapo.jpg",
+        "masonry_0": "",
+        "masonry_1": "",
         "mediapath": "rea_web_locaboat",
         "medias": [
             "01.jpg",
@@ -1454,6 +1530,8 @@
             "ActionScript"
         ],
         "image": "rea_web_lorenove_diapo.jpg",
+        "masonry_0": "",
+        "masonry_1": "",
         "mediapath": "rea_web_lorenove",
         "medias": [
             ""
@@ -1487,6 +1565,8 @@
             "Javascript / JQuery"
         ],
         "image": "rea_web_maaf_diapo.jpg",
+        "masonry_0": "",
+        "masonry_1": "",
         "mediapath": "rea_web_maaf",
         "medias": [
             ""
@@ -1512,12 +1592,14 @@
         "outils": [
             "Flash",
             "Illustrator",
-            "Dreamweaver"
+            "DreamWeaver"
         ],
         "technologies": [
             "ActionScript"
         ],
         "image": "rea_web_malte_diapo.jpg",
+        "masonry_0": "",
+        "masonry_1": "",
         "mediapath": "rea_web_malte",
         "medias": [
             "01.jpg",
@@ -1571,6 +1653,8 @@
             "MySQL"
         ],
         "image": "rea_web_marsans_diapo.jpg",
+        "masonry_0": "",
+        "masonry_1": "",
         "mediapath": "rea_web_marsans",
         "medias": [
             ""
@@ -1604,6 +1688,8 @@
             "XML"
         ],
         "image": "rea_web_mrl_diapo.jpg",
+        "masonry_0": "manson_0_mrl.png",
+        "masonry_1": "manson_1_mrl.png",
         "mediapath": "rea_web_mrl",
         "medias": [
             "01.jpg",
@@ -1654,6 +1740,8 @@
             "XML"
         ],
         "image": "rea_web_premaman_diapo.jpg",
+        "masonry_0": "manson_0_premaman.png",
+        "masonry_1": "manson_1_premaman.png",
         "mediapath": "rea_bol_premaman",
         "medias": [
             "01.jpg",
@@ -1690,6 +1778,8 @@
             "ActionScript"
         ],
         "image": "rea_web_resonnances_diapo.jpg",
+        "masonry_0": "manson_0_reso.png",
+        "masonry_1": "manson_1_reso.png",
         "mediapath": "rea_web_resonnances",
         "medias": [
             ""
@@ -1697,7 +1787,7 @@
         "missions": [
             ""
         ],
-        "status": "draft",
+        "status": "published",
         "order": 44,
         "collection": []
     },
@@ -1729,6 +1819,8 @@
             "MySQL"
         ],
         "image": "rea_web_services2it_diapo.jpg",
+        "masonry_0": "",
+        "masonry_1": "",
         "mediapath": "rea_web_services2it",
         "medias": [
             ""
@@ -1764,6 +1856,8 @@
             "XML"
         ],
         "image": "rea_web_skillmen_diapo.jpg",
+        "masonry_0": "mansonery_0_skillmen.png",
+        "masonry_1": "mansonery_1_skillmen.png",
         "mediapath": "rea_web_skillmen",
         "medias": [
             ""
@@ -1771,7 +1865,7 @@
         "missions": [
             ""
         ],
-        "status": "draft",
+        "status": "published",
         "order": 46,
         "collection": []
     },
@@ -1802,6 +1896,8 @@
             "PHP"
         ],
         "image": "rea_web_slam_diapo.jpg",
+        "masonry_0": "manson_0_slan.png",
+        "masonry_1": "manson_1_slam.png",
         "mediapath": "rea_web_slam",
         "medias": [
             ""
@@ -1831,6 +1927,8 @@
             "ActionScript"
         ],
         "image": "rea_web_tour66_diapo.jpg",
+        "masonry_0": "",
+        "masonry_1": "",
         "mediapath": "rea_web_tour66",
         "medias": [
             ""
@@ -1862,6 +1960,8 @@
             "Javascript / JQuery"
         ],
         "image": "rea_web_tpv_diapo.jpg",
+        "masonry_0": "",
+        "masonry_1": "",
         "mediapath": "rea_web_tpv",
         "medias": [
             ""
@@ -1899,6 +1999,8 @@
             "Javascript / JQuery"
         ],
         "image": "rea_web_ventilo_diapo.jpg",
+        "masonry_0": "manson_0_ventilo.png",
+        "masonry_1": "manson_1_ventilo.png",
         "mediapath": "rea_web_ventilo",
         "medias": [
             "01.jpg",
@@ -1944,6 +2046,8 @@
             "XML"
         ],
         "image": "rea_web_visiteurope_diapo.jpg",
+        "masonry_0": "manson_0_europe.png",
+        "masonry_1": "manson_1_visiteurope.png",
         "mediapath": "rea_web_visiteurope",
         "medias": [
             "01.jpg",
@@ -1989,6 +2093,8 @@
             "MySQL"
         ],
         "image": "rea_web_vu_diapo.jpg",
+        "masonry_0": "manson_0_vu.png",
+        "masonry_1": "manson_1_vu.png",
         "mediapath": "rea_web_vu",
         "medias": [
             "01.jpg"
@@ -2020,6 +2126,8 @@
             "ActionScript"
         ],
         "image": "rea_web_wip_diapo.jpg",
+        "masonry_0": "manson_0_wip.png",
+        "masonry_1": "manson_1_wip.png",
         "mediapath": "rea_web_wip",
         "medias": [
             ""
@@ -2053,6 +2161,8 @@
             "XML"
         ],
         "image": "rea_web_tour66_diapo.jpg",
+        "masonry_0": "",
+        "masonry_1": "",
         "mediapath": "",
         "medias": [
             "01.jpg",
@@ -2092,6 +2202,8 @@
             "XML"
         ],
         "image": "rea_bol_locaboat_diapo.jpg",
+        "masonry_0": "",
+        "masonry_1": "",
         "mediapath": "rea_bol_locaboat",
         "medias": [
             "01.jpg",
@@ -2136,6 +2248,8 @@
             "XML"
         ],
         "image": "rea_web_netseenergy_diapo.jpg",
+        "masonry_0": "manson_0_netseen.png",
+        "masonry_1": "manson_1_netseen.png",
         "mediapath": "rea_web_netseenergy",
         "medias": [
             "rea_web_netseenergy_item.jpg",
@@ -2180,6 +2294,8 @@
             "PHP"
         ],
         "image": "rea_web_youzikme_diapo.jpg",
+        "masonry_0": "manson_0_youzikme.png",
+        "masonry_1": "manson_1_youzikme.png",
         "mediapath": "rea_web_youzikme",
         "medias": [
             "01.jpg",
@@ -2221,6 +2337,8 @@
             "HTML"
         ],
         "image": "rea_web_putainbd_diapo.jpg",
+        "masonry_0": "",
+        "masonry_1": "",
         "mediapath": "rea_web_putainbd",
         "medias": [
             "01.jpg",
@@ -2262,6 +2380,8 @@
             "HTML"
         ],
         "image": "rea_web_podcasts_diapo.jpg",
+        "masonry_0": "",
+        "masonry_1": "",
         "mediapath": "rea_web_podcasts",
         "medias": [
             "01.jpg",
@@ -2302,6 +2422,8 @@
             "HTML"
         ],
         "image": "rea_web_rocksymbol_diapo.jpg",
+        "masonry_0": "",
+        "masonry_1": "",
         "mediapath": "rea_web_rocksymbol",
         "medias": [
             "01.jpg",
@@ -2352,6 +2474,8 @@
             "MySQL"
         ],
         "image": "rea_web_anarlf_diapo.jpg",
+        "masonry_0": "",
+        "masonry_1": "",
         "mediapath": "rea_web_anarlf",
         "medias": [
             ""
@@ -2388,6 +2512,8 @@
             "HTML"
         ],
         "image": "rea_web_docbikerwd_diapo.jpg",
+        "masonry_0": "manson_0_doc.png",
+        "masonry_1": "manson_1_doc.png",
         "mediapath": "rea_web_docbikerwd",
         "medias": [
             "doc_biker_home.png",
@@ -2435,6 +2561,8 @@
             "Javascript / JQuery"
         ],
         "image": "rea_web_cuendet_diapo.jpg",
+        "masonry_0": "",
+        "masonry_1": "",
         "mediapath": "rea_web_cuendet",
         "medias": [
             ""
@@ -2466,6 +2594,8 @@
             "Javascript / JQuery"
         ],
         "image": "rea_web_guadeloupe_diapo.jpg",
+        "masonry_0": "",
+        "masonry_1": "",
         "mediapath": "rea_web_guadeloupe",
         "medias": [
             ""
@@ -2499,6 +2629,8 @@
             "PHP"
         ],
         "image": "rea_web_bourgogne_diapo.jpg",
+        "masonry_0": "",
+        "masonry_1": "",
         "mediapath": "rea_web_bourgogne",
         "medias": [
             ""
@@ -2515,7 +2647,7 @@
     {
         "id": 68,
         "title": "Site Internet Le Site BIG MAMA",
-        "client": "Le Site BIG MAMA",
+        "client": "BIG MAMA",
         "year": 2015,
         "type": "Site Internet",
         "description": "Création du site Officiel de BIG MAMA, acteur majeur de la vidéo Broadcast et entreprises.",
@@ -2537,6 +2669,8 @@
             "HTML"
         ],
         "image": "rea_web_bigmama_diapo.jpg",
+        "masonry_0": "manson_0_big.png",
+        "masonry_1": "manson_1_big.png",
         "mediapath": "rea_web_bigmama",
         "medias": [
             "01.jpg",
@@ -2574,6 +2708,8 @@
             ""
         ],
         "image": "rea_web_domino_diapo.jpg",
+        "masonry_0": "",
+        "masonry_1": "",
         "mediapath": "rea_web_domino",
         "medias": [
             ""
@@ -2607,6 +2743,8 @@
             "Javascript / JQuery"
         ],
         "image": "rea_web_ilexen_diapo.png",
+        "masonry_0": "manson_0_ilexen.png",
+        "masonry_1": "manson_1_ilexen.png",
         "mediapath": "rea_web_ilexen",
         "medias": [
             "desktop_home.png",
@@ -2650,6 +2788,8 @@
             "ActionScript"
         ],
         "image": "rea_web_cms_diapo.jpg",
+        "masonry_0": "",
+        "masonry_1": "",
         "mediapath": "rea_web_cms",
         "medias": [
             {
@@ -2726,6 +2866,8 @@
             "ActionScript"
         ],
         "image": "rea_web_bol_diapo.png",
+        "masonry_0": "",
+        "masonry_1": "",
         "mediapath": "rea_web_bol",
         "medias": [
             {
@@ -2768,7 +2910,8 @@
         "status": "published",
         "order": 68,
         "collection": [
-            "case-study", "portfolio"
+            "case-study"
         ]
     }    
 ]
+

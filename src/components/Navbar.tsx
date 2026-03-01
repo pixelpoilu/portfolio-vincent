@@ -37,7 +37,7 @@ export default function Navbar() {
   const navStyle = {
     "--nav-shadow-opacity": (scrollProgress * 0.12).toFixed(3),
     "--nav-inset-opacity": (scrollProgress * 0.6).toFixed(3),
-    "--nav-bg-alpha": (scrollProgress * 0.5).toFixed(3),
+    "--nav-bg-alpha": (scrollProgress * 0.8).toFixed(3),
   } as CSSProperties;
 
   return (
