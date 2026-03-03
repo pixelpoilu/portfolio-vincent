@@ -230,7 +230,6 @@ export default function Projects({
           project.type,
           project.secteur,
           project.description,
-          String(project.year),
           project.outils.join(" "),
           project.technologies.join(" "),
         ]

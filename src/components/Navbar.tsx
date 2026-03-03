@@ -1,8 +1,7 @@
 
 import { useEffect, useState, type CSSProperties } from "react";
 import { NavLink } from "react-router-dom";
-import logo from "../assets/logo.svg";
-
+import Logo from "./Logo";
 export default function Navbar() {
   const [scrollProgress, setScrollProgress] = useState(0);
 
@@ -44,7 +43,7 @@ export default function Navbar() {
     <header className="navbar" style={navStyle}>
       <div className="nav-container">
         <NavLink to="/" className="logo">
-          <img src={logo} alt="Logo Vincent Lepretre" />
+          <Logo className="home-logo" />
         </NavLink>
         <nav className="nav-links">
           <NavLink to="/" end>

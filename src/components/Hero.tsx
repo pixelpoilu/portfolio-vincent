@@ -1,15 +1,14 @@
 ﻿import portrait from "../assets/images/hero/portrait-bw.png";
 import Footer from "./Footer";
-import logo from "../assets/logo.svg";
 import { ArrowRight } from "./icons";
-
+import Logo from "./Logo";
 export default function Home() {
   return (
     <main className="home">
       {/* Header minimal */}
       <div className="home-top">
         <div className="logo">
-          <img src={logo} alt="Logo Vincent Lepretre" />
+          <Logo className="home-logo" />
         </div>
         <div className="home-year">2026</div>
       </div>
@@ -18,13 +17,12 @@ export default function Home() {
       <section className="home-hero">
         {/* Colonne gauche */}
         <div className="hero-left">
-          <h1>Vincent Lepretre</h1>
+          <h1>Vincent Leprêtre</h1>
           <span className="hero-role">WEBMASTER</span>
           <div className="hero-divider" />
 
           <p className="hero-description">
-            Developpeur frontend oriente UX/UI
-            Je concois des interfaces claires, structurees et pensees comme des produits.
+            Développeur frontend orienté UX/UI, je conçois des interfaces claires, structurées et pensées comme des produits.
           </p>
 
           <div className="hero-buttons">

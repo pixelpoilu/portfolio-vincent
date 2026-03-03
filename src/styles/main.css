@@ -14,10 +14,21 @@
 :root {
   --bg: #f4f4f1;
   --card-bg: #ffffff;
-  --text: #0f172a;
-  --muted: #64748b;
+  --text: #1f1f1f;
+  --text-body: #4f4f4f;
+  --text-soft: #6f6f6f;
+  --muted: #8b8b8b;
   --accent: #2563eb;
   --borders: #e2e8f0;
+  --font-sans: "Manrope", "Afacad", "Inter", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  --font-ui: "Manrope", "Roboto", "Inter", system-ui, Arial, sans-serif;
+
+  --fs-display: clamp(2.2rem, 3.4vw, 3.9rem);
+  --fs-h1: clamp(2rem, 3vw, 3.2rem);
+  --fs-h2: clamp(1.6rem, 2.2vw, 2.4rem);
+  --fs-h3: clamp(1.15rem, 1.5vw, 1.45rem);
+  --fs-body: clamp(1rem, 1.05vw, 1.15rem);
+  --fs-meta: 0.95rem;
 
   --radius: 12px;
   --shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
@@ -43,7 +54,7 @@
 /* ===================================================== */
 
 body {
-  font-family: "Roboto", Inter, system-ui, Arial, sans-serif;
+  font-family: var(--font-sans);
   font-optical-sizing: auto;
   margin: 0;
   font-style: normal;
@@ -51,11 +62,59 @@ body {
     "wdth" 100;
   background: var(--bg);
   color: var(--text);
+  line-height: 1.5;
+  letter-spacing: -0.01em;
 }
 
 button,
 .nav-cta {
-  font-family: "Roboto Condensed", Inter, system-ui, Arial, sans-serif;
+  font-family: var(--font-ui);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--text);
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  font-size: var(--fs-h1);
+  font-weight: 600;
+  line-height: 1.08;
+}
+
+h2 {
+  font-size: var(--fs-h2);
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+h3 {
+  font-size: var(--fs-h3);
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+p,
+li,
+label,
+input,
+textarea {
+  color: var(--text-body);
+  font-size: var(--fs-body);
+  line-height: 1.6;
+}
+
+small,
+.meta,
+.muted {
+  color: var(--muted);
+  font-size: var(--fs-meta);
 }
 
 a {
@@ -180,7 +239,7 @@ section {
   font-size: 0.9rem;
   font-weight: 500;
 
-  color: #64748b;
+  color: var(--text-soft);
 
   transition:
     color 0.25s ease,
@@ -191,12 +250,12 @@ section {
 /* Hover main link */
 .nav-links a:hover {
   opacity: 1;
-  color: #0f172a;
+  color: var(--text);
 }
 
 /* Active link */
 .nav-links a.active {
-  color: #0f172a;
+  color: var(--text);
   opacity: 1;
 }
 
@@ -342,6 +401,7 @@ section {
 }
 
 .card-title {
+  color: #FFF;
   margin-top: 20px;
   margin-right: 0px;
   margin-bottom: 0px;
@@ -436,6 +496,7 @@ section {
   margin-right: auto;
   /*background: var(--bg, #ffffff);*/
   width: 100%;
+  box-sizing: border-box;
   /*max-width: 1150px;*/
   animation: fadeSlideDown 0.8s cubic-bezier(.22, 1, .36, 1);
   background: rgba(255, 255, 255, var(--nav-bg-alpha, 0.7));
@@ -487,77 +548,11 @@ section {
   border-left: 0;
 }
 
-.filter-bar {
-  display: flex;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-  gap: 0.7rem;
-
-  padding: 1rem 1.1rem;
-  margin: 0;
-
-  width: 100%;
-  max-width: none;
-  min-width: 0;
-  box-sizing: border-box;
-
-  background: transparent;
-  border: 0;
-  border-radius: 0;
-}
-
 .filter-section {
   display: flex;
   flex-wrap: wrap;
   gap: 0.6rem;
   align-items: center;
-}
-
-@media (max-width: 640px) {
-  .filter-bar {
-    flex-direction: row;
-    align-items: center;
-  }
-}
-
-/* ===================================================== */
-/*                  FILTER BAR BUTTONS                   */
-/* ===================================================== */
-
-.filter-bar button {
-  padding: 0.62rem 1.1rem;
-  border-radius: 0;
-  border: 1px solid #222;
-  background: transparent;
-  color: #222;
-  font-size: 0.8rem;
-  font-weight: 500;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition:
-    background-color 0.28s cubic-bezier(.22, 1, .36, 1),
-    color 0.28s cubic-bezier(.22, 1, .36, 1),
-    border-color 0.28s cubic-bezier(.22, 1, .36, 1);
-}
-
-/* Hover */
-.filter-bar button:hover {
-  background: #222;
-  color: #fff;
-}
-
-/* Active */
-.filter-bar button.active {
-  background: #222;
-  color: #fff;
-  border-color: #222;
-}
-
-/* Click feedback */
-.filter-bar button:active {
-  background: #111;
-  color: #fff;
 }
 
 /* ===================================================== */
@@ -713,6 +708,12 @@ section {
 
 .site-footer a:hover {
   text-decoration: underline;
+}
+
+@media (max-height: 850px) {
+  .home .site-footer {
+    font-size: 12px;
+  }
 }
 
 /* ===================================================== */
@@ -877,6 +878,57 @@ section {
 .project-info ul {
   margin-top: 10px;
   padding-left: 18px;
+}
+
+.project-tech-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 12px;
+  padding: 0;
+  list-style: none;
+}
+
+.project-tech-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.4rem 1rem;
+  border-radius: 999px;
+  border: 1px solid #c8c8c8;
+  background: #e6e6e6;
+  color: #2f2f2f;
+  font-size: 0.85rem;
+  font-weight: 500;
+  line-height: 1;
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.project-tech-pill:hover,
+.project-tech-pill:focus-within {
+  transform: translateY(-1px);
+  background: #f0f0f0;
+  border-color: #b8b8b8;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.project-tech-pill a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.project-tech-pill a:focus-visible {
+  outline: none;
+}
+
+@media (hover: none) {
+  .project-tech-pill:hover {
+    transform: none;
+    box-shadow: none;
+  }
 }
 
 /* ================= RESPONSIVE ================= */
@@ -1262,8 +1314,11 @@ section {
 }
 
 .home-logo {
+  /*
   font-size: 28px;
   font-weight: 500;
+  */
+  width: 60px;
 }
 
 .home-year {
@@ -1415,14 +1470,56 @@ section.home-hero {
   width: 100%;
 }
 
+@media (max-height: 850px) {
+  .hero-left h1 {
+    font-size: 44px;
+  }
+
+  .hero-role {
+    margin-top: 15px;
+  }
+
+  .hero-divider {
+    margin-top: 15px;
+    margin-right: 0px;
+    margin-bottom: 10px;
+    margin-left: 0px;
+  }
+
+  .hero-description {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #555;
+    max-width: 420px;
+  }
+
+  .hero-buttons {
+    font-size: 12px;
+    margin-top: 20px;
+    display: flex;
+    gap: 20px;
+  }
+
+  .btn {
+    padding: 10px 14px;
+    font-size: 12px;
+    letter-spacing: 0px;
+    text-decoration: none;
+    border: 1px solid #222;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+  }
+}
+
+/*
 @media (max-height: 560px) {
   .hero-left h1 {
     font-size: 44px;
   }
 
   .hero-description {
-    font-size: 18px;
-    line-height: normal;
+    font-size: 16px;
+    line-height: 1.6;
     color: #555;
     max-width: 420px;
   }
@@ -1443,7 +1540,7 @@ section.home-hero {
     text-transform: uppercase;
   }
 }
-
+*/
 /* ===================================================== */
 /*               FILTER BAR (merged)                     */
 /* ===================================================== */
@@ -1458,6 +1555,7 @@ section.home-hero {
   margin-right: auto;
   width: 100%;
   max-width: 1150px;
+  box-sizing: border-box;
   /*
   animation: fadeSlideDown 0.8s cubic-bezier(.22, 1, .36, 1);
   background: rgba(255, 255, 255, var(--nav-bg-alpha, 0.3));

@@ -56,7 +56,7 @@
         "technologies": [
             "ActionScript",
             "PHP",
-            "MySQL."
+            "MySQL"
         ],
         "image": "rea_cd_gauloises_diapo.jpg",
         "masonry_0": "manson_0_gauloises.png",
@@ -528,18 +528,26 @@
             "GIF Animé"
         ],
         "image": "rea_pub_wengo_diapo.jpg",
-        "masonry_0": "",
-        "masonry_1": "",
+        "masonry_0": "manson_0_wengo.png",
+        "masonry_1": "manson_1_wengo.png",
         "mediapath": "rea_pub_wengo",
         "medias": [
-            ""
+            "00.jpg",
+            "01.jpg",
+            "02.jpg",
+            "03.jpg",
+            "04.jpg",
+            "06.jpg",
+            "07.jpg"
         ],
         "missions": [
             ""
         ],
-        "status": "draft",
+        "status": "published",
         "order": 15,
-        "collection": []
+        "collection": [
+            "portfolio"
+        ]
     },
     {
         "id": 7,
@@ -981,52 +989,7 @@
         "order": 25,
         "collection": []
     },
-    {
-        "id": 21,
-        "title": "Réalisation du Site Internet DOC-BIKER",
-        "client": "DOC-BIKER",
-        "year": 2010,
-        "type": "Site Internet",
-        "description": "Réalisation complète du Site Internet, optimisation SEO, Webmastering",
-        "link": "www.docbiker.com",
-        "secteur": "Auto-Moto",
-        "Contexte": "",
-        "Reponse": "Site Dynamique",
-        "outils": [
-            "HTML",
-            "CSS",
-            "Javascript / JQuery",
-            "MySQL",
-            "PHP",
-            "Back Office dédié"
-        ],
-        "technologies": [
-            "HTML",
-            "CSS",
-            "Javascript / JQuery",
-            "MySQL",
-            "PHP"
-        ],
-        "image": "rea_web_docbiker_diapo.jpg",
-        "masonry_0": "",
-        "masonry_1": "",
-        "mediapath": "rea_web_docbiker",
-        "medias": [
-            "01.jpg",
-            "02.jpg",
-            "03.jpg",
-            "04.jpg",
-            "05.jpg"
-        ],
-        "missions": [
-            "Objectif : Effectuer une transition du site en flash vers un site visible par les moteurs de recherches."
-        ],
-        "status": "published",
-        "order": 26,
-        "collection": [
-            "portfolio"
-        ]
-    },
+
     {
         "id": 47,
         "title": "Newsletter OT ECOSSE",
@@ -2489,21 +2452,25 @@
     },
     {
         "id": 64,
-        "title": "Refonte du Site Internet DOC-BIKER",
+        "title": "Site Internet DOC-BIKER",
         "client": "DOC-BIKER",
         "year": 2014,
         "type": "Site Internet",
-        "description": "Refonte complète du Site Internet, optimisation et suivi SEO, Webmastering",
+        "description": "Gestion complète du site Internet pour l'enseigne DOC'BIKER pendant plus de 10 ans",
         "link": "www.docbiker.com",
         "secteur": "Auto-Moto",
-        "Contexte": "Focus cs",
-        "Reponse": "Site Dynamique",
+        "Contexte": "Initialement sollicité pour étudier le SEO, la mise en place du site HTML a permis d'obtenir un référencement naturel optimal, positionnant le site en première page de Google pour les requêtes liées à l'activité de DOC-BIKER (pneus moto Paris). ",
+        "Reponse": "Par la suite, le développement d'un thème Joomla personnalisé a permis d'offrir une interface d'administration adaptée aux besoins spécifiques de l'enseigne, facilitant la gestion des centres, des forfaits, des devis et des contenus du site.",
         "outils": [
             "Bootstrap",
             "Joomla",
-            "CSS",
+            "Responsive design",
             "HTML",
-            "Responsive design"
+            "CSS",
+            "Javascript / JQuery",
+            "MySQL",
+            "PHP",
+            "Back Office dédié"
         ],
         "technologies": [
             "Bootstrap",
@@ -2516,23 +2483,49 @@
         "masonry_1": "manson_1_doc.png",
         "mediapath": "rea_web_docbikerwd",
         "medias": [
-            "doc_biker_home.png",
-            "doc_centres.png",
-            "forfaits.png",
-            "devis.png",
-            "mobile01.png",
-            "mobile02.png",
-            "slider.png",
-            "carte_centres.png",
-            "fiche_centre.png",
-            "admin.png"
+      {
+        "file": "doc_biker_home.png",
+        "caption": "Nouvelle Home Page"
+      },
+            {"file":"doc_centres.png"},
+            {"file":"forfaits.png"},
+            {"file":"devis.png"},
+            {"file":"mobile01.png"},
+            {"file":"mobile02.png"},
+            {"file":"slider.png"},
+            {"file":"carte_centres.png"},
+            {"file":"fiche_centre.png"},
+            {"file":"admin.png",
+        "caption": "L'interface d'administration a été personalisée pour répondre aux besoins spécifiques de l'enseigne, avec des fonctionnalités dédiées à la gestion des centres, des forfaits, des devis et des contenus du site."},
+      {
+        "file": "01.jpg",
+        "caption": "Réalisation de la première version du site Internet de DOC-BIKER en 2010, avec une transition du site en flash vers un site visible par les moteurs de recherches."
+      },
+      {
+        "file": "02.jpg",
+        "caption": "Page de contenus de conversion"
+      },
+      {
+        "file": "03.jpg", "caption": "Page des forfaits"
+      },      {
+        "file": "results_google.png",
+        "caption": "Résultat de l'effort de référencement natif mené sur le développement HTML. Le site est aujourd'hui positionné sur la première page de Google pour les requêtes liées à l'activité de DOC-BIKER (pneus moto Paris)."
+      },      {
+        "file": "05.jpg"
+      },
+      {
+        "file": "slider.png",
+        "caption": "Exemple de slider, visible sur le site et dans les centres physiques de l'enseigne, permettant de synchroniser les visuels entre le site et les magasins physiques (via un réseau d'écran)."
+      }
         ],
         "missions": [
             "Création du thème Joomla à partir du blank template T3",
             "Adaptation à Bootstrap 3",
             "Développement des extensions propriétaires",
             "Suivi et optimistations SEO",
-            "Mises à jour de contenus"
+            "Mises à jour de contenus",
+            "Mise en place d'un système de visuels synchronisé entre le site et les magasins physiques (via un réseau d'écran)",
+            "Chaque centre DOC-BIKER dispose d'une fiche dédiée sur le site, avec des informations détaillées sur les services proposés, les horaires d'ouverture et les coordonnées de contact. Ces fiches sont régulièrement mises à jour pour refléter les changements dans les services ou les promotions en cours."
         ],
         "status": "published",
         "order": 62,

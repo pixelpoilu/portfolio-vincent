@@ -189,7 +189,7 @@ export default function ProjectDetail() {
               <h1>{project.title}</h1>
 
               <p className="meta">
-                {project.client} • {project.year}
+                {project.client}
               </p>
 
               <h3>Description</h3>
@@ -209,7 +209,13 @@ export default function ProjectDetail() {
               </ul>
 
               <h3>Technologies</h3>
-              <p>{project.technologies.join(", ")}</p>
+              <ul className="project-tech-list" aria-label="Technologies utilisees">
+                {project.technologies.map((technology) => (
+                  <li key={technology} className="project-tech-pill">
+                    {technology}
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </main>
