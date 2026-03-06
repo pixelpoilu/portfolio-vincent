@@ -190,37 +190,7 @@
             "portfolio"
         ]
     },
-    {
-        "id": 16,
-        "title": "Site Internet VISITMALTA",
-        "client": "VISITMALTA",
-        "year": 2001,
-        "type": "Site Internet",
-        "description": "Site pour l'Office du tourisme de Malte.\nCréation / Montage HMTL / Programmation PHP-MySQL du Back Office",
-        "link": "www.visitmalta.com",
-        "secteur": "Tourisme",
-        "Contexte": "",
-        "Reponse": "Interface Flash,Animation Flash,ActionScript,Banniere,Site Dynamique,Banniere Flash,Video en ligne,Quitime VR,Back Office",
-        "outils": [
-            "Flash"
-        ],
-        "technologies": [
-            "ActionScript"
-        ],
-        "image": "rea_map_malte_diapo.jpg",
-        "masonry_0": "manson_0_malte.png",
-        "masonry_1": "manson_1_malte.png",
-        "mediapath": "rea_web_malte",
-        "medias": [
-            ""
-        ],
-        "missions": [
-            ""
-        ],
-        "status": "draft",
-        "order": 5,
-        "collection": []
-    },
+
     {
         "id": 41,
         "title": "Pub on line CAMPING TYCOON",
@@ -695,30 +665,32 @@
         "Contexte": "",
         "Reponse": "",
         "outils": [
-            "Flash",
             "HTML",
             "CSS",
             "PHP",
             "Javascript / JQuery"
         ],
         "technologies": [
-            "ActionScript",
             "HTML",
             "CSS",
             "PHP",
             "Javascript / JQuery"
         ],
         "image": "rea_web_ads_diapo.jpg",
-        "masonry_0": "",
-        "masonry_1": "",
+        "masonry_0": "mansonery_0_ads.png",
+        "masonry_1": "mansonery_1_ads.png",
         "mediapath": "rea_web_ads",
         "medias": [
-            ""
+            "01.jpg",
+	        "02.jpg",
+            "03.jpg",
+            "ads_bandeau.gif",
+            "ads_big.jpg"
         ],
         "missions": [
             ""
         ],
-        "status": "draft",
+        "status": "published",
         "order": 19,
         "collection": [
             "portfolio"
@@ -827,7 +799,8 @@
             "Pack Adobe",
             "Apache Server",
             "Eclipse",
-            "UltraEdit32"
+            "UltraEdit32",
+            "Back Office propriétaire"
         ],
         "technologies": [
             "HTML",
@@ -1418,7 +1391,7 @@
         ],
         "status": "published",
         "order": 36,
-        "collection": ["case-study"]
+        "collection": ["Portfolio","case-study"]
     },
     {
         "id": 14,
@@ -1440,7 +1413,7 @@
             "Photoshop",
             "Site Dynamique",
             "Quicktime VR",
-            "Back Office Edoo"
+            "Back Office propriétaire"
         ],
         "technologies": [
             "ActionScript",
@@ -1543,11 +1516,11 @@
     },
     {
         "id": 53,
-        "title": "Carte Interactive VISITMALTA",
+        "title": "Carte Interactive et site VISITMALTA",
         "client": "VISITMALTA",
         "year": 2005,
         "type": "Carte Interactive",
-        "description": "Réalisation d'une carte touristique Interactive comme module complémentaire au site de l'office de tourisme de Malte.",
+        "description": "Réalisation complète du site internet de l'office de tourisme de Malte, incluant une carte touristique Interactive comme module complémentaire.",
         "link": "www.visitmalta.com",
         "secteur": "Tourisme",
         "Contexte": "L'office de tourisme de Malte souhaite proposer aux touristes souhaitant découvrir Malte, un outil pour explorer la particularité de chaque région du pays.",
@@ -1560,36 +1533,81 @@
         "technologies": [
             "ActionScript"
         ],
-        "image": "rea_web_malte_diapo.jpg",
-        "masonry_0": "",
-        "masonry_1": "",
+        "image": "rea_map_malte_diapo.jpg",
+        "masonry_0": "manson_0_malte.png",
+        "masonry_1": "manson_1_malte.png",
         "mediapath": "rea_web_malte",
-        "medias": [
-            "01.jpg",
-            "02.jpg",
-            "03.jpg",
-            "04.jpg",
-            "05.jpg",
-            "06.jpg",
-            "07.jpg",
-            "08.jpg",
-            "09.jpg",
-            "10.jpg",
-            "11.jpg",
-            "12.jpg",
-            "13.jpg",
-            "14.jpg",
-            "15.jpg"
-        ],
+    "medias": [
+      {
+        "file": "01.jpg",
+        "caption": "Accueil du portail de tourisme de Malte"
+      },
+      {
+        "file": "02.jpg",
+        "caption": "Page intérieure"
+      },
+      {
+        "file": "03.jpg",
+                "caption": "Page de catégorie"
+      },
+      {
+        "file": "04.jpg"
+      },
+      {
+        "file": "05.jpg",
+                "caption": "Moteur de recherche"
+      },
+      {
+        "file": "06.jpg",
+                "caption": "Carte interactive : Anim d'introduction"
+      },
+      {
+        "file": "07.jpg",
+                "caption": "Carte interactive : Zoom sur Malte"
+      },
+      {
+        "file": "08.jpg",
+                "caption": "Carte interactive : Accueil"
+      },
+      {
+        "file": "09.jpg"
+      },
+      {
+        "file": "10.jpg"
+      },
+      {
+        "file": "11.jpg"
+      },
+      {
+        "file": "12.jpg"
+      },
+      {
+        "file": "13.jpg"
+      },
+      {
+        "file": "14.jpg"
+      },
+      {
+        "file": "15.jpg"
+      }
+    ],
+
+
         "missions": [
-            "Proposer aux touristes souhaitant découvrir Malte, un outil pour explorer la particularité de chaque région du pays."
-        ],
+            "Prise en charge du développement de la carte interactive Flash",
+            "Mise en place d'une structure de données XML pour la mise à jour du contenu de la carte interactive",
+            "Interventions sur le développement de l'interface du site", 
+            "Interventions le codage des modules et bases de données"],
         "status": "published",
         "order": 40,
         "collection": [
-            "portfolio"
+            "portfolio","case-study"
         ]
     },
+    
+
+
+
     {
         "id": 23,
         "title": "Site Internet MARSANS",
@@ -1863,46 +1881,26 @@
         "masonry_1": "manson_1_slam.png",
         "mediapath": "rea_web_slam",
         "medias": [
-            ""
+            "01.jpg",
+            "02.jpg",
+            "03.jpg",
+            "04.jpg",
+            "05.jpg",
+            "06.jpg",
+            "07.jpg",
+      {
+        "file": "08.jpg",
+        "caption": "Interface d'administration dédiée"
+      }
         ],
         "missions": [
             ""
         ],
-        "status": "draft",
+        "status": "published",
         "order": 47,
-        "collection": []
+        "collection": ["portfolio"]
     },
-    {
-        "id": 35,
-        "title": "Site Internet TOUR 66 Teaser 1",
-        "client": "TOUR 66 Teaser 1",
-        "year": 2007,
-        "type": "Site Internet",
-        "description": "Site événementiel pour la tournée Tour66 de Johnny Hallyday ",
-        "link": "0",
-        "secteur": "Loisirs-Musique",
-        "Contexte": "",
-        "Reponse": "Site Vitrine,Site Institutionnel",
-        "outils": [
-            "Flash"
-        ],
-        "technologies": [
-            "ActionScript"
-        ],
-        "image": "rea_web_tour66_diapo.jpg",
-        "masonry_0": "",
-        "masonry_1": "",
-        "mediapath": "rea_web_tour66",
-        "medias": [
-            ""
-        ],
-        "missions": [
-            ""
-        ],
-        "status": "draft",
-        "order": 48,
-        "collection": []
-    },
+ 
     {
         "id": 52,
         "title": "Site Internet TESTE POUR VOUS",
@@ -2102,6 +2100,7 @@
         "order": 53,
         "collection": ["portfolio"]
     },
+	
     {
         "id": 38,
         "title": "Site Internet TOUR 66 Teaser Site",
@@ -2124,9 +2123,9 @@
             "XML"
         ],
         "image": "rea_web_tour66_diapo.jpg",
-        "masonry_0": "",
-        "masonry_1": "",
-        "mediapath": "",
+        "masonry_0": "manson_0_tour66.png",
+        "masonry_1": "manson_1_tour66.png",
+        "mediapath": "rea_web_tour66",
         "medias": [
             "01.jpg",
             "02.jpg",
@@ -2136,9 +2135,9 @@
         "missions": [
             ""
         ],
-        "status": "draft",
+        "status": "published",
         "order": 54,
-        "collection": []
+        "collection": ["portfolio"]
     },
     {
         "id": 39,
@@ -2184,7 +2183,7 @@
         "status": "published",
         "order": 55,
         "collection": [
-            "portfolio"
+            "case-study"
         ]
     },
     {
@@ -2300,8 +2299,8 @@
             "HTML"
         ],
         "image": "rea_web_putainbd_diapo.jpg",
-        "masonry_0": "",
-        "masonry_1": "",
+        "masonry_0": "manson_0_pbd.png",
+        "masonry_1": "manson_1_pbd.png",
         "mediapath": "rea_web_putainbd",
         "medias": [
             "01.jpg",
@@ -2343,8 +2342,8 @@
             "HTML"
         ],
         "image": "rea_web_podcasts_diapo.jpg",
-        "masonry_0": "",
-        "masonry_1": "",
+        "masonry_0": "manson_0_.png",
+        "masonry_1": "manson_1_.png",
         "mediapath": "rea_web_podcasts",
         "medias": [
             "01.jpg",
@@ -2352,10 +2351,10 @@
             "03.jpg"
         ],
         "missions": [
-            "Interface optimisée pour tablettes (Jquery Mobile), Administration (PluXML)"
+            "Interface optimisée pour tablettes (Jquery Mobile)", "Administration (PluXML)"
         ],
         "status": "published",
-        "order": 59,
+        "order": 89,
         "collection": [
             "portfolio"
         ]
@@ -2385,8 +2384,8 @@
             "HTML"
         ],
         "image": "rea_web_rocksymbol_diapo.jpg",
-        "masonry_0": "",
-        "masonry_1": "",
+        "masonry_0": "mansonery_0_rocksymbol.png",
+        "masonry_1": "mansonery_1_rocksymbol.png",
         "mediapath": "rea_web_rocksymbol",
         "medias": [
             "01.jpg",
@@ -2401,8 +2400,7 @@
         "status": "published",
         "order": 60,
         "collection": [
-            "portfolio",
-            "case-study"
+            "portfolio"
         ]
     },
     {
@@ -2905,6 +2903,60 @@
         "collection": [
             "case-study"
         ]
-    }    
+    }, 
+    {
+        "id": 74,
+        "title": "Site Internet Azur Drones",
+        "client": "Azur Drones",
+        "year": 2017,
+        "type": "Site Internet",
+        "description": "Refonte du site Internet d'Azur Drones, acteur majeur de la technologie des drones professionnels en France",
+        "link": "Focus Pt",
+        "secteur": "Industries-Equipement",
+        "Contexte": "L'entreprise Azur Drones, spécialisée dans la technologie des drones professionnels, souhaitait une refonte de son site Internet pour mieux présenter ses produits et services, tout en offrant une expérience utilisateur plus interactive et engageante. Un besoin spécifique était de proposer une présentation dynamique de leurs brochures techniques en ligne, permettant aux visiteurs de consulter les informations de manière plus immersive.",
+        "Reponse": "Après validation du principe de navigation proposé sur XD, j'ai travaillé sur une base de template Wordpress T3, permettant d'offrir un responsive natif sur lequel j'ai intégré les éléments de design. Le template offre également des fonctionalités avancées de gestion de contenu.",
+        "outils": [
+            "Wordpress",
+            "Base T3 Blank Template",
+            "Adobe XD"
+        ],
+        "technologies": [
+            "LESS","Bootstrap","CSS",
+            "HTML","Javascript / JQuery","PHP","MySQL"
+        ],
+        "image": "rea_web_azurdrones_diapo.png",
+        "masonry_0": "manson_1_azur.png",
+        "masonry_1": "manson_0_azur.png",
+        "mediapath": "rea_web_azurdrones",
+        "medias": [
+            {
+                "file": "01.jpg",
+                "caption": "Acceuil"
+            },
+            {
+                "file": "02.jpg",
+                "caption": "Page solutions"
+            },
+            {
+                "file": "03.jpg"
+            },
+            {
+                "file": "04.jpg",
+                "caption": "Module de recherche"
+            },
+            {
+                "file": "05.jpg",
+                "caption": "Page résultats de recherche"
+            }
+        ],
+        "missions": [
+            ""
+        ],
+        "status": "published",
+        "order": 68,
+        "collection": [
+            "case-study","portfolio"
+        ]
+    }  
 ]
 

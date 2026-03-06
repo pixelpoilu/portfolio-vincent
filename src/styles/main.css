@@ -683,13 +683,12 @@ section {
 }
 
 
-
-
-
-.site-footer p {
+.site-footer p,
+.home .site-footer p {
   margin: 0%;
   padding: 0%;
   width: 100%;
+  font-size: 14px;
 }
 
 .site-page .site-footer {
@@ -864,20 +863,30 @@ section {
 
 .project-info h3 {
   margin-top: 30px;
-  font-size: 14px;
-  letter-spacing: 1px;
+  font-size: 12px;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
   text-transform: uppercase;
-  opacity: 0.6;
+  color: #808080;
+  letter-spacing: 0.2rem;
 }
 
 .project-info p {
   line-height: 1.7;
-  margin-top: 10px;
+  margin-top: 8px;
+  font-size: 15px;
+  color: #000000;
 }
 
 .project-info ul {
   margin-top: 10px;
   padding-left: 18px;
+}
+
+.project-info ul li {
+  margin-bottom: 8px;
+  font-size: 15px;
+  color: #000000;
 }
 
 .project-tech-list {

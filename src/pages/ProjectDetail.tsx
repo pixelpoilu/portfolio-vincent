@@ -57,6 +57,15 @@ export default function ProjectDetail() {
     );
   }
 
+  const client = project.client?.trim();
+  const description = project.description?.trim();
+  const contexte = project.Contexte?.trim();
+  const reponse = project.Reponse?.trim();
+  const missions = project.missions.filter((mission) => mission.trim() !== "");
+  const technologies = project.technologies.filter(
+    (technology) => technology.trim() !== ""
+  );
+
   const galleryImages = project.medias
     .map((media) => {
       const mediaFile = typeof media === "string" ? media : media.file;
@@ -188,34 +197,52 @@ export default function ProjectDetail() {
             <div className="project-info">
               <h1>{project.title}</h1>
 
-              <p className="meta">
-                {project.client}
-              </p>
+              {client && <p className="meta">{client}</p>}
 
-              <h3>Description</h3>
-              <p>{project.description}</p>
+              {description && (
+                <>
+                  <h3>Description</h3>
+                  <p>{description}</p>
+                </>
+              )}
 
-              <h3>Contexte</h3>
-              <p>{project.Contexte}</p>
+              {contexte && (
+                <>
+                  <h3>Contexte</h3>
+                  <p>{contexte}</p>
+                </>
+              )}
 
-              <h3>Réponse</h3>
-              <p>{project.Reponse}</p>
+              {reponse && (
+                <>
+                  <h3>Réponse</h3>
+                  <p>{reponse}</p>
+                </>
+              )}
 
-              <h3>Missions</h3>
-              <ul>
-                {project.missions.map((mission, index) => (
-                  <li key={index}>{mission}</li>
-                ))}
-              </ul>
+              {missions.length > 0 && (
+                <>
+                  <h3>Missions</h3>
+                  <ul>
+                    {missions.map((mission, index) => (
+                      <li key={index}>{mission}</li>
+                    ))}
+                  </ul>
+                </>
+              )}
 
-              <h3>Technologies</h3>
-              <ul className="project-tech-list" aria-label="Technologies utilisees">
-                {project.technologies.map((technology) => (
-                  <li key={technology} className="project-tech-pill">
-                    {technology}
-                  </li>
-                ))}
-              </ul>
+              {technologies.length > 0 && (
+                <>
+                  <h3>Technologies</h3>
+                  <ul className="project-tech-list" aria-label="Technologies utilisees">
+                    {technologies.map((technology) => (
+                      <li key={technology} className="project-tech-pill">
+                        {technology}
+                      </li>
+                    ))}
+                  </ul>
+                </>
+              )}
             </div>
           </div>
         </main>
