@@ -265,7 +265,7 @@ export default function FilterBar({
               aria-expanded={open === "tech"}
             >
               <span className="trigger-label">
-                Tech {activeTechs.length > 0 ? `(${activeTechs.length})` : ""}
+                Technologies {activeTechs.length > 0 ? `(${activeTechs.length})` : ""}
               </span>
               <span className="trigger-caret">{open === "tech" ? <RiArrowUpSLine /> : <RiArrowDownSLine />}</span>
             </button>
@@ -292,3 +292,4 @@ export default function FilterBar({
     </div>
   );
 }
+

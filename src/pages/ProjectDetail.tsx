@@ -1,6 +1,7 @@
-﻿import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link, Navigate, useLocation, useParams } from "react-router-dom";
 import Footer from "../components/Footer";
+import Loader from "../components/Loader";
 import PageTransition from "../components/PageTransition";
 import projectsData from "../data/project-prod.json";
 import type { Project, ProjectMedia } from "../types/Project";
@@ -35,6 +36,7 @@ export default function ProjectDetail() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(true);
   const [isHovered, setIsHovered] = useState(false);
+  const [isSliderImageLoaded, setIsSliderImageLoaded] = useState(false);
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   if (projectByLegacyId && !projectBySlug) {
@@ -87,7 +89,12 @@ export default function ProjectDetail() {
     setCurrentIndex(0);
     setIsPlaying(true);
     setIsHovered(false);
+    setIsSliderImageLoaded(false);
   }, [project?.id]);
+
+  useEffect(() => {
+    setIsSliderImageLoaded(false);
+  }, [currentIndex, project?.id]);
 
   useEffect(() => {
     if (intervalRef.current) {
@@ -129,7 +136,7 @@ export default function ProjectDetail() {
         <div className="detail-wrapper">
           <div className="filter-top">
             <Link to={listingBasePath} className="btn secondary">
-             <span className="arrow">‹‹ </span>{backLabel}
+             <span className="arrow">�� </span>{backLabel}
             </Link>
           </div>
 
@@ -144,20 +151,27 @@ export default function ProjectDetail() {
             >
               {galleryImages.length > 0 && (
                 <>
+                  {!isSliderImageLoaded && (
+                    <div className="image-loader-overlay" aria-hidden="true">
+                      <Loader />
+                    </div>
+                  )}
                   <img
                     src={galleryImages[currentIndex].src}
                     alt={project.title}
-                    className="slider-image"
+                    className={`slider-image ${isSliderImageLoaded ? "is-loaded" : "is-loading"}`}
+                    onLoad={() => setIsSliderImageLoaded(true)}
+                    onError={() => setIsSliderImageLoaded(true)}
                   />
                   {galleryImages[currentIndex].caption && (
                     <p className="slider-caption">{galleryImages[currentIndex].caption}</p>
                   )}
 
                   <button className="slider-btn left" onClick={prevSlide}>
-                    ‹
+                    �
                   </button>
                   <button className="slider-btn right" onClick={nextSlide}>
-                    ›
+                    �
                   </button>
 
                   <div
@@ -169,9 +183,9 @@ export default function ProjectDetail() {
                       className="slider-control"
                       onClick={prevSlide}
                       disabled={galleryImages.length <= 1}
-                      aria-label="Image ⏮e"
+                      aria-label="Image ?e"
                     >
-                      ⏮
+                      ?
                     </button>
                     <button
                       className="slider-control"
@@ -179,15 +193,15 @@ export default function ProjectDetail() {
                       disabled={galleryImages.length <= 1}
                       aria-label={isPlaying ? "Mettre en pause" : "Lire"}
                     >
-                      {isPlaying ? "⏸" : "▶"}
+                      {isPlaying ? "?" : "?"}
                     </button>
                     <button
                       className="slider-control"
                       onClick={nextSlide}
                       disabled={galleryImages.length <= 1}
-                      aria-label="Image ⏭e"
+                      aria-label="Image ?e"
                     >
-                      ⏭
+                      ?
                     </button>
                   </div>
                 </>
@@ -215,7 +229,7 @@ export default function ProjectDetail() {
 
               {reponse && (
                 <>
-                  <h3>Réponse</h3>
+                  <h3>R�ponse</h3>
                   <p>{reponse}</p>
                 </>
               )}
@@ -251,4 +265,3 @@ export default function ProjectDetail() {
     </PageTransition>
   );
 }
-

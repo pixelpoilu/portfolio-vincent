@@ -7,6 +7,7 @@ import projectsData from "../data/project-prod.json";
 import PageTransition from "../components/PageTransition";
 import ProjectCard from "../components/ProjectCard";
 import Footer from "../components/Footer";
+import Loader from "../components/Loader";
 import type { Project, ProjectMedia } from "../types/Project";
 import { hasCollection, type ProjectCollectionKey } from "../utils/projectCollection";
 import { slugifyTitle } from "../utils/slug";
@@ -63,7 +64,9 @@ export default function Projects({
   const [slideshowProject, setSlideshowProject] = useState<Project | null>(null);
   const [slideshowSlides, setSlideshowSlides] = useState<SlideshowSlide[]>([]);
   const [activeSlideIndex, setActiveSlideIndex] = useState(0);
-  const [isSlideshowPlaying, setIsSlideshowPlaying] = useState(true);
+  const [isSlideshowThumbLoaded, setIsSlideshowThumbLoaded] = useState(false);
+  const [isSlideImageLoaded, setIsSlideImageLoaded] = useState(false);
+  const [isSlideshowPlaying, setIsSlideshowPlaying] = useState(false);
   const [transitionDirection, setTransitionDirection] = useState<1 | -1>(1);
   const isSlideshowOpen = slideshowProject !== null;
 
@@ -306,7 +309,7 @@ export default function Projects({
     setSlideshowProject(null);
     setSlideshowSlides([]);
     setActiveSlideIndex(0);
-    setIsSlideshowPlaying(true);
+    setIsSlideshowPlaying(false);
   }, []);
 
   const openProjectSlideshow = useCallback(
@@ -321,7 +324,7 @@ export default function Projects({
       setSlideshowProject(project);
       setSlideshowSlides(slides);
       setActiveSlideIndex(0);
-      setIsSlideshowPlaying(true);
+      setIsSlideshowPlaying(false);
       setTransitionDirection(1);
     },
     [detailBasePath, navigate, resolveProjectSlides]
@@ -406,6 +409,14 @@ export default function Projects({
 
     return masonryImageByFilename.get(masonryFilename);
   }, [slideshowProject]);
+  useEffect(() => {
+    setIsSlideshowThumbLoaded(false);
+  }, [slideshowThumbSrc, slideshowProject?.id]);
+
+  useEffect(() => {
+    setIsSlideImageLoaded(false);
+  }, [currentSlide?.src, activeSlideIndex, slideshowProject?.id]);
+
   const slideMotion = {
     initial: { opacity: 0, x: transitionDirection * 140 },
     animate: { opacity: 1, x: 0 },
@@ -497,11 +508,20 @@ export default function Projects({
                     <div className="portfolio-slideshow-meta">
                       <div className="portfolio-slideshow-project">
                         {slideshowThumbSrc ? (
-                          <img
-                            className="portfolio-slideshow-thumb"
-                            src={slideshowThumbSrc}
-                            alt={`Vignette ${slideshowProject.title}`}
-                          />
+                          <>
+                            {!isSlideshowThumbLoaded && (
+                              <div className="image-loader-overlay" aria-hidden="true">
+                                <Loader />
+                              </div>
+                            )}
+                            <img
+                              className={`portfolio-slideshow-thumb ${isSlideshowThumbLoaded ? "is-loaded" : "is-loading"}`}
+                              src={slideshowThumbSrc}
+                              alt={`Vignette ${slideshowProject.title}`}
+                              onLoad={() => setIsSlideshowThumbLoaded(true)}
+                              onError={() => setIsSlideshowThumbLoaded(true)}
+                            />
+                          </>
                         ) : (
                           <div className="portfolio-slideshow-thumb-fallback" aria-hidden="true" />
                         )}
@@ -558,7 +578,18 @@ export default function Projects({
                         exit={slideMotion.exit}
                         transition={{ duration: 0.42, ease: "easeOut" }}
                       >
-                        <img src={currentSlide.src} alt={slideshowProject.title} />
+                        {!isSlideImageLoaded && (
+                          <div className="image-loader-overlay" aria-hidden="true">
+                            <Loader />
+                          </div>
+                        )}
+                        <img
+                          src={currentSlide.src}
+                          alt={slideshowProject.title}
+                          className={isSlideImageLoaded ? "is-loaded" : "is-loading"}
+                          onLoad={() => setIsSlideImageLoaded(true)}
+                          onError={() => setIsSlideImageLoaded(true)}
+                        />
                         {currentSlide.caption && (
                           <figcaption>{currentSlide.caption}</figcaption>
                         )}
@@ -586,3 +617,7 @@ export default function Projects({
     </PageTransition>
   );
 }
+
+
+
+

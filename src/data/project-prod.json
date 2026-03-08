@@ -1079,7 +1079,7 @@
             "Réalisation d'un site dynamique, doté d'un back office propriétaire permettant la mise à jour du contenu et des médias."
         ],
         "status": "published",
-        "order": 32,
+        "order": 12,
         "collection": [
             "portfolio"
         ]
@@ -1673,6 +1673,46 @@
         "status": "published",
         "order": 44,
         "collection": ["portfolio"]
+    },    {
+        "id": 128,
+        "title": "Site Internet Utilitaire & services",
+        "client": "Particulier",
+        "year": 2011,
+        "type": "Mini-site",
+        "description": "Mini-Site OnePage Admninistrable pour un prestataire de services",
+        "link": "www.services2it.com",
+        "secteur": "Aide à la personne",
+        "Contexte": "",
+        "Reponse": "Site Dynamique,Back Office",
+        "outils": [
+            "Illustrator",
+            "Photoshop",
+            "DreamWeaver"
+        ],
+        "technologies": [
+            "PluXML",
+            "HTML",
+            "CSS",
+            "PHP",
+            "Javascript / JQuery",
+            "MySQL"
+        ],
+        "image": "rea_web_uservices_diapo.jpg",
+        "masonry_0": "manson_0_uservices.png",
+        "masonry_1": "manson_1_uservices.png",
+        "mediapath": "rea_web_uservices",
+        "thumb": "manson_0_uservices.png",
+        "medias": [
+            "home.png",
+            "contact.png",
+            "home_phone.png"
+        ],
+        "missions": [
+            ""
+        ],
+        "status": "published",
+        "order": 45,
+        "collection": ["portfolio"]
     },
     {
         "id": 56,
@@ -1966,7 +2006,7 @@
         "missions": [
             "Site Full Flash + Full Administrable"
         ],
-        "status": "published",
+        "status": "draft",
         "order": 2,
         "collection": [
             "portfolio"
@@ -2011,8 +2051,8 @@
 	
     {
         "id": 38,
-        "title": "Site Internet TOUR 66 Teaser Site",
-        "client": "TOUR 66 Teaser Site",
+        "title": "Site Internet TOUR 66 Teaser et Site",
+        "client": "TOUR 66",
         "year": 2008,
         "type": "Site Internet",
         "description": "Site événementiel pour la tournée Tour66 de Johnny Hallyday ",
@@ -2057,7 +2097,7 @@
         "year": 2010,
         "type": "Brochure Online",
         "description": "Conception / Réalisation du module de lecture en ligne de Brochure PDF. Flash pour Locaboat.",
-        "link": "http://www.locaboat.com/73/lire-en-ligne.html",
+        "link": "",
         "secteur": "Nautique",
         "Contexte": "",
         "Reponse": "Interface Flash,Animation Flash,ActionScript",
@@ -2587,7 +2627,7 @@
         ]
     },
     {
-        "id": 71,
+        "id": 171,
         "title": "Campagnes DOMINO-PRINTING",
         "client": "DOMINO-PRINTING",
         "year": 2018,
@@ -2876,6 +2916,62 @@
         "collection": [
             "case-study","portfolio"
         ]
-    }  
+    },
+    {
+        "id": 177,
+        "title": "Landing Pages commerciales",
+        "client": "Divers clients",
+        "year": 2023,
+        "type": "Landing Pages",
+        "description": "Refonte du site Internet d'Azur Drones, acteur majeur de la technologie des drones professionnels en France",
+        "link": "",
+        "secteur": "Industries-Equipement",
+        "Contexte": "L'entreprise Azur Drones, spécialisée dans la technologie des drones professionnels, souhaitait une refonte de son site Internet pour mieux présenter ses produits et services, tout en offrant une expérience utilisateur plus interactive et engageante. Un besoin spécifique était de proposer une présentation dynamique de leurs brochures techniques en ligne, permettant aux visiteurs de consulter les informations de manière plus immersive.",
+        "Reponse": "Après validation du principe de navigation proposé sur XD, j'ai travaillé sur une base de template Wordpress T3, permettant d'offrir un responsive natif sur lequel j'ai intégré les éléments de design. Le template offre également des fonctionalités avancées de gestion de contenu.",
+        "outils": [
+            "Wordpress",
+            "Base T3 Blank Template",
+            "Adobe XD","Pardot","SalesForce"
+        ],
+        "technologies": [
+            "LESS","Bootstrap","CSS",
+            "HTML","Javascript / JQuery","PHP","MySQL"
+        ],
+        "image": "manson_1_landings.png",
+        "masonry_0": "manson_1_landings.png",
+        "masonry_1": "manson_0_landings.png",
+        "mediapath": "rea_web_landings",
+        "thumb": "manson_0_landings.jpg",
+        "medias": [
+            {
+                "file": "landing_dilitrust01.png",
+                "caption": "Formulaires Pardot intégrés dans des landing Pages, pilotées via Worpdress"
+            },
+            {
+                "file": "landing_dilitrust02.png",
+                "caption": "Campagne pour la soltion SASS Board Portal DiliTrust (Canada)"
+            },
+            {
+                "file": "landing_domino01.png",
+                "caption": "Campagne pour Domino Printing, connectée à Pardot/Salesforce"
+            },
+            {
+                "file": "landing_domino01_phone.png",
+                "caption": "Landing format téléphone"
+            },
+            {
+                "file": "landing_domino01_form2phone.png",
+                "caption": "Landing Desktop, envoi de mail responsive"
+            }
+        ],
+        "missions": [
+            ""
+        ],
+        "status": "published",
+        "order": 98,
+        "collection": [
+            "portfolio"
+        ]
+    }      
 ]
 

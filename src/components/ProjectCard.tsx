@@ -2,8 +2,9 @@ import { motion } from "framer-motion";
 import { FaAngleRight } from "@react-icons/all-files/fa/FaAngleRight";
 import { Link } from "react-router-dom";
 import { slugifyTitle } from "../utils/slug";
-import type { MouseEvent } from "react";
+import { useEffect, useState, type MouseEvent } from "react";
 import type { Project } from "../types/Project";
+import Loader from "./Loader";
 
 interface ProjectCardProps {
     project: Project;
@@ -19,7 +20,13 @@ export default function ProjectCard({
     onCardClick,
 }: ProjectCardProps) {
     const thumbnail = thumbnailOverride;
+    const [isImageLoaded, setIsImageLoaded] = useState(false);
     const projectSlug = slugifyTitle(project.title);
+
+    useEffect(() => {
+        setIsImageLoaded(false);
+    }, [thumbnail]);
+
     const handleCardClick = (event: MouseEvent<HTMLAnchorElement>) => {
         if (!onCardClick) {
             return;
@@ -37,12 +44,21 @@ export default function ProjectCard({
             <Link to={`${detailBasePath}/${projectSlug}`} className="card-link" onClick={handleCardClick}>
                 <div className="card-image-wrapper">
                     {thumbnail ? (
-                        <img
-                            src={thumbnail}
-                            alt={project.title}
-                            className="card-image"
-                            loading="lazy"
-                        />
+                        <>
+                            {!isImageLoaded && (
+                                <div className="image-loader-overlay" aria-hidden="true">
+                                    <Loader />
+                                </div>
+                            )}
+                            <img
+                                src={thumbnail}
+                                alt={project.title}
+                                className={`card-image ${isImageLoaded ? "is-loaded" : "is-loading"}`}
+                                loading="lazy"
+                                onLoad={() => setIsImageLoaded(true)}
+                                onError={() => setIsImageLoaded(true)}
+                            />
+                        </>
                     ) : (
                         <div className="card-image card-image-fallback" aria-hidden="true" />
                     )}
