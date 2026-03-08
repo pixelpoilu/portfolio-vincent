@@ -1,4 +1,4 @@
-﻿[
+[
     {
         "id": 4,
         "title": "MINI-SITE OT - FINLANDE",
@@ -21,6 +21,7 @@
         "masonry_0": "manson_0_finland.png",
         "masonry_1": "manson_1_finland.png",
         "mediapath": "rea_cd_finlande",
+        "thumb": "rea_cd_finlande_thumb.jpg",
         "medias": [
             "01.jpg",
             "02.jpg",
@@ -48,10 +49,7 @@
         "Contexte": "",
         "Reponse": "Interface Flash,Animation FlashActionScript,Site Dynamique",
         "outils": [
-            "ActionScript",
-            "Flash",
-            "PHP",
-            "MySQL"
+            "Flash"
         ],
         "technologies": [
             "ActionScript",
@@ -62,6 +60,7 @@
         "masonry_0": "manson_0_gauloises.png",
         "masonry_1": "manson_1_gauloises.png",
         "mediapath": "rea_webcat_gauloises",
+        "thumb": "rea_webcat_gauloises_thumb.jpg",
         "medias": [
             "01.jpg",
             "02.jpg",
@@ -92,7 +91,7 @@
             "Proposer un outil de présentation interactif des objets Matpub, permettant également une gestion des commandes."
         ],
         "status": "published",
-        "order": 2,
+        "order": 24,
         "collection": [
             "portfolio"
         ]
@@ -110,9 +109,7 @@
         "Reponse": "Interface Flash,Animation Flash,ActionScript,Site Dynamique,Vidéo en ligne,Quitime VR",
         "outils": [
             "Flash 4",
-            "DreamWeaver",
-            "Développement XML",
-            "ActionScript"
+            "DreamWeaver"
         ],
         "technologies": [
             "HTML",
@@ -125,6 +122,7 @@
         "masonry_0": "manson_0_marmara.png",
         "masonry_1": "manson_1_marmara.png",
         "mediapath": "rea_cd_marmara",
+        "thumb": "rea_cd_marmara_thumb.jpg",
         "medias": [
             "01.jpg",
             "02.jpg",
@@ -171,6 +169,7 @@
         "masonry_0": "manson_0_medicis.png",
         "masonry_1": "manson_1_medicis.png",
         "mediapath": "rea_cd_medicis",
+        "thumb": "rea_cd_medicis_thumb.jpg",
         "medias": [
             "01.jpg",
             "02.jpg",
@@ -203,16 +202,16 @@
         "Contexte": "",
         "Reponse": "Animation Flash, Pub Online",
         "outils": [
-            ""
+            "Flash", "Fireworks"
         ],
         "technologies": [
-            "Flash",
             "GIF Animé"
         ],
         "image": "rea_pub_camping_diapo.jpg",
         "masonry_0": "",
         "masonry_1": "",
         "mediapath": "rea_pub_camping",
+        "thumb": "rea_pub_camping_thumb.jpg",
         "medias": [
             ""
         ],
@@ -244,6 +243,7 @@
         "masonry_0": "",
         "masonry_1": "",
         "mediapath": "rea_pub_chevrolet",
+        "thumb": "rea_pub_chevrolet_thumb.jpg",
         "medias": [
             ""
         ],
@@ -275,6 +275,7 @@
         "masonry_0": "",
         "masonry_1": "",
         "mediapath": "rea_pub_daewoo",
+        "thumb": "rea_pub_daewoo_thumb.jpg",
         "medias": [
             ""
         ],
@@ -312,6 +313,7 @@
         "masonry_0": "",
         "masonry_1": "",
         "mediapath": "rea_pub_esselte",
+        "thumb": "rea_pub_esselte_thumb.jpg",
         "medias": [
             ""
         ],
@@ -337,13 +339,14 @@
             "Flash"
         ],
         "technologies": [
-            "Flash",
+            "ActionScript",
             "GIF Animé"
         ],
         "image": "rea_pub_pacific_diapo.jpg",
         "masonry_0": "",
         "masonry_1": "",
         "mediapath": "rea_pub_pacific",
+        "thumb": "rea_pub_pacific_thumb.jpg",
         "medias": [
             ""
         ],
@@ -366,16 +369,17 @@
         "Contexte": "",
         "Reponse": "Animation Flash, Pub Online",
         "outils": [
-            "Flash"
+            "Flash", "Fireworks"
         ],
         "technologies": [
-            "Flash",
+            "ActionScript",
             "GIF Animé"
         ],
         "image": "rea_pub_poker_diapo.jpg",
         "masonry_0": "",
         "masonry_1": "",
         "mediapath": "rea_pub_poker",
+        "thumb": "rea_pub_poker_thumb.jpg",
         "medias": [
             ""
         ],
@@ -407,6 +411,7 @@
         "masonry_0": "",
         "masonry_1": "",
         "mediapath": "rea_pub_tms",
+        "thumb": "rea_pub_tms_thumb.jpg",
         "medias": [
             ""
         ],
@@ -438,6 +443,7 @@
         "masonry_0": "",
         "masonry_1": "",
         "mediapath": "rea_pub_trainz",
+        "thumb": "rea_pub_trainz_thumb.jpg",
         "medias": [
             ""
         ],
@@ -469,6 +475,7 @@
         "masonry_0": "",
         "masonry_1": "",
         "mediapath": "rea_pub_wanadoo",
+        "thumb": "rea_pub_wanadoo_thumb.jpg",
         "medias": [
             ""
         ],
@@ -491,16 +498,17 @@
         "Contexte": "",
         "Reponse": "Animation Flash, Pub Online",
         "outils": [
-            ""
+            "Flash", "Fireworks"
         ],
         "technologies": [
-            "Flash",
+            "ActionScript",
             "GIF Animé"
         ],
         "image": "rea_pub_wengo_diapo.jpg",
         "masonry_0": "manson_0_wengo.png",
         "masonry_1": "manson_1_wengo.png",
         "mediapath": "rea_pub_wengo",
+        "thumb": "rea_pub_wengo_thumb.jpg",
         "medias": [
             "00.jpg",
             "01.jpg",
@@ -540,6 +548,7 @@
         "masonry_0": "",
         "masonry_1": "",
         "mediapath": "rea_screen_sacla",
+        "thumb": "rea_screen_sacla_thumb.jpg",
         "medias": [
             "rea_screen_sacla_diapo.jpg"
         ],
@@ -554,7 +563,7 @@
     },
     {
         "id": 32,
-        "title": "Catalogue Online GAULOISES Merchandising",
+        "title": "Catalogue interactif",
         "client": "GAULOISES Merchandising",
         "year": 2007,
         "type": "Catalogue Online",
@@ -576,9 +585,10 @@
             "Javascript / JQuery"
         ],
         "image": "rea_webcat_gauloises_diapo.jpg",
-        "masonry_0": "",
-        "masonry_1": "",
+        "masonry_0": "manson_0_gauloises.png",
+        "masonry_1": "manson_1_gauloises.png",
         "mediapath": "rea_cd_gauloises",
+        "thumb": "rea_cd_gauloises_thumb.jpg",
         "medias": [
             "01.jpg",
             "02.jpg",
@@ -632,6 +642,7 @@
         "masonry_0": "manson_0_1018.png",
         "masonry_1": "manson_1_1018.png",
         "mediapath": "rea_web_1018",
+        "thumb": "rea_web_1018_thumb.jpg",
         "medias": [
             "01.jpg",
             "02.jpg",
@@ -665,10 +676,9 @@
         "Contexte": "",
         "Reponse": "",
         "outils": [
-            "HTML",
-            "CSS",
-            "PHP",
-            "Javascript / JQuery"
+            "Illustrator",
+            "Photoshop",
+            "Fireworks", "DreamWeaver"
         ],
         "technologies": [
             "HTML",
@@ -680,6 +690,7 @@
         "masonry_0": "mansonery_0_ads.png",
         "masonry_1": "mansonery_1_ads.png",
         "mediapath": "rea_web_ads",
+        "thumb": "rea_web_ads_thumb.jpg",
         "medias": [
             "01.jpg",
 	        "02.jpg",
@@ -717,6 +728,7 @@
         "masonry_0": "",
         "masonry_1": "",
         "mediapath": "rea_web_artFenetres",
+        "thumb": "rea_web_artFenetres_thumb.jpg",
         "medias": [
             ""
         ],
@@ -756,6 +768,7 @@
         "masonry_0": "manson_0_melun.png",
         "masonry_1": "manson_1_melun.png",
         "mediapath": "rea_web_carresenart",
+        "thumb": "rea_web_carresenart_thumb.jpg",
         "medias": [
             "01.jpg",
             "02.jpg",
@@ -814,8 +827,10 @@
         "masonry_0": "manson_0_clestra.png",
         "masonry_1": "manson_1_clestra.png",
         "mediapath": "rea_web_clestra",
+        "thumb": "rea_web_clestra_thumb.jpg",
         "medias": [
-            "01.jpg",
+            "01.jpg","home.jpg",
+            
             "02.jpg",
             "03.jpg",
             "04.jpg",
@@ -849,12 +864,9 @@
         "Contexte": "Le client souhaite une présentation numérique mettant en valeur ses créations",
         "Reponse": "Univers de la marque, Fond Sonore, Animations",
         "outils": [
-            "HTML",
-            "CSS",
-            "PHP",
-            "Flash",
-            "Javascript / JQuery",
-            "MySQL"
+            "Illustrator",
+            "Photoshop",
+            "Fireworks", "DreamWeaver", "Flash"
         ],
         "technologies": [
             "HTML",
@@ -868,6 +880,7 @@
         "masonry_0": "manson_0_clozeau.png",
         "masonry_1": "manson_1_clozeau.png",
         "mediapath": "rea_web_clozeau",
+        "thumb": "rea_web_clozeau_thumb.jpg",
         "medias": [
             "01.jpg",
             "02.jpg",
@@ -902,7 +915,7 @@
         "Contexte": "",
         "Reponse": "Fond Sonore,Site Vitrine",
         "outils": [
-            "Golive",
+            "Go Live",
             "Macromedia"
         ],
         "technologies": [
@@ -914,6 +927,7 @@
         "masonry_0": "manson_0_croatie.png",
         "masonry_1": "manson_1_croatie.png",
         "mediapath": "rea_web_croatie",
+        "thumb": "rea_web_croatie_thumb.jpg",
         "medias": [
             "croatie_site_01.jpg",
             "croatie_site_02.jpg",
@@ -931,71 +945,8 @@
             "portfolio"
         ]
     },
-    {
-        "id": 13,
-        "title": "Site Internet DARGAUD",
-        "client": "DARGAUD",
-        "year": 2003,
-        "type": "Site Internet",
-        "description": "0",
-        "link": "http://daranweb.free.fr/portfolio/website_dargaud/index.html",
-        "secteur": "Edition",
-        "Contexte": "",
-        "Reponse": "Fond Sonore,Interface Flash,Animation Flash,ActionScript,Maquette-prospection",
-        "outils": [
-            "Flash"
-        ],
-        "technologies": [
-            "ActionScript"
-        ],
-        "image": "rea_web_dargaud_diapo.jpg",
-        "masonry_0": "",
-        "masonry_1": "",
-        "mediapath": "rea_web_dargaud",
-        "medias": [
-            ""
-        ],
-        "missions": [
-            ""
-        ],
-        "status": "draft",
-        "order": 25,
-        "collection": []
-    },
 
-    {
-        "id": 47,
-        "title": "Newsletter OT ECOSSE",
-        "client": "OT ECOSSE",
-        "year": 2004,
-        "type": "Newsletter",
-        "description": "Newsletter OT-Ecosse",
-        "link": "www.ecossetourisme.com",
-        "secteur": "Tourisme",
-        "Contexte": "",
-        "Reponse": "Interface Flash,Animation Flash,ActionScript,Banniere,Site Dynamique,Banniere Flash,Video en ligne,Quitime VR,Back Office",
-        "outils": [
-            ""
-        ],
-        "technologies": [
-            "HTML",
-            "CSS",
-            "Javascript / JQuery"
-        ],
-        "image": "rea_web_ecosse_diapo.jpg",
-        "masonry_0": "",
-        "masonry_1": "",
-        "mediapath": "rea_web_ecosse",
-        "medias": [
-            ""
-        ],
-        "missions": [
-            ""
-        ],
-        "status": "draft",
-        "order": 27,
-        "collection": []
-    },
+
     {
         "id": 9,
         "title": "Site Internet OT - EGYPTE",
@@ -1008,7 +959,7 @@
         "Contexte": "",
         "Reponse": "Site Dynamique",
         "outils": [
-            "Golive",
+            "Go Live",
             "Macromedia",
             "Photoshop"
         ],
@@ -1022,6 +973,7 @@
         "masonry_0": "mansonery_0_egypte.png",
         "masonry_1": "mansonery_1_egypte.png",
         "mediapath": "rea_web_egypte",
+        "thumb": "rea_web_egypte_thumb.jpg",
         "medias": [
             "01.jpg",
             "02.jpg",
@@ -1040,82 +992,7 @@
             "portfolio"
         ]
     },
-    {
-        "id": 24,
-        "title": "Site Internet EIF",
-        "client": "EIF",
-        "year": 2001,
-        "type": "Site Internet",
-        "description": "0",
-        "link": "http://daranweb.free.fr/portfolio/website_eif/index.html",
-        "secteur": "Industries-Equipement",
-        "Contexte": "",
-        "Reponse": "Interface Flash,Site Vitrine,Site Institutionnel,Maquette-prospection",
-        "outils": [
-            "HTML",
-            "CSS",
-            "PHP",
-            "Javascript / JQuery",
-            "XML"
-        ],
-        "technologies": [
-            "HTML",
-            "CSS",
-            "PHP",
-            "Javascript / JQuery",
-            "XML"
-        ],
-        "image": "rea_web_eif_diapo.jpg",
-        "masonry_0": "",
-        "masonry_1": "",
-        "mediapath": "rea_web_eif",
-        "medias": [
-            ""
-        ],
-        "missions": [
-            ""
-        ],
-        "status": "draft",
-        "order": 29,
-        "collection": []
-    },
-    {
-        "id": 22,
-        "title": "Site Internet pour l'établissement ESRA",
-        "client": "ESRA",
-        "year": 2005,
-        "type": "Site Internet",
-        "description": "0",
-        "link": "0",
-        "secteur": "Audiovisuel",
-        "Contexte": "L'école d'audiovisuel ESRA souhaite une refonte de son site",
-        "Reponse": "Réalisation d'un site Vitrine",
-        "outils": [
-            "DreamWeaver",
-            "Macromedia",
-            "Photoshop",
-            "Quitime VR"
-        ],
-        "technologies": [
-            "HTML",
-            "CSS",
-            "ActionScript",
-            "Javascript / JQuery"
-        ],
-        "image": "rea_web_esra_diapo.jpg",
-        "masonry_0": "",
-        "masonry_1": "",
-        "mediapath": "rea_web_esra",
-        "medias": [
-            "rea_web_esra_diapo.jpg"
-        ],
-        "missions": [
-            ""
-        ],
-        "status": "draft",
-        "order": 30,
-        "collection": []
-    },
+
     {
         "id": 48,
         "title": "Site Internet ALEX VAGNINI",
@@ -1124,7 +1001,7 @@
         "type": "Site Internet",
         "description": "Site Internet en Flash pour Alex Vagnini, créatrice - décoratrice d'intérieur.",
         "link": "www.marredesfrigosblancs.fr",
-        "secteur": "Portfolio",
+        "secteur": "portfolio",
         "Contexte": "",
         "Reponse": "Interface Flash,Site Vitrine,Site Institutionnel,Maquette-prospection",
         "outils": [
@@ -1145,6 +1022,7 @@
         "masonry_0": "manson_0_frigo.png",
         "masonry_1": "manson_1_frigo.png",
         "mediapath": "rea_web_frigos",
+        "thumb": "rea_web_frigos_thumb.jpg",
         "medias": [
             "frigo01.jpg",
             "frigo02.jpg",
@@ -1174,10 +1052,9 @@
         "Contexte": "",
         "Reponse": "Site Dynamique,Site Institutionnel",
         "outils": [
-            "DreamWeaver et Pack Macromedia",
+            "Illustrator",
             "Photoshop",
-            "PHP",
-            "MySQL"
+            "Fireworks", "DreamWeaver"
         ],
         "technologies": [
             "HTML",
@@ -1192,6 +1069,7 @@
         "masonry_0": "manson_0_hongrie.png",
         "masonry_1": "manson_1_hongrie.png",
         "mediapath": "rea_web_hongrie",
+        "thumb": "rea_web_hongrie_thumb.jpg",
         "medias": [
             "01.jpg",
             "02.jpg",
@@ -1230,6 +1108,7 @@
         "masonry_0": "manson_0_lfdd.png",
         "masonry_1": "manson_1_lfdd.png",
         "mediapath": "rea_web_lfdd",
+        "thumb": "rea_web_lfdd_thumb.jpg",
         "medias": [
             "01.jpg",
             "02.jpg",
@@ -1261,8 +1140,9 @@
         "Contexte": "",
         "Reponse": "Interface Flash,Site Vitrine,Site Institutionnel,Maquette-prospection",
         "outils": [
-            "DreamWeaver",
-            "Développement XML"
+            "Illustrator",
+            "Photoshop",
+            "Fireworks", "DreamWeaver"
         ],
         "technologies": [
             "HTML",
@@ -1273,6 +1153,7 @@
         "masonry_0": "manson_0_lgi.png",
         "masonry_1": "manson_1 _lgi.png",
         "mediapath": "rea_web_lgi",
+        "thumb": "rea_web_lgi_thumb.jpg",
         "medias": [
             "01.jpg",
             "02.jpg",
@@ -1315,6 +1196,7 @@
         "masonry_0": "mansonery_0_liban.png",
         "masonry_1": "mansonery_1_liban.png",
         "mediapath": "rea_web_liban",
+        "thumb": "rea_web_liban_thumb.jpg",
         "medias": [
             "liban_site_00.jpg",
             "liban_site_01.jpg",
@@ -1348,6 +1230,7 @@
         "masonry_0": "manson_0_locabindust.png",
         "masonry_1": "manson_1_locabindust.png",
         "mediapath": "rea_web_locaboatindustries",
+        "thumb": "rea_web_locaboatindustries_thumb.jpg",
         "medias": [
             {
                 "file": "locaboat_ind_00.jpg",
@@ -1381,6 +1264,11 @@
                 "file": "locaboat_3D_09.jpg",
                 "caption": "Aperçus de customisation d'intérieur"
             },
+
+            {
+                "file": "rea_appli_locaboatindustries_diapo.jpg",
+                "caption": "Aperçus de customisation d'intérieur"
+            },
             {
                 "file": "locaboat_ind_admin_01.jpg",
                 "caption": "Interface d'administration"
@@ -1391,7 +1279,7 @@
         ],
         "status": "published",
         "order": 36,
-        "collection": ["Portfolio","case-study"]
+        "collection": ["portfolio","case-study"]
     },
     {
         "id": 14,
@@ -1412,8 +1300,7 @@
             "Pack Macromedia",
             "Photoshop",
             "Site Dynamique",
-            "Quicktime VR",
-            "Back Office propriétaire"
+            "Quicktime VR"
         ],
         "technologies": [
             "ActionScript",
@@ -1424,6 +1311,7 @@
         "masonry_0": "",
         "masonry_1": "",
         "mediapath": "rea_web_locaboat",
+        "thumb": "rea_web_locaboat_thumb.jpg",
         "medias": [
             "01.jpg",
             "02.jpg",
@@ -1445,7 +1333,7 @@
         "status": "published",
         "order": 37,
         "collection": [
-            "portfolio","case-study"
+           "case-study"
         ]
     },
     {
@@ -1454,30 +1342,35 @@
         "client": "LORENOVE",
         "year": 2002,
         "type": "Site Internet",
-        "description": "0",
+        "description": "Nouveau site pour Lorénove",
         "link": "http://daranweb.free.fr/portfolio/website_lorenove/index.html",
         "secteur": "Industries-Equipement",
-        "Contexte": "",
-        "Reponse": "Site Dynamique",
+        "Contexte": "Proposer un nouveau site permettant de développer la notoriété de l'enseigne ",
+        "Reponse": "Nouveau site plus ergonomique et pensé pour positionner graphiquement la marque en adéquation avec sa nouvelle ligne graphique",
         "outils": [
-            "Flash"
+            "Flash", "Go Live", "Fireworks"
         ],
         "technologies": [
-            "ActionScript"
+            "ActionScript","CSS","HTML","GIF Animé"
         ],
         "image": "rea_web_lorenove_diapo.jpg",
-        "masonry_0": "",
-        "masonry_1": "",
+        "masonry_0": "manson_0_lorenove.png",
+        "masonry_1": "manson_1_lorenove.png",
         "mediapath": "rea_web_lorenove",
+        "thumb": "rea_web_lorenove_thumb.jpg",
         "medias": [
-            ""
+            "lorenove_site_01.jpg",
+            "lorenove_site_02.jpg",
+            "lorenove_site_03.jpg",
+            "lorenove_site_04.jpg", 
+            "lorenove_site_05.jpg"
         ],
         "missions": [
-            ""
+            "Un de mes premiers projets en tant que dev junior, le petit défi technique était de proposer un site novateur dans les limites du web de l'époque","Intégrations disrètes de micro-animations flash dans la sctructure HTML pour plus de fluidité"
         ],
-        "status": "draft",
-        "order": 38,
-        "collection": []
+        "status": "published",
+        "order": 18,
+        "collection": ["portfolio","case-study"]
     },
     {
         "id": 5,
@@ -1501,18 +1394,20 @@
             "Javascript / JQuery"
         ],
         "image": "rea_web_maaf_diapo.jpg",
-        "masonry_0": "",
-        "masonry_1": "",
+        "masonry_0": "manson_0_maaf.png",
+        "masonry_1": "manson_1_maaf.png",
         "mediapath": "rea_web_maaf",
+        "thumb": "rea_web_maaf_thumb.jpg",
         "medias": [
-            ""
+            "maaf_site_01.jpg",
+            "maaf_site_02.jpg","maaf_baniere_01.jpg"
         ],
         "missions": [
             ""
         ],
-        "status": "draft",
-        "order": 39,
-        "collection": []
+        "status": "published",
+        "order": 19,
+        "collection": ["portfolio"]
     },
     {
         "id": 53,
@@ -1537,6 +1432,7 @@
         "masonry_0": "manson_0_malte.png",
         "masonry_1": "manson_1_malte.png",
         "mediapath": "rea_web_malte",
+        "thumb": "rea_web_malte_thumb.jpg",
     "medias": [
       {
         "file": "01.jpg",
@@ -1620,11 +1516,9 @@
         "Contexte": "",
         "Reponse": "Site Vitrine",
         "outils": [
-            "HTML",
-            "CSS",
-            "PHP",
-            "Javascript / JQuery",
-            "MySQL"
+            "Illustrator",
+            "Photoshop",
+            "Fireworks", "DreamWeaver"
         ],
         "technologies": [
             "HTML",
@@ -1637,6 +1531,7 @@
         "masonry_0": "",
         "masonry_1": "",
         "mediapath": "rea_web_marsans",
+        "thumb": "rea_web_marsans_thumb.jpg",
         "medias": [
             ""
         ],
@@ -1659,7 +1554,9 @@
         "Contexte": "",
         "Reponse": "Webdesign",
         "outils": [
-            ""
+            "Illustrator",
+            "Photoshop",
+            "Fireworks", "DreamWeaver"
         ],
         "technologies": [
             "HTML",
@@ -1672,6 +1569,7 @@
         "masonry_0": "manson_0_mrl.png",
         "masonry_1": "manson_1_mrl.png",
         "mediapath": "rea_web_mrl",
+        "thumb": "rea_web_mrl_thumb.jpg",
         "medias": [
             "01.jpg",
             "02.jpg",
@@ -1709,9 +1607,9 @@
         "Reponse": "Interface Flash,Animation Flash,ActionScript",
         "outils": [
             "Flash",
-            "DreamWeaver",
-            "Développement XML",
-            "ActionScript"
+            "DreamWeaver"
+
+
         ],
         "technologies": [
             "ActionScript",
@@ -1724,6 +1622,7 @@
         "masonry_0": "manson_0_premaman.png",
         "masonry_1": "manson_1_premaman.png",
         "mediapath": "rea_bol_premaman",
+        "thumb": "rea_bol_premaman_thumb.jpg",
         "medias": [
             "01.jpg",
             "02.jpg",
@@ -1753,7 +1652,9 @@
         "Contexte": "",
         "Reponse": "Fond Sonore,Interface Flash,Animation Flash,ActionScript,Site Dynamique,Site Institutionnel,Video en ligne,Quitime VR ",
         "outils": [
-            "Flash"
+            "Illustrator",
+            "Photoshop",
+            "Fireworks", "DreamWeaver", "Flash"
         ],
         "technologies": [
             "ActionScript"
@@ -1762,15 +1663,16 @@
         "masonry_0": "manson_0_reso.png",
         "masonry_1": "manson_1_reso.png",
         "mediapath": "rea_web_resonnances",
+        "thumb": "rea_web_resonnances_thumb.jpg",
         "medias": [
-            ""
+            "01.jpg"
         ],
         "missions": [
             ""
         ],
         "status": "published",
         "order": 44,
-        "collection": []
+        "collection": ["portfolio"]
     },
     {
         "id": 56,
@@ -1784,12 +1686,9 @@
         "Contexte": "",
         "Reponse": "Site Dynamique,Back Office",
         "outils": [
-            "Joomla",
-            "HTML",
-            "CSS",
-            "PHP",
-            "Javascript / JQuery",
-            "MySQL"
+            "Illustrator",
+            "Photoshop",
+            "Fireworks", "DreamWeaver"
         ],
         "technologies": [
             "Joomla",
@@ -1803,6 +1702,7 @@
         "masonry_0": "",
         "masonry_1": "",
         "mediapath": "rea_web_services2it",
+        "thumb": "rea_web_services2it_thumb.jpg",
         "medias": [
             ""
         ],
@@ -1840,6 +1740,7 @@
         "masonry_0": "mansonery_0_skillmen.png",
         "masonry_1": "mansonery_1_skillmen.png",
         "mediapath": "rea_web_skillmen",
+        "thumb": "rea_web_skillmen_thumb.jpg",
         "medias": [
             ""
         ],
@@ -1862,12 +1763,9 @@
         "Contexte": "",
         "Reponse": "Interface Flash,Site Vitrine,Site Institutionnel,Maquette-prospection",
         "outils": [
-            "HTML",
-            "CSS",
-            "Javascript / JQuery",
-            "MySQL",
-            "PHP",
-            "Back Office dédié"
+            "Illustrator",
+            "Photoshop",
+            "Fireworks", "DreamWeaver"
         ],
         "technologies": [
             "HTML",
@@ -1880,6 +1778,7 @@
         "masonry_0": "manson_0_slan.png",
         "masonry_1": "manson_1_slam.png",
         "mediapath": "rea_web_slam",
+        "thumb": "rea_web_slam_thumb.jpg",
         "medias": [
             "01.jpg",
             "02.jpg",
@@ -1913,7 +1812,9 @@
         "Contexte": "",
         "Reponse": "Interface Flash,Site Vitrine,Site Institutionnel,Maquette-prospection",
         "outils": [
-            ""
+            "Illustrator",
+            "Photoshop",
+            "Fireworks", "DreamWeaver"
         ],
         "technologies": [
             "HTML",
@@ -1924,6 +1825,7 @@
         "masonry_0": "",
         "masonry_1": "",
         "mediapath": "rea_web_tpv",
+        "thumb": "rea_web_tpv_thumb.jpg",
         "medias": [
             ""
         ],
@@ -1942,8 +1844,8 @@
         "type": "Site Internet",
         "description": "Site Internet en Flash pour Fabienne Faussillon, conceptrice - rédactrice - Freelance. \n",
         "link": "http://fabienne.faussillon.free.fr/",
-        "secteur": "Portfolio",
-        "Contexte": "Focus p",
+        "secteur": "portfolio",
+        "Contexte": "",
         "Reponse": "Interface Flash,Site Vitrine,Site Institutionnel,Maquette-prospection",
         "outils": [
             "Flash",
@@ -1963,6 +1865,7 @@
         "masonry_0": "manson_0_ventilo.png",
         "masonry_1": "manson_1_ventilo.png",
         "mediapath": "rea_web_ventilo",
+        "thumb": "rea_web_ventilo_thumb.jpg",
         "medias": [
             "01.jpg",
             "02.jpg",
@@ -1975,7 +1878,7 @@
             "Mise en valeur de ses réalisations et projets. VERSION FLASH / FULL ADMINISTRABLE"
         ],
         "status": "published",
-        "order": 50,
+        "order": 20,
         "collection": [
             "portfolio"
         ]
@@ -2010,6 +1913,7 @@
         "masonry_0": "manson_0_europe.png",
         "masonry_1": "manson_1_visiteurope.png",
         "mediapath": "rea_web_visiteurope",
+        "thumb": "rea_web_visiteurope_thumb.jpg",
         "medias": [
             "01.jpg",
             "02.jpg",
@@ -2037,13 +1941,11 @@
         "description": "Réalisation et montage du site de l'agence Vu Integral. Déploiement d'un système 100% administrable.\n",
         "link": "www.vuintegral.com",
         "secteur": "Communication",
-        "Contexte": "Focus p",
+        "Contexte": "",
         "Reponse": "Animation Flash,Site Institutionnel",
         "outils": [
             "Flash",
-            "DreamWeaver",
-            "Développement XML",
-            "ActionScript"
+            "DreamWeaver","Photoshop"
         ],
         "technologies": [
             "ActionScript",
@@ -2057,6 +1959,7 @@
         "masonry_0": "manson_0_vu.png",
         "masonry_1": "manson_1_vu.png",
         "mediapath": "rea_web_vu",
+        "thumb": "rea_web_vu_thumb.jpg",
         "medias": [
             "01.jpg"
         ],
@@ -2064,7 +1967,7 @@
             "Site Full Flash + Full Administrable"
         ],
         "status": "published",
-        "order": 52,
+        "order": 2,
         "collection": [
             "portfolio"
         ]
@@ -2076,12 +1979,14 @@
         "year": 2010,
         "type": "Site Internet",
         "description": "Site Full Flash pour une agence de communication spécialisée dans le vin\n",
-        "link": "Focus p",
+        "link": "",
         "secteur": "Communication",
         "Contexte": "",
         "Reponse": "Animation Flash,Site Institutionnel",
         "outils": [
-            "Flash"
+            "Illustrator",
+            "Photoshop",
+            "Fireworks", "Flash"
         ],
         "technologies": [
             "ActionScript"
@@ -2090,14 +1995,17 @@
         "masonry_0": "manson_0_wip.png",
         "masonry_1": "manson_1_wip.png",
         "mediapath": "rea_web_wip",
+        "thumb": "rea_web_wip_thumb.jpg",
         "medias": [
-            ""
+            "01.jpg",
+            "02.jpg",
+            "03.jpg"
         ],
         "missions": [
             ""
         ],
-        "status": "draft",
-        "order": 53,
+        "status": "published",
+        "order": 83,
         "collection": ["portfolio"]
     },
 	
@@ -2108,12 +2016,14 @@
         "year": 2008,
         "type": "Site Internet",
         "description": "Site événementiel pour la tournée Tour66 de Johnny Hallyday ",
-        "link": "Focus p",
+        "link": "",
         "secteur": "Loisirs-Musique",
         "Contexte": "L'agence Vu Intégral, souhaite un prendre en charge toute la partie communication numérique de la dernière tournée du chanteur",
         "Reponse": "Déploiement d'animations teaser, développement de mini-sites dédiés à chaque événement de la tournée, intégration de contenus multimédia et d'outils de partage sur les réseaux sociaux.",
         "outils": [
-            "Flash"
+            "Illustrator",
+            "Photoshop",
+            "Fireworks", "DreamWeaver", "Flash"
         ],
         "technologies": [
             "ActionScript",
@@ -2126,6 +2036,7 @@
         "masonry_0": "manson_0_tour66.png",
         "masonry_1": "manson_1_tour66.png",
         "mediapath": "rea_web_tour66",
+        "thumb": "rea_web_tour66_thumb.jpg",
         "medias": [
             "01.jpg",
             "02.jpg",
@@ -2136,7 +2047,7 @@
             ""
         ],
         "status": "published",
-        "order": 54,
+        "order": 84,
         "collection": ["portfolio"]
     },
     {
@@ -2148,7 +2059,7 @@
         "description": "Conception / Réalisation du module de lecture en ligne de Brochure PDF. Flash pour Locaboat.",
         "link": "http://www.locaboat.com/73/lire-en-ligne.html",
         "secteur": "Nautique",
-        "Contexte": "Focus p",
+        "Contexte": "",
         "Reponse": "Interface Flash,Animation Flash,ActionScript",
         "outils": [
             "Flash",
@@ -2167,6 +2078,7 @@
         "masonry_0": "",
         "masonry_1": "",
         "mediapath": "rea_bol_locaboat",
+        "thumb": "rea_bol_locaboat_thumb.jpg",
         "medias": [
             "01.jpg",
             "02.jpg",
@@ -2181,7 +2093,7 @@
             "Proposer au public online Locaboat un outil de lecture PDF en ligne"
         ],
         "status": "published",
-        "order": 55,
+        "order": 25,
         "collection": [
             "case-study"
         ]
@@ -2198,7 +2110,9 @@
         "Contexte": "",
         "Reponse": "Webdesign, Site Dynamique,Back Office",
         "outils": [
-            "Joomla"
+            "Illustrator",
+            "Photoshop",
+            "Fireworks", "DreamWeaver"
         ],
         "technologies": [
             "Joomla",
@@ -2213,6 +2127,7 @@
         "masonry_0": "manson_0_netseen.png",
         "masonry_1": "manson_1_netseen.png",
         "mediapath": "rea_web_netseenergy",
+        "thumb": "rea_web_netseenergy_thumb.jpg",
         "medias": [
             "rea_web_netseenergy_item.jpg",
             "01.jpg",
@@ -2238,15 +2153,12 @@
         "description": "Réalisation d'un site communautaire destiné aux musiciens.",
         "link": "www.youzikme.com",
         "secteur": "Loisirs-Musique",
-        "Contexte": "Focus p",
+        "Contexte": "",
         "Reponse": "Webdesign, Site Dynamique, Back Office",
         "outils": [
-            "HTML",
-            "CSS",
-            "Javascript / JQuery",
-            "MySQL",
-            "PHP",
-            "Back Office dédié"
+            "Illustrator",
+            "Photoshop",
+            "Fireworks", "DreamWeaver"
         ],
         "technologies": [
             "HTML",
@@ -2259,6 +2171,7 @@
         "masonry_0": "manson_0_youzikme.png",
         "masonry_1": "manson_1_youzikme.png",
         "mediapath": "rea_web_youzikme",
+        "thumb": "rea_web_youzikme_thumb.jpg",
         "medias": [
             "01.jpg",
             "02.jpg",
@@ -2270,7 +2183,7 @@
             "Création, Montage graphique, Adaptation du back office, optimisation SEO"
         ],
         "status": "published",
-        "order": 57,
+        "order": 7,
         "collection": [
             "portfolio"
         ]
@@ -2284,24 +2197,23 @@
         "description": "Site dédié à la promotion de la sortie d'une BD",
         "link": "laputaindebd.mauriceradiolibre.com",
         "secteur": "Edition",
-        "Contexte": "Focus p",
+        "Contexte": "",
         "Reponse": "Webdesign, Site Dynamique,Back Office",
         "outils": [
-            "Bootstrap",
-            "PluXML",
-            "CSS",
-            "HTML",
-            "Responsive design"
+            "Illustrator",
+            "Photoshop",
+            "Fireworks", "DreamWeaver"
         ],
         "technologies": [
             "Bootstrap",
             "CSS",
-            "HTML"
+            "HTML","PluXML"
         ],
         "image": "rea_web_putainbd_diapo.jpg",
         "masonry_0": "manson_0_pbd.png",
         "masonry_1": "manson_1_pbd.png",
         "mediapath": "rea_web_putainbd",
+        "thumb": "rea_web_putainbd_thumb.jpg",
         "medias": [
             "01.jpg",
             "02.jpg",
@@ -2326,14 +2238,12 @@
         "description": "Site dédié à la réécoute des émissions de radio",
         "link": "podcasts.mauriceradiolibre.com",
         "secteur": "Loisirs-Musique",
-        "Contexte": "Focus p",
+        "Contexte": "",
         "Reponse": "Webdesign, Site Dynamique,Back Office",
         "outils": [
-            "Jquery Mobile",
-            "PluXML",
-            "CSS",
-            "HTML",
-            "Responsive design"
+            "Illustrator",
+            "Photoshop",
+            "Fireworks", "DreamWeaver"
         ],
         "technologies": [
             "Jquery Mobile",
@@ -2342,9 +2252,10 @@
             "HTML"
         ],
         "image": "rea_web_podcasts_diapo.jpg",
-        "masonry_0": "manson_0_.png",
-        "masonry_1": "manson_1_.png",
+        "masonry_0": "manson_0_podcasts.png",
+        "masonry_1": "manson_1_podcasts.png",
         "mediapath": "rea_web_podcasts",
+        "thumb": "rea_web_podcasts_thumb.jpg",
         "medias": [
             "01.jpg",
             "02.jpg",
@@ -2368,14 +2279,12 @@
         "description": "Création du site Officiel de l'unique bateau Radio naviguant.",
         "link": "rock-symbol.mauriceradiolibre.com",
         "secteur": "Edition",
-        "Contexte": "Focus p",
+        "Contexte": "",
         "Reponse": "Webdesign, Site Dynamique,Back Office",
         "outils": [
-            "Bootstrap",
-            "PluXML",
-            "CSS",
-            "HTML",
-            "Responsive design"
+            "Illustrator",
+            "Photoshop",
+            "Fireworks", "DreamWeaver"
         ],
         "technologies": [
             "Bootstrap",
@@ -2387,6 +2296,7 @@
         "masonry_0": "mansonery_0_rocksymbol.png",
         "masonry_1": "mansonery_1_rocksymbol.png",
         "mediapath": "rea_web_rocksymbol",
+        "thumb": "rea_web_rocksymbol_thumb.jpg",
         "medias": [
             "01.jpg",
             "02.jpg",
@@ -2417,17 +2327,9 @@
         "outils": [
             "Zend",
             "Eclipse",
-            "Flex",
-            "HTML",
-            "CSS",
-            "PHP",
-            "Javascript / JQuery",
-            "MySQL"
+            "Flex"
         ],
         "technologies": [
-            "Zend",
-            "Eclipse",
-            "Flex",
             "HTML",
             "CSS",
             "PHP",
@@ -2438,6 +2340,7 @@
         "masonry_0": "",
         "masonry_1": "",
         "mediapath": "rea_web_anarlf",
+        "thumb": "rea_web_anarlf_thumb.jpg",
         "medias": [
             ""
         ],
@@ -2461,14 +2364,8 @@
         "Reponse": "Par la suite, le développement d'un thème Joomla personnalisé a permis d'offrir une interface d'administration adaptée aux besoins spécifiques de l'enseigne, facilitant la gestion des centres, des forfaits, des devis et des contenus du site.",
         "outils": [
             "Bootstrap",
-            "Joomla",
-            "Responsive design",
-            "HTML",
-            "CSS",
-            "Javascript / JQuery",
-            "MySQL",
-            "PHP",
-            "Back Office dédié"
+            "Joomla"
+
         ],
         "technologies": [
             "Bootstrap",
@@ -2480,6 +2377,7 @@
         "masonry_0": "manson_0_doc.png",
         "masonry_1": "manson_1_doc.png",
         "mediapath": "rea_web_docbikerwd",
+        "thumb": "rea_web_docbikerwd_thumb.jpg",
         "medias": [
       {
         "file": "doc_biker_home.png",
@@ -2544,7 +2442,9 @@
         "Contexte": "",
         "Reponse": "",
         "outils": [
-            ""
+            "Illustrator",
+            "Photoshop",
+            "Fireworks", "DreamWeaver"
         ],
         "technologies": [
             "HTML",
@@ -2555,6 +2455,7 @@
         "masonry_0": "",
         "masonry_1": "",
         "mediapath": "rea_web_cuendet",
+        "thumb": "rea_web_cuendet_thumb.jpg",
         "medias": [
             ""
         ],
@@ -2577,7 +2478,9 @@
         "Contexte": "",
         "Reponse": "",
         "outils": [
-            ""
+            "Illustrator",
+            "Photoshop",
+            "Fireworks", "DreamWeaver"
         ],
         "technologies": [
             "HTML",
@@ -2588,6 +2491,7 @@
         "masonry_0": "",
         "masonry_1": "",
         "mediapath": "rea_web_guadeloupe",
+        "thumb": "rea_web_guadeloupe_thumb.jpg",
         "medias": [
             ""
         ],
@@ -2610,7 +2514,9 @@
         "Contexte": "",
         "Reponse": "",
         "outils": [
-            ""
+            "Illustrator",
+            "Photoshop",
+            "Fireworks", "DreamWeaver"
         ],
         "technologies": [
             "HTML",
@@ -2623,6 +2529,7 @@
         "masonry_0": "",
         "masonry_1": "",
         "mediapath": "rea_web_bourgogne",
+        "thumb": "rea_web_bourgogne_thumb.jpg",
         "medias": [
             ""
         ],
@@ -2644,18 +2551,15 @@
         "description": "Création du site Officiel de BIG MAMA, acteur majeur de la vidéo Broadcast et entreprises.",
         "link": "www.bigmama.fr",
         "secteur": "Audiovisuel",
-        "Contexte": "Focus p",
+        "Contexte": "",
         "Reponse": "Webdesign, Site Dynamique,Back Office",
         "outils": [
-            "Bootstrap",
-            "Joomla",
-            "CSS",
-            "HTML",
-            "Responsive design"
+            "Illustrator",
+            "Photoshop",
+            "Fireworks", "DreamWeaver", "Joomla"
         ],
         "technologies": [
             "Bootstrap",
-            "Joomla",
             "CSS",
             "HTML"
         ],
@@ -2663,6 +2567,7 @@
         "masonry_0": "manson_0_big.png",
         "masonry_1": "manson_1_big.png",
         "mediapath": "rea_web_bigmama",
+        "thumb": "rea_web_bigmama_thumb.jpg",
         "medias": [
             "01.jpg",
             "02.jpg",
@@ -2693,15 +2598,19 @@
         "Contexte": "",
         "Reponse": "",
         "outils": [
-            ""
+            "Illustrator",
+            "Photoshop",
+            "Fireworks", "DreamWeaver"
         ],
         "technologies": [
-            ""
+            "HTML",
+            "CSS","Bootstrap"
         ],
         "image": "rea_web_domino_diapo.jpg",
         "masonry_0": "",
         "masonry_1": "",
         "mediapath": "rea_web_domino",
+        "thumb": "rea_web_domino_thumb.jpg",
         "medias": [
             ""
         ],
@@ -2719,12 +2628,14 @@
         "year": 2017,
         "type": "Site Internet",
         "description": "Site internet 'One Page' pour le cabinet d'avocats ILEXEN",
-       "link": "Focus p",
+       "link": "",
         "secteur": "Juridique",
         "Contexte": "Demande de création d'une identité numérique pour le cabinet d'avocats ILEXEN, spécialisé dans le droit de la propriété intellectuelle et des nouvelles technologies. Le client souhaite avoir une autonomie complète sur la gestion de son site internet, avec une interface conviviale et des fonctionnalités adaptées à ses besoins spécifiques.",
         "Reponse": "Création d'un site internet 'One Page' pour le cabinet ILEXEN",
         "outils": [
-            "Wordpress"
+                        "Illustrator",
+            "Photoshop",
+            "Fireworks", "DreamWeaver","Wordpress"
         ],
         "technologies": [
             "PHP",
@@ -2737,6 +2648,7 @@
         "masonry_0": "manson_0_ilexen.png",
         "masonry_1": "manson_1_ilexen.png",
         "mediapath": "rea_web_ilexen",
+        "thumb": "rea_web_ilexen_thumb.jpg",
         "medias": [
             "desktop_home.png",
             "desktop_valeurs.png",
@@ -2754,7 +2666,7 @@
             "Création d'outils didactiques pour l'administration du site"
         ],
         "status": "published",
-        "order": 68,
+        "order": 98,
         "collection": [
             "portfolio",
             "case-study"
@@ -2767,7 +2679,7 @@
         "year": 2005,
         "type": "Applicatif propriétaire",
         "description": "Réalisation d'une application CMS",
-       "link": "Focus CS",
+       "link": "",
         "secteur": "Communication",
         "Contexte": "Dans le cadre de développement de sites internets de tailles petites et moyennes, un besoin d'autonomie des clients dans la mise à jour et la gestion de leurs contenus s'est fait sentir.",
         "Reponse": "La complexité des CMS du marché m'ont amené à développer une application de gestion de contenus (CMS) propriétaire, plus intuitive et 'sur mesure'. L'application a été conçue pour être flexible et adaptable à différents types de sites web, permettant aux utilisateurs de gérer facilement leurs contenus sans nécessiter de compétences techniques avancées.",
@@ -2776,12 +2688,13 @@
             "Eclipse"
         ],
         "technologies": [
-            "ActionScript"
+            "ActionScript","CSS","MySQL","PHP","HTML","Javascript / JQuery"
         ],
         "image": "rea_web_cms_diapo.jpg",
         "masonry_0": "",
         "masonry_1": "",
         "mediapath": "rea_web_cms",
+        "thumb": "rea_web_cms_thumb.jpg",
         "medias": [
             {
                 "file": "01.jpg",
@@ -2845,7 +2758,7 @@
         "year": 2005,
         "type": "Applicatif propriétaire",
         "description": "Réalisation d'une application de lecture de Brochure en ligne",
-        "link": "Focus CS",
+        "link": "",
         "secteur": "Communication",
         "Contexte": "Dans le cadre de développement de sites internets plaquettes, de nombreux projets nécéssitent une présentation de brochure à consulter en ligne.",
         "Reponse": "J'ai donc conçu un petit module de lecture de brochure en ligne, permettant d'afficher des PDF de manière interactive et conviviale. L'application a été développée en Flash, offrant une expérience utilisateur fluide et immersive pour la consultation de brochures en ligne.",
@@ -2860,6 +2773,7 @@
         "masonry_0": "",
         "masonry_1": "",
         "mediapath": "rea_web_bol",
+        "thumb": "rea_web_bol_thumb.jpg",
         "medias": [
             {
                 "file": "brochure01.png",
@@ -2911,7 +2825,7 @@
         "year": 2017,
         "type": "Site Internet",
         "description": "Refonte du site Internet d'Azur Drones, acteur majeur de la technologie des drones professionnels en France",
-        "link": "Focus Pt",
+        "link": "",
         "secteur": "Industries-Equipement",
         "Contexte": "L'entreprise Azur Drones, spécialisée dans la technologie des drones professionnels, souhaitait une refonte de son site Internet pour mieux présenter ses produits et services, tout en offrant une expérience utilisateur plus interactive et engageante. Un besoin spécifique était de proposer une présentation dynamique de leurs brochures techniques en ligne, permettant aux visiteurs de consulter les informations de manière plus immersive.",
         "Reponse": "Après validation du principe de navigation proposé sur XD, j'ai travaillé sur une base de template Wordpress T3, permettant d'offrir un responsive natif sur lequel j'ai intégré les éléments de design. Le template offre également des fonctionalités avancées de gestion de contenu.",
@@ -2928,6 +2842,7 @@
         "masonry_0": "manson_1_azur.png",
         "masonry_1": "manson_0_azur.png",
         "mediapath": "rea_web_azurdrones",
+        "thumb": "rea_web_azurdrones_thumb.jpg",
         "medias": [
             {
                 "file": "01.jpg",
@@ -2947,13 +2862,17 @@
             {
                 "file": "05.jpg",
                 "caption": "Page résultats de recherche"
+            },
+            {
+                "file": "phone_site.png",
+                "caption": "Version smartphone"
             }
         ],
         "missions": [
             ""
         ],
         "status": "published",
-        "order": 68,
+        "order": 95,
         "collection": [
             "case-study","portfolio"
         ]

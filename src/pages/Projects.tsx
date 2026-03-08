@@ -1,12 +1,15 @@
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useNavigate } from "react-router-dom";
+import { createPortal } from "react-dom";
 import FilterBar from "../components/FilterBar";
 import projectsData from "../data/project-prod.json";
 import PageTransition from "../components/PageTransition";
 import ProjectCard from "../components/ProjectCard";
 import Footer from "../components/Footer";
-import type { Project } from "../types/Project";
+import type { Project, ProjectMedia } from "../types/Project";
 import { hasCollection, type ProjectCollectionKey } from "../utils/projectCollection";
+import { slugifyTitle } from "../utils/slug";
 
 const masonryTestImageModules = import.meta.glob<{ default: string }>(
   "../assets/images/mansonery_test/*.{jpg,jpeg,png,webp,avif}",
@@ -37,6 +40,11 @@ const normalizeText = (value: string) =>
 const sortAlphabetically = (values: string[]) =>
   [...values].sort((a, b) => a.localeCompare(b, "fr", { sensitivity: "base" }));
 
+type SlideshowSlide = {
+  src: string;
+  caption?: string;
+};
+
 interface ProjectsProps {
   collectionKey?: ProjectCollectionKey;
   detailBasePath?: "/portfolio" | "/etudes-de-cas";
@@ -46,11 +54,18 @@ export default function Projects({
   collectionKey = "portfolio",
   detailBasePath = "/portfolio",
 }: ProjectsProps) {
+  const navigate = useNavigate();
   const [selectedTechnologies, setSelectedTechnologies] = useState<string[]>([]);
   const [selectedTools, setSelectedTools] = useState<string[]>([]);
   const [selectedTypes, setSelectedTypes] = useState<string[]>([]);
   const [selectedSectors, setSelectedSectors] = useState<string[]>([]);
   const [searchQuery, setSearchQuery] = useState("");
+  const [slideshowProject, setSlideshowProject] = useState<Project | null>(null);
+  const [slideshowSlides, setSlideshowSlides] = useState<SlideshowSlide[]>([]);
+  const [activeSlideIndex, setActiveSlideIndex] = useState(0);
+  const [isSlideshowPlaying, setIsSlideshowPlaying] = useState(true);
+  const [transitionDirection, setTransitionDirection] = useState<1 | -1>(1);
+  const isSlideshowOpen = slideshowProject !== null;
 
   const publishedProjects = useMemo(() => {
     const projects = projectsData as Project[];
@@ -252,6 +267,151 @@ export default function Projects({
     searchQuery,
   ]);
 
+  const resolveProjectSlides = useCallback((project: Project): SlideshowSlide[] => {
+    return project.medias.reduce<SlideshowSlide[]>((slides, media) => {
+      const mediaFile = typeof media === "string" ? media : media.file;
+      const mediaPath = `../assets/images/projects/medias/${project.mediapath}/${mediaFile}`;
+      const src = projectImageModules[mediaPath]?.default;
+
+      if (!src) {
+        return slides;
+      }
+
+      if (typeof media === "string") {
+        slides.push({ src });
+        return slides;
+      }
+
+      const caption = (media as ProjectMedia).caption?.trim();
+      slides.push(caption ? { src, caption } : { src });
+      return slides;
+    }, []);
+  }, []);
+
+  const goToNextSlide = useCallback(() => {
+    setTransitionDirection(1);
+    setActiveSlideIndex((current) =>
+      current >= slideshowSlides.length - 1 ? 0 : current + 1
+    );
+  }, [slideshowSlides.length]);
+
+  const goToPreviousSlide = useCallback(() => {
+    setTransitionDirection(-1);
+    setActiveSlideIndex((current) =>
+      current <= 0 ? slideshowSlides.length - 1 : current - 1
+    );
+  }, [slideshowSlides.length]);
+
+  const closeSlideshow = useCallback(() => {
+    setSlideshowProject(null);
+    setSlideshowSlides([]);
+    setActiveSlideIndex(0);
+    setIsSlideshowPlaying(true);
+  }, []);
+
+  const openProjectSlideshow = useCallback(
+    (project: Project) => {
+      const slides = resolveProjectSlides(project);
+
+      if (slides.length === 0) {
+        navigate(`${detailBasePath}/${slugifyTitle(project.title)}`);
+        return;
+      }
+
+      setSlideshowProject(project);
+      setSlideshowSlides(slides);
+      setActiveSlideIndex(0);
+      setIsSlideshowPlaying(true);
+      setTransitionDirection(1);
+    },
+    [detailBasePath, navigate, resolveProjectSlides]
+  );
+
+  useEffect(() => {
+    if (!isSlideshowOpen || !isSlideshowPlaying || slideshowSlides.length <= 1) {
+      return;
+    }
+
+    const timer = setInterval(() => {
+      setTransitionDirection(1);
+      setActiveSlideIndex((current) =>
+        current >= slideshowSlides.length - 1 ? 0 : current + 1
+      );
+    }, 4200);
+
+    return () => clearInterval(timer);
+  }, [isSlideshowOpen, isSlideshowPlaying, slideshowSlides.length]);
+
+  useEffect(() => {
+    if (!isSlideshowOpen) {
+      return;
+    }
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = previousOverflow;
+    };
+  }, [isSlideshowOpen]);
+
+  useEffect(() => {
+    if (!isSlideshowOpen) {
+      return;
+    }
+
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        closeSlideshow();
+        return;
+      }
+
+      if (event.key === "ArrowRight") {
+        goToNextSlide();
+        return;
+      }
+
+      if (event.key === "ArrowLeft") {
+        goToPreviousSlide();
+        return;
+      }
+
+      if (event.code === "Space") {
+        event.preventDefault();
+        setIsSlideshowPlaying((current) => !current);
+      }
+    };
+
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [closeSlideshow, goToNextSlide, goToPreviousSlide, isSlideshowOpen]);
+
+  const currentSlide = slideshowSlides[activeSlideIndex];
+  const slideshowThumbSrc = useMemo(() => {
+    if (!slideshowProject) {
+      return undefined;
+    }
+
+    const thumbFilename = slideshowProject.thumb?.trim();
+    if (thumbFilename) {
+      const thumbImage = masonryImageByFilename.get(thumbFilename);
+      if (thumbImage) {
+        return thumbImage;
+      }
+    }
+
+    const masonryFilename = slideshowProject.masonry_0?.trim();
+    if (!masonryFilename) {
+      return undefined;
+    }
+
+    return masonryImageByFilename.get(masonryFilename);
+  }, [slideshowProject]);
+  const slideMotion = {
+    initial: { opacity: 0, x: transitionDirection * 140 },
+    animate: { opacity: 1, x: 0 },
+    exit: { opacity: 0, x: transitionDirection * -140 },
+  };
+
   return (
     <PageTransition>
       <div className="site-page">
@@ -291,6 +451,9 @@ export default function Projects({
                   <ProjectCard
                     project={project}
                     detailBasePath={detailBasePath}
+                    onCardClick={
+                      collectionKey === "portfolio" ? openProjectSlideshow : undefined
+                    }
                     thumbnailOverride={(() => {
                       const masonryFilename =
                         (index % 2 === 0 ? project.masonry_0 : project.masonry_1)?.trim();
@@ -311,6 +474,113 @@ export default function Projects({
             </AnimatePresence>
           </motion.div>
         </section>
+        {createPortal(
+          <AnimatePresence>
+            {isSlideshowOpen && slideshowProject && currentSlide && (
+              <motion.div
+                className="portfolio-slideshow-overlay"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.25 }}
+                onClick={closeSlideshow}
+              >
+                <motion.div
+                  className="portfolio-slideshow-shell"
+                  initial={{ opacity: 0, y: 20, scale: 0.985 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  exit={{ opacity: 0, y: 12, scale: 0.985 }}
+                  transition={{ duration: 0.28, ease: "easeOut" }}
+                  onClick={(event) => event.stopPropagation()}
+                >
+                  <div className="portfolio-slideshow-topbar">
+                    <div className="portfolio-slideshow-meta">
+                      <div className="portfolio-slideshow-project">
+                        {slideshowThumbSrc ? (
+                          <img
+                            className="portfolio-slideshow-thumb"
+                            src={slideshowThumbSrc}
+                            alt={`Vignette ${slideshowProject.title}`}
+                          />
+                        ) : (
+                          <div className="portfolio-slideshow-thumb-fallback" aria-hidden="true" />
+                        )}
+                        <div className="portfolio-slideshow-meta-text">
+                          <h2>{slideshowProject.title}</h2>
+                          <p className="portfolio-slideshow-sector">{slideshowProject.secteur}</p>
+                          {slideshowProject.description?.trim() && (
+                            <p className="portfolio-slideshow-description">
+                              {slideshowProject.description}
+                            </p>
+                          )}
+                        </div>
+                      </div>
+                    </div>
+                    <div className="portfolio-slideshow-controls">
+                      <span className="muted">
+                        {activeSlideIndex + 1}/{slideshowSlides.length}
+                      </span>
+                      <button
+                        type="button"
+                        className="portfolio-overlay-btn"
+                        onClick={() => setIsSlideshowPlaying((current) => !current)}
+                        disabled={slideshowSlides.length <= 1}
+                      >
+                        {isSlideshowPlaying ? "Pause" : "Lecture"}
+                      </button>
+                      <button
+                        type="button"
+                        className="portfolio-overlay-btn danger"
+                        onClick={closeSlideshow}
+                      >
+                        Fermer
+                      </button>
+                    </div>
+                  </div>
+
+                  <div className="portfolio-slideshow-stage">
+                    <button
+                      type="button"
+                      className="portfolio-nav-btn prev"
+                      onClick={goToPreviousSlide}
+                      disabled={slideshowSlides.length <= 1}
+                      aria-label="Image precedente"
+                    >
+                      &lsaquo;
+                    </button>
+
+                    <AnimatePresence mode="wait" initial={false}>
+                      <motion.figure
+                        key={`${currentSlide.src}-${activeSlideIndex}`}
+                        className="portfolio-slideshow-figure"
+                        initial={slideMotion.initial}
+                        animate={slideMotion.animate}
+                        exit={slideMotion.exit}
+                        transition={{ duration: 0.42, ease: "easeOut" }}
+                      >
+                        <img src={currentSlide.src} alt={slideshowProject.title} />
+                        {currentSlide.caption && (
+                          <figcaption>{currentSlide.caption}</figcaption>
+                        )}
+                      </motion.figure>
+                    </AnimatePresence>
+
+                    <button
+                      type="button"
+                      className="portfolio-nav-btn next"
+                      onClick={goToNextSlide}
+                      disabled={slideshowSlides.length <= 1}
+                      aria-label="Image suivante"
+                    >
+                      &rsaquo;
+                    </button>
+                  </div>
+                </motion.div>
+              </motion.div>
+            )}
+          </AnimatePresence>,
+          document.body
+        )}
         <Footer />
       </div>
     </PageTransition>

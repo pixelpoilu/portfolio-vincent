@@ -32,7 +32,7 @@ export default function Home() {
 
             <a href="/portfolio" className="btn secondary">
               <ArrowRight width={14} height={14} />
-              Voir les projets
+              Voir mes projets
             </a>
           </div>
         </div>

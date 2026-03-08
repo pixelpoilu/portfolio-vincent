@@ -17,6 +17,7 @@ export type Project = {
   outils: string[];
   technologies: string[];
   image: string;
+  thumb?: string;
   masonry_0?: string;
   masonry_1?: string;
   mediapath: string;

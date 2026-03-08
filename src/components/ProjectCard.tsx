@@ -2,34 +2,31 @@ import { motion } from "framer-motion";
 import { FaAngleRight } from "@react-icons/all-files/fa/FaAngleRight";
 import { Link } from "react-router-dom";
 import { slugifyTitle } from "../utils/slug";
-const images = import.meta.glob<{ default: string }>(
-    "../assets/images/projects/**/*.{jpg,png,webp}",
-    { eager: true }
-);
-
-interface Project {
-    id: number;
-    title: string;
-    description: string;
-    image: string;
-    type: string;
-    client?: string;
-}
+import type { MouseEvent } from "react";
+import type { Project } from "../types/Project";
 
 interface ProjectCardProps {
     project: Project;
     detailBasePath?: "/portfolio" | "/etudes-de-cas";
     thumbnailOverride?: string;
+    onCardClick?: (project: Project) => void;
 }
 
 export default function ProjectCard({
     project,
     detailBasePath = "/portfolio",
     thumbnailOverride,
+    onCardClick,
 }: ProjectCardProps) {
-    const thumbnailPath = `../assets/images/projects/vignettes/${project.image}`;
-    const thumbnail = thumbnailOverride ?? images[thumbnailPath]?.default;
+    const thumbnail = thumbnailOverride;
     const projectSlug = slugifyTitle(project.title);
+    const handleCardClick = (event: MouseEvent<HTMLAnchorElement>) => {
+        if (!onCardClick) {
+            return;
+        }
+        event.preventDefault();
+        onCardClick(project);
+    };
 
     return (
         <motion.article
@@ -37,7 +34,7 @@ export default function ProjectCard({
             layout
             transition={{ type: "spring", stiffness: 260, damping: 18 }}
         >
-            <Link to={`${detailBasePath}/${projectSlug}`} className="card-link">
+            <Link to={`${detailBasePath}/${projectSlug}`} className="card-link" onClick={handleCardClick}>
                 <div className="card-image-wrapper">
                     {thumbnail ? (
                         <img

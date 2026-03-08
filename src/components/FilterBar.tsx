@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { RiArrowDownSLine, RiArrowUpSLine, RiCloseLine } from "react-icons/ri";
 interface Props {
   sectors: string[];
   types: string[];
@@ -129,12 +130,12 @@ export default function FilterBar({
           <button
             type="button"
             className={`filter-pill ${activeSectors.length === 0 &&
-                activeTypes.length === 0 &&
-                activeTools.length === 0 &&
-                activeTechs.length === 0 &&
-                searchQuery.trim() === ""
-                ? "active"
-                : ""
+              activeTypes.length === 0 &&
+              activeTools.length === 0 &&
+              activeTechs.length === 0 &&
+              searchQuery.trim() === ""
+              ? "active"
+              : ""
               }`}
             onClick={() => {
               onSectorChange([]);
@@ -162,7 +163,7 @@ export default function FilterBar({
               <span className="trigger-label">
                 Secteur {activeSectors.length > 0 ? `(${activeSectors.length})` : ""}
               </span>
-              <span className="trigger-caret">{open === "sector" ? "▴" : "▾"}</span>
+              <span className="trigger-caret">{open === "sector" ? <RiArrowUpSLine /> : <RiArrowDownSLine />}</span>
             </button>
 
             {open === "sector" && (
@@ -175,7 +176,7 @@ export default function FilterBar({
                       toggleValue(activeSectors, sector, onSectorChange);
                     }}
                   >
-                    <span className="check">{activeSectors.includes(sector) ? "x" : ""}</span>
+                    <span className="check">{activeSectors.includes(sector) ? <RiCloseLine /> : ""}</span>
                     <span className="menu-label">{sector}</span>
                   </div>
                 ))}
@@ -197,7 +198,7 @@ export default function FilterBar({
               <span className="trigger-label">
                 Type {activeTypes.length > 0 ? `(${activeTypes.length})` : ""}
               </span>
-              <span className="trigger-caret">{open === "type" ? "▴" : "▾"}</span>
+              <span className="trigger-caret">{open === "type" ? <RiArrowUpSLine /> : <RiArrowDownSLine />}</span>
             </button>
 
             {open === "type" && (
@@ -210,7 +211,7 @@ export default function FilterBar({
                       toggleValue(activeTypes, type, onTypeChange);
                     }}
                   >
-                    <span className="check">{activeTypes.includes(type) ? "x" : ""}</span>
+                    <span className="check">{activeTypes.includes(type) ? <RiCloseLine /> : ""}</span>
                     <span className="menu-label">{type}</span>
                   </div>
                 ))}
@@ -232,7 +233,7 @@ export default function FilterBar({
               <span className="trigger-label">
                 Outils {activeTools.length > 0 ? `(${activeTools.length})` : ""}
               </span>
-              <span className="trigger-caret">{open === "tool" ? "▴" : "▾"}</span>
+              <span className="trigger-caret">{open === "tool" ? <RiArrowUpSLine /> : <RiArrowDownSLine />}</span>
             </button>
             {open === "tool" && (
               <div className="menu scroll">
@@ -244,7 +245,7 @@ export default function FilterBar({
                       toggleValue(activeTools, tool, onToolChange);
                     }}
                   >
-                    <span className="check">{activeTools.includes(tool) ? "x" : ""}</span>
+                    <span className="check">{activeTools.includes(tool) ? <RiCloseLine /> : ""}</span>
                     <span className="menu-label">{tool}</span>
                   </div>
                 ))}
@@ -266,7 +267,7 @@ export default function FilterBar({
               <span className="trigger-label">
                 Tech {activeTechs.length > 0 ? `(${activeTechs.length})` : ""}
               </span>
-              <span className="trigger-caret">{open === "tech" ? "▴" : "▾"}</span>
+              <span className="trigger-caret">{open === "tech" ? <RiArrowUpSLine /> : <RiArrowDownSLine />}</span>
             </button>
 
             {open === "tech" && (
@@ -279,7 +280,7 @@ export default function FilterBar({
                       toggleValue(activeTechs, tech, onTechChange);
                     }}
                   >
-                    <span className="check">{activeTechs.includes(tech) ? "x" : ""}</span>
+                    <span className="check">{activeTechs.includes(tech) ? <RiCloseLine /> : ""}</span>
                     <span className="menu-label">{tech}</span>
                   </div>
                 ))}
