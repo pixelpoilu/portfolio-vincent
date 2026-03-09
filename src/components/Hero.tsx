@@ -1,5 +1,6 @@
 import { useState } from "react";
 import portrait from "../assets/images/hero/portrait-bw.png";
+import portraitMobile from "../assets/images/hero/portrait-bw-tel.png";
 import Footer from "./Footer";
 import { ArrowRight } from "./icons";
 import Logo from "./Logo";
@@ -22,12 +23,12 @@ export default function Home() {
       <section className="home-hero">
         {/* Colonne gauche */}
         <div className="hero-left">
-          <h1>Vincent Leprêtre</h1>
+          <h1>Vincent LeprÃªtre</h1>
           <span className="hero-role">WEBMASTER</span>
           <div className="hero-divider" />
 
           <p className="hero-description">
-            Développeur frontend orienté UX/UI, je conçois des interfaces claires, structurées et pensées comme des produits.
+            DÃ©veloppeur frontend orientÃ© UX/UI, je conÃ§ois des interfaces claires, structurÃ©es et pensÃ©es comme des produits.
           </p>
 
           <div className="hero-buttons">
@@ -49,13 +50,16 @@ export default function Home() {
               <Loader />
             </div>
           )}
-          <img
-            src={portrait}
-            alt="Vincent Lepretre"
-            className={isPortraitLoaded ? "is-loaded" : "is-loading"}
-            onLoad={() => setIsPortraitLoaded(true)}
-            onError={() => setIsPortraitLoaded(true)}
-          />
+          <picture>
+            <source media="(max-width: 900px)" srcSet={portraitMobile} />
+            <img
+              src={portrait}
+              alt="Vincent Lepretre"
+              className={isPortraitLoaded ? "is-loaded" : "is-loading"}
+              onLoad={() => setIsPortraitLoaded(true)}
+              onError={() => setIsPortraitLoaded(true)}
+            />
+          </picture>
         </div>
         <Footer />
       </section>

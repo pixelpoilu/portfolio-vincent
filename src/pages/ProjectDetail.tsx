@@ -136,7 +136,7 @@ export default function ProjectDetail() {
         <div className="detail-wrapper">
           <div className="filter-top">
             <Link to={listingBasePath} className="btn secondary">
-             <span className="arrow">‹‹ </span>{backLabel}
+             <span className="arrow">â€¹â€¹ </span>{backLabel}
             </Link>
           </div>
 
@@ -168,10 +168,10 @@ export default function ProjectDetail() {
                   )}
 
                   <button className="slider-btn left" onClick={prevSlide}>
-                    ‹
+                    â€¹
                   </button>
                   <button className="slider-btn right" onClick={nextSlide}>
-                    ›
+                    â€º
                   </button>
 
                   <div
@@ -229,7 +229,7 @@ export default function ProjectDetail() {
 
               {reponse && (
                 <>
-                  <h3>Réponse</h3>
+                  <h3>RÃ©ponse</h3>
                   <p>{reponse}</p>
                 </>
               )}
