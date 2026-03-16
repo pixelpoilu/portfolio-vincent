@@ -21,7 +21,7 @@ export default function App() {
 }
 
 */
-import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import Projects from "./pages/Projects";
@@ -30,13 +30,9 @@ import ProjectDetail from "./pages/ProjectDetail";
 import Contact from "./pages/Contact";
 
 function Layout() {
-  const location = useLocation();
-
-  const hideNavbar = location.pathname === "/";
-
-  return (
+return (
     <>
-      {!hideNavbar && <Navbar />}
+      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/portfolio" element={<Projects />} />
@@ -56,3 +52,5 @@ export default function App() {
     </BrowserRouter>
   );
 }
+
+

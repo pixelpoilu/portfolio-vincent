@@ -11,7 +11,7 @@ import Loader from "../components/Loader";
 import type { Project, ProjectMedia } from "../types/Project";
 import { hasCollection, type ProjectCollectionKey } from "../utils/projectCollection";
 import { slugifyTitle } from "../utils/slug";
-
+import { IoMdClose, IoIosPlay, IoIosPause } from "react-icons/io";
 const masonryTestImageModules = import.meta.glob<{ default: string }>(
   "../assets/images/mansonery_test/*.{jpg,jpeg,png,webp,avif}",
   { eager: true }
@@ -426,7 +426,6 @@ export default function Projects({
   return (
     <PageTransition>
       <div className="site-page">
-
         <FilterBar
           sectors={availableSectors}
           types={availableTypes}
@@ -546,14 +545,14 @@ export default function Projects({
                         onClick={() => setIsSlideshowPlaying((current) => !current)}
                         disabled={slideshowSlides.length <= 1}
                       >
-                        {isSlideshowPlaying ? "Pause" : "Lecture"}
+                        {isSlideshowPlaying ? <IoIosPause /> : <IoIosPlay />}
                       </button>
                       <button
                         type="button"
                         className="portfolio-overlay-btn danger"
                         onClick={closeSlideshow}
                       >
-                        Fermer
+                        <IoMdClose />
                       </button>
                     </div>
                   </div>

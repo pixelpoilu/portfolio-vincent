@@ -91,7 +91,7 @@
             "Proposer un outil de présentation interactif des objets Matpub, permettant également une gestion des commandes."
         ],
         "status": "published",
-        "order": 24,
+        "order": 176,
         "collection": [
             "portfolio"
         ]
@@ -658,7 +658,7 @@
             "Fond Sonore,Interface Flash,Animation Flash,ActionScript,Jeux en ligne,Back Office..."
         ],
         "status": "published",
-        "order": 18,
+        "order": 172,
         "collection": [
             "portfolio",
             "case-study"
@@ -789,7 +789,7 @@
             "Interface, Animation, Conception des jeux, Programmation, Déploiement sur les consoles tactiles"
         ],
         "status": "published",
-        "order": 21,
+        "order": 174,
         "collection": [
             "case-study",
             "portfolio"
@@ -847,7 +847,7 @@
             "Création d'une interface HTML,Montage CSS,animation JQuery,Déploiement d'un backend en Flex dédié,mise en place d'une base SQL,Programmation PHP"
         ],
         "status": "published",
-        "order": 22,
+        "order": 173,
         "collection": [
             "portfolio"
         ]
@@ -940,7 +940,7 @@
             "suivi technique du site."
         ],
         "status": "published",
-        "order": 24,
+        "order": 175,
         "collection": [
             "portfolio"
         ]
@@ -987,7 +987,7 @@
             ""
         ],
         "status": "published",
-        "order": 28,
+        "order": 170,
         "collection": [
             "portfolio"
         ]
@@ -1123,7 +1123,7 @@
             "Formation à la mise à jour"
         ],
         "status": "published",
-        "order": 33,
+        "order": 166,
         "collection": [
             "portfolio"
         ]
@@ -1369,7 +1369,7 @@
             "Un de mes premiers projets en tant que dev junior, le petit défi technique était de proposer un site novateur dans les limites du web de l'époque","Intégrations disrètes de micro-animations flash dans la sctructure HTML pour plus de fluidité"
         ],
         "status": "published",
-        "order": 18,
+        "order": 165,
         "collection": ["portfolio","case-study"]
     },
     {
@@ -1495,7 +1495,7 @@
             "Interventions sur le développement de l'interface du site", 
             "Interventions le codage des modules et bases de données"],
         "status": "published",
-        "order": 40,
+        "order": 167,
         "collection": [
             "portfolio","case-study"
         ]
@@ -1836,7 +1836,7 @@
             ""
         ],
         "status": "published",
-        "order": 47,
+        "order": 164,
         "collection": ["portfolio"]
     },
  
@@ -1967,7 +1967,7 @@
             "Montage graphique vectoriel (Illustrator + Flash)", "Programmation en class ActionScript 2", "Conception des animations de transition avec les classes Tween Zigo", "Compilation en Flash MX vers swf v8.", "Chargement de contenus externes administrés en XML","Mise à jour via XML"
         ],
         "status": "published",
-        "order": 51,
+        "order": 177,
         "collection": [
             "portfolio"
         ]
@@ -2045,7 +2045,7 @@
             ""
         ],
         "status": "published",
-        "order": 83,
+        "order": 163,
         "collection": ["portfolio"]
     },
 	
@@ -2087,7 +2087,7 @@
             ""
         ],
         "status": "published",
-        "order": 84,
+        "order": 162,
         "collection": ["portfolio"]
     },
     {
@@ -2133,7 +2133,7 @@
             "Proposer au public online Locaboat un outil de lecture PDF en ligne"
         ],
         "status": "published",
-        "order": 25,
+        "order": 161,
         "collection": [
             "case-study"
         ]
@@ -2464,7 +2464,7 @@
             "Chaque centre DOC-BIKER dispose d'une fiche dédiée sur le site, avec des informations détaillées sur les services proposés, les horaires d'ouverture et les coordonnées de contact. Ces fiches sont régulièrement mises à jour pour refléter les changements dans les services ou les promotions en cours."
         ],
         "status": "published",
-        "order": 62,
+        "order": 171,
         "collection": [
             "portfolio",
             "case-study"
@@ -2620,7 +2620,7 @@
             ""
         ],
         "status": "published",
-        "order": 66,
+        "order": 178,
         "collection": [
             "portfolio",
             "case-study"
@@ -2659,7 +2659,7 @@
         ],
         "status": "draft",
         "order": 67,
-        "collection": []
+        "collection": ["portfolio"]
     },
     {
         "id": 70,
@@ -2706,7 +2706,7 @@
             "Création d'outils didactiques pour l'administration du site"
         ],
         "status": "published",
-        "order": 98,
+        "order": 169,
         "collection": [
             "portfolio",
             "case-study"
@@ -2912,7 +2912,7 @@
             ""
         ],
         "status": "published",
-        "order": 95,
+        "order": 179,
         "collection": [
             "case-study","portfolio"
         ]
@@ -2923,14 +2923,13 @@
         "client": "Divers clients",
         "year": 2023,
         "type": "Landing Pages",
-        "description": "Refonte du site Internet d'Azur Drones, acteur majeur de la technologie des drones professionnels en France",
+        "description": "",
         "link": "",
-        "secteur": "Industries-Equipement",
-        "Contexte": "L'entreprise Azur Drones, spécialisée dans la technologie des drones professionnels, souhaitait une refonte de son site Internet pour mieux présenter ses produits et services, tout en offrant une expérience utilisateur plus interactive et engageante. Un besoin spécifique était de proposer une présentation dynamique de leurs brochures techniques en ligne, permettant aux visiteurs de consulter les informations de manière plus immersive.",
-        "Reponse": "Après validation du principe de navigation proposé sur XD, j'ai travaillé sur une base de template Wordpress T3, permettant d'offrir un responsive natif sur lequel j'ai intégré les éléments de design. Le template offre également des fonctionalités avancées de gestion de contenu.",
+        "secteur": "",
+        "Contexte": "",
+        "Reponse": "",
         "outils": [
             "Wordpress",
-            "Base T3 Blank Template",
             "Adobe XD","Pardot","SalesForce"
         ],
         "technologies": [
@@ -2968,10 +2967,79 @@
             ""
         ],
         "status": "published",
-        "order": 98,
+        "order": 168,
         "collection": [
             "portfolio"
         ]
-    }      
+    },
+    {
+        "id": 180,
+        "title": "Refonte du site web DiliTrust",
+        "client": "DiliTrust",
+        "year": 2023,
+        "type": "Site Internet",
+        "description": "Refondre sans perdre la performance : concilier design et SEO",
+        "link": "",
+        "secteur": "Edition de SASS",
+        "Contexte": "Dans le cadre de l’adoption d’une nouvelle identité graphique, DiliTrust souhaite une refonte complète de son site web.",
+        "Reponse": "Proposer un site contenant la nouvelle identité graphique, tout en conservant la valeur ajoutée de l'existant.",
+        "outils": [
+            "Adobe XD",
+            "Pack Adobe","Vagrant", "Visual Studio Code",
+            "www"
+        ],
+        "technologies": [
+            "LESS","Bootstrap","CSS", "SCSS",
+            "HTML","Javascript / JQuery","PHP","MySQL"
+        ],
+        "image": "rea_web_site-dilitrust_diapo.png",
+        "masonry_0": "manson_1_site-dilitrust.png",
+        "masonry_1": "manson_0_site-dilitrust.png",
+        "mediapath": "rea_web_site-dilitrust",
+        "thumb": "rea_web_site-dilitrust_thumb.jpg",
+        "medias": [
+            {
+                "file": "old_home_responsive.png",
+                "caption": "Ancienne version du site"
+            },
+            {
+                "file": "charte.png",
+                "caption": "Nouvelle charte graphique"
+            }, 
+            {
+                "file": "new_dilitrust.png",
+                "caption": "Nouvelle version responsive"
+            },            
+            {
+                "file": "mobile_first.png",
+                "caption": "Developpement du mobile first"
+            },
+            {
+                "file": "landing_admin.png",
+                "caption": "Développement de module sur mesure : Landing Page SEA pilotée directement via l'administration Wordpress"
+            },
+            {
+                "file": "perf_compares.png",
+                "caption": "Résultat des optimisations techniques pour performer sur le SEO"
+            },
+            {
+                "file": "conference_assets.png",
+                "caption": "Réalisation d'assets (print & digitaux) pour des événements corporate (DiliTrust Conference)"
+            }
+           
+        ],
+        "missions": [
+            "Validation d'un principe d'UX",
+            "Création d'un nouveau template WorPress sur une base UI validée",
+            "Intégration / montage de la nouvelle identité graphique",
+            "Implémentation des datas dans la nouvelle mouture après validation du prototype",
+            "Mise en service de la nouvelle mouture, qui conserve la valeur SEO et les performances acquises."
+        ],
+        "status": "published",
+        "order": 180,
+        "collection": [
+            "portfolio","case-study"
+        ]
+    }   
 ]
 

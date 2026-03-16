@@ -834,9 +834,9 @@
     "keyv" "^4.5.4"
 
 "flatted@^3.2.9":
-  "integrity" "sha512-GX+ysw4PBCz0PzosHDepZGANEuFCMLrnRTiEy9McGjmkCQYwRq4A/X786G/fjM/+OjsWSU1ZrY5qyARZmO/uwg=="
-  "resolved" "https://registry.npmjs.org/flatted/-/flatted-3.3.3.tgz"
-  "version" "3.3.3"
+  "integrity" "sha512-IxfVbRFVlV8V/yRaGzk0UVIcsKKHMSfYw66T/u4nTwlWteQePsxe//LjudR1AMX4tZW3WFCh3Zqa/sjlqpbURQ=="
+  "resolved" "https://registry.npmjs.org/flatted/-/flatted-3.4.1.tgz"
+  "version" "3.4.1"
 
 "framer-motion@^12.34.1":
   "integrity" "sha512-v81ecyZKYO/DfpTwHivqkxSUBzvceOpoI+wLfgCgoUIKxlFKEXdg0oR9imxwXumT4SFy8vRk9xzJ5l3/Du/55Q=="

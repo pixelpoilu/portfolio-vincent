@@ -1,18 +1,5 @@
-/* ===================================================== */
-/*                     ROOT VARIABLES                    */
-/* ===================================================== */
-/*
-@font-face {
-  font-family: 'FontAwesome';
-  src: url('../fonts/fontawesome-webfont.eot?v=4.0.3');
-  src: url('../fonts/fontawesome-webfont.eot?#iefix&v=4.0.3') format('embedded-opentype'), url('../fonts/fontawesome-webfont.woff?v=4.0.3') format('woff'), url('../fonts/fontawesome-webfont.ttf?v=4.0.3') format('truetype'), url('../fonts/fontawesome-webfont.svg?v=4.0.3#fontawesomeregular') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
-
-*/
-/* ===================================================== */
-/*                     TECH BADGES                       */
+﻿/* ===================================================== */
+/*                     LOADER                            */
 /* ===================================================== */
 .loader {
   display: flex;
@@ -63,6 +50,148 @@
 }
 
 
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin2 {
+  0% {
+    stroke-dasharray: 1, 800;
+    stroke-dashoffset: 0;
+  }
+
+  50% {
+    stroke-dasharray: 400, 400;
+    stroke-dashoffset: -200px;
+  }
+
+  100% {
+    stroke-dasharray: 800, 1;
+    stroke-dashoffset: -800px;
+  }
+}
+
+.spin2 {
+  transform-origin: center;
+  animation: spin2 1.5s ease-in-out infinite,
+    spin 2s linear infinite;
+  animation-direction: alternate;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spin {
+  transform-origin: center;
+  animation: spin 2s linear infinite;
+}
+
+/* ===================================================== */
+/*                     MENU SMARTPHONE BT                */
+/* ===================================================== */
+
+
+.menu-icon {
+  position: absolute;
+  z-index: 3000;
+  right: 10px;
+  top: 10px;
+  width: 54px;
+  height: 54px;
+  background-color: transparent;
+  border-radius: 50%;
+  transition: transform 0.5s;
+}
+
+.menu-icon .icon_span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  width: 22px;
+  height: 2px;
+  background-color: #1f1f1f;
+  transition: background 0.5s, transform 0.5s;
+  transition: background 0.5s steps(1, end);
+}
+
+.icon_span::before,
+.icon_span::after {
+  transform-origin: 100% 50%;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 22px;
+  height: 2px;
+  transform: translateY(-8px);
+  background-color: #1f1f1f;
+  transition: transform 0.5s;
+}
+
+.icon_span::after {
+  transform: translateY(8px);
+}
+
+.menu-icon:hover .icon_span::before {
+  transform: translateY(-10px);
+}
+
+.menu-icon:hover .icon_span::after {
+  transform: translateY(10px);
+}
+
+.menu-icon svg {
+  opacity: 0;
+  fill: transparent;
+  stroke: #1f1f1f;
+  stroke-width: 2px;
+  stroke-dasharray: 22 230;
+  transition: stroke-dasharray 0.5s, stroke-dashoffset 0.5s, opacity 0.5s steps(1, end);
+}
+
+.menu-icon.is-opened .icon_span {
+  transition: background 0.5s steps(1, start);
+  background-color: transparent;
+}
+
+.menu-icon.is-opened svg {
+  opacity: 1;
+  stroke-dasharray: 160;
+  stroke-dashoffset: -65;
+  transition: stroke-dasharray 0.5s, stroke-dashoffset 0.5s, opacity 0.5s steps(1, start);
+  stroke: #fcfcfc;
+}
+
+.menu-icon.is-opened .icon_span::before {
+  transform: translateX(-3px) translateY(-8px) rotate(-45deg);
+  background-color: #fcfcfc;
+}
+
+.menu-icon.is-opened .icon_span::after {
+  transform: translateX(-3px) translateY(8px) rotate(45deg);
+  background-color: #fcfcfc;
+}
+
+/* ===================================================== */
+/*                     ROOT VARIABLES                    */
+/* ===================================================== */
+/*
+@font-face {
+  font-family: 'FontAwesome';
+  src: url('../fonts/fontawesome-webfont.eot?v=4.0.3');
+  src: url('../fonts/fontawesome-webfont.eot?#iefix&v=4.0.3') format('embedded-opentype'), url('../fonts/fontawesome-webfont.woff?v=4.0.3') format('woff'), url('../fonts/fontawesome-webfont.ttf?v=4.0.3') format('truetype'), url('../fonts/fontawesome-webfont.svg?v=4.0.3#fontawesomeregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+*/
 :root {
   --bg: #f4f4f1;
   --card-bg: #ffffff;
@@ -341,6 +470,156 @@ section {
   color: white;
 }
 
+
+/* ================= MOBILE NAV ================= */
+
+.nav-toggle {
+  position: relative;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  margin-left: 1rem;
+  border-radius: 999px;
+  border: 1px solid rgba(17, 24, 39, 0.16);
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  color: #111827;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.nav-toggle:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.12);
+}
+
+.nav-toggle-line {
+  width: 20px;
+  height: 2px;
+  background: currentColor;
+  border-radius: 999px;
+  transition: transform 0.35s ease, opacity 0.3s ease;
+}
+
+.nav-toggle-line+.nav-toggle-line {
+  margin-top: 6px;
+}
+
+.nav-toggle.open .nav-toggle-line:first-child {
+  transform: translateY(4px) rotate(45deg);
+}
+
+.nav-toggle.open .nav-toggle-line:last-child {
+  transform: translateY(-4px) rotate(-45deg);
+}
+
+.mobile-nav-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: flex;
+  background: rgba(10, 12, 16, 0.4);
+  backdrop-filter: blur(12px);
+}
+
+.mobile-nav-panel {
+  position: relative;
+  width: 100%;
+  min-height: 100dvh;
+  background: linear-gradient(160deg, rgba(18, 19, 23, 0.98), rgba(9, 10, 12, 0.94));
+  color: #f7f4ef;
+  padding: calc(20px + env(safe-area-inset-top)) 24px calc(32px + env(safe-area-inset-bottom));
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  gap: 2.5rem;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.mobile-nav-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mobile-nav-logo {
+  color: #f7f4ef;
+  text-decoration: none;
+}
+
+.mobile-nav-links {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+.mobile-nav-link {
+  font-family: var(--font-ui);
+  font-size: clamp(1.8rem, 6vw, 2.6rem);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: rgba(247, 244, 239, 0.78);
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.mobile-nav-link::after {
+  content: "";
+  display: block;
+  width: 0%;
+  height: 2px;
+  margin-top: 10px;
+  background: linear-gradient(90deg, #f7f4ef, rgba(247, 244, 239, 0));
+  transition: width 0.35s cubic-bezier(.22, 1, .36, 1);
+}
+
+.mobile-nav-link:hover,
+.mobile-nav-link.active {
+  color: #ffffff;
+  transform: translateX(6px);
+}
+
+.mobile-nav-link:hover::after,
+.mobile-nav-link.active::after {
+  width: 40%;
+}
+
+.mobile-nav-footer {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.mobile-nav-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 24px;
+  border-radius: 999px;
+  background: #f7f4ef;
+  color: #111827;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mobile-nav-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.25);
+}
+
+.mobile-nav-meta {
+  font-size: 0.75rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: rgba(247, 244, 239, 0.6);
+}
+
 /* ================= ANIMATION ================= */
 
 @keyframes fadeSlideDown {
@@ -367,8 +646,26 @@ section {
   .nav-links {
     display: none;
   }
+
+  .nav-cta {
+    display: none;
+  }
+
+  .nav-toggle {
+    display: inline-flex;
+  }
+
+  .nav-container {
+    padding: 0 1.4rem;
+  }
 }
 
+
+@media (min-width: 769px) {
+  .navbar.is-home {
+    display: none;
+  }
+}
 
 /* ===================================================== */
 /*                    PROJECT GRID                       */
@@ -381,7 +678,31 @@ section {
 }
 
 .case-studies-page .projects-grid {
-  column-count: 3;
+  column-count: 4;
+}
+
+@media (max-width: 1120px) {
+  .case-studies-page .projects-grid {
+    column-count: 4;
+  }
+}
+
+@media (max-width: 740px) {
+  .case-studies-page .projects-grid {
+    column-count: 3;
+  }
+}
+
+@media (max-width: 560px) {
+  .case-studies-page .projects-grid {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 320px) {
+  .case-studies-page .projects-grid {
+    column-count: 1;
+  }
 }
 
 /* ===================================================== */
@@ -1052,17 +1373,33 @@ section {
 
 .portfolio-slideshow-controls select,
 .portfolio-overlay-btn {
+  /*
   border: 1px solid rgba(255, 255, 255, 0.2);
   background: rgba(255, 255, 255, 0.08);
-  color: #fff;
   padding: 0.5rem 0.75rem;
   font-size: 0.82rem;
+*/
+  color: #fff;
+  font-size: 30px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
   cursor: pointer;
+  backdrop-filter: blur(10px);
+  padding-top: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding-left: 7px;
+  background-color: transparent;
 }
 
 .portfolio-overlay-btn.danger {
   background: rgba(181, 40, 40, 0.3);
   border-color: rgba(255, 120, 120, 0.35);
+}
+
+.portfolio-overlay-btn.danger:hover {
+  background: rgba(181, 40, 40, 0.8);
+  border-color: rgba(255, 120, 120, 0.6);
 }
 
 .portfolio-slideshow-stage {
@@ -1101,9 +1438,9 @@ section {
   line-height: 1.35;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
   background-color: rgba(0, 0, 0, 0.6);
-  padding-top: 5px;
+  padding-top: 10px;
   padding-right: 5px;
-  padding-bottom: 5px;
+  padding-bottom: 15px;
   padding-left: 25px;
 }
 
@@ -1249,7 +1586,7 @@ section {
   backdrop-filter: blur(10px);
 }
 
-.slider-btn.left {
+.portfolio-overlay-btn .slider-btn.left {
   left: 20px;
 }
 
@@ -1782,6 +2119,15 @@ section {
   font-weight: 500;
   */
   width: 60px;
+  fill: #525252;
+}
+
+.home-logo svg {
+  /*
+  font-size: 28px;
+  font-weight: 500;
+  */
+
 }
 
 .home-year {
