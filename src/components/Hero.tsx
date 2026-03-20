@@ -1,6 +1,5 @@
 import { useState } from "react";
 import portrait from "../assets/images/hero/portrait-bw.png";
-import portraitMobile from "../assets/images/hero/portrait-bw-tel.png";
 import Footer from "./Footer";
 import { ArrowRight } from "./icons";
 import Logo from "./Logo";
@@ -50,16 +49,13 @@ export default function Home() {
               <Loader />
             </div>
           )}
-          <picture>
-            <source media="(max-width: 900px)" srcSet={portraitMobile} />
-            <img
-              src={portrait}
-              alt="Vincent Lepretre"
-              className={isPortraitLoaded ? "is-loaded" : "is-loading"}
-              onLoad={() => setIsPortraitLoaded(true)}
-              onError={() => setIsPortraitLoaded(true)}
-            />
-          </picture>
+          <img
+            src={portrait}
+            alt="Vincent Lepretre"
+            className={isPortraitLoaded ? "is-loaded" : "is-loading"}
+            onLoad={() => setIsPortraitLoaded(true)}
+            onError={() => setIsPortraitLoaded(true)}
+          />
         </div>
         <Footer />
       </section>

@@ -65,7 +65,7 @@ export default function ProjectCard({
 
                     <div className="card-content">
                         <h3 className="card-title">{project.client}</h3>
-                        <span className="card-type">{project.type}</span>
+                        <span className="card-type">{project.type} - {project.order}</span>
                         <span className="card-cta" aria-hidden="true">
                             <FaAngleRight />
                         </span>

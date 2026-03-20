@@ -136,7 +136,7 @@ export default function ProjectDetail() {
         <div className="detail-wrapper">
           <div className="filter-top">
             <Link to={listingBasePath} className="btn secondary">
-              <span className="arrow">‹‹ </span>{backLabel}
+              <span className="arrow">\u2039\u2039 </span>{backLabel}
             </Link>
           </div>
 
@@ -168,10 +168,10 @@ export default function ProjectDetail() {
                   )}
 
                   <button className="slider-btn left" onClick={prevSlide}>
-                    ‹
+                    \u2039
                   </button>
                   <button className="slider-btn right" onClick={nextSlide}>
-                    ›
+                    \u203a
                   </button>
 
                   <div
@@ -185,7 +185,7 @@ export default function ProjectDetail() {
                       disabled={galleryImages.length <= 1}
                       aria-label="Image pr&eacute;c&eacute;dente"
                     >
-                      ‹
+                      \u2039
                     </button>
                     <button
                       className="slider-control"
@@ -193,7 +193,7 @@ export default function ProjectDetail() {
                       disabled={galleryImages.length <= 1}
                       aria-label={isPlaying ? "Mettre en pause" : "Lire"}
                     >
-                      {isPlaying ? "❚❚" : "▶"}
+                      {isPlaying ? "\u275a\u275a" : "\u25b6"}
                     </button>
                     <button
                       className="slider-control"
@@ -201,7 +201,7 @@ export default function ProjectDetail() {
                       disabled={galleryImages.length <= 1}
                       aria-label="Image suivante"
                     >
-                      ›
+                      \u203a
                     </button>
                   </div>
                 </>
@@ -229,7 +229,7 @@ export default function ProjectDetail() {
 
               {reponse && (
                 <>
-                  <h3>RÃ©ponse</h3>
+                  <h3>R\u00c3\u00a9ponse</h3>
                   <p>{reponse}</p>
                 </>
               )}
@@ -265,6 +265,7 @@ export default function ProjectDetail() {
     </PageTransition>
   );
 }
+
 
 
 

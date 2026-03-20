@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { createPortal } from "react-dom";
@@ -11,7 +11,13 @@ import Loader from "../components/Loader";
 import type { Project, ProjectMedia } from "../types/Project";
 import { hasCollection, type ProjectCollectionKey } from "../utils/projectCollection";
 import { slugifyTitle } from "../utils/slug";
-import { IoMdClose, IoIosPlay, IoIosPause } from "react-icons/io";
+import {
+  IoMdClose,
+  IoIosPlay,
+  IoIosPause,
+  IoIosVolumeHigh,
+  IoIosVolumeOff,
+} from "react-icons/io";
 const masonryTestImageModules = import.meta.glob<{ default: string }>(
   "../assets/images/mansonery_test/*.{jpg,jpeg,png,webp,avif}",
   { eager: true }
@@ -24,6 +30,18 @@ const projectImageModules = import.meta.glob<{ default: string }>(
   "../assets/images/projects/**/*.{jpg,jpeg,png,webp,avif}",
   { eager: true }
 );
+
+const projectVideoModules = import.meta.glob<string>(
+  "../assets/images/projects/**/*.mp4",
+  { eager: true, import: "default" }
+);
+const resolveMediaSrc = (moduleEntry: unknown) => {
+  if (typeof moduleEntry === "string") {
+    return moduleEntry;
+  }
+
+  return (moduleEntry as { default?: string } | undefined)?.default;
+};
 const masonryImageByFilename = new Map(
   Object.entries(projectImageModules).map(([path, image]) => [
     path.split("/").pop()?.trim() ?? "",
@@ -44,6 +62,7 @@ const sortAlphabetically = (values: string[]) =>
 type SlideshowSlide = {
   src: string;
   caption?: string;
+  kind: "image" | "video";
 };
 
 interface ProjectsProps {
@@ -67,8 +86,10 @@ export default function Projects({
   const [isSlideshowThumbLoaded, setIsSlideshowThumbLoaded] = useState(false);
   const [isSlideImageLoaded, setIsSlideImageLoaded] = useState(false);
   const [isSlideshowPlaying, setIsSlideshowPlaying] = useState(false);
+  const [isVideoMuted, setIsVideoMuted] = useState(false);
   const [transitionDirection, setTransitionDirection] = useState<1 | -1>(1);
   const isSlideshowOpen = slideshowProject !== null;
+  const videoRef = useRef<HTMLVideoElement | null>(null);
 
   const publishedProjects = useMemo(() => {
     const projects = projectsData as Project[];
@@ -272,21 +293,31 @@ export default function Projects({
 
   const resolveProjectSlides = useCallback((project: Project): SlideshowSlide[] => {
     return project.medias.reduce<SlideshowSlide[]>((slides, media) => {
-      const mediaFile = typeof media === "string" ? media : media.file;
+      const mediaFile = (typeof media === "string" ? media : media.file).trim();
+      if (!mediaFile) {
+        return slides;
+      }
       const mediaPath = `../assets/images/projects/medias/${project.mediapath}/${mediaFile}`;
-      const src = projectImageModules[mediaPath]?.default;
+      const isVideo = mediaFile.toLowerCase().endsWith(".mp4");
+      const mediaModules = isVideo ? projectVideoModules : projectImageModules;
+      const src = resolveMediaSrc(mediaModules[mediaPath]);
 
       if (!src) {
         return slides;
       }
 
+      const slide: SlideshowSlide = {
+        src,
+        kind: isVideo ? "video" : "image",
+      };
+
       if (typeof media === "string") {
-        slides.push({ src });
+        slides.push(slide);
         return slides;
       }
 
       const caption = (media as ProjectMedia).caption?.trim();
-      slides.push(caption ? { src, caption } : { src });
+      slides.push(caption ? { ...slide, caption } : slide);
       return slides;
     }, []);
   }, []);
@@ -305,11 +336,30 @@ export default function Projects({
     );
   }, [slideshowSlides.length]);
 
+  const toggleVideoMute = useCallback(() => {
+    setIsVideoMuted((current) => {
+      const next = !current;
+      const video = videoRef.current;
+      if (video) {
+        video.muted = next;
+        if (!next) {
+          video.volume = 1;
+          const playPromise = video.play();
+          if (playPromise && typeof playPromise.catch === "function") {
+            playPromise.catch(() => { });
+          }
+        }
+      }
+      return next;
+    });
+  }, []);
+
   const closeSlideshow = useCallback(() => {
     setSlideshowProject(null);
     setSlideshowSlides([]);
     setActiveSlideIndex(0);
     setIsSlideshowPlaying(false);
+    setIsVideoMuted(false);
   }, []);
 
   const openProjectSlideshow = useCallback(
@@ -325,10 +375,44 @@ export default function Projects({
       setSlideshowSlides(slides);
       setActiveSlideIndex(0);
       setIsSlideshowPlaying(false);
+      setIsVideoMuted(false);
       setTransitionDirection(1);
     },
     [detailBasePath, navigate, resolveProjectSlides]
   );
+  const requestVideoPlayback = useCallback(() => {
+    const video = videoRef.current;
+    if (!video) {
+      return;
+    }
+
+    video.muted = isVideoMuted;
+    if (!isVideoMuted) {
+      video.volume = 1;
+    }
+
+    const playPromise = video.play();
+    if (playPromise && typeof playPromise.catch === "function") {
+      playPromise.catch((error) => {
+        const errorName =
+          typeof error === "object" && error !== null && "name" in error
+            ? (error as { name?: string }).name
+            : "";
+        if (errorName !== "NotAllowedError") {
+          return;
+        }
+        if (video.muted) {
+          return;
+        }
+        video.muted = true;
+        setIsVideoMuted(true);
+        const fallbackPromise = video.play();
+        if (fallbackPromise && typeof fallbackPromise.catch === "function") {
+          fallbackPromise.catch(() => { });
+        }
+      });
+    }
+  }, [isVideoMuted]);
 
   useEffect(() => {
     if (!isSlideshowOpen || !isSlideshowPlaying || slideshowSlides.length <= 1) {
@@ -417,11 +501,23 @@ export default function Projects({
     setIsSlideImageLoaded(false);
   }, [currentSlide?.src, activeSlideIndex, slideshowProject?.id]);
 
+  useEffect(() => {
+    if (currentSlide?.kind !== "video") {
+      return;
+    }
+
+    requestVideoPlayback();
+  }, [currentSlide?.kind, currentSlide?.src, requestVideoPlayback]);
   const slideMotion = {
     initial: { opacity: 0, x: transitionDirection * 140 },
     animate: { opacity: 1, x: 0 },
     exit: { opacity: 0, x: transitionDirection * -140 },
   };
+
+  const introText =
+    collectionKey === "portfolio"
+      ? "Découvrez une sélection de projets sur-mesure, conçus pour des marques qui veulent se distinguer."
+      : "Plongez dans les études de cas pour comprendre la démarche, les choix et les résultats.";
 
   return (
     <PageTransition>
@@ -442,6 +538,7 @@ export default function Projects({
           onTechChange={setSelectedTechnologies}
           onSearchChange={setSearchQuery}
           projectsCount={filteredProjects.length}
+          introText={introText}
         />
 
         <section className="projects-section">
@@ -549,6 +646,16 @@ export default function Projects({
                       </button>
                       <button
                         type="button"
+                        className="portfolio-overlay-btn"
+                        onClick={toggleVideoMute}
+                        disabled={currentSlide?.kind !== "video"}
+                        aria-pressed={!isVideoMuted}
+                        aria-label={isVideoMuted ? "Activer le son" : "Couper le son"}
+                      >
+                        {isVideoMuted ? <IoIosVolumeOff /> : <IoIosVolumeHigh />}
+                      </button>
+                      <button
+                        type="button"
                         className="portfolio-overlay-btn danger"
                         onClick={closeSlideshow}
                       >
@@ -582,13 +689,32 @@ export default function Projects({
                             <Loader />
                           </div>
                         )}
-                        <img
-                          src={currentSlide.src}
-                          alt={slideshowProject.title}
-                          className={isSlideImageLoaded ? "is-loaded" : "is-loading"}
-                          onLoad={() => setIsSlideImageLoaded(true)}
-                          onError={() => setIsSlideImageLoaded(true)}
-                        />
+                        {currentSlide.kind === "video" ? (
+                          <video controls
+                            ref={videoRef}
+                            className={isSlideImageLoaded ? "is-loaded" : "is-loading"}
+                            autoPlay
+                            muted={isVideoMuted}
+                            loop
+                            playsInline
+                            preload="auto"
+                            onLoadedMetadata={() => {
+                              setIsSlideImageLoaded(true);
+                              requestVideoPlayback();
+                            }}
+                            onError={() => setIsSlideImageLoaded(true)}
+                          >
+                            <source src={currentSlide.src} type="video/mp4" />
+                          </video>
+                        ) : (
+                          <img
+                            src={currentSlide.src}
+                            alt={slideshowProject.title}
+                            className={isSlideImageLoaded ? "is-loaded" : "is-loading"}
+                            onLoad={() => setIsSlideImageLoaded(true)}
+                            onError={() => setIsSlideImageLoaded(true)}
+                          />
+                        )}
                         {currentSlide.caption && (
                           <figcaption>{currentSlide.caption}</figcaption>
                         )}
@@ -616,7 +742,3 @@ export default function Projects({
     </PageTransition>
   );
 }
-
-
-
-

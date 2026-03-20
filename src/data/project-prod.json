@@ -33,6 +33,7 @@
         ],
         "status": "published",
         "order": 25,
+        "caseorder": 0,
         "collection": [
             "portfolio"
         ]
@@ -92,6 +93,7 @@
         ],
         "status": "published",
         "order": 176,
+        "caseorder": 0,
         "collection": [
             "portfolio"
         ]
@@ -137,6 +139,7 @@
         ],
         "status": "published",
         "order": 3,
+        "caseorder": 0,
         "collection": [
             "portfolio"
         ]
@@ -185,6 +188,7 @@
         ],
         "status": "published",
         "order": 4,
+        "caseorder": 0,
         "collection": [
             "portfolio"
         ]
@@ -220,6 +224,7 @@
         ],
         "status": "draft",
         "order": 6,
+        "caseorder": 0,
         "collection": []
     },
     {
@@ -252,6 +257,7 @@
         ],
         "status": "draft",
         "order": 7,
+        "caseorder": 0,
         "collection": []
     },
     {
@@ -284,6 +290,7 @@
         ],
         "status": "draft",
         "order": 8,
+        "caseorder": 0,
         "collection": []
     },
     {
@@ -322,6 +329,7 @@
         ],
         "status": "draft",
         "order": 9,
+        "caseorder": 0,
         "collection": []
     },
     {
@@ -355,6 +363,7 @@
         ],
         "status": "draft",
         "order": 10,
+        "caseorder": 0,
         "collection": []
     },
     {
@@ -388,6 +397,7 @@
         ],
         "status": "draft",
         "order": 11,
+        "caseorder": 0,
         "collection": []
     },
     {
@@ -420,6 +430,7 @@
         ],
         "status": "draft",
         "order": 12,
+        "caseorder": 0,
         "collection": []
     },
     {
@@ -452,6 +463,7 @@
         ],
         "status": "draft",
         "order": 13,
+        "caseorder": 0,
         "collection": []
     },
     {
@@ -484,6 +496,7 @@
         ],
         "status": "draft",
         "order": 14,
+        "caseorder": 0,
         "collection": []
     },
     {
@@ -523,6 +536,7 @@
         ],
         "status": "published",
         "order": 15,
+        "caseorder": 0,
         "collection": [
             "portfolio"
         ]
@@ -557,6 +571,7 @@
         ],
         "status": "draft",
         "order": 16,
+        "caseorder": 0,
         "collection": [
             "portfolio"
         ]
@@ -608,6 +623,7 @@
         ],
         "status": "published",
         "order": 17,
+        "caseorder": 0,
         "collection": [
             "portfolio",
             "case-study"
@@ -659,6 +675,7 @@
         ],
         "status": "published",
         "order": 172,
+        "caseorder": 0,
         "collection": [
             "portfolio",
             "case-study"
@@ -703,6 +720,7 @@
         ],
         "status": "published",
         "order": 19,
+        "caseorder": 0,
         "collection": [
             "portfolio"
         ]
@@ -737,6 +755,7 @@
         ],
         "status": "draft",
         "order": 20,
+        "caseorder": 0,
         "collection": [
             "portfolio"
         ]
@@ -790,6 +809,7 @@
         ],
         "status": "published",
         "order": 174,
+        "caseorder": 0,
         "collection": [
             "case-study",
             "portfolio"
@@ -848,6 +868,7 @@
         ],
         "status": "published",
         "order": 173,
+        "caseorder": 0,
         "collection": [
             "portfolio"
         ]
@@ -899,6 +920,7 @@
         ],
         "status": "published",
         "order": 23,
+        "caseorder": 0,
         "collection": [
             "portfolio"
         ]
@@ -941,6 +963,7 @@
         ],
         "status": "published",
         "order": 175,
+        "caseorder": 0,
         "collection": [
             "portfolio"
         ]
@@ -988,6 +1011,7 @@
         ],
         "status": "published",
         "order": 170,
+        "caseorder": 0,
         "collection": [
             "portfolio"
         ]
@@ -1036,6 +1060,7 @@
         ],
         "status": "published",
         "order": 31,
+        "caseorder": 0,
         "collection": [
             "portfolio"
         ]
@@ -1080,6 +1105,7 @@
         ],
         "status": "published",
         "order": 12,
+        "caseorder": 0,
         "collection": [
             "portfolio"
         ]
@@ -1124,6 +1150,7 @@
         ],
         "status": "published",
         "order": 166,
+        "caseorder": 0,
         "collection": [
             "portfolio"
         ]
@@ -1165,6 +1192,7 @@
         ],
         "status": "published",
         "order": 34,
+        "caseorder": 0,
         "collection": [
             "portfolio"
         ]
@@ -1207,6 +1235,7 @@
         ],
         "status": "published",
         "order": 35,
+        "caseorder": 0,
         "collection": ["portfolio"]
     },
     {
@@ -1279,6 +1308,7 @@
         ],
         "status": "published",
         "order": 36,
+        "caseorder": 2,
         "collection": ["portfolio","case-study"]
     },
     {
@@ -1332,6 +1362,7 @@
         ],
         "status": "published",
         "order": 37,
+        "caseorder": 8,
         "collection": [
            "case-study"
         ]
@@ -1370,6 +1401,7 @@
         ],
         "status": "published",
         "order": 165,
+        "caseorder": 1,
         "collection": ["portfolio","case-study"]
     },
     {
@@ -1407,6 +1439,7 @@
         ],
         "status": "published",
         "order": 19,
+        "caseorder": 0,
         "collection": ["portfolio"]
     },
     {
@@ -1496,6 +1529,7 @@
             "Interventions le codage des modules et bases de données"],
         "status": "published",
         "order": 167,
+        "caseorder": 6,
         "collection": [
             "portfolio","case-study"
         ]
@@ -1540,6 +1574,7 @@
         ],
         "status": "draft",
         "order": 41,
+        "caseorder": 0,
         "collection": []
     },
     {
@@ -1590,6 +1625,7 @@
         ],
         "status": "published",
         "order": 42,
+        "caseorder": 0,
         "collection": [
             "portfolio"
         ]
@@ -1636,6 +1672,7 @@
         ],
         "status": "published",
         "order": 43,
+        "caseorder": 0,
         "collection": [
             "portfolio"
         ]
@@ -1672,6 +1709,7 @@
         ],
         "status": "published",
         "order": 44,
+        "caseorder": 0,
         "collection": ["portfolio"]
     },    {
         "id": 128,
@@ -1712,6 +1750,7 @@
         ],
         "status": "published",
         "order": 45,
+        "caseorder": 0,
         "collection": ["portfolio"]
     },
     {
@@ -1751,6 +1790,7 @@
         ],
         "status": "draft",
         "order": 45,
+        "caseorder": 0,
         "collection": []
     },
     {
@@ -1789,6 +1829,7 @@
         ],
         "status": "published",
         "order": 46,
+        "caseorder": 0,
         "collection": []
     },
     {
@@ -1837,6 +1878,7 @@
         ],
         "status": "published",
         "order": 164,
+        "caseorder": 0,
         "collection": ["portfolio"]
     },
  
@@ -1874,6 +1916,7 @@
         ],
         "status": "draft",
         "order": 49,
+        "caseorder": 0,
         "collection": []
     },
     {
@@ -1919,6 +1962,7 @@
         ],
         "status": "published",
         "order": 20,
+        "caseorder": 0,
         "collection": [
             "portfolio"
         ]
@@ -1968,6 +2012,7 @@
         ],
         "status": "published",
         "order": 177,
+        "caseorder": 0,
         "collection": [
             "portfolio"
         ]
@@ -2008,6 +2053,7 @@
         ],
         "status": "draft",
         "order": 2,
+        "caseorder": 0,
         "collection": [
             "portfolio"
         ]
@@ -2046,6 +2092,7 @@
         ],
         "status": "published",
         "order": 163,
+        "caseorder": 0,
         "collection": ["portfolio"]
     },
 	
@@ -2088,6 +2135,7 @@
         ],
         "status": "published",
         "order": 162,
+        "caseorder": 0,
         "collection": ["portfolio"]
     },
     {
@@ -2134,6 +2182,7 @@
         ],
         "status": "published",
         "order": 161,
+        "caseorder": 3,
         "collection": [
             "case-study"
         ]
@@ -2179,6 +2228,7 @@
         ],
         "status": "published",
         "order": 56,
+        "caseorder": 4,
         "collection": [
             "portfolio",
             "case-study"
@@ -2224,6 +2274,7 @@
         ],
         "status": "published",
         "order": 7,
+        "caseorder": 0,
         "collection": [
             "portfolio"
         ]
@@ -2265,6 +2316,7 @@
         ],
         "status": "published",
         "order": 58,
+        "caseorder": 0,
         "collection": [
             "portfolio"
         ]
@@ -2306,6 +2358,7 @@
         ],
         "status": "published",
         "order": 89,
+        "caseorder": 0,
         "collection": [
             "portfolio"
         ]
@@ -2349,6 +2402,7 @@
         ],
         "status": "published",
         "order": 60,
+        "caseorder": 0,
         "collection": [
             "portfolio"
         ]
@@ -2389,6 +2443,7 @@
         ],
         "status": "draft",
         "order": 61,
+        "caseorder": 0,
         "collection": []
     },
     {
@@ -2465,6 +2520,7 @@
         ],
         "status": "published",
         "order": 171,
+        "caseorder": 10,
         "collection": [
             "portfolio",
             "case-study"
@@ -2504,6 +2560,7 @@
         ],
         "status": "draft",
         "order": 63,
+        "caseorder": 0,
         "collection": []
     },
     {
@@ -2540,6 +2597,7 @@
         ],
         "status": "draft",
         "order": 64,
+        "caseorder": 0,
         "collection": []
     },
     {
@@ -2578,6 +2636,7 @@
         ],
         "status": "draft",
         "order": 65,
+        "caseorder": 0,
         "collection": [
             "portfolio"
         ]
@@ -2621,6 +2680,7 @@
         ],
         "status": "published",
         "order": 178,
+        "caseorder": 11,
         "collection": [
             "portfolio",
             "case-study"
@@ -2659,6 +2719,7 @@
         ],
         "status": "draft",
         "order": 67,
+        "caseorder": 0,
         "collection": ["portfolio"]
     },
     {
@@ -2707,6 +2768,7 @@
         ],
         "status": "published",
         "order": 169,
+        "caseorder": 12,
         "collection": [
             "portfolio",
             "case-study"
@@ -2787,6 +2849,7 @@
         ],
         "status": "published",
         "order": 68,
+        "caseorder": 5,
         "collection": [
             "case-study"
         ]
@@ -2854,6 +2917,7 @@
         ],
         "status": "published",
         "order": 68,
+        "caseorder": 1,
         "collection": [
             "case-study"
         ]
@@ -2913,6 +2977,7 @@
         ],
         "status": "published",
         "order": 179,
+        "caseorder": 15,
         "collection": [
             "case-study","portfolio"
         ]
@@ -2968,6 +3033,7 @@
         ],
         "status": "published",
         "order": 168,
+        "caseorder": 16,
         "collection": [
             "portfolio"
         ]
@@ -3037,6 +3103,7 @@
         ],
         "status": "published",
         "order": 180,
+        "caseorder": 16,
         "collection": [
             "portfolio","case-study"
         ]

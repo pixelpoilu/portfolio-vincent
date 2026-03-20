@@ -1,4 +1,4 @@
-import PageTransition from "../components/PageTransition";
+﻿import PageTransition from "../components/PageTransition";
 import { useState } from "react";
 import Footer from "../components/Footer";
 export default function ContactForm() {
@@ -17,10 +17,10 @@ export default function ContactForm() {
         });
 
         if (response.ok) {
-            setStatus("Message envoyé ✅");
+            setStatus("Message envoy\u00c3\u00a9 \u00e2\u0153\u2026");
             form.reset();
         } else {
-            setStatus("Erreur ❌");
+            setStatus("Erreur \u00e2\u009d\u0152");
         }
     }
 

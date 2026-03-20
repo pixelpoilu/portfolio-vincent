@@ -15,7 +15,7 @@ interface Props {
   onToolChange: (value: string[]) => void;
   onTechChange: (value: string[]) => void;
   onSearchChange: (value: string) => void;
-  projectsCount: number;
+  projectsCount: number; introText: string;
 }
 
 export default function FilterBar({
@@ -34,6 +34,7 @@ export default function FilterBar({
   onTechChange,
   onSearchChange,
   projectsCount,
+  introText
 }: Props) {
   const [open, setOpen] = useState<string | null>(null);
   const filterRef = useRef<HTMLDivElement | null>(null);
@@ -91,6 +92,9 @@ export default function FilterBar({
     <div className="detail-wrapper">
       <div className="filter-wrapper" ref={filterRef}>
         <div className="filter-top">
+          <div className="projects-intro">
+            <p>{introText}</p>
+          </div>
           <span className="projects-count">
             {projectsCount} projet{projectsCount > 1 ? "s" : ""}
           </span>

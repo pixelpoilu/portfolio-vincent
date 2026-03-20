@@ -26,6 +26,7 @@ import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import Projects from "./pages/Projects";
 import CaseStudies from "./pages/CaseStudies";
+import About from "./pages/About";
 import ProjectDetail from "./pages/ProjectDetail";
 import Contact from "./pages/Contact";
 
@@ -38,6 +39,7 @@ return (
         <Route path="/portfolio" element={<Projects />} />
         <Route path="/portfolio/:slug" element={<ProjectDetail />} />
         <Route path="/etudes-de-cas" element={<CaseStudies />} />
+        <Route path="/a-propos" element={<About />} />
         <Route path="/etudes-de-cas/:slug" element={<ProjectDetail />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
@@ -52,5 +54,7 @@ export default function App() {
     </BrowserRouter>
   );
 }
+
+
 
 

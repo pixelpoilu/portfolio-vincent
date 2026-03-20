@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+﻿import { motion } from "framer-motion";
 
 interface TechnologyFilterProps {
   technologies: string[];
@@ -31,7 +31,7 @@ export default function TechnologyFilter({
             layout
             transition={{ duration: 0.2 }}
           >
-            {/* Highlight animé */}
+            {/* Highlight anim\u00c3\u00a9 */}
             {isActive && (
               <motion.div
                 layoutId="activeTechHighlight"
@@ -61,3 +61,4 @@ export default function TechnologyFilter({
     </div>
   );
 }
+

@@ -19,6 +19,30 @@ const projectImageByFilename = new Map(
   ])
 );
 
+const resolveProjectImageSrc = (project: Project) => {
+  const imageFilename = project.image?.trim();
+  if (!imageFilename) {
+    return undefined;
+  }
+
+  const mediaPath = project.mediapath?.trim();
+  if (mediaPath) {
+    const projectImagePath = `../assets/images/projects/medias/${mediaPath}/${imageFilename}`;
+    const projectImage = projectImageModules[projectImagePath]?.default;
+    if (projectImage) {
+      return projectImage;
+    }
+  }
+
+  const directImage = projectImageByFilename.get(imageFilename);
+  if (directImage) {
+    return directImage;
+  }
+
+  const vignettePath = `../assets/images/projects/vignettes/${imageFilename}`;
+  return projectImageModules[vignettePath]?.default;
+};
+
 const normalizeText = (value: string) =>
   value
     .normalize("NFD")
@@ -36,6 +60,8 @@ export default function CaseStudies() {
   const [selectedTypes, setSelectedTypes] = useState<string[]>([]);
   const [selectedSectors, setSelectedSectors] = useState<string[]>([]);
   const [searchQuery, setSearchQuery] = useState("");
+  const introText =
+    "Plongez dans les études de cas pour comprendre la démarche, les choix et les résultats.";
 
   const publishedProjects = useMemo(() => {
     const projects = projectsData as Project[];
@@ -223,6 +249,17 @@ export default function CaseStudies() {
         return normalizeText(searchableContent).includes(normalizedQuery);
       })
       .sort((a, b) => {
+        const caseOrderA = Number.isFinite(a.caseorder)
+          ? a.caseorder
+          : Number.NEGATIVE_INFINITY;
+        const caseOrderB = Number.isFinite(b.caseorder)
+          ? b.caseorder
+          : Number.NEGATIVE_INFINITY;
+
+        if (caseOrderA !== caseOrderB) {
+          return caseOrderB - caseOrderA;
+        }
+
         const orderA = Number.isFinite(a.order) ? a.order : Number.NEGATIVE_INFINITY;
         const orderB = Number.isFinite(b.order) ? b.order : Number.NEGATIVE_INFINITY;
         return orderB - orderA;
@@ -255,6 +292,7 @@ export default function CaseStudies() {
           onTechChange={setSelectedTechnologies}
           onSearchChange={setSearchQuery}
           projectsCount={filteredProjects.length}
+          introText={introText}
         />
 
         <section className="projects-section">
@@ -272,20 +310,7 @@ export default function CaseStudies() {
                   <ProjectCard
                     project={project}
                     detailBasePath={detailBasePath}
-                    thumbnailOverride={(() => {
-                      const imageFilename = project.image?.trim();
-                      if (!imageFilename) {
-                        return undefined;
-                      }
-
-                      const directImage = projectImageByFilename.get(imageFilename);
-                      if (directImage) {
-                        return directImage;
-                      }
-
-                      const vignettePath = `../assets/images/projects/vignettes/${imageFilename}`;
-                      return projectImageModules[vignettePath]?.default;
-                    })()}
+                    thumbnailOverride={resolveProjectImageSrc(project)}
                   />
                 </motion.div>
               ))}
@@ -297,3 +322,5 @@ export default function CaseStudies() {
     </PageTransition>
   );
 }
+
+
