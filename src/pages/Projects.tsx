@@ -31,17 +31,10 @@ const projectImageModules = import.meta.glob<{ default: string }>(
   { eager: true }
 );
 
-const projectVideoModules = import.meta.glob<string>(
-  "../assets/images/projects/**/*.mp4",
-  { eager: true, import: "default" }
+const projectSlideshowMediaModules = import.meta.glob<string>(
+  "../assets/images/projects/**/*.{jpg,jpeg,png,webp,avif,mp4}",
+  { eager: true, import: "default", query: "?url" }
 );
-const resolveMediaSrc = (moduleEntry: unknown) => {
-  if (typeof moduleEntry === "string") {
-    return moduleEntry;
-  }
-
-  return (moduleEntry as { default?: string } | undefined)?.default;
-};
 const masonryImageByFilename = new Map(
   Object.entries(projectImageModules).map(([path, image]) => [
     path.split("/").pop()?.trim() ?? "",
@@ -299,8 +292,7 @@ export default function Projects({
       }
       const mediaPath = `../assets/images/projects/medias/${project.mediapath}/${mediaFile}`;
       const isVideo = mediaFile.toLowerCase().endsWith(".mp4");
-      const mediaModules = isVideo ? projectVideoModules : projectImageModules;
-      const src = resolveMediaSrc(mediaModules[mediaPath]);
+      const src = projectSlideshowMediaModules[mediaPath];
 
       if (!src) {
         return slides;
@@ -690,8 +682,10 @@ export default function Projects({
                           </div>
                         )}
                         {currentSlide.kind === "video" ? (
-                          <video controls
+                          <video
+                            controls
                             ref={videoRef}
+                            src={currentSlide.src}
                             className={isSlideImageLoaded ? "is-loaded" : "is-loading"}
                             autoPlay
                             muted={isVideoMuted}
@@ -702,10 +696,9 @@ export default function Projects({
                               setIsSlideImageLoaded(true);
                               requestVideoPlayback();
                             }}
+                            onLoadedData={() => setIsSlideImageLoaded(true)}
                             onError={() => setIsSlideImageLoaded(true)}
-                          >
-                            <source src={currentSlide.src} type="video/mp4" />
-                          </video>
+                          />
                         ) : (
                           <img
                             src={currentSlide.src}
@@ -742,3 +735,4 @@ export default function Projects({
     </PageTransition>
   );
 }
+

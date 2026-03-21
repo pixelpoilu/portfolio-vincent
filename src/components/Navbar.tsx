@@ -1,5 +1,10 @@
 import { useEffect, useState, type CSSProperties } from "react";
-import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
+import {
+  AnimatePresence,
+  motion,
+  useReducedMotion,
+  type Transition,
+} from "framer-motion";
 import { NavLink, useLocation } from "react-router-dom";
 import Logo from "./Logo";
 
@@ -9,6 +14,8 @@ export default function Navbar() {
   const location = useLocation();
   const isHome = location.pathname === "/";
   const reduceMotion = useReducedMotion();
+
+  const easingCurve: NonNullable<Transition["ease"]> = [0.22, 1, 0.36, 1];
 
   useEffect(() => {
     let rafId: number | null = null;
@@ -80,11 +87,11 @@ export default function Navbar() {
 
   const overlayTransition = reduceMotion
     ? { duration: 0 }
-    : { duration: 0.45, ease: [0.22, 1, 0.36, 1] };
+    : { duration: 0.45, ease: easingCurve };
 
   const panelTransition = reduceMotion
     ? { duration: 0 }
-    : { duration: 0.4, ease: [0.22, 1, 0.36, 1] };
+    : { duration: 0.4, ease: easingCurve };
 
   return (
     <header className={`navbar${isHome ? " is-home" : ""}`} style={navStyle}>
@@ -125,9 +132,7 @@ export default function Navbar() {
           ))}
         </nav>
 
-        <NavLink to="/contact" className="nav-cta">
-          Contactez-moi
-        </NavLink>
+        <NavLink to="/contact" className="btn-flip" data-back="Contactez-moi" data-front="Contactez-moi"></NavLink>
       </div>
 
       <AnimatePresence>

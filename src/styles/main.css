@@ -54,6 +54,7 @@
   --mycolor-dark: #0c1d0d;
   --mycolor-gradient: linear-gradient(90deg, #0c1d0d, #252525);
   --mycolor-clear: #ffffff;
+  --speed: "0.5s";
 
   /*  
   --mycolor-gradient: linear-gradient(90deg, #a8f163, #55f786);
@@ -163,6 +164,10 @@
 /* ===================================================== */
 /*                     MENU SMARTPHONE BT                */
 /* ===================================================== */
+
+
+
+
 
 
 .menu-icon {
@@ -2788,4 +2793,90 @@ section.home-hero {
   .projects-intro {
     display: none;
   }
+}
+
+
+
+.btn-flip,
+.btn-flipB {
+  line-height: 40px;
+  position: relative;
+  text-align: center;
+  letter-spacing: 1px;
+  display: inline-block;
+  text-decoration: none;
+  /*text-transform: uppercase;*/
+  opacity: 1;
+  outline: 0;
+}
+
+.btn-flip {
+  color: #fff;
+}
+
+.btn-flip:hover:after,
+.btn-flipB:hover:after {
+  opacity: 1;
+  transform: translateY(0) rotateX(0);
+  border: 1px solid #222;
+}
+
+.btn-flip:hover:before,
+.btn-flipB:hover:before {
+  opacity: 0;
+  transform: translateY(50%) rotateX(90deg);
+  border: 1px solid #222;
+}
+
+.btn-flip:after,
+.btn-flipB:after {
+  top: 0;
+  left: 0;
+  opacity: 0;
+  width: 100%;
+  display: block;
+  transition: 0.5s;
+  position: absolute;
+  content: attr(data-back);
+  transform: translateY(-50%) rotateX(90deg);
+  border: 1px solid #222;
+}
+
+.btn-flip:after {
+  color: #323237;
+  background: transparent;
+}
+
+.btn-flip:before,
+.btn-flipB:before {
+  top: 0;
+  left: 0;
+  opacity: 1;
+  display: block;
+  padding: 0 30px;
+  /*line-height: 40px;*/
+  transition: 0.5s;
+  position: relative;
+  content: attr(data-front);
+  transform: translateY(0) rotateX(0);
+  border: 1px solid #222;
+}
+
+.btn-flip:before {
+  color: #ffffff;
+  background: #323237;
+}
+
+.btn-flipB {
+  color: #323237;
+}
+
+.btn-flipB:after {
+  color: #ffffff;
+  background: #323237;
+}
+
+.btn-flipB:before {
+  color: #323237;
+  background: transparent;
 }

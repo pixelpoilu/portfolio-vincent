@@ -53,6 +53,11 @@ const normalizeText = (value: string) =>
 const sortAlphabetically = (values: string[]) =>
   [...values].sort((a, b) => a.localeCompare(b, "fr", { sensitivity: "base" }));
 
+const toSortableOrder = (value?: number) =>
+  typeof value === "number" && Number.isFinite(value)
+    ? value
+    : Number.NEGATIVE_INFINITY;
+
 export default function CaseStudies() {
   const detailBasePath = "/etudes-de-cas";
   const [selectedTechnologies, setSelectedTechnologies] = useState<string[]>([]);
@@ -249,19 +254,15 @@ export default function CaseStudies() {
         return normalizeText(searchableContent).includes(normalizedQuery);
       })
       .sort((a, b) => {
-        const caseOrderA = Number.isFinite(a.caseorder)
-          ? a.caseorder
-          : Number.NEGATIVE_INFINITY;
-        const caseOrderB = Number.isFinite(b.caseorder)
-          ? b.caseorder
-          : Number.NEGATIVE_INFINITY;
+        const caseOrderA = toSortableOrder(a.caseorder);
+        const caseOrderB = toSortableOrder(b.caseorder);
 
         if (caseOrderA !== caseOrderB) {
           return caseOrderB - caseOrderA;
         }
 
-        const orderA = Number.isFinite(a.order) ? a.order : Number.NEGATIVE_INFINITY;
-        const orderB = Number.isFinite(b.order) ? b.order : Number.NEGATIVE_INFINITY;
+        const orderA = toSortableOrder(a.order);
+        const orderB = toSortableOrder(b.order);
         return orderB - orderA;
       });
   }, [

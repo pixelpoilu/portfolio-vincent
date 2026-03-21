@@ -31,14 +31,18 @@ export default function Home() {
           </p>
 
           <div className="hero-buttons">
+            {/* anciens boutons 
             <a href="/cv.pdf" className="btn primary">
               Telecharger mon CV
             </a>
-
-            <a href="/portfolio" className="btn secondary">
-              <ArrowRight width={14} height={14} />
-              Voir mes projets
+            <a href="#" class="btn-flip" data-back="Back" data-front="Front"></a>
+            <a href="/portfolio" className="btn secondary" >
+              <ArrowRight width={14} height={14} /> Voir mes projets
+              
             </a>
+  anciens boutons */}
+            <a href="/cv.pdf" className="btn-flipB" data-back="Telecharger mon CV" data-front="Telecharger mon CV"></a>
+            <a href="/portfolio" className="btn-flip" data-back="Voir mes projets" data-front="Voir mes projets"></a>
           </div>
         </div>
 
