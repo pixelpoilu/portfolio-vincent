@@ -18,7 +18,7 @@ export default function Layout({ children }: Props) {
       <main>{children}</main>
 
       <footer>
-        <small>\u00c2\u00a9 Portfolio \u00e2\u20ac\u201c React</small>
+        <small>&copy; Portfolio - React</small>
       </footer>
     </>
   );

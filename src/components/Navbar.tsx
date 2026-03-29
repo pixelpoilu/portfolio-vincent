@@ -130,9 +130,10 @@ export default function Navbar() {
               {item.label}
             </NavLink>
           ))}
-        </nav>
 
-        <NavLink to="/contact" className="btn-flip" data-back="Contactez-moi" data-front="Contactez-moi"></NavLink>
+        </nav>
+        <NavLink to="/contact" className="nav-cta">Contactez-moi</NavLink>
+
       </div>
 
       <AnimatePresence>

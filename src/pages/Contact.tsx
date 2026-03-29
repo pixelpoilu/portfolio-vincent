@@ -17,10 +17,10 @@ export default function ContactForm() {
         });
 
         if (response.ok) {
-            setStatus("Message envoy\u00c3\u00a9 \u00e2\u0153\u2026");
+            setStatus("Message envoyé ✅");
             form.reset();
         } else {
-            setStatus("Erreur \u00e2\u009d\u0152");
+            setStatus("Erreur ❌");
         }
     }
 

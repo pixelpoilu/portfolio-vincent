@@ -1491,6 +1491,11 @@
                 "caption": "Carte interactive : Anim d'introduction"
       },
       {
+        "file": "visitmalta_map01.mp4",
+                "caption": "Carte interactive : Anim d'introduction"
+      },
+      
+      {
         "file": "07.jpg",
                 "caption": "Carte interactive : Zoom sur Malte"
       },
@@ -1501,6 +1506,10 @@
       {
         "file": "09.jpg"
       },
+      {
+        "file": "visitmalta_map02.mp4",
+                "caption": "Carte interactive : navigation"
+      },      
       {
         "file": "10.jpg"
       },
@@ -1583,7 +1592,7 @@
         "client": "MAURICE RADIO LIBRE",
         "year": 2011,
         "type": "Site Internet",
-        "description": "Nouveau Site pour la Radio libre Associative \u0026 site e-commerce",
+        "description": "Nouveau Site pour la Radio libre Associative, site e-commerce",
         "link": "www.mauriceradiolibre.com",
         "secteur": "Loisirs-Musique",
         "Contexte": "",

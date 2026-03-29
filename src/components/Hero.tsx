@@ -7,7 +7,7 @@ import Loader from "./Loader";
 
 export default function Home() {
   const [isPortraitLoaded, setIsPortraitLoaded] = useState(false);
-
+  const year = new Date().getFullYear();
   return (
     <main className="home">
       {/* Header minimal */}
@@ -15,7 +15,7 @@ export default function Home() {
         <div className="logo">
           <Logo className="home-logo" />
         </div>
-        <div className="home-year">2026</div>
+        <div className="home-year">{year}</div>
       </div>
 
       {/* Hero principal */}
