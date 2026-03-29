@@ -1,0 +1,123 @@
+﻿/* ===================================================== */
+/*                     ROOT VARIABLES                    */
+/* ===================================================== */
+/*
+@font-face {
+  font-family: 'FontAwesome';
+  src: url('../fonts/fontawesome-webfont.eot?v=4.0.3');
+  src: url('../fonts/fontawesome-webfont.eot?#iefix&v=4.0.3') format('embedded-opentype'), url('../fonts/fontawesome-webfont.woff?v=4.0.3') format('woff'), url('../fonts/fontawesome-webfont.ttf?v=4.0.3') format('truetype'), url('../fonts/fontawesome-webfont.svg?v=4.0.3#fontawesomeregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+        font-size: 15px;
+        line-height: 1.6;
+        color: #555;
+        max-width: 420px;
+*/
+:root {
+  --bg: #f4f4f1;
+  --home-bg: #f1efee;
+  --card-bg: #ffffff;
+  --text: #1f1f1f;
+  --text-body: #4f4f4f;
+  --text-soft: #6f6f6f;
+  --muted: #8b8b8b;
+  --accent: #c2c2c2;
+  --borders: #e2e8f0;
+  --font-sans: "Manrope", "Afacad", "Inter", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  --font-ui: "Manrope", "Roboto", "Inter", system-ui, Arial, sans-serif;
+  --font-hero: "Playfair Display", serif;
+  --font-btn: "Roboto Condensed", Inter, system-ui, Arial, sans-serif;
+
+  --fs-display: clamp(2.2rem, 3.4vw, 3.9rem);
+  --fs-h1: clamp(2rem, 3vw, 3.2rem);
+  --fs-h2: clamp(1.6rem, 2.2vw, 2.4rem);
+  --fs-h3: clamp(1.15rem, 1.5vw, 1.45rem);
+  --fs-body: clamp(1rem, 1.05vw, 1.15rem);
+  --fs-meta: 0.95rem;
+
+  --radius: 12px;
+  --shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
+
+  --gradient-start: #6366f1;
+  --gradient-end: #a855f7;
+
+  --gradient-card-start: #6366f1;
+  --gradient-card-end: #ec4899;
+
+  --chip-border: #e2e8f0;
+  --chip-bg: #ffffff;
+  --chip-hover-border: #c2c2c2;
+  --chip-active-bg: #ededed;
+  --chip-active-txt: #4b4b4b;
+
+  --section-muted-bg: #f8fafc;
+  --section-divider: #e2e8f0;
+
+  --mycolor-dark: #0c1d0d;
+  --mycolor-gradient: linear-gradient(90deg, #0c1d0d, #252525);
+  --mycolor-clear: #ffffff;
+  --speed: "0.5s";
+
+  /*  
+  --mycolor-gradient: linear-gradient(90deg, #a8f163, #55f786);
+  --mycolor-clear: #63f176;
+  --mycolor-clear: #5580f7;
+
+
+  --mycolor-gradient: linear-gradient(90deg, #6365f1, #5580f7);
+
+*/
+}
+
+
+/* ===================================================== */
+/*                     LOADER                            */
+/* ===================================================== */
+.loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.loader svg {
+  width: 60px;
+  height: 60px;
+}
+
+.loader-circle {
+  fill: none;
+  stroke: white;
+  stroke-width: 4;
+  stroke-dasharray: 200;
+  stroke-dashoffset: 200;
+  animation: draw 1.4s linear infinite;
+}
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.image-loader-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  background: rgba(8, 12, 18, 0.22);
+}
+
+.is-loading {
+  opacity: 0;
+}
+
+.is-loaded {
+  opacity: 1;
+  transition: opacity 0.25s ease;
+}

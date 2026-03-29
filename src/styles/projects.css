@@ -1,0 +1,293 @@
+﻿/* ===================================================== */
+/*                    PROJECT GRID                       */
+/* ===================================================== */
+
+.projects-grid {
+  column-count: 5;
+  column-gap: 1.25rem;
+  margin-top: 1.5rem;
+}
+
+.case-studies-page .projects-grid {
+  column-count: 4;
+}
+
+@media (max-width: 1120px) {
+  .case-studies-page .projects-grid {
+    column-count: 4;
+  }
+}
+
+@media (max-width: 740px) {
+  .case-studies-page .projects-grid {
+    column-count: 3;
+  }
+}
+
+@media (max-width: 560px) {
+  .case-studies-page .projects-grid {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 320px) {
+  .case-studies-page .projects-grid {
+    column-count: 1;
+  }
+}
+
+/* ===================================================== */
+/*                   PROJECT CARD                        */
+/* ===================================================== */
+
+.projects-grid>div {
+  break-inside: avoid;
+  margin-bottom: 1.25rem;
+}
+
+.project-card {
+  position: relative;
+  overflow: hidden;
+  border: 0;
+  background: transparent;
+  padding: 0;
+  box-shadow: none;
+}
+
+.card-link {
+  display: block;
+  width: 100%;
+  color: #fff;
+}
+
+.card-image-wrapper {
+  position: relative;
+  overflow: hidden;
+  background: #d6d6d6;
+}
+
+.card-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.45s ease, filter 0.45s ease;
+}
+
+.card-image-fallback {
+  aspect-ratio: 4 / 5;
+  background: linear-gradient(145deg, #d9dde5, #b9c2cf);
+}
+
+.card-content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  /* gap: 0.45rem;*/
+  gap: 0rem;
+  padding: 1.4rem;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.58), rgba(0, 0, 0, 0.26));
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.card-type {
+  font-size: 0.92rem;
+  font-weight: 500;
+  opacity: 0.92;
+  margin-top: 0px;
+}
+
+.card-title {
+  color: #FFF;
+  margin-top: 20px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  font-size: 1.25rem;
+  line-height: 1.1;
+  max-width: 90%;
+  text-wrap: balance;
+}
+
+.card-cta {
+  margin-top: auto;
+  margin-right: 0;
+  margin-left: auto;
+  width: 2.8rem;
+  height: 2.8rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  color: #111;
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.project-card:hover .card-content,
+.project-card:focus-within .card-content {
+  opacity: 1;
+}
+
+.project-card:hover .card-image,
+.project-card:focus-within .card-image {
+  transform: scale(1.18);
+  filter: blur(1.9px);
+}
+
+/* ===================================================== */
+/*                CASE STUDIES HOVER FX                 */
+/* ===================================================== */
+
+.case-studies-page .project-card {
+  border-radius: 0;
+  transform: translateY(0) scale(1);
+  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1),
+    box-shadow 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.case-studies-page .card-image-wrapper {
+  border-radius: 0;
+}
+
+.case-studies-page .card-image-wrapper::before {
+  content: "";
+  position: absolute;
+  inset: -20%;
+  background: linear-gradient(115deg,
+      rgba(255, 255, 255, 0) 25%,
+      rgba(255, 255, 255, 0.35) 50%,
+      rgba(255, 255, 255, 0) 75%);
+  transform: translateX(-120%) rotate(8deg);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.8s ease, opacity 0.35s ease;
+}
+
+.case-studies-page .card-content {
+  opacity: 0;
+  background: linear-gradient(to top,
+      rgba(9, 12, 18, 0.82) 12%,
+      rgba(9, 12, 18, 0.5) 45%,
+      rgba(9, 12, 18, 0.08) 100%);
+  backdrop-filter: blur(2px);
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.35s ease, backdrop-filter 0.35s ease;
+}
+
+.case-studies-page .card-title,
+.case-studies-page .card-type,
+.case-studies-page .card-cta {
+  transform: translateY(12px);
+  opacity: 0;
+  transition: transform 0.35s ease, opacity 0.35s ease;
+}
+
+.case-studies-page .project-card:hover,
+.case-studies-page .project-card:focus-within {
+  transform: translateY(-8px) scale(1.015);
+  box-shadow: 0 18px 42px rgba(6, 10, 18, 0.3);
+}
+
+.case-studies-page .project-card:hover .card-image,
+.case-studies-page .project-card:focus-within .card-image {
+  transform: scale(1.2) rotate(0.35deg);
+  filter: blur(2.1px);
+}
+
+.case-studies-page .project-card:hover .card-image-wrapper::before,
+.case-studies-page .project-card:focus-within .card-image-wrapper::before {
+  transform: translateX(120%) rotate(8deg);
+  opacity: 1;
+}
+
+.case-studies-page .project-card:hover .card-content,
+.case-studies-page .project-card:focus-within .card-content {
+  opacity: 1;
+  transform: translateY(0);
+  backdrop-filter: blur(4px);
+}
+
+.case-studies-page .project-card:hover .card-title,
+.case-studies-page .project-card:focus-within .card-title {
+  transform: translateY(0);
+  opacity: 1;
+  transition-delay: 0.04s;
+}
+
+.case-studies-page .project-card:hover .card-type,
+.case-studies-page .project-card:focus-within .card-type {
+  transform: translateY(0);
+  opacity: 1;
+  transition-delay: 0.1s;
+}
+
+.case-studies-page .project-card:hover .card-cta,
+.case-studies-page .project-card:focus-within .card-cta {
+  transform: translateY(0);
+  opacity: 1;
+  transition-delay: 0.16s;
+}
+
+@media (max-width: 1120px) {
+  .projects-grid {
+    column-count: 4;
+  }
+}
+
+@media (max-width: 740px) {
+  .projects-grid {
+    column-count: 3;
+  }
+}
+
+@media (max-width: 560px) {
+  .projects-grid {
+    column-count: 2;
+  }
+}
+
+@media (hover: none) {
+  .card-content {
+    opacity: 1;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.18));
+  }
+}
+
+/* ===================================================== */
+/*                    FILTER BAR                         */
+/* ===================================================== */
+.detail-wrapper {
+  position: sticky;
+  top: 72px;
+  z-index: 900;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  padding-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  /*background: var(--bg, #ffffff);*/
+  width: 100%;
+  box-sizing: border-box;
+  /*max-width: 1150px;*/
+  animation: fadeSlideDown 0.8s cubic-bezier(.22, 1, .36, 1);
+  background: rgba(255, 255, 255, var(--nav-bg-alpha, 0.7));
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow:
+    0 10px 40px rgba(0, 0, 0, var(--nav-shadow-opacity, 0)),
+    inset 0 1px 0 rgba(255, 255, 255, var(--nav-inset-opacity, 0));
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.detail-wrapper .filter-top {
+  max-width: 1150px;
+  margin-left: auto;
+  margin-right: auto;
+}

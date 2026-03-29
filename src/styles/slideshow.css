@@ -1,0 +1,295 @@
+﻿/* ===================================================== */
+/*                       MOBILE                          */
+/* ===================================================== */
+
+@media (max-width: 640px) {
+  .navbar {
+    padding: 0px;
+  }
+
+  .projects-grid {
+    column-gap: 1rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .projects-grid {
+    column-count: 1;
+    column-gap: 0;
+  }
+}
+
+.portfolio-slideshow-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: radial-gradient(circle at 20% 10%, rgba(42, 56, 88, 0.38), rgba(3, 6, 10, 0.92));
+  backdrop-filter: blur(9px);
+  display: grid;
+  place-items: center;
+  padding: 2.5rem;
+}
+
+.portfolio-slideshow-shell {
+  width: min(1320px, 100%);
+  max-height: calc(100vh - 4rem);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: linear-gradient(140deg, rgba(20, 24, 31, 0.96), rgba(12, 16, 23, 0.96));
+  box-shadow: 0 30px 80px rgba(2, 5, 10, 0.6);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.portfolio-slideshow-topbar {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 0.9rem 1.1rem;
+}
+
+.portfolio-slideshow-meta h2 {
+  margin: 0;
+  font-size: 1.15rem;
+  color: #fff;
+  letter-spacing: 0.01em;
+}
+
+.portfolio-slideshow-project {
+  position: relative;
+  display: grid;
+  grid-template-columns: 80px minmax(0, 1fr);
+  gap: 0.9rem;
+  align-items: start;
+}
+
+.portfolio-slideshow-thumb,
+.portfolio-slideshow-thumb-fallback {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  background: linear-gradient(150deg, #1f2838, #0f1520);
+}
+
+.portfolio-slideshow-meta-text {
+  min-width: 0;
+}
+
+.portfolio-slideshow-meta p {
+  margin: 0.25rem 0 0;
+  font-size: 0.83rem;
+  color: rgba(220, 230, 245, 0.78);
+}
+
+.portfolio-slideshow-meta .portfolio-slideshow-sector {
+  margin-top: 0.45rem;
+  font-size: 0.76rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(170, 198, 255, 0.9);
+}
+
+.portfolio-slideshow-meta .portfolio-slideshow-description {
+  margin-top: 0.4rem;
+  /*max-width: 72ch;*/
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: rgba(232, 238, 248, 0.9);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.portfolio-slideshow-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.portfolio-slideshow-controls label {
+  font-size: 0.74rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(220, 230, 245, 0.68);
+}
+
+.portfolio-slideshow-controls select,
+.portfolio-overlay-btn {
+  /*
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.08);
+  padding: 0.5rem 0.75rem;
+  font-size: 0.82rem;
+*/
+  color: #fff;
+  font-size: 30px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  padding-top: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding-left: 7px;
+  background-color: transparent;
+}
+
+.portfolio-overlay-btn.danger {
+  background: rgba(181, 40, 40, 0.3);
+  border-color: rgba(255, 120, 120, 0.35);
+}
+
+.portfolio-overlay-btn.danger:hover {
+  background: rgba(181, 40, 40, 0.8);
+  border-color: rgba(255, 120, 120, 0.6);
+}
+
+.portfolio-slideshow-stage {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+.portfolio-slideshow-figure {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  display: grid;
+  place-items: center;
+}
+
+.portfolio-slideshow-figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: #0a0f18;
+  max-height: 750px;
+}
+
+.portfolio-slideshow-figure video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: #0a0f18;
+  max-height: 750px;
+}
+
+.portfolio-slideshow-figure figcaption {
+  position: absolute;
+  left: 0rem;
+  right: 0rem;
+  bottom: 0rem;
+  color: #f5f7fb;
+  font-size: 0.92rem;
+  line-height: 1.35;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.6);
+  padding-top: 10px;
+  padding-right: 5px;
+  padding-bottom: 15px;
+  padding-left: 25px;
+}
+
+.portfolio-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2.9rem;
+  height: 2.9rem;
+  border: 1px solid rgba(255, 255, 255, 0.32);
+  background: rgba(0, 0, 0, 0.32);
+  color: #fff;
+  font-size: 1.9rem;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.portfolio-nav-btn.prev {
+  left: 0.8rem;
+}
+
+.portfolio-nav-btn.next {
+  right: 0.8rem;
+}
+
+.portfolio-nav-btn:disabled,
+.portfolio-overlay-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+@media (max-height: 900px) and (min-width: 901px) {
+  .portfolio-slideshow-overlay {
+    padding: 1rem;
+  }
+
+  .portfolio-slideshow-shell {
+    max-height: calc(100vh - 2rem);
+  }
+
+  .portfolio-slideshow-topbar {
+    padding: 0.7rem 1rem;
+  }
+
+  .portfolio-slideshow-figure img {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: calc(100vh - 250px);
+    object-fit: contain;
+  }
+
+  .portfolio-slideshow-figure video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background: #0a0f18;
+    max-height: 750px;
+  }
+}
+
+@media (max-width: 900px) {
+  .portfolio-slideshow-overlay {
+    padding: 0.8rem;
+  }
+
+  .portfolio-slideshow-shell {
+    max-height: calc(100vh - 1.6rem);
+  }
+
+  .portfolio-slideshow-topbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .portfolio-slideshow-project {
+    grid-template-columns: 104px minmax(0, 1fr);
+    gap: 0.65rem;
+  }
+
+  .portfolio-slideshow-thumb,
+  .portfolio-slideshow-thumb-fallback {
+    width: 80px;
+    height: 80px;
+  }
+
+  .portfolio-slideshow-controls {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .portfolio-nav-btn {
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1.5rem;
+  }
+}

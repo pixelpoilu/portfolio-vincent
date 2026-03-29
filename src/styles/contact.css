@@ -1,0 +1,75 @@
+﻿/* ===== CONTACT MINIMAL SERIOUS ===== */
+
+.contact-minimal {
+  background: #f4f4f1;
+  padding: 60px 120px;
+  display: flex;
+  align-items: center;
+}
+
+.contact-wrapper {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 140px;
+}
+
+/* LEFT */
+
+.contact-left h1 {
+  font-size: 48px;
+  font-weight: 500;
+  letter-spacing: -1px;
+  margin-bottom: 40px;
+}
+
+.contact-description {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #555;
+  margin-bottom: 80px;
+  max-width: 420px;
+}
+
+/* FORM */
+
+.contact-form-minimal {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+.contact-form-minimal input,
+.contact-form-minimal textarea {
+  border: none;
+  border-bottom: 1px solid #ddd;
+  background: transparent;
+  padding: 6px 0;
+  font-size: 14px;
+  transition: border 0.2s ease;
+}
+
+.contact-form-minimal input:focus,
+.contact-form-minimal textarea:focus {
+  outline: none;
+  border-bottom: 1px solid #111;
+}
+
+.contact-form-minimal button {
+  margin-top: 20px;
+  align-self: flex-start;
+  background: #111;
+  color: white;
+  border: none;
+  padding: 14px 32px;
+  font-size: 13px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.contact-form-minimal button:hover {
+  opacity: 0.85;
+}
