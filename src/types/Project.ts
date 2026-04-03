@@ -8,8 +8,9 @@ export type Project = {
   title: string;
   client: string;
   year: number;
-  type: string;
+  type: string | string[];
   description: string;  
+  longtext?: string;
   link?: string;
   secteur: string;
   Contexte: string;

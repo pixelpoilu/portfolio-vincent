@@ -1,5 +1,6 @@
 ﻿import { useEffect, useRef, useState } from "react";
 import { Link, Navigate, useLocation, useParams } from "react-router-dom";
+import { memo } from "react";
 import Footer from "../components/Footer";
 import Loader from "../components/Loader";
 import PageTransition from "../components/PageTransition";
@@ -13,12 +14,17 @@ const images = import.meta.glob<{ default: string }>(
   { eager: true }
 );
 
+const ProjectLongtext = memo(function ProjectLongtext({ html }: { html: string }) {
+  return <section className="project-longtext" dangerouslySetInnerHTML={{ __html: html }} />;
+});
+
 export default function ProjectDetail() {
   const { slug } = useParams();
   const location = useLocation();
   const collectionKey: ProjectCollectionKey = location.pathname.startsWith("/etudes-de-cas")
     ? "case-study"
     : "portfolio";
+  const isCaseStudy = collectionKey === "case-study";
   const listingBasePath = collectionKey === "case-study" ? "/etudes-de-cas" : "/portfolio";
   const backLabel = collectionKey === "case-study" ? "Retour aux etudes de cas" : "Retour aux projets";
   const projects = (projectsData as Project[]).filter(
@@ -34,7 +40,7 @@ export default function ProjectDetail() {
   const project = projectBySlug ?? projectByLegacyId;
 
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isPlaying, setIsPlaying] = useState(true);
+  const [isPlaying, setIsPlaying] = useState(!isCaseStudy);
   const [isHovered, setIsHovered] = useState(false);
   const [isSliderImageLoaded, setIsSliderImageLoaded] = useState(false);
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
@@ -61,6 +67,7 @@ export default function ProjectDetail() {
 
   const client = project.client?.trim();
   const description = project.description?.trim();
+  const longtext = project.longtext?.trim();
   const contexte = project.Contexte?.trim();
   const reponse = project.Reponse?.trim();
   const missions = project.missions.filter((mission) => mission.trim() !== "");
@@ -76,7 +83,7 @@ export default function ProjectDetail() {
           ? undefined
           : (media as ProjectMedia).caption?.trim() || undefined;
 
-      const path = `../assets/images/projects/medias/${project.mediapath}/${mediaFile}`;
+      const path = `../assets/images/projects/${project.mediapath}/${mediaFile}`;
       const src = images[path]?.default;
 
       return src ? { src, caption } : null;
@@ -85,12 +92,55 @@ export default function ProjectDetail() {
       (media): media is { src: string; caption: string | undefined } => Boolean(media?.src)
     );
 
+  const getProjectAsset = (file?: string) => {
+    if (!file) {
+      return "";
+    }
+
+    const normalizedFile = file.trim();
+    if (!normalizedFile) {
+      return "";
+    }
+
+    return (
+      images[`../assets/images/projects/${normalizedFile}`]?.default ??
+      images[`../assets/images/projects/${project.mediapath}/${normalizedFile}`]?.default ??
+      ""
+    );
+  };
+
+  const getProjectMediaAsset = (index: number) => {
+    const media = project.medias[index];
+    if (!media) {
+      return "";
+    }
+
+    const mediaFile = typeof media === "string" ? media : media.file;
+    if (!mediaFile) {
+      return "";
+    }
+
+    return images[`../assets/images/projects/${project.mediapath}/${mediaFile}`]?.default ?? "";
+  };
+
+  const resolvedImage = getProjectAsset(project.image) || getProjectMediaAsset(0);
+  const resolvedThumb = getProjectAsset(project.thumb) || resolvedImage;
+  const resolvedMasonry0 = getProjectAsset(project.masonry_0) || resolvedImage;
+  const resolvedMasonry1 = getProjectAsset(project.masonry_1) || resolvedMasonry0;
+
+  const resolvedLongtext = longtext
+    ?.replaceAll("{{image}}", resolvedImage)
+    .replaceAll("{{thumb}}", resolvedThumb)
+    .replaceAll("{{masonry_0}}", resolvedMasonry0)
+    .replaceAll("{{masonry_1}}", resolvedMasonry1)
+    .replace(/\{\{media:(\d+)\}\}/g, (_, index) => getProjectMediaAsset(Number(index)));
+
   useEffect(() => {
     setCurrentIndex(0);
-    setIsPlaying(true);
+    setIsPlaying(!isCaseStudy);
     setIsHovered(false);
     setIsSliderImageLoaded(false);
-  }, [project?.id]);
+  }, [isCaseStudy, project?.id]);
 
   useEffect(() => {
     setIsSliderImageLoaded(false);
@@ -102,7 +152,7 @@ export default function ProjectDetail() {
       intervalRef.current = null;
     }
 
-    if (!isPlaying || isHovered || galleryImages.length <= 1) {
+    if (isCaseStudy || !isPlaying || isHovered || galleryImages.length <= 1) {
       return;
     }
 
@@ -142,8 +192,9 @@ export default function ProjectDetail() {
 
         </div>
         <main className="project-detail">
-
+          <div className="project-header"><h1>{project.title}</h1></div>
           <div className="project-layout">
+
             <div
               className="project-slider"
               onMouseEnter={() => setIsHovered(true)}
@@ -187,14 +238,16 @@ export default function ProjectDetail() {
                     >
                       ‹
                     </button>
-                    <button
-                      className="slider-control"
-                      onClick={togglePlay}
-                      disabled={galleryImages.length <= 1}
-                      aria-label={isPlaying ? "Mettre en pause" : "Lire"}
-                    >
-                      {isPlaying ? "\u275a\u275a" : "\u25b6"}
-                    </button>
+                    {!isCaseStudy && (
+                      <button
+                        className="slider-control"
+                        onClick={togglePlay}
+                        disabled={galleryImages.length <= 1}
+                        aria-label={isPlaying ? "Mettre en pause" : "Lire"}
+                      >
+                        {isPlaying ? "\u275a\u275a" : "\u25b6"}
+                      </button>
+                    )}
                     <button
                       className="slider-control"
                       onClick={nextSlide}
@@ -259,6 +312,8 @@ export default function ProjectDetail() {
               )}
             </div>
           </div>
+
+          {resolvedLongtext && <ProjectLongtext html={resolvedLongtext} />}
         </main>
         <Footer />
       </div>

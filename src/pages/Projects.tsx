@@ -11,6 +11,7 @@ import Loader from "../components/Loader";
 import type { Project, ProjectMedia } from "../types/Project";
 import { hasCollection, type ProjectCollectionKey } from "../utils/projectCollection";
 import { slugifyTitle } from "../utils/slug";
+import { getProjectTypes, projectHasType } from "../utils/projectType";
 import {
   IoMdClose,
   IoIosPlay,
@@ -111,7 +112,7 @@ export default function Projects({
   const allTypes = useMemo(() => {
     const typeSet = new Set<string>();
     publishedProjects.forEach((project) => {
-      typeSet.add(project.type);
+      getProjectTypes(project).forEach((type) => typeSet.add(type));
     });
     return sortAlphabetically(Array.from(typeSet));
   }, [publishedProjects]);
@@ -136,7 +137,7 @@ export default function Projects({
             selectedTools.some((tool) => project.outils.includes(tool));
           const matchesSector =
             selectedSectors.length === 0 || selectedSectors.includes(project.secteur);
-          return matchesTech && matchesTool && matchesSector && project.type === type;
+          return matchesTech && matchesTool && matchesSector && projectHasType(project, type);
         })
       ),
     [allTypes, publishedProjects, selectedTechnologies, selectedTools, selectedSectors]
@@ -153,7 +154,8 @@ export default function Projects({
             selectedTools.length === 0 ||
             selectedTools.some((tool) => project.outils.includes(tool));
           const matchesType =
-            selectedTypes.length === 0 || selectedTypes.includes(project.type);
+            selectedTypes.length === 0 ||
+            selectedTypes.some((type) => projectHasType(project, type));
           return matchesTech && matchesTool && matchesType && project.secteur === sector;
         })
       ),
@@ -168,7 +170,8 @@ export default function Projects({
             selectedTools.length === 0 ||
             selectedTools.some((tool) => project.outils.includes(tool));
           const matchesType =
-            selectedTypes.length === 0 || selectedTypes.includes(project.type);
+            selectedTypes.length === 0 ||
+            selectedTypes.some((type) => projectHasType(project, type));
           const matchesSector =
             selectedSectors.length === 0 || selectedSectors.includes(project.secteur);
           return (
@@ -190,7 +193,8 @@ export default function Projects({
             selectedTechnologies.length === 0 ||
             selectedTechnologies.some((tech) => project.technologies.includes(tech));
           const matchesType =
-            selectedTypes.length === 0 || selectedTypes.includes(project.type);
+            selectedTypes.length === 0 ||
+            selectedTypes.some((type) => projectHasType(project, type));
           const matchesSector =
             selectedSectors.length === 0 || selectedSectors.includes(project.secteur);
           return matchesTech && matchesType && matchesSector && project.outils.includes(tool);
@@ -243,7 +247,8 @@ export default function Projects({
           selectedTools.some((tool) => project.outils.includes(tool));
 
         const matchesType =
-          selectedTypes.length === 0 || selectedTypes.includes(project.type);
+          selectedTypes.length === 0 ||
+          selectedTypes.some((type) => projectHasType(project, type));
 
         const matchesSector =
           selectedSectors.length === 0 || selectedSectors.includes(project.secteur);
@@ -259,7 +264,7 @@ export default function Projects({
         const searchableContent = [
           project.title,
           project.client,
-          project.type,
+          getProjectTypes(project).join(" "),
           project.secteur,
           project.description,
           project.outils.join(" "),
@@ -290,7 +295,7 @@ export default function Projects({
       if (!mediaFile) {
         return slides;
       }
-      const mediaPath = `../assets/images/projects/medias/${project.mediapath}/${mediaFile}`;
+      const mediaPath = `../assets/images/projects/${project.mediapath}/${mediaFile}`;
       const isVideo = mediaFile.toLowerCase().endsWith(".mp4");
       const src = projectSlideshowMediaModules[mediaPath];
 

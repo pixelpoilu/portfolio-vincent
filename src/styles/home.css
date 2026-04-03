@@ -21,7 +21,7 @@
 
 .home-logo {
   width: 80px;
-  fill: #525252;
+  fill: var(--mycolor-black);
 }
 
 .home-logo .baseline {
@@ -30,7 +30,7 @@
 
 .home .logo .home-logo {
   width: 180px;
-  fill: #525252;
+  fill: var(--mycolor-black);
 }
 
 .home .logo .home-logo .baseline {
@@ -69,10 +69,33 @@ section.home-hero {
 }
 
 .hero-role {
+  position: relative;
+  display: block;
+  min-height: 1.2rem;
+  width: 100%;
+  max-width: 100%;
   margin-top: 20px;
+  overflow: hidden;
   letter-spacing: 4px;
   font-size: 14px;
+  line-height: 1.2;
   color: #6d7b8a;
+}
+
+.hero-role-track {
+  position: relative;
+  display: block;
+  width: 100%;
+  min-height: 1.2rem;
+}
+
+.hero-role-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  white-space: nowrap;
+  will-change: clip-path, transform;
 }
 
 .hero-divider {
@@ -87,6 +110,61 @@ section.home-hero {
   line-height: 1.7;
   color: #555;
   max-width: 420px;
+}
+
+.recruiter-note {
+  margin-top: 1.85rem;
+  padding-top: 1rem;
+  max-width: 460px;
+  border-top: 1px solid rgba(34, 34, 34, 0.14);
+}
+
+.recruiter-kicker {
+  display: inline-block;
+  margin-bottom: 0.7rem;
+  font-family: var(--font-btn);
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #6d7b8a;
+}
+
+.recruiter-text {
+  margin: 0;
+  max-width: 440px;
+  font-size: 0.98rem;
+  line-height: 1.65;
+  color: #2f2f2f;
+}
+
+.recruiter-projects {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin-top: 1rem;
+}
+
+.recruiter-projects a {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.38rem 0.78rem;
+  border: 1px solid rgba(34, 34, 34, 0.16);
+  border-radius: 999px;
+  font-family: var(--font-btn);
+  font-size: 0.74rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #222;
+  transition:
+    background-color 0.28s cubic-bezier(.22, 1, .36, 1),
+    color 0.28s cubic-bezier(.22, 1, .36, 1),
+    border-color 0.28s cubic-bezier(.22, 1, .36, 1);
+}
+
+.recruiter-projects a:hover {
+  background: #222;
+  color: #fff;
+  border-color: #222;
 }
 
 .hero-buttons {
@@ -197,6 +275,20 @@ section.home-hero {
     max-width: 420px;
   }
 
+  .recruiter-note {
+    margin-top: 1.4rem;
+    padding-top: 0.9rem;
+  }
+
+  .recruiter-text {
+    font-size: 0.92rem;
+  }
+
+  .recruiter-projects {
+    gap: 0.55rem;
+    margin-top: 0.8rem;
+  }
+
   .hero-buttons {
     font-size: 12px;
     margin-top: 20px;
@@ -280,8 +372,13 @@ section.home-hero {
 
   .hero-role {
     margin-top: 0.7rem;
+    min-width: 100%;
     letter-spacing: 0.18em;
     font-size: 0.75rem;
+  }
+
+  .hero-role-track {
+    min-height: 0.9rem;
   }
 
   .hero-divider {
@@ -293,6 +390,28 @@ section.home-hero {
     font-size: var(--hero-mobile-text);
     line-height: 1.55;
     max-width: 32ch;
+  }
+
+  .recruiter-note {
+    margin-top: 1.35rem;
+    padding-top: 0.85rem;
+    max-width: 100%;
+  }
+
+  .recruiter-text {
+    max-width: 100%;
+    font-size: 0.92rem;
+    line-height: 1.55;
+  }
+
+  .recruiter-projects {
+    gap: 0.55rem;
+    margin-top: 0.8rem;
+  }
+
+  .recruiter-projects a {
+    font-size: 0.7rem;
+    letter-spacing: 0.06em;
   }
 
   .hero-buttons {

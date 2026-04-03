@@ -54,17 +54,20 @@
   --section-muted-bg: #f8fafc;
   --section-divider: #e2e8f0;
 
+  --mycolor-black: #1f1f1f;
   --mycolor-dark: #0c1d0d;
   --mycolor-gradient: linear-gradient(90deg, #0c1d0d, #252525);
   --mycolor-clear: #ffffff;
   --speed: "0.5s";
-
+  --portfolio-bg: rgba(41, 46, 52, 1);
+  --portfolio-slideshow-bg: linear-gradient(140deg, rgba(41, 46, 52, 0.96), rgba(41, 46, 52, 0.96));
   /*  
+  var(.) linear-gradient(140deg, rgba(20, 24, 31, 0.96), rgba(12, 16, 23, 0.96))
   --mycolor-gradient: linear-gradient(90deg, #a8f163, #55f786);
   --mycolor-clear: #63f176;
   --mycolor-clear: #5580f7;
-
-
+#0a0f18;.portfolio-slideshow-shell --portfolio-bg
+41 46 52
   --mycolor-gradient: linear-gradient(90deg, #6365f1, #5580f7);
 
 */

@@ -1,16 +1,32 @@
-import { useState } from "react";
+﻿import { AnimatePresence, motion } from "framer-motion";
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import portrait from "../assets/images/hero/portrait-bw.png";
 import Footer from "./Footer";
-import { ArrowRight } from "./icons";
 import Logo from "./Logo";
 import Loader from "./Loader";
 
+const heroRoles = [
+  "WEBMASTER FRONT UX/UI",
+  "VISUAL PRODUCT DESIGNER",
+  "DESIGNER D'INTERFACES",
+];
+
 export default function Home() {
   const [isPortraitLoaded, setIsPortraitLoaded] = useState(false);
+  const [activeRoleIndex, setActiveRoleIndex] = useState(0);
   const year = new Date().getFullYear();
+
+  useEffect(() => {
+    const intervalId = window.setInterval(() => {
+      setActiveRoleIndex((current) => (current + 1) % heroRoles.length);
+    }, 2600);
+
+    return () => window.clearInterval(intervalId);
+  }, []);
+
   return (
     <main className="home">
-      {/* Header minimal */}
       <div className="home-top">
         <div className="logo">
           <Logo className="home-logo" />
@@ -18,35 +34,52 @@ export default function Home() {
         <div className="home-year">{year}</div>
       </div>
 
-      {/* Hero principal */}
       <section className="home-hero">
-        {/* Colonne gauche */}
         <div className="hero-left">
           <h1>Vincent Leprêtre</h1>
-          <span className="hero-role">WEBMASTER</span>
+          <span className="hero-role" aria-live="polite">
+            <span className="hero-role-track">
+              <AnimatePresence initial={false} mode="sync">
+                <motion.span
+                  key={heroRoles[activeRoleIndex]}
+                  className="hero-role-text"
+                  initial={{ clipPath: "inset(0 100% 0 0)", x: -18 }}
+                  animate={{ clipPath: "inset(0 0 0 0)", x: 0 }}
+                  exit={{ clipPath: "inset(0 0 0 100%)", x: 18 }}
+                  transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                >
+                  {heroRoles[activeRoleIndex]}
+                </motion.span>
+              </AnimatePresence>
+            </span>
+          </span>
           <div className="hero-divider" />
-
-          <p className="hero-description">
-            Développeur frontend orienté UX/UI, je conçois des interfaces claires, structurées et pensées comme des produits.
-          </p>
-
+          <div className="hero-description">
+            <p>
+              Product Designer orienté UI, je conçois des interfaces claires, cohérentes et performantes, où vision, usage et exécution avancent ensemble.
+            </p>
+            <div className="recruiter-projects">
+              <Link to="/portfolio/refonte-du-site-web-dilitrust">DiliTrust</Link>
+              <Link to="/portfolio/site-internet-doc-biker">DOC-BIKER</Link>
+              <Link to="/etudes-de-cas/site-internet-locaboat">LOCABOAT</Link>
+            </div>
+          </div>
           <div className="hero-buttons">
-            {/* anciens boutons 
-            <a href="/cv.pdf" className="btn primary">
-              Telecharger mon CV
-            </a>
-            <a href="#" class="btn-flip" data-back="Back" data-front="Front"></a>
-            <a href="/portfolio" className="btn secondary" >
-              <ArrowRight width={14} height={14} /> Voir mes projets
-              
-            </a>
-  anciens boutons */}
-            <a href="/cv.pdf" className="btn-flipB" data-back="Telecharger mon CV" data-front="Telecharger mon CV"></a>
-            <a href="/portfolio" className="btn-flip" data-back="Voir mes projets" data-front="Voir mes projets"></a>
+            <a
+              href="/cv.pdf"
+              className="btn-flipB"
+              data-back="Telecharger mon CV"
+              data-front="Telecharger mon CV"
+            />
+            <a
+              href="/portfolio"
+              className="btn-flip"
+              data-back="Voir mes projets"
+              data-front="Voir mes projets"
+            />
           </div>
         </div>
 
-        {/* Colonne droite */}
         <div className="hero-right">
           {!isPortraitLoaded && (
             <div className="image-loader-overlay" aria-hidden="true">

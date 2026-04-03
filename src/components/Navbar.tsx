@@ -14,7 +14,6 @@ export default function Navbar() {
   const location = useLocation();
   const isHome = location.pathname === "/";
   const reduceMotion = useReducedMotion();
-
   const easingCurve: NonNullable<Transition["ease"]> = [0.22, 1, 0.36, 1];
 
   useEffect(() => {
@@ -23,7 +22,6 @@ export default function Navbar() {
 
     const handleScroll = () => {
       if (ticking) return;
-
       ticking = true;
       rafId = window.requestAnimationFrame(() => {
         const progress = Math.min(window.scrollY / 120, 1);
@@ -133,9 +131,7 @@ export default function Navbar() {
 
         </nav>
         <NavLink to="/contact" className="nav-cta">Contactez-moi</NavLink>
-
       </div>
-
       <AnimatePresence>
         {menuOpen && (
           <motion.div
@@ -160,7 +156,6 @@ export default function Navbar() {
                   <Logo size={96} />
                 </NavLink>
               </div>
-
               <motion.nav
                 className="mobile-nav-links"
                 initial="hidden"
@@ -221,9 +216,3 @@ export default function Navbar() {
     </header>
   );
 }
-
-
-
-
-
-

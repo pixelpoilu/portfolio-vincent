@@ -7,6 +7,7 @@ import ProjectCard from "../components/ProjectCard";
 import Footer from "../components/Footer";
 import type { Project } from "../types/Project";
 import { hasCollection } from "../utils/projectCollection";
+import { getProjectTypes, projectHasType } from "../utils/projectType";
 
 const projectImageModules = import.meta.glob<{ default: string }>(
   "../assets/images/projects/**/*.{jpg,jpeg,png,webp,avif}",
@@ -27,7 +28,7 @@ const resolveProjectImageSrc = (project: Project) => {
 
   const mediaPath = project.mediapath?.trim();
   if (mediaPath) {
-    const projectImagePath = `../assets/images/projects/medias/${mediaPath}/${imageFilename}`;
+    const projectImagePath = `../assets/images/projects/${mediaPath}/${imageFilename}`;
     const projectImage = projectImageModules[projectImagePath]?.default;
     if (projectImage) {
       return projectImage;
@@ -94,7 +95,7 @@ export default function CaseStudies() {
   const allTypes = useMemo(() => {
     const typeSet = new Set<string>();
     publishedProjects.forEach((project) => {
-      typeSet.add(project.type);
+      getProjectTypes(project).forEach((type) => typeSet.add(type));
     });
     return sortAlphabetically(Array.from(typeSet));
   }, [publishedProjects]);
@@ -119,7 +120,7 @@ export default function CaseStudies() {
             selectedTools.some((tool) => project.outils.includes(tool));
           const matchesSector =
             selectedSectors.length === 0 || selectedSectors.includes(project.secteur);
-          return matchesTech && matchesTool && matchesSector && project.type === type;
+          return matchesTech && matchesTool && matchesSector && projectHasType(project, type);
         })
       ),
     [allTypes, publishedProjects, selectedTechnologies, selectedTools, selectedSectors]
@@ -136,7 +137,8 @@ export default function CaseStudies() {
             selectedTools.length === 0 ||
             selectedTools.some((tool) => project.outils.includes(tool));
           const matchesType =
-            selectedTypes.length === 0 || selectedTypes.includes(project.type);
+            selectedTypes.length === 0 ||
+            selectedTypes.some((type) => projectHasType(project, type));
           return matchesTech && matchesTool && matchesType && project.secteur === sector;
         })
       ),
@@ -151,7 +153,8 @@ export default function CaseStudies() {
             selectedTools.length === 0 ||
             selectedTools.some((tool) => project.outils.includes(tool));
           const matchesType =
-            selectedTypes.length === 0 || selectedTypes.includes(project.type);
+            selectedTypes.length === 0 ||
+            selectedTypes.some((type) => projectHasType(project, type));
           const matchesSector =
             selectedSectors.length === 0 || selectedSectors.includes(project.secteur);
           return (
@@ -173,7 +176,8 @@ export default function CaseStudies() {
             selectedTechnologies.length === 0 ||
             selectedTechnologies.some((tech) => project.technologies.includes(tech));
           const matchesType =
-            selectedTypes.length === 0 || selectedTypes.includes(project.type);
+            selectedTypes.length === 0 ||
+            selectedTypes.some((type) => projectHasType(project, type));
           const matchesSector =
             selectedSectors.length === 0 || selectedSectors.includes(project.secteur);
           return matchesTech && matchesType && matchesSector && project.outils.includes(tool);
@@ -226,7 +230,8 @@ export default function CaseStudies() {
           selectedTools.some((tool) => project.outils.includes(tool));
 
         const matchesType =
-          selectedTypes.length === 0 || selectedTypes.includes(project.type);
+          selectedTypes.length === 0 ||
+          selectedTypes.some((type) => projectHasType(project, type));
 
         const matchesSector =
           selectedSectors.length === 0 || selectedSectors.includes(project.secteur);
@@ -242,7 +247,7 @@ export default function CaseStudies() {
         const searchableContent = [
           project.title,
           project.client,
-          project.type,
+          getProjectTypes(project).join(" "),
           project.secteur,
           project.description,
           project.outils.join(" "),

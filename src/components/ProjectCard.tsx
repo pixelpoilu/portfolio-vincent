@@ -5,6 +5,7 @@ import { slugifyTitle } from "../utils/slug";
 import { useEffect, useState, type MouseEvent } from "react";
 import type { Project } from "../types/Project";
 import Loader from "./Loader";
+import { formatProjectTypes } from "../utils/projectType";
 
 interface ProjectCardProps {
     project: Project;
@@ -65,7 +66,7 @@ export default function ProjectCard({
 
                     <div className="card-content">
                         <h3 className="card-title">{project.client}</h3>
-                        <span className="card-type">{project.type} - {project.order}</span>
+                        <span className="card-type">{formatProjectTypes(project)} - {project.order}</span>
                         <span className="card-cta" aria-hidden="true">
                             <FaAngleRight />
                         </span>
