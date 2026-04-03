@@ -23,6 +23,7 @@
         "image": "rea_cd_finlande_diapo.jpg",
         "masonry_0": "manson_0_finland.png",
         "masonry_1": "manson_1_finland.png",
+        "case_image": "manson_0_finland.png",
         "mediapath": "rea_cd_finlande",
         "thumb": "rea_cd_finlande_thumb.jpg",
         "medias": [
@@ -67,6 +68,7 @@
         "image": "rea_cd_gauloises_diapo.jpg",
         "masonry_0": "manson_0_gauloises.png",
         "masonry_1": "manson_1_gauloises.png",
+        "case_image": "manson_0_gauloises.png",
         "mediapath": "rea_webcat_gauloises",
         "thumb": "rea_webcat_gauloises_thumb.jpg",
         "medias": [
@@ -135,6 +137,7 @@
         "image": "rea_cd_marmara_diapo.jpg",
         "masonry_0": "manson_0_marmara.png",
         "masonry_1": "manson_1_marmara.png",
+        "case_image": "manson_0_marmara.png",
         "mediapath": "rea_cd_marmara",
         "thumb": "rea_cd_marmara_thumb.jpg",
         "medias": [
@@ -187,6 +190,7 @@
         "image": "rea_cd_medicis_diapo.jpg",
         "masonry_0": "manson_0_medicis.png",
         "masonry_1": "manson_1_medicis.png",
+        "case_image": "manson_0_medicis.png",
         "mediapath": "rea_cd_medicis",
         "thumb": "rea_cd_medicis_thumb.jpg",
         "medias": [
@@ -232,6 +236,7 @@
         "image": "rea_pub_camping_diapo.jpg",
         "masonry_0": "manson_0_camping.png",
         "masonry_1": "manson_1_camping.png",
+        "case_image": "manson_0_camping.png",
         "mediapath": "rea_pub_camping",
         "thumb": "rea_pub_camping_thumb.jpg",
         "medias": [
@@ -273,6 +278,7 @@
         "image": "rea_pub_chevrolet_diapo.jpg",
         "masonry_0": "manson_0_chevrolet.png",
         "masonry_1": "manson_1_chevrolet.png",
+        "case_image": "manson_0_chevrolet.png",
         "mediapath": "rea_pub_chevrolet",
         "thumb": "rea_pub_chevrolet_thumb.jpg",
         "medias": [
@@ -316,6 +322,7 @@
         "image": "rea_pub_daewoo_diapo.jpg",
         "masonry_0": "manson_0_daewoo.png",
         "masonry_1": "manson_1_daewoo.png",
+        "case_image": "manson_0_daewoo.png",
         "mediapath": "rea_pub_daewoo",
         "thumb": "rea_pub_daewoo_thumb.jpg",
         "medias": [
@@ -363,6 +370,7 @@
         "image": "rea_pub_esselte_diapo.jpg",
         "masonry_0": "",
         "masonry_1": "",
+        "case_image": "",
         "mediapath": "rea_pub_esselte",
         "thumb": "rea_pub_esselte_thumb.jpg",
         "medias": [
@@ -402,6 +410,7 @@
         "image": "rea_pub_pacific_diapo.jpg",
         "masonry_0": "",
         "masonry_1": "",
+        "case_image": "",
         "mediapath": "rea_pub_pacific",
         "thumb": "rea_pub_pacific_thumb.jpg",
         "medias": [
@@ -447,6 +456,7 @@
         "image": "rea_pub_poker_diapo.jpg",
         "masonry_0": "manson_0_poker.jpg",
         "masonry_1": "manson_1_poker.jpg",
+        "case_image": "manson_0_poker.jpg",
         "mediapath": "rea_pub_poker",
         "thumb": "rea_pub_poker_thumb.jpg",
         "medias": [
@@ -490,6 +500,7 @@
         "image": "rea_pub_tms_diapo.jpg",
         "masonry_0": "",
         "masonry_1": "",
+        "case_image": "",
         "mediapath": "rea_pub_tms",
         "thumb": "rea_pub_tms_thumb.jpg",
         "medias": [
@@ -526,6 +537,7 @@
         "image": "rea_pub_trainz_diapo.jpg",
         "masonry_0": "",
         "masonry_1": "",
+        "case_image": "",
         "mediapath": "rea_pub_trainz",
         "thumb": "rea_pub_trainz_thumb.jpg",
         "medias": [
@@ -562,6 +574,7 @@
         "image": "rea_pub_wanadoo_diapo.jpg",
         "masonry_0": "manson_0_wanadoo.png",
         "masonry_1": "manson_1_wanadoo.png",
+        "case_image": "manson_0_wanadoo.png",
         "mediapath": "rea_pub_wanadoo",
         "thumb": "rea_pub_wanadoo_thumb.jpg",
         "medias": [
@@ -603,6 +616,7 @@
         "image": "rea_pub_wengo_diapo.jpg",
         "masonry_0": "manson_0_wengo.png",
         "masonry_1": "manson_1_wengo.png",
+        "case_image": "manson_0_wengo.png",
         "mediapath": "rea_pub_wengo",
         "thumb": "rea_pub_wengo_thumb.jpg",
         "medias": [
@@ -649,6 +663,7 @@
         "image": "rea_screen_sacla_diapo.jpg",
         "masonry_0": "",
         "masonry_1": "",
+        "case_image": "",
         "mediapath": "rea_screen_sacla",
         "thumb": "rea_screen_sacla_thumb.jpg",
         "medias": [
@@ -694,6 +709,7 @@
         "image": "rea_cd_gauloises_diapo.jpg",
         "masonry_0": "manson_0_gauloises.png",
         "masonry_1": "manson_1_gauloises.png",
+        "case_image": "manson_0_gauloises.png",
         "mediapath": "rea_cd_gauloises",
         "thumb": "rea_cd_gauloises_thumb.jpg",
         "medias": [
@@ -753,6 +769,7 @@
         "image": "rea_web_1018_diapo.jpg",
         "masonry_0": "manson_0_1018.png",
         "masonry_1": "manson_1_1018.png",
+        "case_image": "manson_0_1018.png",
         "mediapath": "rea_web_1018",
         "thumb": "rea_web_1018_thumb.jpg",
         "medias": [
@@ -807,6 +824,7 @@
         "image": "rea_web_ads_diapo.jpg",
         "masonry_0": "mansonery_0_ads.png",
         "masonry_1": "mansonery_1_ads.png",
+        "case_image": "mansonery_0_ads.png",
         "mediapath": "rea_web_ads",
         "thumb": "rea_web_ads_thumb.jpg",
         "medias": [
@@ -850,6 +868,7 @@
         "image": "rea_web_artfenetres_diapo.jpg",
         "masonry_0": "manson_0_artfenetres.png",
         "masonry_1": "manson_1_artfenetres.png",
+        "case_image": "manson_0_artfenetres.png",
         "mediapath": "rea_web_artfenetres",
         "thumb": "rea_web_artfenetres_thumb.jpg",
         "medias": [
@@ -895,6 +914,7 @@
         "image": "rea_web_carresenart_diapo.jpg",
         "masonry_0": "manson_0_melun.png",
         "masonry_1": "manson_1_melun.png",
+        "case_image": "manson_0_melun.png",
         "mediapath": "rea_web_carresenart",
         "thumb": "rea_web_carresenart_thumb.jpg",
         "medias": [
@@ -960,6 +980,7 @@
         "image": "rea_web_clestra_diapo.jpg",
         "masonry_0": "manson_0_clestra.png",
         "masonry_1": "manson_1_clestra.png",
+        "case_image": "manson_0_clestra.png",
         "mediapath": "rea_web_clestra",
         "thumb": "rea_web_clestra_thumb.jpg",
         "medias": [
@@ -1021,6 +1042,7 @@
         "image": "rea_web_clozeau_diapo.jpg",
         "masonry_0": "manson_0_clozeau.png",
         "masonry_1": "manson_1_clozeau.png",
+        "case_image": "manson_0_clozeau.png",
         "mediapath": "rea_web_clozeau",
         "thumb": "rea_web_clozeau_thumb.jpg",
         "medias": [
@@ -1073,6 +1095,7 @@
         "image": "rea_web_croatie_diapo.jpg",
         "masonry_0": "manson_0_croatie.png",
         "masonry_1": "manson_1_croatie.png",
+        "case_image": "manson_0_croatie.png",
         "mediapath": "rea_web_croatie",
         "thumb": "rea_web_croatie_thumb.jpg",
         "medias": [
@@ -1123,6 +1146,7 @@
         "image": "rea_web_egypte_diapo.jpg",
         "masonry_0": "mansonery_0_egypte.png",
         "masonry_1": "mansonery_1_egypte.png",
+        "case_image": "mansonery_0_egypte.png",
         "mediapath": "rea_web_egypte",
         "thumb": "rea_web_egypte_thumb.jpg",
         "medias": [
@@ -1176,6 +1200,7 @@
         "image": "rea_web_frigos_diapo.jpg",
         "masonry_0": "manson_0_frigo.png",
         "masonry_1": "manson_1_frigo.png",
+        "case_image": "manson_0_frigo.png",
         "mediapath": "rea_web_frigos",
         "thumb": "rea_web_frigos_thumb.jpg",
         "medias": [
@@ -1230,6 +1255,7 @@
         "image": "rea_web_hongrie_diapo.jpg",
         "masonry_0": "manson_0_hongrie.png",
         "masonry_1": "manson_1_hongrie.png",
+        "case_image": "manson_0_hongrie.png",
         "mediapath": "rea_web_hongrie",
         "thumb": "rea_web_hongrie_thumb.jpg",
         "medias": [
@@ -1274,6 +1300,7 @@
         "image": "rea_web_lfdd_diapo.jpg",
         "masonry_0": "manson_0_lfdd.png",
         "masonry_1": "manson_1_lfdd.png",
+        "case_image": "manson_0_lfdd.png",
         "mediapath": "rea_web_lfdd",
         "thumb": "rea_web_lfdd_thumb.jpg",
         "medias": [
@@ -1326,6 +1353,7 @@
         "image": "rea_web_lgi_diapo.jpg",
         "masonry_0": "manson_0_lgi.png",
         "masonry_1": "manson_1_lgi.png",
+        "case_image": "manson_0_lgi.png",
         "mediapath": "rea_web_lgi",
         "thumb": "rea_web_lgi_thumb.jpg",
         "medias": [
@@ -1374,6 +1402,7 @@
         "image": "rea_web_liban_diapo.jpg",
         "masonry_0": "mansonery_0_liban.png",
         "masonry_1": "mansonery_1_liban.png",
+        "case_image": "mansonery_0_liban.png",
         "mediapath": "rea_web_liban",
         "thumb": "rea_web_liban_thumb.jpg",
         "medias": [
@@ -1419,6 +1448,7 @@
         "image": "rea_web_locaboatindustries_diapo.jpg",
         "masonry_0": "manson_0_locabindust.png",
         "masonry_1": "manson_1_locabindust.png",
+        "case_image": "manson_0_locabindust.png",
         "mediapath": "rea_web_locaboatindustries",
         "thumb": "rea_web_locaboatindustries_thumb.jpg",
         "medias": [
@@ -1511,6 +1541,7 @@
         "image": "rea_web_locaboat_diapo.jpg",
         "masonry_0": "",
         "masonry_1": "",
+        "case_image": "",
         "mediapath": "rea_web_locaboat",
         "thumb": "rea_web_locaboat_thumb.jpg",
         "medias": [
@@ -1567,6 +1598,7 @@
         "image": "rea_web_lorenove_diapo.jpg",
         "masonry_0": "manson_0_lorenove.png",
         "masonry_1": "manson_1_lorenove.png",
+        "case_image": "manson_0_lorenove.png",
         "mediapath": "rea_web_lorenove",
         "thumb": "rea_web_lorenove_thumb.jpg",
         "medias": [
@@ -1616,6 +1648,7 @@
         "image": "rea_web_maaf_diapo.jpg",
         "masonry_0": "manson_0_maaf.png",
         "masonry_1": "manson_1_maaf.png",
+        "case_image": "manson_0_maaf.png",
         "mediapath": "rea_web_maaf",
         "thumb": "rea_web_maaf_thumb.jpg",
         "medias": [
@@ -1661,6 +1694,7 @@
         "image": "rea_map_malte_diapo.jpg",
         "masonry_0": "manson_0_malte.png",
         "masonry_1": "manson_1_malte.png",
+        "case_image": "manson_0_malte.png",
         "mediapath": "rea_web_malte",
         "thumb": "rea_web_malte_thumb.jpg",
         "medias": [
@@ -1770,6 +1804,7 @@
         "image": "rea_web_marsans_diapo.jpg",
         "masonry_0": "",
         "masonry_1": "",
+        "case_image": "",
         "mediapath": "rea_web_marsans",
         "thumb": "rea_web_marsans_thumb.jpg",
         "medias": [
@@ -1816,6 +1851,7 @@
         "image": "rea_web_mrl_diapo.jpg",
         "masonry_0": "manson_0_mrl.png",
         "masonry_1": "manson_1_mrl.png",
+        "case_image": "manson_0_mrl.png",
         "mediapath": "rea_web_mrl",
         "thumb": "rea_web_mrl_thumb.jpg",
         "medias": [
@@ -1872,6 +1908,7 @@
         "image": "rea_web_premaman_diapo.jpg",
         "masonry_0": "manson_0_premaman.png",
         "masonry_1": "manson_1_premaman.png",
+        "case_image": "manson_0_premaman.png",
         "mediapath": "rea_bol_premaman",
         "thumb": "rea_bol_premaman_thumb.jpg",
         "medias": [
@@ -1920,6 +1957,7 @@
         "image": "rea_web_resonnances_diapo.jpg",
         "masonry_0": "manson_0_reso.png",
         "masonry_1": "manson_1_reso.png",
+        "case_image": "manson_0_reso.png",
         "mediapath": "rea_web_resonnances",
         "thumb": "rea_web_resonnances_thumb.jpg",
         "medias": [
@@ -1967,6 +2005,7 @@
         "image": "rea_web_uservices_diapo.jpg",
         "masonry_0": "manson_0_uservices.png",
         "masonry_1": "manson_1_uservices.png",
+        "case_image": "manson_0_uservices.png",
         "mediapath": "rea_web_uservices",
         "thumb": "manson_0_uservices.png",
         "medias": [
@@ -2016,6 +2055,7 @@
         "image": "rea_web_services2it_diapo.jpg",
         "masonry_0": "",
         "masonry_1": "",
+        "case_image": "",
         "mediapath": "rea_web_services2it",
         "thumb": "rea_web_services2it_thumb.jpg",
         "medias": [
@@ -2061,6 +2101,7 @@
         "image": "rea_web_skillmen_diapo.jpg",
         "masonry_0": "mansonery_0_skillmen.png",
         "masonry_1": "mansonery_1_skillmen.png",
+        "case_image": "mansonery_0_skillmen.png",
         "mediapath": "rea_web_skillmen",
         "thumb": "rea_web_skillmen_thumb.jpg",
         "medias": [
@@ -2115,6 +2156,7 @@
         "image": "rea_web_slam_diapo.jpg",
         "masonry_0": "manson_0_slan.png",
         "masonry_1": "manson_1_slam.png",
+        "case_image": "manson_0_slan.png",
         "mediapath": "rea_web_slam",
         "thumb": "rea_web_slam_thumb.jpg",
         "medias": [
@@ -2169,6 +2211,7 @@
         "image": "rea_web_tpv_diapo.jpg",
         "masonry_0": "",
         "masonry_1": "",
+        "case_image": "",
         "mediapath": "rea_web_tpv",
         "thumb": "rea_web_tpv_thumb.jpg",
         "medias": [
@@ -2216,6 +2259,7 @@
         "image": "rea_web_ventilo_diapo.jpg",
         "masonry_0": "manson_0_ventilo.png",
         "masonry_1": "manson_1_ventilo.png",
+        "case_image": "manson_0_ventilo.png",
         "mediapath": "rea_web_ventilo",
         "thumb": "rea_web_ventilo_thumb.jpg",
         "medias": [
@@ -2270,6 +2314,7 @@
         "image": "rea_web_visiteurope_diapo.jpg",
         "masonry_0": "manson_0_europe.png",
         "masonry_1": "manson_1_visiteurope.png",
+        "case_image": "manson_0_europe.png",
         "mediapath": "rea_web_visiteurope",
         "thumb": "rea_web_visiteurope_thumb.jpg",
         "medias": [
@@ -2327,6 +2372,7 @@
         "image": "rea_web_vu_diapo.jpg",
         "masonry_0": "manson_0_vu.png",
         "masonry_1": "manson_1_vu.png",
+        "case_image": "manson_0_vu.png",
         "mediapath": "rea_web_vu",
         "thumb": "rea_web_vu_thumb.jpg",
         "medias": [
@@ -2369,6 +2415,7 @@
         "image": "rea_web_wip_diapo.jpg",
         "masonry_0": "manson_0_wip.png",
         "masonry_1": "manson_1_wip.png",
+        "case_image": "manson_0_wip.png",
         "mediapath": "rea_web_wip",
         "thumb": "rea_web_wip_thumb.jpg",
         "medias": [
@@ -2418,6 +2465,7 @@
         "image": "rea_web_tour66_diapo.jpg",
         "masonry_0": "manson_0_tour66.png",
         "masonry_1": "manson_1_tour66.png",
+        "case_image": "manson_0_tour66.png",
         "mediapath": "rea_web_tour66",
         "thumb": "rea_web_tour66_thumb.jpg",
         "medias": [
@@ -2469,6 +2517,7 @@
         "image": "rea_bol_locaboat_diapo.jpg",
         "masonry_0": "",
         "masonry_1": "",
+        "case_image": "",
         "mediapath": "rea_bol_locaboat",
         "thumb": "rea_bol_locaboat_thumb.jpg",
         "medias": [
@@ -2524,6 +2573,7 @@
         "image": "rea_web_netseenergy_diapo.jpg",
         "masonry_0": "manson_0_netseen.png",
         "masonry_1": "manson_1_netseen.png",
+        "case_image": "manson_0_netseen.png",
         "mediapath": "rea_web_netseenergy",
         "thumb": "rea_web_netseenergy_thumb.jpg",
         "medias": [
@@ -2574,6 +2624,7 @@
         "image": "rea_web_youzikme_diapo.jpg",
         "masonry_0": "manson_0_youzikme.png",
         "masonry_1": "manson_1_youzikme.png",
+        "case_image": "manson_0_youzikme.png",
         "mediapath": "rea_web_youzikme",
         "thumb": "rea_web_youzikme_thumb.jpg",
         "medias": [
@@ -2623,6 +2674,7 @@
         "image": "rea_web_putainbd_diapo.jpg",
         "masonry_0": "manson_0_pbd.png",
         "masonry_1": "manson_1_pbd.png",
+        "case_image": "manson_0_pbd.png",
         "mediapath": "rea_web_putainbd",
         "thumb": "rea_web_putainbd_thumb.jpg",
         "medias": [
@@ -2671,6 +2723,7 @@
         "image": "rea_web_podcasts_diapo.jpg",
         "masonry_0": "manson_0_podcasts.png",
         "masonry_1": "manson_1_podcasts.png",
+        "case_image": "manson_0_podcasts.png",
         "mediapath": "rea_web_podcasts",
         "thumb": "rea_web_podcasts_thumb.jpg",
         "medias": [
@@ -2719,6 +2772,7 @@
         "image": "rea_web_rocksymbol_diapo.jpg",
         "masonry_0": "mansonery_0_rocksymbol.png",
         "masonry_1": "mansonery_1_rocksymbol.png",
+        "case_image": "mansonery_0_rocksymbol.png",
         "mediapath": "rea_web_rocksymbol",
         "thumb": "rea_web_rocksymbol_thumb.jpg",
         "medias": [
@@ -2768,6 +2822,7 @@
         "image": "rea_web_anarlf_diapo.jpg",
         "masonry_0": "",
         "masonry_1": "",
+        "case_image": "",
         "mediapath": "rea_web_anarlf",
         "thumb": "rea_web_anarlf_thumb.jpg",
         "medias": [
@@ -2811,6 +2866,7 @@
         "image": "rea_web_docbiker_diapo.jpg",
         "masonry_0": "manson_0_doc.png",
         "masonry_1": "manson_1_doc.png",
+        "case_image": "manson_0_doc.png",
         "mediapath": "rea_web_docbiker",
         "thumb": "rea_web_docbiker_thumb.jpg",
         "medias": [
@@ -2922,6 +2978,7 @@
         "image": "rea_web_cuendet_diapo.jpg",
         "masonry_0": "",
         "masonry_1": "",
+        "case_image": "",
         "mediapath": "rea_web_cuendet",
         "thumb": "rea_web_cuendet_thumb.jpg",
         "medias": [
@@ -2963,6 +3020,7 @@
         "image": "rea_web_guadeloupe_diapo.jpg",
         "masonry_0": "",
         "masonry_1": "",
+        "case_image": "",
         "mediapath": "rea_web_guadeloupe",
         "thumb": "rea_web_guadeloupe_thumb.jpg",
         "medias": [
@@ -3009,6 +3067,7 @@
         "image": "rea_web_bourgogne_diapo.jpg",
         "masonry_0": "",
         "masonry_1": "",
+        "case_image": "",
         "mediapath": "rea_web_bourgogne",
         "thumb": "rea_web_bourgogne_thumb.jpg",
         "medias": [
@@ -3054,6 +3113,7 @@
         "image": "rea_web_bigmama_diapo.jpg",
         "masonry_0": "manson_0_big.png",
         "masonry_1": "manson_1_big.png",
+        "case_image": "manson_0_big.png",
         "mediapath": "rea_web_bigmama",
         "thumb": "rea_web_bigmama_thumb.jpg",
         "medias": [
@@ -3104,6 +3164,7 @@
         "image": "rea_web_domino_diapo.jpg",
         "masonry_0": "",
         "masonry_1": "",
+        "case_image": "",
         "mediapath": "rea_web_domino",
         "thumb": "rea_web_domino_thumb.jpg",
         "medias": [
@@ -3152,6 +3213,7 @@
         "image": "rea_web_ilexen_diapo.png",
         "masonry_0": "manson_0_ilexen.png",
         "masonry_1": "manson_1_ilexen.png",
+        "case_image": "manson_0_ilexen.png",
         "mediapath": "rea_web_ilexen",
         "thumb": "rea_web_ilexen_thumb.jpg",
         "medias": [
@@ -3208,6 +3270,7 @@
         "image": "rea_web_cms_diapo.jpg",
         "masonry_0": "",
         "masonry_1": "",
+        "case_image": "",
         "mediapath": "rea_web_cms",
         "thumb": "rea_web_cms_thumb.jpg",
         "medias": [
@@ -3293,6 +3356,7 @@
         "image": "rea_web_bol_diapo.png",
         "masonry_0": "",
         "masonry_1": "",
+        "case_image": "",
         "mediapath": "rea_web_bol",
         "thumb": "rea_web_bol_thumb.jpg",
         "medias": [
@@ -3372,6 +3436,7 @@
         "image": "rea_web_azurdrones_diapo.png",
         "masonry_0": "manson_0_azur.png",
         "masonry_1": "manson_1_azur.png",
+        "case_image": "manson_0_azur.png",
         "mediapath": "rea_web_azurdrones",
         "thumb": "rea_web_azurdrones_thumb.jpg",
         "medias": [
@@ -3443,6 +3508,7 @@
         "image": "manson_1_landings.png",
         "masonry_0": "manson_0_landings.png",
         "masonry_1": "manson_1_landings.png",
+        "case_image": "manson_0_landings.png",
         "mediapath": "rea_web_landings",
         "thumb": "manson_0_landings.jpg",
         "medias": [
@@ -3512,6 +3578,7 @@
         "image": "rea_web_site-dilitrust_diapo.png",
         "masonry_0": "manson_0_site-dilitrust.png",
         "masonry_1": "manson_1_site-dilitrust.png",
+        "case_image": "manson_0_site-dilitrust.png",
         "mediapath": "rea_web_site-dilitrust",
         "thumb": "rea_web_site-dilitrust_thumb.png",
         "medias": [
@@ -3592,6 +3659,7 @@
         "image": "rea_web_site-dilitrust_diapo.png",
         "masonry_0": "manson_0_baba.png",
         "masonry_1": "manson_1_baba.png",
+        "case_image": "manson_0_baba.png",
         "mediapath": "rea_web_baba",
         "thumb": "rea_web_site-dilitrust_thumb.png",
         "medias": [

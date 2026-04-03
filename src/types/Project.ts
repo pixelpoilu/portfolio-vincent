@@ -21,6 +21,7 @@ export type Project = {
   thumb?: string;
   masonry_0?: string;
   masonry_1?: string;
+  case_image?: string;
   mediapath: string;
   medias: Array<string | ProjectMedia>;
   missions: string[];

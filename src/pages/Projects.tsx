@@ -543,7 +543,7 @@ export default function Projects({
 
           <motion.div layout className="projects-grid">
             <AnimatePresence mode="popLayout">
-              {filteredProjects.map((project, index) => (
+              {filteredProjects.map((project) => (
                 <motion.div
                   key={project.id}
                   layout
@@ -559,10 +559,9 @@ export default function Projects({
                       collectionKey === "portfolio" ? openProjectSlideshow : undefined
                     }
                     thumbnailOverride={(() => {
-                      const masonryFilename =
-                        (index % 2 === 0 ? project.masonry_0 : project.masonry_1)?.trim();
-                      if (masonryFilename) {
-                        const masonryImage = masonryImageByFilename.get(masonryFilename);
+                      const caseImageFilename = project.case_image?.trim();
+                      if (caseImageFilename) {
+                        const masonryImage = masonryImageByFilename.get(caseImageFilename);
                         if (masonryImage) {
                           return masonryImage;
                         }
