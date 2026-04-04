@@ -30,7 +30,7 @@
 
 .filter-top {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   margin-bottom: 14px;
   font-size: 14px;
@@ -286,7 +286,7 @@
     top: 112px;
   }
 
-  .projects-intro {
+  .filter-wrapper .projects-intro {
     display: none;
   }
 }

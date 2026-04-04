@@ -21,7 +21,7 @@ const projectImageByFilename = new Map(
 );
 
 const resolveProjectImageSrc = (project: Project) => {
-  const imageFilename = project.image?.trim();
+  const imageFilename = project.case_image?.trim();
   if (!imageFilename) {
     return undefined;
   }
@@ -297,11 +297,17 @@ export default function CaseStudies() {
           onToolChange={setSelectedTools}
           onTechChange={setSelectedTechnologies}
           onSearchChange={setSearchQuery}
-          projectsCount={filteredProjects.length}
-          introText={introText}
         />
 
         <section className="projects-section">
+          <div className="projects-section-header">
+            <div className="projects-intro">
+              <p>{introText}</p>
+            </div>
+            <span className="projects-count">
+              {filteredProjects.length} projet{filteredProjects.length > 1 ? "s" : ""}
+            </span>
+          </div>
           <motion.div layout className="projects-grid">
             <AnimatePresence mode="popLayout">
               {filteredProjects.map((project) => (

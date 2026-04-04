@@ -19,13 +19,6 @@ import {
   IoIosVolumeHigh,
   IoIosVolumeOff,
 } from "react-icons/io";
-const masonryTestImageModules = import.meta.glob<{ default: string }>(
-  "../assets/images/mansonery_test/*.{jpg,jpeg,png,webp,avif}",
-  { eager: true }
-);
-const masonryTestImages = Object.entries(masonryTestImageModules)
-  .sort(([a], [b]) => a.localeCompare(b, "fr", { sensitivity: "base" }))
-  .map(([, image]) => image.default);
 
 const projectImageModules = import.meta.glob<{ default: string }>(
   "../assets/images/projects/**/*.{jpg,jpeg,png,webp,avif}",
@@ -42,6 +35,15 @@ const masonryImageByFilename = new Map(
     image.default,
   ])
 );
+
+const resolveThumbnailByFilename = (filename?: string) => {
+  const normalizedFilename = filename?.trim();
+  if (!normalizedFilename) {
+    return undefined;
+  }
+
+  return masonryImageByFilename.get(normalizedFilename);
+};
 
 const normalizeText = (value: string) =>
   value
@@ -475,20 +477,7 @@ export default function Projects({
       return undefined;
     }
 
-    const thumbFilename = slideshowProject.thumb?.trim();
-    if (thumbFilename) {
-      const thumbImage = masonryImageByFilename.get(thumbFilename);
-      if (thumbImage) {
-        return thumbImage;
-      }
-    }
-
-    const masonryFilename = slideshowProject.masonry_0?.trim();
-    if (!masonryFilename) {
-      return undefined;
-    }
-
-    return masonryImageByFilename.get(masonryFilename);
+    return resolveThumbnailByFilename(slideshowProject.portfolio_image);
   }, [slideshowProject]);
   useEffect(() => {
     setIsSlideshowThumbLoaded(false);
@@ -534,12 +523,17 @@ export default function Projects({
           onToolChange={setSelectedTools}
           onTechChange={setSelectedTechnologies}
           onSearchChange={setSearchQuery}
-          projectsCount={filteredProjects.length}
-          introText={introText}
         />
 
         <section className="projects-section">
-
+          <div className="projects-section-header">
+            <div className="projects-intro">
+              <p>{introText}</p>
+            </div>
+            <span className="projects-count">
+              {filteredProjects.length} projet{filteredProjects.length > 1 ? "s" : ""}
+            </span>
+          </div>
 
           <motion.div layout className="projects-grid">
             <AnimatePresence mode="popLayout">
@@ -558,19 +552,7 @@ export default function Projects({
                     onCardClick={
                       collectionKey === "portfolio" ? openProjectSlideshow : undefined
                     }
-                    thumbnailOverride={(() => {
-                      const caseImageFilename = project.case_image?.trim();
-                      if (caseImageFilename) {
-                        const masonryImage = masonryImageByFilename.get(caseImageFilename);
-                        if (masonryImage) {
-                          return masonryImage;
-                        }
-                      }
-
-                      return masonryTestImages.length > 0
-                        ? masonryTestImages[project.id % masonryTestImages.length]
-                        : undefined;
-                    })()}
+                    thumbnailOverride={resolveThumbnailByFilename(project.portfolio_image)}
                   />
                 </motion.div>
               ))}

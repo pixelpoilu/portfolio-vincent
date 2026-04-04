@@ -15,7 +15,6 @@ interface Props {
   onToolChange: (value: string[]) => void;
   onTechChange: (value: string[]) => void;
   onSearchChange: (value: string) => void;
-  projectsCount: number; introText: string;
 }
 
 export default function FilterBar({
@@ -32,13 +31,17 @@ export default function FilterBar({
   onTypeChange,
   onToolChange,
   onTechChange,
-  onSearchChange,
-  projectsCount,
-  introText
+  onSearchChange
 }: Props) {
   const [open, setOpen] = useState<string | null>(null);
   const filterRef = useRef<HTMLDivElement | null>(null);
   const closeTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const hasActiveFilters =
+    activeSectors.length > 0 ||
+    activeTypes.length > 0 ||
+    activeTools.length > 0 ||
+    activeTechs.length > 0 ||
+    searchQuery.trim() !== "";
 
   const clearCloseTimeout = () => {
     if (closeTimeoutRef.current) {
@@ -91,34 +94,24 @@ export default function FilterBar({
   return (
     <div className="detail-wrapper">
       <div className="filter-wrapper" ref={filterRef}>
-        <div className="filter-top">
-          <div className="projects-intro">
-            <p>{introText}</p>
+        {hasActiveFilters && (
+          <div className="filter-top">
+            <button
+              type="button"
+              className="clear-filters"
+              onClick={() => {
+                onSectorChange([]);
+                onTypeChange([]);
+                onToolChange([]);
+                onTechChange([]);
+                onSearchChange("");
+                setOpen(null);
+              }}
+            >
+              Effacer
+            </button>
           </div>
-          <span className="projects-count">
-            {projectsCount} projet{projectsCount > 1 ? "s" : ""}
-          </span>
-          {(activeSectors.length > 0 ||
-            activeTypes.length > 0 ||
-            activeTools.length > 0 ||
-            activeTechs.length > 0 ||
-            searchQuery.trim() !== "") && (
-              <button
-                type="button"
-                className="clear-filters"
-                onClick={() => {
-                  onSectorChange([]);
-                  onTypeChange([]);
-                  onToolChange([]);
-                  onTechChange([]);
-                  onSearchChange("");
-                  setOpen(null);
-                }}
-              >
-                Effacer
-              </button>
-            )}
-        </div>
+        )}
 
         <div className="search-row">
           <input
@@ -296,4 +289,3 @@ export default function FilterBar({
     </div>
   );
 }
-
