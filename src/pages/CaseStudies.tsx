@@ -21,27 +21,38 @@ const projectImageByFilename = new Map(
 );
 
 const resolveProjectImageSrc = (project: Project) => {
-  const imageFilename = project.case_image?.trim();
-  if (!imageFilename) {
-    return undefined;
-  }
+  const imageFilenames = [
+    project.case_image,
+    project.portfolio_image,
+    project.masonry_0,
+    project.image,
+  ]
+    .map((filename) => filename?.trim())
+    .filter((filename): filename is string => Boolean(filename));
 
   const mediaPath = project.mediapath?.trim();
-  if (mediaPath) {
-    const projectImagePath = `../assets/images/projects/${mediaPath}/${imageFilename}`;
-    const projectImage = projectImageModules[projectImagePath]?.default;
-    if (projectImage) {
-      return projectImage;
+  for (const imageFilename of imageFilenames) {
+    if (mediaPath) {
+      const projectImagePath = `../assets/images/projects/${mediaPath}/${imageFilename}`;
+      const projectImage = projectImageModules[projectImagePath]?.default;
+      if (projectImage) {
+        return projectImage;
+      }
+    }
+
+    const directImage = projectImageByFilename.get(imageFilename);
+    if (directImage) {
+      return directImage;
+    }
+
+    const vignettePath = `../assets/images/projects/vignettes/${imageFilename}`;
+    const vignetteImage = projectImageModules[vignettePath]?.default;
+    if (vignetteImage) {
+      return vignetteImage;
     }
   }
 
-  const directImage = projectImageByFilename.get(imageFilename);
-  if (directImage) {
-    return directImage;
-  }
-
-  const vignettePath = `../assets/images/projects/vignettes/${imageFilename}`;
-  return projectImageModules[vignettePath]?.default;
+  return undefined;
 };
 
 const normalizeText = (value: string) =>
@@ -58,6 +69,32 @@ const toSortableOrder = (value?: number) =>
   typeof value === "number" && Number.isFinite(value)
     ? value
     : Number.NEGATIVE_INFINITY;
+
+const editorialLayoutSlots = [
+  "hero-left",
+  "square-left",
+  "square-middle-left",
+  "square-middle-right",
+  "tall-right",
+  "tall-center",
+  "hero-right",
+  "square-right",
+] as const;
+
+const getEditorialTileClassName = (index: number, useEditorialGrid: boolean) => {
+  const classes = ["case-study-tile"];
+
+  if (!useEditorialGrid) {
+    return classes.join(" ");
+  }
+
+  const slot = editorialLayoutSlots[index];
+  if (slot) {
+    classes.push(`case-study-tile--${slot}`);
+  }
+
+  return classes.join(" ");
+};
 
 export default function CaseStudies() {
   const detailBasePath = "/etudes-de-cas";
@@ -279,6 +316,8 @@ export default function CaseStudies() {
     searchQuery,
   ]);
 
+  const useEditorialGrid = filteredProjects.length >= editorialLayoutSlots.length;
+
   return (
     <PageTransition>
       <div className="site-page case-studies-page">
@@ -308,11 +347,15 @@ export default function CaseStudies() {
               {filteredProjects.length} projet{filteredProjects.length > 1 ? "s" : ""}
             </span>
           </div>
-          <motion.div layout className="projects-grid">
+          <motion.div
+            layout
+            className={`projects-grid ${useEditorialGrid ? "case-studies-grid--editorial" : ""}`.trim()}
+          >
             <AnimatePresence mode="popLayout">
-              {filteredProjects.map((project) => (
+              {filteredProjects.map((project, index) => (
                 <motion.div
-                  key={project.id}
+                  key={`${project.id}-${project.title}`}
+                  className={getEditorialTileClassName(index, useEditorialGrid)}
                   layout
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
