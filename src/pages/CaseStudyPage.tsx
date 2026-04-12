@@ -9,6 +9,7 @@ import { JSX, type PointerEvent, useEffect, useRef, useState } from "react";
 import grainTexture from "../assets/images/textures/grain.png";
 import afterImage from "../assets/images/projects/rea_web_dilitrust/home_compare_new2.png";
 import beforeImage from "../assets/images/projects/rea_web_dilitrust/home_compare_old2.png";
+import heroVisual from "../assets/images/projects/rea_web_dilitrust/new_dilitrust_trsp.png";
 import morphAfterImage from "../assets/images/projects/rea_web_dilitrust/morphing_after.png";
 import morphBeforeImage from "../assets/images/projects/rea_web_dilitrust/morphing_before.png";
 import visualImage from "../assets/images/projects/rea_web_dilitrust/mobile_first.png";
@@ -38,25 +39,25 @@ const responsiveSlides: ResponsiveSlide[] = [
   {
     image: morphBeforeImage,
     title: "Home page desktop",
-    meta: "Capture de la home page · 1398 x 781",
+    meta: "Capture de la home page Â· 1398 x 781",
     description:
-      "Le point de depart conserve toute la richesse de l’univers DiliTrust, avec une hero section large et une lecture installee sur desktop.",
+      "Le point de depart conserve toute la richesse de lâ€™univers DiliTrust, avec une hero section large et une lecture installee sur desktop.",
     frame: "browser",
   },
   {
     image: visualImage,
     title: "Approche mobile first",
-    meta: "Recomposition des contenus · 912 x 540",
+    meta: "Recomposition des contenus Â· 912 x 540",
     description:
-      "Le scroll fait glisser vers une composition plus resserree, ou les blocs, les appels a l’action et la hierarchie deviennent plus immediats.",
+      "Le scroll fait glisser vers une composition plus resserree, ou les blocs, les appels a lâ€™action et la hierarchie deviennent plus immediats.",
     frame: "browser",
   },
   {
     image: morphAfterImage,
     title: "Version smartphone",
-    meta: "Home page portrait · 357 x 781",
+    meta: "Home page portrait Â· 357 x 781",
     description:
-      "L’ecran final montre une interface pensee pour le pouce, plus directe a parcourir et plus naturelle sur mobile.",
+      "Lâ€™ecran final montre une interface pensee pour le pouce, plus directe a parcourir et plus naturelle sur mobile.",
     frame: "phone",
   },
 ];
@@ -324,12 +325,12 @@ const ResponsiveShowcase = (): JSX.Element => {
             className={sectionTitleClassName}
             style={{ fontFamily: "var(--font-hero)" }}
           >
-            Une lecture guidée, image après image.
+            Une lecture guidÃ©e, image aprÃ¨s image.
           </h2>
           <p className="text-base leading-8 text-neutral-600 md:text-lg">
             En scrollant vers le bas, chaque visuel prend la place du precedent
             avec une transition laterale douce. Le contenu reste simple a faire
-            evoluer: il suffit d’ajouter un nouvel objet dans la liste des
+            evoluer: il suffit dâ€™ajouter un nouvel objet dans la liste des
             slides.
           </p>
         </motion.div>
@@ -466,15 +467,13 @@ const ResponsiveShowcase = (): JSX.Element => {
                     type="button"
                     onClick={() => scrollToSlide(index)}
                     aria-pressed={index === activeIndex}
-                    className={`rounded-2xl border px-4 py-3 text-left transition-[transform,background-color,border-color,box-shadow] duration-300 ${
-                      index === activeIndex
-                        ? "border-black/10 bg-white/82 shadow-[0_10px_24px_rgba(18,22,29,0.05)]"
-                        : "border-black/6 bg-white/40 hover:-translate-y-0.5 hover:border-black/10 hover:bg-white/66"
-                    } ${
-                      spotlight?.index === index
+                    className={`rounded-2xl border px-4 py-3 text-left transition-[transform,background-color,border-color,box-shadow] duration-300 ${index === activeIndex
+                      ? "border-black/10 bg-white/82 shadow-[0_10px_24px_rgba(18,22,29,0.05)]"
+                      : "border-black/6 bg-white/40 hover:-translate-y-0.5 hover:border-black/10 hover:bg-white/66"
+                      } ${spotlight?.index === index
                         ? "ring-2 ring-amber-300/70 ring-offset-2 ring-offset-transparent"
                         : ""
-                    }`}
+                      }`}
                   >
                     <div className="text-[0.68rem] font-semibold uppercase tracking-[0.22em] text-neutral-500">
                       {String(index + 1).padStart(2, "0")}
@@ -514,100 +513,89 @@ export default function CaseStudyPage(): JSX.Element {
     { label: "Engagement", value: 20 },
     { label: "Bounce", value: 15 },
   ];
+  const { scrollYProgress } = useScroll();
+  const grainOpacity = useSpring(
+    // useTransform(scrollYProgress, [0, 0.45], [0, 0.035]),
+    useTransform(scrollYProgress, [0, 0.45], [0, 0.07]),
+
+    {
+      stiffness: 120,
+      damping: 28,
+      mass: 0.24,
+    },
+  );
 
   return (
     <main
       className="relative isolate text-neutral-950"
       style={{
-        background:
-          "radial-gradient(circle at top left, rgba(159, 188, 216, 0.22), transparent 34%), linear-gradient(180deg, #f4f4f1 0%, #f2efe8 100%)",
+        background: "var(--bg)",
       }}
     >
-      <div
+      <motion.div
         aria-hidden="true"
-        className="pointer-events-none fixed inset-0 z-10 opacity-[0.035] mix-blend-multiply"
+        className="pointer-events-none fixed inset-0 z-10 mix-blend-multiply"
         style={{
+          opacity: grainOpacity,
           backgroundImage: `url(${grainTexture})`,
           backgroundPosition: "center",
-          backgroundSize: "cover",
+          backgroundSize: "35%",
+          willChange: "opacity",
         }}
       />
 
       <section className="relative z-20 px-4 pb-16 pt-32 md:px-6 md:pb-24 md:pt-[180px]">
         <motion.div
           {...reveal}
-          className="mx-auto grid w-full max-w-[1200px] gap-10 overflow-hidden rounded-[32px] border border-black/8 bg-white/82 px-6 py-7 shadow-[0_24px_60px_rgba(22,28,45,0.08)] backdrop-blur-md md:grid-cols-[minmax(0,1.05fr)_minmax(320px,0.95fr)] md:px-10 md:py-10"
+          className={`${shellClassName} grid items-center gap-12 md:grid-cols-[minmax(0,0.86fr)_minmax(0,1.14fr)] md:gap-16`}
         >
           <div className="relative z-10 grid content-center gap-6">
-            <p className={eyebrowClassName}>Case study</p>
+            <p className={eyebrowClassName}>DiliTrust</p>
 
-            <div className="grid gap-4">
+            <div className="grid gap-5">
               <h1
                 className="text-[clamp(3.5rem,11vw,7rem)] leading-[0.88] tracking-[-0.05em] text-neutral-950"
                 style={{ fontFamily: "var(--font-hero)" }}
               >
-                DiliTrust
+                Refonte de site
               </h1>
 
-              <p className="max-w-2xl text-lg leading-8 text-neutral-600 md:text-[1.35rem]">
-                Transformer une experience complexe en produit desirable
+              <p className="max-w-xl text-[clamp(1.2rem,2.5vw,1.7rem)] leading-[1.45] tracking-[-0.03em] text-neutral-700">
+                Rendre un produit dense plus clair, plus desirable et plus
+                naturel a parcourir, du desktop au mobile.
               </p>
             </div>
 
-            <div className="flex flex-wrap gap-3">
+            <div className="h-px w-24 bg-black/10" />
+
+            <div className="flex flex-wrap gap-x-6 gap-y-3 text-[0.72rem] font-semibold uppercase tracking-[0.28em] text-neutral-500">
               {["UX strategy", "Product clarity", "Mobile first"].map((pill) => (
                 <span
                   key={pill}
-                  className="inline-flex items-center rounded-full border border-black/8 bg-black/5 px-4 py-2 text-sm font-semibold text-neutral-800"
+                  className="inline-flex items-center gap-3"
                 >
+                  <span className="h-1.5 w-1.5 rounded-full bg-neutral-300" />
                   {pill}
                 </span>
               ))}
             </div>
           </div>
 
-          <div className="relative z-10">
-            <div className="overflow-hidden rounded-[28px] bg-[linear-gradient(180deg,#19202b,#0f1520)] shadow-[0_32px_60px_rgba(10,14,22,0.28)]">
-              <div className="flex items-center gap-2 border-b border-white/10 bg-white/6 px-4 py-4">
-                <span className="h-3 w-3 rounded-full bg-white/55" />
-                <span className="h-3 w-3 rounded-full bg-white/55" />
-                <span className="h-3 w-3 rounded-full bg-white/55" />
-              </div>
+          <motion.figure
+            initial={{ opacity: 0, x: 24, y: 36 }}
+            whileInView={{ opacity: 1, x: 0, y: 0 }}
+            transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+            viewport={{ once: true, amount: 0.3 }}
+            className="relative mx-auto w-full max-w-[760px]"
+          >
+            <div className="pointer-events-none absolute inset-[-6%] -z-10 bg-[radial-gradient(circle_at_50%_50%,rgba(151,176,204,0.34),rgba(244,244,241,0)_68%)] blur-2xl" />
 
-              <div className="grid min-h-[360px] grid-cols-[76px_1fr] md:min-h-[420px]">
-                <div className="grid content-start gap-3 bg-white/4 px-3 py-5">
-                  {Array.from({ length: 5 }).map((_, index) => (
-                    <div
-                      key={index}
-                      className="h-12 rounded-2xl bg-[linear-gradient(180deg,rgba(125,154,197,0.4),rgba(255,255,255,0.08))]"
-                    />
-                  ))}
-                </div>
-
-                <div className="grid gap-4 p-4 md:p-5">
-                  <div className="min-h-[116px] rounded-[22px] bg-[linear-gradient(135deg,rgba(221,205,184,0.95),rgba(147,168,195,0.92))]" />
-
-                  <div className="grid gap-3 md:grid-cols-3">
-                    {Array.from({ length: 3 }).map((_, index) => (
-                      <div
-                        key={index}
-                        className="min-h-[72px] rounded-2xl bg-white/10"
-                      />
-                    ))}
-                  </div>
-
-                  <div className="grid gap-3 md:grid-cols-2">
-                    {Array.from({ length: 4 }).map((_, index) => (
-                      <div
-                        key={index}
-                        className="min-h-[120px] rounded-2xl bg-[linear-gradient(180deg,rgba(255,255,255,0.12),rgba(255,255,255,0.04))]"
-                      />
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+            <img
+              src={heroVisual}
+              alt="Apercu retravaille du site DiliTrust"
+              className="block w-full "
+            />
+          </motion.figure>
         </motion.div>
       </section>
 
@@ -616,14 +604,13 @@ export default function CaseStudyPage(): JSX.Element {
           <motion.div
             {...reveal}
             className="max-w-4xl rounded-[30px] border border-black/8 bg-white/72 px-6 py-8 shadow-[0_18px_40px_rgba(18,22,29,0.06)] backdrop-blur-sm md:px-8 md:py-10"
-          >
+          ><p className={eyebrowClassName}>CONTEXTE</p>
             <p
               className="text-[clamp(2rem,5vw,3rem)] leading-[1.15] tracking-[-0.03em] text-neutral-950"
               style={{ fontFamily: "var(--font-hero)" }}
             >
-              Un produit puissant ne suffit pas.
-              <br />
-              Encore faut-il qu&apos;il soit compris.
+              Dans le cadre de l’adoption d’une nouvelle identité graphique, DiliTrust, acteur majeur du SaaS juridique et administratif, souhaite refondre entièrement son site web.
+
             </p>
           </motion.div>
         </div>
