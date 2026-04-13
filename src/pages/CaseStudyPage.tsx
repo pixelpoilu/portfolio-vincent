@@ -11,7 +11,7 @@ import afterImage from "../assets/images/projects/rea_web_dilitrust/home_compare
 import beforeImage from "../assets/images/projects/rea_web_dilitrust/home_compare_old2.png";
 import heroVisual from "../assets/images/projects/rea_web_dilitrust/new_dilitrust_trsp.png";
 import morphAfterImage from "../assets/images/projects/rea_web_dilitrust/morphing_after.png";
-import morphBeforeImage from "../assets/images/projects/rea_web_dilitrust/morphing_before.png";
+import seoCompare from "../assets/images/projects/rea_web_dilitrust/seo_compare.png";
 import visualImage from "../assets/images/projects/rea_web_dilitrust/mobile_first.png";
 
 const reveal = {
@@ -32,17 +32,17 @@ type ResponsiveSlide = {
   title: string;
   meta: string;
   description: string;
-  frame: "browser" | "phone";
+  frame: "browser" | "phone" | "document";
 };
 
 const responsiveSlides: ResponsiveSlide[] = [
   {
-    image: morphBeforeImage,
-    title: "Home page desktop",
-    meta: "Capture de la home page Â· 1398 x 781",
+    image: seoCompare,
+    title: "Performance SEO",
+    meta: "Une nette amélioration des performances techniques",
     description:
-      "Le point de depart conserve toute la richesse de lâ€™univers DiliTrust, avec une hero section large et une lecture installee sur desktop.",
-    frame: "browser",
+      "Le site a gagné 37% de performance globale, le volume de chargement a été divisé par 7, tout en conservant les fonctionnalités existantes (trackers, analytics, API).",
+    frame: "document",
   },
   {
     image: visualImage,
@@ -320,19 +320,13 @@ const ResponsiveShowcase = (): JSX.Element => {
     <div className="relative z-20 pb-20 md:pb-28">
       <div className={`${shellClassName} grid gap-4 pb-10 md:pb-12`}>
         <motion.div {...reveal} className="grid max-w-3xl gap-4">
-          <p className={eyebrowClassName}>Responsive design</p>
+          <p className={eyebrowClassName}>RÉSULTATS</p>
           <h2
             className={sectionTitleClassName}
             style={{ fontFamily: "var(--font-hero)" }}
           >
-            Une lecture guidÃ©e, image aprÃ¨s image.
+            Une proposition complète est réalisée et validée..
           </h2>
-          <p className="text-base leading-8 text-neutral-600 md:text-lg">
-            En scrollant vers le bas, chaque visuel prend la place du precedent
-            avec une transition laterale douce. Le contenu reste simple a faire
-            evoluer: il suffit dâ€™ajouter un nouvel objet dans la liste des
-            slides.
-          </p>
         </motion.div>
       </div>
 
@@ -507,6 +501,8 @@ const ResponsiveShowcase = (): JSX.Element => {
   );
 };
 
+
+
 export default function CaseStudyPage(): JSX.Element {
   const stats = [
     { label: "Conversion", value: 35 },
@@ -610,11 +606,163 @@ export default function CaseStudyPage(): JSX.Element {
               style={{ fontFamily: "var(--font-hero)" }}
             >
               Dans le cadre de l’adoption d’une nouvelle identité graphique, DiliTrust, acteur majeur du SaaS juridique et administratif, souhaite refondre entièrement son site web.
-
             </p>
           </motion.div>
         </div>
       </section>
+      <section className="relative z-20 pb-20 md:pb-28">
+        <div className={`${shellClassName} grid gap-10`}>
+          <motion.div {...reveal} className="grid max-w-3xl gap-4">
+            <p className={eyebrowClassName}>Objectif(s)</p>
+            <h2
+              className={sectionTitleClassName}
+              style={{ fontFamily: "var(--font-hero)" }}
+            >
+              Moderniser l’image de marque et améliorer la génération de leads.
+            </h2>
+            <p className="text-base leading-8 text-neutral-600 md:text-lg">
+              Concevoir un site capable :
+              <ul>
+                <li> • D&apos;intégrer la nouvelle charte graphique</li>
+                <li> • De préserver les performances SEO</li>
+                <li> • D&apos;améliorer la conversion</li>
+                <li> • De clarifier l&apos;offre produit</li>
+              </ul>
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      <section className="relative z-20 pb-20 md:pb-28">
+        <div className={`${shellClassName} grid gap-10`}>
+          <motion.div {...reveal} className="grid max-w-3xl gap-4">
+            <p className={eyebrowClassName}>APPROCHE UX & STRAT&Eacute;GIE(s)</p>
+            <h2
+              className={sectionTitleClassName}
+              style={{ fontFamily: "var(--font-hero)" }}
+            >
+              Moderniser l’image de marque et améliorer la génération de leads.
+            </h2>
+            <p className="text-base leading-8 text-neutral-600 md:text-lg">
+              Concevoir un site capable :
+              <ul>
+
+                <li>1. Audit de l’existant
+                  <ul>
+                    <li> • Analyse SEO</li>
+                    <li> • structure des pages </li>
+                    <li> • identification des contenus à forte valeur</li>
+                    <li> • mapping des parcours utilisateurs</li>
+                  </ul>
+                </li>
+
+                <li>2. Repositionnement du site
+                  <ul>
+                    <li> • Transformation du site :
+                      <ul>
+                        <li> D’un site institutionnel vers un site orienté conversion</li>
+                      </ul>
+                    </li>
+
+                    <li> • Mise en place de :
+                      <ul>
+                        <li> •	funnels de conversion </li>
+                        <li> •	logique de réassurance </li>
+                        <li> •	parcours en 3 étapes (comprendre → convaincre → convertir)</li>
+                      </ul>
+                    </li>
+
+
+                    <li> • identification des contenus à forte valeur</li>
+                    <li> • mapping des parcours utilisateurs</li>
+                  </ul>
+                </li>
+
+
+                <li>3. UX + contenu
+                  <ul>
+                    <li> •	réorganisation des contenus existants </li>
+                    <li> •	conservation de l’architecture SEO </li>
+                    <li> •	amélioration de la lisibilité  </li>
+                    <li> •	hiérarchisation de l’information </li>
+                  </ul>
+                </li>
+
+                <li>4. Design & UI
+                  <ul>
+                    <li>Intégration de la nouvelle charte :
+                      <ul>
+                        <li> •	respect des codes visuels  </li>
+                        <li> •	adaptation mobile-first </li>
+                        <li> •	amélioration de la lisibilité  </li>
+                        <li> •	cohérence produit  </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+
+                <li>5. Prototype & validation
+                  <ul>
+                    <li> •	Création Home Page </li>
+                    <li> •	pages types  </li>
+                    <li> •	composants clés </li>
+                  </ul>
+                </li>
+
+                <li>6. Implémentation technique
+                  <ul>
+                    <li> •	développement front-end </li>
+                    <li> •	intégration WordPress custom </li>
+                    <li> •	respect des contraintes SEO </li>
+                    <li> •	Inplémentation des trackers de suivi</li>
+                    <li> •	sécurisation des workflows backend </li>
+                  </ul>
+                </li>
+
+
+              </ul>
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      <section className="relative z-20 px-4 pb-20 md:px-6 md:pb-28">
+        <p className={eyebrowClassName}>RÉSULTATS</p>
+        <h2
+          className={sectionTitleClassName}
+          style={{ fontFamily: "var(--font-hero)" }}
+        >
+          Une proposition complète est réalisée et validée.
+          Le prototype répond aux objectifs :
+        </h2>
+        <ul>
+          <li> •	✅ SEO préservé, vitesse de chargement améliorée  </li>
+          <li> •	✅  nouvelle identité graphique intégrée </li>
+          <li> •	✅ parcours utilisateur clarifié </li>
+          <li> •	✅ conversion optimisée (logique en 3 clics) </li>
+          <li> •	✅  livraison en 4 mois </li>
+        </ul>
+        <motion.figure
+          {...reveal}
+          className="mx-auto w-full max-w-[1320px] overflow-hidden rounded-[34px] border border-black/8 bg-white/84 shadow-[0_28px_70px_rgba(18,22,29,0.12)]"
+        >
+          <motion.img
+            src={visualImage}
+            alt="Apercu mobile de la refonte DiliTrust"
+            className="block w-full"
+            initial={{ opacity: 0, y: 100 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
+            viewport={{ once: true, amount: 0.2 }}
+          />
+          <figcaption className="px-5 py-4 text-sm leading-7 text-neutral-600 md:px-6 md:text-base">
+            Une direction mobile first qui rend l&apos;experience plus directe,
+            plus aeree et plus simple a parcourir.
+          </figcaption>
+        </motion.figure>
+      </section>
+
+
 
       <section className="relative z-20 pb-20 md:pb-28">
         <div className={`${shellClassName} grid gap-10`}>
