@@ -80,6 +80,7 @@ export default function Navbar() {
     { to: "/portfolio", label: "Portfolio" },
     { to: "/etudes-de-cas", label: "Etude de cas" },
     { to: "/test", label: "Test" },
+    { to: "/case", label: "Case Exemple" },
     { to: "/a-propos", label: "A propos" },
     { to: "/contact", label: "Contact" },
   ];

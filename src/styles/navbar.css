@@ -142,6 +142,7 @@ h3 {
   line-height: 1.25;
 }
 
+/*
 p,
 li,
 label,
@@ -151,7 +152,7 @@ textarea {
   font-size: var(--fs-body);
   line-height: 1.6;
 }
-
+*/
 small,
 .meta,
 .muted {
@@ -170,7 +171,8 @@ a {
   padding: 60px 20px;
 }
 
-section {
+
+.site-page section {
   max-width: 1100px;
   margin: 0 auto;
   padding: 3rem 1.5rem;

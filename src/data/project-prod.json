@@ -3486,7 +3486,7 @@
         "masonry_0": "manson_0_azur.png",
         "masonry_1": "manson_1_azur.png",
         "case_image": "manson_0_azur.png",
-        "portfolio_image": "manson_0_azur.png",
+        "portfolio_image": "manson_0_azur_v2.png",
         "mediapath": "rea_web_azurdrones",
         "thumb": "rea_web_azurdrones_thumb.jpg",
         "medias": [
@@ -3712,7 +3712,7 @@
         "masonry_0": "manson_0_baba.png",
         "masonry_1": "manson_1_baba.png",
         "case_image": "manson_0_baba_big.png",
-        "portfolio_image": "manson_0_baba.png",
+        "portfolio_image": "manson_0_baba_big_v2.png",
         "mediapath": "rea_web_baba",
         "thumb": "rea_web_dilitrust_thumb.png",
         "medias": [
