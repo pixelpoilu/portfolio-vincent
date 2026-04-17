@@ -59,6 +59,12 @@ import ResponsiveSlide05 from "../assets/images/projects/rea_web_dilitrust/mobil
 import ResponsiveSlide06 from "../assets/images/projects/rea_web_dilitrust/mobile_first.png";
 import charteImage from "../assets/images/projects/rea_web_dilitrust/charte.png";
 
+import ProductafterImage from "../assets/images/projects/rea_web_dilitrust/prod_compare_new.png";
+import ProductbeforeImage from "../assets/images/projects/rea_web_dilitrust/prod_compare_old.png";
+
+
+
+
 //import oldInterface from "../assets/images/projects/rea_web_dilitrust/pc_phone_old.png";
 
 //import conferenceAssetsImage from "../assets/images/projects/rea_web_dilitrust/conference_assets.png";
@@ -1137,7 +1143,7 @@ export default function CaseStudyExemple(): ReactElement {
                                             Un peu de technique
                                         </span>
                                         <p className={AccordeonBodyClass} >
-                                            Redéfinir un process de production et intégrer le nouveau site.
+                                            Coder et redéfinir un process de production pour intégrer le nouveau site sur des bases solides.
                                         </p>
 
                                     </div>
@@ -1177,17 +1183,25 @@ export default function CaseStudyExemple(): ReactElement {
                                         </div>
 
                                         <span className={AccordeonHeaderTitleClass} style={{ fontFamily: "var(--font-hero)" }}>
-                                            Integration sur mesure
+                                            Mise en service
                                         </span>
                                         <p className={AccordeonBodyClass} >
-                                            Developper un template WordPress custom tout en conservant trackers, contenus et capital technique.
+                                            Assurer une mise en ligne dans les meilleures conditions.
                                         </p>
 
                                     </div>
                                 </MTAccordionHeader>
                                 <MTAccordionBody className={AccordeonAnswerClass}>
-                                    Résultats attendus : meilleure conversion, navigation plus fluide et une
-                                    expérience mobile qui renforce la confiance des utilisateurs.
+                                    <ul className="columns-2">
+                                        <li> <ArrowRightShort className={`${InsertIcon} h-6 w-6 `} /> Intégration des trackers et formulaire.</li>
+                                        <li> <ArrowRightShort className={`${InsertIcon} h-6 w-6 `} /> Optimisation SEO.</li>
+                                        <li> <ArrowRightShort className={`${InsertIcon} h-6 w-6 `} /> Connexion des landing pages.</li>
+                                        <li> <ArrowRightShort className={`${InsertIcon} h-6 w-6 `} /> Déploiement des plugins essentiels.</li>
+                                        <li> <ArrowRightShort className={`${InsertIcon} h-6 w-6 `} /> Contrôle qualité</li>
+                                        <li> <ArrowRightShort className={`${InsertIcon} h-6 w-6 `} /> Validation préprod.</li>
+                                        <li> <ArrowRightShort className={`${InsertIcon} h-6 w-6 `} /> Lancement et monitoring post-lancement.</li>
+                                    </ul>
+                                    Résultat attendu : Une transition fluide vers la nouvelle version du site.
                                 </MTAccordionBody>
                             </MTAccordion>
                         </motion.div>
@@ -1198,114 +1212,7 @@ export default function CaseStudyExemple(): ReactElement {
                 </div>
 
             </section>
-
-            {/* --- Objectifs --------- */}
-            <section className={simpleSection}>
-                <div className={fullLine}></div>
-                <div className={shellClassName}>
-                    <motion.div {...reveal}>
-                        <p className={eyebrowClassName}>Réalisation</p>
-                        <h2
-                            className="mt-4 text-3xl leading-tight tracking-[-0.04em] text-neutral-950 md:text-[3rem]"
-                            style={{ fontFamily: "var(--font-hero)" }}
-                        >
-                            Les grandes étapes du projet
-                        </h2>
-
-                        <div className="mt-6 grid gap-3 text-base leading-7 text-neutral-700">
-                            {[
-                                "Installer la nouvelle charte graphique sur l'ensemble du site.",
-                                "Preserver la structure SEO, les trackers et les contenus forts.",
-                                "Clarifier l'offre produit pour generer davantage de leads.",
-                                "Rendre la navigation plus naturelle sur mobile comme sur desktop.",
-                            ].map((item, index) => (
-                                <motion.div key={item} {...reveal}>
-                                    <div
-                                        className={neutralCells}
-                                    >
-                                        <span className="text-sm font-semibold uppercase tracking-[0.22em] text-base/6 text-neutral-400">
-                                            {String(index + 1).padStart(2, "0")}
-                                        </span>
-                                        <span>{item}</span>
-                                    </div>
-                                </motion.div>
-                            ))}
-                        </div>
-
-                        <div className="mt-7 grid gap-5 md:grid-cols-2">
-                            <div>
-                                <p className="text-[0.72rem] font-semibold uppercase tracking-[0.28em] text-neutral-500">
-                                    Outils
-                                </p>
-                                <div className="mt-3 flex flex-wrap gap-2">
-                                    {["Adobe XD", "Pack Adobe", "Vagrant", "VS Code"].map(
-                                        (tool) => (
-                                            <span
-                                                key={tool}
-                                                className="rounded-full border border-black/8 bg-white px-3 py-2 text-sm text-neutral-700"
-                                            >
-                                                {tool}
-                                            </span>
-                                        ),
-                                    )}
-                                </div>
-                            </div>
-
-                            <div>
-                                <p className="text-[0.72rem] font-semibold uppercase tracking-[0.28em] text-neutral-500">
-                                    Stack
-                                </p>
-                                <div className="mt-3 flex flex-wrap gap-2">
-                                    {["WordPress", "LESS", "Bootstrap", "PHP", "MySQL"].map(
-                                        (tech) => (
-                                            <span
-                                                key={tech}
-                                                className="rounded-full border border-black/8 bg-white px-3 py-2 text-sm text-neutral-700"
-                                            >
-                                                {tech}
-                                            </span>
-                                        ),
-                                    )}
-                                </div>
-                            </div>
-                        </div>
-                    </motion.div>
-                </div><div className={fullLine}></div>
-            </section>
-
-
-
-            {/* ---Etapes--------- */}
-            <section className={fullWidthSection}>
-                <div
-                    className={`${shellClassName}`}
-                >
-                    {processSteps.map((step) => (
-                        <motion.article
-                            key={step.id}
-                            {...reveal}
-                            className="rounded-[12px] m-4 p-4 bg-white/82 p-6 md:p-7"
-                        >
-                            <p className="text-[0.72rem] font-light uppercase tracking-[0.28em] text-neutral-400">
-                                &Eacute;tape {step.id}
-                            </p>
-                            <h3
-                                className="mt-4 text-2xl leading-tight tracking-[-0.03em] text-neutral-950"
-                                style={{ fontFamily: "var(--font-hero)" }}
-                            >
-                                {step.title}
-                            </h3>
-                            <p className="mt-3 text-base leading-7 text-neutral-600">
-                                {step.description}
-                            </p>
-                            <img src={step.visuel} />
-                        </motion.article>
-                    ))}
-
-                </div>
-            </section>
-
-            {/* ---Avant/Après--------- */}
+            {/* ---Avant/Après HOME--------- */}
             <section className={simpleSection}>
                 <div
                     className={shellClassName}
@@ -1313,7 +1220,7 @@ export default function CaseStudyExemple(): ReactElement {
                     <div className="grid gap-6 md:grid-cols-1">
                         <SectionHeading
                             eyebrow="Avant / après"
-                            title="Une home plus lisible, plus structurée et plus attractive."
+                            title="Une Home plus lisible, plus structurée et plus attractive."
                             body="Le travail porte autant sur l'image que sur la compréhension immédiate de l'offre. Le comparatif montre le changement de hiérarchie, de respiration et de ton."
                         />
                         <motion.div {...reveal}>
@@ -1323,7 +1230,7 @@ export default function CaseStudyExemple(): ReactElement {
                             <div className={`${surfaceClassName} p-6 md:p-7`}>
                                 <p className={eyebrowClassName}>Avant</p>
                                 <ul className="text-base text-neutral-700">
-                                    <li>Lecture plus dense et parcours moins guide.</li>
+                                    <li>Lecture peu contrastée.</li>
                                     <li>Perception plus institutionnelle que produit.</li>
                                     <li>Moins de respiration et moins de focalisation.</li>
                                 </ul>
@@ -1339,22 +1246,53 @@ export default function CaseStudyExemple(): ReactElement {
                             </div>
                         </motion.div>
                     </div>
-
-
                 </div>
             </section>
 
+            {/* ---Avant/Après PRODUITS --------- */}
+            <section className={simpleSection}>
+                <div
+                    className={shellClassName}
+                >
+                    <div className="grid gap-6 md:grid-cols-1">
+                        <SectionHeading
+                            eyebrow="Avant / après"
+                            title="Une offre plus cohérente et compréhensible."
+                            body="Le regroupement des solutions SASS sous forme de suite et l'identification de chaque module par un icone, rendent la lecture plus efficace, ainsi que la prise de décision pour l'utilisateur."
+                        />
+                        <motion.div {...reveal}>
+                            <BeforeAfter before={ProductbeforeImage} after={ProductafterImage} />
+                        </motion.div>
+                        <motion.div {...reveal} className="grid gap-4 md:grid-cols-2">
+                            <div className={`${surfaceClassName} p-6 md:p-7`}>
+                                <p className={eyebrowClassName}>Avant</p>
+                                <ul className="text-base text-neutral-700">
+                                    <li>Une lecture très espacée de l'offre.</li>
+                                    <li>Un parcours utilisateur peu intuitif.</li>
+                                    <li>Identification des modules SASS uniquement liée au nom.</li>
+                                </ul>
+                            </div>
 
-
-
+                            <div className={`${surfaceClassName} p-6 md:p-7`}>
+                                <p className={eyebrowClassName}>Après</p>
+                                <ul className="text-base text-neutral-700">
+                                    <li>Compréhension rapide de la gamme de produits.</li>
+                                    <li>Identification directe des modules par un icone.</li>
+                                    <li>Une lecture plus compacte.</li>
+                                </ul>
+                            </div>
+                        </motion.div>
+                    </div>
+                </div>
+            </section>
 
             {/* ----- Blocs Txt/images -------- */}
             <section className="relative z-10 pb-0 md:pb-0">
                 <div className={`${shellClassName} grid gap-10`}>
                     <SectionHeading
                         eyebrow="Choix de conception"
-                        title="Une refonte guidee par la clarte, la conversion et le mobile."
-                        body="Chaque famille d'ecrans a ete retravaillee pour raconter une offre dense plus simplement, sans perdre la richesse du produit ni le cadre technique existant."
+                        title="Une refonte guidée par la clarte, la conversion et le mobile."
+                        body="Chaque famille d'écrans a ete retravaillée pour raconter une offre dense plus simplement, sans perdre la richesse du produit ni le cadre technique existant."
                     />
 
                     <div className="grid gap-5 lg:grid-cols-1">
@@ -1479,6 +1417,141 @@ export default function CaseStudyExemple(): ReactElement {
                     </div>
                 </div>
             </section>
+
+            {/* --- Objectifs --------- */}
+            <section className={simpleSection}>
+                <div className={fullLine}></div>
+                <div className={shellClassName}>
+                    <motion.div {...reveal}>
+                        <p className={eyebrowClassName}>Réalisation</p>
+                        <h2
+                            className="mt-4 text-3xl leading-tight tracking-[-0.04em] text-neutral-950 md:text-[3rem]"
+                            style={{ fontFamily: "var(--font-hero)" }}
+                        >
+                            Les grandes étapes du projet
+                        </h2>
+
+                        <div className="mt-6 grid gap-3 text-base leading-7 text-neutral-700">
+                            {[
+                                "Installer la nouvelle charte graphique sur l'ensemble du site.",
+                                "Preserver la structure SEO, les trackers et les contenus forts.",
+                                "Clarifier l'offre produit pour generer davantage de leads.",
+                                "Rendre la navigation plus naturelle sur mobile comme sur desktop.",
+                            ].map((item, index) => (
+                                <motion.div key={item} {...reveal}>
+                                    <div
+                                        className={neutralCells}
+                                    >
+                                        <span className="text-sm font-semibold uppercase tracking-[0.22em] text-base/6 text-neutral-400">
+                                            {String(index + 1).padStart(2, "0")}
+                                        </span>
+                                        <span>{item}</span>
+                                    </div>
+                                </motion.div>
+                            ))}
+                        </div>
+
+                        <div className="mt-7 grid gap-5 md:grid-cols-2">
+                            <div>
+                                <p className="text-[0.72rem] font-semibold uppercase tracking-[0.28em] text-neutral-500">
+                                    Outils
+                                </p>
+                                <div className="mt-3 flex flex-wrap gap-2">
+                                    {["Adobe XD", "Pack Adobe", "Vagrant", "VS Code"].map(
+                                        (tool) => (
+                                            <span
+                                                key={tool}
+                                                className="rounded-full border border-black/8 bg-white px-3 py-2 text-sm text-neutral-700"
+                                            >
+                                                {tool}
+                                            </span>
+                                        ),
+                                    )}
+                                </div>
+                            </div>
+
+                            <div>
+                                <p className="text-[0.72rem] font-semibold uppercase tracking-[0.28em] text-neutral-500">
+                                    Stack
+                                </p>
+                                <div className="mt-3 flex flex-wrap gap-2">
+                                    {["WordPress", "LESS", "Bootstrap", "PHP", "MySQL"].map(
+                                        (tech) => (
+                                            <span
+                                                key={tech}
+                                                className="rounded-full border border-black/8 bg-white px-3 py-2 text-sm text-neutral-700"
+                                            >
+                                                {tech}
+                                            </span>
+                                        ),
+                                    )}
+                                </div>
+                            </div>
+                        </div>
+                    </motion.div>
+                </div><div className={fullLine}></div>
+            </section>
+
+
+
+            {/* ---Etapes--------- */}
+            <section className={fullWidthSection}>
+                <div
+                    className={`${shellClassName}`}
+                >
+                    {processSteps.map((step) => (
+                        <motion.article
+                            key={step.id}
+                            {...reveal}
+                            className="rounded-[12px] m-4 p-4 bg-white/82 p-6 md:p-7"
+                        >
+                            <p className="text-[0.72rem] font-light uppercase tracking-[0.28em] text-neutral-400">
+                                &Eacute;tape {step.id}
+                            </p>
+                            <h3
+                                className="mt-4 text-2xl leading-tight tracking-[-0.03em] text-neutral-950"
+                                style={{ fontFamily: "var(--font-hero)" }}
+                            >
+                                {step.title}
+                            </h3>
+                            <p className="mt-3 text-base leading-7 text-neutral-600">
+                                {step.description}
+                            </p>
+                            <img src={step.visuel} />
+                        </motion.article>
+                    ))}
+
+                </div>
+            </section>
+
+
+
+
+            <section className={simpleSection}>
+                <div className={`${shellClassName} grid gap-10`}>
+                    <motion.div {...reveal} className="grid max-w-3xl gap-4">
+                        <p className={eyebrowClassName}>Avant / Apres</p>
+                        <h2
+                            className={sectionTitleClassName}
+                            style={{ fontFamily: "var(--font-hero)" }}
+                        >
+                            Clarifier la promesse sans effacer la profondeur.
+                        </h2>
+                        <p className="text-base leading-8 text-neutral-600 md:text-lg">
+                            La comparaison directe met en evidence le gain de lisibilite,
+                            l&apos;organisation du contenu et la sensation de produit plus
+                            premium sur desktop comme sur mobile.
+                        </p>
+                    </motion.div>
+
+                    <motion.div {...reveal}>
+                        <BeforeAfter before={beforeImage} after={afterImage} />
+                    </motion.div>
+                </div>
+            </section>
+
+
+
 
             {/* ------------- */}
 
@@ -1624,28 +1697,7 @@ export default function CaseStudyExemple(): ReactElement {
 
 
 
-            <section className={simpleSection}>
-                <div className={`${shellClassName} grid gap-10`}>
-                    <motion.div {...reveal} className="grid max-w-3xl gap-4">
-                        <p className={eyebrowClassName}>Avant / Apres</p>
-                        <h2
-                            className={sectionTitleClassName}
-                            style={{ fontFamily: "var(--font-hero)" }}
-                        >
-                            Clarifier la promesse sans effacer la profondeur.
-                        </h2>
-                        <p className="text-base leading-8 text-neutral-600 md:text-lg">
-                            La comparaison directe met en evidence le gain de lisibilite,
-                            l&apos;organisation du contenu et la sensation de produit plus
-                            premium sur desktop comme sur mobile.
-                        </p>
-                    </motion.div>
 
-                    <motion.div {...reveal}>
-                        <BeforeAfter before={beforeImage} after={afterImage} />
-                    </motion.div>
-                </div>
-            </section>
 
             <ResponsiveShowcase />
 
