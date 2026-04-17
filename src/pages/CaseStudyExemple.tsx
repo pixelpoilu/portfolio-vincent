@@ -5,7 +5,7 @@ import {
     useSpring,
     useTransform,
 } from "framer-motion";
-import { type ComponentType, type PointerEvent, type ReactElement, type ReactNode, useEffect, useRef, useState } from "react";
+import { type ComponentType, type MouseEvent, type PointerEvent, type ReactElement, type ReactNode, useEffect, useRef, useState } from "react";
 
 import {
     Accordion,
@@ -30,9 +30,7 @@ const MTAccordionBody = AccordionBody as unknown as ComponentType<{
 }>;
 import { GoChevronDown } from "react-icons/go";
 const ChevronDownIcon = GoChevronDown as unknown as ComponentType<{ className?: string }>;
-import { GoChevronUp } from "react-icons/go";
-const ChevronUpIcon = GoChevronUp as unknown as ComponentType<{ className?: string }>;
-
+import { Link } from "react-router-dom";
 
 /*
 import {
@@ -70,6 +68,8 @@ import morphingBeforeImage from "../assets/images/projects/rea_web_dilitrust/mor
 
 import phoneMenuImage from "../assets/images/projects/rea_web_dilitrust/home_phone_menu.PNG";
 import seoCompareImage from "../assets/images/projects/rea_web_dilitrust/seo_compare.png";
+
+
 /*
 // Icons
 import { GoArrowDownRight } from "react-icons/go";
@@ -105,7 +105,7 @@ const reveal = {
     viewport: { once: true, amount: 0.25 },
 };
 
-const shellClassName = "mx-auto w-full max-w-[1200px] pt-10 pb-10 px-6 md:px-8";
+const shellClassName = "mx-auto max-w-[1200px] pt-10 pb-10 px-6 md:px-8";
 const eyebrowClassName =
     "text-[0.79rem]  uppercase tracking-[0.32em] text-neutral-500";
 
@@ -122,10 +122,73 @@ const fullLine =
 const neutralCells =
     "flex gap-4 rounded-[12px] border border-black/8 bg-black/[0.02]  bg-white/82 shadow-[0_20px_50px_rgba(18,22,29,0.08)] backdrop-blur-sm px-4 py-4";
 
-/* 
-class="max-w-3xl text-base leading-8 text-neutral-600 md:text-lg"
-    "flex gap-4 rounded-[12px] border border-black/8 bg-black/[0.02] px-4 py-4";
+// Accordeon Syles
+const AccordeonClass =
+    "rounded-[12px] mb-0 mt-0 p-4 bg-white/82 p-6 md:p-7";
+const AccordeonHeaderClass =
+    "border-transparent p-0 m-0 mt-3";
+const StepNumClass =
+    "border-red-100 text-left text-[0.72rem] font-light uppercase tracking-[0.28em] text-neutral-400 place-items-start m-0 p-0";
+const AccordeonHeaderTitleClass =
+    "mt-4 tracking-[-0.03em] text-[1.5rem]  m-0 p-0";
+const AccordeonBodyClass =
+    "m-0  font-light text-neutral-600 text-base leading-8";
+const AccordeonAnswerClass =
+    "m-0 text-base leading-8";
 
+const fullScreen =
+    "mx-auto h-screen max-w-fit grid  grid-cols-1 gap-4 relative ";
+const nextScreenLinkClass =
+    "absolute right-0 bottom-0";
+
+
+
+/* bg-amber-800 xl:min-h-full xl:min-w-full
+orange 2xl:min-h-full 2xl:min-w-full bg-gray-800 sm:bg-green-800 md:bg-amber-800 lg:bg-yellow-800 xl:bg-orange-800 2xl:bg-olive-200
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 100%;
+  max-width: fit-content;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+  gap: 2rem;
+
+    "relative z-20 px-4 pb-0 pt-32 md:px-6 md:pb-0 md:pt-[180px]";
+sm	40rem (640px)	@media (width >= 40rem) { ... }
+md	48rem (768px)	@media (width >= 48rem) { ... }
+lg	64rem (1024px)	@media (width >= 64rem) { ... }
+xl	80rem (1280px)	@media (width >= 80rem) { ... }
+2xl	96rem (1536px)	@media (width >= 96rem) { ... }
+*/
+
+/*
+import React from "react";
+import { useLocation } from "react-router-dom";
+const useScrollToLocation = () => {
+    const scrolledRef = React.useRef(false);
+    const { hash } = useLocation();
+    const hashRef = React.useRef(hash);
+
+    React.useEffect(() => {
+        if (hash) {
+            // We want to reset if the hash has changed
+            if (hashRef.current !== hash) {
+                hashRef.current = hash;
+                scrolledRef.current = false;
+            }
+
+            // only attempt to scroll if we haven't yet (this could have just reset above if hash changed)
+            if (!scrolledRef.current) {
+                const id = hash.replace('#', '');
+                const element = document.getElementById(id);
+                if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                    scrolledRef.current = true;
+                }
+            }
+        }
+    });
+};
 
 */
 type ResponsiveSlide = {
@@ -222,7 +285,11 @@ const useCountUp = (end: number, duration: number = 1.6): number => {
 
     return value;
 };
-
+type MetricOld = {
+    value: string;
+    label: string;
+    detail: string;
+};
 type BeforeAfterProps = {
     before: string;
     after: string;
@@ -768,7 +835,32 @@ function SectionHeading({
     );
 }
 
-
+const metricsOlds: MetricOld[] = [
+    {
+        value: "1 150",
+        label: "pages maîtresses analysées",
+        detail:
+            "",
+    },
+    {
+        value: "5",
+        label: "langues synchronisées",
+        detail:
+            "",
+    },
+    {
+        value: "1 750",
+        label: "articles de blog recensés",
+        detail:
+            "",
+    },
+    {
+        value: "20%",
+        label: "de contenus à forte valeur mis en avant",
+        detail:
+            "",
+    },
+];
 export default function CaseStudyExemple(): ReactElement {
 
 
@@ -777,9 +869,16 @@ export default function CaseStudyExemple(): ReactElement {
         { label: "Engagement", value: 20 },
         { label: "Bounce", value: 15 },
     ];
-    const [accordionOpen, setAccordionOpen] = useState(true);
-    const [accordionOpen2, setAccordionOpen2] = useState(false);
-    const [accordionOpen3, setAccordionOpen3] = useState(false);
+    /*
+        const [accordionOpen, setAccordionOpen] = useState(true);
+        const [accordionOpen2, setAccordionOpen2] = useState(false);
+        const [accordionOpen3, setAccordionOpen3] = useState(false);
+    */
+    const [myAccor01Open, setmyAccor01Open] = useState(true);
+    const [myAccor01Open2, setmyAccor01Open2] = useState(false);
+    const [myAccor01Open3, setmyAccor01Open3] = useState(false);
+    const [myAccor01Open4, setmyAccor01Open4] = useState(false);
+
     const { scrollYProgress } = useScroll();
     const grainOpacity = useSpring(
         useTransform(scrollYProgress, [0, 0.45], [0, 0.07]),
@@ -790,6 +889,13 @@ export default function CaseStudyExemple(): ReactElement {
         },
     );
 
+    const handleScrollToScreen02 = (event: MouseEvent<HTMLAnchorElement>) => {
+        event.preventDefault();
+        document.getElementById("screen02")?.scrollIntoView({
+            behavior: "smooth",
+        });
+    };
+
     return (
         <main
             className="relative isolate text-neutral-950"
@@ -797,6 +903,7 @@ export default function CaseStudyExemple(): ReactElement {
                 background: "var(--bg)",
             }}
         >
+            {/* -----BG texture-------- */}
             <motion.div
                 aria-hidden="true"
                 className="pointer-events-none fixed inset-0 z-10 mix-blend-multiply"
@@ -808,8 +915,8 @@ export default function CaseStudyExemple(): ReactElement {
                     willChange: "opacity",
                 }}
             />
-
-            <section className="relative z-20 px-4 pb-0 pt-32 md:px-6 md:pb-0 md:pt-[180px]">
+            {/* SCREEN01 -----Header-------- */}
+            <section className={fullScreen}>
                 <motion.div
                     {...reveal}
                     className={`${shellClassName} grid items-center gap-12 md:grid-cols-[minmax(0,0.86fr)_minmax(0,1.14fr)] md:gap-16`}
@@ -861,33 +968,45 @@ export default function CaseStudyExemple(): ReactElement {
                         />
                     </motion.figure>
                 </motion.div>
+
+
+                <Link to="#screen02" className={nextScreenLinkClass} onClick={handleScrollToScreen02}>
+                    <span>Scroller</span>
+                </Link>
+
+
             </section>
 
-            <section className={simpleSection}>
-                <div className={shellClassName}>
-                    <motion.div
-                        {...reveal}
-                    ><SectionHeading
-                            eyebrow="Contexte"
-                            title=""
-                            body="Avec l'arrivée d'une nouvelle identité graphique, le site devait évoluer sans perdre son capital SEO ni ses contenus à forte valeur."
-                        />
-                    </motion.div>
-                </div>
-                <div className={fullLine}></div>
-                <div className={shellClassName}>
-                    <motion.div
-                        {...reveal}
-                    ><SectionHeading
-                            eyebrow="Réponse"
-                            title=""
-                            body="Poser un système de pages plus clair, plus convaincant et
-                            plus souple a décliner, puis l'intégrer dans un template
-                            WordPress sur mesure."
-                        />
-                    </motion.div>
-                </div>
+            {/* SCREEN02 --- Contexte / Réponse--------- */}
+            <section className={fullScreen} id="screen02">
 
+                <motion.div {...reveal}>
+                    <div className={shellClassName}>
+                        <p className={eyebrowClassName}>Contexte</p>
+                        <p className="mt-4 text-base leading-8 text-neutral-700">
+                            Avec l'arrivée d'une nouvelle identité graphique, le site
+                            devait évoluer sans perdre son capital SEO ni ses contenus
+                            a forte valeur.
+                        </p>
+                    </div></motion.div>
+                <motion.div {...reveal}>
+                    <div className={shellClassName}>
+                        <p className={eyebrowClassName}>Réponse</p>
+                        <p className="mt-4 text-base leading-8 text-neutral-700">
+                            Poser un système de pages plus clair, plus convaincant et
+                            plus souple a décliner, puis l'intégrer dans un template
+                            WordPress sur mesure.
+                        </p>
+                    </div>
+                </motion.div>
+
+
+
+            </section>
+
+
+            {/* --- Objectifs --------- */}
+            <section className={simpleSection}>
                 <div className={fullLine}></div>
                 <div className={shellClassName}>
                     <motion.div {...reveal}>
@@ -960,7 +1079,191 @@ export default function CaseStudyExemple(): ReactElement {
                 </div><div className={fullLine}></div>
             </section>
 
+            {/* ----- Accordéon 01 -------- */}
+            <section className={fullWidthSection}>
+                <div
+                    className={`${shellClassName} grid gap-4 pb-0 md:pb-0`}
+                >
+                    <motion.div
+                        {...reveal}
+                    ><SectionHeading
+                            eyebrow="APPROCHE UX & STRATÉGIE"
+                            title=""
+                            body=""
+                            className="m-0 p-0"
+                        />
+                    </motion.div>
+                </div>
+                <div className={`${shellClassName} grid gap-4 pb-0 md:pb-0`}>
 
+                    <div className="m-0 p-0 grid gap-6 md:grid-cols-1">
+                        <motion.div
+                            {...reveal}
+                        >
+                            <MTAccordion
+                                open={myAccor01Open}
+                                icon={
+                                    <ChevronDownIcon
+                                        className={`text-xl transition-transform duration-300 ${myAccor01Open ? "rotate-180" : ""}`}
+                                    />
+                                } className={AccordeonClass}
+                            >
+                                <MTAccordionHeader
+                                    onClick={() => setmyAccor01Open((current) => !current)}
+                                    className={AccordeonHeaderClass}
+                                >
+                                    <div
+                                    >
+                                        <div className={StepNumClass}>
+                                            &Eacute;tape 1
+                                        </div>
+
+                                        <span className={AccordeonHeaderTitleClass} style={{ fontFamily: "var(--font-hero)" }}>
+                                            Audit de l'existant
+                                        </span>
+                                        <p className={AccordeonBodyClass} >
+                                            &Eacute;tat des lieux complet, afin d'identifier les forces a conserver et les points de friction a éliminer.
+                                        </p>
+
+                                    </div>
+                                </MTAccordionHeader>
+                                <MTAccordionBody className={AccordeonAnswerClass}>
+
+                                    <div className="grid gap-4 sm:grid-cols-2">
+                                        {metricsOlds.map((metricOld) => (
+                                            <motion.article
+                                                key={metricOld.label}
+                                                {...reveal}
+                                                className="rounded-[30px] border border-black/8 bg-white/82 shadow-[0_10px_10px_rgba(18,22,29,0.08)] backdrop-blur-sm p-6 md:p-7"
+                                            >
+                                                <p className="text-[clamp(2.6rem,5vw,4.2rem)] font-semibold leading-[0.92] tracking-[-0.1em] text-neutral-600" style={{ opacity: 0.55 }}>
+                                                    {metricOld.value}
+                                                </p>
+                                                <h3 className="mt-3 text-lg font-thin text-neutral-600">
+                                                    {metricOld.label}
+                                                </h3>
+                                                <p className="mt-3 text-base text-neutral-600">
+                                                    {metricOld.detail}
+                                                </p>
+                                            </motion.article>
+                                        ))}
+                                    </div>
+                                </MTAccordionBody>
+                            </MTAccordion>
+                        </motion.div>
+                        <motion.div {...reveal}>
+                            <MTAccordion
+                                open={myAccor01Open2}
+                                icon={
+                                    <ChevronDownIcon
+                                        className={`text-xl transition-transform duration-300 ${myAccor01Open2 ? "rotate-180" : ""}`}
+                                    />
+                                } className={AccordeonClass}
+                            >
+                                <MTAccordionHeader
+                                    onClick={() => setmyAccor01Open2((current) => !current)}
+                                    className={AccordeonHeaderClass}
+                                >
+                                    <div
+                                    >
+                                        <div className={StepNumClass}>
+                                            &Eacute;tape 2
+                                        </div>
+
+                                        <span className={AccordeonHeaderTitleClass} style={{ fontFamily: "var(--font-hero)" }}>
+                                            Repositionnement
+                                        </span>
+                                        <p className={AccordeonBodyClass} >
+                                            Faire evoluer un site institutionnel vers un site plus lisible, plus rassurant et plus oriente conversion.
+                                        </p>
+
+                                    </div>
+                                </MTAccordionHeader>
+                                <MTAccordionBody className={AccordeonAnswerClass}>
+                                    La page a été réorganisée pour rendre le parcours plus simple, le message plus
+                                    clair et les appels à l’action plus visibles sur desktop comme sur mobile.
+                                </MTAccordionBody>
+                            </MTAccordion>
+                        </motion.div>
+
+                        <motion.div {...reveal}>
+                            <MTAccordion
+                                open={myAccor01Open3}
+                                icon={
+                                    <ChevronDownIcon
+                                        className={`text-xl transition-transform duration-300 ${myAccor01Open3 ? "rotate-180" : ""}`}
+                                    />
+                                } className={AccordeonClass}
+                            >
+                                <MTAccordionHeader
+                                    onClick={() => setmyAccor01Open3((current) => !current)}
+                                    className={AccordeonHeaderClass}
+                                >
+                                    <div
+                                    >
+                                        <div className={StepNumClass}>
+                                            &Eacute;tape 3
+                                        </div>
+
+                                        <span className={AccordeonHeaderTitleClass} style={{ fontFamily: "var(--font-hero)" }}>
+                                            Prototype UX/UI
+                                        </span>
+                                        <p className={AccordeonBodyClass} >
+                                            Recomposer la home, valider la nouvelle narration et installer la charte sur les gabarits clefs.
+                                        </p>
+
+                                    </div>
+                                </MTAccordionHeader>
+                                <MTAccordionBody className={AccordeonAnswerClass}>
+                                    Résultats attendus : meilleure conversion, navigation plus fluide et une
+                                    expérience mobile qui renforce la confiance des utilisateurs.
+                                </MTAccordionBody>
+                            </MTAccordion>
+                        </motion.div>
+
+                        <motion.div {...reveal}>
+                            <MTAccordion
+                                open={myAccor01Open4}
+                                icon={
+                                    <ChevronDownIcon
+                                        className={`text-xl transition-transform duration-300 ${myAccor01Open4 ? "rotate-180" : ""}`}
+                                    />
+                                } className={AccordeonClass}
+                            >
+                                <MTAccordionHeader
+                                    onClick={() => setmyAccor01Open4((current) => !current)}
+                                    className={AccordeonHeaderClass}
+                                >
+                                    <div
+                                    >
+                                        <div className={StepNumClass}>
+                                            &Eacute;tape 4
+                                        </div>
+
+                                        <span className={AccordeonHeaderTitleClass} style={{ fontFamily: "var(--font-hero)" }}>
+                                            Integration sur mesure
+                                        </span>
+                                        <p className={AccordeonBodyClass} >
+                                            Developper un template WordPress custom tout en conservant trackers, contenus et capital technique.
+                                        </p>
+
+                                    </div>
+                                </MTAccordionHeader>
+                                <MTAccordionBody className={AccordeonAnswerClass}>
+                                    Résultats attendus : meilleure conversion, navigation plus fluide et une
+                                    expérience mobile qui renforce la confiance des utilisateurs.
+                                </MTAccordionBody>
+                            </MTAccordion>
+                        </motion.div>
+
+
+
+                    </div>
+                </div>
+
+            </section>
+
+            {/* ---Etapes--------- */}
             <section className={fullWidthSection}>
                 <div
                     className={`${shellClassName}`}
@@ -990,9 +1293,7 @@ export default function CaseStudyExemple(): ReactElement {
                 </div>
             </section>
 
-
-            {/* ------------- */}
-
+            {/* ---Avant/Après--------- */}
             <section className={simpleSection}>
                 <div
                     className={shellClassName}
@@ -1030,89 +1331,12 @@ export default function CaseStudyExemple(): ReactElement {
 
                 </div>
             </section>
-            {/* ------------- */}
-            <section className={simpleSection}>
-                <div
-                    className={shellClassName}
-                >
-                    <div className="grid gap-6 md:grid-cols-1">
-                        <SectionHeading
-                            eyebrow="Avant / après"
-                            title="Une home plus lisible, plus structurée et plus attractive."
-                            body="Le travail porte autant sur l'image que sur la compréhension immédiate de l'offre. Le comparatif montre le changement de hiérarchie, de respiration et de ton."
-                        />
-                        <div className="mt-8 grid gap-3">
-                            <MTAccordion
-                                open={accordionOpen}
-                                icon={
-                                    <ChevronDownIcon
-                                        className={`text-xl transition-transform duration-300 ${accordionOpen ? "rotate-180" : ""}`}
-                                    />
-                                }
-                                className={`${surfaceClassName} rounded-[28px] border-black/10 bg-white`}
-                            >
-                                <MTAccordionHeader
-                                    onClick={() => setAccordionOpen((current) => !current)}
-                                    className="rounded-[28px] bg-neutral-100 px-5 py-4 text-left text-base font-semibold uppercase tracking-[0.02em] text-neutral-950 shadow-none"
-                                >
-                                    Pourquoi cette refonte ?
-                                </MTAccordionHeader>
-                                <MTAccordionBody className="px-5 pb-6 text-base leading-7 text-neutral-700">
-                                    Nous avons clarifié l’offre, restructuré le contenu pour le SEO et adapté
-                                    l’interface aux parcours mobile-first sans perdre la vitesse ni la
-                                    performance technique.
-                                </MTAccordionBody>
-                            </MTAccordion>
-
-                            <MTAccordion
-                                open={accordionOpen2}
-                                icon={
-                                    <ChevronDownIcon
-                                        className={`text-xl transition-transform duration-300 ${accordionOpen2 ? "rotate-180" : ""}`}
-                                    />
-                                }
-                                className={`${surfaceClassName} rounded-[28px] border-black/10 bg-white`}
-                            >
-                                <MTAccordionHeader
-                                    onClick={() => setAccordionOpen2((current) => !current)}
-                                    className="rounded-[28px] bg-neutral-100 px-5 py-4 text-left text-base font-semibold uppercase tracking-[0.02em] text-neutral-950 shadow-none"
-                                >
-                                    Comment le design a-t-il été optimisé ?
-                                </MTAccordionHeader>
-                                <MTAccordionBody className="px-5 pb-6 text-base leading-7 text-neutral-700">
-                                    La page a été réorganisée pour rendre le parcours plus simple, le message plus
-                                    clair et les appels à l’action plus visibles sur desktop comme sur mobile.
-                                </MTAccordionBody>
-                            </MTAccordion>
-
-                            <MTAccordion
-                                open={accordionOpen3}
-                                icon={
-                                    <ChevronDownIcon
-                                        className={`text-xl transition-transform duration-300 ${accordionOpen3 ? "rotate-180" : ""}`}
-                                    />
-                                }
-                                className={`${surfaceClassName} rounded-[28px] border-black/10 bg-white`}
-                            >
-                                <MTAccordionHeader
-                                    onClick={() => setAccordionOpen3((current) => !current)}
-                                    className="rounded-[28px] bg-neutral-100 px-5 py-4 text-left text-base font-semibold uppercase tracking-[0.02em] text-neutral-950 shadow-none"
-                                >
-                                    Quels résultats pouvons-nous attendre ?
-                                </MTAccordionHeader>
-                                <MTAccordionBody className="px-5 pb-6 text-base leading-7 text-neutral-700">
-                                    Résultats attendus : meilleure conversion, navigation plus fluide et une
-                                    expérience mobile qui renforce la confiance des utilisateurs.
-                                </MTAccordionBody>
-                            </MTAccordion>
-                        </div>
-
-                    </div>
-                </div>
-            </section>
 
 
-            {/* ------------- */}
+
+
+
+            {/* ----- Blocs Txt/images -------- */}
             <section className="relative z-10 pb-0 md:pb-0">
                 <div className={`${shellClassName} grid gap-10`}>
                     <SectionHeading
