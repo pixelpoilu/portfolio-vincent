@@ -79,6 +79,7 @@ export default function Navbar() {
     { to: "/", label: "Accueil", end: true },
     { to: "/portfolio", label: "Portfolio" },
     { to: "/etudes-de-cas", label: "Etude de cas" },
+    { to: "/dt", label: "DiliTrust" },
     { to: "/test", label: "Test" },
     { to: "/case", label: "Case Exemple" },
     { to: "/a-propos", label: "A propos" },
@@ -151,7 +152,7 @@ export default function Navbar() {
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1, transition: panelTransition }}
               exit={{ y: 20, opacity: 0, transition: panelTransition }}
-              onClick={(event) => event.stopPropagation()}
+              onClick={(event: React.MouseEvent<HTMLDivElement>) => event.stopPropagation()}
             >
               <div className="mobile-nav-header">
                 <NavLink to="/" className="mobile-nav-logo">

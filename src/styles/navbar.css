@@ -180,6 +180,10 @@ a {
   gap: 2rem;
 }
 
+:root {
+  --navbar-height: 72px;
+}
+
 /* ===================================================== */
 /*                 NAVBAR                                */
 /* ===================================================== */
@@ -191,6 +195,8 @@ a {
 
   display: flex;
   justify-content: center;
+
+  --navbar-height: 72px;
 
   animation: fadeSlideDown 0.8s cubic-bezier(.22, 1, .36, 1);
 
