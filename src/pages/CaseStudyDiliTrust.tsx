@@ -43,6 +43,8 @@ const ArrowRedo = IoArrowRedo as unknown as ComponentType<{ className?: string }
 
 // Visuels
 import grainTexture from "../assets/images/textures/grain.png";
+import CaseStudyProjectData from "../components/CaseStudyProjectData";
+import type { Project } from "../types/Project";
 
 //Comparaison HOME
 import homeBeforeImage from "../assets/images/projects/rea_web_dilitrust/home_before.png";
@@ -175,13 +177,9 @@ const AccordeonAnswerClass =
 const fullScreenHome =
     "w-full mx-auto z-10 h-[calc(100vh-184px)] sm:h-[calc(100vh-72px)] py-0 sm:py-8  grid place-items-center relative overflow-hidden 2xl:overflow-hidden xl:overflow-hidden lg:overflow-hidden  md:overflow-hidden sm:overflow-hidden ";
 
-const fullScreen =
-    "w-full mx-auto z-10 h-[calc(100vh-72px)] grid place-items-center py-8 relative overflow-hidden ";
 const fullWidthSection =
     "w-full mx-auto z-10 min-h-[calc(100vh-72px)]  py-8 relative";
 
-const nextScreenLinkClass =
-    "bg-transparent absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2";
 const InsertIcon =
     "inline object-cover";
 /*
@@ -655,9 +653,13 @@ const smartphoneGalleryItems: GalleryImage[] = [
     },
 ];
 
+type CaseStudyDiliTrustProps = {
+    project: Project;
+};
 
-
-export default function CaseStudyDiliTrust(): ReactElement {
+export default function CaseStudyDiliTrust({
+    project,
+}: CaseStudyDiliTrustProps): ReactElement {
     const stats = [
         { label: "Performances SEO", value: 37, unit: "points", variant: "+" },
         { label: "Rapidité de chargement", value: 700, unit: "%", variant: "+" },
@@ -1386,6 +1388,19 @@ export default function CaseStudyDiliTrust(): ReactElement {
                             <Stat key={stat.label} value={stat.value} label={stat.label} unit={stat.unit} variant={stat.variant} />
                         ))}
                     </div>
+                </div>
+            </section>
+            <section className={fullWidthSection} id="screen08">
+                <div className={`${shellClassName} grid gap-10`}>
+                    <SectionHeading
+                        eyebrow="Fiche projet"
+                        title={project.title}
+                        body="Cette section reprend les donnees structurees rattachees a ce case study dans project-prod.json."
+                    />
+
+                    <motion.div {...reveal}>
+                        <CaseStudyProjectData project={project} />
+                    </motion.div>
                 </div>
             </section>
             {/* Lightbox Component */}

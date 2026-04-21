@@ -6,7 +6,11 @@ import {
   type Transition,
 } from "framer-motion";
 import { NavLink, useLocation } from "react-router-dom";
+import { getDedicatedCaseStudyPathByProjectId } from "../config/dedicatedCaseStudies";
 import Logo from "./Logo";
+
+const dilitrustCaseStudyPath =
+  getDedicatedCaseStudyPathByProjectId(180) ?? "/etudes-de-cas";
 
 export default function Navbar() {
   const [scrollProgress, setScrollProgress] = useState(0);
@@ -78,10 +82,10 @@ export default function Navbar() {
   const navItems = [
     { to: "/", label: "Accueil", end: true },
     { to: "/portfolio", label: "Portfolio" },
-    { to: "/etudes-de-cas", label: "Etude de cas" },
-    { to: "/dt", label: "DiliTrust" },
-    { to: "/test", label: "Test" },
-    { to: "/doc", label: "doc" },
+    { to: "/etudes-de-cas", label: "Etude de cas", end: true },
+    { to: dilitrustCaseStudyPath, label: "DiliTrust", end: true },
+    //   { to: "/test", label: "Test" },
+    //    { to: "/doc", label: "doc" },
     { to: "/a-propos", label: "A propos" },
     { to: "/contact", label: "Contact" },
   ];

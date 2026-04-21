@@ -10,7 +10,7 @@ import Footer from "../components/Footer";
 import Loader from "../components/Loader";
 import type { Project, ProjectMedia } from "../types/Project";
 import { hasCollection, type ProjectCollectionKey } from "../utils/projectCollection";
-import { slugifyTitle } from "../utils/slug";
+import { getProjectPath } from "../utils/projectPaths";
 import { getProjectTypes, projectHasType } from "../utils/projectType";
 import {
   IoMdClose,
@@ -366,7 +366,7 @@ export default function Projects({
       const slides = resolveProjectSlides(project);
 
       if (slides.length === 0) {
-        navigate(`${detailBasePath}/${slugifyTitle(project.title)}`);
+        navigate(getProjectPath(project, detailBasePath));
         return;
       }
 

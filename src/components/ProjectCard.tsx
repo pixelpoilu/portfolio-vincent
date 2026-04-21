@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
 import { FaAngleRight } from "@react-icons/all-files/fa/FaAngleRight";
 import { Link } from "react-router-dom";
-import { slugifyTitle } from "../utils/slug";
 import { useEffect, useState, type MouseEvent } from "react";
 import type { Project } from "../types/Project";
+import { getProjectPath } from "../utils/projectPaths";
 import Loader from "./Loader";
 import { formatProjectTypes } from "../utils/projectType";
 
@@ -22,7 +22,7 @@ export default function ProjectCard({
 }: ProjectCardProps) {
     const thumbnail = thumbnailOverride;
     const [isImageLoaded, setIsImageLoaded] = useState(false);
-    const projectSlug = slugifyTitle(project.title);
+    const projectPath = getProjectPath(project, detailBasePath);
 
     useEffect(() => {
         setIsImageLoaded(false);
@@ -42,7 +42,7 @@ export default function ProjectCard({
             layout
             transition={{ type: "spring", stiffness: 260, damping: 18 }}
         >
-            <Link to={`${detailBasePath}/${projectSlug}`} className="card-link" onClick={handleCardClick}>
+            <Link to={projectPath} className="card-link" onClick={handleCardClick}>
                 <div className="card-image-wrapper">
                     {thumbnail ? (
                         <>

@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import portrait from "../assets/images/hero/portrait-bw.png";
+import { getDedicatedCaseStudyPathByProjectId } from "../config/dedicatedCaseStudies";
 import Footer from "./Footer";
 import Logo from "./Logo";
 import Loader from "./Loader";
@@ -11,6 +12,9 @@ const heroRoles = [
   "VISUAL PRODUCT DESIGNER",
   "DESIGNER D'INTERFACES",
 ];
+
+const dilitrustCaseStudyPath =
+  getDedicatedCaseStudyPathByProjectId(180) ?? "/etudes-de-cas";
 
 export default function Home() {
   const [isPortraitLoaded, setIsPortraitLoaded] = useState(false);
@@ -59,7 +63,7 @@ export default function Home() {
               Product Designer orienté UI, je conçois des interfaces claires, cohérentes et performantes, où vision, usage et exécution avancent ensemble.
             </p>
             <div className="recruiter-projects">
-              <Link to="/portfolio/refonte-du-site-web-dilitrust">DiliTrust</Link>
+              <Link to={dilitrustCaseStudyPath}>DiliTrust</Link>
               <Link to="/portfolio/site-internet-doc-biker">DOC-BIKER</Link>
               <Link to="/etudes-de-cas/site-internet-locaboat">LOCABOAT</Link>
             </div>

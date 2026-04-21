@@ -6,6 +6,7 @@ import Loader from "../components/Loader";
 import PageTransition from "../components/PageTransition";
 import projectsData from "../data/project-prod.json";
 import type { Project, ProjectMedia } from "../types/Project";
+import { getProjectPath } from "../utils/projectPaths";
 import { slugifyTitle } from "../utils/slug";
 import { hasCollection, type ProjectCollectionKey } from "../utils/projectCollection";
 
@@ -48,7 +49,7 @@ export default function ProjectDetail() {
   if (projectByLegacyId && !projectBySlug) {
     return (
       <Navigate
-        to={`${listingBasePath}/${slugifyTitle(projectByLegacyId.title)}`}
+        to={getProjectPath(projectByLegacyId, listingBasePath)}
         replace
       />
     );
@@ -320,7 +321,6 @@ export default function ProjectDetail() {
     </PageTransition>
   );
 }
-
 
 
 
