@@ -7,10 +7,14 @@
   z-index: 3000;
   right: 10px;
   top: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   width: 54px;
   height: 54px;
   background-color: transparent;
   border-radius: 50%;
+  -webkit-tap-highlight-color: transparent;
   transition: transform 0.5s;
 }
 
@@ -24,6 +28,8 @@
   background-color: var(--mycolor-black);
   transition: background 0.5s, transform 0.5s;
   transition: background 0.5s steps(1, end);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 .icon_span::before,
@@ -39,10 +45,30 @@
   transform: translateY(-8px);
   background-color: var(--mycolor-black);
   transition: transform 0.5s;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 .icon_span::after {
   transform: translateY(8px);
+}
+
+.menu-ring {
+  position: absolute;
+  inset: 0;
+  box-sizing: border-box;
+  border: 2px solid transparent;
+  border-radius: 999px;
+  opacity: 0;
+  transform: scale(0.82) rotate(-35deg);
+  transform-origin: 50% 50%;
+  transition:
+    transform 0.5s cubic-bezier(.22, 1, .36, 1),
+    opacity 0.5s steps(1, end),
+    border-color 0.5s steps(1, end);
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 .menu-icon:hover .icon_span::before {
@@ -53,26 +79,19 @@
   transform: translateY(10px);
 }
 
-.menu-icon svg {
-  opacity: 0;
-  fill: transparent;
-  stroke: var(--mycolor-black);
-  stroke-width: 2px;
-  stroke-dasharray: 22 230;
-  transition: stroke-dasharray 0.5s, stroke-dashoffset 0.5s, opacity 0.5s steps(1, end);
-}
-
 .menu-icon.is-opened .icon_span {
   transition: background 0.5s steps(1, start);
   background-color: transparent;
 }
 
-.menu-icon.is-opened svg {
+.menu-icon.is-opened .menu-ring {
   opacity: 1;
-  stroke-dasharray: 160;
-  stroke-dashoffset: -65;
-  transition: stroke-dasharray 0.5s, stroke-dashoffset 0.5s, opacity 0.5s steps(1, start);
-  stroke: #fcfcfc;
+  border-color: #fcfcfc;
+  transform: scale(1) rotate(0deg);
+  transition:
+    transform 0.5s cubic-bezier(.22, 1, .36, 1),
+    opacity 0.5s steps(1, start),
+    border-color 0.5s steps(1, start);
 }
 
 .menu-icon.is-opened .icon_span::before {
@@ -213,6 +232,17 @@ a {
     transform 0.4s ease,
     box-shadow 0.2s ease,
     background-color 0.2s ease;
+}
+
+.navbar.is-menu-open {
+  z-index: 2500;
+}
+
+.navbar.is-home {
+  background: var(--home-bg);
+  backdrop-filter: none;
+  border-color: rgba(31, 31, 31, 0.05);
+  box-shadow: inset 0 -1px 0 rgba(31, 31, 31, 0.05);
 }
 
 /* ================= CONTAINER ================= */

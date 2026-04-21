@@ -81,7 +81,7 @@ export default function Navbar() {
     { to: "/etudes-de-cas", label: "Etude de cas" },
     { to: "/dt", label: "DiliTrust" },
     { to: "/test", label: "Test" },
-    { to: "/case", label: "Case Exemple" },
+    { to: "/doc", label: "doc" },
     { to: "/a-propos", label: "A propos" },
     { to: "/contact", label: "Contact" },
   ];
@@ -95,7 +95,10 @@ export default function Navbar() {
     : { duration: 0.4, ease: easingCurve };
 
   return (
-    <header className={`navbar${isHome ? " is-home" : ""}`} style={navStyle}>
+    <header
+      className={`navbar${isHome ? " is-home" : ""}${menuOpen ? " is-menu-open" : ""}`}
+      style={navStyle}
+    >
       <div
         className={`menu-icon ${menuOpen ? "is-opened" : "is-closed"}`}
         onClick={() => setMenuOpen((open) => !open)}
@@ -111,9 +114,7 @@ export default function Navbar() {
         aria-label={menuOpen ? "Fermer le menu" : "Ouvrir le menu"}
       >
         <div className="icon_span"></div>
-        <svg x="0" y="0" width="54px" height="54px" viewBox="0 0 54 54">
-          <path d="M16.500,27.000 C16.500,27.000 24.939,27.000 38.500,27.000 C52.061,27.000 49.945,15.648 46.510,11.367 C41.928,5.656 34.891,2.000 27.000,2.000 C13.193,2.000 2.000,13.193 2.000,27.000 C2.000,40.807 13.193,52.000 27.000,52.000 C40.807,52.000 52.000,40.807 52.000,27.000 C52.000,13.000 40.837,2.000 27.000,2.000"></path>
-        </svg>
+        <span className="menu-ring" aria-hidden="true" />
       </div>
 
       <div className="nav-container">
