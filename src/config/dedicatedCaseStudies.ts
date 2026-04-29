@@ -1,6 +1,7 @@
 import type { ComponentType } from "react";
 
 import CaseStudyDiliTrust from "../pages/CaseStudyDiliTrust";
+import CaseStudyDocBiker from "../pages/CaseStudyDocBiker";
 import type { Project } from "../types/Project";
 
 export type DedicatedCaseStudyComponent = ComponentType<{
@@ -18,6 +19,12 @@ const dedicatedCaseStudies: DedicatedCaseStudyConfig[] = [
         slug: "refonte-du-site-web-dilitrust",
         projectId: 180,
         Component: CaseStudyDiliTrust,
+    },
+
+    {
+        slug: "site-internet-doc-biker",
+        projectId: 64,
+        Component: CaseStudyDocBiker,
     },
 ];
 

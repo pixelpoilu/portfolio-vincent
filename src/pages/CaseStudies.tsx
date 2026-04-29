@@ -103,9 +103,6 @@ export default function CaseStudies() {
   const [selectedTypes, setSelectedTypes] = useState<string[]>([]);
   const [selectedSectors, setSelectedSectors] = useState<string[]>([]);
   const [searchQuery, setSearchQuery] = useState("");
-  const introText =
-    "Plongez dans les études de cas pour comprendre la démarche, les choix et les résultats.";
-
   const publishedProjects = useMemo(() => {
     const projects = projectsData as Project[];
     return projects.filter(
@@ -317,6 +314,8 @@ export default function CaseStudies() {
   ]);
 
   const useEditorialGrid = filteredProjects.length >= editorialLayoutSlots.length;
+  const introCopy =
+    "Plongez dans les etudes de cas pour comprendre la demarche, les choix et les resultats.";
 
   return (
     <PageTransition>
@@ -338,12 +337,12 @@ export default function CaseStudies() {
           onSearchChange={setSearchQuery}
         />
 
-        <section className="projects-section">
-          <div className="projects-section-header">
-            <div className="projects-intro">
-              <p>{introText}</p>
+        <section className="mx-auto grid w-full max-w-[1150px] gap-8 px-4 py-12 sm:px-6">
+          <div className="flex flex-col gap-3 text-slate-500 md:flex-row md:items-end md:justify-between">
+            <div className="max-w-3xl text-[15px] leading-[1.6] text-[#555]">
+              <p>{introCopy}</p>
             </div>
-            <span className="projects-count">
+            <span className="shrink-0 text-sm tracking-[0.2px] text-slate-500">
               {filteredProjects.length} projet{filteredProjects.length > 1 ? "s" : ""}
             </span>
           </div>

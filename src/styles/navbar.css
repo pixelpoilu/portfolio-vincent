@@ -191,14 +191,6 @@ a {
 }
 
 
-.site-page section {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 3rem 1.5rem;
-  display: grid;
-  gap: 2rem;
-}
-
 :root {
   --navbar-height: 72px;
 }

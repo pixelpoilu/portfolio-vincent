@@ -6,12 +6,12 @@ import {
   type Transition,
 } from "framer-motion";
 import { NavLink, useLocation } from "react-router-dom";
-import { getDedicatedCaseStudyPathByProjectId } from "../config/dedicatedCaseStudies";
+//import { getDedicatedCaseStudyPathByProjectId } from "../config/dedicatedCaseStudies";
 import Logo from "./Logo";
-
+/*
 const dilitrustCaseStudyPath =
   getDedicatedCaseStudyPathByProjectId(180) ?? "/etudes-de-cas";
-
+*/
 export default function Navbar() {
   const [scrollProgress, setScrollProgress] = useState(0);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -83,7 +83,7 @@ export default function Navbar() {
     { to: "/", label: "Accueil", end: true },
     { to: "/portfolio", label: "Portfolio" },
     { to: "/etudes-de-cas", label: "Etude de cas", end: true },
-    { to: dilitrustCaseStudyPath, label: "DiliTrust", end: true },
+    // { to: dilitrustCaseStudyPath, label: "DiliTrust", end: true },
     //   { to: "/test", label: "Test" },
     //    { to: "/doc", label: "doc" },
     { to: "/a-propos", label: "A propos" },
@@ -123,7 +123,7 @@ export default function Navbar() {
 
       <div className="nav-container">
         <NavLink to="/" className="logo">
-          <Logo className="home-logo" />
+          <Logo className="nav-logo-mark" />
         </NavLink>
         <nav className="nav-links">
           {navItems.map((item) => (

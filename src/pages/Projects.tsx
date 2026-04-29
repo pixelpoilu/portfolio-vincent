@@ -1,4 +1,12 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import {
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+  type ComponentType,
+  type MouseEvent,
+} from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { createPortal } from "react-dom";
@@ -19,6 +27,14 @@ import {
   IoIosVolumeHigh,
   IoIosVolumeOff,
 } from "react-icons/io";
+
+const CloseIcon = IoMdClose as unknown as ComponentType<{ className?: string }>;
+const PlayIcon = IoIosPlay as unknown as ComponentType<{ className?: string }>;
+const PauseIcon = IoIosPause as unknown as ComponentType<{ className?: string }>;
+const VolumeHighIcon =
+  IoIosVolumeHigh as unknown as ComponentType<{ className?: string }>;
+const VolumeOffIcon =
+  IoIosVolumeOff as unknown as ComponentType<{ className?: string }>;
 
 const projectImageModules = import.meta.glob<{ default: string }>(
   "../assets/images/projects/**/*.{jpg,jpeg,png,webp,avif}",
@@ -499,11 +515,10 @@ export default function Projects({
     animate: { opacity: 1, x: 0 },
     exit: { opacity: 0, x: transitionDirection * -140 },
   };
-
-  const introText =
+  const introCopy =
     collectionKey === "portfolio"
-      ? "Découvrez une sélection de projets sur-mesure, conçus pour des marques qui veulent se distinguer."
-      : "Plongez dans les études de cas pour comprendre la démarche, les choix et les résultats.";
+      ? "Decouvrez une selection de projets sur-mesure, concus pour des marques qui veulent se distinguer."
+      : "Plongez dans les etudes de cas pour comprendre la demarche, les choix et les resultats.";
 
   return (
     <PageTransition>
@@ -525,12 +540,12 @@ export default function Projects({
           onSearchChange={setSearchQuery}
         />
 
-        <section className="projects-section">
-          <div className="projects-section-header">
-            <div className="projects-intro">
-              <p>{introText}</p>
+        <section className="mx-auto grid w-full max-w-[1150px] gap-8 px-4 py-12 sm:px-6">
+          <div className="flex flex-col gap-3 text-slate-500 md:flex-row md:items-end md:justify-between">
+            <div className="max-w-3xl text-[15px] leading-[1.6] text-[#555]">
+              <p>{introCopy}</p>
             </div>
-            <span className="projects-count">
+            <span className="shrink-0 text-sm tracking-[0.2px] text-slate-500">
               {filteredProjects.length} projet{filteredProjects.length > 1 ? "s" : ""}
             </span>
           </div>
@@ -576,7 +591,7 @@ export default function Projects({
                   animate={{ opacity: 1, y: 0, scale: 1 }}
                   exit={{ opacity: 0, y: 12, scale: 0.985 }}
                   transition={{ duration: 0.28, ease: "easeOut" }}
-                  onClick={(event) => event.stopPropagation()}
+                  onClick={(event: MouseEvent<HTMLDivElement>) => event.stopPropagation()}
                 >
                   <div className="portfolio-slideshow-topbar">
                     <div className="portfolio-slideshow-meta">
@@ -620,7 +635,7 @@ export default function Projects({
                         onClick={() => setIsSlideshowPlaying((current) => !current)}
                         disabled={slideshowSlides.length <= 1}
                       >
-                        {isSlideshowPlaying ? <IoIosPause /> : <IoIosPlay />}
+                        {isSlideshowPlaying ? <PauseIcon /> : <PlayIcon />}
                       </button>
                       <button
                         type="button"
@@ -630,14 +645,14 @@ export default function Projects({
                         aria-pressed={!isVideoMuted}
                         aria-label={isVideoMuted ? "Activer le son" : "Couper le son"}
                       >
-                        {isVideoMuted ? <IoIosVolumeOff /> : <IoIosVolumeHigh />}
+                        {isVideoMuted ? <VolumeOffIcon /> : <VolumeHighIcon />}
                       </button>
                       <button
                         type="button"
                         className="portfolio-overlay-btn danger"
                         onClick={closeSlideshow}
                       >
-                        <IoMdClose />
+                        <CloseIcon />
                       </button>
                     </div>
                   </div>

@@ -5,6 +5,19 @@ const ArrowDownIcon = RiArrowDownSLine as unknown as ComponentType<{ className?:
 const ArrowUpIcon = RiArrowUpSLine as unknown as ComponentType<{ className?: string }>;
 const CloseIcon = RiCloseLine as unknown as ComponentType<{ className?: string }>;
 
+const shellClassName =
+  "mx-auto w-[96%] max-w-[1150px]";
+const stickyPanelClassName =
+  "sticky z-[900] mt-2.5 mb-5 w-full border border-white/40 bg-white/70 backdrop-blur-xl shadow-[0_10px_40px_rgba(0,0,0,var(--nav-shadow-opacity,0)),inset_0_1px_0_rgba(255,255,255,var(--nav-inset-opacity,0))] top-[72px] max-[640px]:top-[112px]";
+const controlBaseClassName =
+  "inline-flex min-h-9 items-center gap-2 border border-slate-300 bg-white px-3 py-2 text-[13px] font-medium leading-none text-slate-700 transition duration-200 hover:border-slate-500 hover:text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-300";
+const controlActiveClassName =
+  "border-slate-500 bg-stone-200 text-stone-700 shadow-[inset_0_0_0_1px_rgba(37,99,235,0.15)]";
+const menuClassName =
+  "absolute left-0 top-full z-20 mt-2 min-w-[180px] max-w-[88vw] border border-slate-200 bg-white p-1.5 shadow-[0_20px_40px_rgba(15,23,42,0.16)] sm:min-w-[220px] sm:max-w-[360px]";
+const menuItemClassName =
+  "grid w-full grid-cols-[18px_minmax(0,1fr)] items-center gap-2 rounded-lg px-2.5 py-2 text-left text-sm leading-tight text-slate-800 transition hover:bg-slate-50";
+
 interface Props {
   sectors: string[];
   types: string[];
@@ -96,14 +109,17 @@ export default function FilterBar({
 
   useEffect(() => () => clearCloseTimeout(), []);
 
+  const getTriggerClassName = (isActive: boolean) =>
+    `${controlBaseClassName} ${isActive ? controlActiveClassName : ""}`.trim();
+
   return (
-    <div className="detail-wrapper">
-      <div className="filter-wrapper" ref={filterRef}>
+    <div className={stickyPanelClassName}>
+      <div className={`${shellClassName} py-2`} ref={filterRef}>
         {hasActiveFilters && (
-          <div className="filter-top">
+          <div className="mb-3 flex items-center justify-end text-sm text-slate-500">
             <button
               type="button"
-              className="clear-filters"
+              className="rounded-full border border-slate-300 bg-white px-3.5 py-1.5 text-xs font-medium text-slate-700 transition duration-200 hover:border-slate-400 hover:bg-slate-50 hover:text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-300"
               onClick={() => {
                 onSectorChange([]);
                 onTypeChange([]);
@@ -118,27 +134,26 @@ export default function FilterBar({
           </div>
         )}
 
-        <div className="search-row">
+        <div className="mb-2.5">
           <input
             type="text"
-            className="search-input"
+            className="min-h-10 w-full border border-slate-300 bg-white px-3.5 text-sm text-slate-800 transition duration-200 placeholder:text-slate-400 focus:border-blue-300 focus:outline-none focus:ring-4 focus:ring-blue-300/20"
             placeholder="Rechercher un projet, client, techno..."
             value={searchQuery}
             onChange={(event) => onSearchChange(event.target.value)}
           />
         </div>
 
-        <div className="filter-bar">
+        <div className="flex flex-wrap items-center gap-2 p-2">
           <button
             type="button"
-            className={`filter-pill ${activeSectors.length === 0 &&
-              activeTypes.length === 0 &&
-              activeTools.length === 0 &&
-              activeTechs.length === 0 &&
-              searchQuery.trim() === ""
-              ? "active"
-              : ""
-              }`}
+            className={getTriggerClassName(
+              activeSectors.length === 0 &&
+                activeTypes.length === 0 &&
+                activeTools.length === 0 &&
+                activeTechs.length === 0 &&
+                searchQuery.trim() === ""
+            )}
             onClick={() => {
               onSectorChange([]);
               onTypeChange([]);
@@ -152,139 +167,175 @@ export default function FilterBar({
           </button>
 
           <div
-            className="dropdown"
+            className="relative"
             onMouseEnter={clearCloseTimeout}
             onMouseLeave={scheduleClose}
           >
             <button
               type="button"
-              className={`dropdown-trigger ${activeSectors.length > 0 ? "active" : ""}`}
+              className={getTriggerClassName(activeSectors.length > 0)}
               onClick={() => toggle("sector")}
               aria-expanded={open === "sector"}
             >
-              <span className="trigger-label">
+              <span className="whitespace-nowrap">
                 Secteur {activeSectors.length > 0 ? `(${activeSectors.length})` : ""}
               </span>
-              <span className="trigger-caret">{open === "sector" ? <ArrowUpIcon /> : <ArrowDownIcon />}</span>
+              <span className="inline-flex text-[19px] leading-none opacity-75">
+                {open === "sector" ? <ArrowUpIcon /> : <ArrowDownIcon />}
+              </span>
             </button>
 
             {open === "sector" && (
-              <div className="menu">
+              <div className={menuClassName}>
                 {sectors.map((sector) => (
-                  <div
+                  <button
+                    type="button"
                     key={sector}
-                    className={`menu-item ${activeSectors.includes(sector) ? "selected" : ""}`}
+                    className={`${menuItemClassName} ${
+                      activeSectors.includes(sector)
+                        ? "bg-stone-200 text-stone-700"
+                        : ""
+                    }`.trim()}
                     onClick={() => {
                       toggleValue(activeSectors, sector, onSectorChange);
                     }}
                   >
-                    <span className="check">{activeSectors.includes(sector) ? <CloseIcon /> : ""}</span>
-                    <span className="menu-label">{sector}</span>
-                  </div>
+                    <span className="inline-flex w-[18px] justify-center text-[11px] font-bold text-stone-700">
+                      {activeSectors.includes(sector) ? <CloseIcon /> : ""}
+                    </span>
+                    <span className="break-words">{sector}</span>
+                  </button>
                 ))}
               </div>
             )}
           </div>
 
           <div
-            className="dropdown"
+            className="relative"
             onMouseEnter={clearCloseTimeout}
             onMouseLeave={scheduleClose}
           >
             <button
               type="button"
-              className={`dropdown-trigger ${activeTypes.length > 0 ? "active" : ""}`}
+              className={getTriggerClassName(activeTypes.length > 0)}
               onClick={() => toggle("type")}
               aria-expanded={open === "type"}
             >
-              <span className="trigger-label">
+              <span className="whitespace-nowrap">
                 Type {activeTypes.length > 0 ? `(${activeTypes.length})` : ""}
               </span>
-              <span className="trigger-caret">{open === "type" ? <ArrowUpIcon /> : <ArrowDownIcon />}</span>
+              <span className="inline-flex text-[19px] leading-none opacity-75">
+                {open === "type" ? <ArrowUpIcon /> : <ArrowDownIcon />}
+              </span>
             </button>
 
             {open === "type" && (
-              <div className="menu">
+              <div className={menuClassName}>
                 {types.map((type) => (
-                  <div
+                  <button
+                    type="button"
                     key={type}
-                    className={`menu-item ${activeTypes.includes(type) ? "selected" : ""}`}
+                    className={`${menuItemClassName} ${
+                      activeTypes.includes(type)
+                        ? "bg-stone-200 text-stone-700"
+                        : ""
+                    }`.trim()}
                     onClick={() => {
                       toggleValue(activeTypes, type, onTypeChange);
                     }}
                   >
-                    <span className="check">{activeTypes.includes(type) ? <CloseIcon /> : ""}</span>
-                    <span className="menu-label">{type}</span>
-                  </div>
+                    <span className="inline-flex w-[18px] justify-center text-[11px] font-bold text-stone-700">
+                      {activeTypes.includes(type) ? <CloseIcon /> : ""}
+                    </span>
+                    <span className="break-words">{type}</span>
+                  </button>
                 ))}
               </div>
             )}
           </div>
 
           <div
-            className="dropdown"
+            className="relative"
             onMouseEnter={clearCloseTimeout}
             onMouseLeave={scheduleClose}
           >
             <button
               type="button"
-              className={`dropdown-trigger ${activeTools.length > 0 ? "active" : ""}`}
+              className={getTriggerClassName(activeTools.length > 0)}
               onClick={() => toggle("tool")}
               aria-expanded={open === "tool"}
             >
-              <span className="trigger-label">
+              <span className="whitespace-nowrap">
                 Outils {activeTools.length > 0 ? `(${activeTools.length})` : ""}
               </span>
-              <span className="trigger-caret">{open === "tool" ? <ArrowUpIcon /> : <ArrowDownIcon />}</span>
+              <span className="inline-flex text-[19px] leading-none opacity-75">
+                {open === "tool" ? <ArrowUpIcon /> : <ArrowDownIcon />}
+              </span>
             </button>
             {open === "tool" && (
-              <div className="menu scroll">
+              <div className={`${menuClassName} max-h-[260px] overflow-y-auto`}>
                 {tools.map((tool) => (
-                  <div
+                  <button
+                    type="button"
                     key={tool}
-                    className={`menu-item ${activeTools.includes(tool) ? "selected" : ""}`}
+                    className={`${menuItemClassName} ${
+                      activeTools.includes(tool)
+                        ? "bg-stone-200 text-stone-700"
+                        : ""
+                    }`.trim()}
                     onClick={() => {
                       toggleValue(activeTools, tool, onToolChange);
                     }}
                   >
-                    <span className="check">{activeTools.includes(tool) ? <CloseIcon /> : ""}</span>
-                    <span className="menu-label">{tool}</span>
-                  </div>
+                    <span className="inline-flex w-[18px] justify-center text-[11px] font-bold text-stone-700">
+                      {activeTools.includes(tool) ? <CloseIcon /> : ""}
+                    </span>
+                    <span className="break-words">{tool}</span>
+                  </button>
                 ))}
               </div>
             )}
           </div>
 
           <div
-            className="dropdown"
+            className="relative"
             onMouseEnter={clearCloseTimeout}
             onMouseLeave={scheduleClose}
           >
             <button
               type="button"
-              className={`dropdown-trigger ${activeTechs.length > 0 ? "active" : ""}`}
+              className={getTriggerClassName(activeTechs.length > 0)}
               onClick={() => toggle("tech")}
               aria-expanded={open === "tech"}
             >
-              <span className="trigger-label">
+              <span className="whitespace-nowrap">
                 Technologies {activeTechs.length > 0 ? `(${activeTechs.length})` : ""}
               </span>
-              <span className="trigger-caret">{open === "tech" ? <ArrowUpIcon /> : <ArrowDownIcon />}</span>
+              <span className="inline-flex text-[19px] leading-none opacity-75">
+                {open === "tech" ? <ArrowUpIcon /> : <ArrowDownIcon />}
+              </span>
             </button>
 
             {open === "tech" && (
-              <div className="menu scroll">
+              <div className={`${menuClassName} max-h-[260px] overflow-y-auto`}>
                 {technologies.map((tech) => (
-                  <div
+                  <button
+                    type="button"
                     key={tech}
-                    className={`menu-item ${activeTechs.includes(tech) ? "selected" : ""}`}
+                    className={`${menuItemClassName} ${
+                      activeTechs.includes(tech)
+                        ? "bg-stone-200 text-stone-700"
+                        : ""
+                    }`.trim()}
                     onClick={() => {
                       toggleValue(activeTechs, tech, onTechChange);
                     }}
                   >
-                    <span className="check">{activeTechs.includes(tech) ? <CloseIcon /> : ""}</span>
-                    <span className="menu-label">{tech}</span>
-                  </div>
+                    <span className="inline-flex w-[18px] justify-center text-[11px] font-bold text-stone-700">
+                      {activeTechs.includes(tech) ? <CloseIcon /> : ""}
+                    </span>
+                    <span className="break-words">{tech}</span>
+                  </button>
                 ))}
               </div>
             )}

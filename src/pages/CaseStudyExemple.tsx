@@ -1,5 +1,4 @@
 import {
-    AnimatePresence,
     motion,
     useScroll,
     useSpring,
@@ -151,7 +150,7 @@ const fullWidthSection =
     "relative z-10 pb-0 md:pb-0 p-px";
 const fullLine =
     "h-px  w-full p-0 m-0 bg-black/10";
-const neutralCells =
+export const neutralCells =
     "flex gap-4 rounded-[12px] border border-black/8 bg-black/[0.02]  bg-white/82 shadow-[0_20px_50px_rgba(18,22,29,0.08)] backdrop-blur-sm px-4 py-4";
 
 // Accordeon Syles
@@ -205,13 +204,13 @@ type ResponsiveSlide = {
     description: string;
     frame: "browser" | "phone" | "document";
 };
-type Step = {
+export type Step = {
     id: string;
     title: string;
     description: string;
     visuel: string;
 };
-const responsiveSlides: ResponsiveSlide[] = [
+export const responsiveSlides: ResponsiveSlide[] = [
     {
         image: ResponsiveSlide01,
         title: "Performance SEO",
@@ -266,7 +265,7 @@ const responsiveSlides: ResponsiveSlide[] = [
 
 ];
 
-const clamp = (value: number, min: number, max: number): number =>
+export const clamp = (value: number, min: number, max: number): number =>
     Math.min(max, Math.max(min, value));
 
 const useCountUp = (end: number, duration: number = 1.6): number => {
@@ -438,7 +437,7 @@ type PhoneMockupProps = {
     alt: string;
 };
 
-const PhoneMockup = ({ image, alt }: PhoneMockupProps): ReactElement => {
+export const PhoneMockup = ({ image, alt }: PhoneMockupProps): ReactElement => {
     return (
         <div className="relative mx-auto w-full rounded-[3rem] bg-[linear-gradient(180deg,#1a2232_0%,#111827_55%,#0b1220_100%)] p-[10px] shadow-[0_36px_90px_rgba(15,23,42,0.38)] ring-1 ring-white/8">
             <div className="pointer-events-none absolute inset-y-[72px] left-[6px] w-[3px] rounded-full bg-white/10" />
@@ -459,7 +458,7 @@ const PhoneMockup = ({ image, alt }: PhoneMockupProps): ReactElement => {
         </div>
     );
 };
-type BrowserFrameProps = {
+export type BrowserFrameProps = {
     image: string;
     alt: string;
     label: string;

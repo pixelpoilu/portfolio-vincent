@@ -41,10 +41,12 @@ const ArrowRightShort = BsArrowRightShort as unknown as ComponentType<{ classNam
 import { IoArrowRedo } from "react-icons/io5";
 const ArrowRedo = IoArrowRedo as unknown as ComponentType<{ className?: string }>;
 
-// Visuels
-import grainTexture from "../assets/images/textures/grain.png";
+// URL CaseStudies
 import CaseStudyProjectData from "../components/CaseStudyProjectData";
 import type { Project } from "../types/Project";
+
+// Visuels 
+import grainTexture from "../assets/images/textures/grain.png";
 
 //Comparaison HOME
 import homeBeforeImage from "../assets/images/projects/rea_web_dilitrust/home_before.png";
@@ -548,20 +550,12 @@ const ImageGallery = ({
                 className={`flex snap-x snap-mandatory gap-4 overflow-x-auto pb-2 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden ${listClassName}`.trim()}
             >
                 {items.map((item, index) => (
-                    <motion.button
+                    <button
                         key={`${item.alt}-${index}`}
                         type="button"
                         onClick={() => onImageClick(item.src, item.alt)}
                         aria-label={`Ouvrir ${item.alt}`}
                         className={`group relative block w-[min(74vw,320px)] shrink-0 snap-start overflow-hidden rounded-[28px] border border-black/10 bg-white/82 text-left shadow-[0_16px_40px_rgba(18,22,29,0.08)] md:w-[280px] lg:w-[300px] ${itemClassName} ${item.itemClassName ?? ""}`.trim()}
-                        initial={{ opacity: 0, y: 100 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{
-                            duration: 0.85,
-                            delay: index * 0.08,
-                            ease: [0.16, 1, 0.3, 1],
-                        }}
-                        viewport={{ once: true, amount: 0.2 }}
                     >
                         <img
                             src={item.src}
@@ -575,7 +569,7 @@ const ImageGallery = ({
                                 {item.caption}
                             </span>
                         ) : null}
-                    </motion.button>
+                    </button>
                 ))}
             </div>
         </div>
@@ -663,7 +657,7 @@ export default function CaseStudyDiliTrust({
     const stats = [
         { label: "Performances SEO", value: 37, unit: "points", variant: "+" },
         { label: "Rapidité de chargement", value: 700, unit: "%", variant: "+" },
-        { label: "Du projet à la livraison", value: 4, unit: " mois", variant: " " },
+        { label: "Articles de blog recensés", value: 1150, unit: " ", variant: " " },
     ];
 
     const [myAccor01Open, setmyAccor01Open] = useState(false);
@@ -712,7 +706,7 @@ export default function CaseStudyDiliTrust({
                 background: "var(--bg)",
             }}
         >
-            {/* -----BG texture-------- */}
+            {/* -----BG texture-------- mix-blend-multiply */}
             <motion.div
                 aria-hidden="true"
                 className="pointer-events-none fixed inset-0 z-10 mix-blend-multiply"
@@ -1061,7 +1055,7 @@ export default function CaseStudyDiliTrust({
                     <div className="grid gap-2 md:grid-cols-1">
                         <SectionHeading
                             eyebrow="Home Page"
-                            title="Une Home plus lisible, plus structurée et plus attractive."
+                            title="Une Home plus structurée et attractive."
                             body="Le travail porte autant sur l'image que sur la compréhension immédiate de l'offre. Le comparatif montre le changement de hiérarchie, de respiration et de ton."
                         />
                         <motion.div className="hidden sm:block" {...reveal}>
@@ -1127,7 +1121,7 @@ export default function CaseStudyDiliTrust({
                     <div className="grid gap-2 md:grid-cols-1">
                         <SectionHeading
                             eyebrow="L'offre SASS"
-                            title="Une offre plus cohérente et compréhensible."
+                            title="Une offre plus cohérente et lisible."
                             body="Le regroupement des solutions SASS sous forme de suite et l'identification de chaque module par un icone, rendent la lecture plus efficace, ainsi que la prise de décision pour l'utilisateur."
                         />
                         <motion.div className="hidden sm:block" {...reveal}>

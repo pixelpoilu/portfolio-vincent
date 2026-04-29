@@ -38,8 +38,8 @@ const highlightPills = [
     "Mobile first",
 ];
 
-import { BsArrowRightShort } from "react-icons/bs";
-const ArrowRightShort = BsArrowRightShort as unknown as ComponentType<{ className?: string }>;
+import { MdOutlineKeyboardDoubleArrowRight } from "react-icons/md";
+const ArrowDroprightCircle = MdOutlineKeyboardDoubleArrowRight as unknown as ComponentType<{ className?: string }>;
 
 type SubmitState = "idle" | "submitting" | "success" | "error";
 
@@ -225,7 +225,7 @@ export default function ContactForm() {
                                         >
 
                                             <span>
-                                                <ArrowRightShort className="inline object-cover  text-2xl" />
+                                                <ArrowDroprightCircle className="inline object-cover  text-2xl" />&nbsp;
                                                 {submitState === "submitting"
                                                     ? "Envoi..."
                                                     : "Envoyer"}

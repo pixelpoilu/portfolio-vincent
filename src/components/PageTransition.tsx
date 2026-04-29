@@ -10,7 +10,6 @@ export default function PageTransition({ children }: any) {
                 duration: 0.6,
                 ease: [0.22, 1, 0.36, 1]
             }}
-            style={{ minHeight: "100vh" }}
         >
             {children}
         </motion.div>

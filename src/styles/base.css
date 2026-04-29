@@ -73,21 +73,24 @@
 */
 }
 
-
-/* ===================================================== */
-/*                     LOADER                            */
-/* ===================================================== */
-.loader {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
+#homeLinks a:hover {
+  color: #FFF;
 }
 
-.loader svg {
-  width: 60px;
-  height: 60px;
+.nav-logo-mark {
+  width: 80px;
+  height: auto;
+  fill: var(--mycolor-black);
+}
+
+.nav-logo-mark .baseline {
+  display: none;
+}
+
+.home-wordmark {
+  width: 180px;
+  height: auto;
+  fill: var(--mycolor-black);
 }
 
 .loader-circle {
