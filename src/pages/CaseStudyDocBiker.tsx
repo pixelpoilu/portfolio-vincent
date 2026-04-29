@@ -750,8 +750,8 @@ export default function CaseStudyDocBiker({
                 <div className={`${shellClassName} grid gap-10`}>
                     <SectionHeading
                         eyebrow="Évolutions"
-                        title="Trois etapes, trois niveaux de maturite."
-                        body="Chaque refonte repond a un moment precis de la vie de l'enseigne : visibilite, structuration, puis exploitation plus complete du site comme outil de service."
+                        title="Trois étapes, trois niveaux de maturité."
+                        body="Chaque refonte répond a un moment précis de la vie de l'enseigne : visibilité, structuration, puis exploitation plus complète du site comme outil de service."
                     />
 
                     <div className="grid gap-5 lg:grid-cols-3">
@@ -800,7 +800,7 @@ export default function CaseStudyDocBiker({
                     <SectionHeading
                         eyebrow="SEO, UX, UI"
                         title="La valeur du projet vient autant des usages que des ecrans."
-                        body="Le design evolue, mais l'enjeu devient surtout operationnel : attirer, orienter, convertir et laisser aux equipes un outil facile a faire vivre."
+                        body="Le design évolue, mais l'enjeu devient surtout opérationnel : attirer, orienter, convertir et laisser aux équipes un outil facile a faire vivre."
                     />
 
                     <div className="grid gap-5">
