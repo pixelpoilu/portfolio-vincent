@@ -33,22 +33,34 @@ import stage2017Visual from "../assets/images/projects/rea_web_docbiker/2017_doc
 import stage2018Visual from "../assets/images/projects/rea_web_docbiker/2018_docbiker_trsp.png";
 import seoVisual from "../assets/images/projects/rea_web_docbiker/results_google.png";
 
-import GalleryUxHome from "../assets/images/projects/rea_web_docbiker/gallery_ux_home.png";
-import GalleryUxHomeThumb from "../assets/images/projects/rea_web_docbiker/gallery_ux_home_thumb.png";
+import GalleryUxHome from "../assets/images/projects/rea_web_docbiker/2017_gallery_ux_home.png";
+import GalleryUxHomeThumb from "../assets/images/projects/rea_web_docbiker/2017_gallery_ux_home_thumb.png";
 
-import GalleryUxCentres from "../assets/images/projects/rea_web_docbiker/gallery_ux_centre.png";
-import GalleryUxCentresThumb from "../assets/images/projects/rea_web_docbiker/gallery_ux_centre_thumb.png";
+import GalleryUxHomeMenu from "../assets/images/projects/rea_web_docbiker/2017_gallery_ux_menu.png";
+import GalleryUxHomeMenuThumb from "../assets/images/projects/rea_web_docbiker/2017_gallery_ux_menu_thumb.png";
 
-import GalleryUxCentreDetail from "../assets/images/projects/rea_web_docbiker/gallery_ux_centre_detail.png";
-import GalleryUxCentreDetailThumb from "../assets/images/projects/rea_web_docbiker/gallery_ux_centre_detail_thumb.png";
+import GalleryUxForfaits from "../assets/images/projects/rea_web_docbiker/2017_gallery_ux_forfaits_n1.png";
+import GalleryUxForfaitsThumb from "../assets/images/projects/rea_web_docbiker/2017_gallery_ux_forfaits_n1_thumb.png";
 
-import GalleryUxHomeMenu from "../assets/images/projects/rea_web_docbiker/gallery_ux_menu.png";
-import GalleryUxHomeMenuThumb from "../assets/images/projects/rea_web_docbiker/gallery_ux_menu_thumb.png";
+import GalleryUxForfaitDetail from "../assets/images/projects/rea_web_docbiker/2017_gallery_ux_forfaits_n2.png";
+import GalleryUxForfaitDetailThumb from "../assets/images/projects/rea_web_docbiker/2017_gallery_ux_forfaits_n2_thumb.png";
 
+import GalleryUxPneuSearch from "../assets/images/projects/rea_web_docbiker/2017_gallery_ux_pneu_n1.png";
+import GalleryUxPneuSearchThumb from "../assets/images/projects/rea_web_docbiker/2017_gallery_ux_pneu_n1_thumb.png";
+
+import GalleryUxPneuSearchResults from "../assets/images/projects/rea_web_docbiker/2017_gallery_ux_pneu_n2.png";
+import GalleryUxPneuSearchResultsThumb from "../assets/images/projects/rea_web_docbiker/2017_gallery_ux_pneu_n2_thumb.png";
+
+import GalleryUxPneuSearcDetail from "../assets/images/projects/rea_web_docbiker/2017_gallery_ux_pneus_n3.png";
+import GalleryUxPneuSearcDetailThumb from "../assets/images/projects/rea_web_docbiker/2017_gallery_ux_pneus_n3_thumb.png";
+
+
+
+
+/*
 import GalleryUxFranchise from "../assets/images/projects/rea_web_docbiker/gallery_ux_franchise.png";
 import GalleryUxFranchiseThumb from "../assets/images/projects/rea_web_docbiker/gallery_ux_franchise_thumb.png";
 
-/*
 import centreDetailVisual from "../assets/images/projects/rea_web_docbiker/fiche_centre.png";
 import centerMapVisual from "../assets/images/projects/rea_web_docbiker/carte_centres.png";
 import quoteVisual from "../assets/images/projects/rea_web_docbiker/devis.png";
@@ -414,26 +426,58 @@ const UxGalleryItems: GalleryImage[] = [
         caption: "Menu intuitif",
     },
     {
-        src: GalleryUxCentresThumb,
-        big: GalleryUxCentres,
-        alt: "Trouver mon centre Doc'Biker",
-        caption: "Le centre le plus proche",
+        src: GalleryUxForfaitsThumb,
+        big: GalleryUxForfaits,
+        alt: "Forfaits Doc'Biker",
+        caption: "Un accès simplifié aux forfaits",
     },
+
+
     {
-        src: GalleryUxCentreDetailThumb,
-        big: GalleryUxCentreDetail,
-        alt: "Fiche centre Doc'Biker",
-        caption: "Fiche centre",
+        src: GalleryUxForfaitDetailThumb,
+        big: GalleryUxForfaitDetail,
+        alt: "Forfait Doc'Biker",
+        caption: "Détail du forfait en 1 click",
     },
+
+    {
+        src: GalleryUxPneuSearchThumb,
+        big: GalleryUxPneuSearch,
+        alt: "Recherche de pneus Doc'Biker",
+        caption: "Recherche rapide de pneus",
+    },
+
+    {
+        src: GalleryUxPneuSearchResultsThumb,
+        big: GalleryUxPneuSearchResults,
+        alt: "Une page résultat lisible et rapide",
+        caption: "Des résultats simplifiés",
+    },
+
+    {
+        src: GalleryUxPneuSearcDetailThumb,
+        big: GalleryUxPneuSearcDetail,
+        alt: "Une page détail lisible et rapide",
+        caption: "Une conversion en 3 clicks",
+    },
+
+    {
+        src: GalleryUxPneuSearchThumb,
+        big: GalleryUxPneuSearch,
+        alt: "Recherche de pneus Doc'Biker",
+        caption: "Un moteur de recherche de pneus",
+    },
+
+
+
+    /*
+
     {
         src: GalleryUxFranchiseThumb,
         big: GalleryUxFranchise,
         alt: "Espace admin",
         caption: "Espace admin",
     },
-    /*
-
-    
         {
             src: stage2018Visual,
             big: GalleryUxHome,
@@ -869,10 +913,10 @@ export default function CaseStudyDocBiker({
                             >
                                 Rendre les parcours plus lisibles et plus courts.
                             </h3>
-                            <p className="mt-4 max-w-3xl text-base leading-8 text-neutral-600">
+                            <p className="mt-4 text-base leading-8 text-neutral-600">
                                 Le site s&apos;organise progressivement autour des besoins les plus
-                                concrets : trouver un centre, comprendre l&apos;offre, demander un
-                                devis et accéder rapidement aux informations utiles.
+                                concrets : trouver le bon pneu, comprendre l&apos;offre forfait, contacter
+                                un centre et accéder rapidement aux informations utiles. Le parcours a été déployé en mobile forst de la logique responsive, pour être pensé d'abord pour les usages rapides sur smartphone.
                             </p>
                             <div className="mt-6">
                                 <ImageGallery

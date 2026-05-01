@@ -37,30 +37,30 @@ export default function Hero() {
 
   return (
     <main className="sm:relative h-[calc(100vh+200px)] overflow-hidden sm:h-auto" style={{ background: "#f0eeed" }}>
-      <div className="hidden md:block z-9999 absolute translate-x-1/15 -translate-y-1/15 top-1/15 left-1/15
-     
-      ">
+      <div className="hidden md:block z-9999 absolute translate-x-1/15 -translate-y-1/15 top-1/15 left-1/15">
         <Logo className="
         size-min lg:size-max xl:size-max
         md:w-[120%] lg:w-[125%] xl:w-[130%]
         2xl:w-[150%]
         fill-[var(--mycolor-black)] opacity-70 lg:opacity-50 xl:opacity-40 2xl:opacity-30" />
       </div>
-      <section className="
+      <section className=" 
        mx-auto items-center col-span-full grid grid-cols-1 w-full 
        sm:max-w-fit sm:py-6 sm:px-6 
        md:grid-template-columns[1fr 1fr] md:h-[calc(100vh-83px)] md:flex-1 md:max-w-fit md:gap[2rem] md:grid-cols-2
        lg:m-0 lg:p-0 lg:max-w-none lg:w-screen lg:grid lg:gap[2rem] 
+       
       ">
-        <div className="h-[calc(60vh-180px)] py-4 px-4 overflow-hidden order-2 
+        <div className=" h-[calc(60vh-180px)] py-4 px-4 overflow-hidden order-2 
         sm:order-2 sm:max-w-[620px] sm:mx-auto 
         md:h-auto md:py-0 md:px-4 md:m-y-5
         lg:order-2 lg:w-[calc(50vw)] lg:max-w-[520px] lg:ml-auto  lg:mr-0 lg:float-right lg:overflow-hidden 
+        max-[380px]:overflow-visible 
         ">
           <h1
             className="text-center text-[clamp(2.1rem,11vw,4rem)] leading-[0.95] tracking-[-0.02em] text-[var(--text)] 
             md:text-left md:text-[clamp(2.1rem,11vw,4rem)]
-            lg:text-[64px] lg:tracking-[-1px]"
+            lg:text-[64px] lg:tracking-[-1px] "
             style={{ fontFamily: "var(--font-hero)", fontWeight: 500 }}
           >
             Vincent Lepr&ecirc;tre
@@ -99,31 +99,31 @@ export default function Hero() {
             <p className="hidden sm:block">
               Product Designer orienté UI, je conçois des interfaces claires, cohérentes et performantes, où vision, usage et exécution avancent ensemble.
             </p>
-            <div className="mt-4 flex flex-wrap gap-[0.62rem] justify-end md:justify-start ">
+            <div className="mt-4 flex flex-wrap gap-[0.62rem] justify-end md:justify-start  max-[380px]:gap-[3px] max-[380px]:m-0 max-[380px]:justify-center ">
               <Link
                 to={dilitrustCaseStudyPath}
-                className="inline-flex items-center rounded-full border bg-white border-black/15 px-3 py-1.5 text-[0.74rem] uppercase tracking-[0.08em] text-[#222] transition duration-300 hover:border-[#222] hover:bg-[#222] hover:text-white"
+                className="inline-flex items-center rounded-full border bg-white border-black/15 px-3 py-1.5 text-[0.74rem] uppercase tracking-[0.08em] text-[#222] transition duration-300 hover:border-[#222] hover:bg-[#222] hover:text-white max-[380px]:px-2 "
                 style={{ fontFamily: "var(--font-btn)" }}
               >
                 DiliTrust
               </Link>
               <Link
                 to={docbikerCaseStudyPath}
-                className="inline-flex items-center rounded-full border bg-white border-black/15 px-3 py-1.5 text-[0.74rem] uppercase tracking-[0.08em] text-[#222] transition duration-300 hover:border-[#222] hover:bg-[#222] hover:text-white"
+                className="inline-flex items-center rounded-full border bg-white border-black/15 px-3 py-1.5 text-[0.74rem] uppercase tracking-[0.08em] text-[#222] transition duration-300 hover:border-[#222] hover:bg-[#222] hover:text-white max-[380px]:px-2 "
                 style={{ fontFamily: "var(--font-btn)" }}
               >
                 DOC-BIKER
               </Link>
               <Link
                 to="/etudes-de-cas/site-internet-locaboat"
-                className="inline-flex items-center rounded-full border bg-white border-black/15 px-3 py-1.5 text-[0.74rem] uppercase tracking-[0.08em] text-[#222] transition duration-300 hover:border-[#222] hover:bg-[#222] hover:text-white"
+                className="inline-flex items-center rounded-full border bg-white border-black/15 px-3 py-1.5 text-[0.74rem] uppercase tracking-[0.08em] text-[#222] transition duration-300 hover:border-[#222] hover:bg-[#222] hover:text-white max-[380px]:px-2 "
                 style={{ fontFamily: "var(--font-btn)" }}
               >
                 LOCABOAT
               </Link>
             </div>
           </div>
-          <div className="mt-5 flex flex-col grid grid-cols-2 gap-3 sm:flex-row sm:flex-wrap lg:mt-10 lg:gap-5">
+          <div className=" mt-5 flex flex-col grid grid-cols-2 gap-3 sm:flex-row sm:flex-wrap lg:mt-10 lg:gap-5 max-[380px]:grid-cols-1 max-[380px]:overflow-visible">
             <a
               href="/cv.pdf"
               className="btn-flipB w-full sm:w-auto"
@@ -155,7 +155,7 @@ export default function Hero() {
             src={portrait}
             alt="Vincent Lepretre"
             className={`h-auto w-full max-w-[620px] object-contain transition-opacity duration-300 max-[900px]:max-h-[56svh]
-             md:hidden
+             md:hidden  max-[380px]:overflow-visible 
               }`}
             onLoad={() => setIsPortraitLoaded(true)}
             onError={() => setIsPortraitLoaded(true)}
@@ -165,7 +165,7 @@ export default function Hero() {
             alt="Vincent Lepretre"
             className={`hidden 
               transition-opacity duration-300 max-[900px]:max-h-[56svh] 
-              md:block xl:hidden h-auto w-full max-w-[50vw] object-contain lg:max-h-[640px]
+              md:block xl:hidden h-auto w-full max-w-[50vw] object-contain lg:max-h-[640px] 
               ${isPortraitLoaded ? "opacity-100" : "opacity-0"
               }`}
             onLoad={() => setIsPortraitLoaded(true)}
@@ -176,7 +176,7 @@ export default function Hero() {
             alt="Vincent Lepretre"
             className={`hidden 
               transition-opacity duration-300 max-[900px]:max-h-[56svh] 
-              md:hidden xl:block h-auto w-full max-w-[50vw] object-contain lg:max-h-[640px]
+              md:hidden xl:block h-auto w-full max-w-[50vw] object-contain lg:max-h-[640px]  
               ${isPortraitLoaded ? "opacity-100" : "opacity-0"
               }`}
             onLoad={() => setIsPortraitLoaded(true)}
@@ -186,7 +186,7 @@ export default function Hero() {
         </div>
 
       </section>
-      <Footer className=" relative flex h-[calc(83px)] !mt-0 md:!mt-0" />
+      <Footer className=" relative flex h-[calc(83px)] !mt-0 md:!mt-0 max-[380px]:hidden" />
     </main>
   );
 }
