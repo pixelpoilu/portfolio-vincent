@@ -30,7 +30,6 @@ import heroVisual from "../assets/images/projects/rea_web_docbiker/new_docbiker_
 import stage2006Visual from "../assets/images/projects/rea_web_docbiker/2006_docbiker_trsp.png";
 import stage2011Visual from "../assets/images/projects/rea_web_docbiker/2011_docbiker_trsp.png";
 import stage2017Visual from "../assets/images/projects/rea_web_docbiker/2017_docbiker_trsp.png";
-import stage2018Visual from "../assets/images/projects/rea_web_docbiker/2018_docbiker_trsp.png";
 import seoVisual from "../assets/images/projects/rea_web_docbiker/results_google.png";
 
 import GalleryUxHome from "../assets/images/projects/rea_web_docbiker/2017_gallery_ux_home.png";
@@ -54,6 +53,15 @@ import GalleryUxPneuSearchResultsThumb from "../assets/images/projects/rea_web_d
 import GalleryUxPneuSearcDetail from "../assets/images/projects/rea_web_docbiker/2017_gallery_ux_pneus_n3.png";
 import GalleryUxPneuSearcDetailThumb from "../assets/images/projects/rea_web_docbiker/2017_gallery_ux_pneus_n3_thumb.png";
 
+import GalleryUxAdmin from "../assets/images/projects/rea_web_docbiker/2017_gallery_ux_admin_home.png";
+import GalleryUxAdminThumb from "../assets/images/projects/rea_web_docbiker/2017_gallery_ux_admin_home_thumb.png";
+
+
+import GalleryUxAdminPneus from "../assets/images/projects/rea_web_docbiker/2017_gallery_ux_admin_pneus_n1.png";
+import GalleryUxAdminPneusThumb from "../assets/images/projects/rea_web_docbiker/2017_gallery_ux_admin_pneus_n1_thumb.png";
+
+import GalleryUxAdminPneuDetail from "../assets/images/projects/rea_web_docbiker/2017_gallery_ux_admin_pneus_n2.png";
+import GalleryUxAdminPneuDetailThumb from "../assets/images/projects/rea_web_docbiker/2017_gallery_ux_admin_pneus_n2_thumb.png";
 
 
 
@@ -68,13 +76,15 @@ import packagesVisual from "../assets/images/projects/rea_web_docbiker/forfaits.
 */
 
 import mobileSearchVisual from "../assets/images/projects/rea_web_docbiker/mobile01.png";
-import mobileMenuVisual from "../assets/images/projects/rea_web_docbiker/mobile02.png";
 import networkVisual from "../assets/images/projects/rea_web_docbiker/reseau_de_communication_siteweb_centres_via_ecrans-2026-04-26-1202.png";
 import sliderVisual from "../assets/images/projects/rea_web_docbiker/slider.png";
 import sliderPromoVisual from "../assets/images/projects/rea_web_docbiker/slider02.png";
 import adminVisual from "../assets/images/projects/rea_web_docbiker/admin.png";
 import backofficeVisual from "../assets/images/projects/rea_web_docbiker/capture_backoffice.jpg";
 import projectsData from "../data/project-prod.json";
+
+import reseauScreenVisual01 from "../assets/images/projects/rea_web_docbiker/screen-reseaul-gallery_01.png";
+
 
 const CircleChevDown = CiCircleChevDown as unknown as ComponentType<{
     className?: string;
@@ -352,62 +362,62 @@ function Lightbox({ src, alt, isOpen, onClose }: LightboxProps) {
 const summaryCards = [
     {
         value: "2006-2018",
-        label: "gestion du site dans la durée",
+        label: "réalisation et suivi technique",
         detail:
-            "Douze ans d'évolution continue, du premier socle SEO a un site responsive et administrable.",
+            "Douze ans d'évolutions livrées, maintenues et fiabilisées, du socle SEO au site responsive administrable.",
     },
     {
         value: "3",
-        label: "grandes refontes",
+        label: "refontes intégrées",
         detail:
-            "Trois refontes majeures, chacune alignée sur une nouvelle étape de l'enseigne.",
+            "Trois refontes majeures réalisées à partir de wireframes et de maquettes Photoshop fournis par le directeur artistique.",
     },
     {
         value: "Web + centres",
-        label: "logique web-to-store",
+        label: "exploitation web-to-store",
         detail:
-            "Le site, les promotions et les écrans en centres forment un même dispositif de communication.",
+            "Le site, les promotions, le back-office et les écrans en centres forment un même dispositif opérationnel.",
     },
 ];
 
 const timelinePhases = [
     {
         period: "2006-2007",
-        title: "Quitter le Flash, construire une base indexable.",
+        title: "Transformer une intention visuelle en base indexable.",
         body:
-            "Premier enjeu : faire passer un site très visuel vers une structure exploitable par les moteurs, sans perdre l'identité Doc'Biker.",
+            "Premier enjeu : traduire l'univers graphique Doc'Biker en pages HTML exploitables par les moteurs, tout en conservant l'identité imaginée côté direction artistique.",
         image: stage2006Visual,
         alt: "Première version HTML du site Doc'Biker",
         bullets: [
-            "Structure HTML plus lisible et plus indexable.",
-            "Premières pages utiles autour des centres, des pneus et des forfaits.",
-            "Le site devient un levier d'acquisition locale, plus seulement une vitrine.",
+            "Découpage, intégration et structuration HTML plus lisible et plus indexable.",
+            "Création des premières pages utiles autour des centres, des pneus et des forfaits.",
+            "Mise en place d'un socle technique capable de servir l'acquisition locale.",
         ],
     },
     {
         period: "2011",
-        title: "Clarifier l'offre et rendre le réseau visible.",
+        title: "Industrialiser les maquettes et clarifier l'offre.",
         body:
-            "La refonte suivante accompagne la montee en puissance de l'enseigne avec une home plus structuree et une hierarchie de contenus plus solide.",
+            "La refonte suivante accompagne la montée en puissance de l'enseigne. Mon rôle : transformer les wireframes et maquettes Photoshop en un site plus structuré, maintenable et cohérent dans Joomla.",
         image: stage2011Visual,
         alt: "Refonte 2011 du site Doc'Biker",
         bullets: [
-            "Navigation plus claire entre centres, promos, forfaits et contenus.",
-            "Mise en avant de la franchise, des actualites et des operations commerciales.",
-            "Le réseau devient une vraie porte d'entree utilisateur.",
+            "Intégration d'une navigation plus claire entre centres, promos, forfaits et contenus.",
+            "Mise en place de gabarits pour la franchise, les actualités et les opérations commerciales.",
+            "Amélioration de la qualité d'administration pour rendre le réseau plus visible au quotidien.",
         ],
     },
     {
         period: "2017-2018",
-        title: "Faire du site un outil de service et d'exploitation.",
+        title: "Livrer un outil responsive, robuste et exploitable.",
         body:
-            "La dernière phase pousse plus loin l'UX, le responsive et l'autonomie métier. Le site soutient alors directement le quotidien du réseau.",
+            "La dernière phase pousse plus loin l'UX, le responsive et l'autonomie métier. À partir des intentions validées avec le directeur artistique, j'ai pris en charge la réalisation, les arbitrages techniques et la qualité de livraison.",
         image: stage2017Visual,
         alt: "Refonte 2017-2018 du site Doc'Biker",
         bullets: [
-            "Accès plus directs aux centres, a la révision et au devis.",
-            "Responsive pense pour le mobile et les parcours rapides.",
-            "Back-office plus solide pour les centres, les promos et les contenus.",
+            "Parcours plus directs vers les centres, la révision, les pneus et le devis.",
+            "Intégration responsive pensée pour le mobile et les parcours rapides.",
+            "Back-office renforcé pour administrer les centres, les promos et les contenus avec plus d'autonomie.",
         ],
     },
 ];
@@ -462,16 +472,25 @@ const UxGalleryItems: GalleryImage[] = [
     },
 
     {
-        src: GalleryUxPneuSearchThumb,
-        big: GalleryUxPneuSearch,
-        alt: "Recherche de pneus Doc'Biker",
-        caption: "Un moteur de recherche de pneus",
+        src: GalleryUxAdmin,
+        big: GalleryUxAdminThumb,
+        alt: "Administration",
+        caption: "Un accès à l'admin, même depuis un smartphone",
     },
-
-
-
+    {
+        src: GalleryUxAdminPneus,
+        big: GalleryUxAdminPneusThumb,
+        alt: "Administration",
+        caption: "Une vue rapide de l'ensemble des pneus",
+    },
+    {
+        src: GalleryUxAdminPneuDetail,
+        big: GalleryUxAdminPneuDetailThumb,
+        alt: "Administration",
+        caption: "Modification en live de chaque pneu",
+    },
     /*
-
+GalleryUxAdminPneuThumb
     {
         src: GalleryUxFranchiseThumb,
         big: GalleryUxFranchise,
@@ -511,26 +530,12 @@ const UxGalleryItems: GalleryImage[] = [
         */
 ];
 
-const mobileGalleryItems: GalleryImage[] = [
-    {
-        src: mobileSearchVisual,
-        big: mobileSearchVisual,
-        alt: "Parcours mobile de recherche pneus Doc'Biker",
-        caption: "Recherche mobile",
-    },
-    {
-        src: mobileMenuVisual, big: mobileSearchVisual,
-        alt: "Home et menu mobile Doc'Biker",
-        caption: "Menu et accès rapides",
-    },
-    {
-        src: stage2018Visual, big: mobileSearchVisual,
-        alt: "Refonte 2017-2018 Doc'Biker",
-        caption: "Refonte finale",
-    },
-];
-
 const operationsGalleryItems: GalleryImage[] = [
+    {
+        src: reseauScreenVisual01, big: reseauScreenVisual01,
+        alt: "Configuration du back-office Doc'Biker",
+        caption: "Modules métier",
+    },
     {
         src: sliderVisual, big: mobileSearchVisual,
         alt: "Visuel promotionnel Doc'Biker pour slider",
@@ -554,17 +559,19 @@ const operationsGalleryItems: GalleryImage[] = [
 ];
 
 const strengths = [
-    "Piloter l'évolution d'un site sur plusieurs cycles, sans casser l'existant utile.",
-    "Faire converger enjeux de marque, acquisition, conversion et exploitation.",
-    "Concevoir des dispositifs simples a administrer pour des équipes non techniques.",
+    "Transformer des wireframes et des maquettes Photoshop en interfaces fiables, responsives et administrables.",
+    "Assurer la continuité technique d'un site sur plusieurs cycles, sans casser l'existant utile.",
+    "Faire converger direction artistique, SEO, conversion, back-office et contraintes d'exploitation terrain.",
+    "Faire preuve d'adaptabilité et mettre en place une solution efficace et innovante (réseau d'écrans).",
 ];
 
 const skills = [
-    "Pilotage UX / UI multi-refontes",
-    "Architecture d'information et hierarchisation d'offre",
+    "Réalisation web à partir de maquettes Photoshop",
+    "Intégration responsive HTML / CSS",
+    "Architecture d'information et hiérarchisation d'offre",
     "SEO local et logique d'acquisition",
-    "Intégration responsive",
     "Theming Joomla sur mesure",
+    "Qualité front-end et compatibilité navigateurs",
     "Parcours centres, forfaits et devis",
     "Back-office et outils d'administration",
     "Communication web-to-store",
@@ -712,8 +719,8 @@ export default function CaseStudyDocBiker({
                 <div className={`${shellClassName} grid gap-10`}>
                     <SectionHeading
                         eyebrow="Mission"
-                        title="Plus qu'une simple refonte graphique, une mission de pilotage."
-                        body="Le sujet n'était pas de refaire un site une fois. Il fallait accompagner la croissance du réseau, clarifier l'offre, soutenir le SEO local et garder un outil fiable pour les équipes."
+                        title="Des maquettes validées, un site à rendre réel et durable."
+                        body="Je travaillais avec un directeur artistique qui fournissait les wireframes et les maquettes Photoshop. Mon rôle consistait à transformer ces intentions en un site concret, fiable, responsive, administrable et utile pour le réseau."
                     />
 
                     <div className="grid gap-5 lg:grid-cols-[1.02fr_0.98fr]">
@@ -726,16 +733,21 @@ export default function CaseStudyDocBiker({
                                 Le site suit la maturité de l'enseigne.
                             </h3>
                             <p className="mt-4 text-base leading-8 text-neutral-600">
+                                Le point de départ date de 2005, quand j&apos;ai proposé une duplication du site Flash en HTML brut, uniquement destinée aux moteurs de recherche.
+                                C&apos;était un premier pas vers une logique plus orientée contenu, performance d&apos;indexation et acquisition locale, qui s&apos;est confirmée dans les années suivantes.
                                 Entre 2006 et 2018, les priorités changent. D&apos;abord,
                                 sortir d&apos;une logique trop visuelle pour retrouver une base
-                                indexable. Ensuite, structurer l&apos;offre et rendre le réseau
-                                plus visible. Enfin, faire du site un outil de service, de
+                                indexable.
+                                Ensuite, intégrer les nouvelles directions graphiques, structurer l&apos;offre et rendre le réseau
+                                plus visible.
+                                Enfin, faire du site un outil de service, de
                                 conversion et d&apos;exploitation destiné aux franchisés pour leur clientèle.
                             </p>
                             <p className="mt-4 text-base leading-8 text-neutral-600">
                                 C&apos;est ce temps long qui donne de la valeur au projet :
-                                faire évoluer un même produit digital sans rupture, en gardant
-                                le cap sur l&apos;utile.
+                                faire évoluer un même produit digital sans rupture, en gardant le cap
+                                sur l&apos;utile, la qualité de réalisation et la capacité des équipes à
+                                le faire vivre.
                             </p>
                         </motion.article>
 
@@ -745,24 +757,24 @@ export default function CaseStudyDocBiker({
                                 className="mt-3 text-3xl leading-tight tracking-[-0.03em] text-neutral-950"
                                 style={{ fontFamily: "var(--font-hero)" }}
                             >
-                                Cadrer, faire évoluer, rendre exploitable.
+                                Réaliser, mettre en place, fiabiliser.
                             </h3>
                             <ul className="mt-5 grid gap-3 p-0">
                                 <ArrowListItem>
-                                    Cadrage de l&apos;architecture et des parcours autour des
-                                    centres, des forfaits, des pneus et des devis.
+                                    Traduction technique des wireframes et maquettes Photoshop
+                                    fournis par le directeur artistique.
                                 </ArrowListItem>
                                 <ArrowListItem>
-                                    &eEcute;volution de l&apos;identité graphique sans perdre l&apos;ADN
-                                    très reconnaissable de Doc&apos;Biker.
+                                    Intégration des interfaces, construction des gabarits et
+                                    adaptation responsive des parcours clés.
                                 </ArrowListItem>
                                 <ArrowListItem>
-                                    Conception d&apos;un thème Joomla sur mesure, administrable
-                                    dans la durée.
+                                    Développement d&apos;un thème Joomla sur mesure et d&apos;un
+                                    back-office administrable dans la durée.
                                 </ArrowListItem>
                                 <ArrowListItem>
-                                    Pilotage du suivi éditorial, du SEO et de la cohérence entre
-                                    site, promotions et communication des centres.
+                                    Suivi de la qualité technique, du SEO, des contenus et de la
+                                    cohérence entre site, promotions et communication des centres.
                                 </ArrowListItem>
                             </ul>
                         </motion.article>
@@ -794,8 +806,8 @@ export default function CaseStudyDocBiker({
                 <div className={`${shellClassName} grid gap-10`}>
                     <SectionHeading
                         eyebrow="Évolutions"
-                        title="Trois étapes, trois niveaux de maturité."
-                        body="Chaque refonte répond a un moment précis de la vie de l'enseigne : visibilité, structuration, puis exploitation plus complète du site comme outil de service."
+                        title="Trois étapes, trois niveaux de réalisation."
+                        body="Chaque refonte répond à un moment précis de la vie de l'enseigne : rendre le site indexable, industrialiser les maquettes, puis livrer un outil responsive et exploitable au quotidien."
                     />
 
                     <div className="grid gap-5 lg:grid-cols-3">
@@ -843,8 +855,8 @@ export default function CaseStudyDocBiker({
                 <div className={`${shellClassName} grid gap-10`}>
                     <SectionHeading
                         eyebrow="SEO, UX, UI"
-                        title="La valeur du projet vient autant des usages que des ecrans."
-                        body="Le design évolue, mais l'enjeu devient surtout opérationnel : attirer, orienter, convertir et laisser aux équipes un outil facile a faire vivre."
+                        title="La valeur du projet vient autant de l'exécution que des écrans."
+                        body="Les maquettes donnaient la direction visuelle. Mon travail consistait à les rendre utilisables, rapides, cohérentes, bien structurées pour le SEO et simples à administrer."
                     />
 
                     <div className="grid gap-5">
@@ -882,15 +894,15 @@ export default function CaseStudyDocBiker({
                                 <p className="text-base leading-8 text-neutral-600">
                                     Le point de départ est clair : sortir d&apos;un site peu
                                     exploitable par les moteurs et construire des pages utiles,
-                                    lisibles et alignees sur des intentions locales comme les
-                                    pneus moto a Paris.
+                                    lisibles, techniquement propres et alignées sur des intentions locales comme les
+                                    pneus moto à Paris.
                                 </p>
                                 <ul className="grid gap-3 p-0">
                                     <ArrowListItem>
-                                        Passage vers une structure plus propre pour Google.
+                                        Passage vers une structure HTML plus propre pour Google.
                                     </ArrowListItem>
                                     <ArrowListItem>
-                                        Mise en avant de pages utiles pour l&apos;offre et les centres.
+                                        Mise en place de gabarits utiles pour l&apos;offre, les centres et les contenus longue traîne.
                                     </ArrowListItem>
                                     <ArrowListItem>
                                         Suivi éditorial et ajustements SEO menés dans la durée.
@@ -905,49 +917,36 @@ export default function CaseStudyDocBiker({
                         >
                             <p className={eyebrowClassName}>
                                 <ArrowRedo className="mr-2 inline h-4 w-4" />
-                                UX et lisibilité
+                                UX, responsive et mobile
                             </p>
                             <h3
                                 className="mt-3 text-3xl leading-tight tracking-[-0.03em] text-neutral-950"
                                 style={{ fontFamily: "var(--font-hero)" }}
                             >
-                                Rendre les parcours plus lisibles et plus courts.
+                                Des parcours plus rapides, plus lisibles et plus fluides.
                             </h3>
                             <p className="mt-4 text-base leading-8 text-neutral-600">
-                                Le site s&apos;organise progressivement autour des besoins les plus
-                                concrets : trouver le bon pneu, comprendre l&apos;offre forfait, contacter
-                                un centre et accéder rapidement aux informations utiles. Le parcours a été déployé en mobile forst de la logique responsive, pour être pensé d'abord pour les usages rapides sur smartphone.
+                                Le site s&apos;organise autour des actions les plus concrètes :
+                                trouver le bon pneu, comprendre un forfait, contacter un centre
+                                ou demander un devis. À partir des wireframes et des maquettes,
+                                j&apos;ai simplifié les enchaînements, hiérarchisé les contenus et
+                                intégré des gabarits capables de rester lisibles du desktop au
+                                smartphone.
+                            </p>
+                            <p className="mt-4 text-base leading-8 text-neutral-600">
+                                La réalisation responsive a aussi été pensée côté performance :
+                                interfaces moins lourdes, chargement plus rapide, navigation plus
+                                directe et interactions plus souples sur mobile. L&apos;objectif était
+                                de donner une sensation d&apos;interface fluide, sans rupture entre la
+                                recherche, les résultats et les pages de détail.
+                            </p>
+                            <p className="mt-4 text-base leading-8 text-neutral-600">
+                                Le point fort de l'enseigne est surtout son stock de pneus disponible :
+                                le moteur de recherche exploite 3 500 références de pneumatiques des principaux constructeurs, assurant un résultat pertinent pour tout type de 2 roues.
                             </p>
                             <div className="mt-6">
                                 <ImageGallery
                                     items={UxGalleryItems}
-                                    onImageClick={openLightbox}
-                                />
-                            </div>
-                        </motion.article>
-
-                        <motion.article
-                            {...reveal}
-                            className={`${surfaceClassName} overflow-hidden p-0 sm:p-6 md:p-7`}
-                        >
-                            <p className={eyebrowClassName}>
-                                <ArrowRedo className="mr-2 inline h-4 w-4" />
-                                UI responsive
-                            </p>
-                            <h3
-                                className="mt-3 text-3xl leading-tight tracking-[-0.03em] text-neutral-950"
-                                style={{ fontFamily: "var(--font-hero)" }}
-                            >
-                                Acces plus directs, lecture plus fluide, mobile compris.
-                            </h3>
-                            <p className="mt-4 max-w-3xl text-base leading-8 text-neutral-600">
-                                La dernière évolution simplifie l&apos;accès aux actions clés :
-                                appels a l&apos;action plus visibles, menu plus direct et cohérence
-                                de parcours entre desktop et smartphone.
-                            </p>
-                            <div className="mt-6">
-                                <ImageGallery
-                                    items={mobileGalleryItems}
                                     onImageClick={openLightbox}
                                 />
                             </div>
@@ -960,8 +959,8 @@ export default function CaseStudyDocBiker({
                 <div className={`${shellClassName} grid gap-10`}>
                     <SectionHeading
                         eyebrow="Exploitation"
-                        title="Le site ne s'arrète pas a l'interface publique."
-                        body="Le projet touche aussi a l'animation commerciale, a l'administration quotidienne et a la coherence entre web et centres."
+                        title="Le site ne s'arrête pas à l'interface publique."
+                        body="Le projet touche aussi à l'animation commerciale, à l'administration quotidienne, à la qualité des contenus et à la cohérence entre web et centres."
                     />
 
                     <div className="grid gap-5 lg:grid-cols-2">
@@ -977,13 +976,13 @@ export default function CaseStudyDocBiker({
                                 className="mt-3 text-3xl leading-tight tracking-[-0.03em] text-neutral-950"
                                 style={{ fontFamily: "var(--font-hero)" }}
                             >
-                                Un meme contenu promo du site jusqu'aux points de vente.
+                                Un même contenu promo du site jusqu&apos;aux points de vente.
                             </h3>
                             <p className="mt-4 text-base leading-8 text-neutral-600">
-                                J&apos;ai mis en place un réseau d&apos;ecrans synchronise dans les
-                                centres. Les contenus prepares pour le site pouvaient ainsi etre
-                                rediffuses sur les points de vente, avec moins de ressaisie et
-                                plus de reactivite commerciale.
+                                J&apos;ai mis en place un réseau d&apos;écrans synchronisé dans les
+                                centres. Les contenus préparés pour le site pouvaient ainsi être
+                                rediffusés sur les points de vente, avec moins de ressaisie et
+                                plus de réactivité commerciale.
                             </p>
                             <button
                                 type="button"
@@ -1021,14 +1020,14 @@ export default function CaseStudyDocBiker({
                                 className="mt-3 text-3xl leading-tight tracking-[-0.03em] text-neutral-950"
                                 style={{ fontFamily: "var(--font-hero)" }}
                             >
-                                Donner aux equipes un outil qu&apos;elles peuvent faire vivre.
+                                Donner aux équipes un outil qu&apos;elles peuvent faire vivre.
                             </h3>
                             <p className="mt-4 text-base leading-8 text-neutral-600">
-                                Pour tenir dans la duree, le site devait rester administrable.
-                                Le back-office a donc ete pense comme un outil métier, capable de
-                                gerer les centres, les modules de home, les promos, les forfaits,
-                                les devis et les contenus sans intervention externe a chaque mise
-                                a jour.
+                                Pour tenir dans la durée, le site devait rester administrable.
+                                Le back-office a donc été pensé comme un outil métier, capable de
+                                gérer les centres, les modules de home, les promos, les forfaits,
+                                les devis et les contenus sans intervention technique à chaque mise
+                                à jour.
                             </p>
                             <div className="mt-6">
                                 <ImageGallery
@@ -1046,7 +1045,7 @@ export default function CaseStudyDocBiker({
                     <SectionHeading
                         eyebrow="Points forts"
                         title="Ce que ce projet met en valeur dans ma pratique."
-                        body="Surtout une capacite a tenir un cap dans la duree, a relier design et exploitation, et a faire avancer un produit digital au rythme du terrain."
+                        body="Surtout une capacité à prendre le relais après la conception graphique : produire proprement, intégrer durablement, fiabiliser et faire avancer un produit digital au rythme du terrain."
                     />
 
                     <div className="grid gap-5 lg:grid-cols-[0.96fr_1.04fr]">
@@ -1080,7 +1079,7 @@ export default function CaseStudyDocBiker({
                     <SectionHeading
                         eyebrow="Fiche projet"
                         title={resolvedProject.title}
-                        body="La fiche ci-dessous reprend les donnees portfolio. Le recit ci-dessus documente, lui, l'ensemble de la mission entre 2006 et 2018."
+                        body="La fiche ci-dessous reprend les données portfolio. Le récit ci-dessus documente, lui, l'ensemble de la mission entre 2006 et 2018."
                     />
 
                     <motion.div {...reveal}>
