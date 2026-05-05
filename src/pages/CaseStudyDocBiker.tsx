@@ -65,25 +65,50 @@ import GalleryUxAdminPneuDetailThumb from "../assets/images/projects/rea_web_doc
 
 
 
+
 /*
 import GalleryUxFranchise from "../assets/images/projects/rea_web_docbiker/gallery_ux_franchise.png";
 import GalleryUxFranchiseThumb from "../assets/images/projects/rea_web_docbiker/gallery_ux_franchise_thumb.png";
-
+import GalleryUxFranchise from "../assets/images/projects/rea_web_docbiker/gallery_ux_franchise.png";
+import GalleryUxFranchiseThumb from "../assets/images/projects/rea_web_docbiker/gallery_ux_franchise_thumb.png";
 import centreDetailVisual from "../assets/images/projects/rea_web_docbiker/fiche_centre.png";
 import centerMapVisual from "../assets/images/projects/rea_web_docbiker/carte_centres.png";
 import quoteVisual from "../assets/images/projects/rea_web_docbiker/devis.png";
 import packagesVisual from "../assets/images/projects/rea_web_docbiker/forfaits.png";
+import backofficeVisual from "../assets/images/projects/rea_web_docbiker/capture_backoffice.jpg";
+import adminVisual from "../assets/images/projects/rea_web_docbiker/admin.png";
+import mobileSearchVisual from "../assets/images/projects/rea_web_docbiker/mobile01.png";
+
+
 */
 
-import mobileSearchVisual from "../assets/images/projects/rea_web_docbiker/mobile01.png";
 import networkVisual from "../assets/images/projects/rea_web_docbiker/reseau_de_communication_siteweb_centres_via_ecrans-2026-04-26-1202.png";
-import sliderVisual from "../assets/images/projects/rea_web_docbiker/slider.png";
-import sliderPromoVisual from "../assets/images/projects/rea_web_docbiker/slider02.png";
-import adminVisual from "../assets/images/projects/rea_web_docbiker/admin.png";
-import backofficeVisual from "../assets/images/projects/rea_web_docbiker/capture_backoffice.jpg";
+
 import projectsData from "../data/project-prod.json";
 
+
 import reseauScreenVisual01 from "../assets/images/projects/rea_web_docbiker/screen-reseaul-gallery_01.png";
+import reseauScreenVisual01Thumb from "../assets/images/projects/rea_web_docbiker/screen-reseaul-gallery_01_thumb.png";
+
+import reseauScreenVisual02 from "../assets/images/projects/rea_web_docbiker/screen-reseaul-gallery_02.png";
+import reseauScreenVisual02Thumb from "../assets/images/projects/rea_web_docbiker/screen-reseaul-gallery_02_thumb.png";
+
+
+import reseauScreenVisual03 from "../assets/images/projects/rea_web_docbiker/screen-reseaul-gallery_03.png";
+import reseauScreenVisual03Thumb from "../assets/images/projects/rea_web_docbiker/screen-reseaul-gallery_03_thumb.png";
+
+import reseauScreenVisual04 from "../assets/images/projects/rea_web_docbiker/screen-reseaul-gallery_04.png";
+import reseauScreenVisual04Thumb from "../assets/images/projects/rea_web_docbiker/screen-reseaul-gallery_04_thumb.png";
+
+import franchiseVisual01 from "../assets/images/projects/rea_web_docbiker/franchise_formulaire_candidatures.png";
+import franchiseVisual01Thumb from "../assets/images/projects/rea_web_docbiker/franchise_formulaire_candidatures_thumb.png";
+
+import franchiseVisual02 from "../assets/images/projects/rea_web_docbiker/franchise_admin_centre_infos.png";
+import franchiseVisual02Thumb from "../assets/images/projects/rea_web_docbiker/franchise_admin_centre_infos_thumb.png";
+
+import franchiseVisual03 from "../assets/images/projects/rea_web_docbiker/franchise_admin_promo.png";
+import franchiseVisual03Thumb from "../assets/images/projects/rea_web_docbiker/franchise_admin_promo_thumb.png";
+
 
 
 const CircleChevDown = CiCircleChevDown as unknown as ComponentType<{
@@ -489,62 +514,51 @@ const UxGalleryItems: GalleryImage[] = [
         alt: "Administration",
         caption: "Modification en live de chaque pneu",
     },
-    /*
-GalleryUxAdminPneuThumb
-    {
-        src: GalleryUxFranchiseThumb,
-        big: GalleryUxFranchise,
-        alt: "Espace admin",
-        caption: "Espace admin",
-    },
-        {
-            src: stage2018Visual,
-            big: GalleryUxHome,
-            alt: "Formulaire de devis Doc'Biker",
-            caption: "Conversion",
-        },
-        {
-            src: centreDetailVisual,
-            big: GalleryUxHome,
-            alt: "Fiche centre Doc'Biker",
-            caption: "Fiche centre",
-        },
-        {
-            src: centerMapVisual,
-            big: GalleryUxHome,
-            alt: "Carte des centres Doc'Biker",
-            caption: "Carte interactive",
-        },
-        {
-            src: packagesVisual,
-            big: GalleryUxHome,
-            alt: "Page forfaits Doc'Biker",
-            caption: "Offre structurée",
-        },
-        {
-            src: quoteVisual,
-            big: GalleryUxHome,
-            alt: "Formulaire de devis Doc'Biker",
-            caption: "Conversion",
-        },
-        */
-];
 
-const operationsGalleryItems: GalleryImage[] = [
+];
+const screenCentreGalleryItems: GalleryImage[] = [
     {
-        src: reseauScreenVisual01, big: reseauScreenVisual01,
-        alt: "Configuration du back-office Doc'Biker",
-        caption: "Modules métier",
-    },
-    {
-        src: sliderVisual, big: mobileSearchVisual,
-        alt: "Visuel promotionnel Doc'Biker pour slider",
-        caption: "Promo web",
-    },
-    {
-        src: sliderPromoVisual, big: mobileSearchVisual,
+        src: reseauScreenVisual01Thumb, big: reseauScreenVisual01,
         alt: "Variante de visuel promotionnel Doc'Biker",
-        caption: "Déclinaison campagne",
+        caption: "écran headquarter",
+    },
+    {
+        src: reseauScreenVisual02Thumb, big: reseauScreenVisual02,
+        alt: "Configuration du back-office Doc'Biker",
+        caption: "écran dans un centre",
+    },
+    {
+        src: reseauScreenVisual03Thumb, big: reseauScreenVisual03,
+        alt: "Variante de visuel promotionnel Doc'Biker",
+        caption: "exemple de diffusion",
+    },
+    {
+        src: reseauScreenVisual04Thumb, big: reseauScreenVisual04,
+        alt: "Variante de visuel promotionnel Doc'Biker",
+        caption: "synchro avec le site",
+    },
+];
+/*
+const franchiseGalleryItems: GalleryImage[] = [
+    {
+        src: reseauScreenVisual01Thumb, big: reseauScreenVisual01,
+        alt: "Variante de visuel promotionnel Doc'Biker",
+        caption: "écran headquarter",
+    },
+    {
+        src: reseauScreenVisual02Thumb, big: reseauScreenVisual02,
+        alt: "Configuration du back-office Doc'Biker",
+        caption: "écran dans un centre",
+    },
+    {
+        src: reseauScreenVisual03Thumb, big: reseauScreenVisual03,
+        alt: "Variante de visuel promotionnel Doc'Biker",
+        caption: "exemple de diffusion",
+    },
+    {
+        src: reseauScreenVisual04Thumb, big: reseauScreenVisual04,
+        alt: "Variante de visuel promotionnel Doc'Biker",
+        caption: "synchro avec le site",
     },
     {
         src: adminVisual, big: mobileSearchVisual,
@@ -552,9 +566,30 @@ const operationsGalleryItems: GalleryImage[] = [
         caption: "Administration",
     },
     {
-        src: backofficeVisual, big: mobileSearchVisual,
+        src: reseauScreenVisual01Thumb, big: reseauScreenVisual01,
         alt: "Configuration du back-office Doc'Biker",
-        caption: "Modules métier",
+        caption: "écran headquarter",
+    },
+];
+*/
+const franchiseGrowthGalleryItems: GalleryImage[] = [
+    {
+        src: franchiseVisual01Thumb,
+        big: franchiseVisual01,
+        alt: "Page franchise Doc'Biker",
+        caption: "Recrutement franchise",
+    },
+    {
+        src: franchiseVisual02Thumb,
+        big: franchiseVisual02,
+        alt: "Back-office Doc'Biker",
+        caption: "Admin centre franchisé",
+    },
+    {
+        src: franchiseVisual03Thumb,
+        big: franchiseVisual03,
+        alt: "Promotion franchise Doc'Biker",
+        caption: "Admin Promotion franchise",
     },
 ];
 
@@ -1002,7 +1037,7 @@ export default function CaseStudyDocBiker({
                             </button>
                             <div className="mt-6">
                                 <ImageGallery
-                                    items={operationsGalleryItems.slice(0, 2)}
+                                    items={screenCentreGalleryItems}
                                     onImageClick={openLightbox}
                                 />
                             </div>
@@ -1014,24 +1049,69 @@ export default function CaseStudyDocBiker({
                         >
                             <p className={eyebrowClassName}>
                                 <ArrowRedo className="mr-2 inline h-4 w-4" />
-                                Back-office
+                                Franchise et back-office
                             </p>
                             <h3
                                 className="mt-3 text-3xl leading-tight tracking-[-0.03em] text-neutral-950"
                                 style={{ fontFamily: "var(--font-hero)" }}
                             >
-                                Donner aux équipes un outil qu&apos;elles peuvent faire vivre.
+                                Faire du site un pilier du développement de la franchise.
                             </h3>
                             <p className="mt-4 text-base leading-8 text-neutral-600">
-                                Pour tenir dans la durée, le site devait rester administrable.
-                                Le back-office a donc été pensé comme un outil métier, capable de
-                                gérer les centres, les modules de home, les promos, les forfaits,
-                                les devis et les contenus sans intervention technique à chaque mise
-                                à jour.
+                                Au fil des refontes, mon rôle a dépassé la simple administration
+                                de contenus : j&apos;ai transformé le site en outil de croissance pour
+                                le réseau Doc&apos;Biker. Côté siège, les formulaires en ligne
+                                centralisaient les candidatures de futurs franchisés et facilitaient
+                                les routines de création d&apos;un nouveau centre. Côté terrain, les
+                                chefs de centre gagnaient en autonomie sur les informations
+                                pratiques, les opérations commerciales et le suivi des demandes
+                                entrantes.
                             </p>
+                            <p className="mt-4 text-base leading-8 text-neutral-600">
+                                Cette approche qualifie mon intervention comme un rôle de
+                                développeur produit orienté réseau : relier acquisition franchise,
+                                exploitation quotidienne et génération de prospects dans un même
+                                écosystème web.
+                            </p>
+                            <ul className="mt-5 grid gap-3 p-0">
+                                <ArrowListItem>
+                                    Recrutement en ligne des candidats à la franchise via des
+                                    formulaires exploitables par le headquarter.
+                                </ArrowListItem>
+                                <ArrowListItem>
+                                    Automatisation des routines de création de centre pour accélérer
+                                    l&apos;ouverture et la mise en ligne des fiches locales.
+                                </ArrowListItem>
+                                <ArrowListItem>
+                                    Outils web-to-shop pour rendre les franchisés plus autonomes dans
+                                    leur communication promotionnelle et informative.
+                                </ArrowListItem>
+                                <ArrowListItem>
+                                    Mise à disposition d&apos;un espace documentaire en ligne pour
+                                    partager les ressources utiles au réseau.
+                                </ArrowListItem>
+                                <ArrowListItem>
+                                    Administration des fiches centre et génération de devis donnant
+                                    aux responsables une liste directe de clients potentiels.
+                                </ArrowListItem>
+                            </ul>
+                            <div className="mt-6 grid gap-4 rounded-[24px] border border-black/8 bg-white/72 p-5 sm:grid-cols-[0.7fr_1.3fr] sm:items-center">
+
+                                <div className="grid gap-4 rounded-[28px] border border-black/8 bg-white/78 p-6 shadow-[0_14px_34px_rgba(18,22,29,0.06)] backdrop-blur-md md:p-7">
+                                    <p className="text-[clamp(2.5rem,4vw,4.2rem)] font-semibold leading-[0.99] tracking-[-0.10em] text-neutral-600  p-y-0 m-y-0 ">
+                                        59<span className="text-base tracking-[-0.01em] font-normal text-neutral-500"> %</span></p>
+                                    <p className="text-base p-y-0 m-y-0 leading-7text-neutral-600">de centres Franchisés</p>
+                                </div>
+                                <p className="text-base leading-8 text-neutral-600">
+                                    Le réseau passe d&apos;environ 13 centres au lancement de la
+                                    franchise en 2011 à 22 centres en 2018. Le site
+                                    accompagne cette structuration en outillant à la fois le siège,
+                                    les chefs de centre et les parcours de devis.
+                                </p>
+                            </div>
                             <div className="mt-6">
                                 <ImageGallery
-                                    items={operationsGalleryItems.slice(2)}
+                                    items={franchiseGrowthGalleryItems}
                                     onImageClick={openLightbox}
                                 />
                             </div>
