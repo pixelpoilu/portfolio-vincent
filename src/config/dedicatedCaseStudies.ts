@@ -2,6 +2,8 @@ import type { ComponentType } from "react";
 
 import CaseStudyDiliTrust from "../pages/CaseStudyDiliTrust";
 import CaseStudyDocBiker from "../pages/CaseStudyDocBiker";
+import CaseStudyLocaboat from "../pages/CaseStudyLocaboat";
+
 import type { Project } from "../types/Project";
 
 export type DedicatedCaseStudyComponent = ComponentType<{
@@ -26,6 +28,14 @@ const dedicatedCaseStudies: DedicatedCaseStudyConfig[] = [
         projectId: 64,
         Component: CaseStudyDocBiker,
     },
+
+
+    {
+        slug: "site-internet-locaboat",
+        projectId: 14,
+        Component: CaseStudyLocaboat,
+    },
+    
 ];
 
 export function getDedicatedCaseStudyBySlug(slug?: string) {

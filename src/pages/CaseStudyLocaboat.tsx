@@ -1,9 +1,9 @@
 import {
+    AnimatePresence,
     motion,
     useScroll,
     useSpring,
     useTransform,
-    AnimatePresence,
 } from "framer-motion";
 import {
     type ComponentType,
@@ -17,72 +17,50 @@ import {
 } from "react";
 import { Link } from "react-router-dom";
 
-import { CiCircleChevDown } from "react-icons/ci";
 import { BsArrowRightShort } from "react-icons/bs";
+import { CiCircleChevDown } from "react-icons/ci";
 import { IoArrowRedo } from "react-icons/io5";
 
 import grainTexture from "../assets/images/textures/grain.png";
 import CaseStudyProjectData from "../components/CaseStudyProjectData";
+import projectsData from "../data/project-prod.json";
 import type { Project } from "../types/Project";
 
-import heroVisual from "../assets/images/projects/rea_web_docbiker/new_docbiker_trsp.png";
-import stage2006Visual from "../assets/images/projects/rea_web_docbiker/2006_docbiker_trsp.png";
-import stage2011Visual from "../assets/images/projects/rea_web_docbiker/2011_docbiker_trsp.png";
-import stage2017Visual from "../assets/images/projects/rea_web_docbiker/2017_docbiker_trsp.png";
-import seoVisual from "../assets/images/projects/rea_web_docbiker/results_google.png";
+import heroVisual from "../assets/images/projects/rea_web_locaboat/rea_web_locaboat_diapo.png";
+import homeVisual from "../assets/images/projects/rea_web_locaboat/01.jpg";
+import searchVisual from "../assets/images/projects/rea_web_locaboat/02.jpg";
+import routeVisual from "../assets/images/projects/rea_web_locaboat/03.jpg";
+import mapVisual from "../assets/images/projects/rea_web_locaboat/04.png";
+import bookingVisual from "../assets/images/projects/rea_web_locaboat/05.jpg";
+import offerVisual from "../assets/images/projects/rea_web_locaboat/06.jpg";
+import contentVisual from "../assets/images/projects/rea_web_locaboat/07.jpg";
 
-import GalleryUxHome from "../assets/images/projects/rea_web_docbiker/2017_gallery_ux_home.png";
-import GalleryUxHomeThumb from "../assets/images/projects/rea_web_docbiker/2017_gallery_ux_home_thumb.png";
+import industriesHeroVisual from "../assets/images/projects/rea_web_locaboatindustries/rea_web_locaboatindustries_diapo.jpg";
+import industriesHomeVisual from "../assets/images/projects/rea_web_locaboatindustries/locaboat_ind_00.jpg";
+import industriesBoatVisual from "../assets/images/projects/rea_web_locaboatindustries/locaboat_ind_05.jpg";
+import industriesPortListVisual from "../assets/images/projects/rea_web_locaboatindustries/locaboat_ind_04.jpg";
+import industriesPortDetailVisual from "../assets/images/projects/rea_web_locaboatindustries/locaboat_ind_03.jpg";
+import industriesAdminVisual from "../assets/images/projects/rea_web_locaboatindustries/locaboat_ind_admin_01.jpg";
+import industries3dVisual01 from "../assets/images/projects/rea_web_locaboatindustries/locaboat_3D_07.jpg";
+import industries3dVisual02 from "../assets/images/projects/rea_web_locaboatindustries/locaboat_3D_08.jpg";
+import industries3dVisual03 from "../assets/images/projects/rea_web_locaboatindustries/locaboat_3D_09.jpg";
 
-import GalleryUxHomeMenu from "../assets/images/projects/rea_web_docbiker/2017_gallery_ux_menu.png";
-import GalleryUxHomeMenuThumb from "../assets/images/projects/rea_web_docbiker/2017_gallery_ux_menu_thumb.png";
+import brochurePanoramaVisual from "../assets/images/projects/rea_bol_locaboat/rea_bol_locaboat_panorama.png";
+import brochureVisual01 from "../assets/images/projects/rea_bol_locaboat/01.jpg";
+import brochureVisual02 from "../assets/images/projects/rea_bol_locaboat/02.jpg";
+import brochureVisual03 from "../assets/images/projects/rea_bol_locaboat/03.jpg";
+import brochureVisual04 from "../assets/images/projects/rea_bol_locaboat/04.jpg";
 
-import GalleryUxForfaits from "../assets/images/projects/rea_web_docbiker/2017_gallery_ux_forfaits_n1.png";
-import GalleryUxForfaitsThumb from "../assets/images/projects/rea_web_docbiker/2017_gallery_ux_forfaits_n1_thumb.png";
+import portailVisual01 from "../assets/images/projects/rea_web_docbiker/franchise_formulaire_candidatures.png";
+import portailVisual01Thumb from "../assets/images/projects/rea_web_docbiker/franchise_formulaire_candidatures_thumb.png";
 
-import GalleryUxForfaitDetail from "../assets/images/projects/rea_web_docbiker/2017_gallery_ux_forfaits_n2.png";
-import GalleryUxForfaitDetailThumb from "../assets/images/projects/rea_web_docbiker/2017_gallery_ux_forfaits_n2_thumb.png";
+import portailVisual02 from "../assets/images/projects/rea_web_docbiker/franchise_admin_centre_infos.png";
+import portailVisual02Thumb from "../assets/images/projects/rea_web_docbiker/franchise_admin_centre_infos_thumb.png";
 
-import GalleryUxPneuSearch from "../assets/images/projects/rea_web_docbiker/2017_gallery_ux_pneu_n1.png";
-import GalleryUxPneuSearchThumb from "../assets/images/projects/rea_web_docbiker/2017_gallery_ux_pneu_n1_thumb.png";
-
-import GalleryUxPneuSearchResults from "../assets/images/projects/rea_web_docbiker/2017_gallery_ux_pneu_n2.png";
-import GalleryUxPneuSearchResultsThumb from "../assets/images/projects/rea_web_docbiker/2017_gallery_ux_pneu_n2_thumb.png";
-
-import GalleryUxPneuSearcDetail from "../assets/images/projects/rea_web_docbiker/2017_gallery_ux_pneus_n3.png";
-import GalleryUxPneuSearcDetailThumb from "../assets/images/projects/rea_web_docbiker/2017_gallery_ux_pneus_n3_thumb.png";
-
-import GalleryUxAdmin from "../assets/images/projects/rea_web_docbiker/2017_gallery_ux_admin_home.png";
-import GalleryUxAdminThumb from "../assets/images/projects/rea_web_docbiker/2017_gallery_ux_admin_home_thumb.png";
-
-
-import GalleryUxAdminPneus from "../assets/images/projects/rea_web_docbiker/2017_gallery_ux_admin_pneus_n1.png";
-import GalleryUxAdminPneusThumb from "../assets/images/projects/rea_web_docbiker/2017_gallery_ux_admin_pneus_n1_thumb.png";
-
-import GalleryUxAdminPneuDetail from "../assets/images/projects/rea_web_docbiker/2017_gallery_ux_admin_pneus_n2.png";
-import GalleryUxAdminPneuDetailThumb from "../assets/images/projects/rea_web_docbiker/2017_gallery_ux_admin_pneus_n2_thumb.png";
-
-
-
-
-/*
-import GalleryUxFranchise from "../assets/images/projects/rea_web_docbiker/gallery_ux_franchise.png";
-import GalleryUxFranchiseThumb from "../assets/images/projects/rea_web_docbiker/gallery_ux_franchise_thumb.png";
-import GalleryUxFranchise from "../assets/images/projects/rea_web_docbiker/gallery_ux_franchise.png";
-import GalleryUxFranchiseThumb from "../assets/images/projects/rea_web_docbiker/gallery_ux_franchise_thumb.png";
-import centreDetailVisual from "../assets/images/projects/rea_web_docbiker/fiche_centre.png";
-import centerMapVisual from "../assets/images/projects/rea_web_docbiker/carte_centres.png";
-import quoteVisual from "../assets/images/projects/rea_web_docbiker/devis.png";
-import packagesVisual from "../assets/images/projects/rea_web_docbiker/forfaits.png";
-import backofficeVisual from "../assets/images/projects/rea_web_docbiker/capture_backoffice.jpg";
-import adminVisual from "../assets/images/projects/rea_web_docbiker/admin.png";
-import mobileSearchVisual from "../assets/images/projects/rea_web_docbiker/mobile01.png";
-
-
-*/
+import portailVisual03 from "../assets/images/projects/rea_web_docbiker/franchise_admin_promo.png";
+import portailVisual03Thumb from "../assets/images/projects/rea_web_docbiker/franchise_admin_promo_thumb.png";
 
 import networkVisual from "../assets/images/projects/rea_web_docbiker/reseau_de_communication_siteweb_centres_via_ecrans-2026-04-26-1202.png";
-import projectsData from "../data/project-prod.json";
 
 import reseauScreenVisual01 from "../assets/images/projects/rea_web_docbiker/screen-reseaul-gallery_01.png";
 import reseauScreenVisual01Thumb from "../assets/images/projects/rea_web_docbiker/screen-reseaul-gallery_01_thumb.png";
@@ -96,14 +74,6 @@ import reseauScreenVisual03Thumb from "../assets/images/projects/rea_web_docbike
 import reseauScreenVisual04 from "../assets/images/projects/rea_web_docbiker/screen-reseaul-gallery_04.png";
 import reseauScreenVisual04Thumb from "../assets/images/projects/rea_web_docbiker/screen-reseaul-gallery_04_thumb.png";
 
-import franchiseVisual01 from "../assets/images/projects/rea_web_docbiker/franchise_formulaire_candidatures.png";
-import franchiseVisual01Thumb from "../assets/images/projects/rea_web_docbiker/franchise_formulaire_candidatures_thumb.png";
-
-import franchiseVisual02 from "../assets/images/projects/rea_web_docbiker/franchise_admin_centre_infos.png";
-import franchiseVisual02Thumb from "../assets/images/projects/rea_web_docbiker/franchise_admin_centre_infos_thumb.png";
-
-import franchiseVisual03 from "../assets/images/projects/rea_web_docbiker/franchise_admin_promo.png";
-import franchiseVisual03Thumb from "../assets/images/projects/rea_web_docbiker/franchise_admin_promo_thumb.png";
 
 const CircleChevDown = CiCircleChevDown as unknown as ComponentType<{
     className?: string;
@@ -182,11 +152,7 @@ function SectionHeading({
     );
 }
 
-type ArrowListItemProps = {
-    children: ReactNode;
-};
-
-function ArrowListItem({ children }: ArrowListItemProps) {
+function ArrowListItem({ children }: { children: ReactNode }) {
     return (
         <li className="list-none">
             <div className="flex items-start gap-3">
@@ -205,13 +171,55 @@ type GalleryImage = {
     alt: string;
     caption: string;
 };
-
-type ImageGalleryProps = {
+const screenCentreGalleryItems: GalleryImage[] = [
+    {
+        src: reseauScreenVisual01Thumb, big: reseauScreenVisual01,
+        alt: "Variante de visuel promotionnel Doc'Biker",
+        caption: "écran headquarter",
+    },
+    {
+        src: reseauScreenVisual02Thumb, big: reseauScreenVisual02,
+        alt: "Configuration du back-office Doc'Biker",
+        caption: "écran dans un centre",
+    },
+    {
+        src: reseauScreenVisual03Thumb, big: reseauScreenVisual03,
+        alt: "Variante de visuel promotionnel Doc'Biker",
+        caption: "exemple de diffusion",
+    },
+    {
+        src: reseauScreenVisual04Thumb, big: reseauScreenVisual04,
+        alt: "Variante de visuel promotionnel Doc'Biker",
+        caption: "synchro avec le site",
+    },
+];
+const portailGalleryItems: GalleryImage[] = [
+    {
+        src: portailVisual01Thumb,
+        big: portailVisual01,
+        alt: "Page franchise Doc'Biker",
+        caption: "Recrutement franchise",
+    },
+    {
+        src: portailVisual02Thumb,
+        big: portailVisual02,
+        alt: "Back-office Doc'Biker",
+        caption: "Admin centre franchisé",
+    },
+    {
+        src: portailVisual03Thumb,
+        big: portailVisual03,
+        alt: "Promotion franchise Doc'Biker",
+        caption: "Admin Promotion franchise",
+    },
+];
+function ImageGallery({
+    items,
+    onImageClick,
+}: {
     items: GalleryImage[];
-    onImageClick: (src: string, big: string, alt: string) => void;
-};
-
-function ImageGallery({ items, onImageClick }: ImageGalleryProps) {
+    onImageClick: (src: string, alt: string) => void;
+}) {
     const galleryRef = useRef<HTMLDivElement | null>(null);
     const [canScrollLeft, setCanScrollLeft] = useState(false);
     const [canScrollRight, setCanScrollRight] = useState(false);
@@ -224,7 +232,6 @@ function ImageGallery({ items, onImageClick }: ImageGalleryProps) {
         }
 
         const maxScrollLeft = gallery.scrollWidth - gallery.clientWidth;
-
         setCanScrollLeft(gallery.scrollLeft > 4);
         setCanScrollRight(maxScrollLeft - gallery.scrollLeft > 4);
     }, []);
@@ -275,9 +282,8 @@ function ImageGallery({ items, onImageClick }: ImageGalleryProps) {
             return;
         }
 
-        const offset = Math.max(gallery.clientWidth * 0.72, 280);
         gallery.scrollBy({
-            left: direction === "right" ? offset : -offset,
+            left: direction === "right" ? Math.max(gallery.clientWidth * 0.72, 280) : -Math.max(gallery.clientWidth * 0.72, 280),
             behavior: "smooth",
         });
 
@@ -286,7 +292,6 @@ function ImageGallery({ items, onImageClick }: ImageGalleryProps) {
 
     return (
         <div className="grid gap-4">
-
             <div
                 ref={galleryRef}
                 className="flex snap-x snap-mandatory gap-4 overflow-x-auto pb-2 pr-6 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden md:pr-8"
@@ -296,13 +301,12 @@ function ImageGallery({ items, onImageClick }: ImageGalleryProps) {
                     <button
                         key={`${item.alt}-${index}`}
                         type="button"
-                        onClick={() => onImageClick(item.big, item.alt, item.src)}
+                        onClick={() => onImageClick(item.big, item.alt)}
                         aria-label={`Ouvrir ${item.alt}`}
                         className="group relative block w-[min(74vw,320px)] shrink-0 snap-start overflow-hidden rounded-[28px] border border-black/10 bg-white/82 text-left shadow-[0_16px_40px_rgba(18,22,29,0.08)] md:w-[280px] lg:w-[300px]"
                     >
                         <img
                             src={item.src}
-                            data-big={item.big}
                             alt={item.alt}
                             className="block aspect-[4/5] w-full object-cover transition duration-500 group-hover:scale-[1.02]"
                         />
@@ -333,19 +337,21 @@ function ImageGallery({ items, onImageClick }: ImageGalleryProps) {
                     <span aria-hidden="true">›</span>
                 </button>
             </div>
-
         </div>
     );
 }
 
-type LightboxProps = {
+function Lightbox({
+    src,
+    alt,
+    isOpen,
+    onClose,
+}: {
     src: string;
     alt: string;
     isOpen: boolean;
     onClose: () => void;
-};
-
-function Lightbox({ src, alt, isOpen, onClose }: LightboxProps) {
+}) {
     useEffect(() => {
         const handleEscape = (event: KeyboardEvent) => {
             if (event.key === "Escape") {
@@ -392,243 +398,221 @@ function Lightbox({ src, alt, isOpen, onClose }: LightboxProps) {
 
 const summaryCards = [
     {
-        value: "2006-2018",
-        label: "réalisation et suivi technique",
+        value: "2001-2011",
+        label: "D'un site 'Brochure' vers une plateforme commerciale et informative.",
         detail:
-            "Douze ans d'évolutions livrées, maintenues et fiabilisées, du socle SEO au site responsive administrable.",
+            "Refonte graphique, déploiement des contenus, optimisation SEO, évolutions techniques et maintenance.",
     },
     {
-        value: "3",
-        label: "refontes intégrées",
+        value: "Paiement + flotte",
+        label: "services connectés",
         detail:
-            "Trois refontes majeures réalisées à partir de wireframes et de maquettes Photoshop fournis par le directeur artistique.",
+            "Mise en place d'une API de paiement et connexion au service de planning de la flotte.",
     },
     {
-        value: "Web + centres",
-        label: "exploitation web-to-store",
+        value: "Multi-support",
+        label: "expérience de voyage",
         detail:
-            "Le site, les promotions, le back-office et les écrans en centres forment un même dispositif opérationnel.",
+            "Site, contenus interactifs, visites 3D, carte des ports et brochure online travaillent comme un même dispositif.",
     },
 ];
 
 const timelinePhases = [
     {
-        period: "2006-2007",
-        title: "Transformer une intention visuelle en base indexable.",
+        period: "2002",
+        title: "Présenter le constructeur et ses modèles.",
         body:
-            "Premier enjeu : traduire l'univers graphique Doc'Biker en pages HTML exploitables par les moteurs, tout en conservant l'identité imaginée côté direction artistique.",
-        image: stage2006Visual,
-        alt: "Première version HTML du site Doc'Biker",
+            "Locaboat Industries avait besoin d'un site dynamique pour valoriser la fabrication des Pénichettes, présenter les modèles et donner de la visibilité aux ports partenaires.",
+        image: industriesHeroVisual,
+        alt: "Site Locaboat Industries",
         bullets: [
-            "Découpage, intégration et structuration HTML plus lisible et plus indexable.",
-            "Création des premières pages utiles autour des centres, des pneus et des forfaits.",
-            "Mise en place d'un socle technique capable de servir l'acquisition locale.",
+            "Création d'un site dynamique en Flash, PHP et MySQL.",
+            "Mise en place d'un back-office propriétaire pour les contenus et les médias.",
+            "Présentation des modèles, des ports et des aménagements intérieurs.",
         ],
     },
     {
-        period: "2011",
-        title: "Industrialiser les maquettes et clarifier l'offre.",
+        period: "2010",
+        title: "Faire vivre le site de location comme un outil commercial.",
         body:
-            "La refonte suivante accompagne la montée en puissance de l'enseigne. Mon rôle : transformer les wireframes et maquettes Photoshop en un site plus structuré, maintenable et cohérent dans Joomla.",
-        image: stage2011Visual,
-        alt: "Refonte 2011 du site Doc'Biker",
+            "Locaboat m'a confié la gestion complète de son site Internet : refonte, contenus, SEO, suivi technique et maintien d'une expérience cohérente pour préparer les séjours.",
+        image: heroVisual,
+        alt: "Site Internet Locaboat",
         bullets: [
-            "Intégration d'une navigation plus claire entre centres, promos, forfaits et contenus.",
-            "Mise en place de gabarits pour la franchise, les actualités et les opérations commerciales.",
-            "Amélioration de la qualité d'administration pour rendre le réseau plus visible au quotidien.",
+            "Refonte graphique et évolution régulière de l'interface.",
+            "Optimisation des versions multilingues et suivi SEO.",
+            "Gestion des prestataires techniques et de l'hébergement.",
         ],
     },
     {
-        period: "2017-2018",
-        title: "Livrer un outil responsive, robuste et exploitable.",
+        period: "Services",
+        title: "Connecter inspiration, disponibilité et réservation.",
         body:
-            "La dernière phase pousse plus loin l'UX, le responsive et l'autonomie métier. À partir des intentions validées avec le directeur artistique, j'ai pris en charge la réalisation, les arbitrages techniques et la qualité de livraison.",
-        image: stage2017Visual,
-        alt: "Refonte 2017-2018 du site Doc'Biker",
+            "Le site ne se limitait pas à une vitrine : il devait accompagner le choix de destination, vérifier la disponibilité et sécuriser les étapes de conversion.",
+        image: bookingVisual,
+        alt: "Parcours de réservation Locaboat",
         bullets: [
-            "Parcours plus directs vers les centres, la révision, les pneus et le devis.",
-            "Intégration responsive pensée pour le mobile et les parcours rapides.",
-            "Back-office renforcé pour administrer les centres, les promos et les contenus avec plus d'autonomie.",
+            "Mise en place d'une API de paiement.",
+            "Connexion au service de planning de la flotte.",
+            "Création de contenus interactifs de promotion des séjours.",
         ],
     },
 ];
 
-const UxGalleryItems: GalleryImage[] = [
+const locaboatGalleryItems: GalleryImage[] = [
     {
-        src: GalleryUxHomeThumb,
-        big: GalleryUxHome,
-        alt: "Page d'accueil Doc'Biker",
-        caption: "Home plus directe",
+        src: homeVisual,
+        big: homeVisual,
+        alt: "Page d'accueil Locaboat",
+        caption: "Accueil",
     },
     {
-        src: GalleryUxHomeMenuThumb,
-        big: GalleryUxHomeMenu,
-        alt: "Menu intuitif",
-        caption: "Menu intuitif",
+        src: searchVisual,
+        big: searchVisual,
+        alt: "Recherche de séjour Locaboat",
+        caption: "Recherche",
     },
     {
-        src: GalleryUxForfaitsThumb,
-        big: GalleryUxForfaits,
-        alt: "Forfaits Doc'Biker",
-        caption: "Un accès simplifié aux forfaits",
-    },
-
-
-    {
-        src: GalleryUxForfaitDetailThumb,
-        big: GalleryUxForfaitDetail,
-        alt: "Forfait Doc'Biker",
-        caption: "Détail du forfait en 1 click",
-    },
-
-    {
-        src: GalleryUxPneuSearchThumb,
-        big: GalleryUxPneuSearch,
-        alt: "Recherche de pneus Doc'Biker",
-        caption: "Recherche rapide de pneus",
-    },
-
-    {
-        src: GalleryUxPneuSearchResultsThumb,
-        big: GalleryUxPneuSearchResults,
-        alt: "Une page résultat lisible et rapide",
-        caption: "Des résultats simplifiés",
-    },
-
-    {
-        src: GalleryUxPneuSearcDetailThumb,
-        big: GalleryUxPneuSearcDetail,
-        alt: "Une page détail lisible et rapide",
-        caption: "Une conversion en 3 clicks",
-    },
-
-    {
-        src: GalleryUxAdmin,
-        big: GalleryUxAdminThumb,
-        alt: "Administration",
-        caption: "Un accès à l'admin, même depuis un smartphone",
+        src: routeVisual,
+        big: routeVisual,
+        alt: "Parcours de navigation Locaboat",
+        caption: "Itinéraires",
     },
     {
-        src: GalleryUxAdminPneus,
-        big: GalleryUxAdminPneusThumb,
-        alt: "Administration",
-        caption: "Une vue rapide de l'ensemble des pneus",
+        src: mapVisual,
+        big: mapVisual,
+        alt: "Carte des ports Locaboat",
+        caption: "Carte des ports",
     },
     {
-        src: GalleryUxAdminPneuDetail,
-        big: GalleryUxAdminPneuDetailThumb,
-        alt: "Administration",
-        caption: "Modification en live de chaque pneu",
-    },
-
-];
-const screenCentreGalleryItems: GalleryImage[] = [
-    {
-        src: reseauScreenVisual01Thumb, big: reseauScreenVisual01,
-        alt: "Variante de visuel promotionnel Doc'Biker",
-        caption: "écran headquarter",
+        src: bookingVisual,
+        big: bookingVisual,
+        alt: "Réservation Locaboat",
+        caption: "Réservation",
     },
     {
-        src: reseauScreenVisual02Thumb, big: reseauScreenVisual02,
-        alt: "Configuration du back-office Doc'Biker",
-        caption: "écran dans un centre",
+        src: offerVisual,
+        big: offerVisual,
+        alt: "Offres Locaboat",
+        caption: "Offres",
     },
     {
-        src: reseauScreenVisual03Thumb, big: reseauScreenVisual03,
-        alt: "Variante de visuel promotionnel Doc'Biker",
-        caption: "exemple de diffusion",
-    },
-    {
-        src: reseauScreenVisual04Thumb, big: reseauScreenVisual04,
-        alt: "Variante de visuel promotionnel Doc'Biker",
-        caption: "synchro avec le site",
+        src: contentVisual,
+        big: contentVisual,
+        alt: "Contenu éditorial Locaboat",
+        caption: "Contenu",
     },
 ];
-/*
-const franchiseGalleryItems: GalleryImage[] = [
+
+const industriesGalleryItems: GalleryImage[] = [
     {
-        src: reseauScreenVisual01Thumb, big: reseauScreenVisual01,
-        alt: "Variante de visuel promotionnel Doc'Biker",
-        caption: "écran headquarter",
+        src: industriesHomeVisual,
+        big: industriesHomeVisual,
+        alt: "Accueil Locaboat Industries",
+        caption: "Home industrie",
     },
     {
-        src: reseauScreenVisual02Thumb, big: reseauScreenVisual02,
-        alt: "Configuration du back-office Doc'Biker",
-        caption: "écran dans un centre",
+        src: industriesBoatVisual,
+        big: industriesBoatVisual,
+        alt: "Modèle de Pénichette",
+        caption: "Modèle",
     },
     {
-        src: reseauScreenVisual03Thumb, big: reseauScreenVisual03,
-        alt: "Variante de visuel promotionnel Doc'Biker",
-        caption: "exemple de diffusion",
+        src: industriesPortListVisual,
+        big: industriesPortListVisual,
+        alt: "Liste des ports Locaboat",
+        caption: "Ports",
     },
     {
-        src: reseauScreenVisual04Thumb, big: reseauScreenVisual04,
-        alt: "Variante de visuel promotionnel Doc'Biker",
-        caption: "synchro avec le site",
+        src: industriesPortDetailVisual,
+        big: industriesPortDetailVisual,
+        alt: "Fiche port Locaboat",
+        caption: "Fiche port",
     },
     {
-        src: adminVisual, big: mobileSearchVisual,
-        alt: "Back-office Joomla Doc'Biker",
-        caption: "Administration",
-    },
-    {
-        src: reseauScreenVisual01Thumb, big: reseauScreenVisual01,
-        alt: "Configuration du back-office Doc'Biker",
-        caption: "écran headquarter",
+        src: industriesAdminVisual,
+        big: industriesAdminVisual,
+        alt: "Administration Locaboat Industries",
+        caption: "Back-office",
     },
 ];
-*/
-const franchiseGrowthGalleryItems: GalleryImage[] = [
+
+const immersiveGalleryItems: GalleryImage[] = [
     {
-        src: franchiseVisual01Thumb,
-        big: franchiseVisual01,
-        alt: "Page franchise Doc'Biker",
-        caption: "Recrutement franchise",
+        src: industries3dVisual01,
+        big: industries3dVisual01,
+        alt: "Visite 3D d'une Pénichette",
+        caption: "Visite 3D",
     },
     {
-        src: franchiseVisual02Thumb,
-        big: franchiseVisual02,
-        alt: "Back-office Doc'Biker",
-        caption: "Admin centre franchisé",
+        src: industries3dVisual02,
+        big: industries3dVisual02,
+        alt: "Détail d'aménagement intérieur",
+        caption: "Aménagement",
     },
     {
-        src: franchiseVisual03Thumb,
-        big: franchiseVisual03,
-        alt: "Promotion franchise Doc'Biker",
-        caption: "Admin Promotion franchise",
+        src: industries3dVisual03,
+        big: industries3dVisual03,
+        alt: "Personnalisation d'intérieur",
+        caption: "Intérieur",
+    },
+    {
+        src: brochureVisual01,
+        big: brochureVisual01,
+        alt: "Brochure online Locaboat",
+        caption: "Brochure",
+    },
+    {
+        src: brochureVisual02,
+        big: brochureVisual02,
+        alt: "Navigation dans la brochure online",
+        caption: "Lecture PDF",
+    },
+    {
+        src: brochureVisual03,
+        big: brochureVisual03,
+        alt: "Page de brochure Locaboat",
+        caption: "Page brochure",
+    },
+    {
+        src: brochureVisual04,
+        big: brochureVisual04,
+        alt: "Interface de brochure online",
+        caption: "Interface",
     },
 ];
 
 const strengths = [
-    "Transformer des wireframes et des maquettes Photoshop en interfaces fiables, responsives et administrables.",
-    "Assurer la continuité technique d'un site sur plusieurs cycles, sans casser l'existant utile.",
-    "Faire converger direction artistique, SEO, conversion, back-office et contraintes d'exploitation terrain.",
-    "Faire preuve d'adaptabilité et mettre en place une solution efficace et innovante (réseau d'écrans).",
+    "Piloter un site touristique dans la durée, entre image de marque, contenu, conversion et contraintes techniques.",
+    "Relier des briques métiers hétérogènes : paiement, planning de flotte, contenus multilingues, hébergement et prestataires.",
+    "Transformer des supports commerciaux en expériences interactives utiles : carte, visites 3D, brochure online et contenus de séjour.",
+    "Maintenir une cohérence entre site vitrine, outil de réservation et patrimoine visuel d'une marque nautique.",
 ];
 
 const skills = [
-    "Réalisation web à partir de maquettes Photoshop",
-    "Intégration responsive HTML / CSS",
-    "Architecture d'information et hiérarchisation d'offre",
-    "SEO local et logique d'acquisition",
-    "Theming Joomla sur mesure",
-    "Qualité front-end et compatibilité navigateurs",
-    "Parcours centres, forfaits et devis",
-    "Back-office et outils d'administration",
-    "Communication web-to-store",
+    "Refonte graphique et suivi d'interface",
+    "Gestion complète de site dynamique",
+    "Flash, ActionScript, PHP et MySQL",
+    "API de paiement",
+    "Connexion au planning de flotte",
+    "Optimisation SEO",
+    "Versions multilingues",
+    "Back-office propriétaire",
+    "Création de contenus interactifs",
+    "Gestion hébergement et prestataires",
 ];
 
-type CaseStudyDocBikerProps = {
+type CaseStudyLocaboatProps = {
     project?: Project;
 };
 
 const fallbackProject = (projectsData as Project[]).find(
-    (entry) => entry.client.trim() === "DOC-BIKER",
+    (entry) => entry.id === 14,
 );
 
-export default function CaseStudyDocBiker({
+export default function CaseStudyLocaboat({
     project,
-}: CaseStudyDocBikerProps): ReactElement {
+}: CaseStudyLocaboatProps): ReactElement {
     const resolvedProject = project ?? fallbackProject;
     const [lightboxState, setLightboxState] = useState<{
         isOpen: boolean;
@@ -668,7 +652,7 @@ export default function CaseStudyDocBiker({
         return (
             <main className="mx-auto flex min-h-[60vh] w-full max-w-[900px] items-center px-6 py-16 text-neutral-950">
                 <p className="text-lg leading-8 text-neutral-700">
-                    Le projet Doc&apos;Biker est introuvable dans les données.
+                    Le projet Locaboat est introuvable dans les données.
                 </p>
             </main>
         );
@@ -695,26 +679,25 @@ export default function CaseStudyDocBiker({
                 <div className={shellClassHome}>
                     <motion.div {...heroFirstReveal}>
                         <div className="relative z-10 grid content-center gap-5">
-                            <p className={eyebrowClassName}>Doc&apos;Biker</p>
+                            <p className={eyebrowClassName}>Locaboat</p>
                             <h1
                                 className="text-[clamp(3.3rem,11vw,7rem)] leading-[0.88] tracking-[-0.05em] text-neutral-950"
                                 style={{ fontFamily: "var(--font-hero)" }}
                             >
-                                Piloter un site <br /> dans la durée.
+                                Faire naviguer le site avec la marque.
                             </h1>
                             <p className="max-w-xl text-[clamp(1.15rem,2.5vw,1.7rem)] leading-[1.45] tracking-[-0.03em] text-neutral-700">
-                                Entre 2006 et 2018, j&apos;ai piloté l&apos;évolution du site
-                                Doc&apos;Biker comme un outil business : acquisition locale,
-                                clarification de l&apos;offre, conception d'applicatifs en ligne, animation
-                                commerciale et déploiement digital du réseau de centres.
+                                Gestion complète du site Locaboat : refonte graphique,
+                                contenus interactifs, optimisation SEO, paiement en ligne,
+                                connexion au planning de flotte et suivi technique.
                             </p>
                             <div className="h-px w-24 bg-black/10" />
                             <div className="flex flex-wrap gap-x-6 gap-y-3 text-[0.72rem] font-semibold uppercase tracking-[0.28em] text-neutral-500">
                                 {[
-                                    "Gestion long terme",
-                                    "SEO local",
-                                    "UX / UI",
-                                    "Site sur mesure",
+                                    "Tourisme fluvial",
+                                    "Site dynamique",
+                                    "Paiement",
+                                    "SEO",
                                 ].map((pill) => (
                                     <span
                                         key={pill}
@@ -732,12 +715,9 @@ export default function CaseStudyDocBiker({
                         <motion.img
                             {...heroSecondReveal}
                             src={heroVisual}
-                            alt="Aperçu de la refonte finale du site Doc'Biker"
+                            alt="Aperçu du site Locaboat"
                             onClick={() =>
-                                openLightbox(
-                                    heroVisual,
-                                    "Aperçu de la refonte finale du site Doc'Biker",
-                                )
+                                openLightbox(heroVisual, "Aperçu du site Locaboat")
                             }
                             className="block w-full cursor-zoom-in"
                         />
@@ -760,8 +740,8 @@ export default function CaseStudyDocBiker({
                 <div className={`${shellClassName} grid gap-10`}>
                     <SectionHeading
                         eyebrow="Mission"
-                        title="Des maquettes validées, un site à rendre réel et durable."
-                        body="Je travaillais avec un directeur artistique qui fournissait les wireframes et les maquettes Photoshop. Mon rôle consistait à transformer ces intentions en un site concret, fiable, responsive, administrable et utile pour le réseau."
+                        title="Un site de tourisme à exploiter comme un produit vivant."
+                        body="Locaboat ne demandait pas seulement une présence en ligne : le site devait inspirer, rassurer, orienter le choix d'un séjour, connecter la disponibilité de la flotte et accompagner la conversion."
                     />
 
                     <div className="grid gap-5 lg:grid-cols-[1.02fr_0.98fr]">
@@ -771,24 +751,16 @@ export default function CaseStudyDocBiker({
                                 className="mt-3 text-3xl leading-tight tracking-[-0.03em] text-neutral-950"
                                 style={{ fontFamily: "var(--font-hero)" }}
                             >
-                                Le site suit la maturité de l'enseigne.
+                                Une marque de voyage, un site à maintenir dans le temps.
                             </h3>
                             <p className="mt-4 text-base leading-8 text-neutral-600">
-                                Le point de départ date de 2005, quand j&apos;ai proposé une duplication du site Flash en HTML brut, uniquement destinée aux moteurs de recherche.
-                                C&apos;était un premier pas vers une logique plus orientée contenu, performance d&apos;indexation et acquisition locale, qui s&apos;est confirmée dans les années suivantes.
-                                Entre 2006 et 2018, les priorités changent. D&apos;abord,
-                                sortir d&apos;une logique trop visuelle pour retrouver une base
-                                indexable.
-                                Ensuite, intégrer les nouvelles directions graphiques, structurer l&apos;offre et rendre le réseau
-                                plus visible.
-                                Enfin, faire du site un outil de service, de
-                                conversion et d&apos;exploitation destiné aux franchisés pour leur clientèle.
-                            </p>
-                            <p className="mt-4 text-base leading-8 text-neutral-600">
-                                C&apos;est ce temps long qui donne de la valeur au projet :
-                                faire évoluer un même produit digital sans rupture, en gardant le cap
-                                sur l&apos;utile, la qualité de réalisation et la capacité des équipes à
-                                le faire vivre.
+                                La mission couvre la gestion complète du site Internet de
+                                Locaboat : refonte graphique, mise à jour régulière des contenus
+                                et des médias, optimisation SEO, suivi technique, hébergement et
+                                coordination des prestataires. Le site devait rester fidèle à
+                                l'imaginaire de la Pénichette tout en servant des parcours très
+                                concrets : choisir une destination, comprendre les itinéraires,
+                                consulter les ports, vérifier une disponibilité et réserver.
                             </p>
                         </motion.article>
 
@@ -798,24 +770,24 @@ export default function CaseStudyDocBiker({
                                 className="mt-3 text-3xl leading-tight tracking-[-0.03em] text-neutral-950"
                                 style={{ fontFamily: "var(--font-hero)" }}
                             >
-                                Réaliser, mettre en place, fiabiliser.
+                                Relier l'expérience éditoriale au système métier.
                             </h3>
                             <ul className="mt-5 grid gap-3 p-0">
                                 <ArrowListItem>
-                                    Traduction technique des wireframes et maquettes Photoshop
-                                    fournis par le directeur artistique.
+                                    Concevoir et faire évoluer l'interface du site au rythme des
+                                    besoins commerciaux.
                                 </ArrowListItem>
                                 <ArrowListItem>
-                                    Intégration des interfaces, construction des gabarits et
-                                    adaptation responsive des parcours clés.
+                                    Créer des contenus interactifs de promotion : visites 3D,
+                                    carte des ports, parcours animés et brochure online.
                                 </ArrowListItem>
                                 <ArrowListItem>
-                                    Développement d&apos;un thème Joomla sur mesure et d&apos;un
-                                    back-office administrable dans la durée.
+                                    Brancher les étapes sensibles du parcours : paiement en ligne
+                                    et service de planning de la flotte.
                                 </ArrowListItem>
                                 <ArrowListItem>
-                                    Suivi de la qualité technique, du SEO, des contenus et de la
-                                    cohérence entre site, promotions et communication des centres.
+                                    Maintenir les versions multilingues, le SEO, les médias et le
+                                    socle technique.
                                 </ArrowListItem>
                             </ul>
                         </motion.article>
@@ -846,9 +818,9 @@ export default function CaseStudyDocBiker({
             <section className={fullWidthSection} id="screen03">
                 <div className={`${shellClassName} grid gap-10`}>
                     <SectionHeading
-                        eyebrow="Évolutions"
-                        title="Trois étapes, trois niveaux de réalisation."
-                        body="Chaque refonte répond à un moment précis de la vie de l'enseigne : rendre le site indexable, industrialiser les maquettes, puis livrer un outil responsive et exploitable au quotidien."
+                        eyebrow="Écosystème"
+                        title="Trois chantiers autour d'une même expérience nautique."
+                        body="Le projet Locaboat s'étend du site commercial à des outils plus spécialisés : site constructeur, contenus immersifs, brochure online et briques connectées à la réservation."
                     />
 
                     <div className="grid gap-5 lg:grid-cols-3">
@@ -895,60 +867,76 @@ export default function CaseStudyDocBiker({
             <section className={fullWidthSection} id="screen04">
                 <div className={`${shellClassName} grid gap-10`}>
                     <SectionHeading
-                        eyebrow="SEO, UX, UI"
-                        title="La valeur du projet vient autant de l'exécution que des écrans."
-                        body="Les maquettes donnaient la direction visuelle. Mon travail consistait à les rendre utilisables, rapides, cohérentes, bien structurées pour le SEO et simples à administrer."
+                        eyebrow="Parcours"
+                        title="Inspirer le séjour, puis réduire la distance avec la réservation."
+                        body="Le site devait associer une promesse très visuelle, liée au voyage fluvial, à des actions précises : explorer les destinations, comprendre les bateaux, localiser les ports et avancer vers une réservation."
                     />
 
-                    <div className="grid gap-5">
+                    <motion.article
+                        {...reveal}
+                        className={`${surfaceClassName} overflow-hidden p-0 sm:p-6 md:p-7`}
+                    >
+                        <p className={eyebrowClassName}>
+                            <ArrowRedo className="mr-2 inline h-4 w-4" />
+                            Site commercial
+                        </p>
+                        <h3
+                            className="mt-3 text-3xl leading-tight tracking-[-0.03em] text-neutral-950"
+                            style={{ fontFamily: "var(--font-hero)" }}
+                        >
+                            Un parcours qui transforme l'envie d'évasion en choix concret.
+                        </h3>
+                        <p className="mt-4 text-base leading-8 text-neutral-600">
+                            Mon travail consistait à garder l'équilibre entre l'imaginaire de la
+                            navigation et l'efficacité d'un site marchand. Les pages devaient
+                            donner envie, mais aussi aider l'utilisateur à comparer, se repérer,
+                            vérifier les informations utiles et progresser vers la demande ou la
+                            réservation.
+                        </p>
+                        <div className="mt-6">
+                            <ImageGallery
+                                items={locaboatGalleryItems}
+                                onImageClick={openLightbox}
+                            />
+                        </div>
+                    </motion.article>
+                </div>
+            </section>
+
+            <section className={fullWidthSection} id="screen05">
+                <div className={`${shellClassName} grid gap-10`}>
+                    <SectionHeading
+                        eyebrow="Contenus immersifs"
+                        title="Rendre le produit touristique visible avant le départ."
+                        body="Pour vendre un séjour fluvial, il faut aider l'utilisateur à se projeter : dans le bateau, dans les ports, dans le parcours et dans les supports commerciaux consultés à distance."
+                    />
+
+                    <div className="grid gap-5 lg:grid-cols-2">
                         <motion.article
                             {...reveal}
-                            className={`${surfaceClassName} overflow-hidden p-0 lg:grid lg:grid-cols-[0.92fr_1.08fr]`}
+                            className={`${surfaceClassName} overflow-hidden p-0 sm:p-6 md:p-7`}
                         >
-                            <button
-                                type="button"
-                                className="block w-full cursor-zoom-in"
-                                onClick={() =>
-                                    openLightbox(
-                                        seoVisual,
-                                        "Résultats Google sur la requête pneu moto",
-                                    )
-                                }
+                            <p className={eyebrowClassName}>
+                                <ArrowRedo className="mr-2 inline h-4 w-4" />
+                                Locaboat Industries
+                            </p>
+                            <h3
+                                className="mt-3 text-3xl leading-tight tracking-[-0.03em] text-neutral-950"
+                                style={{ fontFamily: "var(--font-hero)" }}
                             >
-                                <img
-                                    src={seoVisual}
-                                    alt="Résultats Google sur la requête pneu moto"
-                                    className="block h-full w-full object-cover"
+                                Présenter les modèles, les ports et l'outil d'administration.
+                            </h3>
+                            <p className="mt-4 text-base leading-8 text-neutral-600">
+                                Le site constructeur complète l'écosystème Locaboat : il met en
+                                avant les Pénichettes, les ports partenaires et les contenus
+                                administrables. Cette partie montre ma capacité à produire un site
+                                dynamique complet, avec une couche back-office sur mesure.
+                            </p>
+                            <div className="mt-6">
+                                <ImageGallery
+                                    items={industriesGalleryItems}
+                                    onImageClick={openLightbox}
                                 />
-                            </button>
-                            <div className="grid gap-4 p-6 md:p-7">
-                                <p className={eyebrowClassName}>
-                                    <ArrowRedo className="mr-2 inline h-4 w-4" />
-                                    SEO local
-                                </p>
-                                <h3
-                                    className="text-3xl leading-tight tracking-[-0.03em] text-neutral-950"
-                                    style={{ fontFamily: "var(--font-hero)" }}
-                                >
-                                    Ancrer Doc&apos;Biker sur les requètes locales utiles.
-                                </h3>
-                                <p className="text-base leading-8 text-neutral-600">
-                                    Le point de départ est clair : sortir d&apos;un site peu
-                                    exploitable par les moteurs et construire des pages utiles,
-                                    lisibles, techniquement propres et alignées sur des intentions locales comme les
-                                    pneus moto à Paris.
-                                </p>
-                                <ul className="grid gap-3 p-0">
-                                    <ArrowListItem>
-                                        Passage vers une structure HTML plus propre pour Google.
-                                    </ArrowListItem>
-                                    <ArrowListItem>
-                                        Mise en place de gabarits utiles pour l&apos;offre, les centres et les contenus longue traîne.
-                                    </ArrowListItem>
-                                    <ArrowListItem>
-                                        Suivi éditorial et ajustements SEO menés dans la durée.
-                                    </ArrowListItem>
-                                </ul>
                             </div>
                         </motion.article>
 
@@ -958,36 +946,38 @@ export default function CaseStudyDocBiker({
                         >
                             <p className={eyebrowClassName}>
                                 <ArrowRedo className="mr-2 inline h-4 w-4" />
-                                UX, responsive et mobile
+                                3D et brochure online
                             </p>
                             <h3
                                 className="mt-3 text-3xl leading-tight tracking-[-0.03em] text-neutral-950"
                                 style={{ fontFamily: "var(--font-hero)" }}
                             >
-                                Des parcours plus rapides, plus lisibles et plus fluides.
+                                Transformer les supports commerciaux en expériences consultables.
                             </h3>
                             <p className="mt-4 text-base leading-8 text-neutral-600">
-                                Le site s&apos;organise autour des actions les plus concrètes :
-                                trouver le bon pneu, comprendre un forfait, contacter un centre
-                                ou demander un devis. À partir des wireframes et des maquettes,
-                                j&apos;ai simplifié les enchaînements, hiérarchisé les contenus et
-                                intégré des gabarits capables de rester lisibles du desktop au
-                                smartphone.
+                                Les visites 3D, les vues d'aménagement et la brochure online
+                                prolongent le site : elles donnent accès aux détails du bateau et
+                                aux supports de vente sans rompre l'expérience digitale.
                             </p>
-                            <p className="mt-4 text-base leading-8 text-neutral-600">
-                                La réalisation responsive a aussi été pensée côté performance :
-                                interfaces moins lourdes, chargement plus rapide, navigation plus
-                                directe et interactions plus souples sur mobile. L&apos;objectif était
-                                de donner une sensation d&apos;interface fluide, sans rupture entre la
-                                recherche, les résultats et les pages de détail.
-                            </p>
-                            <p className="mt-4 text-base leading-8 text-neutral-600">
-                                Le point fort de l'enseigne est surtout son stock de pneus disponible :
-                                le moteur de recherche exploite 3 500 références de pneumatiques des principaux constructeurs, assurant un résultat pertinent pour tout type de 2 roues.
-                            </p>
+                            <button
+                                type="button"
+                                className="mt-6 block w-full cursor-zoom-in overflow-hidden rounded-[24px] border border-black/10"
+                                onClick={() =>
+                                    openLightbox(
+                                        brochurePanoramaVisual,
+                                        "Brochure online Locaboat",
+                                    )
+                                }
+                            >
+                                <img
+                                    src={brochurePanoramaVisual}
+                                    alt="Brochure online Locaboat"
+                                    className="block w-full"
+                                />
+                            </button>
                             <div className="mt-6">
                                 <ImageGallery
-                                    items={UxGalleryItems}
+                                    items={immersiveGalleryItems}
                                     onImageClick={openLightbox}
                                 />
                             </div>
@@ -995,13 +985,12 @@ export default function CaseStudyDocBiker({
                     </div>
                 </div>
             </section>
-
-            <section className={fullWidthSection} id="screen05">
+            <section className={fullWidthSection} id="screen06">
                 <div className={`${shellClassName} grid gap-10`}>
                     <SectionHeading
-                        eyebrow="Exploitation"
-                        title="Le site ne s'arrête pas à l'interface publique."
-                        body="Le projet touche aussi à l'animation commerciale, à l'administration quotidienne, à la qualité des contenus et à la cohérence entre web et centres."
+                        eyebrow="Réservation"
+                        title="Assurer la conversion"
+                        body="Le site s'ouvre à la réservation ferme en ligne et à la connexion au planning de flotte."
                     />
 
                     <div className="grid gap-5 grid-cols-1">
@@ -1011,19 +1000,16 @@ export default function CaseStudyDocBiker({
                         >
                             <p className={eyebrowClassName}>
                                 <ArrowRedo className="mr-2 inline h-4 w-4" />
-                                Réseau d&apos;écrans
+                                Connexion au planning de flotte
                             </p>
                             <h3
                                 className="mt-3 text-3xl leading-tight tracking-[-0.03em] text-neutral-950"
                                 style={{ fontFamily: "var(--font-hero)" }}
                             >
-                                Un même contenu promo du site jusqu&apos;aux points de vente.
+                                Un défi technique.
                             </h3>
                             <p className="mt-4 text-base leading-8 text-neutral-600">
-                                J&apos;ai mis en place un réseau d&apos;écrans synchronisé dans les
-                                centres. Les contenus préparés pour le site pouvaient ainsi être
-                                rediffusés sur les points de vente, avec moins de ressaisie et
-                                plus de réactivité commerciale.
+                                J&apos;ai mis en relation un spécialiste des réseaux AS400, afin de pouvoir créer un pont entre le site et le système interne, il a donc fallu prévoir une passerelle sécurisée entre les 2 applicatifs.
                             </p>
                             <button
                                 type="button"
@@ -1116,7 +1102,7 @@ export default function CaseStudyDocBiker({
                             </div>
                             <div className="mt-6">
                                 <ImageGallery
-                                    items={franchiseGrowthGalleryItems}
+                                    items={portailGalleryItems}
                                     onImageClick={openLightbox}
                                 />
                             </div>
@@ -1124,13 +1110,12 @@ export default function CaseStudyDocBiker({
                     </div>
                 </div>
             </section>
-
-            <section className={fullWidthSection} id="screen06">
+            <section className={fullWidthSection} id="screen08">
                 <div className={`${shellClassName} grid gap-10`}>
                     <SectionHeading
                         eyebrow="Points forts"
                         title="Ce que ce projet met en valeur dans ma pratique."
-                        body="Surtout une capacité à prendre le relais après la conception graphique : produire proprement, intégrer durablement, fiabiliser et faire avancer un produit digital au rythme du terrain."
+                        body="Une capacité à tenir ensemble l'image, le contenu, les systèmes métiers et l'exploitation technique d'un site touristique dans la durée."
                     />
 
                     <div className="grid gap-5 lg:grid-cols-[0.96fr_1.04fr]">
@@ -1138,7 +1123,10 @@ export default function CaseStudyDocBiker({
                             <p className={eyebrowClassName}>Ce projet dit de moi</p>
                             <div className="mt-4 grid gap-5">
                                 {strengths.map((strength) => (
-                                    <div key={strength} className="border-b border-black/8 pb-5 last:border-b-0 last:pb-0">
+                                    <div
+                                        key={strength}
+                                        className="border-b border-black/8 pb-5 last:border-b-0 last:pb-0"
+                                    >
                                         <p className="text-base leading-8 text-neutral-700">
                                             {strength}
                                         </p>
@@ -1159,12 +1147,12 @@ export default function CaseStudyDocBiker({
                 </div>
             </section>
 
-            <section className={fullWidthSection} id="screen07">
+            <section className={fullWidthSection} id="screen09">
                 <div className={`${shellClassName} grid gap-10`}>
                     <SectionHeading
                         eyebrow="Fiche projet"
                         title={resolvedProject.title}
-                        body="La fiche ci-dessous reprend les données portfolio. Le récit ci-dessus documente, lui, l'ensemble de la mission entre 2006 et 2018."
+                        body="La fiche ci-dessous reprend les données portfolio rattachées au site Internet Locaboat."
                     />
 
                     <motion.div {...reveal}>

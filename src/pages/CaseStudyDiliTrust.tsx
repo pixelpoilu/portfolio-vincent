@@ -647,6 +647,26 @@ const smartphoneGalleryItems: GalleryImage[] = [
     },
 ];
 
+const strengths = [
+    "Reprendre un site B2B dense sans se limiter à une couche graphique : clarification de l'offre, hiérarchie des contenus et cohérence des parcours.",
+    "Transformer une nouvelle charte en système d'interface exploitable sur la home, les pages produits, les contenus éditoriaux et le mobile.",
+    "Structurer un socle technique durable : thème WordPress propriétaire, documentation, process de production et pages SEA plus faciles à décliner.",
+    "Faire converger image de marque, performance, SEO, conversion et contraintes de maintenance dans un même livrable.",
+];
+
+const skills = [
+    "Refonte UX / UI",
+    "Application de charte graphique",
+    "Thème WordPress propriétaire",
+    "Architecture de contenu",
+    "Optimisation SEO",
+    "Performance front-end",
+    "Responsive design",
+    "Industrialisation de pages SEA",
+    "Documentation projet",
+    "Maintenance et évolutivité",
+];
+
 type CaseStudyDiliTrustProps = {
     project: Project;
 };
@@ -1385,6 +1405,39 @@ export default function CaseStudyDiliTrust({
                 </div>
             </section>
             <section className={fullWidthSection} id="screen08">
+                <div className={`${shellClassName} grid gap-10`}>
+                    <SectionHeading
+                        eyebrow="Points forts"
+                        title="Ce que ce projet met en valeur dans ma pratique."
+                        body="Une capacité à transformer une refonte de marque en produit digital robuste : lisible pour les utilisateurs, performant pour l'acquisition et durable pour les équipes qui le font vivre."
+                    />
+
+                    <div className="grid gap-5 lg:grid-cols-[0.96fr_1.04fr]">
+                        <motion.article {...reveal} className={surfaceClassName}>
+                            <p className={eyebrowClassName}>Ce projet dit de moi</p>
+                            <div className="mt-4 grid gap-5">
+                                {strengths.map((strength) => (
+                                    <div key={strength} className="border-b border-black/8 pb-5 last:border-b-0 last:pb-0">
+                                        <p className="text-base leading-8 text-neutral-700">
+                                            {strength}
+                                        </p>
+                                    </div>
+                                ))}
+                            </div>
+                        </motion.article>
+
+                        <motion.article {...reveal} className={surfaceClassName}>
+                            <p className={eyebrowClassName}>Compétences mobilisées</p>
+                            <ul className="mt-4 grid gap-3 p-0 sm:grid-cols-2">
+                                {skills.map((skill) => (
+                                    <ArrowListItem key={skill}>{skill}</ArrowListItem>
+                                ))}
+                            </ul>
+                        </motion.article>
+                    </div>
+                </div>
+            </section>
+            <section className={fullWidthSection} id="screen09">
                 <div className={`${shellClassName} grid gap-10`}>
                     <SectionHeading
                         eyebrow="Fiche projet"
