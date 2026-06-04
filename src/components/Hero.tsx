@@ -1,9 +1,9 @@
 ﻿import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import portrait from "../assets/images/hero/portrait-bw-tel.png";
-import portraitMD from "../assets/images/hero/portrait-bw-md.png";
-import portraitHD from "../assets/images/hero/portrait-bw.png";
+import portrait from "../assets/images/hero/portrait-bw-tel.webp";
+import portraitMD from "../assets/images/hero/portrait-bw-md.webp";
+import portraitHD from "../assets/images/hero/portrait-bw.webp";
 import { getDedicatedCaseStudyPathByProjectId } from "../config/dedicatedCaseStudies";
 import Footer from "./Footer";
 import Logo from "./Logo";

@@ -7,7 +7,7 @@ import {
 import { type ComponentType } from "react";
 import { type FormEvent, useState } from "react";
 
-import grainTexture from "../assets/images/textures/grain.png";
+import grainTexture from "../assets/images/textures/grain.webp";
 import Footer from "../components/Footer";
 import PageTransition from "../components/PageTransition";
 

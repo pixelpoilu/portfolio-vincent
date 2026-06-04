@@ -2,18 +2,18 @@ import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 import { type PointerEvent, useRef, useState } from "react";
 import Footer from "../components/Footer";
 import PageTransition from "../components/PageTransition";
-import afterImage from "../assets/images/projects/rea_web_dilitrust/home_compare_new2.png";
-import beforeImage from "../assets/images/projects/rea_web_dilitrust/home_compare_old2.png";
-import charteImage from "../assets/images/projects/rea_web_dilitrust/charte.png";
-import conferenceAssetsImage from "../assets/images/projects/rea_web_dilitrust/conference_assets.png";
-import heroVisual from "../assets/images/projects/rea_web_dilitrust/new_dilitrust_trsp.png";
-import landingAdminImage from "../assets/images/projects/rea_web_dilitrust/landing_admin.png";
-import morphingAfterImage from "../assets/images/projects/rea_web_dilitrust/morphing_after.png";
-import morphingBeforeImage from "../assets/images/projects/rea_web_dilitrust/morphing_before.png";
-import newDilitrustImage from "../assets/images/projects/rea_web_dilitrust/new_dilitrust.png";
-import performanceCompareImage from "../assets/images/projects/rea_web_dilitrust/perf_compares.png";
+import afterImage from "../assets/images/projects/rea_web_dilitrust/home_compare_new2.webp";
+import beforeImage from "../assets/images/projects/rea_web_dilitrust/home_compare_old2.webp";
+import charteImage from "../assets/images/projects/rea_web_dilitrust/charte.webp";
+import conferenceAssetsImage from "../assets/images/projects/rea_web_dilitrust/conference_assets.webp";
+import heroVisual from "../assets/images/projects/rea_web_dilitrust/new_dilitrust_trsp.webp";
+import landingAdminImage from "../assets/images/projects/rea_web_dilitrust/landing_admin.webp";
+import morphingAfterImage from "../assets/images/projects/rea_web_dilitrust/morphing_after.webp";
+import morphingBeforeImage from "../assets/images/projects/rea_web_dilitrust/morphing_before.webp";
+import newDilitrustImage from "../assets/images/projects/rea_web_dilitrust/new_dilitrust.webp";
+import performanceCompareImage from "../assets/images/projects/rea_web_dilitrust/perf_compares.webp";
 import phoneMenuImage from "../assets/images/projects/rea_web_dilitrust/home_phone_menu.PNG";
-import seoCompareImage from "../assets/images/projects/rea_web_dilitrust/seo_compare.png";
+import seoCompareImage from "../assets/images/projects/rea_web_dilitrust/seo_compare.webp";
 
 const reveal = {
   initial: { opacity: 0, y: 32 },

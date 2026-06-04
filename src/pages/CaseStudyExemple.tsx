@@ -58,35 +58,35 @@ import {
 } from "@material-tailwind/react";
 */
 // Visuels
-import grainTexture from "../assets/images/textures/grain.png";
-import afterImage from "../assets/images/projects/rea_web_dilitrust/home_compare_new2.png";
-import beforeImage from "../assets/images/projects/rea_web_dilitrust/home_compare_old2.png";
-import heroVisual from "../assets/images/projects/rea_web_dilitrust/new_dilitrust_trsp.png";
-//import otherVisual from "../assets/images/projects/rea_web_dilitrust/morphing_after.png";
-import ResponsiveSlide01 from "../assets/images/projects/rea_web_dilitrust/seo_compare.png";
-import ResponsiveSlide02 from "../assets/images/projects/rea_web_dilitrust/charte.png";
-import ResponsiveSlide03 from "../assets/images/projects/rea_web_dilitrust/morphing_before.png";
-import ResponsiveSlide04 from "../assets/images/projects/rea_web_dilitrust/morphing_after.png";
-import ResponsiveSlide05 from "../assets/images/projects/rea_web_dilitrust/mobile_first.png";
-import ResponsiveSlide06 from "../assets/images/projects/rea_web_dilitrust/mobile_first.png";
-//import charteImage from "../assets/images/projects/rea_web_dilitrust/charte.png";
+import grainTexture from "../assets/images/textures/grain.webp";
+import afterImage from "../assets/images/projects/rea_web_dilitrust/home_compare_new2.webp";
+import beforeImage from "../assets/images/projects/rea_web_dilitrust/home_compare_old2.webp";
+import heroVisual from "../assets/images/projects/rea_web_dilitrust/new_dilitrust_trsp.webp";
+//import otherVisual from "../assets/images/projects/rea_web_dilitrust/morphing_after.webp";
+import ResponsiveSlide01 from "../assets/images/projects/rea_web_dilitrust/seo_compare.webp";
+import ResponsiveSlide02 from "../assets/images/projects/rea_web_dilitrust/charte.webp";
+import ResponsiveSlide03 from "../assets/images/projects/rea_web_dilitrust/morphing_before.webp";
+import ResponsiveSlide04 from "../assets/images/projects/rea_web_dilitrust/morphing_after.webp";
+import ResponsiveSlide05 from "../assets/images/projects/rea_web_dilitrust/mobile_first.webp";
+import ResponsiveSlide06 from "../assets/images/projects/rea_web_dilitrust/mobile_first.webp";
+//import charteImage from "../assets/images/projects/rea_web_dilitrust/charte.webp";
 
-import ProductafterImage from "../assets/images/projects/rea_web_dilitrust/prod_compare_new.png";
-import ProductbeforeImage from "../assets/images/projects/rea_web_dilitrust/prod_compare_old.png";
+import ProductafterImage from "../assets/images/projects/rea_web_dilitrust/prod_compare_new.webp";
+import ProductbeforeImage from "../assets/images/projects/rea_web_dilitrust/prod_compare_old.webp";
 
-import ApplicationCharte from "../assets/images/projects/rea_web_dilitrust/new_charte_application.png";
+import ApplicationCharte from "../assets/images/projects/rea_web_dilitrust/new_charte_application.webp";
 
-import new3Iphones from "../assets/images/projects/rea_web_dilitrust/new_3_iphones.png";
-import socleTechnique from "../assets/images/projects/rea_web_dilitrust/socle_technique.png";
-import seaProcess from "../assets/images/projects/rea_web_dilitrust/sea_process.png";
-import seoPerform from "../assets/images/projects/rea_web_dilitrust/seo_perform.png";
-//import oldInterface from "../assets/images/projects/rea_web_dilitrust/pc_phone_old.png";
+import new3Iphones from "../assets/images/projects/rea_web_dilitrust/new_3_iphones.webp";
+import socleTechnique from "../assets/images/projects/rea_web_dilitrust/socle_technique.webp";
+import seaProcess from "../assets/images/projects/rea_web_dilitrust/sea_process.webp";
+import seoPerform from "../assets/images/projects/rea_web_dilitrust/seo_perform.webp";
+//import oldInterface from "../assets/images/projects/rea_web_dilitrust/pc_phone_old.webp";
 
-//import conferenceAssetsImage from "../assets/images/projects/rea_web_dilitrust/conference_assets.png";
-//import landingAdminImage from "../assets/images/projects/rea_web_dilitrust/landing_admin.png";
-//import newDilitrustImage from "../assets/images/projects/rea_web_dilitrust/new_dilitrust.png";
-//import performanceCompareImage from "../assets/images/projects/rea_web_dilitrust/perf_compares.png";
-//import contentMapping from "../assets/images/projects/rea_web_dilitrust/wordpress_map.png";
+//import conferenceAssetsImage from "../assets/images/projects/rea_web_dilitrust/conference_assets.webp";
+//import landingAdminImage from "../assets/images/projects/rea_web_dilitrust/landing_admin.webp";
+//import newDilitrustImage from "../assets/images/projects/rea_web_dilitrust/new_dilitrust.webp";
+//import performanceCompareImage from "../assets/images/projects/rea_web_dilitrust/perf_compares.webp";
+//import contentMapping from "../assets/images/projects/rea_web_dilitrust/wordpress_map.webp";
 
 // import { ThemeProvider } from "@material-tailwind/react";
 
@@ -95,11 +95,11 @@ import seoPerform from "../assets/images/projects/rea_web_dilitrust/seo_perform.
 
 /*
 
-import morphingAfterImage from "../assets/images/projects/rea_web_dilitrust/morphing_after.png";
-import morphingBeforeImage from "../assets/images/projects/rea_web_dilitrust/morphing_before.png";
+import morphingAfterImage from "../assets/images/projects/rea_web_dilitrust/morphing_after.webp";
+import morphingBeforeImage from "../assets/images/projects/rea_web_dilitrust/morphing_before.webp";
 
 import phoneMenuImage from "../assets/images/projects/rea_web_dilitrust/home_phone_menu.PNG";
-import seoCompareImage from "../assets/images/projects/rea_web_dilitrust/seo_compare.png";
+import seoCompareImage from "../assets/images/projects/rea_web_dilitrust/seo_compare.webp";
 
 
 // Icons

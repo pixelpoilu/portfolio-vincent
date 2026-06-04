@@ -21,89 +21,89 @@ import { CiCircleChevDown } from "react-icons/ci";
 import { BsArrowRightShort } from "react-icons/bs";
 import { IoArrowRedo } from "react-icons/io5";
 
-import grainTexture from "../assets/images/textures/grain.png";
+import grainTexture from "../assets/images/textures/grain.webp";
 import CaseStudyProjectData from "../components/CaseStudyProjectData";
 import type { Project } from "../types/Project";
 
-import heroVisual from "../assets/images/projects/rea_web_docbiker/new_docbiker_trsp.png";
-import stage2006Visual from "../assets/images/projects/rea_web_docbiker/2006_docbiker_trsp.png";
-import stage2011Visual from "../assets/images/projects/rea_web_docbiker/2011_docbiker_trsp.png";
-import stage2017Visual from "../assets/images/projects/rea_web_docbiker/2017_docbiker_trsp.png";
-import seoVisual from "../assets/images/projects/rea_web_docbiker/results_google.png";
+import heroVisual from "../assets/images/projects/rea_web_docbiker/new_docbiker_trsp.webp";
+import stage2006Visual from "../assets/images/projects/rea_web_docbiker/2006_docbiker_trsp.webp";
+import stage2011Visual from "../assets/images/projects/rea_web_docbiker/2011_docbiker_trsp.webp";
+import stage2017Visual from "../assets/images/projects/rea_web_docbiker/2017_docbiker_trsp.webp";
+import seoVisual from "../assets/images/projects/rea_web_docbiker/results_google.webp";
 
-import GalleryUxHome from "../assets/images/projects/rea_web_docbiker/2017_gallery_ux_home.png";
-import GalleryUxHomeThumb from "../assets/images/projects/rea_web_docbiker/2017_gallery_ux_home_thumb.png";
+import GalleryUxHome from "../assets/images/projects/rea_web_docbiker/2017_gallery_ux_home.webp";
+import GalleryUxHomeThumb from "../assets/images/projects/rea_web_docbiker/2017_gallery_ux_home_thumb.webp";
 
-import GalleryUxHomeMenu from "../assets/images/projects/rea_web_docbiker/2017_gallery_ux_menu.png";
-import GalleryUxHomeMenuThumb from "../assets/images/projects/rea_web_docbiker/2017_gallery_ux_menu_thumb.png";
+import GalleryUxHomeMenu from "../assets/images/projects/rea_web_docbiker/2017_gallery_ux_menu.webp";
+import GalleryUxHomeMenuThumb from "../assets/images/projects/rea_web_docbiker/2017_gallery_ux_menu_thumb.webp";
 
-import GalleryUxForfaits from "../assets/images/projects/rea_web_docbiker/2017_gallery_ux_forfaits_n1.png";
-import GalleryUxForfaitsThumb from "../assets/images/projects/rea_web_docbiker/2017_gallery_ux_forfaits_n1_thumb.png";
+import GalleryUxForfaits from "../assets/images/projects/rea_web_docbiker/2017_gallery_ux_forfaits_n1.webp";
+import GalleryUxForfaitsThumb from "../assets/images/projects/rea_web_docbiker/2017_gallery_ux_forfaits_n1_thumb.webp";
 
-import GalleryUxForfaitDetail from "../assets/images/projects/rea_web_docbiker/2017_gallery_ux_forfaits_n2.png";
-import GalleryUxForfaitDetailThumb from "../assets/images/projects/rea_web_docbiker/2017_gallery_ux_forfaits_n2_thumb.png";
+import GalleryUxForfaitDetail from "../assets/images/projects/rea_web_docbiker/2017_gallery_ux_forfaits_n2.webp";
+import GalleryUxForfaitDetailThumb from "../assets/images/projects/rea_web_docbiker/2017_gallery_ux_forfaits_n2_thumb.webp";
 
-import GalleryUxPneuSearch from "../assets/images/projects/rea_web_docbiker/2017_gallery_ux_pneu_n1.png";
-import GalleryUxPneuSearchThumb from "../assets/images/projects/rea_web_docbiker/2017_gallery_ux_pneu_n1_thumb.png";
+import GalleryUxPneuSearch from "../assets/images/projects/rea_web_docbiker/2017_gallery_ux_pneu_n1.webp";
+import GalleryUxPneuSearchThumb from "../assets/images/projects/rea_web_docbiker/2017_gallery_ux_pneu_n1_thumb.webp";
 
-import GalleryUxPneuSearchResults from "../assets/images/projects/rea_web_docbiker/2017_gallery_ux_pneu_n2.png";
-import GalleryUxPneuSearchResultsThumb from "../assets/images/projects/rea_web_docbiker/2017_gallery_ux_pneu_n2_thumb.png";
+import GalleryUxPneuSearchResults from "../assets/images/projects/rea_web_docbiker/2017_gallery_ux_pneu_n2.webp";
+import GalleryUxPneuSearchResultsThumb from "../assets/images/projects/rea_web_docbiker/2017_gallery_ux_pneu_n2_thumb.webp";
 
-import GalleryUxPneuSearcDetail from "../assets/images/projects/rea_web_docbiker/2017_gallery_ux_pneus_n3.png";
-import GalleryUxPneuSearcDetailThumb from "../assets/images/projects/rea_web_docbiker/2017_gallery_ux_pneus_n3_thumb.png";
+import GalleryUxPneuSearcDetail from "../assets/images/projects/rea_web_docbiker/2017_gallery_ux_pneus_n3.webp";
+import GalleryUxPneuSearcDetailThumb from "../assets/images/projects/rea_web_docbiker/2017_gallery_ux_pneus_n3_thumb.webp";
 
-import GalleryUxAdmin from "../assets/images/projects/rea_web_docbiker/2017_gallery_ux_admin_home.png";
-import GalleryUxAdminThumb from "../assets/images/projects/rea_web_docbiker/2017_gallery_ux_admin_home_thumb.png";
+import GalleryUxAdmin from "../assets/images/projects/rea_web_docbiker/2017_gallery_ux_admin_home.webp";
+import GalleryUxAdminThumb from "../assets/images/projects/rea_web_docbiker/2017_gallery_ux_admin_home_thumb.webp";
 
 
-import GalleryUxAdminPneus from "../assets/images/projects/rea_web_docbiker/2017_gallery_ux_admin_pneus_n1.png";
-import GalleryUxAdminPneusThumb from "../assets/images/projects/rea_web_docbiker/2017_gallery_ux_admin_pneus_n1_thumb.png";
+import GalleryUxAdminPneus from "../assets/images/projects/rea_web_docbiker/2017_gallery_ux_admin_pneus_n1.webp";
+import GalleryUxAdminPneusThumb from "../assets/images/projects/rea_web_docbiker/2017_gallery_ux_admin_pneus_n1_thumb.webp";
 
-import GalleryUxAdminPneuDetail from "../assets/images/projects/rea_web_docbiker/2017_gallery_ux_admin_pneus_n2.png";
-import GalleryUxAdminPneuDetailThumb from "../assets/images/projects/rea_web_docbiker/2017_gallery_ux_admin_pneus_n2_thumb.png";
+import GalleryUxAdminPneuDetail from "../assets/images/projects/rea_web_docbiker/2017_gallery_ux_admin_pneus_n2.webp";
+import GalleryUxAdminPneuDetailThumb from "../assets/images/projects/rea_web_docbiker/2017_gallery_ux_admin_pneus_n2_thumb.webp";
 
 
 
 
 /*
-import GalleryUxFranchise from "../assets/images/projects/rea_web_docbiker/gallery_ux_franchise.png";
-import GalleryUxFranchiseThumb from "../assets/images/projects/rea_web_docbiker/gallery_ux_franchise_thumb.png";
-import GalleryUxFranchise from "../assets/images/projects/rea_web_docbiker/gallery_ux_franchise.png";
-import GalleryUxFranchiseThumb from "../assets/images/projects/rea_web_docbiker/gallery_ux_franchise_thumb.png";
-import centreDetailVisual from "../assets/images/projects/rea_web_docbiker/fiche_centre.png";
-import centerMapVisual from "../assets/images/projects/rea_web_docbiker/carte_centres.png";
-import quoteVisual from "../assets/images/projects/rea_web_docbiker/devis.png";
-import packagesVisual from "../assets/images/projects/rea_web_docbiker/forfaits.png";
-import backofficeVisual from "../assets/images/projects/rea_web_docbiker/capture_backoffice.jpg";
-import adminVisual from "../assets/images/projects/rea_web_docbiker/admin.png";
-import mobileSearchVisual from "../assets/images/projects/rea_web_docbiker/mobile01.png";
+import GalleryUxFranchise from "../assets/images/projects/rea_web_docbiker/gallery_ux_franchise.webp";
+import GalleryUxFranchiseThumb from "../assets/images/projects/rea_web_docbiker/gallery_ux_franchise_thumb.webp";
+import GalleryUxFranchise from "../assets/images/projects/rea_web_docbiker/gallery_ux_franchise.webp";
+import GalleryUxFranchiseThumb from "../assets/images/projects/rea_web_docbiker/gallery_ux_franchise_thumb.webp";
+import centreDetailVisual from "../assets/images/projects/rea_web_docbiker/fiche_centre.webp";
+import centerMapVisual from "../assets/images/projects/rea_web_docbiker/carte_centres.webp";
+import quoteVisual from "../assets/images/projects/rea_web_docbiker/devis.webp";
+import packagesVisual from "../assets/images/projects/rea_web_docbiker/forfaits.webp";
+import backofficeVisual from "../assets/images/projects/rea_web_docbiker/capture_backoffice.webp";
+import adminVisual from "../assets/images/projects/rea_web_docbiker/admin.webp";
+import mobileSearchVisual from "../assets/images/projects/rea_web_docbiker/mobile01.webp";
 
 
 */
 
-import networkVisual from "../assets/images/projects/rea_web_docbiker/reseau_de_communication_siteweb_centres_via_ecrans-2026-04-26-1202.png";
+import networkVisual from "../assets/images/projects/rea_web_docbiker/reseau_de_communication_siteweb_centres_via_ecrans-2026-04-26-1202.webp";
 import projectsData from "../data/project-prod.json";
 
-import reseauScreenVisual01 from "../assets/images/projects/rea_web_docbiker/screen-reseaul-gallery_01.png";
-import reseauScreenVisual01Thumb from "../assets/images/projects/rea_web_docbiker/screen-reseaul-gallery_01_thumb.png";
+import reseauScreenVisual01 from "../assets/images/projects/rea_web_docbiker/screen-reseaul-gallery_01.webp";
+import reseauScreenVisual01Thumb from "../assets/images/projects/rea_web_docbiker/screen-reseaul-gallery_01_thumb.webp";
 
-import reseauScreenVisual02 from "../assets/images/projects/rea_web_docbiker/screen-reseaul-gallery_02.png";
-import reseauScreenVisual02Thumb from "../assets/images/projects/rea_web_docbiker/screen-reseaul-gallery_02_thumb.png";
+import reseauScreenVisual02 from "../assets/images/projects/rea_web_docbiker/screen-reseaul-gallery_02.webp";
+import reseauScreenVisual02Thumb from "../assets/images/projects/rea_web_docbiker/screen-reseaul-gallery_02_thumb.webp";
 
-import reseauScreenVisual03 from "../assets/images/projects/rea_web_docbiker/screen-reseaul-gallery_03.png";
-import reseauScreenVisual03Thumb from "../assets/images/projects/rea_web_docbiker/screen-reseaul-gallery_03_thumb.png";
+import reseauScreenVisual03 from "../assets/images/projects/rea_web_docbiker/screen-reseaul-gallery_03.webp";
+import reseauScreenVisual03Thumb from "../assets/images/projects/rea_web_docbiker/screen-reseaul-gallery_03_thumb.webp";
 
-import reseauScreenVisual04 from "../assets/images/projects/rea_web_docbiker/screen-reseaul-gallery_04.png";
-import reseauScreenVisual04Thumb from "../assets/images/projects/rea_web_docbiker/screen-reseaul-gallery_04_thumb.png";
+import reseauScreenVisual04 from "../assets/images/projects/rea_web_docbiker/screen-reseaul-gallery_04.webp";
+import reseauScreenVisual04Thumb from "../assets/images/projects/rea_web_docbiker/screen-reseaul-gallery_04_thumb.webp";
 
-import franchiseVisual01 from "../assets/images/projects/rea_web_docbiker/franchise_formulaire_candidatures.png";
-import franchiseVisual01Thumb from "../assets/images/projects/rea_web_docbiker/franchise_formulaire_candidatures_thumb.png";
+import franchiseVisual01 from "../assets/images/projects/rea_web_docbiker/franchise_formulaire_candidatures.webp";
+import franchiseVisual01Thumb from "../assets/images/projects/rea_web_docbiker/franchise_formulaire_candidatures_thumb.webp";
 
-import franchiseVisual02 from "../assets/images/projects/rea_web_docbiker/franchise_admin_centre_infos.png";
-import franchiseVisual02Thumb from "../assets/images/projects/rea_web_docbiker/franchise_admin_centre_infos_thumb.png";
+import franchiseVisual02 from "../assets/images/projects/rea_web_docbiker/franchise_admin_centre_infos.webp";
+import franchiseVisual02Thumb from "../assets/images/projects/rea_web_docbiker/franchise_admin_centre_infos_thumb.webp";
 
-import franchiseVisual03 from "../assets/images/projects/rea_web_docbiker/franchise_admin_promo.png";
-import franchiseVisual03Thumb from "../assets/images/projects/rea_web_docbiker/franchise_admin_promo_thumb.png";
+import franchiseVisual03 from "../assets/images/projects/rea_web_docbiker/franchise_admin_promo.webp";
+import franchiseVisual03Thumb from "../assets/images/projects/rea_web_docbiker/franchise_admin_promo_thumb.webp";
 
 const CircleChevDown = CiCircleChevDown as unknown as ComponentType<{
     className?: string;
@@ -298,13 +298,13 @@ function ImageGallery({ items, onImageClick }: ImageGalleryProps) {
                         type="button"
                         onClick={() => onImageClick(item.big, item.alt, item.src)}
                         aria-label={`Ouvrir ${item.alt}`}
-                        className="group relative block w-[min(74vw,320px)] shrink-0 snap-start overflow-hidden rounded-[28px] border border-black/10 bg-white/82 text-left shadow-[0_16px_40px_rgba(18,22,29,0.08)] md:w-[280px] lg:w-[300px]"
+                        className="group relative block w-[min(74vw,320px)] shrink-0 snap-start overflow-hidden rounded-[28px] border border-black/10 bg-white/82 text-left shadow-[0_16px_40px_rgba(18,22,29,0.08)] md:w-70 lg:w-75"
                     >
                         <img
                             src={item.src}
                             data-big={item.big}
                             alt={item.alt}
-                            className="block aspect-[4/5] w-full object-cover transition duration-500 group-hover:scale-[1.02]"
+                            className="block aspect-4/5 w-full object-cover transition duration-500 group-hover:scale-[1.02]"
                         />
                         <span className="pointer-events-none absolute inset-x-4 bottom-4 rounded-full bg-black/65 px-4 py-2 text-[0.72rem] font-medium uppercase tracking-[0.18em] text-white backdrop-blur-md">
                             {item.caption}
@@ -365,7 +365,7 @@ function Lightbox({ src, alt, isOpen, onClose }: LightboxProps) {
         <AnimatePresence>
             {isOpen ? (
                 <motion.div
-                    className="fixed inset-0 z-[1500] grid place-items-center"
+                    className="fixed inset-0 z-1500 grid place-items-center"
                     style={{ backgroundColor: "rgba(0, 0, 0, 0.75)" }}
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
@@ -666,7 +666,7 @@ export default function CaseStudyDocBiker({
 
     if (!resolvedProject) {
         return (
-            <main className="mx-auto flex min-h-[60vh] w-full max-w-[900px] items-center px-6 py-16 text-neutral-950">
+            <main className="mx-auto flex min-h-[60vh] w-full max-w-225 items-center px-6 py-16 text-neutral-950">
                 <p className="text-lg leading-8 text-neutral-700">
                     Le projet Doc&apos;Biker est introuvable dans les données.
                 </p>
@@ -728,7 +728,7 @@ export default function CaseStudyDocBiker({
                         </div>
                     </motion.div>
 
-                    <figure className="relative mx-auto w-full max-w-[820px] pt-5">
+                    <figure className="relative mx-auto w-full max-w-205 pt-5">
                         <motion.img
                             {...heroSecondReveal}
                             src={heroVisual}
@@ -866,7 +866,7 @@ export default function CaseStudyDocBiker({
                                     <img
                                         src={phase.image}
                                         alt={phase.alt}
-                                        className="block aspect-[4/3] w-full object-cover"
+                                        className="block aspect-4/3 w-full object-cover"
                                     />
                                 </button>
                                 <div className="grid gap-4 p-6 md:p-7">
@@ -1027,7 +1027,7 @@ export default function CaseStudyDocBiker({
                             </p>
                             <button
                                 type="button"
-                                className="mt-6 block w-full object-fill  cursor-zoom-in overflow-visible rounded-[24px] border border-black/10"
+                                className="mt-6 block w-full object-fill  cursor-zoom-in overflow-visible rounded-3xl border border-black/10"
                                 onClick={() =>
                                     openLightbox(
                                         networkVisual,
@@ -1103,7 +1103,7 @@ export default function CaseStudyDocBiker({
                             </ul>
                             <div className="mt-6 grid gap-4  p-5 sm:grid-cols-[0.45fr_1.55fr] sm:items-center">
                                 <div className="grid gap-4 rounded-[28px] border border-black/8 bg-white/78 p-6 shadow-[0_14px_34px_rgba(18,22,29,0.06)] backdrop-blur-md md:p-7">
-                                    <p className="text-[clamp(2.5rem,4vw,4.2rem)] font-semibold leading-[0.99] tracking-[-0.10em] text-neutral-600  p-y-0 m-y-0 mx-auto">
+                                    <p className="text-[clamp(2.5rem,4vw,4.2rem)] font-semibold leading-[0.99] -tracking-widest text-neutral-600  p-y-0 m-y-0 mx-auto">
                                         59<span className="text-base tracking-[-0.01em] font-normal text-neutral-500"> %</span></p>
                                     <p className="text-base p-y-0 m-y-0 leading-7 text-neutral-600 mx-auto text-center">de centres franchisés</p>
                                 </div>

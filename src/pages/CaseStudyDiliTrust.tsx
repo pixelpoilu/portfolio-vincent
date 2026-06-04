@@ -46,56 +46,56 @@ import CaseStudyProjectData from "../components/CaseStudyProjectData";
 import type { Project } from "../types/Project";
 
 // Visuels 
-import grainTexture from "../assets/images/textures/grain.png";
+import grainTexture from "../assets/images/textures/grain.webp";
 
 //Comparaison HOME
-import homeBeforeImage from "../assets/images/projects/rea_web_dilitrust/home_before.png";
-import homeBeforeImageTablet from "../assets/images/projects/rea_web_dilitrust/home_before_tablette.png";
-import homeBeforeImageLaptop from "../assets/images/projects/rea_web_dilitrust/home_before_laptop.png";
-import homeBeforeImageDesktop from "../assets/images/projects/rea_web_dilitrust/home_before_desktop.png";
-import homeAfterImage from "../assets/images/projects/rea_web_dilitrust/home_after.png";
-import homeAfterImageTablet from "../assets/images/projects/rea_web_dilitrust/home_after_tablette.png";
-import homeAfterImageLaptop from "../assets/images/projects/rea_web_dilitrust/home_after_laptop.png";
-import homeAfterImageDesktop from "../assets/images/projects/rea_web_dilitrust/home_after_desktop.png";
+import homeBeforeImage from "../assets/images/projects/rea_web_dilitrust/home_before.webp";
+import homeBeforeImageTablet from "../assets/images/projects/rea_web_dilitrust/home_before_tablette.webp";
+import homeBeforeImageLaptop from "../assets/images/projects/rea_web_dilitrust/home_before_laptop.webp";
+import homeBeforeImageDesktop from "../assets/images/projects/rea_web_dilitrust/home_before_desktop.webp";
+import homeAfterImage from "../assets/images/projects/rea_web_dilitrust/home_after.webp";
+import homeAfterImageTablet from "../assets/images/projects/rea_web_dilitrust/home_after_tablette.webp";
+import homeAfterImageLaptop from "../assets/images/projects/rea_web_dilitrust/home_after_laptop.webp";
+import homeAfterImageDesktop from "../assets/images/projects/rea_web_dilitrust/home_after_desktop.webp";
 
 
 
-import heroVisual from "../assets/images/projects/rea_web_dilitrust/new_dilitrust_trsp.png";
+import heroVisual from "../assets/images/projects/rea_web_dilitrust/new_dilitrust_trsp.webp";
 
 
 
-import productBeforeImage from "../assets/images/projects/rea_web_dilitrust/product_before.png";
-import productBeforeImageTablet from "../assets/images/projects/rea_web_dilitrust/product_before_tablette.png";
-import productBeforeImageLaptop from "../assets/images/projects/rea_web_dilitrust/product_before_laptop.png";
-import productBeforeImageDesktop from "../assets/images/projects/rea_web_dilitrust/product_before_desktop.png";
+import productBeforeImage from "../assets/images/projects/rea_web_dilitrust/product_before.webp";
+import productBeforeImageTablet from "../assets/images/projects/rea_web_dilitrust/product_before_tablette.webp";
+import productBeforeImageLaptop from "../assets/images/projects/rea_web_dilitrust/product_before_laptop.webp";
+import productBeforeImageDesktop from "../assets/images/projects/rea_web_dilitrust/product_before_desktop.webp";
 
-import productAfterImage from "../assets/images/projects/rea_web_dilitrust/product_after.png";
-import productAfterImageTablet from "../assets/images/projects/rea_web_dilitrust/product_after_tablette.png";
-import productAfterImageLaptop from "../assets/images/projects/rea_web_dilitrust/product_after_laptop.png";
-import productAfterImageDesktop from "../assets/images/projects/rea_web_dilitrust/product_after_desktop.png";
-
-
+import productAfterImage from "../assets/images/projects/rea_web_dilitrust/product_after.webp";
+import productAfterImageTablet from "../assets/images/projects/rea_web_dilitrust/product_after_tablette.webp";
+import productAfterImageLaptop from "../assets/images/projects/rea_web_dilitrust/product_after_laptop.webp";
+import productAfterImageDesktop from "../assets/images/projects/rea_web_dilitrust/product_after_desktop.webp";
 
 
-import ApplicationCharte from "../assets/images/projects/rea_web_dilitrust/new_charte_application.png";
+
+
+import ApplicationCharte from "../assets/images/projects/rea_web_dilitrust/new_charte_application.webp";
 
 
 
 //import homePhoneMenu from "../assets/images/projects/rea_web_dilitrust/home_phone_menu.PNG";
-import socleTechnique from "../assets/images/projects/rea_web_dilitrust/socle_technique.png";
-import seaProcess from "../assets/images/projects/rea_web_dilitrust/sea_process.png";
-//import seoPerform from "../assets/images/projects/rea_web_dilitrust/seo_perform.png";
-import SpeedReport1 from "../assets/images/projects/rea_web_dilitrust/DiliTrust_SPEED_report-www.dilitrust.com-20190423_Page_01.png";
-import SpeedReport2 from "../assets/images/projects/rea_web_dilitrust/GTmetrix-report-www.dilitrust.com-20230124T091658-jE188pAT_Page_1.png";
-import SpeedCompare from "../assets/images/projects/rea_web_dilitrust/seo_perform.png";
+import socleTechnique from "../assets/images/projects/rea_web_dilitrust/socle_technique.webp";
+import seaProcess from "../assets/images/projects/rea_web_dilitrust/sea_process.webp";
+//import seoPerform from "../assets/images/projects/rea_web_dilitrust/seo_perform.webp";
+import SpeedReport1 from "../assets/images/projects/rea_web_dilitrust/DiliTrust_SPEED_report-www.dilitrust.com-20190423_Page_01.webp";
+import SpeedReport2 from "../assets/images/projects/rea_web_dilitrust/GTmetrix-report-www.dilitrust.com-20230124T091658-jE188pAT_Page_1.webp";
+import SpeedCompare from "../assets/images/projects/rea_web_dilitrust/seo_perform.webp";
 
-import newCharte1 from "../assets/images/projects/rea_web_dilitrust/new_charte_application1.png";
-import newCharte2 from "../assets/images/projects/rea_web_dilitrust/new_charte_application2.png";
+import newCharte1 from "../assets/images/projects/rea_web_dilitrust/new_charte_application1.webp";
+import newCharte2 from "../assets/images/projects/rea_web_dilitrust/new_charte_application2.webp";
 
-import phoneView01 from "../assets/images/projects/rea_web_dilitrust/phone_home.png";
-import phoneView02 from "../assets/images/projects/rea_web_dilitrust/phone_menu.png";
-import phoneView03 from "../assets/images/projects/rea_web_dilitrust/phone_article.png";
-import phoneView04 from "../assets/images/projects/rea_web_dilitrust/phone_event.png";
+import phoneView01 from "../assets/images/projects/rea_web_dilitrust/phone_home.webp";
+import phoneView02 from "../assets/images/projects/rea_web_dilitrust/phone_menu.webp";
+import phoneView03 from "../assets/images/projects/rea_web_dilitrust/phone_article.webp";
+import phoneView04 from "../assets/images/projects/rea_web_dilitrust/phone_event.webp";
 
 
 const surfaceClassName =
