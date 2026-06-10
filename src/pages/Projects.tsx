@@ -627,6 +627,7 @@ export default function Projects({
                                 <Loader />
                               </div>
                             )}
+
                             <img
                               className={`portfolio-slideshow-thumb ${isSlideshowThumbLoaded ? "is-loaded" : "is-loading"}`}
                               src={slideshowThumbSrc}

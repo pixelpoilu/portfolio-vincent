@@ -415,10 +415,10 @@
             "GIF Animé"
         ],
         "image": "rea_pub_pacific_diapo.jpg",
-        "masonry_0": "",
-        "masonry_1": "",
-        "case_image": "",
-        "portfolio_image": "",
+        "masonry_0": "manson_0_pacific.png",
+        "masonry_1": "manson_1_pacific.png",
+        "case_image": "manson_0_pacific.png",
+        "portfolio_image": "manson_0_pacific.png",
         "mediapath": "rea_pub_pacific",
         "thumb": "rea_pub_pacific_thumb.jpg",
         "medias": [
@@ -482,7 +482,7 @@
             ""
         ],
         "status": "published",
-        "order": 11,
+        "order": 163,
         "caseorder": 0,
         "collection": [
             "portfolio"
@@ -1019,7 +1019,7 @@
             "Création d'une interface HTML,Montage CSS,animation jQuery,Déploiement d'un backend en Flex dédié,mise en place d'une base SQL,Programmation PHP"
         ],
         "status": "published",
-        "order": 178,
+        "order": 34,
         "caseorder": 0,
         "collection": [
             "portfolio",
@@ -1181,7 +1181,7 @@
             ""
         ],
         "status": "published",
-        "order": 170,
+        "order": 56,
         "caseorder": 0,
         "collection": [
             "portfolio"
@@ -1236,7 +1236,7 @@
             "GALERIE ADMINISTRABLE"
         ],
         "status": "published",
-        "order": 31,
+        "order": 167,
         "caseorder": 0,
         "collection": [
             "portfolio"
@@ -1389,7 +1389,7 @@
             "PHP / Flash / HTML"
         ],
         "status": "published",
-        "order": 34,
+        "order": 178,
         "caseorder": 0,
         "collection": [
             "portfolio"
@@ -1793,7 +1793,7 @@
             "Interventions le codage des modules et bases de données"
         ],
         "status": "published",
-        "order": 167,
+        "order": 31,
         "caseorder": 6,
         "collection": [
             "portfolio"
@@ -2466,7 +2466,7 @@
             ""
         ],
         "status": "published",
-        "order": 163,
+        "order": 12,
         "caseorder": 0,
         "collection": [
             "portfolio"
@@ -2520,7 +2520,7 @@
             ""
         ],
         "status": "published",
-        "order": 162,
+        "order": 60,
         "caseorder": 0,
         "collection": [
             "portfolio"
@@ -2626,7 +2626,7 @@
             "Développement de composants sur-mesure sur Joomla 3"
         ],
         "status": "published",
-        "order": 56,
+        "order": 170,
         "caseorder": 4,
         "collection": [
             "portfolio"
@@ -2778,7 +2778,7 @@
             "Administration (PluXML)"
         ],
         "status": "published",
-        "order": 89,
+        "order": 162,
         "caseorder": 0,
         "collection": [
             "portfolio"
@@ -2829,7 +2829,7 @@
             ""
         ],
         "status": "published",
-        "order": 60,
+        "order": 168,
         "caseorder": 0,
         "collection": [
             "portfolio"
@@ -2993,7 +2993,7 @@
             "Gestion de fiches centres détaillées avec services, horaires et coordonnées"
         ],
         "status": "published",
-        "order": 171,
+        "order": 179,
         "caseorder": 10,
         "collection": [
             "portfolio",
@@ -3521,7 +3521,7 @@
             ""
         ],
         "status": "published",
-        "order": 179,
+        "order": 189,
         "caseorder": 15,
         "collection": [
             "case-study",
@@ -3591,7 +3591,7 @@
             ""
         ],
         "status": "published",
-        "order": 168,
+        "order": 89,
         "caseorder": 16,
         "collection": [
             "portfolio"
@@ -3599,7 +3599,7 @@
         "longtext": "<div class=\"project-longtext-block\"><div class=\"project-longtext-copy\"><h3>Vue d'ensemble</h3><p><strong>Divers clients</strong> est un projet de type Landing Pages r&eacute;alis&eacute; en 2023. Cette r&eacute;alisation s'inscrit dans le secteur digital avec une attention particuli&egrave;re port&eacute;e &agrave; la clart&eacute; du parcours, &agrave; la qualit&eacute; visuelle et &agrave; la mise en valeur du contenu.</p></div><figure class=\"project-longtext-hero\"><picture><source media=\"(min-width: 1180px)\" srcset=\"{{masonry_0}}\"><source media=\"(min-width: 720px)\" srcset=\"{{image}}\"><img src=\"{{masonry_1}}\" alt=\"Landing Pages commerciales - visuel principal\" loading=\"lazy\"></picture><figcaption>Landing Pages commerciales : synth&egrave;se visuelle du projet et de ses principaux &eacute;crans.</figcaption></figure><div class=\"project-longtext-gallery\"><figure><picture><img src=\"{{media:0}}\" alt=\"Landing Pages commerciales - vue 1\" loading=\"lazy\"></picture><figcaption>Formulaires Pardot intégrés dans des landing Pages, pilotées via Worpdress</figcaption></figure><figure><picture><img src=\"{{media:1}}\" alt=\"Landing Pages commerciales - vue 2\" loading=\"lazy\"></picture><figcaption>Campagne pour la soltion SASS Board Portal DiliTrust (Canada)</figcaption></figure></div><div class=\"project-longtext-meta\"><div class=\"project-longtext-copy\"><h3>Outils</h3><ul><li>Wordpress</li><li>Adobe XD</li><li>Pardot</li><li>SalesForce</li></ul></div><div class=\"project-longtext-copy\"><h3>Technologies</h3><ul><li>LESS</li><li>Bootstrap</li><li>CSS</li><li>HTML</li><li>Javascript / jQuery</li><li>PHP</li><li>MySQL</li></ul></div></div></div>"
     },
     {
-        "id": 180,
+        "id": 171,
         "title": "Refonte du site web DiliTrust",
         "client": "DiliTrust",
         "year": 2023,
@@ -3674,7 +3674,7 @@
             "Mise en service de la nouvelle mouture, qui conserve la valeur SEO et les performances acquises."
         ],
         "status": "published",
-        "order": 180,
+        "order": 11,
         "caseorder": 16,
         "collection": [
             "portfolio",
