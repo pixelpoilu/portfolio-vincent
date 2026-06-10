@@ -195,10 +195,10 @@ type PhoneMockupProps = {
 
 function PhoneMockup({ image, alt }: PhoneMockupProps) {
   return (
-    <div className="relative mx-auto w-full max-w-[320px] rounded-[3rem] bg-[linear-gradient(180deg,#192233_0%,#0a101a_100%)] p-[10px] shadow-[0_36px_80px_rgba(15,23,42,0.38)] ring-1 ring-white/10">
-      <div className="pointer-events-none absolute inset-y-[72px] left-[6px] w-[3px] rounded-full bg-white/10" />
-      <div className="pointer-events-none absolute right-[6px] top-[86px] h-16 w-[3px] rounded-full bg-white/10" />
-      <div className="pointer-events-none absolute right-[6px] top-[156px] h-10 w-[3px] rounded-full bg-white/10" />
+    <div className="relative mx-auto w-full max-w-[320px] rounded-[3rem] bg-[linear-gradient(180deg,#192233_0%,#0a101a_100%)] p-2.5 shadow-[0_36px_80px_rgba(15,23,42,0.38)] ring-1 ring-white/10">
+      <div className="pointer-events-none absolute inset-y-18 left-1.5 w-0.75 rounded-full bg-white/10" />
+      <div className="pointer-events-none absolute right-1.5 top-21.5 h-16 w-0.75 rounded-full bg-white/10" />
+      <div className="pointer-events-none absolute right-1.5 top-39 h-10 w-0.75 rounded-full bg-white/10" />
 
       <div className="relative overflow-hidden rounded-[2.45rem] bg-[#061121]">
         <div className="absolute left-1/2 top-3 z-20 h-1.5 w-20 -translate-x-1/2 rounded-full bg-white/16" />
@@ -255,7 +255,7 @@ function BeforeAfter({ before, after }: BeforeAfterProps) {
   return (
     <div
       ref={containerRef}
-      className="relative min-h-[320px] overflow-hidden rounded-[30px] border border-black/10 bg-neutral-950 shadow-[0_32px_80px_rgba(18,22,29,0.22)] outline-none [touch-action:none] select-none md:min-h-[560px]"
+      className="relative min-h-80 overflow-hidden rounded-[30px] border border-black/10 bg-neutral-950 shadow-[0_32px_80px_rgba(18,22,29,0.22)] outline-none touch-none select-none md:min-h-140"
       role="slider"
       tabIndex={0}
       aria-label="Comparaison avant apres"
@@ -292,14 +292,14 @@ function BeforeAfter({ before, after }: BeforeAfterProps) {
         draggable={false}
       />
       <div
-        className="pointer-events-none absolute inset-y-0 z-10 w-[2px] -translate-x-1/2 bg-white/95 shadow-[0_0_0_1px_rgba(0,0,0,0.04),0_0_40px_rgba(255,255,255,0.35)]"
+        className="pointer-events-none absolute inset-y-0 z-10 w-0.5 -translate-x-1/2 bg-white/95 shadow-[0_0_0_1px_rgba(0,0,0,0.04),0_0_40px_rgba(255,255,255,0.35)]"
         style={{ left: `${position}%` }}
       />
       <div
-        className="pointer-events-none absolute top-1/2 z-20 grid h-12 w-12 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full bg-white shadow-[0_10px_24px_rgba(0,0,0,0.2)] md:h-[60px] md:w-[60px]"
+        className="pointer-events-none absolute top-1/2 z-20 grid h-12 w-12 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full bg-white shadow-[0_10px_24px_rgba(0,0,0,0.2)] md:h-15 md:w-15"
         style={{ left: `${position}%` }}
       >
-        <span className="h-4 w-[18px] border-x-2 border-neutral-700/55 md:h-[18px]" />
+        <span className="h-4 w-4.5 border-x-2 border-neutral-700/55 md:h-4.5" />
       </div>
       <span className="pointer-events-none absolute left-4 top-4 z-20 rounded-full bg-black/55 px-3 py-2 text-[0.72rem] font-medium uppercase tracking-[0.18em] text-white backdrop-blur-md md:left-5 md:top-5">
         Avant
@@ -330,15 +330,15 @@ export default function CaseStudyPage() {
         <main className="relative isolate overflow-hidden bg-[linear-gradient(180deg,#f5f0e8_0%,#f6f4ef_25%,#ffffff_58%,#eef3f8_100%)] text-neutral-950">
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[760px] bg-[radial-gradient(circle_at_top_left,rgba(230,192,153,0.38),transparent_36%),radial-gradient(circle_at_80%_16%,rgba(151,185,225,0.38),transparent_30%)]"
+            className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-190 bg-[radial-gradient(circle_at_top_left,rgba(230,192,153,0.38),transparent_36%),radial-gradient(circle_at_80%_16%,rgba(151,185,225,0.38),transparent_30%)]"
           />
           <motion.div
             aria-hidden="true"
-            className="pointer-events-none absolute right-[-12%] top-24 -z-10 h-[26rem] w-[26rem] rounded-full bg-[#d8e4f4]/80 blur-3xl"
+            className="pointer-events-none absolute right-[-12%] top-24 -z-10 h-104 w-104 rounded-full bg-[#d8e4f4]/80 blur-3xl"
             style={{ y: accentOrbY }}
           />
 
-          <section className="relative px-4 pb-18 pt-30 md:px-6 md:pb-26 md:pt-[170px]">
+          <section className="relative px-4 pb-18 pt-30 md:px-6 md:pb-26 md:pt-42.5">
             <motion.div
               {...reveal}
               className={`${shellClassName} grid items-center gap-14 lg:grid-cols-[minmax(0,0.88fr)_minmax(0,1.12fr)] lg:gap-18`}
@@ -400,7 +400,7 @@ export default function CaseStudyPage() {
                     <img
                       src={heroVisual}
                       alt="Apercu du nouveau territoire visuel DiliTrust"
-                      className="mx-auto block w-full max-w-[720px]"
+                      className="mx-auto block w-full max-w-180"
                     />
                   </div>
 
@@ -420,7 +420,7 @@ export default function CaseStudyPage() {
                   </div>
                 </div>
 
-                <div className="mt-5 grid gap-4 md:absolute md:-bottom-8 md:left-4 md:w-[47%] md:max-w-[360px]">
+                <div className="mt-5 grid gap-4 md:absolute md:-bottom-8 md:left-4 md:w-[47%] md:max-w-90">
                   <BrowserFrame
                     image={charteImage}
                     alt="Extraction de la nouvelle charte DiliTrust"
@@ -466,7 +466,7 @@ export default function CaseStudyPage() {
                   ].map((item, index) => (
                     <div
                       key={item}
-                      className="flex gap-4 rounded-[22px] border border-black/6 bg-black/[0.02] px-4 py-4"
+                      className="flex gap-4 rounded-[22px] border border-black/6 bg-black/2 px-4 py-4"
                     >
                       <span className="text-sm font-semibold uppercase tracking-[0.22em] text-neutral-400">
                         {String(index + 1).padStart(2, "0")}

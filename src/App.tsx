@@ -8,7 +8,7 @@ import About from "./pages/About";
 import ProjectDetail from "./pages/ProjectDetail";
 import CaseStudyEntry from "./pages/CaseStudyEntry";
 import CaseStudyPage from "./pages/CaseStudyPage";
-import CaseExemple from "./pages/CaseStudyExemple";
+import Portfolio from "./pages/Portfolio";
 import CaseStudyDocBiker from "./pages/CaseStudyDocBiker";
 import Contact from "./pages/Contact";
 
@@ -25,7 +25,8 @@ function Layout() {
         <Route path="/portfolio/:slug" element={<ProjectDetail />} />
         <Route path="/etudes-de-cas" element={<CaseStudies />} />
         <Route path="/test" element={<CaseStudyPage />} />
-        <Route path="/case" element={<CaseExemple />} />
+        <Route path="/port" element={<Portfolio />} />
+
         <Route
           path="/dt"
           element={<Navigate to={dilitrustCaseStudyPath} replace />}

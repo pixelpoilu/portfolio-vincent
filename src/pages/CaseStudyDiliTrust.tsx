@@ -281,7 +281,7 @@ const BeforeAfter = ({
     return (
         <div
             ref={containerRef}
-            className="relative md:min-h-[320px] overflow-hidden rounded-[12px] border border-black/10 bg-neutral-950 shadow-[0_28px_70px_rgba(18,22,29,0.18)] outline-none [touch-action:none] select-none md:min-h-[520px]"
+            className="relative overflow-hidden rounded-xl border border-black/10 bg-neutral-950 shadow-[0_28px_70px_rgba(18,22,29,0.18)] outline-none touch-none select-none md:min-h-130"
             role="slider"
             tabIndex={0}
             aria-label="Comparaison avant apres"
@@ -377,15 +377,15 @@ const BeforeAfter = ({
             )}
 
             <div
-                className="pointer-events-none absolute inset-y-0 z-10 w-[2px] -translate-x-1/2 bg-white/95 shadow-[0_0_0_1px_rgba(0,0,0,0.04),0_0_40px_rgba(255,255,255,0.35)]"
+                className="pointer-events-none absolute inset-y-0 z-10 w-0.5 -translate-x-1/2 bg-white/95 shadow-[0_0_0_1px_rgba(0,0,0,0.04),0_0_40px_rgba(255,255,255,0.35)]"
                 style={{ left: `${position}%` }}
             />
 
             <div
-                className="pointer-events-none absolute top-1/2 z-20 grid h-12 w-12 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full bg-white shadow-[0_10px_20px_rgba(0,0,0,0.2)] md:h-[60px] md:w-[60px]"
+                className="pointer-events-none absolute top-1/2 z-20 grid h-12 w-12 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full bg-white shadow-[0_10px_20px_rgba(0,0,0,0.2)] md:h-15 md:w-15"
                 style={{ left: `${position}%` }}
             >
-                <span className="h-4 w-[18px] border-x-2 border-neutral-700/55 md:h-[18px]" />
+                <span className="h-4 w-4.5 border-x-2 border-neutral-700/55 md:h-4.5" />
             </div>
 
             <span className="pointer-events-none absolute left-4 top-4 z-20 rounded-full bg-black/55 px-3 py-2 text-[0.72rem] font-medium uppercase tracking-[0.18em] text-white backdrop-blur-md md:left-5 md:top-5">
@@ -418,7 +418,7 @@ const Stat = ({ value, label, unit, variant }: StatProps) => {
             <p className="text-base leading-7 text-neutral-600">{label}</p>
             <div className="h-1.5 overflow-hidden rounded-full bg-black/12">
                 <motion.div
-                    className="h-full origin-left rounded-full bg-gradient-to-r from-neutral-950 via-neutral-800 to-slate-400"
+                    className="h-full origin-left rounded-full bg-linear-to-r from-neutral-950 via-neutral-800 to-slate-400"
                     initial={{ scaleX: 0 }}
                     whileInView={{ scaleX: value / 100 }}
                     transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
@@ -555,12 +555,12 @@ const ImageGallery = ({
                         type="button"
                         onClick={() => onImageClick(item.src, item.alt)}
                         aria-label={`Ouvrir ${item.alt}`}
-                        className={`group relative block w-[min(74vw,320px)] shrink-0 snap-start overflow-hidden rounded-[28px] border border-black/10 bg-white/82 text-left shadow-[0_16px_40px_rgba(18,22,29,0.08)] md:w-[280px] lg:w-[300px] ${itemClassName} ${item.itemClassName ?? ""}`.trim()}
+                        className={`group relative block w-[min(74vw,320px)] shrink-0 snap-start overflow-hidden rounded-[28px] border border-black/10 bg-white/82 text-left shadow-[0_16px_40px_rgba(18,22,29,0.08)] md:w-70 lg:w-75 ${itemClassName} ${item.itemClassName ?? ""}`.trim()}
                     >
                         <img
                             src={item.src}
                             alt={item.alt}
-                            className={`block aspect-[4/5] w-full object-cover transition duration-500 group-hover:scale-[1.02] ${imageClassName} ${item.imageClassName ?? ""}`.trim()}
+                            className={`block aspect-4/5 w-full object-cover transition duration-500 group-hover:scale-[1.02] ${imageClassName} ${item.imageClassName ?? ""}`.trim()}
                         />
                         {item.caption ? (
                             <span
@@ -599,7 +599,7 @@ const Lightbox = ({ src, alt, isOpen, onClose }: LightboxProps) => {
         <AnimatePresence>
             {isOpen && (
                 <motion.div
-                    className="fixed inset-0 z-[1500] grid place-items-center"
+                    className="fixed inset-0 z-1500 grid place-items-center"
                     style={{ backgroundColor: "rgba(0, 0, 0, 0.75)" }}
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
@@ -779,7 +779,7 @@ export default function CaseStudyDiliTrust({
                         </div>
                     </motion.div>
                     <figure
-                        className="relative mx-auto w-full max-w-[760px] pt-5"
+                        className="relative mx-auto w-full max-w-190 pt-5"
                     >
                         <motion.img id="heroImg"
                             {...heroSecondReveal}
@@ -806,12 +806,10 @@ export default function CaseStudyDiliTrust({
             xl:overflow-visible 
             lg:overflow-hidden  
             md:overflow-hidden  
-            sm:overflow-hidden 
-            overflow-visible  
-            z-999
+            sm:overflow-hidden
             `} id="screen02">
                 <motion.div {...animFirstReveal}>
-                    <div className="mx-auto max-w-[1200px] pt-0 pb-0 mt-0 mb-0 sm:pt-10 sm:pb-5 px-6 sm:pt-10 sm:pb-10 sm:px-6 md:px-8">
+                    <div className="mx-auto max-w-300 pt-0 pb-0 mt-0 mb-0 sm:pt-10 sm:pb-5 px-6 sm:px-6 md:px-8">
                         <p className={eyebrowClassName}>problématique</p>
                         <h2
                             className="mt-4 text-3xl leading-tight tracking-[-0.04em] text-neutral-950 md:text-[3rem]"
@@ -826,7 +824,7 @@ export default function CaseStudyDiliTrust({
                     </div>
                 </motion.div>
                 <motion.div {...animSecondReveal}>
-                    <div className="mx-auto max-w-[1200px] pt-0 pb-0 mt-0 mb-0  sm:pt-10 sm:pb-5 px-6 sm:pt-10 sm:pb-10 sm:px-6 md:px-8">
+                    <div className="mx-auto max-w-300 pt-0 pb-0 mt-0 mb-0  sm:pt-10 sm:pb-5 px-6 sm:px-6 md:px-8">
                         <p className={eyebrowClassName}>Réponse</p>
                         <h2
                             className="mt-4 text-3xl leading-tight tracking-[-0.04em] text-neutral-950 md:text-[3rem]"
@@ -910,7 +908,7 @@ export default function CaseStudyDiliTrust({
                                                 {...reveal}
                                                 className="rounded-[30px] border border-black/8 bg-white/82 shadow-[0_10px_10px_rgba(18,22,29,0.08)] backdrop-blur-sm p-6 md:p-7"
                                             >
-                                                <p className="text-[clamp(2.6rem,5vw,4.2rem)] font-semibold leading-[0.92] tracking-[-0.1em] text-neutral-600" style={{ opacity: 0.55 }}>
+                                                <p className="text-[clamp(2.6rem,5vw,4.2rem)] font-semibold leading-[0.92] -tracking-widest text-neutral-600" style={{ opacity: 0.55 }}>
                                                     {metricOld.value}
                                                 </p>
                                                 <h3 className="mt-3 text-lg font-thin text-neutral-600">
@@ -1094,7 +1092,7 @@ export default function CaseStudyDiliTrust({
                                 <motion.img
                                     src={homeBeforeImage}
                                     alt="Application de la charte graphique DiliTrust"
-                                    className="block w-full block md:hidden"
+                                    className="block w-full md:hidden"
                                     onClick={() => openLightbox(homeBeforeImage, "Home DiliTrust - Avant")}
                                     initial={{ opacity: 0, y: 100 }}
                                     whileInView={{ opacity: 1, y: 0 }}
@@ -1115,7 +1113,7 @@ export default function CaseStudyDiliTrust({
                                 <motion.img
                                     src={homeAfterImage}
                                     alt="Application de la charte graphique DiliTrust"
-                                    className="block w-full block md:hidden"
+                                    className="block w-full md:hidden"
                                     onClick={() => openLightbox(homeAfterImage, "Home DiliTrust - Après")}
                                     initial={{ opacity: 0, y: 100 }}
                                     whileInView={{ opacity: 1, y: 0 }}
@@ -1160,7 +1158,7 @@ export default function CaseStudyDiliTrust({
                                 <motion.img
                                     src={productBeforeImage}
                                     alt="Application de la charte graphique DiliTrust"
-                                    className="block w-full block md:hidden"
+                                    className="block w-full md:hidden"
                                     onClick={() => openLightbox(productBeforeImage, "Produit DiliTrust - Avant")}
                                     initial={{ opacity: 0, y: 100 }}
                                     whileInView={{ opacity: 1, y: 0 }}
@@ -1180,7 +1178,7 @@ export default function CaseStudyDiliTrust({
                                 <motion.img
                                     src={productAfterImage}
                                     alt="Application de la charte graphique DiliTrust"
-                                    className="block w-full block md:hidden"
+                                    className="block w-full md:hidden"
                                     onClick={() => openLightbox(productAfterImage, "Produit DiliTrust - Après")}
                                     initial={{ opacity: 0, y: 100 }}
                                     whileInView={{ opacity: 1, y: 0 }}
@@ -1225,7 +1223,7 @@ export default function CaseStudyDiliTrust({
                                 elle reorganise le rythme, les contrastes et la mise en confiance.
 
                             </p>
-                            <div className="grid gap-1 grid-cols-2 lg:grid-cols-2 block md:hidden">
+                            <div className="grid gap-1 grid-cols-2 lg:grid-cols-2 md:hidden">
                                 <motion.img
                                     src={newCharte1}
                                     alt="Nouvelle charte graphique DiliTrust"
@@ -1247,7 +1245,7 @@ export default function CaseStudyDiliTrust({
                                     viewport={{ once: true, amount: 0.2 }}
                                 />
                             </div>
-                            <div className="grid gap-1 grid-cols-2 lg:grid-cols-2 hidden md:block">
+                            <div className=" gap-1 grid-cols-2 lg:grid-cols-2 hidden md:grid">
                                 <motion.img
                                     src={ApplicationCharte}
                                     alt="Nouvelle charte graphique DiliTrust"
@@ -1343,7 +1341,7 @@ export default function CaseStudyDiliTrust({
                             <p className="mt-4 max-w-1xl text-base leading-8 text-neutral-600">
                                 Le développement du thème WordPress propriétaire a été effectué dans un souci de clarté de code et de lisibilité, ce qui a fait grimper la note SEO de manière significative.
                             </p>
-                            <div className="grid gap-1 grid-cols-2 lg:grid-cols-2 block md:hidden">
+                            <div className="grid gap-1 grid-cols-2 lg:grid-cols-2 md:hidden">
                                 <motion.img
                                     src={SpeedReport1}
                                     alt="Score SEO"
@@ -1365,7 +1363,7 @@ export default function CaseStudyDiliTrust({
                                     viewport={{ once: true, amount: 0.2 }}
                                 />
                             </div>
-                            <div className="grid gap-1 grid-cols-2 lg:grid-cols-2 hidden md:block">
+                            <div className=" gap-1 grid-cols-2 lg:grid-cols-2 hidden md:grid">
                                 <motion.img
                                     src={SpeedCompare}
                                     className="block w-full"

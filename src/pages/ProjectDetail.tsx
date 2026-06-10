@@ -6,7 +6,6 @@ import Loader from "../components/Loader";
 import PageTransition from "../components/PageTransition";
 import projectsData from "../data/project-prod.json";
 import type { Project, ProjectMedia } from "../types/Project";
-import { getProjectPath } from "../utils/projectPaths";
 import { slugifyTitle } from "../utils/slug";
 import { hasCollection, type ProjectCollectionKey } from "../utils/projectCollection";
 
@@ -18,11 +17,34 @@ const images = import.meta.glob<{ default: string }>(
 const ProjectLongtext = memo(function ProjectLongtext({ html }: { html: string }) {
   return (
     <section
-      className="project-longtext mx-auto mt-12 w-full max-w-[1180px]"
+      className="project-longtext mx-auto mt-12 w-full max-w-295"
       dangerouslySetInnerHTML={{ __html: html }}
     />
   );
 });
+
+function GalleryImage({ src, alt }: { src: string; alt: string }) {
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  return (
+    <>
+      {!isLoaded && (
+        <div className="image-loader-overlay" aria-hidden="true">
+          <Loader />
+        </div>
+      )}
+      <img
+        src={src}
+        alt={alt}
+        className={`block w-full transition-opacity duration-300 ${
+          isLoaded ? "opacity-100" : "opacity-0"
+        }`}
+        onLoad={() => setIsLoaded(true)}
+        onError={() => setIsLoaded(true)}
+      />
+    </>
+  );
+}
 
 export default function ProjectDetail() {
   const { slug } = useParams();
@@ -45,38 +67,38 @@ export default function ProjectDetail() {
       : undefined;
   const project = projectBySlug ?? projectByLegacyId;
 
+  if (!project) {
+    return <Navigate to={listingBasePath} replace />;
+  }
+
+  return (
+    <ProjectDetailContent
+      key={`${collectionKey}-${project.id}`}
+      project={project}
+      isCaseStudy={isCaseStudy}
+      listingBasePath={listingBasePath}
+      backLabel={backLabel}
+    />
+  );
+}
+
+type ProjectDetailContentProps = {
+  project: Project;
+  isCaseStudy: boolean;
+  listingBasePath: string;
+  backLabel: string;
+};
+
+function ProjectDetailContent({
+  project,
+  isCaseStudy,
+  listingBasePath,
+  backLabel,
+}: ProjectDetailContentProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(!isCaseStudy);
   const [isHovered, setIsHovered] = useState(false);
-  const [isSliderImageLoaded, setIsSliderImageLoaded] = useState(false);
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
-
-  if (projectByLegacyId && !projectBySlug) {
-    return (
-      <Navigate
-        to={getProjectPath(projectByLegacyId, listingBasePath)}
-        replace
-      />
-    );
-  }
-
-  if (!project) {
-    return (
-      <PageTransition>
-        <main className="mx-auto flex min-h-[60vh] w-full max-w-[960px] flex-col justify-center gap-4 px-6 py-16">
-          <h1 className="text-4xl leading-tight tracking-[-0.04em] text-neutral-950">
-            Projet introuvable
-          </h1>
-          <Link
-            to={listingBasePath}
-            className="inline-flex w-fit items-center gap-2 border border-[#222] px-4 py-3 text-xs uppercase tracking-[0.08em] text-[var(--mycolor-dark)] transition duration-300 hover:bg-[var(--mycolor-dark)] hover:text-[var(--mycolor-clear)]"
-          >
-            Retour
-          </Link>
-        </main>
-      </PageTransition>
-    );
-  }
 
   const client = project.client?.trim();
   const description = project.description?.trim();
@@ -149,17 +171,6 @@ export default function ProjectDetail() {
     .replace(/\{\{media:(\d+)\}\}/g, (_, index) => getProjectMediaAsset(Number(index)));
 
   useEffect(() => {
-    setCurrentIndex(0);
-    setIsPlaying(!isCaseStudy);
-    setIsHovered(false);
-    setIsSliderImageLoaded(false);
-  }, [isCaseStudy, project?.id]);
-
-  useEffect(() => {
-    setIsSliderImageLoaded(false);
-  }, [currentIndex, project?.id]);
-
-  useEffect(() => {
     if (intervalRef.current) {
       clearInterval(intervalRef.current);
       intervalRef.current = null;
@@ -181,7 +192,7 @@ export default function ProjectDetail() {
         intervalRef.current = null;
       }
     };
-  }, [isPlaying, isHovered, galleryImages.length]);
+  }, [isPlaying, isHovered, galleryImages.length, isCaseStudy]);
 
   const nextSlide = () =>
     setCurrentIndex((prev) => (prev === galleryImages.length - 1 ? 0 : prev + 1));
@@ -201,16 +212,16 @@ export default function ProjectDetail() {
 
   return (
     <PageTransition>
-      <div className="site-page bg-[var(--bg)]">
-        <div className="sticky z-[900] mt-2.5 mb-5 w-full border border-white/40 bg-white/70 backdrop-blur-xl shadow-[0_10px_40px_rgba(0,0,0,var(--nav-shadow-opacity,0)),inset_0_1px_0_rgba(255,255,255,var(--nav-inset-opacity,0))] top-[72px] max-[640px]:top-[112px]">
-          <div className="mx-auto flex w-[96%] max-w-[1150px] justify-end py-2">
+      <div className="site-page bg-(--bg)">
+        <div className="sticky z-900 mt-2.5 mb-5 w-full border border-white/40 bg-white/70 backdrop-blur-xl shadow-[0_10px_40px_rgba(0,0,0,var(--nav-shadow-opacity,0)),inset_0_1px_0_rgba(255,255,255,var(--nav-inset-opacity,0))] top-18 max-[640px]:top-28">
+          <div className="mx-auto flex w-[96%] max-w-287.5 justify-end py-2">
             <Link to={listingBasePath} className={backButtonClassName}>
               <span aria-hidden="true">‹‹</span>
               {backLabel}
             </Link>
           </div>
         </div>
-        <main className="mx-auto w-full max-w-[1180px] px-4 pb-16 sm:px-6 lg:px-8">
+        <main className="mx-auto w-full max-w-295 px-4 pb-16 sm:px-6 lg:px-8">
           <div className="mt-12">
             <h1 className="text-[clamp(2.2rem,4vw,3.2rem)] leading-[1.05] tracking-[-0.04em] text-neutral-950">
               {project.title}
@@ -224,22 +235,13 @@ export default function ProjectDetail() {
             >
               {galleryImages.length > 0 && (
                 <>
-                  {!isSliderImageLoaded && (
-                    <div className="image-loader-overlay" aria-hidden="true">
-                      <Loader />
-                    </div>
-                  )}
-                  <img
+                  <GalleryImage
+                    key={`${project.id}-${currentIndex}-${galleryImages[currentIndex].src}`}
                     src={galleryImages[currentIndex].src}
                     alt={project.title}
-                    className={`block w-full transition-opacity duration-300 ${
-                      isSliderImageLoaded ? "opacity-100" : "opacity-0"
-                    }`}
-                    onLoad={() => setIsSliderImageLoaded(true)}
-                    onError={() => setIsSliderImageLoaded(true)}
                   />
                   {galleryImages[currentIndex].caption && (
-                    <p className="mt-2.5 text-center text-sm text-[var(--muted)]">
+                    <p className="mt-2.5 text-center text-sm text-(--muted)">
                       {galleryImages[currentIndex].caption}
                     </p>
                   )}
@@ -300,12 +302,12 @@ export default function ProjectDetail() {
               )}
             </div>
 
-            <div className="lg:sticky lg:top-[120px]">
+            <div className="lg:sticky lg:top-30">
               <h2 className="text-[32px] leading-tight tracking-[-0.03em] text-neutral-950">
                 {project.title}
               </h2>
 
-              {client && <p className="mt-2 mb-8 text-[0.95rem] text-[var(--muted)]">{client}</p>}
+              {client && <p className="mt-2 mb-8 text-[0.95rem] text-(--muted)">{client}</p>}
 
               {description && (
                 <>
@@ -339,7 +341,7 @@ export default function ProjectDetail() {
                   <h3 className="mt-8 text-xs uppercase tracking-[0.2rem] text-[#808080]">
                     Missions
                   </h3>
-                  <ul className="mt-2 list-disc pl-[18px]">
+                  <ul className="mt-2 list-disc pl-4.5">
                     {missions.map((mission, index) => (
                       <li key={index} className="mb-2 text-[15px] text-black">
                         {mission}

@@ -48,8 +48,14 @@ export default function Navbar() {
   }, []);
 
   useEffect(() => {
-    setMenuOpen(false);
-  }, [location.pathname]);
+    if (!menuOpen) return;
+
+    const timeoutId = window.setTimeout(() => {
+      setMenuOpen(false);
+    }, 0);
+
+    return () => window.clearTimeout(timeoutId);
+  }, [location.pathname, menuOpen]);
 
   useEffect(() => {
     if (!menuOpen) return;
@@ -82,11 +88,11 @@ export default function Navbar() {
   const navItems = [
     { to: "/", label: "Accueil", end: true },
     { to: "/portfolio", label: "Portfolio" },
-    { to: "/etudes-de-cas", label: "Etude de cas", end: true },
+    { to: "/etudes-de-cas", label: "Études de cas", end: true },
     // { to: dilitrustCaseStudyPath, label: "DiliTrust", end: true },
     //   { to: "/test", label: "Test" },
-    //    { to: "/doc", label: "doc" },
-    { to: "/a-propos", label: "A propos" },
+    { to: "/port", label: "Port" },
+    { to: "/a-propos", label: "À propos" },
     { to: "/contact", label: "Contact" },
   ];
 

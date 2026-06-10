@@ -11,7 +11,7 @@ const socialLinks = [
   { href: "https://www.pinterest.com", label: "Pinterest", Icon: FaPinterest },
 ];
 
-interface FooterProps extends ComponentPropsWithoutRef<"footer"> {}
+type FooterProps = ComponentPropsWithoutRef<"footer">;
 
 export default function Footer({ className = "", ...props }: FooterProps) {
   const year = new Date().getFullYear();
@@ -22,7 +22,7 @@ export default function Footer({ className = "", ...props }: FooterProps) {
       aria-label="Reseaux sociaux"
       {...props}
     >
-      <p className="m-0 text-sm leading-5 text-[var(--mycolor-black)] md:col-[2] md:justify-self-center">
+      <p className="m-0 text-sm leading-5 text-(--mycolor-black) md:col-2 md:justify-self-center">
         &copy; {year} copyright{" "}
         <a
           href="https://vincent-lepretre.fr"
@@ -32,7 +32,7 @@ export default function Footer({ className = "", ...props }: FooterProps) {
         </a>{" "}
         Tous droits reserves
       </p>
-      <ul className="m-0 flex list-none items-center justify-center gap-[1.1rem] p-0 md:col-[3] md:justify-self-end">
+      <ul className="m-0 flex list-none items-center justify-center gap-[1.1rem] p-0 md:col-3 md:justify-self-end">
         {socialLinks.map(({ href, label, Icon }) => (
           <li key={label} className="inline-flex">
             <a

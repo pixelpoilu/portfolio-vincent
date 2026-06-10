@@ -3,7 +3,7 @@
   column-gap: 1.25rem;
 }
 
-.projects-grid > div {
+.projects-grid>div {
   break-inside: avoid;
   margin-bottom: 1.25rem;
 }
@@ -27,7 +27,7 @@
     column-gap: 0;
   }
 
-  .case-studies-page .projects-grid:not(.case-studies-grid--editorial) > div {
+  .case-studies-page .projects-grid:not(.case-studies-grid--editorial)>div {
     margin-bottom: 0;
   }
 
@@ -41,7 +41,7 @@
     column-gap: 0;
   }
 
-  .case-studies-page .projects-grid.case-studies-grid--editorial > .case-study-tile {
+  .case-studies-page .projects-grid.case-studies-grid--editorial>.case-study-tile {
     margin-bottom: 0;
     min-height: 0;
   }
@@ -57,6 +57,11 @@
   .case-studies-page .projects-grid.case-studies-grid--editorial .case-study-tile--hero-left {
     grid-column: 1 / span 2;
     grid-row: 1;
+  }
+
+  a.card-link:any-link,
+  a.card-link:any-link h3 {
+    color: #fff;
   }
 
   .case-studies-page .projects-grid.case-studies-grid--editorial .case-study-tile--square-left {
@@ -107,16 +112,27 @@
   border-radius: 0;
 }
 
+.case-studies-page .case-study-media-link:any-link,
+.case-studies-page .case-study-media-link:any-link h2,
+.case-studies-page .case-study-media-link:any-link p,
+.case-studies-page .case-study-cta-link:any-link,
+.case-studies-page .case-study-cta-link:any-link svg {
+  color: #fff;
+}
+
+.case-studies-page .case-study-cta-link:hover,
+.case-studies-page .case-study-cta-link:focus-visible {
+  color: #fff;
+}
+
 .case-studies-page .card-image-wrapper::before {
   content: "";
   position: absolute;
   inset: -20%;
-  background: linear-gradient(
-    115deg,
-    rgba(255, 255, 255, 0) 25%,
-    rgba(255, 255, 255, 0.35) 50%,
-    rgba(255, 255, 255, 0) 75%
-  );
+  background: linear-gradient(115deg,
+      rgba(255, 255, 255, 0) 25%,
+      rgba(255, 255, 255, 0.35) 50%,
+      rgba(255, 255, 255, 0) 75%);
   transform: translateX(-120%) rotate(8deg);
   opacity: 0;
   pointer-events: none;
@@ -124,12 +140,10 @@
 }
 
 .case-studies-page .card-content {
-  background: linear-gradient(
-    to top,
-    rgba(9, 12, 18, 0.82) 12%,
-    rgba(9, 12, 18, 0.5) 45%,
-    rgba(9, 12, 18, 0.08) 100%
-  );
+  background: linear-gradient(to top,
+      rgba(9, 12, 18, 0.82) 12%,
+      rgba(9, 12, 18, 0.5) 45%,
+      rgba(9, 12, 18, 0.08) 100%);
   backdrop-filter: blur(2px);
   transform: translateY(10px);
   transition: opacity 0.3s ease, transform 0.35s ease, backdrop-filter 0.35s ease;
@@ -189,6 +203,7 @@
 }
 
 @media (max-width: 1120px) {
+
   .projects-grid,
   .case-studies-page .projects-grid {
     column-count: 4;
@@ -196,6 +211,7 @@
 }
 
 @media (max-width: 740px) {
+
   .projects-grid,
   .case-studies-page .projects-grid {
     column-count: 3;
@@ -203,6 +219,7 @@
 }
 
 @media (max-width: 560px) {
+
   .projects-grid,
   .case-studies-page .projects-grid {
     column-count: 2;

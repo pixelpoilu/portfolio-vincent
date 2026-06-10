@@ -222,33 +222,49 @@ export default function Projects({
   );
 
   useEffect(() => {
-    setSelectedTypes((current) => {
-      const next = current.filter((type) => availableTypes.includes(type));
-      return next.length === current.length ? current : next;
-    });
+    const timeout = window.setTimeout(() => {
+      setSelectedTypes((current) => {
+        const next = current.filter((type) => availableTypes.includes(type));
+        return next.length === current.length ? current : next;
+      });
+    }, 0);
+
+    return () => window.clearTimeout(timeout);
   }, [availableTypes]);
 
   useEffect(() => {
-    setSelectedSectors((current) => {
-      const next = current.filter((sector) => availableSectors.includes(sector));
-      return next.length === current.length ? current : next;
-    });
+    const timeout = window.setTimeout(() => {
+      setSelectedSectors((current) => {
+        const next = current.filter((sector) => availableSectors.includes(sector));
+        return next.length === current.length ? current : next;
+      });
+    }, 0);
+
+    return () => window.clearTimeout(timeout);
   }, [availableSectors]);
 
   useEffect(() => {
-    setSelectedTechnologies((current) => {
-      const next = current.filter((technology) =>
-        availableTechnologies.includes(technology)
-      );
-      return next.length === current.length ? current : next;
-    });
+    const timeout = window.setTimeout(() => {
+      setSelectedTechnologies((current) => {
+        const next = current.filter((technology) =>
+          availableTechnologies.includes(technology)
+        );
+        return next.length === current.length ? current : next;
+      });
+    }, 0);
+
+    return () => window.clearTimeout(timeout);
   }, [availableTechnologies]);
 
   useEffect(() => {
-    setSelectedTools((current) => {
-      const next = current.filter((tool) => availableTools.includes(tool));
-      return next.length === current.length ? current : next;
-    });
+    const timeout = window.setTimeout(() => {
+      setSelectedTools((current) => {
+        const next = current.filter((tool) => availableTools.includes(tool));
+        return next.length === current.length ? current : next;
+      });
+    }, 0);
+
+    return () => window.clearTimeout(timeout);
   }, [availableTools]);
 
   const filteredProjects = useMemo(() => {
@@ -496,11 +512,19 @@ export default function Projects({
     return resolveThumbnailByFilename(slideshowProject.portfolio_image);
   }, [slideshowProject]);
   useEffect(() => {
-    setIsSlideshowThumbLoaded(false);
+    const timeout = window.setTimeout(() => {
+      setIsSlideshowThumbLoaded(false);
+    }, 0);
+
+    return () => window.clearTimeout(timeout);
   }, [slideshowThumbSrc, slideshowProject?.id]);
 
   useEffect(() => {
-    setIsSlideImageLoaded(false);
+    const timeout = window.setTimeout(() => {
+      setIsSlideImageLoaded(false);
+    }, 0);
+
+    return () => window.clearTimeout(timeout);
   }, [currentSlide?.src, activeSlideIndex, slideshowProject?.id]);
 
   useEffect(() => {
@@ -540,7 +564,7 @@ export default function Projects({
           onSearchChange={setSearchQuery}
         />
 
-        <section className="mx-auto grid w-full max-w-[1150px] gap-8 px-4 py-12 sm:px-6">
+        <section className="mx-auto grid w-full max-w-287.5 gap-8 px-4 py-12 sm:px-6">
           <div className="flex flex-col gap-3 text-slate-500 md:flex-row md:items-end md:justify-between">
             <div className="max-w-3xl text-[15px] leading-[1.6] text-[#555]">
               <p>{introCopy}</p>

@@ -1,18 +1,19 @@
-import { useEffect, useMemo, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import FilterBar from "../components/FilterBar";
+import { useMemo } from "react";
+import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+import { FaAngleRight } from "@react-icons/all-files/fa/FaAngleRight";
 import projectsData from "../data/project-prod.json";
 import PageTransition from "../components/PageTransition";
-import ProjectCard from "../components/ProjectCard";
 import Footer from "../components/Footer";
 import type { Project } from "../types/Project";
-import { hasCollection } from "../utils/projectCollection";
-import { getProjectTypes, projectHasType } from "../utils/projectType";
+import { getDedicatedCaseStudyPathByProjectId } from "../config/dedicatedCaseStudies";
+import { formatProjectTypes } from "../utils/projectType";
 
 const projectImageModules = import.meta.glob<{ default: string }>(
   "../assets/images/projects/**/*.{jpg,jpeg,png,webp,avif}",
   { eager: true }
 );
+
 const projectImageByFilename = new Map(
   Object.entries(projectImageModules).map(([path, image]) => [
     path.split("/").pop()?.trim() ?? "",
@@ -55,326 +56,228 @@ const resolveProjectImageSrc = (project: Project) => {
   return undefined;
 };
 
-const normalizeText = (value: string) =>
-  value
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .toLowerCase()
-    .trim();
+type CaseStudyHighlight = {
+  id: number;
+  label: string;
+  summary: string;
+  strengths: string[];
+  accent: string;
+};
 
-const sortAlphabetically = (values: string[]) =>
-  [...values].sort((a, b) => a.localeCompare(b, "fr", { sensitivity: "base" }));
+type ResolvedCaseStudy = CaseStudyHighlight & {
+  project: Project;
+  image: string | undefined;
+  path: string;
+};
 
-const toSortableOrder = (value?: number) =>
-  typeof value === "number" && Number.isFinite(value)
-    ? value
-    : Number.NEGATIVE_INFINITY;
+const selectedCaseStudies: CaseStudyHighlight[] = [
+  {
+    id: 180,
+    label: "Refonte SaaS",
+    summary:
+      "Une refonte pensée pour moderniser la perception de marque, clarifier l'offre et préserver le SEO.",
+    strengths: [
+      "Nouvelle direction UX/UI plus lisible et premium",
+      "Template WordPress custom, contenus et trackers conservés",
+      "Performance, SEO et expérience mobile intégrés au projet",
+    ],
+    accent: "from-[#0c1d43] via-[#174f8f] to-[#f0a51e]",
+  },
+  {
+    id: 64,
+    label: "Parcours e-commerce",
+    summary:
+      "Un site réorganisé autour de l'expérience client, la prise de rendez-vous et des contenus plus faciles à administrer.",
+    strengths: [
+      "Refonte UX centrée sur les services moto",
+      "Back-office enrichi pour piloter les contenus",
+      "SEO, catalogue et parcours client harmonisés",
+    ],
+    accent: "from-[#1b1715] via-[#b45f13] to-[#ffd23c]",
+  },
+  {
+    id: 14,
+    label: "Écosystème tourisme",
+    summary:
+      "Une collaboration longue pour faire évoluer le site, les contenus, le SEO et la réservation en ligne autour du voyage fluvial.",
+    strengths: [
+      "Refontes successives et stratégie éditoriale multilingue",
+      "Passerelle de disponibilité reliée au système interne",
+      "Brochures, modules et contenus touristiques connectés",
+    ],
+    accent: "from-[#2f7dbd] via-[#8dcf81] to-[#f2df80]",
+  },
+];
 
-const editorialLayoutSlots = [
-  "hero-left",
-  "square-left",
-  "square-middle-left",
-  "square-middle-right",
-  "tall-right",
-  "tall-center",
-  "hero-right",
-  "square-right",
-] as const;
-
-const getEditorialTileClassName = (index: number, useEditorialGrid: boolean) => {
-  const classes = ["case-study-tile"];
-
-  if (!useEditorialGrid) {
-    return classes.join(" ");
-  }
-
-  const slot = editorialLayoutSlots[index];
-  if (slot) {
-    classes.push(`case-study-tile--${slot}`);
-  }
-
-  return classes.join(" ");
+const reveal = {
+  initial: { opacity: 0, y: 26 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.55, ease: [0.16, 1, 0.3, 1] as const },
 };
 
 export default function CaseStudies() {
-  const detailBasePath = "/etudes-de-cas";
-  const [selectedTechnologies, setSelectedTechnologies] = useState<string[]>([]);
-  const [selectedTools, setSelectedTools] = useState<string[]>([]);
-  const [selectedTypes, setSelectedTypes] = useState<string[]>([]);
-  const [selectedSectors, setSelectedSectors] = useState<string[]>([]);
-  const [searchQuery, setSearchQuery] = useState("");
-  const publishedProjects = useMemo(() => {
+  const caseStudies = useMemo(() => {
     const projects = projectsData as Project[];
-    return projects.filter(
-      (project) => project.status === "published" && hasCollection(project, "case-study")
-    );
-  }, []);
 
-  const allTechnologies = useMemo(() => {
-    const techSet = new Set<string>();
-    publishedProjects.forEach((project) => {
-      project.technologies.forEach((tech) => techSet.add(tech));
-    });
-    return sortAlphabetically(Array.from(techSet));
-  }, [publishedProjects]);
-
-  const allTools = useMemo(() => {
-    const toolSet = new Set<string>();
-    publishedProjects.forEach((project) => {
-      project.outils.forEach((tool) => toolSet.add(tool));
-    });
-    return sortAlphabetically(Array.from(toolSet));
-  }, [publishedProjects]);
-
-  const allTypes = useMemo(() => {
-    const typeSet = new Set<string>();
-    publishedProjects.forEach((project) => {
-      getProjectTypes(project).forEach((type) => typeSet.add(type));
-    });
-    return sortAlphabetically(Array.from(typeSet));
-  }, [publishedProjects]);
-
-  const allSectors = useMemo(() => {
-    const sectorSet = new Set<string>();
-    publishedProjects.forEach((project) => {
-      sectorSet.add(project.secteur);
-    });
-    return sortAlphabetically(Array.from(sectorSet));
-  }, [publishedProjects]);
-
-  const availableTypes = useMemo(
-    () =>
-      allTypes.filter((type) =>
-        publishedProjects.some((project) => {
-          const matchesTech =
-            selectedTechnologies.length === 0 ||
-            selectedTechnologies.some((tech) => project.technologies.includes(tech));
-          const matchesTool =
-            selectedTools.length === 0 ||
-            selectedTools.some((tool) => project.outils.includes(tool));
-          const matchesSector =
-            selectedSectors.length === 0 || selectedSectors.includes(project.secteur);
-          return matchesTech && matchesTool && matchesSector && projectHasType(project, type);
-        })
-      ),
-    [allTypes, publishedProjects, selectedTechnologies, selectedTools, selectedSectors]
-  );
-
-  const availableSectors = useMemo(
-    () =>
-      allSectors.filter((sector) =>
-        publishedProjects.some((project) => {
-          const matchesTech =
-            selectedTechnologies.length === 0 ||
-            selectedTechnologies.some((tech) => project.technologies.includes(tech));
-          const matchesTool =
-            selectedTools.length === 0 ||
-            selectedTools.some((tool) => project.outils.includes(tool));
-          const matchesType =
-            selectedTypes.length === 0 ||
-            selectedTypes.some((type) => projectHasType(project, type));
-          return matchesTech && matchesTool && matchesType && project.secteur === sector;
-        })
-      ),
-    [allSectors, publishedProjects, selectedTechnologies, selectedTools, selectedTypes]
-  );
-
-  const availableTechnologies = useMemo(
-    () =>
-      allTechnologies.filter((technology) =>
-        publishedProjects.some((project) => {
-          const matchesTool =
-            selectedTools.length === 0 ||
-            selectedTools.some((tool) => project.outils.includes(tool));
-          const matchesType =
-            selectedTypes.length === 0 ||
-            selectedTypes.some((type) => projectHasType(project, type));
-          const matchesSector =
-            selectedSectors.length === 0 || selectedSectors.includes(project.secteur);
-          return (
-            matchesTool &&
-            matchesType &&
-            matchesSector &&
-            project.technologies.includes(technology)
-          );
-        })
-      ),
-    [allTechnologies, publishedProjects, selectedTools, selectedTypes, selectedSectors]
-  );
-
-  const availableTools = useMemo(
-    () =>
-      allTools.filter((tool) =>
-        publishedProjects.some((project) => {
-          const matchesTech =
-            selectedTechnologies.length === 0 ||
-            selectedTechnologies.some((tech) => project.technologies.includes(tech));
-          const matchesType =
-            selectedTypes.length === 0 ||
-            selectedTypes.some((type) => projectHasType(project, type));
-          const matchesSector =
-            selectedSectors.length === 0 || selectedSectors.includes(project.secteur);
-          return matchesTech && matchesType && matchesSector && project.outils.includes(tool);
-        })
-      ),
-    [allTools, publishedProjects, selectedTechnologies, selectedTypes, selectedSectors]
-  );
-
-  useEffect(() => {
-    setSelectedTypes((current) => {
-      const next = current.filter((type) => availableTypes.includes(type));
-      return next.length === current.length ? current : next;
-    });
-  }, [availableTypes]);
-
-  useEffect(() => {
-    setSelectedSectors((current) => {
-      const next = current.filter((sector) => availableSectors.includes(sector));
-      return next.length === current.length ? current : next;
-    });
-  }, [availableSectors]);
-
-  useEffect(() => {
-    setSelectedTechnologies((current) => {
-      const next = current.filter((technology) =>
-        availableTechnologies.includes(technology)
-      );
-      return next.length === current.length ? current : next;
-    });
-  }, [availableTechnologies]);
-
-  useEffect(() => {
-    setSelectedTools((current) => {
-      const next = current.filter((tool) => availableTools.includes(tool));
-      return next.length === current.length ? current : next;
-    });
-  }, [availableTools]);
-
-  const filteredProjects = useMemo(() => {
-    const normalizedQuery = normalizeText(searchQuery);
-
-    return publishedProjects
-      .filter((project) => {
-        const matchesTech =
-          selectedTechnologies.length === 0 ||
-          selectedTechnologies.some((tech) => project.technologies.includes(tech));
-
-        const matchesTool =
-          selectedTools.length === 0 ||
-          selectedTools.some((tool) => project.outils.includes(tool));
-
-        const matchesType =
-          selectedTypes.length === 0 ||
-          selectedTypes.some((type) => projectHasType(project, type));
-
-        const matchesSector =
-          selectedSectors.length === 0 || selectedSectors.includes(project.secteur);
-
-        if (!matchesTech || !matchesTool || !matchesType || !matchesSector) {
-          return false;
+    return selectedCaseStudies
+      .map((caseStudy) => {
+        const project = projects.find((item) => item.id === caseStudy.id);
+        if (!project) {
+          return undefined;
         }
 
-        if (normalizedQuery === "") {
-          return true;
-        }
-
-        const searchableContent = [
-          project.title,
-          project.client,
-          getProjectTypes(project).join(" "),
-          project.secteur,
-          project.description,
-          project.outils.join(" "),
-          project.technologies.join(" "),
-        ]
-          .filter(Boolean)
-          .join(" ");
-
-        return normalizeText(searchableContent).includes(normalizedQuery);
+        return {
+          ...caseStudy,
+          project,
+          image: resolveProjectImageSrc(project),
+          path: getDedicatedCaseStudyPathByProjectId(project.id) ?? "/etudes-de-cas",
+        };
       })
-      .sort((a, b) => {
-        const caseOrderA = toSortableOrder(a.caseorder);
-        const caseOrderB = toSortableOrder(b.caseorder);
-
-        if (caseOrderA !== caseOrderB) {
-          return caseOrderB - caseOrderA;
-        }
-
-        const orderA = toSortableOrder(a.order);
-        const orderB = toSortableOrder(b.order);
-        return orderB - orderA;
-      });
-  }, [
-    publishedProjects,
-    selectedTechnologies,
-    selectedTools,
-    selectedTypes,
-    selectedSectors,
-    searchQuery,
-  ]);
-
-  const useEditorialGrid = filteredProjects.length >= editorialLayoutSlots.length;
-  const introCopy =
-    "Plongez dans les etudes de cas pour comprendre la demarche, les choix et les resultats.";
+      .filter((item): item is ResolvedCaseStudy => Boolean(item));
+  }, []);
 
   return (
     <PageTransition>
       <div className="site-page case-studies-page">
-        <FilterBar
-          sectors={availableSectors}
-          types={availableTypes}
-          tools={availableTools}
-          technologies={availableTechnologies}
-          activeSectors={selectedSectors}
-          activeTypes={selectedTypes}
-          activeTools={selectedTools}
-          activeTechs={selectedTechnologies}
-          searchQuery={searchQuery}
-          onSectorChange={setSelectedSectors}
-          onTypeChange={setSelectedTypes}
-          onToolChange={setSelectedTools}
-          onTechChange={setSelectedTechnologies}
-          onSearchChange={setSearchQuery}
-        />
-
-        <section className="mx-auto grid w-full max-w-[1150px] gap-8 px-4 py-12 sm:px-6">
-          <div className="flex flex-col gap-3 text-slate-500 md:flex-row md:items-end md:justify-between">
-            <div className="max-w-3xl text-[15px] leading-[1.6] text-[#555]">
-              <p>{introCopy}</p>
-            </div>
-            <span className="shrink-0 text-sm tracking-[0.2px] text-slate-500">
-              {filteredProjects.length} projet{filteredProjects.length > 1 ? "s" : ""}
-            </span>
-          </div>
-          <motion.div
-            layout
-            className={`projects-grid ${useEditorialGrid ? "case-studies-grid--editorial" : ""}`.trim()}
-          >
-            <AnimatePresence mode="popLayout">
-              {filteredProjects.map((project, index) => (
-                <motion.div
-                  key={`${project.id}-${project.title}`}
-                  className={getEditorialTileClassName(index, useEditorialGrid)}
-                  layout
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -20 }}
-                  transition={{ duration: 0.25, ease: "easeOut" }}
+        <main className="bg-[#f6f3ee] text-neutral-950">
+          <section className="mx-auto grid w-full max-w-295 gap-10 px-4 pb-20 pt-28 sm:px-6 md:pt-34">
+            <motion.div
+              {...reveal}
+              className="grid gap-7 md:grid-cols-[minmax(0,0.9fr)_minmax(260px,0.36fr)] md:items-end"
+            >
+              <div className="grid gap-5">
+                <p className="text-[0.75rem] font-semibold uppercase tracking-[0.32em] text-neutral-500">
+                  Études de cas
+                </p>
+                <h1
+                  className="max-w-4xl text-[clamp(3.4rem,8vw,6.8rem)] leading-[0.9] tracking-[-0.05em]"
+                  style={{ fontFamily: "var(--font-hero)" }}
                 >
-                  <ProjectCard
-                    project={project}
-                    detailBasePath={detailBasePath}
-                    thumbnailOverride={resolveProjectImageSrc(project)}
-                  />
-                </motion.div>
-              ))}
-            </AnimatePresence>
-          </motion.div>
-        </section>
+                  Trois projets, trois enjeux digitaux.
+                </h1>
+                <p className="max-w-3xl text-lg leading-8 text-neutral-600 md:text-xl">
+                  Une sélection resserrée pour comprendre la démarche, les choix
+                  de conception et les résultats : refonte SaaS, parcours client
+                  et écosystème tourisme.
+                </p>
+              </div>
+
+              <div className="rounded-lg border border-black/8 bg-white/70 p-5 shadow-[0_16px_44px_rgba(18,22,29,0.08)]">
+                <span className="text-[3.4rem] font-semibold leading-none tracking-[-0.07em]">
+                  {caseStudies.length}
+                </span>
+                <p className="mt-2 text-sm uppercase tracking-[0.22em] text-neutral-500">
+                  projets sélectionnés
+                </p>
+              </div>
+            </motion.div>
+
+            <div className="grid gap-6">
+              {caseStudies.map((caseStudy, index) => {
+                const { project } = caseStudy;
+                const isFeatured = index === 150;
+
+                return (
+                  <motion.article
+                    key={project.id}
+                    {...reveal}
+                    transition={{
+                      ...reveal.transition,
+                      delay: index * 0.08,
+                    }}
+                    className={`group overflow-hidden rounded-lg border border-black/8 bg-white shadow-[0_18px_54px_rgba(18,22,29,0.08)] 
+                      } grid lg:grid-cols-2 `}
+                    style={{
+                      "grid-template-columns": "236px auto",
+                    }}
+                  >
+                    <Link
+                      to={caseStudy.path}
+                      className={`case-study-media-link relative block min-h-75 overflow-hidden bg-neutral-900 text-white visited:text-white ${isFeatured ? "lg:min-h-130" : "lg:min-h-95"
+                        }  2xl:maxw-[236px]`}
+                      aria-label={`Voir l'étude de cas ${project.client}`}
+                    >
+                      {caseStudy.image ? (
+                        <img
+                          src={caseStudy.image}
+                          alt={project.title}
+                          className="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105"
+                          loading={index === 0 ? "eager" : "lazy"}
+                        />
+                      ) : null}
+                      <div
+                        className={`absolute inset-0 bg-linear-to-br ${caseStudy.accent} opacity-35 mix-blend-screen`}
+                      />
+                      <div className="absolute inset-x-0 bottom-0 bg-linear-to-t from-black/78 via-black/28 to-transparent p-6 text-white md:p-8">
+                        <p className="text-[0.72rem] font-semibold uppercase tracking-[0.28em] text-white/72">
+                          {caseStudy.label}
+                        </p>
+                        <h2
+                          className="mt-3 text-4xl leading-[0.95] tracking-[-0.045em] md:text-6xl"
+                          style={{ fontFamily: "var(--font-hero)" }}
+                        >
+                          {project.client}
+                        </h2>
+                      </div>
+                    </Link>
+
+                    <div className="grid content-between gap-8 p-6 md:p-8 lg:p-10">
+                      <div className="grid gap-5">
+                        <div className="flex flex-wrap gap-3 text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-neutral-500">
+                          <span>{formatProjectTypes(project)}</span>
+                          <span>{project.secteur}</span>
+                        </div>
+
+                        <h3
+                          className="text-3xl leading-tight tracking-[-0.04em] md:text-5xl"
+                          style={{ fontFamily: "var(--font-hero)" }}
+                        >
+                          {project.title}
+                        </h3>
+
+                        <p className="text-base leading-8 text-neutral-600 md:text-lg">
+                          {caseStudy.summary}
+                        </p>
+
+                        <div className="grid gap-3">
+                          {caseStudy.strengths.map((strength, strengthIndex) => (
+                            <div
+                              key={strength}
+                              className="grid grid-cols-[2.75rem_minmax(0,1fr)] items-start gap-4 rounded-lg border border-black/6 bg-[#f8f7f4] p-4"
+                            >
+                              <span className="text-sm font-semibold uppercase tracking-[0.22em] text-neutral-400">
+                                {String(strengthIndex + 1).padStart(2, "0")}
+                              </span>
+                              <p className="text-[0.98rem] leading-7 text-neutral-700">
+                                {strength}
+                              </p>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+
+                      <Link
+                        to={caseStudy.path}
+                        className="case-study-cta-link inline-flex w-fit 
+                        items-center gap-3 rounded-full
+                        ml-auto
+                         bg-neutral-950 px-5 py-3 text-sm font-semibold uppercase tracking-[0.22em]
+
+                         text-white transition
+                         visited:text-white hover:bg-neutral-800 hover:text-white focus-visible:text-white"
+                      >
+                        Voir le cas
+                        <FaAngleRight aria-hidden="true" />
+                      </Link>
+                    </div>
+                  </motion.article>
+                );
+              })}
+            </div>
+          </section>
+        </main>
         <Footer />
       </div>
     </PageTransition>
   );
 }
-
-

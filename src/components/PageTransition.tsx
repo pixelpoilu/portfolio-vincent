@@ -1,6 +1,11 @@
+import { ReactNode } from "react";
 import { motion } from "framer-motion";
 
-export default function PageTransition({ children }: any) {
+type PageTransitionProps = {
+    children: ReactNode;
+};
+
+export default function PageTransition({ children }: PageTransitionProps) {
     return (
         <motion.div
             initial={{ opacity: 0, scale: 0.98, filter: "blur(6px)" }}

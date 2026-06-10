@@ -5,7 +5,7 @@ export default function About() {
   return (
     <PageTransition>
       <div className="site-page">
-        <section className="mx-auto grid w-full max-w-[1100px] gap-6 px-6 py-12 md:gap-8 md:px-8 md:py-16">
+        <section className="mx-auto grid w-full max-w-275 gap-6 px-6 py-12 md:gap-8 md:px-8 md:py-16">
           <p className="text-xs font-semibold uppercase tracking-[0.24em] text-neutral-500">
             A propos
           </p>

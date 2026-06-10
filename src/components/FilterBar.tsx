@@ -145,70 +145,9 @@ export default function FilterBar({
         </div>
 
         <div className="flex flex-wrap items-center gap-2 p-2">
-          <button
-            type="button"
-            className={getTriggerClassName(
-              activeSectors.length === 0 &&
-                activeTypes.length === 0 &&
-                activeTools.length === 0 &&
-                activeTechs.length === 0 &&
-                searchQuery.trim() === ""
-            )}
-            onClick={() => {
-              onSectorChange([]);
-              onTypeChange([]);
-              onToolChange([]);
-              onTechChange([]);
-              onSearchChange("");
-              setOpen(null);
-            }}
-          >
-            Tous
-          </button>
 
-          <div
-            className="relative"
-            onMouseEnter={clearCloseTimeout}
-            onMouseLeave={scheduleClose}
-          >
-            <button
-              type="button"
-              className={getTriggerClassName(activeSectors.length > 0)}
-              onClick={() => toggle("sector")}
-              aria-expanded={open === "sector"}
-            >
-              <span className="whitespace-nowrap">
-                Secteur {activeSectors.length > 0 ? `(${activeSectors.length})` : ""}
-              </span>
-              <span className="inline-flex text-[19px] leading-none opacity-75">
-                {open === "sector" ? <ArrowUpIcon /> : <ArrowDownIcon />}
-              </span>
-            </button>
-
-            {open === "sector" && (
-              <div className={menuClassName}>
-                {sectors.map((sector) => (
-                  <button
-                    type="button"
-                    key={sector}
-                    className={`${menuItemClassName} ${
-                      activeSectors.includes(sector)
-                        ? "bg-stone-200 text-stone-700"
-                        : ""
-                    }`.trim()}
-                    onClick={() => {
-                      toggleValue(activeSectors, sector, onSectorChange);
-                    }}
-                  >
-                    <span className="inline-flex w-[18px] justify-center text-[11px] font-bold text-stone-700">
-                      {activeSectors.includes(sector) ? <CloseIcon /> : ""}
-                    </span>
-                    <span className="break-words">{sector}</span>
-                  </button>
-                ))}
-              </div>
-            )}
-          </div>
+          Je sais faire des
+          {/*Types Filter*/}
 
           <div
             className="relative"
@@ -222,7 +161,7 @@ export default function FilterBar({
               aria-expanded={open === "type"}
             >
               <span className="whitespace-nowrap">
-                Type {activeTypes.length > 0 ? `(${activeTypes.length})` : ""}
+                Types {activeTypes.length > 0 ? `(${activeTypes.length})` : ""}
               </span>
               <span className="inline-flex text-[19px] leading-none opacity-75">
                 {open === "type" ? <ArrowUpIcon /> : <ArrowDownIcon />}
@@ -235,25 +174,71 @@ export default function FilterBar({
                   <button
                     type="button"
                     key={type}
-                    className={`${menuItemClassName} ${
-                      activeTypes.includes(type)
-                        ? "bg-stone-200 text-stone-700"
-                        : ""
-                    }`.trim()}
+                    className={`${menuItemClassName} ${activeTypes.includes(type)
+                      ? "bg-stone-200 text-stone-700"
+                      : ""
+                      }`.trim()}
                     onClick={() => {
                       toggleValue(activeTypes, type, onTypeChange);
                     }}
                   >
-                    <span className="inline-flex w-[18px] justify-center text-[11px] font-bold text-stone-700">
+                    <span className="inline-flex w-4.5 justify-center text-[11px] font-bold text-stone-700">
                       {activeTypes.includes(type) ? <CloseIcon /> : ""}
                     </span>
-                    <span className="break-words">{type}</span>
+                    <span className="wrap-break-word">{type}</span>
                   </button>
                 ))}
               </div>
             )}
           </div>
+          , j'en ai déjà fait pour le secteur de
 
+          {/*Secteur Filter*/}
+
+          <div
+            className="relative"
+            onMouseEnter={clearCloseTimeout}
+            onMouseLeave={scheduleClose}
+          >
+            <button
+              type="button"
+              className={getTriggerClassName(activeSectors.length > 0)}
+              onClick={() => toggle("sector")}
+              aria-expanded={open === "sector"}
+            >
+              <span className="whitespace-nowrap">
+                Secteurs {activeSectors.length > 0 ? `(${activeSectors.length})` : ""}
+              </span>
+              <span className="inline-flex text-[19px] leading-none opacity-75">
+                {open === "sector" ? <ArrowUpIcon /> : <ArrowDownIcon />}
+              </span>
+            </button>
+
+            {open === "sector" && (
+              <div className={menuClassName}>
+                {sectors.map((sector) => (
+                  <button
+                    type="button"
+                    key={sector}
+                    className={`${menuItemClassName} ${activeSectors.includes(sector)
+                      ? "bg-stone-200 text-stone-700"
+                      : ""
+                      }`.trim()}
+                    onClick={() => {
+                      toggleValue(activeSectors, sector, onSectorChange);
+                    }}
+                  >
+                    <span className="inline-flex w-4.5 justify-center text-[11px] font-bold text-stone-700">
+                      {activeSectors.includes(sector) ? <CloseIcon /> : ""}
+                    </span>
+                    <span className="wrap-break-word">{sector}</span>
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
+          à l'aide de
+          {/*Tools Filter*/}
           <div
             className="relative"
             onMouseEnter={clearCloseTimeout}
@@ -273,29 +258,31 @@ export default function FilterBar({
               </span>
             </button>
             {open === "tool" && (
-              <div className={`${menuClassName} max-h-[260px] overflow-y-auto`}>
+              <div className={`${menuClassName} max-h-65 overflow-y-auto`}>
                 {tools.map((tool) => (
                   <button
                     type="button"
                     key={tool}
-                    className={`${menuItemClassName} ${
-                      activeTools.includes(tool)
-                        ? "bg-stone-200 text-stone-700"
-                        : ""
-                    }`.trim()}
+                    className={`${menuItemClassName} ${activeTools.includes(tool)
+                      ? "bg-stone-200 text-stone-700"
+                      : ""
+                      }`.trim()}
                     onClick={() => {
                       toggleValue(activeTools, tool, onToolChange);
                     }}
                   >
-                    <span className="inline-flex w-[18px] justify-center text-[11px] font-bold text-stone-700">
+                    <span className="inline-flex w-4.5 justify-center text-[11px] font-bold text-stone-700">
                       {activeTools.includes(tool) ? <CloseIcon /> : ""}
                     </span>
-                    <span className="break-words">{tool}</span>
+                    <span className="wrap-break-word">{tool}</span>
                   </button>
                 ))}
               </div>
             )}
           </div>
+
+          en utilisant
+          {/*Technologies Filter*/}
 
           <div
             className="relative"
@@ -317,29 +304,54 @@ export default function FilterBar({
             </button>
 
             {open === "tech" && (
-              <div className={`${menuClassName} max-h-[260px] overflow-y-auto`}>
+              <div className={`${menuClassName} max-h-65 overflow-y-auto`}>
                 {technologies.map((tech) => (
                   <button
                     type="button"
                     key={tech}
-                    className={`${menuItemClassName} ${
-                      activeTechs.includes(tech)
-                        ? "bg-stone-200 text-stone-700"
-                        : ""
-                    }`.trim()}
+                    className={`${menuItemClassName} ${activeTechs.includes(tech)
+                      ? "bg-stone-200 text-stone-700"
+                      : ""
+                      }`.trim()}
                     onClick={() => {
                       toggleValue(activeTechs, tech, onTechChange);
                     }}
                   >
-                    <span className="inline-flex w-[18px] justify-center text-[11px] font-bold text-stone-700">
+                    <span className="inline-flex w-4.5 justify-center text-[11px] font-bold text-stone-700">
                       {activeTechs.includes(tech) ? <CloseIcon /> : ""}
                     </span>
-                    <span className="break-words">{tech}</span>
+                    <span className="wrap-break-word">{tech}</span>
                   </button>
                 ))}
+
+
+
               </div>
             )}
           </div>
+
+          {/*Tous*/}
+          <button
+            type="button"
+            className={getTriggerClassName(
+              activeSectors.length === 0 &&
+              activeTypes.length === 0 &&
+              activeTools.length === 0 &&
+              activeTechs.length === 0 &&
+              searchQuery.trim() === ""
+            )}
+            onClick={() => {
+              onSectorChange([]);
+              onTypeChange([]);
+              onToolChange([]);
+              onTechChange([]);
+              onSearchChange("");
+              setOpen(null);
+            }}
+          >
+            Tous
+          </button>
+
         </div>
       </div>
     </div>

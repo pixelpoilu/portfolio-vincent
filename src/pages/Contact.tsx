@@ -112,11 +112,11 @@ export default function ContactForm() {
 
                     <div
                         aria-hidden="true"
-                        className="pointer-events-none absolute left-[-9rem] top-20 h-64 w-64 rounded-full bg-white/70 blur-3xl sm:h-80 sm:w-80"
+                        className="pointer-events-none absolute -left-36 top-20 h-64 w-64 rounded-full bg-white/70 blur-3xl sm:h-80 sm:w-80"
                     />
                     <div
                         aria-hidden="true"
-                        className="pointer-events-none absolute bottom-10 right-[-8rem] h-72 w-72 rounded-full bg-stone-300/45 blur-3xl sm:h-96 sm:w-96"
+                        className="pointer-events-none absolute bottom-10 -right-32 h-72 w-72 rounded-full bg-stone-300/45 blur-3xl sm:h-96 sm:w-96"
                     />
 
                     <div
@@ -131,7 +131,7 @@ export default function ContactForm() {
                                 >
                                     Parlons de votre prochain projet.
                                 </h1>
-                                <p className="max-w-xl text-[clamp(1.08rem,2.5vw,1.6rem)] leading-[1.5] tracking-[-0.03em] text-neutral-700">
+                                <p className="max-w-xl text-[clamp(1.08rem,2.5vw,1.6rem)] leading-normal tracking-[-0.03em] text-neutral-700">
                                     Disponible pour les projets digitaux exigeants.
                                 </p>
                             </div>
@@ -209,7 +209,7 @@ export default function ContactForm() {
 
                                     <label className="grid gap-3">
                                         <textarea
-                                            className={`${inputClassName} min-h-[148px] resize-y`}
+                                            className={`${inputClassName} min-h-37 resize-y`}
                                             name="message"
                                             placeholder="Votre message..."
                                             rows={6}
@@ -217,7 +217,7 @@ export default function ContactForm() {
                                         />
                                     </label>
 
-                                    <div className="flex flex-row gap-4 pt-2 flex-row-reverse">
+                                    <div className="flex flex-row gap-4 pt-2">
                                         <button
                                             type="submit"
                                             disabled={submitState === "submitting"}

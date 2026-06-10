@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { FaAngleRight } from "@react-icons/all-files/fa/FaAngleRight";
 import { Link } from "react-router-dom";
-import { useEffect, useState, type MouseEvent } from "react";
+import { useState, type MouseEvent } from "react";
 import type { Project } from "../types/Project";
 import { getProjectPath } from "../utils/projectPaths";
 import Loader from "./Loader";
@@ -24,10 +24,6 @@ export default function ProjectCard({
     const [isImageLoaded, setIsImageLoaded] = useState(false);
     const projectPath = getProjectPath(project, detailBasePath);
 
-    useEffect(() => {
-        setIsImageLoaded(false);
-    }, [thumbnail]);
-
     const handleCardClick = (event: MouseEvent<HTMLAnchorElement>) => {
         if (!onCardClick) {
             return;
@@ -38,6 +34,7 @@ export default function ProjectCard({
 
     return (
         <motion.article
+            key={thumbnail}
             className="project-card group relative overflow-hidden border-0 bg-transparent p-0 shadow-none"
             layout
             transition={{ type: "spring", stiffness: 260, damping: 18 }}
@@ -52,7 +49,7 @@ export default function ProjectCard({
                         <>
                             {!isImageLoaded && (
                                 <div
-                                    className="image-loader-overlay pointer-events-none absolute inset-0 z-[3] flex items-center justify-center bg-[rgba(8,12,18,0.22)]"
+                                    className="image-loader-overlay pointer-events-none absolute inset-0 z-3 flex items-center justify-center bg-[rgba(8,12,18,0.22)]"
                                     aria-hidden="true"
                                 >
                                     <Loader />
@@ -61,9 +58,8 @@ export default function ProjectCard({
                             <img
                                 src={thumbnail}
                                 alt={project.title}
-                                className={`card-image block h-auto w-full object-cover transition duration-500 ease-out group-hover:scale-[1.18] group-hover:blur-[1.9px] group-focus-within:scale-[1.18] group-focus-within:blur-[1.9px] ${
-                                    isImageLoaded ? "opacity-100" : "opacity-0"
-                                }`}
+                                className={`card-image block h-auto w-full object-cover transition duration-500 ease-out group-hover:scale-[1.18] group-hover:blur-[1.9px] group-focus-within:scale-[1.18] group-focus-within:blur-[1.9px] ${isImageLoaded ? "opacity-100" : "opacity-0"
+                                    }`}
                                 loading="lazy"
                                 onLoad={() => setIsImageLoaded(true)}
                                 onError={() => setIsImageLoaded(true)}
@@ -71,13 +67,13 @@ export default function ProjectCard({
                         </>
                     ) : (
                         <div
-                            className="card-image card-image-fallback aspect-[4/5] bg-gradient-to-br from-slate-200 to-slate-300"
+                            className="card-image card-image-fallback aspect-4/5 bg-linear-to-br from-slate-200 to-slate-300"
                             aria-hidden="true"
                         />
                     )}
 
-                    <div className="card-content pointer-events-none absolute inset-0 flex flex-col bg-gradient-to-t from-black/60 via-black/25 to-transparent p-6 opacity-0 transition duration-200 group-hover:opacity-100 group-focus-within:opacity-100">
-                        <h3 className="card-title mt-5 max-w-[90%] text-[1.25rem] leading-[1.1] text-white [text-wrap:balance]">
+                    <div className="card-content pointer-events-none absolute inset-0 flex flex-col bg-linear-to-t from-black/60 via-black/25 to-transparent p-6 opacity-0 transition duration-200 group-hover:opacity-100 group-focus-within:opacity-100">
+                        <h3 className="card-title mt-5 max-w-[90%] text-[1.25rem] leading-[1.1] text-white text-balance">
                             {project.client}
                         </h3>
                         <span className="card-type text-[0.92rem] font-medium opacity-90">
