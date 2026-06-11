@@ -36,6 +36,7 @@ const highlightPills = [
     "UX / UI",
     "React",
     "Mobile first",
+    "ReactJS",
 ];
 
 import { MdOutlineKeyboardDoubleArrowRight } from "react-icons/md";
@@ -129,10 +130,13 @@ export default function ContactForm() {
                                     className="text-[clamp(3.2rem,10vw,6.6rem)] leading-[0.88] tracking-[-0.05em] text-neutral-950"
                                     style={{ fontFamily: "var(--font-hero)" }}
                                 >
-                                    Parlons de votre prochain projet.
+                                    Opportunités CDI
                                 </h1>
                                 <p className="max-w-xl text-[clamp(1.08rem,2.5vw,1.6rem)] leading-normal tracking-[-0.03em] text-neutral-700">
-                                    Disponible pour les projets digitaux exigeants.
+                                    Vous recrutez un UX/UI Designer, Product Designer, Webmaster Senior ou Front-End Developer ?
+                                </p>
+                                <p className="max-w-xl tracking-[-0.03em] text-neutral-700">
+                                    Je suis ouvert aux opportunités en CDI, principalement en Île-de-France ou en télétravail hybride.
                                 </p>
                             </div>
 
@@ -165,12 +169,10 @@ export default function ContactForm() {
                                         className="text-3xl leading-tight tracking-[-0.04em] text-neutral-950 sm:text-4xl"
                                         style={{ fontFamily: "var(--font-hero)" }}
                                     >
-                                        Décrivez le contexte, je reviens vers vous
-                                        rapidement.
+                                        N'hésitez pas à me contacter
                                     </h2>
                                     <p className="max-w-2xl text-base leading-8 text-neutral-600">
-                                        Quelques lignes suffisent: objectif, périmètre,
-                                        échéance et contraintes éventuelles.
+                                        Je réponds personnellement à chaque prise de contact et serai ravi d'échanger autour de votre projet ou de votre besoin de recrutement.
                                     </p>
                                 </div>
 
@@ -180,7 +182,7 @@ export default function ContactForm() {
                                             className={inputClassName}
                                             type="text"
                                             name="name"
-                                            placeholder="Nom complet"
+                                            placeholder="Votre nom"
                                             autoComplete="name"
                                             required
                                         />
@@ -196,13 +198,46 @@ export default function ContactForm() {
                                             required
                                         />
                                     </label>
+                                    <div className="inline-flex items-center">
+                                        <label
+                                            className="relative flex cursor-pointer items-center rounded-full p-3"
+                                            data-ripple-dark="true"
+                                        >
+                                            <input
+                                                id="ripple-on"
+                                                type="checkbox"
+                                                className="peer relative h-5 w-5 cursor-pointer appearance-none rounded border border-slate-300 shadow hover:shadow-md transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-slate-400 before:opacity-0 before:transition-opacity checked:border-slate-800 checked:bg-slate-800 checked:before:bg-slate-400 hover:before:opacity-10"
+                                            />
+                                            <span className="pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100">
+                                                <svg
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                    className="h-3.5 w-3.5"
+                                                    viewBox="0 0 20 20"
+                                                    fill="currentColor"
+                                                    stroke="currentColor"
+                                                    stroke-width="1"
+                                                >
+                                                    <path
+                                                        fill-rule="evenodd"
+                                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                                        clip-rule="evenodd"
+                                                    ></path>
+                                                </svg>
+                                            </span>
+                                        </label>
+                                        <label className="cursor-pointer text-slate-600 text-sm"
+
+                                        >
+                                            Demande de CV
+                                        </label>
+                                    </div>
 
                                     <label className="grid gap-3">
                                         <input
                                             className={inputClassName}
                                             type="text"
                                             name="subject"
-                                            placeholder="Le sujet de votre message..."
+                                            placeholder="Sujet de votre message..."
                                             required
                                         />
                                     </label>
@@ -221,7 +256,10 @@ export default function ContactForm() {
                                         <button
                                             type="submit"
                                             disabled={submitState === "submitting"}
-                                            className="inline-flex w-full items-center justify-between gap-4 rounded-full bg-neutral-950 px-6 py-4 text-sm font-semibold uppercase tracking-[0.24em] text-white transition hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-70 sm:w-auto"
+                                            className="inline-flex w-full 
+                                            items-center justify-between gap-4 rounded-full bg-neutral-950 ml-auto mr-0 
+                                            px-6 py-4 text-sm font-semibold uppercase tracking-[0.24em] text-white 
+                                            transition hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-70 sm:w-auto"
                                         >
 
                                             <span>

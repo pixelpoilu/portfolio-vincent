@@ -89,10 +89,6 @@ export default function Navbar() {
     { to: "/", label: "Accueil", end: true },
     { to: "/portfolio", label: "Portfolio" },
     { to: "/etudes-de-cas", label: "Études de cas", end: true },
-    // { to: dilitrustCaseStudyPath, label: "DiliTrust", end: true },
-    //   { to: "/test", label: "Test" },
-    { to: "/port", label: "Port" },
-    { to: "/a-propos", label: "À propos" },
     { to: "/contact", label: "Contact" },
   ];
 
