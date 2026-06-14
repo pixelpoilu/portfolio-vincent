@@ -15,18 +15,16 @@ import projectsData from "../data/project-prod.json";
 import PageTransition from "../components/PageTransition";
 import ProjectCard from "../components/ProjectCard";
 import Footer from "../components/Footer";
-import Loader from "../components/Loader";
 import type { Project, ProjectMedia } from "../types/Project";
 import { hasCollection, type ProjectCollectionKey } from "../utils/projectCollection";
 import { getProjectPath } from "../utils/projectPaths";
 import { getProjectTypes, projectHasType } from "../utils/projectType";
-import {
-  IoMdClose,
-  IoIosPlay,
-  IoIosPause,
-  IoIosVolumeHigh,
-  IoIosVolumeOff,
-} from "react-icons/io";
+import { IoMdClose } from "@react-icons/all-files/io/IoMdClose";
+import { IoIosPlay } from "@react-icons/all-files/io/IoIosPlay";
+import { IoIosPause } from "@react-icons/all-files/io/IoIosPause";
+import { IoIosVolumeHigh } from "@react-icons/all-files/io/IoIosVolumeHigh";
+import { IoIosVolumeOff } from "@react-icons/all-files/io/IoIosVolumeOff";
+import { ArrowUpLeft, ArrowUpRight } from "../components/icons";
 
 const CloseIcon = IoMdClose as unknown as ComponentType<{ className?: string }>;
 const PlayIcon = IoIosPlay as unknown as ComponentType<{ className?: string }>;
@@ -37,28 +35,41 @@ const VolumeOffIcon =
   IoIosVolumeOff as unknown as ComponentType<{ className?: string }>;
 
 const projectImageModules = import.meta.glob<{ default: string }>(
-  "../assets/images/projects/**/*.{jpg,jpeg,png,webp,avif}",
-  { eager: true }
+  "../assets/images/projects/**/*.{jpg,jpeg,png,webp,avif}"
 );
 
 const projectSlideshowMediaModules = import.meta.glob<string>(
   "../assets/images/projects/**/*.{jpg,jpeg,png,webp,avif,mp4}",
-  { eager: true, import: "default", query: "?url" }
+  { import: "default", query: "?url" }
 );
-const masonryImageByFilename = new Map(
-  Object.entries(projectImageModules).map(([path, image]) => [
+const projectImageImporterByFilename = new Map(
+  Object.entries(projectImageModules).map(([path, importImage]) => [
     path.split("/").pop()?.trim() ?? "",
-    image.default,
+    importImage,
   ])
 );
 
-const resolveThumbnailByFilename = (filename?: string) => {
+const loadThumbnailByFilename = async (filename?: string) => {
   const normalizedFilename = filename?.trim();
   if (!normalizedFilename) {
     return undefined;
   }
 
-  return masonryImageByFilename.get(normalizedFilename);
+  const importImage = projectImageImporterByFilename.get(normalizedFilename);
+  if (!importImage) {
+    return undefined;
+  }
+
+  const image = await importImage();
+  return image.default;
+};
+
+const getProjectBatchSize = () => {
+  if (typeof window === "undefined") {
+    return 12;
+  }
+
+  return window.matchMedia("(max-width: 640px)").matches ? 3 : 12;
 };
 
 const normalizeText = (value: string) =>
@@ -75,6 +86,7 @@ type SlideshowSlide = {
   src: string;
   caption?: string;
   kind: "image" | "video";
+  height?: number;
 };
 
 interface ProjectsProps {
@@ -95,13 +107,18 @@ export default function Projects({
   const [slideshowProject, setSlideshowProject] = useState<Project | null>(null);
   const [slideshowSlides, setSlideshowSlides] = useState<SlideshowSlide[]>([]);
   const [activeSlideIndex, setActiveSlideIndex] = useState(0);
-  const [isSlideshowThumbLoaded, setIsSlideshowThumbLoaded] = useState(false);
-  const [isSlideImageLoaded, setIsSlideImageLoaded] = useState(false);
   const [isSlideshowPlaying, setIsSlideshowPlaying] = useState(false);
   const [isVideoMuted, setIsVideoMuted] = useState(false);
   const [transitionDirection, setTransitionDirection] = useState<1 | -1>(1);
   const isSlideshowOpen = slideshowProject !== null;
   const videoRef = useRef<HTMLVideoElement | null>(null);
+  const loadMoreRef = useRef<HTMLDivElement | null>(null);
+  const thumbnailRequestsRef = useRef<Set<number>>(new Set());
+  const [projectBatchSize, setProjectBatchSize] = useState(getProjectBatchSize);
+  const [visibleProjectCount, setVisibleProjectCount] = useState(getProjectBatchSize);
+  const [thumbnailSrcByProjectId, setThumbnailSrcByProjectId] = useState<
+    Record<number, string | undefined>
+  >({});
 
   const publishedProjects = useMemo(() => {
     const projects = projectsData as Project[];
@@ -323,48 +340,173 @@ export default function Projects({
     searchQuery,
   ]);
 
-  const resolveProjectSlides = useCallback((project: Project): SlideshowSlide[] => {
-    return project.medias.reduce<SlideshowSlide[]>((slides, media) => {
+  const visibleProjects = useMemo(
+    () => filteredProjects.slice(0, visibleProjectCount),
+    [filteredProjects, visibleProjectCount]
+  );
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(max-width: 640px)");
+    const updateBatchSize = () => {
+      const nextBatchSize = mediaQuery.matches ? 3 : 12;
+      setProjectBatchSize(nextBatchSize);
+      setVisibleProjectCount(nextBatchSize);
+    };
+
+    updateBatchSize();
+    mediaQuery.addEventListener("change", updateBatchSize);
+    return () => mediaQuery.removeEventListener("change", updateBatchSize);
+  }, []);
+
+  const resetVisibleProjects = useCallback(() => {
+    setVisibleProjectCount(projectBatchSize);
+  }, [projectBatchSize]);
+
+  const handleSectorChange = useCallback(
+    (nextSectors: string[]) => {
+      setSelectedSectors(nextSectors);
+      resetVisibleProjects();
+    },
+    [resetVisibleProjects]
+  );
+
+  const handleTypeChange = useCallback(
+    (nextTypes: string[]) => {
+      setSelectedTypes(nextTypes);
+      resetVisibleProjects();
+    },
+    [resetVisibleProjects]
+  );
+
+  const handleToolChange = useCallback(
+    (nextTools: string[]) => {
+      setSelectedTools(nextTools);
+      resetVisibleProjects();
+    },
+    [resetVisibleProjects]
+  );
+
+  const handleTechChange = useCallback(
+    (nextTechnologies: string[]) => {
+      setSelectedTechnologies(nextTechnologies);
+      resetVisibleProjects();
+    },
+    [resetVisibleProjects]
+  );
+
+  const handleSearchChange = useCallback(
+    (nextQuery: string) => {
+      setSearchQuery(nextQuery);
+      resetVisibleProjects();
+    },
+    [resetVisibleProjects]
+  );
+
+  useEffect(() => {
+    visibleProjects.forEach((project) => {
+      if (
+        !project.portfolio_image ||
+        thumbnailSrcByProjectId[project.id] ||
+        thumbnailRequestsRef.current.has(project.id)
+      ) {
+        return;
+      }
+
+      thumbnailRequestsRef.current.add(project.id);
+      loadThumbnailByFilename(project.portfolio_image)
+        .then((thumbnailSrc) => {
+          setThumbnailSrcByProjectId((current) => ({
+            ...current,
+            [project.id]: thumbnailSrc,
+          }));
+        })
+        .catch(() => {
+          setThumbnailSrcByProjectId((current) => ({
+            ...current,
+            [project.id]: undefined,
+          }));
+        });
+    });
+  }, [thumbnailSrcByProjectId, visibleProjects]);
+
+  useEffect(() => {
+    const sentinel = loadMoreRef.current;
+    if (!sentinel || visibleProjectCount >= filteredProjects.length) {
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting) {
+          return;
+        }
+
+        setVisibleProjectCount((current) =>
+          Math.min(current + projectBatchSize, filteredProjects.length)
+        );
+      },
+      { rootMargin: "600px 0px" }
+    );
+
+    observer.observe(sentinel);
+    return () => observer.disconnect();
+  }, [filteredProjects.length, projectBatchSize, visibleProjectCount]);
+
+  const resolveProjectSlides = useCallback(async (project: Project): Promise<SlideshowSlide[]> => {
+    const slides: SlideshowSlide[] = [];
+
+    for (const media of project.medias) {
       const mediaFile = (typeof media === "string" ? media : media.file).trim();
       if (!mediaFile) {
-        return slides;
+        continue;
       }
       const mediaPath = `../assets/images/projects/${project.mediapath}/${mediaFile}`;
       const isVideo = mediaFile.toLowerCase().endsWith(".mp4");
-      const src = projectSlideshowMediaModules[mediaPath];
+      const importMedia = projectSlideshowMediaModules[mediaPath];
 
-      if (!src) {
-        return slides;
+      if (!importMedia) {
+        continue;
       }
 
+      const src = await importMedia();
       const slide: SlideshowSlide = {
         src,
         kind: isVideo ? "video" : "image",
+        height: typeof media === "string" ? undefined : media.height,
       };
 
       if (typeof media === "string") {
         slides.push(slide);
-        return slides;
+        continue;
       }
 
       const caption = (media as ProjectMedia).caption?.trim();
       slides.push(caption ? { ...slide, caption } : slide);
-      return slides;
-    }, []);
+    }
+
+    return slides;
   }, []);
 
   const goToNextSlide = useCallback(() => {
     setTransitionDirection(1);
-    setActiveSlideIndex((current) =>
-      current >= slideshowSlides.length - 1 ? 0 : current + 1
-    );
+    setActiveSlideIndex((current) => {
+      if (slideshowSlides.length <= 1 || current >= slideshowSlides.length - 1) {
+        return current;
+      }
+
+      return current + 1;
+    });
   }, [slideshowSlides.length]);
 
   const goToPreviousSlide = useCallback(() => {
     setTransitionDirection(-1);
-    setActiveSlideIndex((current) =>
-      current <= 0 ? slideshowSlides.length - 1 : current - 1
-    );
+    setActiveSlideIndex((current) => {
+      if (slideshowSlides.length <= 1 || current <= 0) {
+        return current;
+      }
+
+      return current - 1;
+    });
   }, [slideshowSlides.length]);
 
   const toggleVideoMute = useCallback(() => {
@@ -394,8 +536,8 @@ export default function Projects({
   }, []);
 
   const openProjectSlideshow = useCallback(
-    (project: Project) => {
-      const slides = resolveProjectSlides(project);
+    async (project: Project, direction: 1 | -1 = 1) => {
+      const slides = await resolveProjectSlides(project);
 
       if (slides.length === 0) {
         navigate(getProjectPath(project, detailBasePath));
@@ -407,9 +549,30 @@ export default function Projects({
       setActiveSlideIndex(0);
       setIsSlideshowPlaying(false);
       setIsVideoMuted(false);
-      setTransitionDirection(1);
+      setTransitionDirection(direction);
     },
     [detailBasePath, navigate, resolveProjectSlides]
+  );
+
+  const goToAdjacentProject = useCallback(
+    (direction: 1 | -1) => {
+      if (!slideshowProject) {
+        return;
+      }
+
+      const currentProjectIndex = filteredProjects.findIndex(
+        (project) => project.id === slideshowProject.id
+      );
+      const targetIndex = currentProjectIndex + direction;
+      const targetProject = filteredProjects[targetIndex];
+
+      if (!targetProject) {
+        return;
+      }
+
+      void openProjectSlideshow(targetProject, direction);
+    },
+    [filteredProjects, openProjectSlideshow, slideshowProject]
   );
   const requestVideoPlayback = useCallback(() => {
     const video = videoRef.current;
@@ -452,9 +615,14 @@ export default function Projects({
 
     const timer = setInterval(() => {
       setTransitionDirection(1);
-      setActiveSlideIndex((current) =>
-        current >= slideshowSlides.length - 1 ? 0 : current + 1
-      );
+      setActiveSlideIndex((current) => {
+        if (current >= slideshowSlides.length - 1) {
+          setIsSlideshowPlaying(false);
+          return current;
+        }
+
+        return current + 1;
+      });
     }, 4200);
 
     return () => clearInterval(timer);
@@ -504,29 +672,43 @@ export default function Projects({
   }, [closeSlideshow, goToNextSlide, goToPreviousSlide, isSlideshowOpen]);
 
   const currentSlide = slideshowSlides[activeSlideIndex];
-  const slideshowThumbSrc = useMemo(() => {
-    if (!slideshowProject) {
-      return undefined;
+  const slideshowThumbSrc = slideshowProject
+    ? thumbnailSrcByProjectId[slideshowProject.id]
+    : undefined;
+  const currentProjectIndex = slideshowProject
+    ? filteredProjects.findIndex((project) => project.id === slideshowProject.id)
+    : -1;
+  const isAtFirstSlide = activeSlideIndex <= 0;
+  const isAtLastSlide = slideshowSlides.length > 0 && activeSlideIndex >= slideshowSlides.length - 1;
+  const hasPreviousProject = currentProjectIndex > 0;
+  const hasNextProject = currentProjectIndex >= 0 && currentProjectIndex < filteredProjects.length - 1;
+  const showPreviousProjectButton = isAtFirstSlide && hasPreviousProject;
+  const showNextProjectButton = isAtLastSlide && hasNextProject;
+
+  useEffect(() => {
+    if (
+      !slideshowProject?.portfolio_image ||
+      thumbnailSrcByProjectId[slideshowProject.id] ||
+      thumbnailRequestsRef.current.has(slideshowProject.id)
+    ) {
+      return;
     }
 
-    return resolveThumbnailByFilename(slideshowProject.portfolio_image);
-  }, [slideshowProject]);
-  useEffect(() => {
-    const timeout = window.setTimeout(() => {
-      setIsSlideshowThumbLoaded(false);
-    }, 0);
-
-    return () => window.clearTimeout(timeout);
-  }, [slideshowThumbSrc, slideshowProject?.id]);
-
-  useEffect(() => {
-    const timeout = window.setTimeout(() => {
-      setIsSlideImageLoaded(false);
-    }, 0);
-
-    return () => window.clearTimeout(timeout);
-  }, [currentSlide?.src, activeSlideIndex, slideshowProject?.id]);
-
+    thumbnailRequestsRef.current.add(slideshowProject.id);
+    loadThumbnailByFilename(slideshowProject.portfolio_image)
+      .then((thumbnailSrc) => {
+        setThumbnailSrcByProjectId((current) => ({
+          ...current,
+          [slideshowProject.id]: thumbnailSrc,
+        }));
+      })
+      .catch(() => {
+        setThumbnailSrcByProjectId((current) => ({
+          ...current,
+          [slideshowProject.id]: undefined,
+        }));
+      });
+  }, [slideshowProject, thumbnailSrcByProjectId]);
   useEffect(() => {
     if (currentSlide?.kind !== "video") {
       return;
@@ -557,11 +739,11 @@ export default function Projects({
           activeTools={selectedTools}
           activeTechs={selectedTechnologies}
           searchQuery={searchQuery}
-          onSectorChange={setSelectedSectors}
-          onTypeChange={setSelectedTypes}
-          onToolChange={setSelectedTools}
-          onTechChange={setSelectedTechnologies}
-          onSearchChange={setSearchQuery}
+          onSectorChange={handleSectorChange}
+          onTypeChange={handleTypeChange}
+          onToolChange={handleToolChange}
+          onTechChange={handleTechChange}
+          onSearchChange={handleSearchChange}
         />
 
         <section className="mx-auto grid w-full max-w-287.5 gap-8 px-4 py-12 sm:px-6">
@@ -576,7 +758,7 @@ export default function Projects({
 
           <motion.div layout className="projects-grid">
             <AnimatePresence mode="popLayout">
-              {filteredProjects.map((project) => (
+              {visibleProjects.map((project, index) => (
                 <motion.div
                   key={project.id}
                   layout
@@ -591,12 +773,20 @@ export default function Projects({
                     onCardClick={
                       collectionKey === "portfolio" ? openProjectSlideshow : undefined
                     }
-                    thumbnailOverride={resolveThumbnailByFilename(project.portfolio_image)}
+                    thumbnailOverride={thumbnailSrcByProjectId[project.id]}
+                    isThumbnailLoading={
+                      Boolean(project.portfolio_image) &&
+                      !thumbnailSrcByProjectId[project.id]
+                    }
+                    isPriorityThumbnail={index === 0}
                   />
                 </motion.div>
               ))}
             </AnimatePresence>
           </motion.div>
+          {visibleProjectCount < filteredProjects.length && (
+            <div ref={loadMoreRef} className="h-10 w-full" aria-hidden="true" />
+          )}
         </section>
         {createPortal(
           <AnimatePresence>
@@ -610,7 +800,7 @@ export default function Projects({
                 onClick={closeSlideshow}
               >
                 <motion.div
-                  className="portfolio-slideshow-shell"
+                  className="portfolio-slideshow-shell h-full"
                   initial={{ opacity: 0, y: 20, scale: 0.985 }}
                   animate={{ opacity: 1, y: 0, scale: 1 }}
                   exit={{ opacity: 0, y: 12, scale: 0.985 }}
@@ -622,18 +812,10 @@ export default function Projects({
                       <div className="portfolio-slideshow-project">
                         {slideshowThumbSrc ? (
                           <>
-                            {!isSlideshowThumbLoaded && (
-                              <div className="image-loader-overlay" aria-hidden="true">
-                                <Loader />
-                              </div>
-                            )}
-
                             <img
-                              className={`portfolio-slideshow-thumb ${isSlideshowThumbLoaded ? "is-loaded" : "is-loading"}`}
+                              className="portfolio-slideshow-thumb is-loaded"
                               src={slideshowThumbSrc}
                               alt={`Vignette ${slideshowProject.title}`}
-                              onLoad={() => setIsSlideshowThumbLoaded(true)}
-                              onError={() => setIsSlideshowThumbLoaded(true)}
                             />
                           </>
                         ) : (
@@ -687,7 +869,7 @@ export default function Projects({
                       type="button"
                       className="portfolio-nav-btn prev"
                       onClick={goToPreviousSlide}
-                      disabled={slideshowSlides.length <= 1}
+                      disabled={slideshowSlides.length <= 1 || activeSlideIndex <= 0}
                       aria-label="Image precedente"
                     >
                       &lsaquo;
@@ -702,37 +884,52 @@ export default function Projects({
                         exit={slideMotion.exit}
                         transition={{ duration: 0.42, ease: "easeOut" }}
                       >
-                        {!isSlideImageLoaded && (
-                          <div className="image-loader-overlay" aria-hidden="true">
-                            <Loader />
-                          </div>
-                        )}
                         {currentSlide.kind === "video" ? (
                           <video
                             controls
                             ref={videoRef}
                             src={currentSlide.src}
-                            className={isSlideImageLoaded ? "is-loaded" : "is-loading"}
+                            className="is-loaded"
                             autoPlay
                             muted={isVideoMuted}
                             loop
                             playsInline
                             preload="auto"
                             onLoadedMetadata={() => {
-                              setIsSlideImageLoaded(true);
                               requestVideoPlayback();
                             }}
-                            onLoadedData={() => setIsSlideImageLoaded(true)}
-                            onError={() => setIsSlideImageLoaded(true)}
                           />
                         ) : (
                           <img
                             src={currentSlide.src}
                             alt={slideshowProject.title}
-                            className={isSlideImageLoaded ? "is-loaded" : "is-loading"}
-                            onLoad={() => setIsSlideImageLoaded(true)}
-                            onError={() => setIsSlideImageLoaded(true)}
+                            className="is-loaded"
+                            style={{ maxHeight: currentSlide.height ? `${currentSlide.height}px` : "180px" }}
                           />
+                        )}
+                        {(showPreviousProjectButton || showNextProjectButton) && (
+                          <div className="portfolio-adjacent-project-nav">
+                            {showPreviousProjectButton && (
+                              <button
+                                type="button"
+                                className="flex items-center gap-2 rounded-full border border-white/20 bg-black/45 px-4 py-2 text-sm font-medium text-white backdrop-blur-sm transition hover:bg-black/70"
+                                onClick={() => goToAdjacentProject(-1)}
+                              >
+                                <ArrowUpLeft className="shrink-0" />
+                                <span>Projet précédent</span>
+                              </button>
+                            )}
+                            {showNextProjectButton && (
+                              <button
+                                type="button"
+                                className="ml-auto flex items-center gap-2 rounded-full border border-white/20 bg-black/45 px-4 py-2 text-sm font-medium text-white backdrop-blur-sm transition hover:bg-black/70"
+                                onClick={() => goToAdjacentProject(1)}
+                              >
+                                <span>Projet suivant</span>
+                                <ArrowUpRight className="shrink-0" />
+                              </button>
+                            )}
+                          </div>
                         )}
                         {currentSlide.caption && (
                           <figcaption>{currentSlide.caption}</figcaption>
@@ -744,7 +941,7 @@ export default function Projects({
                       type="button"
                       className="portfolio-nav-btn next"
                       onClick={goToNextSlide}
-                      disabled={slideshowSlides.length <= 1}
+                      disabled={slideshowSlides.length <= 1 || activeSlideIndex >= slideshowSlides.length - 1}
                       aria-label="Image suivante"
                     >
                       &rsaquo;

@@ -1,13 +1,11 @@
-﻿import { AnimatePresence, motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import { lazy, Suspense, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import portrait from "../assets/images/hero/portrait-bw-tel.webp";
 import portraitMD from "../assets/images/hero/portrait-bw-md.webp";
 import portraitHD from "../assets/images/hero/portrait-bw.webp";
-import { getDedicatedCaseStudyPathByProjectId } from "../config/dedicatedCaseStudies";
-import Footer from "./Footer";
 import Logo from "./Logo";
-import Loader from "./Loader";
+
+const DeferredFooter = lazy(() => import("./Footer"));
 
 const heroRoles = [
   "WEBMASTER FRONT UX/UI",
@@ -15,17 +13,13 @@ const heroRoles = [
   "DESIGNER D'INTERFACES",
 ];
 
-const dilitrustCaseStudyPath =
-  getDedicatedCaseStudyPathByProjectId(180) ?? "/etudes-de-cas";
-const docbikerCaseStudyPath =
-  getDedicatedCaseStudyPathByProjectId(64) ?? "/etudes-de-cas";
-
-
+const dilitrustCaseStudyPath = "/etudes-de-cas/refonte-du-site-web-dilitrust";
+const docbikerCaseStudyPath = "/etudes-de-cas/site-internet-doc-biker";
 
 export default function Hero() {
   const [isPortraitLoaded, setIsPortraitLoaded] = useState(false);
   const [activeRoleIndex, setActiveRoleIndex] = useState(0);
-
+  const [shouldRenderFooter, setShouldRenderFooter] = useState(false);
 
   useEffect(() => {
     const intervalId = window.setInterval(() => {
@@ -35,8 +29,23 @@ export default function Hero() {
     return () => window.clearInterval(intervalId);
   }, []);
 
+  useEffect(() => {
+    const renderFooter = () => setShouldRenderFooter(true);
+
+    if ("requestIdleCallback" in window) {
+      const idleId = window.requestIdleCallback(renderFooter, { timeout: 1600 });
+      return () => window.cancelIdleCallback(idleId);
+    }
+
+    const timeoutId = globalThis.setTimeout(renderFooter, 800);
+    return () => globalThis.clearTimeout(timeoutId);
+  }, []);
+
   return (
-    <main className="sm:relative h-[calc(100vh+200px)] overflow-hidden sm:h-auto" style={{ background: "#f0eeed" }}>
+    <main
+      className="sm:relative h-[calc(100vh+200px)] overflow-hidden sm:h-auto"
+      style={{ background: "#f0eeed" }}
+    >
       <div className="hidden md:block z-9999 absolute translate-x-1/15 -translate-y-1/15 top-1/15 left-1/15">
         <Logo className="
         size-min lg:size-max xl:size-max
@@ -49,7 +58,6 @@ export default function Hero() {
        sm:max-w-fit sm:py-6 sm:px-6 
        md:grid-template-columns[1fr 1fr] md:h-[calc(100vh-83px)] md:flex-1 md:max-w-fit md:gap[2rem] md:grid-cols-2
        lg:m-0 lg:p-0 lg:max-w-none lg:w-screen lg:grid lg:gap[2rem] 
-       
       ">
         <div className=" h-[calc(60vh-180px)] py-4 px-4 overflow-hidden order-2 
         sm:order-2 sm:max-w-155 sm:mx-auto 
@@ -70,23 +78,13 @@ export default function Hero() {
             md:inline lg:mt-5 lg:text-[14px] lg:tracking-[4px]  md:pt-5"
             aria-live="polite"
           >
-            { /*py-0 my-0  relative block min-h-[1.2rem] w-auto md:w-full md:relative*/
-              /* w-[200px] left-0 right-0 md:right-auto top-0 block whitespace-nowrap absolute md:top-0 md:left-0 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 */
-            }
             <span className="relative block min-h-[1.2rem] w-full">
-              <AnimatePresence initial={false} mode="sync">
-                <motion.span
-                  key={heroRoles[activeRoleIndex]}
-                  className="absolute block left-1/2 whitespace-nowrap mb-3 mt-2 transform -translate-x-1/2  -translate-y-1/2 md:translate-x-1  md:translate-y-1  md:left-0 md:top-0 md:mb-3 md:mt-2"
-                  initial={{ clipPath: "inset(0 100% 0 0)", x: -18 }}
-                  animate={{ clipPath: "inset(0 0 0 0)", x: 0 }}
-                  exit={{ clipPath: "inset(0 0 0 100%)", x: 18 }}
-                  transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-                  style={{ willChange: "clip-path, transform" }}
-                >
-                  {heroRoles[activeRoleIndex]}
-                </motion.span>
-              </AnimatePresence>
+              <span
+                key={heroRoles[activeRoleIndex]}
+                className="hero-role-reveal absolute block left-1/2 whitespace-nowrap mb-3 mt-2 transform -translate-x-1/2  -translate-y-1/2 md:translate-x-1  md:translate-y-1  md:left-0 md:top-0 md:mb-3 md:mt-2"
+              >
+                {heroRoles[activeRoleIndex]}
+              </span>
             </span>
           </span>
           <div className="mb-2 h-px w-auto lg:w-16 bg-[#222] lg:my-7.5 
@@ -124,8 +122,8 @@ export default function Hero() {
             </div>
           </div>
           <div className=" mt-5 grid grid-cols-2 gap-3 sm:flex-row sm:flex-wrap lg:mt-10 lg:gap-5 max-[380px]:grid-cols-1 max-[380px]:overflow-visible">
-            <a
-              href="/cv.pdf"
+            <Link
+              to="/contact?sendCv=1"
               className="btn-flipB w-full sm:w-auto"
               data-back="Telecharger mon CV"
               data-front="Telecharger mon CV"
@@ -145,48 +143,34 @@ export default function Hero() {
           relative order-1 flex items-center justify-center pt-2 lg:order-2 lg:pt-0">
           {!isPortraitLoaded && (
             <div
-              className="pointer-events-none absolute inset-0 z-3 flex items-center justify-center bg-[rgba(8,12,18,0.22)]"
+              className="pointer-events-none absolute inset-0 z-3 bg-[rgba(8,12,18,0.08)]"
               aria-hidden="true"
-            >
-              <Loader />
-            </div>
+            />
           )}
-          <img
-            src={portrait}
-            alt="Vincent Lepretre"
-            className={`h-auto w-full max-w-155 object-contain transition-opacity duration-300 max-[900px]:max-h-[56svh]
-             md:hidden  max-[380px]:overflow-visible 
-              }`}
-            onLoad={() => setIsPortraitLoaded(true)}
-            onError={() => setIsPortraitLoaded(true)}
-          />
-          <img
-            src={portraitMD}
-            alt="Vincent Lepretre"
-            className={`hidden 
-              transition-opacity duration-300 max-[900px]:max-h-[56svh] 
-              md:block xl:hidden h-auto w-full max-w-[50vw] object-contain lg:max-h-160 
-              ${isPortraitLoaded ? "opacity-100" : "opacity-0"
-              }`}
-            onLoad={() => setIsPortraitLoaded(true)}
-            onError={() => setIsPortraitLoaded(true)}
-          />
-          <img
-            src={portraitHD}
-            alt="Vincent Lepretre"
-            className={`hidden 
-              transition-opacity duration-300 max-[900px]:max-h-[56svh] 
-              md:hidden xl:block h-auto w-full max-w-[50vw] object-contain lg:max-h-160  
-              ${isPortraitLoaded ? "opacity-100" : "opacity-0"
-              }`}
-            onLoad={() => setIsPortraitLoaded(true)}
-            onError={() => setIsPortraitLoaded(true)}
-          />
-
+          <picture>
+            <source media="(min-width: 1280px)" srcSet={portraitHD} />
+            <source media="(min-width: 768px)" srcSet={portraitMD} />
+            <img
+              src={portrait}
+              alt="Vincent Lepretre"
+              className={`h-auto w-full max-w-155 object-contain transition-opacity duration-300 max-[900px]:max-h-[56svh] md:max-w-[50vw] lg:max-h-160 max-[380px]:overflow-visible ${isPortraitLoaded ? "opacity-100" : "opacity-0"
+                }`}
+              loading="eager"
+              decoding="async"
+              {...({ fetchpriority: "high" } as { fetchpriority: "high" })}
+              onLoad={() => setIsPortraitLoaded(true)}
+              onError={() => setIsPortraitLoaded(true)}
+            />
+          </picture>
         </div>
-
       </section>
-      <Footer className=" relative flex h-[calc(83px)] mt-0! md:mt-0! max-[380px]:hidden" />
+      {shouldRenderFooter ? (
+        <Suspense fallback={<div className="h-[83px] max-[380px]:hidden" />}>
+          <DeferredFooter className=" relative flex h-[calc(83px)] mt-0! md:mt-0! max-[380px]:hidden" />
+        </Suspense>
+      ) : (
+        <div className="h-[83px] max-[380px]:hidden" aria-hidden="true" />
+      )}
     </main>
   );
 }

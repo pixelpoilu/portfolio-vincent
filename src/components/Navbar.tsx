@@ -1,4 +1,4 @@
-import { useEffect, useState, type CSSProperties } from "react";
+import { useEffect, useRef, useState, type CSSProperties } from "react";
 import {
   AnimatePresence,
   motion,
@@ -16,6 +16,7 @@ export default function Navbar() {
   const [scrollProgress, setScrollProgress] = useState(0);
   const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
+  const previousPathRef = useRef(location.pathname);
   const isHome = location.pathname === "/";
   const reduceMotion = useReducedMotion();
   const easingCurve: NonNullable<Transition["ease"]> = [0.22, 1, 0.36, 1];
@@ -48,13 +49,11 @@ export default function Navbar() {
   }, []);
 
   useEffect(() => {
-    if (!menuOpen) return;
-
-    const timeoutId = window.setTimeout(() => {
+    if (previousPathRef.current === location.pathname) return;
+    previousPathRef.current = location.pathname;
+    if (menuOpen) {
       setMenuOpen(false);
-    }, 0);
-
-    return () => window.clearTimeout(timeoutId);
+    }
   }, [location.pathname, menuOpen]);
 
   useEffect(() => {
@@ -105,23 +104,16 @@ export default function Navbar() {
       className={`navbar${isHome ? " is-home" : ""}${menuOpen ? " is-menu-open" : ""}`}
       style={navStyle}
     >
-      <div
+      <button
+        type="button"
         className={`menu-icon ${menuOpen ? "is-opened" : "is-closed"}`}
         onClick={() => setMenuOpen((open) => !open)}
-        onKeyDown={(event) => {
-          if (event.key === "Enter" || event.key === " ") {
-            event.preventDefault();
-            setMenuOpen((open) => !open);
-          }
-        }}
-        role="button"
-        tabIndex={0}
         aria-pressed={menuOpen}
         aria-label={menuOpen ? "Fermer le menu" : "Ouvrir le menu"}
       >
         <div className="icon_span"></div>
         <span className="menu-ring" aria-hidden="true" />
-      </div>
+      </button>
 
       <div className="nav-container">
         <NavLink to="/" className="logo">

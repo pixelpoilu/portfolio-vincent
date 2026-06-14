@@ -6,6 +6,7 @@ import {
 } from "framer-motion";
 import { type ComponentType } from "react";
 import { type FormEvent, useState } from "react";
+import { useLocation } from "react-router-dom";
 
 import grainTexture from "../assets/images/textures/grain.webp";
 import Footer from "../components/Footer";
@@ -46,6 +47,8 @@ type SubmitState = "idle" | "submitting" | "success" | "error";
 
 export default function ContactForm() {
     const [submitState, setSubmitState] = useState<SubmitState>("idle");
+    const location = useLocation();
+    const shouldSendCv = new URLSearchParams(location.search).get("sendCv") === "1";
     const { scrollYProgress } = useScroll();
 
     const grainOpacity = useSpring(
@@ -130,13 +133,13 @@ export default function ContactForm() {
                                     className="text-[clamp(3.2rem,10vw,6.6rem)] leading-[0.88] tracking-[-0.05em] text-neutral-950"
                                     style={{ fontFamily: "var(--font-hero)" }}
                                 >
-                                    Opportunités CDI
+                                    Une opportunité à me proposer ?
                                 </h1>
                                 <p className="max-w-xl text-[clamp(1.08rem,2.5vw,1.6rem)] leading-normal tracking-[-0.03em] text-neutral-700">
                                     Vous recrutez un UX/UI Designer, Product Designer, Webmaster Senior ou Front-End Developer ?
                                 </p>
                                 <p className="max-w-xl tracking-[-0.03em] text-neutral-700">
-                                    Je suis ouvert aux opportunités en CDI, principalement en Île-de-France ou en télétravail hybride.
+                                    Je suis ouvert aux opportunités de travail, principalement en Île-de-France ou en télétravail hybride.
                                 </p>
                             </div>
 
@@ -180,17 +183,6 @@ export default function ContactForm() {
                                     <label className="grid gap-3">
                                         <input
                                             className={inputClassName}
-                                            type="text"
-                                            name="name"
-                                            placeholder="Votre nom"
-                                            autoComplete="name"
-                                            required
-                                        />
-                                    </label>
-
-                                    <label className="grid gap-3">
-                                        <input
-                                            className={inputClassName}
                                             type="email"
                                             name="email"
                                             placeholder="votre email@exemple.com"
@@ -204,8 +196,11 @@ export default function ContactForm() {
                                             data-ripple-dark="true"
                                         >
                                             <input
-                                                id="ripple-on"
+                                                id="send-cv-checkbox"
                                                 type="checkbox"
+                                                name="sendCv"
+                                                value="Oui"
+                                                defaultChecked={shouldSendCv}
                                                 className="peer relative h-5 w-5 cursor-pointer appearance-none rounded border border-slate-300 shadow hover:shadow-md transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-slate-400 before:opacity-0 before:transition-opacity checked:border-slate-800 checked:bg-slate-800 checked:before:bg-slate-400 hover:before:opacity-10"
                                             />
                                             <span className="pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100">
@@ -225,28 +220,19 @@ export default function ContactForm() {
                                                 </svg>
                                             </span>
                                         </label>
-                                        <label className="cursor-pointer text-slate-600 text-sm"
-
+                                        <label
+                                            htmlFor="send-cv-checkbox"
+                                            className="cursor-pointer text-slate-600 text-sm"
                                         >
-                                            Demande de CV
+                                            Recevoir automatiquement mon CV
                                         </label>
                                     </div>
-
-                                    <label className="grid gap-3">
-                                        <input
-                                            className={inputClassName}
-                                            type="text"
-                                            name="subject"
-                                            placeholder="Sujet de votre message..."
-                                            required
-                                        />
-                                    </label>
 
                                     <label className="grid gap-3">
                                         <textarea
                                             className={`${inputClassName} min-h-37 resize-y`}
                                             name="message"
-                                            placeholder="Votre message..."
+                                            placeholder="Décrivez votre besoin, votre projet ou votre opportunité de recrutement..."
                                             rows={6}
                                             required
                                         />
@@ -266,11 +252,10 @@ export default function ContactForm() {
                                                 <ArrowDroprightCircle className="inline object-cover  text-2xl" />&nbsp;
                                                 {submitState === "submitting"
                                                     ? "Envoi..."
-                                                    : "Envoyer"}
+                                                    : "Envoyer ma demande"}
                                             </span>
 
                                         </button>
-
                                         {statusMessage ? (
                                             <p
                                                 aria-live="polite"
@@ -283,6 +268,11 @@ export default function ContactForm() {
                                             </p>
                                         ) : null}
                                     </div>
+                                    <p aria-live="polite"
+                                        className={`text-sm leading-6 text-right`}>
+                                        Réponse sous 24h à 48h<br />
+                                        Basé en Île-de-France • Télétravail hybride • Disponible rapidement
+                                    </p>
                                 </form>
                             </div>
                         </motion.div>

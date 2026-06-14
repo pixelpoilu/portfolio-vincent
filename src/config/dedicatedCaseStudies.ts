@@ -19,20 +19,20 @@ export type DedicatedCaseStudyConfig = {
 const dedicatedCaseStudies: DedicatedCaseStudyConfig[] = [
     {
         slug: "refonte-du-site-web-dilitrust",
-        projectId: 180,
+        projectId: 68,
         Component: CaseStudyDiliTrust,
     },
 
     {
         slug: "site-internet-doc-biker",
-        projectId: 64,
+        projectId: 60,
         Component: CaseStudyDocBiker,
     },
 
 
     {
         slug: "site-internet-locaboat",
-        projectId: 14,
+        projectId: 50,
         Component: CaseStudyLocaboat,
     },
     

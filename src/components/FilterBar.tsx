@@ -112,6 +112,12 @@ export default function FilterBar({
   const getTriggerClassName = (isActive: boolean) =>
     `${controlBaseClassName} ${isActive ? controlActiveClassName : ""}`.trim();
 
+  const getTriggerLabel = (defaultLabel: string, activeValues: string[]) =>
+    activeValues.length > 0 ? activeValues.join(", ") : defaultLabel;
+
+  const triggerLabelClassName =
+    "max-w-[min(72vw,360px)] whitespace-normal text-left leading-tight";
+
   return (
     <div className={stickyPanelClassName}>
       <div className={`${shellClassName} py-2`} ref={filterRef}>
@@ -145,8 +151,7 @@ export default function FilterBar({
         </div>
 
         <div className="flex flex-wrap items-center gap-2 p-2">
-
-          Je sais faire des
+          J'ai réalisé des
           {/*Types Filter*/}
 
           <div
@@ -160,8 +165,8 @@ export default function FilterBar({
               onClick={() => toggle("type")}
               aria-expanded={open === "type"}
             >
-              <span className="whitespace-nowrap">
-                Types {activeTypes.length > 0 ? `(${activeTypes.length})` : ""}
+              <span className={triggerLabelClassName}>
+                {getTriggerLabel("Types", activeTypes)}
               </span>
               <span className="inline-flex text-[19px] leading-none opacity-75">
                 {open === "type" ? <ArrowUpIcon /> : <ArrowDownIcon />}
@@ -191,8 +196,7 @@ export default function FilterBar({
               </div>
             )}
           </div>
-          , j'en ai déjà fait pour le secteur de
-
+          pour le secteur
           {/*Secteur Filter*/}
 
           <div
@@ -206,8 +210,8 @@ export default function FilterBar({
               onClick={() => toggle("sector")}
               aria-expanded={open === "sector"}
             >
-              <span className="whitespace-nowrap">
-                Secteurs {activeSectors.length > 0 ? `(${activeSectors.length})` : ""}
+              <span className={triggerLabelClassName}>
+                {getTriggerLabel("Secteurs", activeSectors)}
               </span>
               <span className="inline-flex text-[19px] leading-none opacity-75">
                 {open === "sector" ? <ArrowUpIcon /> : <ArrowDownIcon />}
@@ -237,7 +241,7 @@ export default function FilterBar({
               </div>
             )}
           </div>
-          à l'aide de
+          avec
           {/*Tools Filter*/}
           <div
             className="relative"
@@ -250,8 +254,8 @@ export default function FilterBar({
               onClick={() => toggle("tool")}
               aria-expanded={open === "tool"}
             >
-              <span className="whitespace-nowrap">
-                Outils {activeTools.length > 0 ? `(${activeTools.length})` : ""}
+              <span className={triggerLabelClassName}>
+                {getTriggerLabel("Outils", activeTools)}
               </span>
               <span className="inline-flex text-[19px] leading-none opacity-75">
                 {open === "tool" ? <ArrowUpIcon /> : <ArrowDownIcon />}
@@ -295,8 +299,8 @@ export default function FilterBar({
               onClick={() => toggle("tech")}
               aria-expanded={open === "tech"}
             >
-              <span className="whitespace-nowrap">
-                Technologies {activeTechs.length > 0 ? `(${activeTechs.length})` : ""}
+              <span className={triggerLabelClassName}>
+                {getTriggerLabel("Technologies", activeTechs)}
               </span>
               <span className="inline-flex text-[19px] leading-none opacity-75">
                 {open === "tech" ? <ArrowUpIcon /> : <ArrowDownIcon />}

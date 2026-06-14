@@ -1,5 +1,37 @@
 ﻿/* ===================================================== */
 /*                 HERO (merged)                         */
+/* Lightweight home hero text reveal. */
+.hero-role-reveal {
+  animation: hero-role-reveal 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: clip-path, transform;
+}
+
+@keyframes hero-role-reveal {
+  from {
+    clip-path: inset(0 100% 0 0);
+    transform: translate(-50%, -50%) translateX(-18px);
+  }
+
+  to {
+    clip-path: inset(0 0 0 0);
+    transform: translate(-50%, -50%) translateX(0);
+  }
+}
+
+@media (min-width: 768px) {
+  @keyframes hero-role-reveal {
+    from {
+      clip-path: inset(0 100% 0 0);
+      transform: translateX(0.25rem) translateY(0.25rem) translateX(-18px);
+    }
+
+    to {
+      clip-path: inset(0 0 0 0);
+      transform: translateX(0.25rem) translateY(0.25rem);
+    }
+  }
+}
+
 /* ===================================================== */
 
 .home {

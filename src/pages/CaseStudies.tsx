@@ -72,7 +72,7 @@ type ResolvedCaseStudy = CaseStudyHighlight & {
 
 const selectedCaseStudies: CaseStudyHighlight[] = [
   {
-    id: 180,
+    id: 68,
     label: "Refonte SaaS",
     summary:
       "Une refonte pensée pour moderniser la perception de marque, clarifier l'offre et préserver le SEO.",
@@ -84,7 +84,7 @@ const selectedCaseStudies: CaseStudyHighlight[] = [
     accent: "from-[#0c1d43] via-[#174f8f] to-[#f0a51e]",
   },
   {
-    id: 64,
+    id: 60,
     label: "Parcours e-commerce",
     summary:
       "Un site réorganisé autour de l'expérience client, la prise de rendez-vous et des contenus plus faciles à administrer.",
@@ -96,7 +96,7 @@ const selectedCaseStudies: CaseStudyHighlight[] = [
     accent: "from-[#1b1715] via-[#b45f13] to-[#ffd23c]",
   },
   {
-    id: 14,
+    id: 50,
     label: "Écosystème tourisme",
     summary:
       "Une collaboration longue pour faire évoluer le site, les contenus, le SEO et la réservation en ligne autour du voyage fluvial.",

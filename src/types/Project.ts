@@ -1,6 +1,8 @@
 export type ProjectMedia = {
   file: string;
   caption?: string;
+  width?: number;
+  height?: number;
 };
 
 export type Project = {

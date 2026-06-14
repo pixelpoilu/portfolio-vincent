@@ -1179,6 +1179,16 @@
   "resolved" "https://registry.npmjs.org/ignore/-/ignore-7.0.5.tgz"
   "version" "7.0.5"
 
+"image-dimensions@^2.5.1":
+  "integrity" "sha512-It7CkTNp7IYA8jhvGgz8K18OAbHF3/Juk8RNEyTyMFfolJOIU1Y2wGDnzDQPbGCjyxVF/++pwIZE0BKJUEOb1g=="
+  "resolved" "https://registry.npmjs.org/image-dimensions/-/image-dimensions-2.5.1.tgz"
+  "version" "2.5.1"
+
+"image-size@*":
+  "integrity" "sha512-IRqXKlaXwgSMAMtpNzZa1ZAe8m+Sa1770Dhk8VkSsP9LS+iHD62Zd8FQKs8fbPiagBE7BzoFX23cxFnwshpV6w=="
+  "resolved" "https://registry.npmjs.org/image-size/-/image-size-2.0.2.tgz"
+  "version" "2.0.2"
+
 "import-fresh@^3.2.1":
   "integrity" "sha512-TR3KfrTZTYLPB6jUjfx6MF9WcWrHL9su5TObK4ZkYgBdWKPOFoSoQIdEuTuR82pmtxH2spWG9h6etwfr1pLBqQ=="
   "resolved" "https://registry.npmjs.org/import-fresh/-/import-fresh-3.3.1.tgz"
