@@ -1,4 +1,3 @@
-﻿import { AnimatePresence, motion } from "framer-motion";
 import SectorFilter from "./SectorFilter";
 import TypeFilter from "./TypeFilter";
 import TechnologyFilter from "./TechnologyFilter";
@@ -65,22 +64,11 @@ export default function ProjectsHeader({
       </div>
 
       <div className="projects-meta">
-        <AnimatePresence>
-          {hasActiveFilters && (
-            <motion.button
-              className="reset-button"
-              onClick={resetFilters}
-              initial={{ opacity: 0, y: -6 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -6 }}
-              transition={{ duration: 0.2 }}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Reset filters
-            </motion.button>
-          )}
-        </AnimatePresence>
+        {hasActiveFilters && (
+          <button className="reset-button" onClick={resetFilters}>
+            Reset filters
+          </button>
+        )}
 
         <p className="projects-count">
           {projectsCount} projet{projectsCount > 1 ? "s" : ""}

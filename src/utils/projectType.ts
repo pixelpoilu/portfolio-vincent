@@ -14,4 +14,4 @@ export const projectHasType = (
 ): boolean => getProjectTypes(project).includes(type);
 
 export const formatProjectTypes = (project: Pick<Project, "type">): string =>
-  getProjectTypes(project).join(" / ");
+  getProjectTypes(project).join(" • ");

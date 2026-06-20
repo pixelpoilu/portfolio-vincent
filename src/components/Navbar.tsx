@@ -1,10 +1,4 @@
-import { useEffect, useRef, useState, type CSSProperties } from "react";
-import {
-  AnimatePresence,
-  motion,
-  useReducedMotion,
-  type Transition,
-} from "framer-motion";
+import { useEffect, useState, type CSSProperties, type MouseEvent } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 //import { getDedicatedCaseStudyPathByProjectId } from "../config/dedicatedCaseStudies";
 import Logo from "./Logo";
@@ -14,12 +8,12 @@ const dilitrustCaseStudyPath =
 */
 export default function Navbar() {
   const [scrollProgress, setScrollProgress] = useState(0);
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [menuRequestedOpen, setMenuRequestedOpen] = useState(false);
+  const [menuOpenedPath, setMenuOpenedPath] = useState<string | null>(null);
   const location = useLocation();
-  const previousPathRef = useRef(location.pathname);
   const isHome = location.pathname === "/";
-  const reduceMotion = useReducedMotion();
-  const easingCurve: NonNullable<Transition["ease"]> = [0.22, 1, 0.36, 1];
+  const menuOpen =
+    menuRequestedOpen && menuOpenedPath === location.pathname;
 
   useEffect(() => {
     let rafId: number | null = null;
@@ -49,19 +43,11 @@ export default function Navbar() {
   }, []);
 
   useEffect(() => {
-    if (previousPathRef.current === location.pathname) return;
-    previousPathRef.current = location.pathname;
-    if (menuOpen) {
-      setMenuOpen(false);
-    }
-  }, [location.pathname, menuOpen]);
-
-  useEffect(() => {
     if (!menuOpen) return;
 
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
-        setMenuOpen(false);
+        setMenuRequestedOpen(false);
       }
     };
 
@@ -88,16 +74,19 @@ export default function Navbar() {
     { to: "/", label: "Accueil", end: true },
     { to: "/portfolio", label: "Portfolio" },
     { to: "/etudes-de-cas", label: "Études de cas", end: true },
-    { to: "/contact", label: "Contact" },
   ];
 
-  const overlayTransition = reduceMotion
-    ? { duration: 0 }
-    : { duration: 0.45, ease: easingCurve };
+  const closeMenu = () => setMenuRequestedOpen(false);
 
-  const panelTransition = reduceMotion
-    ? { duration: 0 }
-    : { duration: 0.4, ease: easingCurve };
+  const toggleMenu = () => {
+    if (menuOpen) {
+      setMenuRequestedOpen(false);
+      return;
+    }
+
+    setMenuOpenedPath(location.pathname);
+    setMenuRequestedOpen(true);
+  };
 
   return (
     <header
@@ -107,7 +96,7 @@ export default function Navbar() {
       <button
         type="button"
         className={`menu-icon ${menuOpen ? "is-opened" : "is-closed"}`}
-        onClick={() => setMenuOpen((open) => !open)}
+        onClick={toggleMenu}
         aria-pressed={menuOpen}
         aria-label={menuOpen ? "Fermer le menu" : "Ouvrir le menu"}
       >
@@ -134,87 +123,58 @@ export default function Navbar() {
         </nav>
         <NavLink to="/contact" className="nav-cta">Contactez-moi</NavLink>
       </div>
-      <AnimatePresence>
-        {menuOpen && (
-          <motion.div
-            className="mobile-nav-overlay"
-            id="mobile-nav-overlay"
-            role="dialog"
-            aria-modal="true"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1, transition: overlayTransition }}
-            exit={{ opacity: 0, transition: overlayTransition }}
-            onClick={() => setMenuOpen(false)}
+      {menuOpen && (
+        <div
+          className="mobile-nav-overlay"
+          id="mobile-nav-overlay"
+          role="dialog"
+          aria-modal="true"
+          onClick={closeMenu}
+        >
+          <div
+            className="mobile-nav-panel"
+            onClick={(event: MouseEvent<HTMLDivElement>) => event.stopPropagation()}
           >
-            <motion.div
-              className="mobile-nav-panel"
-              initial={{ y: 20, opacity: 0 }}
-              animate={{ y: 0, opacity: 1, transition: panelTransition }}
-              exit={{ y: 20, opacity: 0, transition: panelTransition }}
-              onClick={(event: React.MouseEvent<HTMLDivElement>) => event.stopPropagation()}
+            <div className="mobile-nav-header">
+              <NavLink to="/" className="mobile-nav-logo">
+                <Logo size={96} />
+              </NavLink>
+            </div>
+            <nav
+              className="mobile-nav-links"
             >
-              <div className="mobile-nav-header">
-                <NavLink to="/" className="mobile-nav-logo">
-                  <Logo size={96} />
-                </NavLink>
-              </div>
-              <motion.nav
-                className="mobile-nav-links"
-                initial="hidden"
-                animate="show"
-                exit="hidden"
-                variants={{
-                  hidden: { opacity: 0 },
-                  show: {
-                    opacity: 1,
-                    transition: reduceMotion
-                      ? { duration: 0 }
-                      : { staggerChildren: 0.08, delayChildren: 0.05 },
-                  },
-                }}
-              >
-                {navItems.map((item) => (
-                  <motion.div
-                    key={item.to}
-                    variants={{
-                      hidden: { opacity: 0, y: 12 },
-                      show: {
-                        opacity: 1,
-                        y: 0,
-                        transition: reduceMotion
-                          ? { duration: 0 }
-                          : { duration: 0.32, ease: [0.22, 1, 0.36, 1] },
-                      },
-                    }}
-                  >
-                    <NavLink
-                      to={item.to}
-                      end={item.end}
-                      onClick={() => setMenuOpen(false)}
-                      className={({ isActive }) =>
-                        `mobile-nav-link${isActive ? " active" : ""}`
-                      }
-                    >
-                      {item.label}
-                    </NavLink>
-                  </motion.div>
-                ))}
-              </motion.nav>
-
-              <div className="mobile-nav-footer">
-                <NavLink
-                  to="/contact"
-                  className="mobile-nav-cta"
-                  onClick={() => setMenuOpen(false)}
+              {navItems.map((item, index) => (
+                <div
+                  key={item.to}
+                  className="mobile-nav-link-item"
+                  style={{ "--mobile-nav-link-index": index } as CSSProperties}
                 >
-                  Contactez-moi
-                </NavLink>
-                <span className="mobile-nav-meta">Disponibilite 2026</span>
-              </div>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+                  <NavLink
+                    to={item.to}
+                    end={item.end}
+                    onClick={closeMenu}
+                    className={({ isActive }) =>
+                      `mobile-nav-link${isActive ? " active" : ""}`
+                    }
+                  >
+                    {item.label}
+                  </NavLink>
+                </div>
+              ))}
+            </nav>
+
+            <div className="mobile-nav-footer">
+              <NavLink
+                to="/contact"
+                className="mobile-nav-cta"
+                onClick={closeMenu}
+              >
+                Contactez-moi
+              </NavLink>
+            </div>
+          </div>
+        </div>
+      )}
     </header>
   );
 }

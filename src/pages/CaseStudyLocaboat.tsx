@@ -25,48 +25,51 @@ import grainTexture from "../assets/images/textures/grain.webp";
 import CaseStudyProjectData from "../components/CaseStudyProjectData";
 import projectsData from "../data/project-prod.json";
 import type { Project } from "../types/Project";
+import { lazyImageProps, priorityImageProps } from "../utils/imageLoading";
 
 import heroVisual from "../assets/images/projects/rea_web_locaboat/rea_web_locaboat_diapooo.webp";
 import moduleVisual from "../assets/images/projects/rea_web_locaboat/module_website.webp";
 
-import bateaux from "../assets/images/projects/rea_web_locaboat/version_2008/penichettes-bateaux.webp";
+import bateaux from "../assets/images/projects/rea_web_locaboat/version_2008/penichettes-bateaux.png";
 import bateauxThumb from "../assets/images/projects/rea_web_locaboat/version_2008/penichettes-bateaux_ti.webp";
 import bateauxFicheThumb from "../assets/images/projects/rea_web_locaboat/version_2008/penichettes-fiche_ti.webp";
-import bateauxFiche from "../assets/images/projects/rea_web_locaboat/version_2008/penichettes-fiche.webp";
+import bateauxFiche from "../assets/images/projects/rea_web_locaboat/version_2008/penichettes-fiche.png";
 
 import bateauxVistVisitThumb from "../assets/images/projects/rea_web_locaboat/version_2008/penichettes-fiche_visite_virtuelle_ti.webp";
-import bateauxVistVisit from "../assets/images/projects/rea_web_locaboat/version_2008/penichettes-fiche_visite_virtuelle.webp";
+import bateauxVistVisit from "../assets/images/projects/rea_web_locaboat/version_2008/penichettes-fiche_visite_virtuelle.png";
 
 
 import circuitsThumb from "../assets/images/projects/rea_web_locaboat/version_2008/circuits_ti.webp";
-import circuits from "../assets/images/projects/rea_web_locaboat/version_2008/circuits.webp";
+import circuits from "../assets/images/projects/rea_web_locaboat/version_2008/circuits.png";
 
 import circuitsAnimThumb from "../assets/images/projects/rea_web_locaboat/version_2008/circuits_animation_ti.webp";
-import circuitsAnim from "../assets/images/projects/rea_web_locaboat/version_2008/circuits_animation.webp";
+import circuitsAnim from "../assets/images/projects/rea_web_locaboat/version_2008/circuits_animation.png";
 
 import reportagesThumb from "../assets/images/projects/rea_web_locaboat/version_2008/reportages_ti.webp";
-import reportages from "../assets/images/projects/rea_web_locaboat/version_2008/reportages.webp";
+import reportages from "../assets/images/projects/rea_web_locaboat/version_2008/reportages.png";
 
 import TarifsThumb from "../assets/images/projects/rea_web_locaboat/version_2008/tarifs_ti.webp";
-import Tarifs from "../assets/images/projects/rea_web_locaboat/version_2008/tarifs.webp";
+import Tarifs from "../assets/images/projects/rea_web_locaboat/version_2008/tarifs.png";
 
 
 import InfoBaseThumb from "../assets/images/projects/rea_web_locaboat/version_2008/infobases_ti.webp";
 import InfoBase from "../assets/images/projects/rea_web_locaboat/version_2008/infobases.webp";
 
+import locaboatServices from "../assets/images/projects/rea_web_locaboat/locaboat_services.png";
+import multilanguesIMGti from "../assets/images/projects/rea_web_locaboat/locaboat_multilangues_ti.png";
 
 /*
 TarifsThumb
 circuits
-import routeVisual from "../assets/images/projects/rea_web_locaboat/03.webp";
-import mapVisual from "../assets/images/projects/rea_web_locaboat/04.webp";
+import routeVisual from "../assets/images/projects/rea_web_locaboat/03.png";
+import mapVisual from "../assets/images/projects/rea_web_locaboat/04.png";
 
-import offerVisual from "../assets/images/projects/rea_web_locaboat/06.webp";
-import contentVisual from "../assets/images/projects/rea_web_locaboat/07.webp";
+import offerVisual from "../assets/images/projects/rea_web_locaboat/06.png";
+import contentVisual from "../assets/images/projects/rea_web_locaboat/07.png";
 
 reportages_ti
 
-import brochurePanoramaVisual from "../assets/images/projects/rea_bol_locaboat/rea_bol_locaboat_panorama.webp";
+import brochurePanoramaVisual from "../assets/images/projects/rea_bol_locaboat/rea_bol_locaboat_panorama.png";
 
 
 */
@@ -76,34 +79,34 @@ import bookingVisual from "../assets/images/projects/rea_web_locaboat/module_res
 import portailVisual00 from "../assets/images/projects/rea_web_locaboat/projet_portail/homepage.webp";
 import portailVisual00Thumb from "../assets/images/projects/rea_web_locaboat/projet_portail/homepage_ti.webp";
 
-import portailVisual01 from "../assets/images/projects/rea_web_locaboat/projet_portail/portail_step01.webp";
+import portailVisual01 from "../assets/images/projects/rea_web_locaboat/projet_portail/portail_step01.png";
 import portailVisual01Thumb from "../assets/images/projects/rea_web_locaboat/projet_portail/portail_step01_ti.webp";
 
-import portailVisual02 from "../assets/images/projects/rea_web_locaboat/projet_portail/portail_step02.webp";
+import portailVisual02 from "../assets/images/projects/rea_web_locaboat/projet_portail/portail_step02.png";
 import portailVisual02Thumb from "../assets/images/projects/rea_web_locaboat/projet_portail/portail_step02_ti.webp";
 
-import portailVisual03 from "../assets/images/projects/rea_web_locaboat/projet_portail/portail_step03.webp";
+import portailVisual03 from "../assets/images/projects/rea_web_locaboat/projet_portail/portail_step03.png";
 import portailVisual03Thumb from "../assets/images/projects/rea_web_locaboat/projet_portail/portail_step03_ti.webp";
 
-import portailVisual04 from "../assets/images/projects/rea_web_locaboat/projet_portail/portail_step04.webp";
+import portailVisual04 from "../assets/images/projects/rea_web_locaboat/projet_portail/portail_step04.png";
 import portailVisual04Thumb from "../assets/images/projects/rea_web_locaboat/projet_portail/portail_step04_ti.webp";
 
-import portailVisual05 from "../assets/images/projects/rea_web_locaboat/projet_portail/portail_step05.webp";
+import portailVisual05 from "../assets/images/projects/rea_web_locaboat/projet_portail/portail_step05.png";
 import portailVisual05Thumb from "../assets/images/projects/rea_web_locaboat/projet_portail/portail_step05_ti.webp";
 
-import portailVisual06 from "../assets/images/projects/rea_web_locaboat/projet_portail/portail_step06.webp";
+import portailVisual06 from "../assets/images/projects/rea_web_locaboat/projet_portail/portail_step06.png";
 import portailVisual06Thumb from "../assets/images/projects/rea_web_locaboat/projet_portail/portail_step06_ti.webp";
 
-import portailVisual07 from "../assets/images/projects/rea_web_locaboat/projet_portail/portail_step07.webp";
+import portailVisual07 from "../assets/images/projects/rea_web_locaboat/projet_portail/portail_step07.png";
 import portailVisual07Thumb from "../assets/images/projects/rea_web_locaboat/projet_portail/portail_step07_ti.webp";
 
-import portailVisual08 from "../assets/images/projects/rea_web_locaboat/projet_portail/portail_step08.webp";
+import portailVisual08 from "../assets/images/projects/rea_web_locaboat/projet_portail/portail_step08.png";
 import portailVisual08Thumb from "../assets/images/projects/rea_web_locaboat/projet_portail/portail_step08_ti.webp";
 
-import portailVisual09 from "../assets/images/projects/rea_web_locaboat/projet_portail/portail_step09.webp";
+import portailVisual09 from "../assets/images/projects/rea_web_locaboat/projet_portail/portail_step09.png";
 import portailVisual09Thumb from "../assets/images/projects/rea_web_locaboat/projet_portail/portail_step09_ti.webp";
 
-import PasserelleProcess from "../assets/images/projects/rea_web_locaboat/projet_portail/process_schema03_flux.webp";
+import PasserelleProcess from "../assets/images/projects/rea_web_locaboat/projet_portail/process_schema03_flux.png";
 
 
 
@@ -352,6 +355,7 @@ function ImageGallery({
                             src={item.src}
                             alt={item.alt}
                             className="block aspect-4/5 w-full object-cover transition duration-500 group-hover:scale-[1.02]"
+                            {...lazyImageProps}
                         />
                         <span className="pointer-events-none absolute inset-x-4 bottom-4 rounded-full bg-black/65 px-4 py-2 text-[0.72rem] font-medium uppercase tracking-[0.18em] text-white backdrop-blur-md">
                             {item.caption}
@@ -365,7 +369,7 @@ function ImageGallery({
                     type="button"
                     onClick={() => scrollGalleryBy("left")}
                     disabled={!canScrollLeft}
-                    aria-label="Voir les visuels precedents"
+                    aria-label="Voir les visuels précédents"
                     className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-black/10 bg-white/88 text-2xl text-neutral-900 shadow-[0_12px_28px_rgba(18,22,29,0.08)] transition disabled:cursor-not-allowed disabled:opacity-35"
                 >
                     <span aria-hidden="true">‹</span>
@@ -456,7 +460,7 @@ const summaryCards = [
         value: "Leader européen",
         label: "croissance accompagnée",
         detail:
-            "En dix ans, le site accompagne la montée en puissance de Locaboat Plaisance sur le tourisme fluvial.",
+            "En dix ans, le site accompagne, notamment gràce à un SEO efficace, la montée en puissance de Locaboat Plaisance sur le tourisme fluvial.",
     },
 ];
 
@@ -479,7 +483,7 @@ const timelinePhases = [
         title: "Installer le référencement naturel et l'expansion européenne.",
         body:
             "La croissance passe par une stratégie SEO multilingue, des versions locales et des relais éditoriaux capables d'ancrer Locaboat dans ses marchés européens.",
-        image: circuits,
+        image: multilanguesIMGti,
         alt: "Carte des destinations Locaboat",
         bullets: [
             "Création des versions néerlandaise et italienne du site.",
@@ -492,12 +496,12 @@ const timelinePhases = [
         title: "Compléter l'offre autour du séjour.",
         body:
             "Le site devient aussi un service pour les clients acquis, avec des informations pratiques et des options complémentaires avant le départ.",
-        image: InfoBase,
+        image: locaboatServices,
         alt: "Informations de base Locaboat",
         bullets: [
-            "Pages services et informations détaillées sur les bases de départ.",
+            "Pages services et informations détaillées sur les bases de départ, les circuits, les infos pratiques.",
             "Demandes de services complémentaires et commande d'options en ligne.",
-            "Transferts de véhicules, livrets de bord, location de vélos, guides pratiques et informations de séjour.",
+            "Transferts de véhicules, livrets de bord, location de vélos, guides de navigation de séjour.",
         ],
     },
     {
@@ -685,9 +689,8 @@ export default function CaseStudyLocaboat({
                                 Faire naviguer le site avec la marque.
                             </h1>
                             <p className="max-w-xl text-[clamp(1.15rem,2.5vw,1.7rem)] leading-[1.45] tracking-[-0.03em] text-neutral-700">
-                                Gestion complète du site Locaboat : refonte graphique,
-                                contenus interactifs, optimisation SEO, paiement en ligne,
-                                connexion au planning de flotte et suivi technique.
+                                Gestion complète du site Locaboat, leader européen du tourisme fluvial.
+                                Une présence digitale renforcée au fil des années.
                             </p>
                             <div className="h-px w-24 bg-black/10" />
                             <div className="flex flex-wrap gap-x-6 gap-y-3 text-[0.72rem] font-semibold uppercase tracking-[0.28em] text-neutral-500">
@@ -714,6 +717,7 @@ export default function CaseStudyLocaboat({
                             {...heroSecondReveal}
                             src={heroVisual}
                             alt="Aperçu du site Locaboat"
+                            {...priorityImageProps}
                             onClick={() =>
                                 openLightbox(heroVisual, "Aperçu du site Locaboat")
                             }
@@ -837,6 +841,7 @@ export default function CaseStudyLocaboat({
                                         src={phase.image}
                                         alt={phase.alt}
                                         className="block aspect-4/3 w-full object-cover"
+                                        {...lazyImageProps}
                                     />
                                 </button>
                                 <div className="grid gap-4 p-6 md:p-7">
@@ -944,6 +949,7 @@ export default function CaseStudyLocaboat({
                                     src={PasserelleProcess}
                                     alt="Schéma de passerelle entre le site Locaboat et le planning interne"
                                     className="block w-full"
+                                    {...lazyImageProps}
                                 />
                             </button>
                             <div className="mt-6">
@@ -994,7 +1000,7 @@ export default function CaseStudyLocaboat({
                 </div>
             </section>
 
-            <section className={fullWidthSection} id="screen09">
+            <section className={`${fullWidthSection} project-detail`} id="screen09">
                 <div className={`${shellClassName} grid gap-10`}>
                     <SectionHeading
                         eyebrow="Fiche projet"

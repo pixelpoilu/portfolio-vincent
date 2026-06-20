@@ -16,7 +16,6 @@ import {
   useState,
 } from "react";
 import { Link } from "react-router-dom";
-import { Select, Option } from "@material-tailwind/react";
 import { CiCircleChevDown } from "react-icons/ci";
 import { BsArrowRightShort } from "react-icons/bs";
 import { IoArrowRedo } from "react-icons/io5";
@@ -24,6 +23,7 @@ import { IoArrowRedo } from "react-icons/io5";
 import grainTexture from "../assets/images/textures/grain.webp";
 import CaseStudyProjectData from "../components/CaseStudyProjectData";
 import type { Project } from "../types/Project";
+import { lazyImageProps } from "../utils/imageLoading";
 
 
 import stage2006Visual from "../assets/images/projects/rea_web_docbiker/2006_docbiker_trsp.webp";
@@ -143,6 +143,27 @@ const heroFirstReveal = {
   transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] },
   viewport: { once: true, amount: 0.3 },
 };
+
+const inlineSelectClassName =
+  "mx-2 inline-flex max-w-[min(68vw,15rem)] rounded-full border border-black/15 bg-white/75 px-3 py-1 text-[0.9em] text-neutral-900 shadow-sm outline-none transition focus:border-neutral-900";
+
+function InlineSelect({
+  label,
+  options,
+}: {
+  label: string;
+  options: string[];
+}) {
+  return (
+    <select className={inlineSelectClassName} aria-label={label} defaultValue={options[0]}>
+      {options.map((option) => (
+        <option key={option} value={option}>
+          {option}
+        </option>
+      ))}
+    </select>
+  );
+}
 
 
 
@@ -300,6 +321,7 @@ function ImageGallery({ items, onImageClick }: ImageGalleryProps) {
               data-big={item.big}
               alt={item.alt}
               className="block aspect-4/5 w-full object-cover transition duration-500 group-hover:scale-[1.02]"
+              {...lazyImageProps}
             />
             <span className="pointer-events-none absolute inset-x-4 bottom-4 rounded-full bg-black/65 px-4 py-2 text-[0.72rem] font-medium uppercase tracking-[0.18em] text-white backdrop-blur-md">
               {item.caption}
@@ -313,7 +335,7 @@ function ImageGallery({ items, onImageClick }: ImageGalleryProps) {
           type="button"
           onClick={() => scrollGalleryBy("left")}
           disabled={!canScrollLeft}
-          aria-label="Voir les visuels precedents"
+          aria-label="Voir les visuels précédents"
           className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-black/10 bg-white/88 text-2xl text-neutral-900 shadow-[0_12px_28px_rgba(18,22,29,0.08)] transition disabled:cursor-not-allowed disabled:opacity-35"
         >
           <span aria-hidden="true">‹</span>
@@ -699,31 +721,22 @@ export default function HeroPortfolio({
               </h1>
               <p className=" text-[clamp(1.08rem,2.5vw,1.6rem)] leading-[1.45] tracking-[-0.03em] text-neutral-700">
                 Je sais faire des
-                <Select label="Select Version">
-                  <Option>Material Tailwind HTML</Option>
-                  <Option>Material Tailwind React</Option>
-                  <Option>Material Tailwind Vue</Option>
-                  <Option>Material Tailwind Angular</Option>
-                  <Option>Material Tailwind Svelte</Option>
-                </Select>, j'en ai déjà fait pour le secteur de                 <Select label="Select Version">
-                  <Option>Material Tailwind HTML</Option>
-                  <Option>Material Tailwind React</Option>
-                  <Option>Material Tailwind Vue</Option>
-                  <Option>Material Tailwind Angular</Option>
-                  <Option>Material Tailwind Svelte</Option>
-                </Select>  à l'aide de                 <Select label="Select Version">
-                  <Option>Material Tailwind HTML</Option>
-                  <Option>Material Tailwind React</Option>
-                  <Option>Material Tailwind Vue</Option>
-                  <Option>Material Tailwind Angular</Option>
-                  <Option>Material Tailwind Svelte</Option>
-                </Select> en utilisant                 <Select label="Select Version">
-                  <Option>Material Tailwind HTML</Option>
-                  <Option>Material Tailwind React</Option>
-                  <Option>Material Tailwind Vue</Option>
-                  <Option>Material Tailwind Angular</Option>
-                  <Option>Material Tailwind Svelte</Option>
-                </Select>
+                <InlineSelect
+                  label="Type de projet"
+                  options={["sites sur mesure", "interfaces métier", "parcours e-commerce"]}
+                />, j'en ai déjà fait pour le secteur de
+                <InlineSelect
+                  label="Secteur"
+                  options={["la mobilité", "la franchise", "la distribution"]}
+                /> à l'aide de
+                <InlineSelect
+                  label="CMS ou socle"
+                  options={["Joomla", "WordPress", "React"]}
+                /> en utilisant
+                <InlineSelect
+                  label="Méthode"
+                  options={["UX, SEO et intégration", "audit et refonte", "design system"]}
+                />
               </p>
               <div className="h-px w-24 bg-black/10" />
               <div className="flex flex-wrap gap-x-6 gap-y-3 text-[0.72rem] font-semibold uppercase tracking-[0.28em] text-neutral-500">
@@ -868,6 +881,7 @@ export default function HeroPortfolio({
                     src={phase.image}
                     alt={phase.alt}
                     className="block aspect-4/3 w-full object-cover"
+                    {...lazyImageProps}
                   />
                 </button>
                 <div className="grid gap-4 p-6 md:p-7">
@@ -920,6 +934,7 @@ export default function HeroPortfolio({
                   src={seoVisual}
                   alt="Résultats Google sur la requête pneu moto"
                   className="block h-full w-full object-cover"
+                  {...lazyImageProps}
                 />
               </button>
               <div className="grid gap-4 p-6 md:p-7">
@@ -1040,6 +1055,7 @@ export default function HeroPortfolio({
                   src={networkVisual}
                   alt="Schéma du réseau d'écrans Doc'Biker"
                   className="block w-full"
+                  {...lazyImageProps}
                 />
               </button>
               <div className="mt-6">
@@ -1160,7 +1176,7 @@ export default function HeroPortfolio({
         </div>
       </section>
 
-      <section className={fullWidthSection} id="screen07">
+      <section className={`${fullWidthSection} project-detail`} id="screen07">
         <div className={`${shellClassName} grid gap-10`}>
           <SectionHeading
             eyebrow="Fiche projet"

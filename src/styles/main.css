@@ -1,7 +1,12 @@
 @import "tailwindcss";
+
+/* Tailwind handles ordinary layout in components.
+   The CSS imports below are reserved for global tokens and complex visual systems. */
 @import "./base.css";
 @import "./navbar.css";
 @import "./projects.css";
 @import "./slideshow.css";
 @import "./project-detail.css";
+@import "./contact.css";
 @import "./flip-buttons.css";
+@import "./floating-page-actions.css";

@@ -5,29 +5,84 @@ import {
     useTransform,
     AnimatePresence,
 } from "framer-motion";
-import { type ComponentType, type MouseEvent, type PointerEvent, type ReactElement, type ReactNode, useEffect, useRef, useState } from "react";
-
 import {
-    Accordion,
-    AccordionHeader,
-    AccordionBody,
-} from "@material-tailwind/react";
+    createContext,
+    type ComponentType,
+    type MouseEvent,
+    type PointerEvent,
+    type ReactElement,
+    type ReactNode,
+    useContext,
+    useEffect,
+    useRef,
+    useState,
+} from "react";
 
-const MTAccordion = Accordion as unknown as ComponentType<{
+const AccordionOpenContext = createContext(false);
+
+function MTAccordion({
+    open,
+    icon,
+    className = "",
+    children,
+}: {
     open: boolean;
     icon?: ReactNode;
     className?: string;
     children: ReactNode;
-}>;
-const MTAccordionHeader = AccordionHeader as unknown as ComponentType<{
+}) {
+    return (
+        <AccordionOpenContext.Provider value={open}>
+            <div className={`${className} relative`.trim()} data-open={open}>
+                {icon ? (
+                    <span className="pointer-events-none absolute right-4 top-6 text-neutral-500">
+                        {icon}
+                    </span>
+                ) : null}
+                {children}
+            </div>
+        </AccordionOpenContext.Provider>
+    );
+}
+
+function MTAccordionHeader({
+    onClick,
+    className = "",
+    children,
+}: {
     onClick?: () => void;
     className?: string;
     children: ReactNode;
-}>;
-const MTAccordionBody = AccordionBody as unknown as ComponentType<{
+}) {
+    const open = useContext(AccordionOpenContext);
+
+    return (
+        <button
+            type="button"
+            aria-expanded={open}
+            onClick={onClick}
+            className={`${className} block w-full pr-12 text-left`.trim()}
+        >
+            {children}
+        </button>
+    );
+}
+
+function MTAccordionBody({
+    className = "",
+    children,
+}: {
     className?: string;
     children: ReactNode;
-}>;
+}) {
+    const open = useContext(AccordionOpenContext);
+
+    if (!open) {
+        return null;
+    }
+
+    return <div className={className}>{children}</div>;
+}
 import { GoChevronDown } from "react-icons/go";
 const ChevronDownIcon = GoChevronDown as unknown as ComponentType<{ className?: string }>;
 import { Link } from "react-router-dom";
@@ -44,19 +99,20 @@ const ArrowRedo = IoArrowRedo as unknown as ComponentType<{ className?: string }
 // URL CaseStudies
 import CaseStudyProjectData from "../components/CaseStudyProjectData";
 import type { Project } from "../types/Project";
+import { lazyImageProps, priorityImageProps } from "../utils/imageLoading";
 
 // Visuels 
 import grainTexture from "../assets/images/textures/grain.webp";
 
 //Comparaison HOME
-import homeBeforeImage from "../assets/images/projects/rea_web_dilitrust/home_before.webp";
-import homeBeforeImageTablet from "../assets/images/projects/rea_web_dilitrust/home_before_tablette.webp";
-import homeBeforeImageLaptop from "../assets/images/projects/rea_web_dilitrust/home_before_laptop.webp";
-import homeBeforeImageDesktop from "../assets/images/projects/rea_web_dilitrust/home_before_desktop.webp";
-import homeAfterImage from "../assets/images/projects/rea_web_dilitrust/home_after.webp";
-import homeAfterImageTablet from "../assets/images/projects/rea_web_dilitrust/home_after_tablette.webp";
-import homeAfterImageLaptop from "../assets/images/projects/rea_web_dilitrust/home_after_laptop.webp";
-import homeAfterImageDesktop from "../assets/images/projects/rea_web_dilitrust/home_after_desktop.webp";
+import homeBeforeImage from "../assets/images/projects/rea_web_dilitrust/home_before.png";
+import homeBeforeImageTablet from "../assets/images/projects/rea_web_dilitrust/home_before_tablette.png";
+import homeBeforeImageLaptop from "../assets/images/projects/rea_web_dilitrust/home_before_laptop.png";
+import homeBeforeImageDesktop from "../assets/images/projects/rea_web_dilitrust/home_before_desktop.png";
+import homeAfterImage from "../assets/images/projects/rea_web_dilitrust/home_after.png";
+import homeAfterImageTablet from "../assets/images/projects/rea_web_dilitrust/home_after_tablette.png";
+import homeAfterImageLaptop from "../assets/images/projects/rea_web_dilitrust/home_after_laptop.png";
+import homeAfterImageDesktop from "../assets/images/projects/rea_web_dilitrust/home_after_desktop.png";
 
 
 
@@ -64,38 +120,38 @@ import heroVisual from "../assets/images/projects/rea_web_dilitrust/new_dilitrus
 
 
 
-import productBeforeImage from "../assets/images/projects/rea_web_dilitrust/product_before.webp";
-import productBeforeImageTablet from "../assets/images/projects/rea_web_dilitrust/product_before_tablette.webp";
-import productBeforeImageLaptop from "../assets/images/projects/rea_web_dilitrust/product_before_laptop.webp";
-import productBeforeImageDesktop from "../assets/images/projects/rea_web_dilitrust/product_before_desktop.webp";
+import productBeforeImage from "../assets/images/projects/rea_web_dilitrust/product_before.png";
+import productBeforeImageTablet from "../assets/images/projects/rea_web_dilitrust/product_before_tablette.png";
+import productBeforeImageLaptop from "../assets/images/projects/rea_web_dilitrust/product_before_laptop.png";
+import productBeforeImageDesktop from "../assets/images/projects/rea_web_dilitrust/product_before_desktop.png";
 
-import productAfterImage from "../assets/images/projects/rea_web_dilitrust/product_after.webp";
-import productAfterImageTablet from "../assets/images/projects/rea_web_dilitrust/product_after_tablette.webp";
-import productAfterImageLaptop from "../assets/images/projects/rea_web_dilitrust/product_after_laptop.webp";
-import productAfterImageDesktop from "../assets/images/projects/rea_web_dilitrust/product_after_desktop.webp";
-
-
+import productAfterImage from "../assets/images/projects/rea_web_dilitrust/product_after.png";
+import productAfterImageTablet from "../assets/images/projects/rea_web_dilitrust/product_after_tablette.png";
+import productAfterImageLaptop from "../assets/images/projects/rea_web_dilitrust/product_after_laptop.png";
+import productAfterImageDesktop from "../assets/images/projects/rea_web_dilitrust/product_after_desktop.png";
 
 
-import ApplicationCharte from "../assets/images/projects/rea_web_dilitrust/new_charte_application.webp";
+
+
+import ApplicationCharte from "../assets/images/projects/rea_web_dilitrust/new_charte_application.png";
 
 
 
 //import homePhoneMenu from "../assets/images/projects/rea_web_dilitrust/home_phone_menu.PNG";
-import socleTechnique from "../assets/images/projects/rea_web_dilitrust/socle_technique.webp";
-import seaProcess from "../assets/images/projects/rea_web_dilitrust/sea_process.webp";
-//import seoPerform from "../assets/images/projects/rea_web_dilitrust/seo_perform.webp";
-import SpeedReport1 from "../assets/images/projects/rea_web_dilitrust/DiliTrust_SPEED_report-www.dilitrust.com-20190423_Page_01.webp";
-import SpeedReport2 from "../assets/images/projects/rea_web_dilitrust/GTmetrix-report-www.dilitrust.com-20230124T091658-jE188pAT_Page_1.webp";
-import SpeedCompare from "../assets/images/projects/rea_web_dilitrust/seo_perform.webp";
+import socleTechnique from "../assets/images/projects/rea_web_dilitrust/socle_technique.png";
+import seaProcess from "../assets/images/projects/rea_web_dilitrust/sea_process.png";
+//import seoPerform from "../assets/images/projects/rea_web_dilitrust/seo_perform.png";
+import SpeedReport1 from "../assets/images/projects/rea_web_dilitrust/DiliTrust_SPEED_report-www.dilitrust.com-20190423_Page_01.png";
+import SpeedReport2 from "../assets/images/projects/rea_web_dilitrust/GTmetrix-report-www.dilitrust.com-20230124T091658-jE188pAT_Page_1.png";
+import SpeedCompare from "../assets/images/projects/rea_web_dilitrust/seo_perform.png";
 
-import newCharte1 from "../assets/images/projects/rea_web_dilitrust/new_charte_application1.webp";
-import newCharte2 from "../assets/images/projects/rea_web_dilitrust/new_charte_application2.webp";
+import newCharte1 from "../assets/images/projects/rea_web_dilitrust/new_charte_application1.png";
+import newCharte2 from "../assets/images/projects/rea_web_dilitrust/new_charte_application2.png";
 
-import phoneView01 from "../assets/images/projects/rea_web_dilitrust/phone_home.webp";
-import phoneView02 from "../assets/images/projects/rea_web_dilitrust/phone_menu.webp";
-import phoneView03 from "../assets/images/projects/rea_web_dilitrust/phone_article.webp";
-import phoneView04 from "../assets/images/projects/rea_web_dilitrust/phone_event.webp";
+import phoneView01 from "../assets/images/projects/rea_web_dilitrust/phone_home.png";
+import phoneView02 from "../assets/images/projects/rea_web_dilitrust/phone_menu.png";
+import phoneView03 from "../assets/images/projects/rea_web_dilitrust/phone_article.png";
+import phoneView04 from "../assets/images/projects/rea_web_dilitrust/phone_event.png";
 
 
 const surfaceClassName =
@@ -310,6 +366,7 @@ const BeforeAfter = ({
                     src={afterMobile || after}
                     alt="Version apres mobile"
                     className="absolute inset-0 h-full w-full object-cover block md:hidden"
+                    {...lazyImageProps}
                     draggable={false}
                 />
             )}
@@ -318,6 +375,7 @@ const BeforeAfter = ({
                     src={afterTablet}
                     alt="Version apres tablet"
                     className="absolute inset-0 h-full w-full object-cover hidden md:block lg:hidden"
+                    {...lazyImageProps}
                     draggable={false}
                 />
             )}
@@ -326,6 +384,7 @@ const BeforeAfter = ({
                     src={afterLaptop}
                     alt="Version apres laptop"
                     className="absolute inset-0 h-full w-full object-cover hidden lg:block xl:hidden"
+                    {...lazyImageProps}
                     draggable={false}
                 />
             )}
@@ -334,6 +393,7 @@ const BeforeAfter = ({
                     src={afterDesktop}
                     alt="Version apres desktop"
                     className="absolute inset-0 h-full w-full object-cover hidden xl:block"
+                    {...lazyImageProps}
                     draggable={false}
                 />
             )}
@@ -345,6 +405,7 @@ const BeforeAfter = ({
                     alt="Version avant mobile"
                     className="absolute inset-0 h-full w-full object-cover block md:hidden"
                     style={{ clipPath: `inset(0 ${100 - position}% 0 0)` }}
+                    {...lazyImageProps}
                     draggable={false}
                 />
             )}
@@ -354,6 +415,7 @@ const BeforeAfter = ({
                     alt="Version avant tablet"
                     className="absolute inset-0 h-full w-full object-cover hidden md:block lg:hidden"
                     style={{ clipPath: `inset(0 ${100 - position}% 0 0)` }}
+                    {...lazyImageProps}
                     draggable={false}
                 />
             )}
@@ -363,6 +425,7 @@ const BeforeAfter = ({
                     alt="Version avant laptop"
                     className="absolute inset-0 h-full w-full object-cover hidden lg:block xl:hidden"
                     style={{ clipPath: `inset(0 ${100 - position}% 0 0)` }}
+                    {...lazyImageProps}
                     draggable={false}
                 />
             )}
@@ -372,6 +435,7 @@ const BeforeAfter = ({
                     alt="Version avant desktop"
                     className="absolute inset-0 h-full w-full object-cover hidden xl:block"
                     style={{ clipPath: `inset(0 ${100 - position}% 0 0)` }}
+                    {...lazyImageProps}
                     draggable={false}
                 />
             )}
@@ -561,6 +625,7 @@ const ImageGallery = ({
                             src={item.src}
                             alt={item.alt}
                             className={`block aspect-4/5 w-full object-cover transition duration-500 group-hover:scale-[1.02] ${imageClassName} ${item.imageClassName ?? ""}`.trim()}
+                            {...lazyImageProps}
                         />
                         {item.caption ? (
                             <span
@@ -785,6 +850,7 @@ export default function CaseStudyDiliTrust({
                             {...heroSecondReveal}
                             src={heroVisual}
                             alt="Apercu retravaille du site DiliTrust"
+                            {...priorityImageProps}
                             onClick={() => openLightbox(heroVisual, "Refonte du site DiliTrust")}
                             className="block w-full"
                         />
@@ -1093,6 +1159,7 @@ export default function CaseStudyDiliTrust({
                                     src={homeBeforeImage}
                                     alt="Application de la charte graphique DiliTrust"
                                     className="block w-full md:hidden"
+                                    {...lazyImageProps}
                                     onClick={() => openLightbox(homeBeforeImage, "Home DiliTrust - Avant")}
                                     initial={{ opacity: 0, y: 100 }}
                                     whileInView={{ opacity: 1, y: 0 }}
@@ -1114,6 +1181,7 @@ export default function CaseStudyDiliTrust({
                                     src={homeAfterImage}
                                     alt="Application de la charte graphique DiliTrust"
                                     className="block w-full md:hidden"
+                                    {...lazyImageProps}
                                     onClick={() => openLightbox(homeAfterImage, "Home DiliTrust - Après")}
                                     initial={{ opacity: 0, y: 100 }}
                                     whileInView={{ opacity: 1, y: 0 }}
@@ -1159,6 +1227,7 @@ export default function CaseStudyDiliTrust({
                                     src={productBeforeImage}
                                     alt="Application de la charte graphique DiliTrust"
                                     className="block w-full md:hidden"
+                                    {...lazyImageProps}
                                     onClick={() => openLightbox(productBeforeImage, "Produit DiliTrust - Avant")}
                                     initial={{ opacity: 0, y: 100 }}
                                     whileInView={{ opacity: 1, y: 0 }}
@@ -1179,6 +1248,7 @@ export default function CaseStudyDiliTrust({
                                     src={productAfterImage}
                                     alt="Application de la charte graphique DiliTrust"
                                     className="block w-full md:hidden"
+                                    {...lazyImageProps}
                                     onClick={() => openLightbox(productAfterImage, "Produit DiliTrust - Après")}
                                     initial={{ opacity: 0, y: 100 }}
                                     whileInView={{ opacity: 1, y: 0 }}
@@ -1228,6 +1298,7 @@ export default function CaseStudyDiliTrust({
                                     src={newCharte1}
                                     alt="Nouvelle charte graphique DiliTrust"
                                     className="block w-full"
+                                    {...lazyImageProps}
                                     onClick={() => openLightbox(newCharte1, "Nouvelle charte graphique DiliTrust")}
                                     initial={{ opacity: 0, y: 100 }}
                                     whileInView={{ opacity: 1, y: 0 }}
@@ -1238,6 +1309,7 @@ export default function CaseStudyDiliTrust({
                                     src={newCharte2}
                                     alt="Application de la charte graphique DiliTrust"
                                     className="block w-full"
+                                    {...lazyImageProps}
                                     onClick={() => openLightbox(newCharte2, "Application de la charte graphique DiliTrust")}
                                     initial={{ opacity: 0, y: 100 }}
                                     whileInView={{ opacity: 1, y: 0 }}
@@ -1250,6 +1322,7 @@ export default function CaseStudyDiliTrust({
                                     src={ApplicationCharte}
                                     alt="Nouvelle charte graphique DiliTrust"
                                     className="block w-full"
+                                    {...lazyImageProps}
                                     initial={{ opacity: 0, y: 100 }}
                                     whileInView={{ opacity: 1, y: 0 }}
                                     transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
@@ -1305,6 +1378,7 @@ export default function CaseStudyDiliTrust({
                                 src={socleTechnique}
                                 alt="La bible du site DiliTrust"
                                 className="block w-full"
+                                {...lazyImageProps}
                                 onClick={() => openLightbox(socleTechnique, "La bible du site DiliTrust")}
                                 initial={{ opacity: 0, y: 100 }}
                                 whileInView={{ opacity: 1, y: 0 }}
@@ -1320,6 +1394,7 @@ export default function CaseStudyDiliTrust({
                                     src={seaProcess}
                                     alt="Pages SEA"
                                     className="block w-full"
+                                    {...lazyImageProps}
                                     onClick={() => openLightbox(seaProcess, "Process de réalisation des pages SEA repensé")}
                                     initial={{ opacity: 0, y: 100 }}
                                     whileInView={{ opacity: 1, y: 0 }}
@@ -1346,6 +1421,7 @@ export default function CaseStudyDiliTrust({
                                     src={SpeedReport1}
                                     alt="Score SEO"
                                     className="block w-full"
+                                    {...lazyImageProps}
                                     onClick={() => openLightbox(SpeedReport1, "Score SEO avant/après")}
                                     initial={{ opacity: 0, y: 100 }}
                                     whileInView={{ opacity: 1, y: 0 }}
@@ -1356,6 +1432,7 @@ export default function CaseStudyDiliTrust({
                                     src={SpeedReport2}
                                     alt="Score SEO"
                                     className="block w-full"
+                                    {...lazyImageProps}
                                     onClick={() => openLightbox(SpeedReport2, "Score SEO avant/après")}
                                     initial={{ opacity: 0, y: 100 }}
                                     whileInView={{ opacity: 1, y: 0 }}
@@ -1367,6 +1444,7 @@ export default function CaseStudyDiliTrust({
                                 <motion.img
                                     src={SpeedCompare}
                                     className="block w-full"
+                                    {...lazyImageProps}
                                     initial={{ opacity: 0, y: 100 }}
                                     whileInView={{ opacity: 1, y: 0 }}
                                     transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
@@ -1435,7 +1513,7 @@ export default function CaseStudyDiliTrust({
                     </div>
                 </div>
             </section>
-            <section className={fullWidthSection} id="screen09">
+            <section className={`${fullWidthSection} project-detail`} id="screen09">
                 <div className={`${shellClassName} grid gap-10`}>
                     <SectionHeading
                         eyebrow="Fiche projet"

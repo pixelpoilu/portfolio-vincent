@@ -1,16 +1,11 @@
-import { motion } from "framer-motion";
 import { FaAngleRight } from "@react-icons/all-files/fa/FaAngleRight";
 import { Link } from "react-router-dom";
 import { useState, type MouseEvent } from "react";
-/*
-import {
-    Chip
-} from "@material-tailwind/react";
-*/
 import type { Project } from "../types/Project";
 import { getProjectPath } from "../utils/projectPaths";
 import Loader from "./Loader";
 import { formatProjectTypes } from "../utils/projectType";
+import { lazyImageProps, priorityImageProps } from "../utils/imageLoading";
 
 
 interface ProjectCardProps {
@@ -43,12 +38,7 @@ export default function ProjectCard({
     };
 
     return (
-        <motion.article
-            key={thumbnail}
-            className="project-card group relative overflow-hidden border-0 bg-transparent p-0 shadow-none"
-            layout
-            transition={{ type: "spring", stiffness: 260, damping: 18 }}
-        >
+        <article className="project-card group relative overflow-hidden border-0 bg-transparent p-0 shadow-none">
             <Link
                 to={projectPath}
                 className="card-link block w-full text-white"
@@ -70,10 +60,7 @@ export default function ProjectCard({
                                 alt={project.title}
                                 className={`card-image block h-auto w-full object-cover transition duration-500 ease-out group-hover:scale-[1.98]  group-hover:blur-[1.9px] group-focus-within:scale-[1.18] group-focus-within:blur-[1.9px] ${isImageLoaded ? "opacity-100" : "opacity-0"
                                     }`}
-                                loading={isPriorityThumbnail ? "eager" : "lazy"}
-                                {...({
-                                    fetchpriority: isPriorityThumbnail ? "high" : "auto",
-                                } as { fetchpriority: "high" | "auto" })}
+                                {...(isPriorityThumbnail ? priorityImageProps : lazyImageProps)}
                                 onLoad={() => setIsImageLoaded(true)}
                                 onError={() => setIsImageLoaded(true)}
                             />
@@ -103,7 +90,7 @@ export default function ProjectCard({
                             {formatProjectTypes(project)} - {project.order}
                         </span>
                         <span
-                            className="card-cta ml-auto mt-auto inline-flex h-11 w-11 items-center justify-center bg-white text-2xl leading-none text-[#111]"
+                            className="card-cta ml-auto mt-auto inline-flex h-11 w-11 items-center justify-center text-2xl leading-none text-white"
                             aria-hidden="true"
                         >
                             <FaAngleRight />
@@ -111,6 +98,6 @@ export default function ProjectCard({
                     </div>
                 </div>
             </Link>
-        </motion.article>
+        </article>
     );
 }

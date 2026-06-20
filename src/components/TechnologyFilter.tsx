@@ -1,5 +1,3 @@
-﻿import { motion } from "framer-motion";
-
 interface TechnologyFilterProps {
   technologies: string[];
   activeTech: string | null;
@@ -21,41 +19,28 @@ export default function TechnologyFilter({
         if (count === 0) return null;
 
         return (
-          <motion.button
+          <button
             key={tech}
             type="button"
             onClick={() => onSelect(tech)}
             className={`tech-button chip ${isActive ? "active" : ""}`}
-            whileTap={{ scale: 0.94 }}
-            whileHover={{ scale: 1.05 }}
-            layout
-            transition={{ duration: 0.2 }}
           >
-            {/* Highlight animé */}
             {isActive && (
-              <motion.div
-                layoutId="activeTechHighlight"
+              <span
                 className="active-highlight"
-                transition={{
-                  type: "spring",
-                  stiffness: 320,
-                  damping: 28,
-                }}
+                aria-hidden="true"
               />
             )}
 
             <span className="tech-label">{tech}</span>
 
-            <motion.span
+            <span
               className="tech-count"
               key={count}
-              initial={{ scale: 0.8, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              transition={{ duration: 0.2 }}
             >
               {count}
-            </motion.span>
-          </motion.button>
+            </span>
+          </button>
         );
       })}
     </div>

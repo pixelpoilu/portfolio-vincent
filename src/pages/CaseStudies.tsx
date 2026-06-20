@@ -1,119 +1,56 @@
 import { useMemo } from "react";
-import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { FaAngleRight } from "@react-icons/all-files/fa/FaAngleRight";
 import projectsData from "../data/project-prod.json";
-import PageTransition from "../components/PageTransition";
 import Footer from "../components/Footer";
-import type { Project } from "../types/Project";
+import PageTransition from "../components/PageTransition";
 import { getDedicatedCaseStudyPathByProjectId } from "../config/dedicatedCaseStudies";
+import {
+  selectedCaseStudies,
+  type CaseStudyHighlight,
+} from "../config/selectedCaseStudies";
+import type { Project } from "../types/Project";
 import { formatProjectTypes } from "../utils/projectType";
+import { priorityImageProps } from "../utils/imageLoading";
 
-const projectImageModules = import.meta.glob<{ default: string }>(
+const caseStudyImageModules = import.meta.glob(
   "../assets/images/projects/**/*.{jpg,jpeg,png,webp,avif}",
-  { eager: true }
-);
+  { eager: true, import: "default" },
+) as Record<string, string>;
 
-const projectImageByFilename = new Map(
-  Object.entries(projectImageModules).map(([path, image]) => [
+const caseStudyImageByFilename = new Map(
+  Object.entries(caseStudyImageModules).map(([path, imageSrc]) => [
     path.split("/").pop()?.trim() ?? "",
-    image.default,
-  ])
+    imageSrc,
+  ]),
 );
 
-const resolveProjectImageSrc = (project: Project) => {
-  const imageFilenames = [
-    project.case_image,
-    project.portfolio_image,
-    project.masonry_0,
-    project.image,
-  ]
-    .map((filename) => filename?.trim())
-    .filter((filename): filename is string => Boolean(filename));
-
-  const mediaPath = project.mediapath?.trim();
-  for (const imageFilename of imageFilenames) {
-    if (mediaPath) {
-      const projectImagePath = `../assets/images/projects/${mediaPath}/${imageFilename}`;
-      const projectImage = projectImageModules[projectImagePath]?.default;
-      if (projectImage) {
-        return projectImage;
-      }
-    }
-
-    const directImage = projectImageByFilename.get(imageFilename);
-    if (directImage) {
-      return directImage;
-    }
-
-    const vignettePath = `../assets/images/projects/vignettes/${imageFilename}`;
-    const vignetteImage = projectImageModules[vignettePath]?.default;
-    if (vignetteImage) {
-      return vignetteImage;
-    }
+const getCaseImageFilenames = (project: Project) => {
+  if (Array.isArray(project.case_image)) {
+    return project.case_image;
   }
 
-  return undefined;
+  return project.case_image ? [project.case_image] : [];
 };
 
-type CaseStudyHighlight = {
-  id: number;
-  label: string;
-  summary: string;
-  strengths: string[];
-  accent: string;
-};
+const resolveCaseImages = (project: Project) =>
+  getCaseImageFilenames(project)
+    .map((filename) => caseStudyImageByFilename.get(filename.trim()))
+    .filter((imageSrc): imageSrc is string => Boolean(imageSrc));
 
 type ResolvedCaseStudy = CaseStudyHighlight & {
   project: Project;
-  image: string | undefined;
+  images: string[];
   path: string;
 };
 
-const selectedCaseStudies: CaseStudyHighlight[] = [
-  {
-    id: 68,
-    label: "Refonte SaaS",
-    summary:
-      "Une refonte pensée pour moderniser la perception de marque, clarifier l'offre et préserver le SEO.",
-    strengths: [
-      "Nouvelle direction UX/UI plus lisible et premium",
-      "Template WordPress custom, contenus et trackers conservés",
-      "Performance, SEO et expérience mobile intégrés au projet",
-    ],
-    accent: "from-[#0c1d43] via-[#174f8f] to-[#f0a51e]",
-  },
-  {
-    id: 60,
-    label: "Parcours e-commerce",
-    summary:
-      "Un site réorganisé autour de l'expérience client, la prise de rendez-vous et des contenus plus faciles à administrer.",
-    strengths: [
-      "Refonte UX centrée sur les services moto",
-      "Back-office enrichi pour piloter les contenus",
-      "SEO, catalogue et parcours client harmonisés",
-    ],
-    accent: "from-[#1b1715] via-[#b45f13] to-[#ffd23c]",
-  },
-  {
-    id: 50,
-    label: "Écosystème tourisme",
-    summary:
-      "Une collaboration longue pour faire évoluer le site, les contenus, le SEO et la réservation en ligne autour du voyage fluvial.",
-    strengths: [
-      "Refontes successives et stratégie éditoriale multilingue",
-      "Passerelle de disponibilité reliée au système interne",
-      "Brochures, modules et contenus touristiques connectés",
-    ],
-    accent: "from-[#2f7dbd] via-[#8dcf81] to-[#f2df80]",
-  },
-];
-
-const reveal = {
-  initial: { opacity: 0, y: 26 },
-  animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.55, ease: [0.16, 1, 0.3, 1] as const },
-};
+function RoundArrow() {
+  return (
+    <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-neutral-950 text-white transition duration-300 group-hover:scale-105 group-hover:bg-neutral-800">
+      <FaAngleRight aria-hidden="true" />
+    </span>
+  );
+}
 
 export default function CaseStudies() {
   const caseStudies = useMemo(() => {
@@ -129,8 +66,10 @@ export default function CaseStudies() {
         return {
           ...caseStudy,
           project,
-          image: resolveProjectImageSrc(project),
-          path: getDedicatedCaseStudyPathByProjectId(project.id) ?? "/etudes-de-cas",
+          images: resolveCaseImages(project),
+          path:
+            getDedicatedCaseStudyPathByProjectId(project.id) ??
+            "/etudes-de-cas",
         };
       })
       .filter((item): item is ResolvedCaseStudy => Boolean(item));
@@ -138,142 +77,93 @@ export default function CaseStudies() {
 
   return (
     <PageTransition>
-      <div className="site-page case-studies-page">
-        <main className="bg-[#f6f3ee] text-neutral-950">
-          <section className="mx-auto grid w-full max-w-295 gap-10 px-4 pb-20 pt-28 sm:px-6 md:pt-34">
-            <motion.div
-              {...reveal}
-              className="grid gap-7 md:grid-cols-[minmax(0,0.9fr)_minmax(260px,0.36fr)] md:items-end"
-            >
-              <div className="grid gap-5">
-                <p className="text-[0.75rem] font-semibold uppercase tracking-[0.32em] text-neutral-500">
-                  Études de cas
-                </p>
-                <h1
-                  className="max-w-4xl text-[clamp(3.4rem,8vw,6.8rem)] leading-[0.9] tracking-[-0.05em]"
-                  style={{ fontFamily: "var(--font-hero)" }}
-                >
-                  Trois projets, trois enjeux digitaux.
-                </h1>
-                <p className="max-w-3xl text-lg leading-8 text-neutral-600 md:text-xl">
-                  Une sélection resserrée pour comprendre la démarche, les choix
-                  de conception et les résultats : refonte SaaS, parcours client
-                  et écosystème tourisme.
-                </p>
-              </div>
+      <div className="site-page case-studies-page bg-[#f5f2ec] text-neutral-950">
+        <main className="mx-auto grid w-full max-w-[1440px] gap-12 px-4 pb-24 pt-28 sm:px-6 lg:px-10">
+          <header className="case-study-reveal grid gap-5 border-b border-black/10 pb-8 md:grid-cols-[minmax(0,0.72fr)_minmax(280px,0.28fr)] md:items-end">
+            <div className="grid gap-4">
+              <p className="text-[0.75rem] font-semibold uppercase tracking-[0.34em] text-neutral-500">
+                Etudes de cas
+              </p>
+              <h1
+                className="max-w-5xl text-[clamp(3rem,7vw,6.5rem)] leading-[0.9] tracking-[-0.055em]"
+                style={{ fontFamily: "var(--font-hero)" }}
+              >
+                Trois projets, trois enjeux digitaux.
+              </h1>
+            </div>
+            <p className="max-w-xl text-base leading-7 text-neutral-600 md:text-lg">
+              Une sélection courte pour comprendre la démarche, les choix de
+              conception et les résultats sans alourdir la lecture.
+            </p>
+          </header>
 
-              <div className="rounded-lg border border-black/8 bg-white/70 p-5 shadow-[0_16px_44px_rgba(18,22,29,0.08)]">
-                <span className="text-[3.4rem] font-semibold leading-none tracking-[-0.07em]">
-                  {caseStudies.length}
-                </span>
-                <p className="mt-2 text-sm uppercase tracking-[0.22em] text-neutral-500">
-                  projets sélectionnés
-                </p>
-              </div>
-            </motion.div>
-
-            <div className="grid gap-6">
-              {caseStudies.map((caseStudy, index) => {
-                const { project } = caseStudy;
-                const isFeatured = index === 150;
-
-                return (
-                  <motion.article
-                    key={project.id}
-                    {...reveal}
-                    transition={{
-                      ...reveal.transition,
-                      delay: index * 0.08,
-                    }}
-                    className={`group overflow-hidden rounded-lg border border-black/8 bg-white shadow-[0_18px_54px_rgba(18,22,29,0.08)] 
-                      } grid lg:grid-cols-2 `}
-                    style={{
-                      "grid-template-columns": "236px auto",
-                    }}
-                  >
-                    <Link
-                      to={caseStudy.path}
-                      className={`case-study-media-link relative block min-h-75 overflow-hidden bg-neutral-900 text-white visited:text-white ${isFeatured ? "lg:min-h-130" : "lg:min-h-95"
-                        }  2xl:maxw-[236px]`}
-                      aria-label={`Voir l'étude de cas ${project.client}`}
+          <section
+            className="case-study-reveal divide-y divide-black/10 "
+            style={{ animationDelay: "80ms" }}
+          >
+            {caseStudies.map((caseStudy, index) => (
+              <Link
+                key={caseStudy.project.id}
+                to={caseStudy.path}
+                className="group grid gap-6 py-7 text-neutral-950 no-underline visited:text-neutral-950 md:grid-cols-[minmax(260px,0.44fr)_minmax(0,0.42fr)_auto] md:items-center"
+              >
+                <span className="grid grid-cols-3 gap-3">
+                  {[0, 1, 2].map((offset) => (
+                    <span
+                      key={offset}
+                      className="relative block aspect-[1.38] overflow-hidden rounded-lg bg-neutral-900"
                     >
-                      {caseStudy.image ? (
+                      {caseStudy.images.length > 0 ? (
                         <img
-                          src={caseStudy.image}
-                          alt={project.title}
-                          className="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105"
-                          loading={index === 0 ? "eager" : "lazy"}
+                          src={
+                            caseStudy.images[offset] ?? caseStudy.images[0]
+                          }
+                          alt={
+                            offset === 0
+                              ? caseStudy.project.title
+                              : ""
+                          }
+                          className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
+                          {...(index === 0 && offset === 0
+                            ? priorityImageProps
+                            : { loading: "lazy" as const })}
                         />
                       ) : null}
-                      <div
-                        className={`absolute inset-0 bg-linear-to-br ${caseStudy.accent} opacity-35 mix-blend-screen`}
+                      <span
+                        className={`absolute inset-0 bg-linear-to-br ${caseStudy.accent} ${offset === 1 ? "opacity-30" : "opacity-[0.15]"
+                          }`}
                       />
-                      <div className="absolute inset-x-0 bottom-0 bg-linear-to-t from-black/78 via-black/28 to-transparent p-6 text-white md:p-8">
-                        <p className="text-[0.72rem] font-semibold uppercase tracking-[0.28em] text-white/72">
-                          {caseStudy.label}
-                        </p>
-                        <h2
-                          className="mt-3 text-4xl leading-[0.95] tracking-[-0.045em] md:text-6xl"
-                          style={{ fontFamily: "var(--font-hero)" }}
-                        >
-                          {project.client}
-                        </h2>
-                      </div>
-                    </Link>
+                    </span>
+                  ))}
+                </span>
 
-                    <div className="grid content-between gap-8 p-6 md:p-8 lg:p-10">
-                      <div className="grid gap-5">
-                        <div className="flex flex-wrap gap-3 text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-neutral-500">
-                          <span>{formatProjectTypes(project)}</span>
-                          <span>{project.secteur}</span>
-                        </div>
+                <span className="grid gap-2">
+                  <span className="text-[0.72rem] font-semibold uppercase tracking-[0.26em] text-neutral-500">
+                    0{index + 1} / {caseStudy.label}
+                  </span>
+                  <span
+                    className="text-3xl leading-tight tracking-[-0.045em] md:text-4xl"
+                    style={{ fontFamily: "var(--font-hero)" }}
+                  >
+                    {caseStudy.project.client}
+                  </span>
+                  <span className="text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-neutral-400">
+                    {formatProjectTypes(caseStudy.project)} /{" "}
+                    {caseStudy.project.secteur}
+                  </span>
+                  <span className="max-w-2xl text-base leading-7 text-neutral-600">
+                    {caseStudy.summary}
+                  </span>
+                </span>
 
-                        <h3
-                          className="text-3xl leading-tight tracking-[-0.04em] md:text-5xl"
-                          style={{ fontFamily: "var(--font-hero)" }}
-                        >
-                          {project.title}
-                        </h3>
-
-                        <p className="text-base leading-8 text-neutral-600 md:text-lg">
-                          {caseStudy.summary}
-                        </p>
-
-                        <div className="grid gap-3">
-                          {caseStudy.strengths.map((strength, strengthIndex) => (
-                            <div
-                              key={strength}
-                              className="grid grid-cols-[2.75rem_minmax(0,1fr)] items-start gap-4 rounded-lg border border-black/6 bg-[#f8f7f4] p-4"
-                            >
-                              <span className="text-sm font-semibold uppercase tracking-[0.22em] text-neutral-400">
-                                {String(strengthIndex + 1).padStart(2, "0")}
-                              </span>
-                              <p className="text-[0.98rem] leading-7 text-neutral-700">
-                                {strength}
-                              </p>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-
-                      <Link
-                        to={caseStudy.path}
-                        className="case-study-cta-link inline-flex w-fit 
-                        items-center gap-3 rounded-full
-                        ml-auto
-                         bg-neutral-950 px-5 py-3 text-sm font-semibold uppercase tracking-[0.22em]
-
-                         text-white transition
-                         visited:text-white hover:bg-neutral-800 hover:text-white focus-visible:text-white"
-                      >
-                        Voir le cas
-                        <FaAngleRight aria-hidden="true" />
-                      </Link>
-                    </div>
-                  </motion.article>
-                );
-              })}
-            </div>
+                <span className="flex items-center justify-between gap-4 md:justify-self-end">
+                  <span className="text-[0.68rem] font-semibold uppercase tracking-[0.22em] text-neutral-400 md:hidden">
+                    Voir le cas
+                  </span>
+                  <RoundArrow />
+                </span>
+              </Link>
+            ))}
           </section>
         </main>
         <Footer />

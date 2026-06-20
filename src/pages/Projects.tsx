@@ -19,6 +19,8 @@ import type { Project, ProjectMedia } from "../types/Project";
 import { hasCollection, type ProjectCollectionKey } from "../utils/projectCollection";
 import { getProjectPath } from "../utils/projectPaths";
 import { getProjectTypes, projectHasType } from "../utils/projectType";
+import { getDedicatedCaseStudyPathByProjectId } from "../config/dedicatedCaseStudies";
+import { selectedCaseStudies } from "../config/selectedCaseStudies";
 import { IoMdClose } from "@react-icons/all-files/io/IoMdClose";
 import { IoIosPlay } from "@react-icons/all-files/io/IoIosPlay";
 import { IoIosPause } from "@react-icons/all-files/io/IoIosPause";
@@ -33,6 +35,8 @@ const VolumeHighIcon =
   IoIosVolumeHigh as unknown as ComponentType<{ className?: string }>;
 const VolumeOffIcon =
   IoIosVolumeOff as unknown as ComponentType<{ className?: string }>;
+
+const selectedCaseStudyIds = new Set(selectedCaseStudies.map((caseStudy) => caseStudy.id));
 
 const projectImageModules = import.meta.glob<{ default: string }>(
   "../assets/images/projects/**/*.{jpg,jpeg,png,webp,avif}"
@@ -403,7 +407,14 @@ export default function Projects({
   );
 
   useEffect(() => {
-    visibleProjects.forEach((project) => {
+    const projectsToLoad = visibleProjects.filter(
+      (project) =>
+        project.portfolio_image &&
+        !thumbnailSrcByProjectId[project.id] &&
+        !thumbnailRequestsRef.current.has(project.id)
+    );
+
+    const requestThumbnail = (project: Project) => {
       if (
         !project.portfolio_image ||
         thumbnailSrcByProjectId[project.id] ||
@@ -426,7 +437,32 @@ export default function Projects({
             [project.id]: undefined,
           }));
         });
-    });
+    };
+
+    if (projectsToLoad.length === 0) {
+      return;
+    }
+
+    requestThumbnail(projectsToLoad[0]);
+
+    const deferredProjects = projectsToLoad.slice(1);
+    if (deferredProjects.length === 0) {
+      return;
+    }
+
+    const loadDeferredThumbnails = () => {
+      deferredProjects.forEach(requestThumbnail);
+    };
+
+    if ("requestIdleCallback" in window) {
+      const idleId = window.requestIdleCallback(loadDeferredThumbnails, {
+        timeout: 900,
+      });
+      return () => window.cancelIdleCallback(idleId);
+    }
+
+    const timeoutId = globalThis.setTimeout(loadDeferredThumbnails, 180);
+    return () => globalThis.clearTimeout(timeoutId);
   }, [thumbnailSrcByProjectId, visibleProjects]);
 
   useEffect(() => {
@@ -684,6 +720,31 @@ export default function Projects({
   const hasNextProject = currentProjectIndex >= 0 && currentProjectIndex < filteredProjects.length - 1;
   const showPreviousProjectButton = isAtFirstSlide && hasPreviousProject;
   const showNextProjectButton = isAtLastSlide && hasNextProject;
+  const slideshowCaseStudyPath = useMemo(() => {
+    if (!slideshowProject) {
+      return undefined;
+    }
+
+    const directCaseStudyPath = getDedicatedCaseStudyPathByProjectId(slideshowProject.id);
+    if (directCaseStudyPath) {
+      return directCaseStudyPath;
+    }
+
+    const normalizedClient = normalizeText(slideshowProject.client);
+    const clientCaseStudyProject = publishedProjects.find(
+      (project) =>
+        project.status === "published" &&
+        hasCollection(project, "case-study") &&
+        normalizeText(project.client) === normalizedClient
+    );
+
+    return clientCaseStudyProject
+      ? getProjectPath(clientCaseStudyProject, "/etudes-de-cas")
+      : undefined;
+  }, [publishedProjects, slideshowProject]);
+  const canShowCaseStudyButton =
+    Boolean(slideshowCaseStudyPath) &&
+    Boolean(slideshowProject && selectedCaseStudyIds.has(slideshowProject.id));
 
   useEffect(() => {
     if (
@@ -800,7 +861,7 @@ export default function Projects({
                 onClick={closeSlideshow}
               >
                 <motion.div
-                  className="portfolio-slideshow-shell h-full"
+                  className="portfolio-slideshow-shell"
                   initial={{ opacity: 0, y: 20, scale: 0.985 }}
                   animate={{ opacity: 1, y: 0, scale: 1 }}
                   exit={{ opacity: 0, y: 12, scale: 0.985 }}
@@ -830,6 +891,22 @@ export default function Projects({
                             </p>
                           )}
                         </div>
+                        {canShowCaseStudyButton && (
+                          <button
+                            type="button"
+                            className="portfolio-slideshow-case-link"
+                            onClick={() => {
+                              if (!slideshowCaseStudyPath) {
+                                return;
+                              }
+                              closeSlideshow();
+                              navigate(slideshowCaseStudyPath);
+                            }}
+                          >
+                            <span>Voir l'etude de cas</span>
+                            <ArrowUpRight className="shrink-0" />
+                          </button>
+                        )}
                       </div>
                     </div>
                     <div className="portfolio-slideshow-controls">
@@ -870,7 +947,7 @@ export default function Projects({
                       className="portfolio-nav-btn prev"
                       onClick={goToPreviousSlide}
                       disabled={slideshowSlides.length <= 1 || activeSlideIndex <= 0}
-                      aria-label="Image precedente"
+                      aria-label="Image précédente"
                     >
                       &lsaquo;
                     </button>

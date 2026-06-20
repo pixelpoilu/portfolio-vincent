@@ -33,11 +33,10 @@ const heroSecondReveal = {
 };
 
 const highlightPills = [
-    "Refonte",
     "UX / UI",
-    "React",
     "Mobile first",
     "ReactJS",
+    "Fullstack",
 ];
 
 import { MdOutlineKeyboardDoubleArrowRight } from "react-icons/md";
@@ -124,10 +123,14 @@ export default function ContactForm() {
                     />
 
                     <div
-                        className={`${shellClassName} relative z-10 grid items-start gap-10 pt-24 pb-16 sm:gap-12 sm:pt-28 sm:pb-20 lg:min-h-[calc(100vh-72px)] lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-center lg:gap-16`}
+                        className={`${shellClassName} relative z-10 grid items-start gap-10
+                        sm:gap-12 sm:py-0 sm:pb-20 
+                        md:pt-0 
+                        lg:min-h-[calc(100vh-72px)]  lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-center lg:gap-16
+                        2xl:pt-24 2xl:pb-16 contact-page`}
                     >
-                        <motion.div {...heroFirstReveal} className="grid gap-8">
-                            <div className="grid gap-5">
+                        <motion.div {...heroFirstReveal} className="grid gap-8 contact-intro">
+                            <div className="grid gap-5 contact-content">
                                 <p className={eyebrowClassName}>Contact</p>
                                 <h1
                                     className="text-[clamp(3.2rem,10vw,6.6rem)] leading-[0.88] tracking-[-0.05em] text-neutral-950"
@@ -138,7 +141,7 @@ export default function ContactForm() {
                                 <p className="max-w-xl text-[clamp(1.08rem,2.5vw,1.6rem)] leading-normal tracking-[-0.03em] text-neutral-700">
                                     Vous recrutez un UX/UI Designer, Product Designer, Webmaster Senior ou Front-End Developer ?
                                 </p>
-                                <p className="max-w-xl tracking-[-0.03em] text-neutral-700">
+                                <p className="max-w-xl tracking-[-0.03em] text-neutral-700 contact-text">
                                     Je suis ouvert aux opportunités de travail, principalement en Île-de-France ou en télétravail hybride.
                                 </p>
                             </div>
@@ -163,7 +166,7 @@ export default function ContactForm() {
 
                         <motion.div
                             {...heroSecondReveal}
-                            className={`${surfaceClassName} p-6 sm:p-8 md:p-10`}
+                            className={`${surfaceClassName} p-6 sm:p-8 md:p-10 contact-box`}
                         >
                             <div className="grid gap-6">
                                 <div className="grid gap-3">
@@ -185,7 +188,7 @@ export default function ContactForm() {
                                             className={inputClassName}
                                             type="email"
                                             name="email"
-                                            placeholder="votre email@exemple.com"
+                                            placeholder="Mon email@exemple.com"
                                             autoComplete="email"
                                             required
                                         />
@@ -210,12 +213,12 @@ export default function ContactForm() {
                                                     viewBox="0 0 20 20"
                                                     fill="currentColor"
                                                     stroke="currentColor"
-                                                    stroke-width="1"
+                                                    strokeWidth="1"
                                                 >
                                                     <path
-                                                        fill-rule="evenodd"
+                                                        fillRule="evenodd"
                                                         d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                                                        clip-rule="evenodd"
+                                                        clipRule="evenodd"
                                                     ></path>
                                                 </svg>
                                             </span>
@@ -224,7 +227,7 @@ export default function ContactForm() {
                                             htmlFor="send-cv-checkbox"
                                             className="cursor-pointer text-slate-600 text-sm"
                                         >
-                                            Recevoir automatiquement mon CV
+                                            Recevoir automatiquement le CV
                                         </label>
                                     </div>
 
@@ -232,7 +235,7 @@ export default function ContactForm() {
                                         <textarea
                                             className={`${inputClassName} min-h-37 resize-y`}
                                             name="message"
-                                            placeholder="Décrivez votre besoin, votre projet ou votre opportunité de recrutement..."
+                                            placeholder="Je décris mon besoin, mon projet ou mon opportunité de recrutement..."
                                             rows={6}
                                             required
                                         />

@@ -24,6 +24,7 @@ import { IoArrowRedo } from "react-icons/io5";
 import grainTexture from "../assets/images/textures/grain.webp";
 import CaseStudyProjectData from "../components/CaseStudyProjectData";
 import type { Project } from "../types/Project";
+import { lazyImageProps, priorityImageProps } from "../utils/imageLoading";
 
 import heroVisual from "../assets/images/projects/rea_web_docbiker/new_docbiker_trsp.webp";
 import stage2006Visual from "../assets/images/projects/rea_web_docbiker/2006_docbiker_trsp.webp";
@@ -66,17 +67,17 @@ import GalleryUxAdminPneuDetailThumb from "../assets/images/projects/rea_web_doc
 
 
 /*
-import GalleryUxFranchise from "../assets/images/projects/rea_web_docbiker/gallery_ux_franchise.webp";
-import GalleryUxFranchiseThumb from "../assets/images/projects/rea_web_docbiker/gallery_ux_franchise_thumb.webp";
-import GalleryUxFranchise from "../assets/images/projects/rea_web_docbiker/gallery_ux_franchise.webp";
-import GalleryUxFranchiseThumb from "../assets/images/projects/rea_web_docbiker/gallery_ux_franchise_thumb.webp";
-import centreDetailVisual from "../assets/images/projects/rea_web_docbiker/fiche_centre.webp";
-import centerMapVisual from "../assets/images/projects/rea_web_docbiker/carte_centres.webp";
-import quoteVisual from "../assets/images/projects/rea_web_docbiker/devis.webp";
-import packagesVisual from "../assets/images/projects/rea_web_docbiker/forfaits.webp";
-import backofficeVisual from "../assets/images/projects/rea_web_docbiker/capture_backoffice.webp";
-import adminVisual from "../assets/images/projects/rea_web_docbiker/admin.webp";
-import mobileSearchVisual from "../assets/images/projects/rea_web_docbiker/mobile01.webp";
+import GalleryUxFranchise from "../assets/images/projects/rea_web_docbiker/gallery_ux_franchise.png";
+import GalleryUxFranchiseThumb from "../assets/images/projects/rea_web_docbiker/gallery_ux_franchise_thumb.png";
+import GalleryUxFranchise from "../assets/images/projects/rea_web_docbiker/gallery_ux_franchise.png";
+import GalleryUxFranchiseThumb from "../assets/images/projects/rea_web_docbiker/gallery_ux_franchise_thumb.png";
+import centreDetailVisual from "../assets/images/projects/rea_web_docbiker/fiche_centre.png";
+import centerMapVisual from "../assets/images/projects/rea_web_docbiker/carte_centres.png";
+import quoteVisual from "../assets/images/projects/rea_web_docbiker/devis.png";
+import packagesVisual from "../assets/images/projects/rea_web_docbiker/forfaits.png";
+import backofficeVisual from "../assets/images/projects/rea_web_docbiker/capture_backoffice.png";
+import adminVisual from "../assets/images/projects/rea_web_docbiker/admin.png";
+import mobileSearchVisual from "../assets/images/projects/rea_web_docbiker/mobile01.png";
 
 
 */
@@ -305,6 +306,7 @@ function ImageGallery({ items, onImageClick }: ImageGalleryProps) {
                             data-big={item.big}
                             alt={item.alt}
                             className="block aspect-4/5 w-full object-cover transition duration-500 group-hover:scale-[1.02]"
+                            {...lazyImageProps}
                         />
                         <span className="pointer-events-none absolute inset-x-4 bottom-4 rounded-full bg-black/65 px-4 py-2 text-[0.72rem] font-medium uppercase tracking-[0.18em] text-white backdrop-blur-md">
                             {item.caption}
@@ -318,7 +320,7 @@ function ImageGallery({ items, onImageClick }: ImageGalleryProps) {
                     type="button"
                     onClick={() => scrollGalleryBy("left")}
                     disabled={!canScrollLeft}
-                    aria-label="Voir les visuels precedents"
+                    aria-label="Voir les visuels précédents"
                     className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-black/10 bg-white/88 text-2xl text-neutral-900 shadow-[0_12px_28px_rgba(18,22,29,0.08)] transition disabled:cursor-not-allowed disabled:opacity-35"
                 >
                     <span aria-hidden="true">‹</span>
@@ -733,6 +735,7 @@ export default function CaseStudyDocBiker({
                             {...heroSecondReveal}
                             src={heroVisual}
                             alt="Aperçu de la refonte finale du site Doc'Biker"
+                            {...priorityImageProps}
                             onClick={() =>
                                 openLightbox(
                                     heroVisual,
@@ -867,6 +870,7 @@ export default function CaseStudyDocBiker({
                                         src={phase.image}
                                         alt={phase.alt}
                                         className="block aspect-4/3 w-full object-cover"
+                                        {...lazyImageProps}
                                     />
                                 </button>
                                 <div className="grid gap-4 p-6 md:p-7">
@@ -919,6 +923,7 @@ export default function CaseStudyDocBiker({
                                     src={seoVisual}
                                     alt="Résultats Google sur la requête pneu moto"
                                     className="block h-full w-full object-cover"
+                                    {...lazyImageProps}
                                 />
                             </button>
                             <div className="grid gap-4 p-6 md:p-7">
@@ -1039,6 +1044,7 @@ export default function CaseStudyDocBiker({
                                     src={networkVisual}
                                     alt="Schéma du réseau d'écrans Doc'Biker"
                                     className="block w-full"
+                                    {...lazyImageProps}
                                 />
                             </button>
                             <div className="mt-6">

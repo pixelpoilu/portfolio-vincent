@@ -8,6 +8,7 @@ import projectsData from "../data/project-prod.json";
 import type { Project, ProjectMedia } from "../types/Project";
 import { slugifyTitle } from "../utils/slug";
 import { hasCollection, type ProjectCollectionKey } from "../utils/projectCollection";
+import { lazyImageProps, priorityImageProps } from "../utils/imageLoading";
 
 const images = import.meta.glob<{ default: string }>(
   "../assets/images/projects/**/*.{jpg,png,webp}",
@@ -23,7 +24,15 @@ const ProjectLongtext = memo(function ProjectLongtext({ html }: { html: string }
   );
 });
 
-function GalleryImage({ src, alt }: { src: string; alt: string }) {
+function GalleryImage({
+  src,
+  alt,
+  isPriority = false,
+}: {
+  src: string;
+  alt: string;
+  isPriority?: boolean;
+}) {
   const [isLoaded, setIsLoaded] = useState(false);
 
   return (
@@ -36,9 +45,9 @@ function GalleryImage({ src, alt }: { src: string; alt: string }) {
       <img
         src={src}
         alt={alt}
-        className={`block w-full transition-opacity duration-300 ${
-          isLoaded ? "opacity-100" : "opacity-0"
-        }`}
+        className={`block w-full transition-opacity duration-300 ${isLoaded ? "opacity-100" : "opacity-0"
+          }`}
+        {...(isPriority ? priorityImageProps : lazyImageProps)}
         onLoad={() => setIsLoaded(true)}
         onError={() => setIsLoaded(true)}
       />
@@ -239,6 +248,7 @@ function ProjectDetailContent({
                     key={`${project.id}-${currentIndex}-${galleryImages[currentIndex].src}`}
                     src={galleryImages[currentIndex].src}
                     alt={project.title}
+                    isPriority={currentIndex === 0}
                   />
                   {galleryImages[currentIndex].caption && (
                     <p className="mt-2.5 text-center text-sm text-(--muted)">
@@ -250,7 +260,7 @@ function ProjectDetailContent({
                     type="button"
                     className={`${sliderButtonClassName} left-5`}
                     onClick={prevSlide}
-                    aria-label="Image precedente"
+                    aria-label="Image précédente"
                   >
                     ‹
                   </button>
@@ -273,7 +283,7 @@ function ProjectDetailContent({
                       className={sliderControlClassName}
                       onClick={prevSlide}
                       disabled={galleryImages.length <= 1}
-                      aria-label="Image precedente"
+                      aria-label="Image précédente"
                     >
                       ‹
                     </button>

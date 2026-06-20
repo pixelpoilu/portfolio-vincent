@@ -26,20 +26,22 @@
         "image": "rea_web_maaf_diapo.jpg",
         "masonry_0": "manson_0_maaf.png",
         "masonry_1": "manson_1_maaf.png",
-        "case_image": "manson_0_maaf.png",
+        "case_image": [
+            "manson_0_maaf.png"
+        ],
         "portfolio_image": "manson_0_maaf.png",
         "mediapath": "rea_web_maaf",
         "thumb": "rea_web_maaf_thumb.jpg",
         "medias": [
             {
                 "file": "maaf_site_01.jpg",
-                "width": 796,
-                "height": 472
+                "width": 741,
+                "height": 460
             },
             {
                 "file": "maaf_site_02.jpg",
-                "width": 796,
-                "height": 472
+                "width": 740,
+                "height": 460
             },
             {
                 "file": "maaf_baniere_01.jpg",
@@ -86,19 +88,33 @@
             "MySQL"
         ],
         "image": "rea_web_marsans_diapo.jpg",
-        "masonry_0": "",
-        "masonry_1": "",
-        "case_image": "",
-        "portfolio_image": "",
+        "masonry_0": "manson_0_marsans.png",
+        "masonry_1": "manson_1_marsans.png",
+        "case_image": [],
+        "portfolio_image": "manson_0_marsans.png",
         "mediapath": "rea_web_marsans",
         "thumb": "rea_web_marsans_thumb.jpg",
         "medias": [
-            ""
+            {
+                "file": "marsans_site_01.jpg",
+                "width": 819,
+                "height": 600
+            },
+            {
+                "file": "marsans_site_02.jpg",
+                "width": 819,
+                "height": 957
+            },
+            {
+                "file": "marsans_site_03.jpg",
+                "width": 819,
+                "height": 957
+            }
         ],
         "missions": [
             ""
         ],
-        "status": "draft",
+        "status": "published",
         "order": 2,
         "caseorder": 0,
         "collection": [
@@ -135,7 +151,9 @@
         "image": "rea_web_liban_diapo.jpg",
         "masonry_0": "mansonery_0_liban.png",
         "masonry_1": "mansonery_1_liban.png",
-        "case_image": "mansonery_0_liban.png",
+        "case_image": [
+            "mansonery_0_liban.png"
+        ],
         "portfolio_image": "mansonery_0_liban.png",
         "mediapath": "rea_web_liban",
         "thumb": "rea_web_liban_thumb.jpg",
@@ -194,7 +212,9 @@
         "image": "rea_web_locaboatindustries_diapo.jpg",
         "masonry_0": "manson_0_locabindust.png",
         "masonry_1": "manson_1_locabindust.png",
-        "case_image": "manson_0_locabindust.png",
+        "case_image": [
+            "manson_0_locabindust.png"
+        ],
         "portfolio_image": "manson_0_locabindust.png",
         "mediapath": "rea_web_locaboatindustries",
         "thumb": "rea_web_locaboatindustries_thumb.jpg",
@@ -301,30 +321,32 @@
         "image": "rea_web_croatie_diapo.jpg",
         "masonry_0": "manson_0_croatie.png",
         "masonry_1": "manson_1_croatie.png",
-        "case_image": "manson_0_croatie.png",
+        "case_image": [
+            "manson_0_croatie.png"
+        ],
         "portfolio_image": "manson_0_croatie.png",
         "mediapath": "rea_web_croatie",
         "thumb": "rea_web_croatie_thumb.jpg",
         "medias": [
             {
                 "file": "croatie_site_01.jpg",
-                "width": 796,
-                "height": 472
+                "width": 691,
+                "height": 460
             },
             {
                 "file": "croatie_site_02.jpg",
-                "width": 796,
+                "width": 759,
                 "height": 472
             },
             {
                 "file": "croatie_site_03.jpg",
-                "width": 796,
-                "height": 472
+                "width": 744,
+                "height": 468
             },
             {
                 "file": "croatie_site_04.jpg",
-                "width": 796,
-                "height": 472
+                "width": 745,
+                "height": 468
             }
         ],
         "missions": [
@@ -370,7 +392,9 @@
         "image": "rea_cd_medicis_diapo.jpg",
         "masonry_0": "manson_0_medicis.png",
         "masonry_1": "manson_1_medicis.png",
-        "case_image": "manson_0_medicis.png",
+        "case_image": [
+            "manson_0_medicis.png"
+        ],
         "portfolio_image": "manson_0_medicis.png",
         "mediapath": "rea_cd_medicis",
         "thumb": "rea_cd_medicis_thumb.jpg",
@@ -443,7 +467,9 @@
         "image": "rea_cd_finlande_diapo.jpg",
         "masonry_0": "manson_0_finland.png",
         "masonry_1": "manson_1_finland.png",
-        "case_image": "manson_0_finland.png",
+        "case_image": [
+            "manson_0_finland.png"
+        ],
         "portfolio_image": "manson_0_finland.png",
         "mediapath": "rea_cd_finlande",
         "thumb": "rea_cd_finlande_thumb.jpg",
@@ -508,7 +534,9 @@
         "image": "rea_web_lorenove_diapo.jpg",
         "masonry_0": "manson_0_lorenove.png",
         "masonry_1": "manson_1_lorenove.png",
-        "case_image": "manson_0_lorenove.png",
+        "case_image": [
+            "manson_0_lorenove.png"
+        ],
         "portfolio_image": "manson_0_lorenove.png",
         "mediapath": "rea_web_lorenove",
         "thumb": "rea_web_lorenove_thumb.jpg",
@@ -579,45 +607,47 @@
         "image": "rea_web_egypte_diapo.jpg",
         "masonry_0": "mansonery_0_egypte.png",
         "masonry_1": "mansonery_1_egypte.png",
-        "case_image": "mansonery_0_egypte.png",
+        "case_image": [
+            "mansonery_0_egypte.png"
+        ],
         "portfolio_image": "mansonery_0_egypte.png",
         "mediapath": "rea_web_egypte",
         "thumb": "rea_web_egypte_thumb.jpg",
         "medias": [
             {
                 "file": "01.jpg",
-                "width": 796,
-                "height": 472
+                "width": 727,
+                "height": 395
             },
             {
                 "file": "02.jpg",
-                "width": 796,
-                "height": 472
+                "width": 732,
+                "height": 397
             },
             {
                 "file": "03.jpg",
-                "width": 796,
-                "height": 472
+                "width": 736,
+                "height": 399
             },
             {
                 "file": "04.jpg",
-                "width": 796,
-                "height": 472
+                "width": 738,
+                "height": 401
             },
             {
                 "file": "05.jpg",
-                "width": 796,
-                "height": 472
+                "width": 748,
+                "height": 406
             },
             {
                 "file": "06.jpg",
-                "width": 796,
+                "width": 614,
                 "height": 472
             },
             {
                 "file": "07.jpg",
-                "width": 796,
-                "height": 472
+                "width": 757,
+                "height": 410
             }
         ],
         "missions": [
@@ -662,54 +692,61 @@
         "image": "rea_web_1018_diapo.jpg",
         "masonry_0": "manson_0_1018.png",
         "masonry_1": "manson_1_1018.png",
-        "case_image": "manson_0_1018.png",
+        "case_image": [
+            "manson_0_1018.png"
+        ],
         "portfolio_image": "manson_0_1018.png",
         "mediapath": "rea_web_1018",
         "thumb": "rea_web_1018_thumb.jpg",
         "medias": [
             {
+                "file": "10-18_interface.mp4",
+                "width": 687,
+                "height": 471
+            },
+            {
                 "file": "01.jpg",
-                "width": 796,
-                "height": 472
+                "width": 687,
+                "height": 471
             },
             {
                 "file": "02.jpg",
-                "width": 796,
-                "height": 472
+                "width": 687,
+                "height": 471
             },
             {
                 "file": "03.jpg",
-                "width": 796,
+                "width": 561,
                 "height": 472
             },
             {
                 "file": "04.jpg",
-                "width": 796,
+                "width": 640,
                 "height": 472
             },
             {
                 "file": "06.jpg",
-                "width": 796,
-                "height": 472
+                "width": 687,
+                "height": 471
             },
             {
                 "file": "07.jpg",
-                "width": 796,
-                "height": 472
+                "width": 587,
+                "height": 471
             },
             {
                 "file": "08.jpg",
-                "width": 796,
-                "height": 472
+                "width": 567,
+                "height": 471
             },
             {
                 "file": "09.jpg",
-                "width": 796,
+                "width": 563,
                 "height": 472
             },
             {
                 "file": "10.jpg",
-                "width": 796,
+                "width": 606,
                 "height": 472
             }
         ],
@@ -753,7 +790,9 @@
         "image": "rea_web_skillmen_diapo.jpg",
         "masonry_0": "mansonery_0_skillmen.png",
         "masonry_1": "mansonery_1_skillmen.png",
-        "case_image": "mansonery_0_skillmen.png",
+        "case_image": [
+            "mansonery_0_skillmen.png"
+        ],
         "portfolio_image": "mansonery_0_skillmen.png",
         "mediapath": "rea_web_skillmen",
         "thumb": "rea_web_skillmen_thumb.jpg",
@@ -837,7 +876,7 @@
         "image": "rea_pub_esselte_diapo.jpg",
         "masonry_0": "",
         "masonry_1": "",
-        "case_image": "",
+        "case_image": [],
         "portfolio_image": "",
         "mediapath": "rea_pub_esselte",
         "thumb": "rea_pub_esselte_thumb.jpg",
@@ -871,7 +910,7 @@
         "client": "WANADOO",
         "year": 2004,
         "type": "Pub on line",
-        "description": "0",
+        "description": "Campagne pour le lancement du pack eXtense",
         "link": "0",
         "secteur": "Industries-Equipement",
         "Contexte": "",
@@ -885,7 +924,9 @@
         "image": "rea_pub_wanadoo_diapo.jpg",
         "masonry_0": "manson_0_wanadoo.png",
         "masonry_1": "manson_1_wanadoo.png",
-        "case_image": "manson_0_wanadoo.png",
+        "case_image": [
+            "manson_0_wanadoo.png"
+        ],
         "portfolio_image": "manson_0_wanadoo.png",
         "mediapath": "rea_pub_wanadoo",
         "thumb": "rea_pub_wanadoo_thumb.jpg",
@@ -910,7 +951,7 @@
         "missions": [
             ""
         ],
-        "status": "published",
+        "status": "draft",
         "order": 13,
         "caseorder": 0,
         "collection": [
@@ -943,7 +984,7 @@
         "image": "rea_web_cuendet_diapo.jpg",
         "masonry_0": "",
         "masonry_1": "",
-        "case_image": "",
+        "case_image": [],
         "portfolio_image": "",
         "mediapath": "rea_web_cuendet",
         "thumb": "rea_web_cuendet_thumb.jpg",
@@ -993,7 +1034,9 @@
         "image": "rea_web_hongrie_diapo.jpg",
         "masonry_0": "manson_0_hongrie.png",
         "masonry_1": "manson_1_hongrie.png",
-        "case_image": "manson_0_hongrie.png",
+        "case_image": [
+            "manson_0_hongrie.png"
+        ],
         "portfolio_image": "manson_0_hongrie.png",
         "mediapath": "rea_web_hongrie",
         "thumb": "rea_web_hongrie_thumb.jpg",
@@ -1045,7 +1088,9 @@
         "image": "rea_pub_daewoo_diapo.jpg",
         "masonry_0": "manson_0_daewoo.png",
         "masonry_1": "manson_1_daewoo.png",
-        "case_image": "manson_0_daewoo.png",
+        "case_image": [
+            "manson_0_daewoo.png"
+        ],
         "portfolio_image": "manson_0_daewoo.png",
         "mediapath": "rea_pub_daewoo",
         "thumb": "rea_pub_daewoo_thumb.jpg",
@@ -1105,7 +1150,7 @@
         "image": "rea_web_guadeloupe_diapo.jpg",
         "masonry_0": "",
         "masonry_1": "",
-        "case_image": "",
+        "case_image": [],
         "portfolio_image": "",
         "mediapath": "rea_web_guadeloupe",
         "thumb": "rea_web_guadeloupe_thumb.jpg",
@@ -1151,19 +1196,23 @@
             "PHP"
         ],
         "image": "rea_web_bourgogne_diapo.jpg",
-        "masonry_0": "",
-        "masonry_1": "",
-        "case_image": "",
-        "portfolio_image": "",
+        "masonry_0": "manson_0_bourgogne.png",
+        "masonry_1": "manson_1_bourgogne.png",
+        "case_image": [],
+        "portfolio_image": "manson_0_bourgogne.png",
         "mediapath": "rea_web_bourgogne",
         "thumb": "rea_web_bourgogne_thumb.jpg",
         "medias": [
-            ""
+            {
+                "file": "01_big.jpg",
+                "width": 942,
+                "height": 674
+            }
         ],
         "missions": [
             ""
         ],
-        "status": "draft",
+        "status": "published",
         "order": 18,
         "caseorder": 0,
         "collection": [
@@ -1199,7 +1248,9 @@
         "image": "rea_cd_marmara_diapo.jpg",
         "masonry_0": "manson_0_marmara.png",
         "masonry_1": "manson_1_marmara.png",
-        "case_image": "manson_0_marmara.png",
+        "case_image": [
+            "manson_0_marmara.png"
+        ],
         "portfolio_image": "manson_0_marmara.png",
         "mediapath": "rea_cd_marmara",
         "thumb": "rea_cd_marmara_thumb.jpg",
@@ -1276,7 +1327,7 @@
         "image": "rea_web_bol_diapo.png",
         "masonry_0": "",
         "masonry_1": "",
-        "case_image": "",
+        "case_image": [],
         "portfolio_image": "",
         "mediapath": "rea_web_bol",
         "thumb": "rea_web_bol_thumb.jpg",
@@ -1371,7 +1422,9 @@
         "image": "rea_web_frigos_diapo.jpg",
         "masonry_0": "manson_0_frigo.png",
         "masonry_1": "manson_1_frigo.png",
-        "case_image": "manson_0_frigo.png",
+        "case_image": [
+            "manson_0_frigo.png"
+        ],
         "portfolio_image": "manson_0_frigo.png",
         "mediapath": "rea_web_frigos",
         "thumb": "rea_web_frigos_thumb.jpg",
@@ -1442,7 +1495,9 @@
         "image": "rea_web_resonnances_diapo.jpg",
         "masonry_0": "manson_0_reso.png",
         "masonry_1": "manson_1_reso.png",
-        "case_image": "manson_0_reso.png",
+        "case_image": [
+            "manson_0_reso.png"
+        ],
         "portfolio_image": "manson_0_reso.png",
         "mediapath": "rea_web_resonnances",
         "thumb": "rea_web_resonnances_thumb.jpg",
@@ -1491,7 +1546,9 @@
         "image": "rea_map_malte_diapo.jpg",
         "masonry_0": "manson_0_malte.png",
         "masonry_1": "manson_1_malte.png",
-        "case_image": "manson_0_malte.png",
+        "case_image": [
+            "manson_0_malte.png"
+        ],
         "portfolio_image": "manson_0_malte.png",
         "mediapath": "rea_web_malte",
         "thumb": "rea_web_malte_thumb.jpg",
@@ -1630,7 +1687,9 @@
         "image": "rea_web_ads_diapo.jpg",
         "masonry_0": "mansonery_0_ads.png",
         "masonry_1": "mansonery_1_ads.png",
-        "case_image": "mansonery_0_ads.png",
+        "case_image": [
+            "mansonery_0_ads.png"
+        ],
         "portfolio_image": "mansonery_0_ads.png",
         "mediapath": "rea_web_ads",
         "thumb": "rea_web_ads_thumb.jpg",
@@ -1695,7 +1754,9 @@
         "image": "rea_web_artfenetres_diapo.jpg",
         "masonry_0": "manson_0_artfenetres.png",
         "masonry_1": "manson_1_artfenetres.png",
-        "case_image": "manson_0_artfenetres.png",
+        "case_image": [
+            "manson_0_artfenetres.png"
+        ],
         "portfolio_image": "manson_0_artfenetres.png",
         "mediapath": "rea_web_artfenetres",
         "thumb": "rea_web_artfenetres_thumb.jpg",
@@ -1744,7 +1805,9 @@
         "image": "rea_web_ventilo_diapo.jpg",
         "masonry_0": "manson_0_ventilo.png",
         "masonry_1": "manson_1_ventilo.png",
-        "case_image": "manson_0_ventilo.png",
+        "case_image": [
+            "manson_0_ventilo.png"
+        ],
         "portfolio_image": "manson_0_ventilo.png",
         "mediapath": "rea_web_ventilo",
         "thumb": "rea_web_ventilo_thumb.jpg",
@@ -1821,7 +1884,7 @@
         "image": "rea_web_cms_diapo.jpg",
         "masonry_0": "",
         "masonry_1": "",
-        "case_image": "",
+        "case_image": [],
         "portfolio_image": "",
         "mediapath": "rea_web_cms",
         "thumb": "rea_web_cms_thumb.jpg",
@@ -1929,7 +1992,9 @@
         "image": "rea_web_visiteurope_diapo.jpg",
         "masonry_0": "manson_0_europe.png",
         "masonry_1": "manson_1_visiteurope.png",
-        "case_image": "manson_0_europe.png",
+        "case_image": [
+            "manson_0_europe.png"
+        ],
         "portfolio_image": "manson_0_europe.png",
         "mediapath": "rea_web_visiteurope",
         "thumb": "rea_web_visiteurope_thumb.jpg",
@@ -2009,7 +2074,7 @@
         "image": "rea_screen_sacla_diapo.jpg",
         "masonry_0": "",
         "masonry_1": "",
-        "case_image": "",
+        "case_image": [],
         "portfolio_image": "",
         "mediapath": "rea_screen_sacla",
         "thumb": "rea_screen_sacla_thumb.jpg",
@@ -2051,7 +2116,9 @@
         "image": "rea_pub_chevrolet_diapo.jpg",
         "masonry_0": "manson_0_chevrolet.png",
         "masonry_1": "manson_1_chevrolet.png",
-        "case_image": "manson_0_chevrolet.png",
+        "case_image": [
+            "manson_0_chevrolet.png"
+        ],
         "portfolio_image": "manson_0_chevrolet.png",
         "mediapath": "rea_pub_chevrolet",
         "thumb": "rea_pub_chevrolet_thumb.jpg",
@@ -2120,7 +2187,9 @@
         "image": "rea_web_clozeau_diapo.jpg",
         "masonry_0": "manson_0_clozeau.png",
         "masonry_1": "manson_1_clozeau.png",
-        "case_image": "manson_0_clozeau.png",
+        "case_image": [
+            "manson_0_clozeau.png"
+        ],
         "portfolio_image": "manson_0_clozeau.png",
         "mediapath": "rea_web_clozeau",
         "thumb": "rea_web_clozeau_thumb.jpg",
@@ -2208,7 +2277,9 @@
         "image": "rea_web_premaman_diapo.jpg",
         "masonry_0": "manson_0_premaman.png",
         "masonry_1": "manson_1_premaman.png",
-        "case_image": "manson_0_premaman.png",
+        "case_image": [
+            "manson_0_premaman.png"
+        ],
         "portfolio_image": "manson_0_premaman.png",
         "mediapath": "rea_bol_premaman",
         "thumb": "rea_bol_premaman_thumb.jpg",
@@ -2284,11 +2355,17 @@
         "image": "rea_cd_gauloises_diapo.jpg",
         "masonry_0": "manson_0_gauloises.png",
         "masonry_1": "manson_1_gauloises.png",
-        "case_image": "manson_0_gauloises.png",
+        "case_image": [
+            "manson_0_gauloises.png"
+        ],
         "portfolio_image": "manson_0_gauloises.png",
         "mediapath": "rea_cd_gauloises",
         "thumb": "rea_cd_gauloises_thumb.jpg",
         "medias": [
+            {
+                "file": "gauloises.mp4",
+                "caption": "Parcours interactif de l'application"
+            },
             {
                 "file": "01.jpg",
                 "width": 796,
@@ -2381,7 +2458,7 @@
         "image": "rea_pub_tms_diapo.jpg",
         "masonry_0": "",
         "masonry_1": "",
-        "case_image": "",
+        "case_image": [],
         "portfolio_image": "",
         "mediapath": "rea_pub_tms",
         "thumb": "rea_pub_tms_thumb.jpg",
@@ -2427,7 +2504,9 @@
         "image": "rea_web_lgi_diapo.jpg",
         "masonry_0": "manson_0_lgi.png",
         "masonry_1": "manson_1_lgi.png",
-        "case_image": "manson_0_lgi.png",
+        "case_image": [
+            "manson_0_lgi.png"
+        ],
         "portfolio_image": "manson_0_lgi.png",
         "mediapath": "rea_web_lgi",
         "thumb": "rea_web_lgi_thumb.jpg",
@@ -2485,7 +2564,9 @@
         "image": "rea_pub_camping_diapo.jpg",
         "masonry_0": "manson_0_camping.png",
         "masonry_1": "manson_1_camping.png",
-        "case_image": "manson_0_camping.png",
+        "case_image": [
+            "manson_0_camping.png"
+        ],
         "portfolio_image": "manson_0_camping.png",
         "mediapath": "rea_pub_camping",
         "thumb": "rea_pub_camping_thumb.jpg",
@@ -2545,7 +2626,9 @@
         "image": "rea_pub_pacific_diapo.jpg",
         "masonry_0": "manson_0_pacific.png",
         "masonry_1": "manson_1_pacific.png",
-        "case_image": "manson_0_pacific.png",
+        "case_image": [
+            "manson_0_pacific.png"
+        ],
         "portfolio_image": "manson_0_pacific.png",
         "mediapath": "rea_pub_pacific",
         "thumb": "rea_pub_pacific_thumb.jpg",
@@ -2555,34 +2638,9 @@
                 "width": 796,
                 "height": 472
             },
-            {
-                "file": "02.jpg",
-                "width": 381,
-                "height": 280
-            },
-            {
-                "file": "03.jpg",
-                "width": 381,
-                "height": 280
-            },
-            {
-                "file": "04.jpg",
-                "width": 381,
-                "height": 280
-            },
             "anuman_pacific_storm_rectangle.mp4",
             {
-                "file": "05.jpg",
-                "width": 381,
-                "height": 280
-            },
-            {
                 "file": "06.jpg",
-                "width": 381,
-                "height": 280
-            },
-            {
-                "file": "07.jpg",
                 "width": 381,
                 "height": 280
             }
@@ -2620,47 +2678,19 @@
         "image": "rea_pub_poker_diapo.jpg",
         "masonry_0": "manson_0_poker.jpg",
         "masonry_1": "manson_1_poker.jpg",
-        "case_image": "manson_0_poker.jpg",
+        "case_image": [
+            "manson_0_poker.jpg"
+        ],
         "portfolio_image": "manson_0_poker.jpg",
         "mediapath": "rea_pub_poker",
         "thumb": "rea_pub_poker_thumb.jpg",
         "medias": [
             {
-                "file": "01.jpg",
-                "width": 381,
-                "height": 280
-            },
-            {
                 "file": "02.jpg",
                 "width": 796,
                 "height": 472
             },
-            {
-                "file": "03.jpg",
-                "width": 381,
-                "height": 280
-            },
-            {
-                "file": "04.jpg",
-                "width": 381,
-                "height": 280
-            },
-            "anuman_poker_academy_rectangle.mp4",
-            {
-                "file": "05.jpg",
-                "width": 381,
-                "height": 280
-            },
-            {
-                "file": "06.jpg",
-                "width": 381,
-                "height": 280
-            },
-            {
-                "file": "07.jpg",
-                "width": 381,
-                "height": 280
-            }
+            "anuman_poker_academy_rectangle.mp4"
         ],
         "missions": [
             ""
@@ -2693,7 +2723,7 @@
         "image": "rea_pub_trainz_diapo.jpg",
         "masonry_0": "",
         "masonry_1": "",
-        "case_image": "",
+        "case_image": [],
         "portfolio_image": "",
         "mediapath": "rea_pub_trainz",
         "thumb": "rea_pub_trainz_thumb.jpg",
@@ -2733,7 +2763,9 @@
         "image": "rea_pub_wengo_diapo.jpg",
         "masonry_0": "manson_0_wengo.png",
         "masonry_1": "manson_1_wengo.png",
-        "case_image": "manson_0_wengo.png",
+        "case_image": [
+            "manson_0_wengo.png"
+        ],
         "portfolio_image": "manson_0_wengo.png",
         "mediapath": "rea_pub_wengo",
         "thumb": "rea_pub_wengo_thumb.jpg",
@@ -2747,31 +2779,6 @@
                 "file": "01.jpg",
                 "width": 796,
                 "height": 472
-            },
-            {
-                "file": "02.jpg",
-                "width": 381,
-                "height": 280
-            },
-            {
-                "file": "03.jpg",
-                "width": 381,
-                "height": 280
-            },
-            {
-                "file": "04.jpg",
-                "width": 381,
-                "height": 280
-            },
-            {
-                "file": "06.jpg",
-                "width": 381,
-                "height": 280
-            },
-            {
-                "file": "07.jpg",
-                "width": 381,
-                "height": 280
             },
             "wengo_rectangle.mp4"
         ],
@@ -2816,7 +2823,9 @@
         "image": "rea_web_slam_diapo.jpg",
         "masonry_0": "manson_0_slan.png",
         "masonry_1": "manson_1_slam.png",
-        "case_image": "manson_0_slan.png",
+        "case_image": [
+            "manson_0_slan.png"
+        ],
         "portfolio_image": "manson_0_slan.png",
         "mediapath": "rea_web_slam",
         "thumb": "rea_web_slam_thumb.jpg",
@@ -2900,19 +2909,48 @@
             "Javascript / jQuery"
         ],
         "image": "rea_web_tpv_diapo.jpg",
-        "masonry_0": "",
-        "masonry_1": "",
-        "case_image": "",
-        "portfolio_image": "",
+        "masonry_0": "manson_0_tpv.jpg",
+        "masonry_1": "manson_1_tpv.jpg",
+        "case_image": [],
+        "portfolio_image": "manson_0_tpv.jpg",
         "mediapath": "rea_web_tpv",
         "thumb": "rea_web_tpv_thumb.jpg",
         "medias": [
-            ""
+            {
+                "file": "version1-home.jpg",
+                "width": 776,
+                "height": 650
+            },
+            {
+                "file": "version1-navigation.jpg",
+                "width": 776,
+                "height": 650
+            },
+            {
+                "file": "version1-rollover.jpg",
+                "width": 776,
+                "height": 650
+            },
+            {
+                "file": "version2-home.jpg",
+                "width": 776,
+                "height": 650
+            },
+            {
+                "file": "version2-navigation.jpg",
+                "width": 776,
+                "height": 650
+            },
+            {
+                "file": "version2-rollover.jpg",
+                "width": 776,
+                "height": 650
+            }
         ],
         "missions": [
             ""
         ],
-        "status": "draft",
+        "status": "published",
         "order": 42,
         "caseorder": 0,
         "collection": [
@@ -2951,34 +2989,31 @@
         "image": "rea_web_tour66_diapo.jpg",
         "masonry_0": "manson_0_tour66.png",
         "masonry_1": "manson_1_tour66.png",
-        "case_image": "manson_0_tour66.png",
+        "case_image": [
+            "manson_0_tour66.png"
+        ],
         "portfolio_image": "manson_0_tour66.png",
         "mediapath": "rea_web_tour66",
         "thumb": "rea_web_tour66_thumb.jpg",
         "medias": [
             {
-                "file": "01.jpg",
-                "width": 796,
-                "height": 472
-            },
-            "pre-site00.mp4",
-            {
-                "file": "02.jpg",
-                "width": 796,
-                "height": 472
-            },
-            "pre-site01.mp4",
-            {
-                "file": "03.jpg",
-                "width": 796,
-                "height": 472
+                "file": "tour66_site.mp4",
+                "caption": "Site officiel de la tournée Tour66"
             },
             {
                 "file": "04.jpg",
+                "caption": "Home Page - Site officiel de la tournée Tour66",
                 "width": 796,
                 "height": 472
             },
-            "tour66_site.mp4"
+            {
+                "file": "pre-site00.mp4",
+                "caption": "Tour 66 Teaser 01"
+            },
+            {
+                "file": "pre-site01.mp4",
+                "caption": "Tour 66 Teaser 02"
+            }
         ],
         "missions": [
             ""
@@ -3016,12 +3051,13 @@
         "image": "rea_cd_gauloises_diapo.jpg",
         "masonry_0": "manson_0_gauloises.png",
         "masonry_1": "manson_1_gauloises.png",
-        "case_image": "manson_0_gauloises.png",
+        "case_image": [
+            "manson_0_gauloises.png"
+        ],
         "portfolio_image": "manson_0_gauloises.png",
         "mediapath": "rea_webcat_gauloises",
         "thumb": "rea_webcat_gauloises_thumb.jpg",
         "medias": [
-            "gauloises.mp4",
             {
                 "file": "01.jpg",
                 "width": 796,
@@ -3146,7 +3182,7 @@
         "missions": [
             "Proposer un outil de présentation interactif des objets Matpub, permettant également une gestion des commandes."
         ],
-        "status": "published",
+        "status": "draft",
         "order": 44,
         "caseorder": 0,
         "collection": [
@@ -3166,7 +3202,7 @@
         "description": "Refondre sans perdre la performance : concilier design et SEO",
         "link": "",
         "secteur": "Puériculture",
-        "Contexte": "Dans le cadre de l’adoption d’une nouvelle identité graphique, DiliTrust souhaite une refonte complète de son site web.",
+        "Contexte": "Dans le cadre de lâ€™adoption dâ€™une nouvelle identité graphique, DiliTrust souhaite une refonte complète de son site web.",
         "Reponse": "Proposer un site contenant la nouvelle identité graphique, tout en conservant la valeur ajoutée de l'existant.",
         "outils": [
             "Adobe XD",
@@ -3186,7 +3222,9 @@
         "image": "rea_web_dilitrust_diapo.png",
         "masonry_0": "manson_0_baba.png",
         "masonry_1": "manson_1_baba.png",
-        "case_image": "manson_0_baba_big.png",
+        "case_image": [
+            "manson_0_baba_big.png"
+        ],
         "portfolio_image": "manson_0_baba_big_v2.png",
         "mediapath": "rea_web_baba",
         "thumb": "rea_web_dilitrust_thumb.png",
@@ -3194,14 +3232,14 @@
             {
                 "file": "PC_IE7.jpg",
                 "caption": "Home Page",
-                "width": 1280,
-                "height": 998
+                "width": 821,
+                "height": 640
             },
             {
                 "file": "PC_firefox-3-0-11.jpg",
                 "caption": "Page Univers/produits",
-                "width": 1280,
-                "height": 998
+                "width": 821,
+                "height": 640
             }
         ],
         "missions": [
@@ -3249,7 +3287,7 @@
         "image": "rea_bol_locaboat_diapo.jpg",
         "masonry_0": "",
         "masonry_1": "",
-        "case_image": "",
+        "case_image": [],
         "portfolio_image": "",
         "mediapath": "rea_bol_locaboat",
         "thumb": "rea_bol_locaboat_thumb.jpg",
@@ -3334,7 +3372,9 @@
         "image": "rea_web_vu_diapo.jpg",
         "masonry_0": "manson_0_vu.png",
         "masonry_1": "manson_1_vu.png",
-        "case_image": "manson_0_vu.png",
+        "case_image": [
+            "manson_0_vu.png"
+        ],
         "portfolio_image": "manson_0_vu.png",
         "mediapath": "rea_web_vu",
         "thumb": "rea_web_vu_thumb.jpg",
@@ -3382,7 +3422,9 @@
         "image": "rea_web_wip_diapo.jpg",
         "masonry_0": "manson_0_wip.png",
         "masonry_1": "manson_1_wip.png",
-        "case_image": "manson_0_wip.png",
+        "case_image": [
+            "manson_0_wip.png"
+        ],
         "portfolio_image": "manson_0_wip.png",
         "mediapath": "rea_web_wip",
         "thumb": "rea_web_wip_thumb.jpg",
@@ -3440,7 +3482,9 @@
         "image": "rea_web_lfdd_diapo.jpg",
         "masonry_0": "manson_0_lfdd.png",
         "masonry_1": "manson_1_lfdd.png",
-        "case_image": "manson_0_lfdd.png",
+        "case_image": [
+            "manson_0_lfdd.png"
+        ],
         "portfolio_image": "manson_0_lfdd.png",
         "mediapath": "rea_web_lfdd",
         "thumb": "rea_web_lfdd_thumb.jpg",
@@ -3518,7 +3562,11 @@
         "image": "rea_web_locaboat_diapo.jpg",
         "masonry_0": "",
         "masonry_1": "",
-        "case_image": "manson_1_locaboat.png",
+        "case_image": [
+            "case_studie_locaboat01.png",
+            "case_studie_locaboat02.png",
+            "case_studie_locaboat03.png"
+        ],
         "portfolio_image": "rea_web_locaboat_diapo.png",
         "mediapath": "rea_web_locaboat",
         "thumb": "rea_web_locaboat_thumb.jpg",
@@ -3583,8 +3631,7 @@
         "year": 2011,
         "type": [
             "Site One page,",
-            "Mini-site",
-            "PluXML"
+            "Mini-site"
         ],
         "description": "Mini-Site OnePage Admninistrable pour un prestataire de services",
         "link": "www.services2it.com",
@@ -3607,7 +3654,9 @@
         "image": "rea_web_uservices_diapo.jpg",
         "masonry_0": "manson_0_uservices.png",
         "masonry_1": "manson_1_uservices.png",
-        "case_image": "manson_0_uservices.png",
+        "case_image": [
+            "manson_0_uservices.png"
+        ],
         "portfolio_image": "manson_0_uservices.png",
         "mediapath": "rea_web_uservices",
         "thumb": "manson_0_uservices.png",
@@ -3668,74 +3717,29 @@
         "image": "rea_web_carresenart_diapo.jpg",
         "masonry_0": "manson_0_melun.png",
         "masonry_1": "manson_1_melun.png",
-        "case_image": "manson_0_melun.png",
+        "case_image": [
+            "manson_0_melun.png"
+        ],
         "portfolio_image": "manson_0_melun.png",
         "mediapath": "rea_web_carresenart",
         "thumb": "rea_web_carresenart_thumb.jpg",
         "medias": [
             {
+                "file": "recycle_vetement.mp4",
+                "caption": "Le jeu du recyclage"
+            },
+            {
                 "file": "01.jpg",
                 "width": 796,
                 "height": 472
             },
-            "recycle_vetement.mp4",
             {
                 "file": "02.jpg",
                 "width": 796,
                 "height": 472
             },
             {
-                "file": "03.jpg",
-                "width": 796,
-                "height": 472
-            },
-            {
-                "file": "04.jpg",
-                "width": 796,
-                "height": 472
-            },
-            {
-                "file": "05.jpg",
-                "width": 796,
-                "height": 472
-            },
-            {
-                "file": "06.jpg",
-                "width": 796,
-                "height": 472
-            },
-            {
-                "file": "07.jpg",
-                "width": 796,
-                "height": 472
-            },
-            {
-                "file": "08.jpg",
-                "width": 796,
-                "height": 472
-            },
-            {
-                "file": "09.jpg",
-                "width": 796,
-                "height": 472
-            },
-            {
                 "file": "10.jpg",
-                "width": 796,
-                "height": 472
-            },
-            {
-                "file": "11.jpg",
-                "width": 796,
-                "height": 472
-            },
-            {
-                "file": "12.jpg",
-                "width": 796,
-                "height": 472
-            },
-            {
-                "file": "13.jpg",
                 "width": 796,
                 "height": 472
             }
@@ -3770,7 +3774,6 @@
             "Flex",
             "Flash",
             "Pack Adobe",
-            "Apache Server",
             "Eclipse",
             "UltraEdit32",
             "Back Office propriétaire"
@@ -3786,7 +3789,9 @@
         "image": "rea_web_clestra_diapo.jpg",
         "masonry_0": "manson_0_clestra.png",
         "masonry_1": "manson_1_clestra.png",
-        "case_image": "manson_0_clestra_big.png",
+        "case_image": [
+            "manson_0_clestra_big.png"
+        ],
         "portfolio_image": "manson_0_clestra.png",
         "mediapath": "rea_web_clestra",
         "thumb": "rea_web_clestra_thumb.jpg",
@@ -3871,14 +3876,14 @@
     },
     {
         "id": 54,
-        "title": "Site Internet MAURICE RADIO LIBRE",
+        "title": "MAURICE RADIO LIBRE - Radio 100% digitale",
         "client": "MAURICE RADIO LIBRE",
         "year": 2011,
         "type": [
             "Site Internet",
             "Site from scratch"
         ],
-        "description": "Nouveau Site pour la Radio libre Associative, site e-commerce",
+        "description": "Ècosystème dédié à une radio libre associative 100% digitale",
         "link": "www.mauriceradiolibre.com",
         "secteur": "Loisirs-Musique",
         "Contexte": "",
@@ -3899,75 +3904,54 @@
         "image": "rea_web_mrl_diapo.jpg",
         "masonry_0": "manson_0_mrl.png",
         "masonry_1": "manson_1_mrl.png",
-        "case_image": "manson_0_mrl.png",
+        "case_image": [
+            "manson_0_mrl.png"
+        ],
         "portfolio_image": "manson_0_mrl.png",
-        "mediapath": "rea_web_mrl",
+        "mediapath": "rea_web_mauriceradiolibre",
         "thumb": "rea_web_mrl_thumb.jpg",
         "medias": [
             {
-                "file": "01.jpg",
+                "file": "home_page_mrl-2011-03-18.png",
+                "caption": "Site principal - Accueil",
+                "width": 646,
+                "height": 700
+            },
+            {
+                "file": "14.jpg",
+                "caption": "Site principal - Focus sur les moments forts du programme",
                 "width": 796,
                 "height": 472
             },
             {
                 "file": "02.jpg",
-                "width": 796,
-                "height": 472
-            },
-            {
-                "file": "03.jpg",
+                "caption": "Site principal - accès aux différents bonus de la radio (chat, lecteurs audio, boutique, podcasts, projet radio/bateau)",
                 "width": 796,
                 "height": 472
             },
             {
                 "file": "04.jpg",
-                "width": 796,
-                "height": 472
-            },
-            {
-                "file": "06.jpg",
-                "width": 796,
-                "height": 472
-            },
-            {
-                "file": "07.jpg",
-                "width": 796,
-                "height": 472
-            },
-            {
-                "file": "08.jpg",
-                "width": 796,
-                "height": 472
-            },
-            {
-                "file": "09.jpg",
+                "caption": "Site principal - accès aux différents univers de l'émission",
                 "width": 796,
                 "height": 472
             },
             {
                 "file": "10.jpg",
+                "caption": "Site marchand - CMS Prestashop opur la vente de goodies",
                 "width": 796,
                 "height": 472
             },
             {
-                "file": "11.jpg",
-                "width": 796,
-                "height": 472
+                "file": "putainbd_00.jpg",
+                "caption": "Site promotionnel dédié à la BD de l'émission",
+                "width": 600,
+                "height": 455
             },
             {
-                "file": "12.jpg",
-                "width": 796,
-                "height": 472
-            },
-            {
-                "file": "13.jpg",
-                "width": 796,
-                "height": 472
-            },
-            {
-                "file": "14.jpg",
-                "width": 796,
-                "height": 472
+                "file": "rea_web_rocksymbol_item.jpg",
+                "caption": "Site dédié au projet de la radio-bateau Rock symbol",
+                "width": 600,
+                "height": 455
             }
         ],
         "missions": [
@@ -4010,19 +3994,33 @@
             "MySQL"
         ],
         "image": "rea_web_services2it_diapo.jpg",
-        "masonry_0": "",
-        "masonry_1": "",
-        "case_image": "",
-        "portfolio_image": "",
+        "masonry_0": "manson_0_s2it.jpg",
+        "masonry_1": "manson_1_s2it.jpg",
+        "case_image": [],
+        "portfolio_image": "manson_0_s2it.jpg",
         "mediapath": "rea_web_services2it",
         "thumb": "rea_web_services2it_thumb.jpg",
         "medias": [
-            ""
+            {
+                "file": "02.jpg",
+                "width": 796,
+                "height": 472
+            },
+            {
+                "file": "03.jpg",
+                "width": 796,
+                "height": 472
+            },
+            {
+                "file": "04.jpg",
+                "width": 796,
+                "height": 472
+            }
         ],
         "missions": [
             ""
         ],
-        "status": "draft",
+        "status": "published",
         "order": 55,
         "caseorder": 0,
         "collection": [
@@ -4062,7 +4060,9 @@
         "image": "rea_web_netseenergy_diapo.jpg",
         "masonry_0": "manson_0_netseen.png",
         "masonry_1": "manson_1_netseen.png",
-        "case_image": "manson_0_netseen.png",
+        "case_image": [
+            "manson_0_netseen.png"
+        ],
         "portfolio_image": "manson_0_netseen.png",
         "mediapath": "rea_web_netseenergy",
         "thumb": "rea_web_netseenergy_thumb.jpg",
@@ -4129,7 +4129,9 @@
         "image": "rea_web_youzikme_diapo.jpg",
         "masonry_0": "manson_0_youzikme.png",
         "masonry_1": "manson_1_youzikme.png",
-        "case_image": "manson_0_youzikme.png",
+        "case_image": [
+            "manson_0_youzikme.png"
+        ],
         "portfolio_image": "manson_0_youzikme.png",
         "mediapath": "rea_web_youzikme",
         "thumb": "rea_web_youzikme_thumb.jpg",
@@ -4177,8 +4179,7 @@
         "client": "La putain de BD",
         "year": 2013,
         "type": [
-            "Mini-site",
-            "PluXML"
+            "Mini-site"
         ],
         "description": "Site dédié à la promotion de la sortie d'une BD",
         "link": "laputaindebd.mauriceradiolibre.com",
@@ -4200,7 +4201,9 @@
         "image": "rea_web_putainbd_diapo.jpg",
         "masonry_0": "manson_0_pbd.png",
         "masonry_1": "manson_1_pbd.png",
-        "case_image": "manson_0_pbd.png",
+        "case_image": [
+            "manson_0_pbd.png"
+        ],
         "portfolio_image": "manson_0_pbd.png",
         "mediapath": "rea_web_putainbd",
         "thumb": "rea_web_putainbd_thumb.jpg",
@@ -4229,7 +4232,7 @@
         "missions": [
             ""
         ],
-        "status": "published",
+        "status": "draft",
         "order": 58,
         "caseorder": 0,
         "collection": [
@@ -4243,8 +4246,7 @@
         "client": "Le Blog podcasts",
         "year": 2013,
         "type": [
-            "Mini-site",
-            "PluXML"
+            "Mini-site"
         ],
         "description": "Site dédié à la réécoute des émissions de radio",
         "link": "podcasts.mauriceradiolibre.com",
@@ -4266,7 +4268,9 @@
         "image": "rea_web_podcasts_diapo.jpg",
         "masonry_0": "manson_0_podcasts.png",
         "masonry_1": "manson_1_podcasts.png",
-        "case_image": "manson_0_podcasts.png",
+        "case_image": [
+            "manson_0_podcasts.png"
+        ],
         "portfolio_image": "manson_0_podcasts.png",
         "mediapath": "rea_web_podcasts",
         "thumb": "rea_web_podcasts_thumb.jpg",
@@ -4291,7 +4295,7 @@
             "Interface optimisée pour tablettes (jQuery Mobile)",
             "Administration (PluXML)"
         ],
-        "status": "published",
+        "status": "draft",
         "order": 59,
         "caseorder": 0,
         "collection": [
@@ -4328,8 +4332,12 @@
         ],
         "image": "rea_web_docbiker_diapo.jpg",
         "masonry_0": "manson_0_docbiker.png",
-        "masonry_1": "manson_1_docbiker.png",
-        "case_image": "manson_1_docbiker.png",
+        "masonry_1": "manson_1_docbiker.webp",
+        "case_image": [
+            "case_studie_docbiker_01.png",
+            "case_studie_docbiker_02.png",
+            "case_studie_docbiker_03.png"
+        ],
         "portfolio_image": "manson_0_doc.png",
         "mediapath": "rea_web_docbiker",
         "thumb": "rea_web_docbiker_thumb.jpg",
@@ -4341,23 +4349,32 @@
                 "height": 495
             },
             {
-                "file": "new_docbiker_trsp.png",
+                "file": "new_docbiker_trsp.webp",
                 "caption": "Refonte version 2016.",
                 "width": 912,
                 "height": 540
             },
             {
-                "file": "mobile01.png",
+                "file": "2017_3iphones.png",
                 "caption": "Version mobile : adaptation du parcours sur petit écran.",
                 "width": 912,
                 "height": 540
             },
             {
-                "file": "01.jpg",
-                "caption": "Première version HTML orientée SEO après la sortie d'un site en Flash."
+                "file": "screen-reseaul-gallery_03.png",
+                "caption": "Réseau d'écrans dans tous les centres pilotés via une app web",
+                "width": 843,
+                "height": 495
+            },
+            {
+                "file": "2011_docbiker_trsp.png",
+                "caption": "Version 2011 du site",
+                "width": 645,
+                "height": 495
             },
             {
                 "file": "2006_docbiker_trsp.png",
+                "caption": "Première version HTML (2003) orientée SEO après la sortie d'un site en Flash.",
                 "width": 645,
                 "height": 495
             }
@@ -4379,7 +4396,7 @@
             "portfolio",
             "case-study"
         ],
-        "longtext": "<div class=\"project-longtext-block\"><div class=\"project-longtext-copy\"><h3>Vue d'ensemble</h3><p><strong>DOC-BIKER</strong> est un projet de type Site Internet r&eacute;alis&eacute; en 2014 pour l&#39;enseigne DOC&#39;BIKER, sp&eacute;cialis&eacute;e dans l&#39;univers moto. L&#39;accompagnement s&#39;est inscrit dans la dur&eacute;e, avec un objectif clair : faire &eacute;voluer le site en un outil &agrave; la fois plus visible, plus utile pour les utilisateurs et plus simple &agrave; exploiter au quotidien.</p><p>Le point de d&eacute;part &eacute;tait un enjeu de r&eacute;f&eacute;rencement naturel. La mise en place d&#39;une base HTML a permis de sortir d&#39;une logique peu lisible par les moteurs et de construire un site capable de mieux se positionner sur les requ&ecirc;tes li&eacute;es &agrave; l&#39;activit&eacute; de la marque, notamment sur la recherche locale.</p><p>Le projet a ensuite pris la forme d&#39;une refonte plus large, avec un th&egrave;me Joomla personnalis&eacute;, un back-office adapt&eacute; &agrave; l&#39;enseigne et une organisation du contenu centr&eacute;e sur les centres, les forfaits, les devis et les informations pratiques.</p></div><figure class=\"project-longtext-hero\"><picture><source media=\"(min-width: 1180px)\" srcset=\"{{masonry_0}}\"><source media=\"(min-width: 720px)\" srcset=\"{{image}}\"><img src=\"{{masonry_1}}\" alt=\"Site Internet DOC-BIKER - visuel principal\" loading=\"lazy\"></picture><figcaption>Refonte du site DOC-BIKER : une plateforme pens&eacute;e pour guider les utilisateurs vers le bon centre, le bon forfait et la bonne action.</figcaption></figure><div class=\"project-longtext-copy\"><h3>Refonte</h3><p>La refonte ne s&#39;est pas limit&eacute;e &agrave; une mise &agrave; jour graphique. Elle a consist&eacute; &agrave; remettre &agrave; plat la structure du site pour mieux hi&eacute;rarchiser les contenus utiles et transformer le site en v&eacute;ritable support op&eacute;rationnel pour l&#39;enseigne.</p><p>Le passage d&#39;une premi&egrave;re version orient&eacute;e visibilit&eacute; SEO vers une mouture plus compl&egrave;te sous Joomla a permis de faire converger deux besoins : une meilleure pr&eacute;sence en ligne et une gestion plus fine du r&eacute;seau DOC-BIKER.</p></div><div class=\"project-longtext-gallery\"><figure><picture><img src=\"{{media:10}}\" alt=\"Site Internet DOC-BIKER - version precedente\" loading=\"lazy\"></picture><figcaption>Premi&egrave;re version HTML con&ccedil;ue pour rendre le site visible par les moteurs.</figcaption></figure><figure><picture><img src=\"{{media:0}}\" alt=\"Site Internet DOC-BIKER - home page refondue\" loading=\"lazy\"></picture><figcaption>Home page refondue : une entr&eacute;e plus claire vers les centres, les forfaits et la demande de devis.</figcaption></figure></div><div class=\"project-longtext-copy\"><h3>UX</h3><p>L&#39;UX a &eacute;t&eacute; travaill&eacute;e autour des besoins les plus concrets des visiteurs : localiser un centre, comprendre les prestations propos&eacute;es, consulter les forfaits et demander un devis sans friction.</p><p>La pr&eacute;sence de pages d&eacute;di&eacute;es aux centres, d&#39;une carte, de fiches d&eacute;taill&eacute;es et de parcours de devis clarifie la navigation et rapproche chaque visiteur de son objectif. L&#39;adaptation mobile permet en plus de conserver ce niveau de lisibilit&eacute; dans un contexte de consultation rapide.</p></div><div class=\"project-longtext-gallery\"><figure><picture><img src=\"{{media:1}}\" alt=\"Site Internet DOC-BIKER - reseau de centres\" loading=\"lazy\"></picture><figcaption>Le r&eacute;seau de centres devient un point d&#39;entr&eacute;e clair dans le parcours.</figcaption></figure><figure><picture><img src=\"{{media:8}}\" alt=\"Site Internet DOC-BIKER - fiche centre\" loading=\"lazy\"></picture><figcaption>Chaque fiche centre rassemble services, horaires et coordonn&eacute;es dans un seul &eacute;cran.</figcaption></figure></div><div class=\"project-longtext-copy\"><h3>Int&eacute;gration</h3><p>La solution repose sur un th&egrave;me Joomla construit &agrave; partir du blank template T3 et adapt&eacute; &agrave; Bootstrap 3. Ce socle technique a permis d&#39;int&eacute;grer les maquettes, de d&eacute;ployer des gabarits coh&eacute;rents et de faire &eacute;voluer le site dans le temps.</p><p>Des extensions propri&eacute;taires et une interface d&#39;administration sur mesure ont &eacute;t&eacute; mises en place pour r&eacute;pondre aux besoins sp&eacute;cifiques du r&eacute;seau : gestion des centres, des forfaits, des devis et des contenus, avec un niveau d&#39;autonomie adapt&eacute; &agrave; l&#39;usage quotidien.</p></div><div class=\"project-longtext-gallery\"><figure><picture><img src=\"{{media:9}}\" alt=\"Site Internet DOC-BIKER - back office\" loading=\"lazy\"></picture><figcaption>Un back-office personnalis&eacute; pour piloter les contenus et les modules m&eacute;tiers.</figcaption></figure><figure><picture><img src=\"{{media:3}}\" alt=\"Site Internet DOC-BIKER - devis\" loading=\"lazy\"></picture><figcaption>Le module de devis traduit l&#39;int&eacute;gration technique en service concret pour l&#39;utilisateur.</figcaption></figure></div><div class=\"project-longtext-copy\"><h3>Identit&eacute; visuelle</h3><p>La refonte a aussi permis de renforcer la coh&eacute;rence visuelle de DOC-BIKER. Les &eacute;crans pr&eacute;sentent une hi&eacute;rarchie plus nette, des blocs mieux identifi&eacute;s et une lecture plus directe de l&#39;offre et des points de contact.</p><p>Le dispositif prend une dimension suppl&eacute;mentaire avec la synchronisation des visuels entre le site et les magasins physiques. Cette continuit&eacute; entre pr&eacute;sence en ligne et communication en centre consolide l&#39;identit&eacute; de marque sur l&#39;ensemble du parcours.</p></div><div class=\"project-longtext-gallery\"><figure><picture><img src=\"{{media:6}}\" alt=\"Site Internet DOC-BIKER - visuels synchronises\" loading=\"lazy\"></picture><figcaption>Des visuels pens&eacute;s pour vivre &agrave; la fois sur le site et dans les centres physiques.</figcaption></figure><figure><picture><img src=\"{{media:4}}\" alt=\"Site Internet DOC-BIKER - version mobile\" loading=\"lazy\"></picture><figcaption>La coh&eacute;rence visuelle est maintenue jusque sur les gabarits mobiles.</figcaption></figure></div><div class=\"project-longtext-copy\"><h3>SEO</h3><p>Le SEO a &eacute;t&eacute; le point d&#39;entr&eacute;e du projet et il reste l&#39;un de ses r&eacute;sultats les plus tangibles. Le passage &agrave; une structure HTML, la mise en ordre des contenus et la cr&eacute;ation de pages utiles pour les centres et les prestations ont permis de construire une base plus favorable au r&eacute;f&eacute;rencement naturel.</p><p>Ce travail a contribu&eacute; &agrave; positionner le site en premi&egrave;re page de Google sur des requ&ecirc;tes li&eacute;es &agrave; l&#39;activit&eacute; de DOC-BIKER, notamment <strong>pneus moto Paris</strong>. Ici, le SEO n&#39;est pas trait&eacute; comme une couche ajout&eacute;e apr&egrave;s coup, mais comme une cons&eacute;quence directe d&#39;une refonte utile, bien structur&eacute;e et orient&eacute;e service.</p></div><div class=\"project-longtext-gallery\"><figure><picture><img src=\"{{media:13}}\" alt=\"Site Internet DOC-BIKER - resultat SEO\" loading=\"lazy\"></picture><figcaption>Le gain de visibilit&eacute; confirme l&#39;alignement entre structure du site, contenus et besoins m&eacute;tier.</figcaption></figure><figure><picture><img src=\"{{media:11}}\" alt=\"Site Internet DOC-BIKER - contenu de conversion\" loading=\"lazy\"></picture><figcaption>Les pages de contenu participent &agrave; la fois &agrave; l&#39;information, &agrave; la conversion et au r&eacute;f&eacute;rencement.</figcaption></figure></div><div class=\"project-longtext-meta\"><div class=\"project-longtext-copy\"><h3>Missions</h3><ul><li>Refonte du site et creation du theme Joomla a partir du blank template T3</li><li>Adaptation a Bootstrap 3 et integration responsive</li><li>Developpement d&#39;extensions proprietaires</li><li>Structuration des contenus autour des centres, des forfaits et des devis</li><li>Suivi, optimisation et maintenance SEO</li><li>Mises a jour de contenus dans la duree</li><li>Mise en place d&#39;un systeme de visuels synchronise entre le site et les magasins physiques via un reseau d&#39;ecrans</li></ul></div><div class=\"project-longtext-copy\"><h3>Outils</h3><ul><li>Bootstrap</li><li>Joomla</li></ul></div><div class=\"project-longtext-copy\"><h3>Technologies</h3><ul><li>Bootstrap</li><li>Joomla</li><li>CSS</li><li>HTML</li></ul></div><div class=\"project-longtext-copy\"><h3>Points cl&eacute;s</h3><ul><li>Refonte orientee usage et exploitation metier</li><li>Parcours centre sur les centres, les forfaits et le devis</li><li>Back-office adapte a l&#39;organisation du reseau</li><li>Identite coherente entre le web et les points de vente</li><li>SEO integre a la conception du site</li></ul></div></div></div>"
+        "longtext": "<div class=\"project-longtext-block\"><div class=\"project-longtext-copy\"><h3>Vue d'ensemble</h3><p><strong>DOC-BIKER</strong> est un projet de type Site Internet r&eacute;alis&eacute; en 2014 pour l&#39;enseigne DOC&#39;BIKER, sp&eacute;cialis&eacute;e dans l&#39;univers moto. L&#39;accompagnement s&#39;est inscrit dans la dur&eacute;e, avec un objectif clair : faire &eacute;voluer le site en un outil &agrave; la fois plus visible, plus utile pour les utilisateurs et plus simple &agrave; exploiter au quotidien.</p><p>Le point de d&eacute;part &eacute;tait un enjeu de r&eacute;f&eacute;rencement naturel. La mise en place d&#39;une base HTML a permis de sortir d&#39;une logique peu lisible par les moteurs et de construire un site capable de mieux se positionner sur les requ&ecirc;tes li&eacute;es &agrave; l&#39;activit&eacute; de la marque, notamment sur la recherche locale.</p><p>Le projet a ensuite pris la forme d&#39;une refonte plus large, avec un th&egrave;me Joomla personnalis&eacute;, un back-office adapt&eacute; &agrave; l&#39;enseigne et une organisation du contenu centr&eacute;e sur les centres, les forfaits, les devis et les informations pratiques.</p></div><figure class=\"project-longtext-hero\"><picture><source media=\"(min-width: 1180px)\" srcset=\"{{masonry_0}}\"><source media=\"(min-width: 720px)\" srcset=\"{{image}}\"><img src=\"{{masonry_1}}\" alt=\"Site Internet DOC-BIKER - visuel principal\" loading=\"lazy\"></picture><figcaption>Refonte du site DOC-BIKER : une plateforme pens&eacute;e pour guider les utilisateurs vers le bon centre, le bon forfait et la bonne action.</figcaption></figure><div class=\"project-longtext-copy\"><h3>Refonte</h3><p>La refonte ne s&#39;est pas limit&eacute;e &agrave; une mise &agrave; jour graphique. Elle a consist&eacute; &agrave; remettre &agrave; plat la structure du site pour mieux hi&eacute;rarchiser les contenus utiles et transformer le site en v&eacute;ritable support op&eacute;rationnel pour l&#39;enseigne.</p><p>Le passage d&#39;une premi&egrave;re version orient&eacute;e visibilit&eacute; SEO vers une mouture plus compl&egrave;te sous Joomla a permis de faire converger deux besoins : une meilleure pr&eacute;sence en ligne et une gestion plus fine du r&eacute;seau DOC-BIKER.</p></div><div class=\"project-longtext-gallery\"><figure><picture><img src=\"{{media:10}}\" alt=\"Site Internet DOC-BIKER - version précédente\" loading=\"lazy\"></picture><figcaption>Premi&egrave;re version HTML con&ccedil;ue pour rendre le site visible par les moteurs.</figcaption></figure><figure><picture><img src=\"{{media:0}}\" alt=\"Site Internet DOC-BIKER - home page refondue\" loading=\"lazy\"></picture><figcaption>Home page refondue : une entr&eacute;e plus claire vers les centres, les forfaits et la demande de devis.</figcaption></figure></div><div class=\"project-longtext-copy\"><h3>UX</h3><p>L&#39;UX a &eacute;t&eacute; travaill&eacute;e autour des besoins les plus concrets des visiteurs : localiser un centre, comprendre les prestations propos&eacute;es, consulter les forfaits et demander un devis sans friction.</p><p>La pr&eacute;sence de pages d&eacute;di&eacute;es aux centres, d&#39;une carte, de fiches d&eacute;taill&eacute;es et de parcours de devis clarifie la navigation et rapproche chaque visiteur de son objectif. L&#39;adaptation mobile permet en plus de conserver ce niveau de lisibilit&eacute; dans un contexte de consultation rapide.</p></div><div class=\"project-longtext-gallery\"><figure><picture><img src=\"{{media:1}}\" alt=\"Site Internet DOC-BIKER - reseau de centres\" loading=\"lazy\"></picture><figcaption>Le r&eacute;seau de centres devient un point d&#39;entr&eacute;e clair dans le parcours.</figcaption></figure><figure><picture><img src=\"{{media:8}}\" alt=\"Site Internet DOC-BIKER - fiche centre\" loading=\"lazy\"></picture><figcaption>Chaque fiche centre rassemble services, horaires et coordonn&eacute;es dans un seul &eacute;cran.</figcaption></figure></div><div class=\"project-longtext-copy\"><h3>Int&eacute;gration</h3><p>La solution repose sur un th&egrave;me Joomla construit &agrave; partir du blank template T3 et adapt&eacute; &agrave; Bootstrap 3. Ce socle technique a permis d&#39;int&eacute;grer les maquettes, de d&eacute;ployer des gabarits coh&eacute;rents et de faire &eacute;voluer le site dans le temps.</p><p>Des extensions propri&eacute;taires et une interface d&#39;administration sur mesure ont &eacute;t&eacute; mises en place pour r&eacute;pondre aux besoins sp&eacute;cifiques du r&eacute;seau : gestion des centres, des forfaits, des devis et des contenus, avec un niveau d&#39;autonomie adapt&eacute; &agrave; l&#39;usage quotidien.</p></div><div class=\"project-longtext-gallery\"><figure><picture><img src=\"{{media:9}}\" alt=\"Site Internet DOC-BIKER - back office\" loading=\"lazy\"></picture><figcaption>Un back-office personnalis&eacute; pour piloter les contenus et les modules m&eacute;tiers.</figcaption></figure><figure><picture><img src=\"{{media:3}}\" alt=\"Site Internet DOC-BIKER - devis\" loading=\"lazy\"></picture><figcaption>Le module de devis traduit l&#39;int&eacute;gration technique en service concret pour l&#39;utilisateur.</figcaption></figure></div><div class=\"project-longtext-copy\"><h3>Identit&eacute; visuelle</h3><p>La refonte a aussi permis de renforcer la coh&eacute;rence visuelle de DOC-BIKER. Les &eacute;crans pr&eacute;sentent une hi&eacute;rarchie plus nette, des blocs mieux identifi&eacute;s et une lecture plus directe de l&#39;offre et des points de contact.</p><p>Le dispositif prend une dimension suppl&eacute;mentaire avec la synchronisation des visuels entre le site et les magasins physiques. Cette continuit&eacute; entre pr&eacute;sence en ligne et communication en centre consolide l&#39;identit&eacute; de marque sur l&#39;ensemble du parcours.</p></div><div class=\"project-longtext-gallery\"><figure><picture><img src=\"{{media:6}}\" alt=\"Site Internet DOC-BIKER - visuels synchronises\" loading=\"lazy\"></picture><figcaption>Des visuels pens&eacute;s pour vivre &agrave; la fois sur le site et dans les centres physiques.</figcaption></figure><figure><picture><img src=\"{{media:4}}\" alt=\"Site Internet DOC-BIKER - version mobile\" loading=\"lazy\"></picture><figcaption>La coh&eacute;rence visuelle est maintenue jusque sur les gabarits mobiles.</figcaption></figure></div><div class=\"project-longtext-copy\"><h3>SEO</h3><p>Le SEO a &eacute;t&eacute; le point d&#39;entr&eacute;e du projet et il reste l&#39;un de ses r&eacute;sultats les plus tangibles. Le passage &agrave; une structure HTML, la mise en ordre des contenus et la cr&eacute;ation de pages utiles pour les centres et les prestations ont permis de construire une base plus favorable au r&eacute;f&eacute;rencement naturel.</p><p>Ce travail a contribu&eacute; &agrave; positionner le site en premi&egrave;re page de Google sur des requ&ecirc;tes li&eacute;es &agrave; l&#39;activit&eacute; de DOC-BIKER, notamment <strong>pneus moto Paris</strong>. Ici, le SEO n&#39;est pas trait&eacute; comme une couche ajout&eacute;e apr&egrave;s coup, mais comme une cons&eacute;quence directe d&#39;une refonte utile, bien structur&eacute;e et orient&eacute;e service.</p></div><div class=\"project-longtext-gallery\"><figure><picture><img src=\"{{media:13}}\" alt=\"Site Internet DOC-BIKER - resultat SEO\" loading=\"lazy\"></picture><figcaption>Le gain de visibilit&eacute; confirme l&#39;alignement entre structure du site, contenus et besoins m&eacute;tier.</figcaption></figure><figure><picture><img src=\"{{media:11}}\" alt=\"Site Internet DOC-BIKER - contenu de conversion\" loading=\"lazy\"></picture><figcaption>Les pages de contenu participent &agrave; la fois &agrave; l&#39;information, &agrave; la conversion et au r&eacute;f&eacute;rencement.</figcaption></figure></div><div class=\"project-longtext-meta\"><div class=\"project-longtext-copy\"><h3>Missions</h3><ul><li>Refonte du site et creation du theme Joomla a partir du blank template T3</li><li>Adaptation a Bootstrap 3 et integration responsive</li><li>Developpement d&#39;extensions proprietaires</li><li>Structuration des contenus autour des centres, des forfaits et des devis</li><li>Suivi, optimisation et maintenance SEO</li><li>Mises a jour de contenus dans la duree</li><li>Mise en place d&#39;un systeme de visuels synchronise entre le site et les magasins physiques via un reseau d&#39;ecrans</li></ul></div><div class=\"project-longtext-copy\"><h3>Outils</h3><ul><li>Bootstrap</li><li>Joomla</li></ul></div><div class=\"project-longtext-copy\"><h3>Technologies</h3><ul><li>Bootstrap</li><li>Joomla</li><li>CSS</li><li>HTML</li></ul></div><div class=\"project-longtext-copy\"><h3>Points cl&eacute;s</h3><ul><li>Refonte orientee usage et exploitation metier</li><li>Parcours centre sur les centres, les forfaits et le devis</li><li>Back-office adapte a l&#39;organisation du reseau</li><li>Identite coherente entre le web et les points de vente</li><li>SEO integre a la conception du site</li></ul></div></div></div>"
     },
     {
         "id": 61,
@@ -4387,8 +4404,7 @@
         "client": "Le Site Rock Symbol",
         "year": 2014,
         "type": [
-            "Mini-site",
-            "PluXML"
+            "Mini-site"
         ],
         "description": "Création du site Officiel de l'unique bateau Radio naviguant.",
         "link": "rock-symbol.mauriceradiolibre.com",
@@ -4410,7 +4426,9 @@
         "image": "rea_web_rocksymbol_diapo.jpg",
         "masonry_0": "mansonery_0_rocksymbol.png",
         "masonry_1": "mansonery_1_rocksymbol.png",
-        "case_image": "mansonery_0_rocksymbol.png",
+        "case_image": [
+            "mansonery_0_rocksymbol.png"
+        ],
         "portfolio_image": "mansonery_0_rocksymbol.png",
         "mediapath": "rea_web_rocksymbol",
         "thumb": "rea_web_rocksymbol_thumb.jpg",
@@ -4444,7 +4462,7 @@
         "missions": [
             ""
         ],
-        "status": "published",
+        "status": "draft",
         "order": 61,
         "caseorder": 0,
         "collection": [
@@ -4481,7 +4499,9 @@
         "image": "rea_web_bigmama_diapo.jpg",
         "masonry_0": "manson_0_big.png",
         "masonry_1": "manson_1_big.png",
-        "case_image": "manson_1_vbig.png",
+        "case_image": [
+            "manson_1_vbig.png"
+        ],
         "portfolio_image": "manson_0_big.png",
         "mediapath": "rea_web_bigmama",
         "thumb": "rea_web_bigmama_thumb.jpg",
@@ -4558,7 +4578,7 @@
         "image": "rea_web_anarlf_diapo.jpg",
         "masonry_0": "",
         "masonry_1": "",
-        "case_image": "",
+        "case_image": [],
         "portfolio_image": "",
         "mediapath": "rea_web_anarlf",
         "thumb": "rea_web_anarlf_thumb.jpg",
@@ -4608,7 +4628,9 @@
         "image": "rea_web_ilexen_diapo.png",
         "masonry_0": "manson_0_ilexen.png",
         "masonry_1": "manson_1_ilexen.png",
-        "case_image": "manson_0_ilexen.png",
+        "case_image": [
+            "manson_0_ilexen.png"
+        ],
         "portfolio_image": "manson_0_ilexen.png",
         "mediapath": "rea_web_ilexen",
         "thumb": "rea_web_ilexen_thumb.jpg",
@@ -4700,45 +4722,36 @@
         "image": "rea_web_azurdrones_diapo.png",
         "masonry_0": "manson_0_azur.png",
         "masonry_1": "manson_1_azur.png",
-        "case_image": "manson_0_azur.png",
+        "case_image": [
+            "manson_0_azur.png"
+        ],
         "portfolio_image": "manson_0_azur_v2.png",
         "mediapath": "rea_web_azurdrones",
         "thumb": "rea_web_azurdrones_thumb.jpg",
         "medias": [
             {
-                "file": "01.jpg",
+                "file": "1iphone_pc_big.png",
                 "caption": "Acceuil",
-                "width": 796,
-                "height": 472
-            },
-            {
-                "file": "02.jpg",
-                "caption": "Page solutions",
-                "width": 796,
-                "height": 472
-            },
-            {
-                "file": "03.jpg",
-                "width": 796,
-                "height": 472
-            },
-            {
-                "file": "04.jpg",
-                "caption": "Module de recherche",
-                "width": 796,
-                "height": 472
-            },
-            {
-                "file": "05.jpg",
-                "caption": "Page résultats de recherche",
-                "width": 796,
-                "height": 472
-            },
-            {
-                "file": "phone_site.png",
-                "caption": "Version smartphone",
                 "width": 912,
                 "height": 540
+            },
+            {
+                "file": "ipad_phone.png",
+                "caption": "Page intérieure",
+                "width": 990,
+                "height": 600
+            },
+            {
+                "file": "ipad_flotte.png",
+                "caption": "Page flotte",
+                "width": 990,
+                "height": 600
+            },
+            {
+                "file": "ipad_search.png",
+                "caption": "Module de recherche",
+                "width": 990,
+                "height": 600
             }
         ],
         "missions": [
@@ -4781,7 +4794,7 @@
         "image": "rea_web_domino_diapo.jpg",
         "masonry_0": "",
         "masonry_1": "",
-        "case_image": "",
+        "case_image": [],
         "portfolio_image": "",
         "mediapath": "rea_web_domino",
         "thumb": "rea_web_domino_thumb.jpg",
@@ -4802,13 +4815,13 @@
     {
         "id": 67,
         "title": "Landing Pages commerciales",
-        "client": "Divers clients",
+        "client": "Landing Pages",
         "year": 2023,
         "type": [
             "Landing page",
             "Site Wordpress"
         ],
-        "description": "",
+        "description": "Séléction de Landing Page directement connectées aux CRM (Pardot, HupSpot, Monday)",
         "link": "",
         "secteur": "",
         "Contexte": "",
@@ -4831,11 +4844,19 @@
         "image": "manson_1_landings.png",
         "masonry_0": "manson_0_landings.png",
         "masonry_1": "manson_1_landings.png",
-        "case_image": "manson_0_landings.png",
+        "case_image": [
+            "manson_0_landings.png"
+        ],
         "portfolio_image": "manson_0_landings.png",
         "mediapath": "rea_web_landings",
         "thumb": "manson_0_landings.jpg",
         "medias": [
+            {
+                "file": "landing_dilitrust00.png",
+                "caption": "Campagne pour la soltion SASS Contrats DiliTrust France ",
+                "width": 912,
+                "height": 540
+            },
             {
                 "file": "landing_dilitrust01.png",
                 "caption": "Campagne pour la soltion SASS Board Portal DiliTrust (Canada) ",
@@ -4891,7 +4912,7 @@
         "description": "Refondre sans perdre la performance : concilier design et SEO",
         "link": "",
         "secteur": "Edition de SASS",
-        "Contexte": "Dans le cadre de l’adoption d’une nouvelle identité graphique, DiliTrust souhaite une refonte complète de son site web.",
+        "Contexte": "Dans le cadre de lâ€™adoption dâ€™une nouvelle identité graphique, DiliTrust souhaite une refonte complète de son site web.",
         "Reponse": "Proposer un site contenant la nouvelle identité graphique, tout en conservant la valeur ajoutée de l'existant.",
         "outils": [
             "Adobe XD",
@@ -4911,8 +4932,12 @@
         ],
         "image": "rea_web_dilitrust_diapo.png",
         "masonry_0": "manson_0_dilitrust.png",
-        "masonry_1": "manson_1_dilitrust.png",
-        "case_image": "manson_1_dilitrust.png",
+        "masonry_1": "manson_1_dilitrust.webp",
+        "case_image": [
+            "case_studie_01.png",
+            "case_studie_02.png",
+            "case_studie_03.png"
+        ],
         "portfolio_image": "manson_0_dilitrust.png",
         "mediapath": "rea_web_dilitrust",
         "thumb": "rea_web_dilitrust_thumb.png",
@@ -4956,6 +4981,6 @@
             "portfolio",
             "case-study"
         ],
-        "longtext": "<div class=\"project-longtext-block\"><div class=\"project-longtext-copy\"><h3>Vue d'ensemble</h3><p><strong>DiliTrust</strong> est un projet de type Site Internet r&eacute;alis&eacute; en 2023. Cette r&eacute;alisation s'inscrit dans le secteur Edition de SASS avec une attention particuli&egrave;re port&eacute;e &agrave; la clart&eacute; du parcours, &agrave; la qualit&eacute; visuelle et &agrave; la mise en valeur du contenu.</p><p>Refondre sans perdre la performance : concilier design et SEO</p><p>Dans le cadre de l’adoption d’une nouvelle identité graphique, DiliTrust souhaite une refonte complète de son site web.</p><p>Proposer un site contenant la nouvelle identité graphique, tout en conservant la valeur ajoutée de l&#39;existant.</p></div><figure class=\"project-longtext-hero\"><picture><source media=\"(min-width: 1180px)\" srcset=\"{{masonry_0}}\"><source media=\"(min-width: 720px)\" srcset=\"{{image}}\"><img src=\"{{masonry_1}}\" alt=\"Refonte du site web DiliTrust - visuel principal\" loading=\"lazy\"></picture><figcaption>Refonte du site web DiliTrust : synth&egrave;se visuelle du projet et de ses principaux &eacute;crans.</figcaption></figure><div class=\"project-longtext-gallery\"><figure><picture><img src=\"{{media:0}}\" alt=\"Refonte du site web DiliTrust - vue 1\" loading=\"lazy\"></picture><figcaption>Ancienne version du site</figcaption></figure><figure><picture><img src=\"{{media:1}}\" alt=\"Refonte du site web DiliTrust - vue 2\" loading=\"lazy\"></picture><figcaption>Nouvelle charte graphique</figcaption></figure></div><div class=\"project-longtext-meta\"><div class=\"project-longtext-copy\"><h3>Missions</h3><ul><li>Validation d&#39;un principe d&#39;UX</li><li>Création d&#39;un nouveau template WorPress sur une base UI validée</li><li>Intégration / montage de la nouvelle identité graphique</li><li>Implémentation des datas dans la nouvelle mouture après validation du prototype</li><li>Mise en service de la nouvelle mouture, qui conserve la valeur SEO et les performances acquises.</li></ul></div><div class=\"project-longtext-copy\"><h3>Outils</h3><ul><li>Adobe XD</li><li>Pack Adobe</li><li>Vagrant</li><li>Visual Studio Code</li></ul></div><div class=\"project-longtext-copy\"><h3>Technologies</h3><ul><li>LESS</li><li>Bootstrap</li><li>CSS</li><li>SCSS</li><li>HTML</li><li>Javascript / jQuery</li><li>PHP</li><li>MySQL</li></ul></div></div></div>"
+        "longtext": "<div class=\"project-longtext-block\"><div class=\"project-longtext-copy\"><h3>Vue d'ensemble</h3><p><strong>DiliTrust</strong> est un projet de type Site Internet r&eacute;alis&eacute; en 2023. Cette r&eacute;alisation s'inscrit dans le secteur Edition de SASS avec une attention particuli&egrave;re port&eacute;e &agrave; la clart&eacute; du parcours, &agrave; la qualit&eacute; visuelle et &agrave; la mise en valeur du contenu.</p><p>Refondre sans perdre la performance : concilier design et SEO</p><p>Dans le cadre de lâ€™adoption dâ€™une nouvelle identité graphique, DiliTrust souhaite une refonte complète de son site web.</p><p>Proposer un site contenant la nouvelle identité graphique, tout en conservant la valeur ajoutée de l&#39;existant.</p></div><figure class=\"project-longtext-hero\"><picture><source media=\"(min-width: 1180px)\" srcset=\"{{masonry_0}}\"><source media=\"(min-width: 720px)\" srcset=\"{{image}}\"><img src=\"{{masonry_1}}\" alt=\"Refonte du site web DiliTrust - visuel principal\" loading=\"lazy\"></picture><figcaption>Refonte du site web DiliTrust : synth&egrave;se visuelle du projet et de ses principaux &eacute;crans.</figcaption></figure><div class=\"project-longtext-gallery\"><figure><picture><img src=\"{{media:0}}\" alt=\"Refonte du site web DiliTrust - vue 1\" loading=\"lazy\"></picture><figcaption>Ancienne version du site</figcaption></figure><figure><picture><img src=\"{{media:1}}\" alt=\"Refonte du site web DiliTrust - vue 2\" loading=\"lazy\"></picture><figcaption>Nouvelle charte graphique</figcaption></figure></div><div class=\"project-longtext-meta\"><div class=\"project-longtext-copy\"><h3>Missions</h3><ul><li>Validation d&#39;un principe d&#39;UX</li><li>Création d&#39;un nouveau template WorPress sur une base UI validée</li><li>Intégration / montage de la nouvelle identité graphique</li><li>Implémentation des datas dans la nouvelle mouture après validation du prototype</li><li>Mise en service de la nouvelle mouture, qui conserve la valeur SEO et les performances acquises.</li></ul></div><div class=\"project-longtext-copy\"><h3>Outils</h3><ul><li>Adobe XD</li><li>Pack Adobe</li><li>Vagrant</li><li>Visual Studio Code</li></ul></div><div class=\"project-longtext-copy\"><h3>Technologies</h3><ul><li>LESS</li><li>Bootstrap</li><li>CSS</li><li>SCSS</li><li>HTML</li><li>Javascript / jQuery</li><li>PHP</li><li>MySQL</li></ul></div></div></div>"
     }
 ]

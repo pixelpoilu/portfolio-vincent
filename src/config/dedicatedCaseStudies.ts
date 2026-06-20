@@ -1,8 +1,4 @@
-import type { ComponentType } from "react";
-
-import CaseStudyDiliTrust from "../pages/CaseStudyDiliTrust";
-import CaseStudyDocBiker from "../pages/CaseStudyDocBiker";
-import CaseStudyLocaboat from "../pages/CaseStudyLocaboat";
+import { lazy, type ComponentType, type LazyExoticComponent } from "react";
 
 import type { Project } from "../types/Project";
 
@@ -13,27 +9,27 @@ export type DedicatedCaseStudyComponent = ComponentType<{
 export type DedicatedCaseStudyConfig = {
     slug: string;
     projectId: number;
-    Component: DedicatedCaseStudyComponent;
+    Component: LazyExoticComponent<DedicatedCaseStudyComponent>;
 };
 
 const dedicatedCaseStudies: DedicatedCaseStudyConfig[] = [
     {
         slug: "refonte-du-site-web-dilitrust",
         projectId: 68,
-        Component: CaseStudyDiliTrust,
+        Component: lazy(() => import("../pages/CaseStudyDiliTrust")),
     },
 
     {
         slug: "site-internet-doc-biker",
         projectId: 60,
-        Component: CaseStudyDocBiker,
+        Component: lazy(() => import("../pages/CaseStudyDocBiker")),
     },
 
 
     {
         slug: "site-internet-locaboat",
         projectId: 50,
-        Component: CaseStudyLocaboat,
+        Component: lazy(() => import("../pages/CaseStudyLocaboat")),
     },
     
 ];

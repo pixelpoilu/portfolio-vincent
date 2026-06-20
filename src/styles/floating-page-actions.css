@@ -1,0 +1,180 @@
+.floating-page-actions {
+  position: fixed;
+  right: max(1rem, env(safe-area-inset-right));
+  bottom: max(1rem, env(safe-area-inset-bottom));
+  z-index: 90;
+  pointer-events: none;
+  opacity: 0;
+  transform: translate3d(0, 18px, 0);
+  transition:
+    opacity 0.22s ease,
+    transform 0.22s ease;
+}
+
+.floating-page-actions.is-visible {
+  pointer-events: auto;
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.floating-page-actions__inner {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.38rem;
+  border: 1px solid rgba(17, 24, 39, 0.1);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow: 0 18px 50px rgba(15, 23, 42, 0.18);
+  backdrop-filter: blur(18px);
+}
+
+.floating-page-actions__button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.7rem;
+  height: 2.7rem;
+  border: 1px solid rgba(17, 24, 39, 0.1);
+  border-radius: 999px;
+  background: #ffffff;
+  color: #171717;
+  box-shadow: 0 8px 22px rgba(15, 23, 42, 0.11);
+  cursor: pointer;
+  text-decoration: none;
+  transition:
+    width 0.22s ease,
+    background 0.18s ease,
+    color 0.18s ease,
+    border-color 0.18s ease,
+    transform 0.18s ease;
+}
+
+.floating-page-actions__button:visited {
+  color: #171717;
+}
+
+.floating-page-actions__button:hover,
+.floating-page-actions__button:focus-visible {
+  width: 10.7rem;
+  border-color: rgba(17, 24, 39, 0.92);
+  background: #171717;
+  color: #ffffff;
+  outline: none;
+  transform: translateY(-1px);
+}
+
+.floating-page-actions__button--contact:hover,
+.floating-page-actions__button--contact:focus-visible {
+  width: 7.85rem;
+}
+
+.floating-page-actions__button svg {
+  flex: 0 0 auto;
+  width: 0.98rem;
+  height: 0.98rem;
+}
+
+.floating-page-actions__button span {
+  max-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  font-family: var(--font-btn);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  opacity: 0;
+  transition:
+    max-width 0.18s ease,
+    margin-left 0.18s ease,
+    opacity 0.14s ease;
+}
+
+.floating-page-actions__button small {
+  display: none;
+}
+
+.floating-page-actions__button:hover span,
+.floating-page-actions__button:focus-visible span {
+  max-width: 8rem;
+  margin-left: 0.55rem;
+  opacity: 1;
+}
+
+@media (max-width: 767px) {
+  .floating-page-actions {
+    right: max(0.75rem, env(safe-area-inset-right));
+    bottom: max(0.75rem, env(safe-area-inset-bottom));
+    left: auto;
+  }
+
+  .floating-page-actions__inner {
+    flex-direction: column;
+    gap: 0.38rem;
+    padding: 0.36rem;
+  }
+
+  .floating-page-actions__button,
+  .floating-page-actions__button:hover,
+  .floating-page-actions__button:focus-visible,
+  .floating-page-actions__button--contact:hover,
+  .floating-page-actions__button--contact:focus-visible {
+    width: 2.58rem;
+    height: 2.58rem;
+    transform: none;
+  }
+
+  .floating-page-actions__button span {
+    position: absolute;
+    right: calc(100% + 0.55rem);
+    max-width: none;
+    margin-left: 0;
+    padding: 0.46rem 0.65rem;
+    border-radius: 999px;
+    background: rgba(23, 23, 23, 0.94);
+    color: #ffffff;
+    font-size: 0.66rem;
+    opacity: 0;
+    transform: translateX(0.3rem);
+    transition:
+      opacity 0.16s ease,
+      transform 0.16s ease;
+  }
+
+  .floating-page-actions__button:hover span,
+  .floating-page-actions__button:focus-visible span {
+    max-width: none;
+    margin-left: 0;
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1100px) {
+  .floating-page-actions {
+    right: max(1.15rem, env(safe-area-inset-right));
+    bottom: max(1.15rem, env(safe-area-inset-bottom));
+  }
+
+  .floating-page-actions__button {
+    width: 3rem;
+    height: 3rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .floating-page-actions {
+    right: max(2rem, env(safe-area-inset-right));
+    bottom: max(1.6rem, env(safe-area-inset-bottom));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .floating-page-actions,
+  .floating-page-actions__button,
+  .floating-page-actions__button span {
+    transition: none;
+  }
+}
