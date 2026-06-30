@@ -223,7 +223,7 @@ a {
 
   animation: fadeSlideDown 0.8s cubic-bezier(.22, 1, .36, 1);
 
-  background: rgba(255, 255, 255, var(--nav-bg-alpha, 0));
+  background: rgba(240, 239, 235, var(--nav-bg-alpha, 0));
   backdrop-filter: blur(20px);
 
   border: 1px solid rgba(255, 255, 255, 0.4);
@@ -509,6 +509,7 @@ a {
 }
 
 @media (prefers-reduced-motion: reduce) {
+
   .mobile-nav-overlay,
   .mobile-nav-panel,
   .mobile-nav-link-item {

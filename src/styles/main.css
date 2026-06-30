@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+@theme {
+   --last-pantone: #f0efeb;
+   /*2026 color-cloud-dancer*/
+}
+
 /* Tailwind handles ordinary layout in components.
    The CSS imports below are reserved for global tokens and complex visual systems. */
 @import "./base.css";

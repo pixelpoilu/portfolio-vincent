@@ -295,6 +295,19 @@
   transform: translateY(0);
   opacity: 1;
   transition-delay: 0.04s;
+  color: #fff;
+}
+
+.case-studies-page .project-card:hover h3.card-title,
+.case-studies-page .project-card:focus-within h3.card-title {
+  transform: translateY(0);
+  opacity: 1;
+  transition-delay: 0.04s;
+  color: #fff;
+}
+
+.card-content h3 {
+  color: #fff;
 }
 
 .case-studies-page .project-card:hover .card-type,
@@ -346,7 +359,7 @@
 @media (hover: none) {
   .card-content {
     opacity: 1;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.18));
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8));
   }
 }
 

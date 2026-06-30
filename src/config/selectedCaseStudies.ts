@@ -29,7 +29,7 @@ export const selectedCaseStudies: CaseStudyHighlight[] = [
       "Back-office enrichi pour piloter les contenus",
       "SEO, catalogue et parcours client harmonisés",
     ],
-    accent: "from-[#1b1715] via-[#b45f13] to-[#ffd23c]",
+    accent: "from-[#fe6a00] via-[#004d92] to-[#facc00]",
   },
   {
     id: 50,

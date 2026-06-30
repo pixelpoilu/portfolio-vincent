@@ -23,6 +23,7 @@ import { IoArrowRedo } from "react-icons/io5";
 
 import grainTexture from "../assets/images/textures/grain.webp";
 import CaseStudyProjectData from "../components/CaseStudyProjectData";
+import Footer from "../components/Footer";
 import projectsData from "../data/project-prod.json";
 import type { Project } from "../types/Project";
 import { lazyImageProps, priorityImageProps } from "../utils/imageLoading";
@@ -1013,6 +1014,8 @@ export default function CaseStudyLocaboat({
                     </motion.div>
                 </div>
             </section>
+
+            <Footer />
 
             <Lightbox
                 src={lightboxState.src}

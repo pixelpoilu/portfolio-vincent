@@ -44,7 +44,7 @@ export default function Hero() {
   return (
     <main
       className="sm:relative h-[calc(100vh+200px)] overflow-hidden sm:h-auto"
-      style={{ background: "#f0eeed" }}
+      style={{ background: "#f0efeb" }}
     >
       <div className="hidden md:block z-9999 absolute translate-x-1/15 -translate-y-1/15 top-1/15 left-1/15">
         <Logo className="
@@ -95,7 +95,7 @@ export default function Hero() {
               cohérentes et performantes.
             </p>
             <p className="hidden sm:block">
-              Product Designer orienté UI, je conçois des interfaces claires, cohérentes et performantes, où vision, usage et exécution avancent ensemble.
+              <strong>Je conçois des plateformes web utiles, performantes et durables.</strong><br />Depuis plus de 25 ans, j'aide les entreprises à transformer des besoins métier complexes en expériences numériques simples, efficaces et évolutives.
             </p>
             <div className="mt-4 flex flex-wrap gap-[0.62rem] justify-end md:justify-start  max-[380px]:gap-0.75 max-[380px]:m-0 max-[380px]:justify-center ">
               <Link

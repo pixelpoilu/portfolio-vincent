@@ -77,12 +77,12 @@ export default function CaseStudies() {
 
   return (
     <PageTransition>
-      <div className="site-page case-studies-page bg-[#f5f2ec] text-neutral-950">
+      <div className="site-page case-studies-page bg-[#f0efeb] text-neutral-950">
         <main className="mx-auto grid w-full max-w-[1440px] gap-12 px-4 pb-24 pt-28 sm:px-6 lg:px-10">
           <header className="case-study-reveal grid gap-5 border-b border-black/10 pb-8 md:grid-cols-[minmax(0,0.72fr)_minmax(280px,0.28fr)] md:items-end">
             <div className="grid gap-4">
               <p className="text-[0.75rem] font-semibold uppercase tracking-[0.34em] text-neutral-500">
-                Etudes de cas
+                Ètudes de cas
               </p>
               <h1
                 className="max-w-5xl text-[clamp(3rem,7vw,6.5rem)] leading-[0.9] tracking-[-0.055em]"
@@ -92,8 +92,7 @@ export default function CaseStudies() {
               </h1>
             </div>
             <p className="max-w-xl text-base leading-7 text-neutral-600 md:text-lg">
-              Une sélection courte pour comprendre la démarche, les choix de
-              conception et les résultats sans alourdir la lecture.
+              Refonte SaaS, parcours client et écosystème tourisme : retrouvez, à travers ces cas, mon approche, ma démarche et mes résultats.
             </p>
           </header>
 

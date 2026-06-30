@@ -76,18 +76,18 @@ export default function ProjectCard({
                                 </div>
                             )}
                             <div
-                                className="card-image card-image-fallback aspect-4/5 bg-linear-to-br from-slate-200 to-slate-300"
+                                className="card-image card-image-fallback aspect-square bg-linear-to-br from-white to---last-pantone"
                                 aria-hidden="true"
                             />
                         </>
                     )}
 
-                    <div className="card-content pointer-events-none absolute inset-0 flex flex-col bg-linear-to-t from-black/60 via-black/50 to-black/90 p-6 opacity-0 transition duration-200 group-hover:opacity-100 group-focus-within:opacity-100">
-                        <h3 className="card-title mt-5 max-w-[90%] text-[1.25rem] leading-[1.1] text-white text-balance">
+                    <div className="card-content pointer-events-none absolute inset-0 flex flex-col bg-linear-to-t from-black/80 via-black/70 to-black/90 p-6 opacity-0 transition duration-200 group-hover:opacity-100 group-focus-within:opacity-100  text-white">
+                        <h3 className="card-title mt-5 max-w-[90%] text-[1.25rem] leading-[1.1] text-balance  text-white">
                             {project.client}
                         </h3>
-                        <span className="card-type text-[0.92rem] font-medium opacity-90">
-                            {formatProjectTypes(project)} - {project.order}
+                        <span className="card-type text-[0.92rem] font-medium opacity-90 text-white">
+                            {formatProjectTypes(project)} - id:{project.id} - order:{project.order}
                         </span>
                         <span
                             className="card-cta ml-auto mt-auto inline-flex h-11 w-11 items-center justify-center text-2xl leading-none text-white"

@@ -8,7 +8,7 @@ const CloseIcon = RiCloseLine as unknown as ComponentType<{ className?: string }
 const shellClassName =
   "mx-auto w-[96%] max-w-[1150px]";
 const stickyPanelClassName =
-  "sticky z-[900] mt-2.5 mb-5 w-full border border-white/40 bg-white/70 backdrop-blur-xl shadow-[0_10px_40px_rgba(0,0,0,var(--nav-shadow-opacity,0)),inset_0_1px_0_rgba(255,255,255,var(--nav-inset-opacity,0))] top-[72px] max-[640px]:top-[112px]";
+  "sticky z-[900] mt-0 mb-5 w-full border border-white/40 bg-white/70 backdrop-blur-xl shadow-[0_10px_40px_rgba(0,0,0,var(--nav-shadow-opacity,0)),inset_0_1px_0_rgba(255,255,255,var(--nav-inset-opacity,0))] top-[72px] max-[640px]:top-[0px]";
 const controlBaseClassName =
   "inline-flex min-h-9 items-center gap-2 border border-slate-300 bg-white px-3 py-2 text-[13px] font-medium leading-none text-slate-700 transition duration-200 hover:border-slate-500 hover:text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-300";
 const controlActiveClassName =
@@ -143,7 +143,7 @@ export default function FilterBar({
         <div className="mb-2.5">
           <input
             type="text"
-            className="min-h-10 w-full border border-slate-300 bg-white px-3.5 text-sm text-slate-800 transition duration-200 placeholder:text-slate-400 focus:border-blue-300 focus:outline-none focus:ring-4 focus:ring-blue-300/20"
+            className="min-h-10 w-auto min-w-3/4 border border-slate-300 bg-white px-3.5 text-sm text-slate-800 transition duration-200 placeholder:text-slate-400 focus:border-blue-300 focus:outline-none focus:ring-4 focus:ring-blue-300/20"
             placeholder="Rechercher un projet, client, techno..."
             value={searchQuery}
             onChange={(event) => onSearchChange(event.target.value)}

@@ -37,6 +37,7 @@ const VolumeOffIcon =
   IoIosVolumeOff as unknown as ComponentType<{ className?: string }>;
 
 const selectedCaseStudyIds = new Set(selectedCaseStudies.map((caseStudy) => caseStudy.id));
+const MAX_VISIBLE_PROJECTS = 45;
 
 const projectImageModules = import.meta.glob<{ default: string }>(
   "../assets/images/projects/**/*.{jpg,jpeg,png,webp,avif}"
@@ -85,6 +86,71 @@ const normalizeText = (value: string) =>
 
 const sortAlphabetically = (values: string[]) =>
   [...values].sort((a, b) => a.localeCompare(b, "fr", { sensitivity: "base" }));
+
+const TYPE_PRIORITY = [
+  "Sites administrés (CMS)",
+  "Sites from scratch",
+  "Landing pages",
+  "Sites One page",
+  "Applicatifs propriétaire",
+  "Supports print",
+  "Sites statiques",
+  "Newsletters",
+  "Mini-sites",
+  "Cartes interactives",
+  "Jeux interactifs",
+  "Brochures Online",
+  "Pubs on line",
+  "Applis en Flash",
+  "ScreenSavers",
+];
+
+const TOOL_PRIORITY = [
+  "WordPress",
+  "Visual Studio Code",
+  "Adobe XD",
+  "Vagrant",
+  "Pardot",
+  "Salesforce",
+  "Pack Adobe",
+  "Photoshop",
+  "Illustrator",
+  "Joomla",
+  "PluXML",
+  "CMS Propriétaire",
+  "Eclipse",
+  "Dreamweaver",
+];
+
+const TECHNOLOGY_PRIORITY = [
+  "HTML",
+  "CSS",
+  "JavaScript / jQuery",
+  "PHP",
+  "MySQL",
+  "SCSS",
+  "LESS",
+  "Bootstrap",
+  "XML",
+  "Zend",
+  "jQuery Mobile",
+  "Quicktime VR",
+  "GIF Animé",
+  "Flex",
+  "ActionScript",
+  "Tween Zigo",
+];
+
+const sortByPriority = (values: string[], priority: string[]) => {
+  const priorityByValue = new Map(priority.map((value, index) => [value, index]));
+
+  return [...values].sort((a, b) => {
+    const rankA = priorityByValue.get(a) ?? Number.POSITIVE_INFINITY;
+    const rankB = priorityByValue.get(b) ?? Number.POSITIVE_INFINITY;
+
+    return rankA - rankB || a.localeCompare(b, "fr", { sensitivity: "base" });
+  });
+};
 
 type SlideshowSlide = {
   src: string;
@@ -137,7 +203,7 @@ export default function Projects({
     publishedProjects.forEach((project) => {
       project.technologies.forEach((tech) => techSet.add(tech));
     });
-    return sortAlphabetically(Array.from(techSet));
+    return sortByPriority(Array.from(techSet), TECHNOLOGY_PRIORITY);
   }, [publishedProjects]);
 
   const allTools = useMemo(() => {
@@ -145,7 +211,7 @@ export default function Projects({
     publishedProjects.forEach((project) => {
       project.outils.forEach((tool) => toolSet.add(tool));
     });
-    return sortAlphabetically(Array.from(toolSet));
+    return sortByPriority(Array.from(toolSet), TOOL_PRIORITY);
   }, [publishedProjects]);
 
   const allTypes = useMemo(() => {
@@ -153,7 +219,7 @@ export default function Projects({
     publishedProjects.forEach((project) => {
       getProjectTypes(project).forEach((type) => typeSet.add(type));
     });
-    return sortAlphabetically(Array.from(typeSet));
+    return sortByPriority(Array.from(typeSet), TYPE_PRIORITY);
   }, [publishedProjects]);
 
   const allSectors = useMemo(() => {
@@ -345,9 +411,11 @@ export default function Projects({
   ]);
 
   const visibleProjects = useMemo(
-    () => filteredProjects.slice(0, visibleProjectCount),
+    () => filteredProjects.slice(0, Math.min(visibleProjectCount, MAX_VISIBLE_PROJECTS)),
     [filteredProjects, visibleProjectCount]
   );
+
+  const displayProjectCount = Math.min(filteredProjects.length, MAX_VISIBLE_PROJECTS);
 
   useEffect(() => {
     const mediaQuery = window.matchMedia("(max-width: 640px)");
@@ -467,7 +535,7 @@ export default function Projects({
 
   useEffect(() => {
     const sentinel = loadMoreRef.current;
-    if (!sentinel || visibleProjectCount >= filteredProjects.length) {
+    if (!sentinel || visibleProjectCount >= displayProjectCount) {
       return;
     }
 
@@ -478,7 +546,7 @@ export default function Projects({
         }
 
         setVisibleProjectCount((current) =>
-          Math.min(current + projectBatchSize, filteredProjects.length)
+          Math.min(current + projectBatchSize, displayProjectCount)
         );
       },
       { rootMargin: "600px 0px" }
@@ -486,7 +554,7 @@ export default function Projects({
 
     observer.observe(sentinel);
     return () => observer.disconnect();
-  }, [filteredProjects.length, projectBatchSize, visibleProjectCount]);
+  }, [displayProjectCount, projectBatchSize, visibleProjectCount]);
 
   const resolveProjectSlides = useCallback(async (project: Project): Promise<SlideshowSlide[]> => {
     const slides: SlideshowSlide[] = [];
@@ -784,8 +852,8 @@ export default function Projects({
   };
   const introCopy =
     collectionKey === "portfolio"
-      ? "Decouvrez une selection de projets sur-mesure, concus pour des marques qui veulent se distinguer."
-      : "Plongez dans les etudes de cas pour comprendre la demarche, les choix et les resultats.";
+      ? "Découvrez une sélection de projets sur-mesure, conçus pour des marques qui veulent se distinguer."
+      : "Plongez dans les études de cas pour comprendre la démarche, les choix et les résultats.";
 
   return (
     <PageTransition>
@@ -812,9 +880,6 @@ export default function Projects({
             <div className="max-w-3xl text-[15px] leading-[1.6] text-[#555]">
               <p>{introCopy}</p>
             </div>
-            <span className="shrink-0 text-sm tracking-[0.2px] text-slate-500">
-              {filteredProjects.length} projet{filteredProjects.length > 1 ? "s" : ""}
-            </span>
           </div>
 
           <motion.div layout className="projects-grid">
@@ -845,11 +910,11 @@ export default function Projects({
               ))}
             </AnimatePresence>
           </motion.div>
-          {visibleProjectCount < filteredProjects.length && (
+          {visibleProjectCount < displayProjectCount && (
             <div ref={loadMoreRef} className="h-10 w-full" aria-hidden="true" />
           )}
         </section>
-        {createPortal(
+        {typeof document !== "undefined" ? createPortal(
           <AnimatePresence>
             {isSlideshowOpen && slideshowProject && currentSlide && (
               <motion.div
@@ -1029,7 +1094,7 @@ export default function Projects({
             )}
           </AnimatePresence>,
           document.body
-        )}
+        ) : null}
         <Footer />
       </div>
     </PageTransition>

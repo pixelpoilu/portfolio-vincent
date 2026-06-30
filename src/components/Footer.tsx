@@ -5,10 +5,10 @@ import { FaPinterest } from "@react-icons/all-files/fa/FaPinterest";
 import type { ComponentPropsWithoutRef } from "react";
 
 const socialLinks = [
-  { href: "https://www.facebook.com", label: "Facebook", Icon: FaFacebookF },
-  { href: "https://www.instagram.com", label: "Instagram", Icon: FaInstagram },
-  { href: "https://www.linkedin.com", label: "LinkedIn", Icon: FaLinkedinIn },
-  { href: "https://www.pinterest.com", label: "Pinterest", Icon: FaPinterest },
+  { href: "https://www.linkedin.com/in/vincent-lepretre/", label: "LinkedIn", Icon: FaLinkedinIn },
+  { href: "https://www.instagram.com/pixelpoilu/", label: "Instagram", Icon: FaInstagram },
+  { href: "https://fr.pinterest.com/lepretre1091/", label: "Pinterest", Icon: FaPinterest },
+  { href: "https://www.facebook.com/vincent.lepretre", label: "Facebook", Icon: FaFacebookF },
 ];
 
 type FooterProps = ComponentPropsWithoutRef<"footer">;
@@ -23,14 +23,14 @@ export default function Footer({ className = "", ...props }: FooterProps) {
       {...props}
     >
       <p className="m-0 text-sm leading-5 text-(--mycolor-black) md:col-2 md:justify-self-center">
-        &copy; {year} copyright{" "}
+        &copy; {year} • copyright{" "}
         <a
-          href="https://vincent-lepretre.fr"
+          href="https://www.vincent-lepretre.fr"
           className="text-[#2f5e9d] transition hover:underline"
         >
-          vincent-lepretre.fr
-        </a>{" "}
-        Tous droits reserves
+          www.vincent-lepretre.fr
+        </a>{" "} •
+        Tous droits reservés
       </p>
       <ul className="m-0 flex list-none items-center justify-center gap-[1.1rem] p-0 md:col-3 md:justify-self-end">
         {socialLinks.map(({ href, label, Icon }) => (

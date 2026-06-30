@@ -17,6 +17,7 @@ import {
     useRef,
     useState,
 } from "react";
+import Footer from "../components/Footer";
 
 const AccordionOpenContext = createContext(false);
 
@@ -1526,6 +1527,8 @@ export default function CaseStudyDiliTrust({
                     </motion.div>
                 </div>
             </section>
+            <Footer />
+
             {/* Lightbox Component */}
             <Lightbox
                 src={lightboxState.src}
