@@ -21,9 +21,9 @@ const dedicatedCaseStudySlugs = new Map<number, string>([
 const staticSeoRoutes: SeoRoute[] = [
   {
     path: "/",
-    title: "Vincent Leprêtre — Product Designer UX/UI & Front-end",
+    title: "Vincent Leprêtre — UX/UI design & web expertise",
     description:
-      "Portfolio de Vincent Leprêtre, Product Designer UX/UI et développeur front-end : études de cas, interfaces et projets digitaux.",
+      "Portfolio de Vincent Leprêtre, Senior UX/UI designer & web expert : études de cas, interfaces et projets digitaux.",
     openGraphType: "website",
   },
   {
@@ -49,7 +49,7 @@ const staticSeoRoutes: SeoRoute[] = [
   },
   {
     path: "/contact",
-    title: "Contact — Vincent Leprêtre, Product Designer UX/UI",
+    title: "Contact — Vincent Leprêtre, Senior UX/UI designer & web expert",
     description:
       "Contactez Vincent Leprêtre pour une opportunité en Product Design, UX/UI, webmastering ou développement front-end.",
     openGraphType: "website",

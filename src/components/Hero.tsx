@@ -7,27 +7,12 @@ import Logo from "./Logo";
 
 const DeferredFooter = lazy(() => import("./Footer"));
 
-const heroRoles = [
-  "WEBMASTER FRONT UX/UI",
-  "VISUAL PRODUCT DESIGNER",
-  "DESIGNER D'INTERFACES",
-];
-
 const dilitrustCaseStudyPath = "/etudes-de-cas/refonte-du-site-web-dilitrust";
 const docbikerCaseStudyPath = "/etudes-de-cas/site-internet-doc-biker";
 
 export default function Hero() {
   const [isPortraitLoaded, setIsPortraitLoaded] = useState(false);
-  const [activeRoleIndex, setActiveRoleIndex] = useState(0);
   const [shouldRenderFooter, setShouldRenderFooter] = useState(false);
-
-  useEffect(() => {
-    const intervalId = window.setInterval(() => {
-      setActiveRoleIndex((current) => (current + 1) % heroRoles.length);
-    }, 2600);
-
-    return () => window.clearInterval(intervalId);
-  }, []);
 
   useEffect(() => {
     const renderFooter = () => setShouldRenderFooter(true);
@@ -76,22 +61,16 @@ export default function Hero() {
           <span
             className="py-2 my-0  block min-h-[1.2rem] overflow-hidden text-[0.75rem] leading-[1.2] tracking-[0.18em] text-[#6d7b8a] 
             md:inline lg:mt-5 lg:text-[14px] lg:tracking-[4px]  md:pt-5"
-            aria-live="polite"
           >
-            <span className="relative block min-h-[1.2rem] w-full">
-              <span
-                key={heroRoles[activeRoleIndex]}
-                className="hero-role-reveal absolute block left-1/2 whitespace-nowrap mb-3 mt-2 transform -translate-x-1/2  -translate-y-1/2 md:translate-x-1  md:translate-y-1  md:left-0 md:top-0 md:mb-3 md:mt-2"
-              >
-                {heroRoles[activeRoleIndex]}
-              </span>
+            <span className="block whitespace-nowrap mb-3 mt-2 md:translate-x-1 md:translate-y-1">
+              UX/UI DESIGN &amp; WEB EXPERTISE
             </span>
           </span>
           <div className="mb-2 h-px w-auto lg:w-16 bg-[#222] lg:my-7.5 
           md:w-20 md:mt-6 md:mb-4 md:h-px " />
           <div id="homeLinks" className="text-center text-base leading-[1.55] text-[#555] md:text-left lg:max-w-105 lg:text-lg lg:leading-[1.7]">
             <p className="block sm:hidden">
-              Product Designer orienté UI, je conçois des interfaces claires,
+              Expert Plateformes Web, je conçois des interfaces claires,
               cohérentes et performantes.
             </p>
             <p className="hidden sm:block">

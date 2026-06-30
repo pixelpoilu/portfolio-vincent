@@ -11,7 +11,7 @@ export default function Layout({ children }: Props) {
         <nav>
           <Link to="/">Accueil</Link> |{" "}
           <Link to="/portfolio">Portfolio</Link> |{" "}
-          <Link to="/etudes-de-cas">Etude de cas</Link>
+          <Link to="/etudes-de-cas">Étude de cas</Link>
         </nav>
       </header>
 

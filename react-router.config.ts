@@ -28,6 +28,10 @@ export default {
   appDirectory: "src",
   buildDirectory: "dist",
   ssr: false,
+  future: {
+    v8_middleware: true,
+    v8_viteEnvironmentApi: true,
+  },
   prerender: {
     paths: prerenderPaths,
     concurrency: 4,

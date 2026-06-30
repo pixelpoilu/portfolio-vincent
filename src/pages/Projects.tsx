@@ -968,7 +968,7 @@ export default function Projects({
                               navigate(slideshowCaseStudyPath);
                             }}
                           >
-                            <span>Voir l'etude de cas</span>
+                            <span>Voir l'étude de cas</span>
                             <ArrowUpRight className="shrink-0" />
                           </button>
                         )}

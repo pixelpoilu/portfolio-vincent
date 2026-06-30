@@ -139,7 +139,7 @@ export default function ContactForm() {
                                     Une opportunité à me proposer ?
                                 </h1>
                                 <p className="max-w-xl text-[clamp(1.08rem,2.5vw,1.6rem)] leading-normal tracking-[-0.03em] text-neutral-700">
-                                    Vous recrutez un UX/UI Designer, Product Designer, Webmaster Senior ou Front-End Developer ?
+                                    Vous recrutez un Senior UX/UI designer ?
                                 </p>
                                 <p className="max-w-xl tracking-[-0.03em] text-neutral-700 contact-text">
                                     Je suis ouvert aux opportunités de travail, principalement en Île-de-France ou en télétravail hybride.
