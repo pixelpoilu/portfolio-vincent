@@ -87,12 +87,6 @@
   display: none;
 }
 
-.home-wordmark {
-  width: 180px;
-  height: auto;
-  fill: var(--mycolor-black);
-}
-
 .loader-circle {
   fill: none;
   stroke: white;
@@ -141,10 +135,6 @@
   .page-transition {
     animation-duration: 0.01ms;
   }
-}
-
-.is-loading {
-  opacity: 0;
 }
 
 .is-loaded {

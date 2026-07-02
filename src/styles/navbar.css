@@ -453,13 +453,6 @@ a {
   box-shadow: 0 16px 30px rgba(0, 0, 0, 0.25);
 }
 
-.mobile-nav-meta {
-  font-size: 0.75rem;
-  letter-spacing: 0.24em;
-  text-transform: uppercase;
-  color: rgba(247, 244, 239, 0.6);
-}
-
 /* ================= ANIMATION ================= */
 
 @keyframes fadeSlideDown {
