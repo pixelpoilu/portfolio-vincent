@@ -13,6 +13,10 @@ dist
 dist-ssr
 *.local
 
+# Large local export/source files (GitHub limit: 100 MB)
+/portfolio-react-ftp.zip
+/src/assets/images/projects/rea_web_docbiker/caseStudy_hero.psd
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
