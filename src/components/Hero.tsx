@@ -1,4 +1,4 @@
-import { lazy, Suspense, useEffect, useState } from "react";
+import { lazy, Suspense, useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import portrait from "../assets/images/hero/portrait-bw-tel.webp";
 import portraitMD from "../assets/images/hero/portrait-bw-md.webp";
@@ -13,6 +13,15 @@ const docbikerCaseStudyPath = "/etudes-de-cas/site-internet-doc-biker";
 export default function Hero() {
   const [isPortraitLoaded, setIsPortraitLoaded] = useState(false);
   const [shouldRenderFooter, setShouldRenderFooter] = useState(false);
+  const portraitRef = useRef<HTMLImageElement>(null);
+
+  useEffect(() => {
+    // With SSR hydration, the eager image can finish loading before React has
+    // attached onLoad. In that case no event reaches the component.
+    if (portraitRef.current?.complete) {
+      setIsPortraitLoaded(true);
+    }
+  }, []);
 
   useEffect(() => {
     const renderFooter = () => setShouldRenderFooter(true);
@@ -130,6 +139,7 @@ export default function Hero() {
             <source media="(min-width: 1280px)" srcSet={portraitHD} />
             <source media="(min-width: 768px)" srcSet={portraitMD} />
             <img
+              ref={portraitRef}
               src={portrait}
               alt="Vincent Lepretre"
               className={`h-auto w-full max-w-155 object-contain transition-opacity duration-300 max-[900px]:max-h-[56svh] md:max-w-[50vw] lg:max-h-160 max-[380px]:overflow-visible ${isPortraitLoaded ? "opacity-100" : "opacity-0"
