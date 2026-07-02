@@ -3203,11 +3203,11 @@
             "Sites statiques",
             "Sites from scratch"
         ],
-        "description": "Refondre sans perdre la performance : concilier design et SEO",
+        "description": "",
         "link": "",
         "secteur": "Puériculture",
-        "Contexte": "Dans le cadre de lâ€™adoption dâ€™une nouvelle identité graphique, DiliTrust souhaite une refonte complète de son site web.",
-        "Reponse": "Proposer un site contenant la nouvelle identité graphique, tout en conservant la valeur ajoutée de l'existant.",
+        "Contexte": "",
+        "Reponse": "",
         "outils": [
             "Adobe XD",
             "Pack Adobe",
@@ -3223,7 +3223,7 @@
             "PHP",
             "MySQL"
         ],
-        "image": "rea_web_dilitrust_diapo.png",
+        "image": "manson_0_baba.png",
         "masonry_0": "manson_0_baba.png",
         "masonry_1": "manson_1_baba.png",
         "case_image": [
@@ -3231,7 +3231,7 @@
         ],
         "portfolio_image": "manson_0_baba_big_v2.png",
         "mediapath": "rea_web_baba",
-        "thumb": "rea_web_dilitrust_thumb.png",
+        "thumb": "manson_0_baba.png",
         "medias": [
             {
                 "file": "PC_IE7.jpg",
