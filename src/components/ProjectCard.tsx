@@ -58,7 +58,16 @@ export default function ProjectCard({
                             <img
                                 src={thumbnail}
                                 alt={project.title}
-                                className={`card-image block h-auto w-full object-cover transition duration-500 ease-out group-hover:scale-[1.98]  group-hover:blur-[1.9px] group-focus-within:scale-[1.18] group-focus-within:blur-[1.9px] ${isImageLoaded ? "opacity-100" : "opacity-0"
+                                className={`card-image block h-auto w-full 
+                                    object-cover transition duration-500 
+                                    ease-out group-hover:scale-[1.98] group-hover:blur-[1.9px] 
+                                    group-focus-within:scale-[1.18] group-focus-within:blur-[1.9px]
+
+                                    max-[640px]:group-hover:scale-100 
+                                    max-[640px]:group-hover:blur-none 
+                                    max-[640px]:group-focus-within:scale-100 
+                                    max-[640px]:group-focus-within:blur-none 
+                                    ${isImageLoaded ? "opacity-100" : "opacity-0"
                                     }`}
                                 {...(isPriorityThumbnail ? priorityImageProps : lazyImageProps)}
                                 onLoad={() => setIsImageLoaded(true)}
@@ -82,12 +91,13 @@ export default function ProjectCard({
                         </>
                     )}
 
-                    <div className="card-content pointer-events-none absolute inset-0 flex flex-col bg-linear-to-t from-black/80 via-black/70 to-black/90 p-6 opacity-0 transition duration-200 group-hover:opacity-100 group-focus-within:opacity-100  text-white">
+                    <div className="card-content pointer-events-none absolute inset-0 flex flex-col bg-linear-to-t from-black/80 via-black/70 to-black/90 p-6 opacity-0 transition duration-200 group-hover:opacity-100 group-focus-within:opacity-100 text-white 
+                    max-[640px]:hidden">
                         <h3 className="card-title mt-5 max-w-[90%] text-[1.25rem] leading-[1.1] text-balance  text-white">
                             {project.client}
                         </h3>
                         <span className="card-type text-[0.92rem] font-medium opacity-90 text-white">
-                            {formatProjectTypes(project)} - id:{project.id} - order:{project.order}
+                            {formatProjectTypes(project)}
                         </span>
                         <span
                             className="card-cta ml-auto mt-auto inline-flex h-11 w-11 items-center justify-center text-2xl leading-none text-white"

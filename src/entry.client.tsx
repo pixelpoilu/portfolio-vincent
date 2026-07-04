@@ -1,10 +1,12 @@
-import React from "react";
+import React, { startTransition } from "react";
 import ReactDOM from "react-dom/client";
 import { HydratedRouter } from "react-router/dom";
 
-ReactDOM.hydrateRoot(
-  document,
-  <React.StrictMode>
-    <HydratedRouter />
-  </React.StrictMode>,
-);
+startTransition(() => {
+  ReactDOM.hydrateRoot(
+    document,
+    <React.StrictMode>
+      <HydratedRouter />
+    </React.StrictMode>,
+  );
+});

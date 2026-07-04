@@ -3,7 +3,6 @@ import { Link, Navigate, useLocation, useParams } from "react-router-dom";
 import { memo } from "react";
 import Footer from "../components/Footer";
 import Loader from "../components/Loader";
-import PageTransition from "../components/PageTransition";
 import projectsData from "../data/project-prod.json";
 import type { Project, ProjectMedia } from "../types/Project";
 import { slugifyTitle } from "../utils/slug";
@@ -220,8 +219,7 @@ function ProjectDetailContent({
     "inline-flex h-10 w-10 items-center justify-center rounded-full bg-black/55 text-lg leading-none text-white transition hover:bg-black/80 disabled:cursor-not-allowed disabled:opacity-45";
 
   return (
-    <PageTransition>
-      <div className="site-page bg-(--bg)">
+    <div className="site-page bg-(--bg)">
         <div className="sticky z-900 mt-2.5 mb-5 w-full border border-white/40 bg-white/70 backdrop-blur-xl shadow-[0_10px_40px_rgba(0,0,0,var(--nav-shadow-opacity,0)),inset_0_1px_0_rgba(255,255,255,var(--nav-inset-opacity,0))] top-18 max-[640px]:top-28">
           <div className="mx-auto flex w-[96%] max-w-287.5 justify-end py-2">
             <Link to={listingBasePath} className={backButtonClassName}>
@@ -387,7 +385,6 @@ function ProjectDetailContent({
           {resolvedLongtext && <ProjectLongtext html={resolvedLongtext} />}
         </main>
         <Footer />
-      </div>
-    </PageTransition>
+    </div>
   );
 }

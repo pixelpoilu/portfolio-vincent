@@ -10,7 +10,6 @@ import { useLocation } from "react-router-dom";
 
 import grainTexture from "../assets/images/textures/grain.webp";
 import Footer from "../components/Footer";
-import PageTransition from "../components/PageTransition";
 
 const shellClassName = "mx-auto w-full max-w-[1200px] px-6 sm:px-6 md:px-8";
 const eyebrowClassName =
@@ -94,8 +93,7 @@ export default function ContactForm() {
                 : null;
 
     return (
-        <PageTransition>
-            <>
+        <>
                 <main
                     className="relative isolate overflow-hidden text-neutral-950"
                     style={{ background: "var(--bg)" }}
@@ -285,7 +283,6 @@ export default function ContactForm() {
                 <div className="site-page">
                     <Footer />
                 </div>
-            </>
-        </PageTransition>
+        </>
     );
 }

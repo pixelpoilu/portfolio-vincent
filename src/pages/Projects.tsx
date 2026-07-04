@@ -12,7 +12,6 @@ import { useNavigate } from "react-router-dom";
 import { createPortal } from "react-dom";
 import FilterBar from "../components/FilterBar";
 import projectsData from "../data/project-prod.json";
-import PageTransition from "../components/PageTransition";
 import ProjectCard from "../components/ProjectCard";
 import PortfolioHero from "../components/PortfolioHero";
 import Footer from "../components/Footer";
@@ -41,12 +40,11 @@ const selectedCaseStudyIds = new Set(selectedCaseStudies.map((caseStudy) => case
 const MAX_VISIBLE_PROJECTS = 45;
 
 const projectImageModules = import.meta.glob<{ default: string }>(
-  "../assets/images/projects/**/*.{jpg,jpeg,png,webp,avif}"
-);
-
-const projectSlideshowMediaModules = import.meta.glob<string>(
-  "../assets/images/projects/**/*.{jpg,jpeg,png,webp,avif,mp4}",
-  { import: "default", query: "?url" }
+  [
+    "../assets/images/projects/**/manson*.{jpg,jpeg,png,webp,avif}",
+    "../assets/images/projects/**/rea_web_locaboat_diapo.png",
+    "../assets/images/projects/**/vignette02_square.png",
+  ]
 );
 const projectImageImporterByFilename = new Map(
   Object.entries(projectImageModules).map(([path, importImage]) => [
@@ -585,6 +583,7 @@ export default function Projects({
   }, [displayProjectCount, projectBatchSize, visibleProjectCount]);
 
   const resolveProjectSlides = useCallback(async (project: Project): Promise<SlideshowSlide[]> => {
+    const { loadProjectMedia } = await import("../utils/projectMediaLoader");
     const slides: SlideshowSlide[] = [];
 
     for (const media of project.medias) {
@@ -592,15 +591,9 @@ export default function Projects({
       if (!mediaFile) {
         continue;
       }
-      const mediaPath = `../assets/images/projects/${project.mediapath}/${mediaFile}`;
       const isVideo = mediaFile.toLowerCase().endsWith(".mp4");
-      const importMedia = projectSlideshowMediaModules[mediaPath];
-
-      if (!importMedia) {
-        continue;
-      }
-
-      const src = await importMedia();
+      const src = await loadProjectMedia(project.mediapath, mediaFile);
+      if (!src) continue;
       const slide: SlideshowSlide = {
         src,
         kind: isVideo ? "video" : "image",
@@ -879,9 +872,7 @@ export default function Projects({
     exit: { opacity: 0, x: transitionDirection * -140 },
   };
   return (
-    <PageTransition>
-
-      <div className="site-page">
+    <div className="site-page">
         {collectionKey === "portfolio" && (
           <PortfolioHero
             projects={heroProjects}
@@ -1123,8 +1114,7 @@ export default function Projects({
           document.body
         ) : null}
         <Footer />
-      </div>
-    </PageTransition>
+    </div>
   );
 }
 

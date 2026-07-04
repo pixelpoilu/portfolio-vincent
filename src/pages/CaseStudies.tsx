@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { FaAngleRight } from "@react-icons/all-files/fa/FaAngleRight";
 import projectsData from "../data/project-prod.json";
 import Footer from "../components/Footer";
-import PageTransition from "../components/PageTransition";
 import { getDedicatedCaseStudyPathByProjectId } from "../config/dedicatedCaseStudies";
 import {
   selectedCaseStudies,
@@ -76,8 +75,7 @@ export default function CaseStudies() {
   }, []);
 
   return (
-    <PageTransition>
-      <div className="site-page case-studies-page bg-[#f0efeb] text-neutral-950">
+    <div className="site-page case-studies-page bg-[#f0efeb] text-neutral-950">
         <main className="mx-auto grid w-full max-w-[1440px] gap-12 px-4 pb-24 pt-28 sm:px-6 lg:px-10">
           <header className="case-study-reveal grid gap-5 border-b border-black/10 pb-8 md:grid-cols-[minmax(0,0.72fr)_minmax(280px,0.28fr)] md:items-end">
             <div className="grid gap-4">
@@ -166,7 +164,6 @@ export default function CaseStudies() {
           </section>
         </main>
         <Footer />
-      </div>
-    </PageTransition>
+    </div>
   );
 }

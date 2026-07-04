@@ -4062,7 +4062,7 @@
             },
             {
                 "file": "10.jpg",
-                "caption": "Site marchand - CMS Prestashop opur la vente de goodies",
+                "caption": "Site marchand - CMS Prestashop pour la vente de goodies",
                 "width": 796,
                 "height": 472
             },
@@ -4469,14 +4469,8 @@
         "thumb": "rea_web_docbiker_thumb.jpg",
         "medias": [
             {
-                "file": "2018_docbiker_trsp.png",
-                "caption": "Refonte version 2018.",
-                "width": 645,
-                "height": 495
-            },
-            {
                 "file": "new_docbiker_trsp.webp",
-                "caption": "Refonte version 2016.",
+                "caption": "Refonte complète.",
                 "width": 912,
                 "height": 540
             },

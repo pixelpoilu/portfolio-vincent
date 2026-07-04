@@ -16,13 +16,13 @@ const stickyPanelClassName =
 
 
 const controlBaseClassName =
-  "inline-flex min-h-11 items-center justify-between gap-5 border border-slate-300 bg-white px-5 py-2 text-[14px] font-medium leading-none text-slate-700 transition duration-200 hover:border-slate-500 hover:text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-300";
+  "inline-flex min-h-11 w-full items-center justify-between gap-3 border border-slate-300 bg-white px-3 py-2 text-[14px] font-medium leading-none text-slate-700 transition duration-200 hover:border-slate-500 hover:text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-300 sm:px-4";
 const controlActiveClassName =
-  "border-slate-500 bg-stone-200 text-stone-700 shadow-[inset_0_0_0_1px_rgba(37,99,235,0.15)]";
+  "border-slate-500 bg-stone-200 pr-16 text-stone-700 shadow-[inset_0_0_0_1px_rgba(37,99,235,0.15)] sm:pr-18";
 const menuClassName =
   "absolute left-0 top-full z-20 mt-2 min-w-[180px] max-w-[88vw] border border-slate-200 bg-white p-1.5 shadow-[0_20px_40px_rgba(15,23,42,0.16)] sm:min-w-[220px] sm:max-w-[360px]";
 const menuItemClassName =
-  "grid w-full grid-cols-[18px_minmax(0,1fr)] items-center gap-2 rounded-lg px-2.5 py-2 text-left text-sm leading-tight text-slate-800 transition hover:bg-slate-50";
+  "block w-full rounded-lg px-2.5 py-2 text-left text-sm leading-tight text-slate-800 transition hover:bg-slate-50";
 
 interface Props {
   sectors: string[];
@@ -87,16 +87,19 @@ export default function FilterBar({
     setOpen((current) => (current === name ? null : name));
   };
 
-  const toggleValue = (
-    currentValues: string[],
+  const selectValue = (
     value: string,
     onChange: (nextValues: string[]) => void
   ) => {
-    if (currentValues.includes(value)) {
-      onChange(currentValues.filter((item) => item !== value));
-      return;
-    }
-    onChange([...currentValues, value]);
+    clearCloseTimeout();
+    onChange([value]);
+    setOpen(null);
+  };
+
+  const clearSelection = (onChange: (nextValues: string[]) => void) => {
+    clearCloseTimeout();
+    onChange([]);
+    setOpen(null);
   };
 
   useEffect(() => {
@@ -122,16 +125,39 @@ export default function FilterBar({
     activeValues.length > 0 ? activeValues.join(", ") : defaultLabel;
 
   const triggerLabelClassName =
-    "max-w-[min(72vw,360px)] whitespace-normal text-left leading-tight";
+    "min-w-0 flex-1 truncate text-left leading-tight";
+
+  const clearButtonClassName =
+    "absolute right-8 top-1/2 z-10 inline-flex size-7 -translate-y-1/2 items-center justify-center rounded-full text-lg text-slate-500 transition hover:bg-white/70 hover:text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-300 sm:right-9";
 
   return (
     <div className={stickyPanelClassName}>
       <div className={`${shellClassName} py-1`} ref={filterRef}>
-        {hasActiveFilters && (
-          <div className="mb-3 flex items-center justify-end text-sm text-slate-500">
+        <div className="mb-2.5 flex items-stretch gap-2">
+          <div className="relative min-w-0 flex-1">
+            <svg
+              className="pointer-events-none absolute left-4 top-1/2 size-5 -translate-y-1/2 text-slate-700"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.8"
+              aria-hidden="true"
+            >
+              <circle cx="11" cy="11" r="7" />
+              <path d="m16.5 16.5 4 4" />
+            </svg>
+            <input
+              type="text"
+              className="min-h-13 w-full border border-slate-300 bg-white pl-13 pr-4 text-sm text-slate-800 transition duration-200 placeholder:text-slate-400 focus:border-blue-300 focus:outline-none focus:ring-4 focus:ring-blue-300/20"
+              placeholder="Rechercher un projet, client, techno..."
+              value={searchQuery}
+              onChange={(event) => onSearchChange(event.target.value)}
+            />
+          </div>
+          {hasActiveFilters && (
             <button
               type="button"
-              className="rounded-full border border-slate-300 bg-white px-3.5 py-1.5 text-xs font-medium text-slate-700 transition duration-200 hover:border-slate-400 hover:bg-slate-50 hover:text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-300"
+              className="shrink-0 border border-slate-300 bg-white px-3.5 text-xs font-medium text-slate-700 transition duration-200 hover:border-slate-400 hover:bg-slate-50 hover:text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-300 sm:px-5"
               onClick={() => {
                 onSectorChange([]);
                 onTypeChange([]);
@@ -143,37 +169,16 @@ export default function FilterBar({
             >
               Effacer
             </button>
-          </div>
-        )}
-
-        <div className="relative mb-2.5">
-          <svg
-            className="pointer-events-none absolute left-4 top-1/2 size-5 -translate-y-1/2 text-slate-700"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="1.8"
-            aria-hidden="true"
-          >
-            <circle cx="11" cy="11" r="7" />
-            <path d="m16.5 16.5 4 4" />
-          </svg>
-          <input
-            type="text"
-            className="min-h-13 w-full border border-slate-300 bg-white pl-13 pr-4 text-sm text-slate-800 transition duration-200 placeholder:text-slate-400 focus:border-blue-300 focus:outline-none focus:ring-4 focus:ring-blue-300/20"
-            placeholder="Rechercher un projet, client, techno..."
-            value={searchQuery}
-            onChange={(event) => onSearchChange(event.target.value)}
-          />
+          )}
         </div>
 
-        <div className="flex flex-wrap items-center gap-3 w-fit mx-auto">
+        <div className="mx-auto grid w-full grid-cols-2 items-center gap-2 lg:flex lg:flex-nowrap lg:gap-3">
 
-          <span>J'ai réalisé des</span>
+          <span className="hidden lg:inline lg:shrink-0 lg:whitespace-nowrap">J'ai réalisé des</span>
           {/*Types Filter*/}
 
           <div
-            className="relative"
+            className="relative min-w-0 lg:flex-1"
             onMouseEnter={clearCloseTimeout}
             onMouseLeave={scheduleClose}
           >
@@ -191,6 +196,12 @@ export default function FilterBar({
               </span>
             </button>
 
+            {activeTypes.length > 0 && (
+              <button type="button" className={clearButtonClassName} onClick={() => clearSelection(onTypeChange)} aria-label={`Effacer le filtre type ${activeTypes[0]}`}>
+                <CloseIcon />
+              </button>
+            )}
+
             {open === "type" && (
               <div className={menuClassName}>
                 {types.map((type) => (
@@ -202,12 +213,9 @@ export default function FilterBar({
                       : ""
                       }`.trim()}
                     onClick={() => {
-                      toggleValue(activeTypes, type, onTypeChange);
+                      selectValue(type, onTypeChange);
                     }}
                   >
-                    <span className="inline-flex w-4.5 justify-center text-[11px] font-bold text-stone-700">
-                      {activeTypes.includes(type) ? <CloseIcon /> : ""}
-                    </span>
                     <span className="wrap-break-word">{type}</span>
                   </button>
                 ))}
@@ -215,9 +223,9 @@ export default function FilterBar({
             )}
           </div>
           {/*Secteur Filter*/}
-          <span>pour le secteur</span>
+          <span className="hidden lg:inline lg:shrink-0 lg:whitespace-nowrap">pour le secteur</span>
           <div
-            className="relative"
+            className="relative min-w-0 lg:flex-1"
             onMouseEnter={clearCloseTimeout}
             onMouseLeave={scheduleClose}
           >
@@ -235,8 +243,14 @@ export default function FilterBar({
               </span>
             </button>
 
+            {activeSectors.length > 0 && (
+              <button type="button" className={clearButtonClassName} onClick={() => clearSelection(onSectorChange)} aria-label={`Effacer le filtre secteur ${activeSectors[0]}`}>
+                <CloseIcon />
+              </button>
+            )}
+
             {open === "sector" && (
-              <div className={menuClassName}>
+              <div className={`${menuClassName} max-lg:left-auto max-lg:right-0`}>
                 {sectors.map((sector) => (
                   <button
                     type="button"
@@ -246,12 +260,9 @@ export default function FilterBar({
                       : ""
                       }`.trim()}
                     onClick={() => {
-                      toggleValue(activeSectors, sector, onSectorChange);
+                      selectValue(sector, onSectorChange);
                     }}
                   >
-                    <span className="inline-flex w-4.5 justify-center text-[11px] font-bold text-stone-700">
-                      {activeSectors.includes(sector) ? <CloseIcon /> : ""}
-                    </span>
                     <span className="wrap-break-word">{sector}</span>
                   </button>
                 ))}
@@ -259,10 +270,10 @@ export default function FilterBar({
             )}
           </div>
           {/*Tools Filter*/}
-          <span>avec </span>
+          <span className="hidden lg:inline lg:shrink-0 lg:whitespace-nowrap">avec </span>
 
           <div
-            className="relative"
+            className="relative min-w-0 lg:flex-1"
             onMouseEnter={clearCloseTimeout}
             onMouseLeave={scheduleClose}
           >
@@ -279,6 +290,11 @@ export default function FilterBar({
                 {open === "tool" ? <ArrowUpIcon /> : <ArrowDownIcon />}
               </span>
             </button>
+            {activeTools.length > 0 && (
+              <button type="button" className={clearButtonClassName} onClick={() => clearSelection(onToolChange)} aria-label={`Effacer le filtre outil ${activeTools[0]}`}>
+                <CloseIcon />
+              </button>
+            )}
             {open === "tool" && (
               <div className={`${menuClassName} max-h-65 overflow-y-auto`}>
                 {tools.map((tool) => (
@@ -290,12 +306,9 @@ export default function FilterBar({
                       : ""
                       }`.trim()}
                     onClick={() => {
-                      toggleValue(activeTools, tool, onToolChange);
+                      selectValue(tool, onToolChange);
                     }}
                   >
-                    <span className="inline-flex w-4.5 justify-center text-[11px] font-bold text-stone-700">
-                      {activeTools.includes(tool) ? <CloseIcon /> : ""}
-                    </span>
                     <span className="wrap-break-word">{tool}</span>
                   </button>
                 ))}
@@ -305,9 +318,9 @@ export default function FilterBar({
 
           {/*Technologies Filter*/}
 
-          <span>en utilisant </span>
+          <span className="hidden lg:inline lg:shrink-0 lg:whitespace-nowrap">en utilisant </span>
           <div
-            className="relative"
+            className="relative min-w-0 lg:flex-1"
             onMouseEnter={clearCloseTimeout}
             onMouseLeave={scheduleClose}
           >
@@ -325,8 +338,14 @@ export default function FilterBar({
               </span>
             </button>
 
+            {activeTechs.length > 0 && (
+              <button type="button" className={clearButtonClassName} onClick={() => clearSelection(onTechChange)} aria-label={`Effacer le filtre technologie ${activeTechs[0]}`}>
+                <CloseIcon />
+              </button>
+            )}
+
             {open === "tech" && (
-              <div className={`${menuClassName} max-h-65 overflow-y-auto`}>
+              <div className={`${menuClassName} max-h-65 overflow-y-auto max-lg:left-auto max-lg:right-0`}>
                 {technologies.map((tech) => (
                   <button
                     type="button"
@@ -336,12 +355,9 @@ export default function FilterBar({
                       : ""
                       }`.trim()}
                     onClick={() => {
-                      toggleValue(activeTechs, tech, onTechChange);
+                      selectValue(tech, onTechChange);
                     }}
                   >
-                    <span className="inline-flex w-4.5 justify-center text-[11px] font-bold text-stone-700">
-                      {activeTechs.includes(tech) ? <CloseIcon /> : ""}
-                    </span>
                     <span className="wrap-break-word">{tech}</span>
                   </button>
                 ))}
@@ -355,13 +371,13 @@ export default function FilterBar({
           {/*Tous*/}
           <button
             type="button"
-            className={getTriggerClassName(
+            className={`${getTriggerClassName(
               activeSectors.length === 0 &&
               activeTypes.length === 0 &&
               activeTools.length === 0 &&
               activeTechs.length === 0 &&
               searchQuery.trim() === ""
-            )}
+            )} col-span-2 lg:w-auto lg:shrink-0`}
             onClick={() => {
               onSectorChange([]);
               onTypeChange([]);

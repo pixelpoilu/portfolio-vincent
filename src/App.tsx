@@ -1,15 +1,15 @@
 import { lazy, Suspense } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
+import FloatingPageActions from "./components/FloatingPageActions";
 import Navbar from "./components/Navbar";
+import Home from "./pages/Home";
+import Projects from "./pages/Projects";
 
-const Home = lazy(() => import("./pages/Home"));
-const Projects = lazy(() => import("./pages/Projects"));
 const CaseStudies = lazy(() => import("./pages/CaseStudies"));
 const CaseStudiesConcepts = lazy(() => import("./pages/CaseStudiesConcepts"));
 const ProjectDetail = lazy(() => import("./pages/ProjectDetail"));
 const CaseStudyEntry = lazy(() => import("./pages/CaseStudyEntry"));
 const Contact = lazy(() => import("./pages/Contact"));
-const FloatingPageActions = lazy(() => import("./components/FloatingPageActions"));
 
 const dilitrustCaseStudyPath = "/etudes-de-cas/refonte-du-site-web-dilitrust";
 
@@ -32,9 +32,7 @@ function Layout() {
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </Suspense>
-      <Suspense fallback={null}>
-        <FloatingPageActions />
-      </Suspense>
+      <FloatingPageActions />
     </>
   );
 }

@@ -6,17 +6,6 @@
   .navbar {
     padding: 0px;
   }
-
-  .projects-grid {
-    gap: 1rem;
-  }
-}
-
-@media (max-width: 420px) {
-  .projects-grid {
-    grid-template-columns: 1fr;
-    gap: 0;
-  }
 }
 
 .portfolio-slideshow-overlay {
