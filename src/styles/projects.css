@@ -1,7 +1,217 @@
+.portfolio-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(480px, 0.95fr);
+  gap: clamp(3rem, 6vw, 7rem);
+  width: min(1450px, calc(100% - 4rem));
+  min-height: calc(100svh - 72px);
+  margin: 0 auto;
+  padding: clamp(2.5rem, 5vh, 5rem) 0 3rem;
+  align-items: center;
+}
+
+.portfolio-hero__copy {
+  min-width: 0;
+}
+
+.portfolio-hero__eyebrow {
+  margin: 0 0 1.4rem;
+  color: #5675a5;
+  font-size: 0.92rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.portfolio-hero h1 {
+  max-width: 18ch;
+  font-family: var(--font-hero);
+  letter-spacing: -0.045em;
+  margin: 0;
+  /*
+  color: #111318;
+  font-size: clamp(2.35rem, 3.4vw, 4.15rem);
+  font-weight: 750;
+  line-height: 1.12;
+  text-wrap: balance;
+  */
+}
+
+.portfolio-hero__intro {
+  max-width: 55ch;
+  margin: 1.6rem 0 0;
+  /*
+  color: #4f5661;
+  font-size: clamp(1rem, 1.15vw, 1.18rem);
+  line-height: 1.58;
+*/
+}
+
+.portfolio-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.8rem;
+  margin-top: 2.3rem;
+}
+
+.portfolio-hero__stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-top: 3.3rem;
+}
+
+.portfolio-stat {
+  display: flex;
+  min-width: 0;
+  align-items: flex-start;
+  gap: 0.8rem;
+  padding-right: 1rem;
+}
+
+.portfolio-stat+.portfolio-stat {
+  border-left: 1px solid #d8d8d5;
+  padding-left: 1.3rem;
+}
+
+.portfolio-stat__icon {
+  display: grid;
+  width: 2.8rem;
+  height: 2.8rem;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 50%;
+  background: #eeede9;
+  color: #20242a;
+}
+
+.portfolio-stat__icon svg {
+  width: 1.3rem;
+  height: 1.3rem;
+}
+
+.portfolio-stat__text {
+  display: grid;
+  gap: 0.25rem;
+}
+
+.portfolio-stat strong {
+  color: #111318;
+  font-size: 1.25rem;
+  line-height: 1.1;
+}
+
+.portfolio-stat small {
+  color: #5f6670;
+  font-size: 0.75rem;
+  line-height: 1.45;
+}
+
+.portfolio-hero__mosaic {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.85rem;
+}
+
+.portfolio-hero__tile {
+  position: relative;
+  aspect-ratio: 1.08 / 1;
+  overflow: hidden;
+  border: 0;
+  border-radius: 0.45rem;
+  background: #dededb;
+  cursor: pointer;
+}
+
+.portfolio-hero__tile img,
+.portfolio-hero__tile-placeholder {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.portfolio-hero__tile img {
+  transition: transform 450ms cubic-bezier(0.2, 0.8, 0.2, 1), filter 450ms ease;
+}
+
+.portfolio-hero__tile:hover img,
+.portfolio-hero__tile:focus-visible img {
+  transform: scale(1.06);
+  filter: saturate(1.08);
+}
+
+.portfolio-hero__tile:focus-visible {
+  outline: 3px solid #5675a5;
+  outline-offset: 3px;
+}
+
+.portfolio-hero__tile-placeholder {
+  background: linear-gradient(120deg, #e8e7e3 15%, #d9d8d4 45%, #e8e7e3 75%);
+  background-size: 200% 100%;
+  animation: portfolioHeroLoading 1.4s ease-in-out infinite;
+}
+
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 1.25rem;
+  min-height: 100svh;
+}
+
+@keyframes portfolioHeroLoading {
+  to {
+    background-position: -200% 0;
+  }
+}
+
+@media (max-width: 1100px) {
+  .portfolio-hero {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .portfolio-hero h1,
+  .portfolio-hero__intro {
+    max-width: 100%;
+  }
+
+  .portfolio-hero__mosaic {
+    max-width: 820px;
+  }
+}
+
+@media (max-width: 700px) {
+  .portfolio-hero {
+    width: min(100% - 2rem, 1450px);
+    gap: 2.5rem;
+    padding-top: 2rem;
+  }
+
+  .portfolio-hero h1 {
+    font-size: clamp(2.05rem, 10vw, 3rem);
+  }
+
+  .portfolio-hero__stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.4rem 0;
+  }
+
+  .portfolio-stat:nth-child(3) {
+    border-left: 0;
+    padding-left: 0;
+  }
+
+  .portfolio-hero__mosaic {
+    gap: 0.45rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .portfolio-hero__tile img,
+  .portfolio-hero__primary,
+  .portfolio-hero__secondary {
+    transition: none;
+  }
 }
 
 .projects-grid>div {

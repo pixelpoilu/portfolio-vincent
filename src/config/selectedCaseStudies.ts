@@ -23,7 +23,7 @@ export const selectedCaseStudies: CaseStudyHighlight[] = [
     id: 60,
     label: "Parcours e-commerce",
     summary:
-      "Un site réorganisé autour de l'expérience client, la prise de rendez-vous et des contenus plus faciles à administrer.",
+      "Un site réorganisé autour de l'expérience client et des contenus plus faciles à administrer.",
     strengths: [
       "Refonte UX centrée sur les services moto",
       "Back-office enrichi pour piloter les contenus",

@@ -6,11 +6,17 @@ const ArrowUpIcon = RiArrowUpSLine as unknown as ComponentType<{ className?: str
 const CloseIcon = RiCloseLine as unknown as ComponentType<{ className?: string }>;
 
 const shellClassName =
-  "mx-auto w-[96%] max-w-[1150px]";
+  "mx-auto w-full max-w-[1450px] px-5 sm:px-8";
+/*  
 const stickyPanelClassName =
-  "sticky z-[900] mt-0 mb-5 w-full border border-white/40 bg-white/70 backdrop-blur-xl shadow-[0_10px_40px_rgba(0,0,0,var(--nav-shadow-opacity,0)),inset_0_1px_0_rgba(255,255,255,var(--nav-inset-opacity,0))] top-[72px] max-[640px]:top-[0px]";
+  "sticky z-[900] top-[72px] w-full border-y border-slate-200/80  py-2  max-[640px]:top-[72px] bg-[#f0efeb]/95 backdrop-blur-xl shadow-[0_12px_30px_rgba(15,23,42,0.08)]";
+*/
+const stickyPanelClassName =
+  "sticky z-[900] top-[72px] w-full border-y border-slate-200/80 bg-[#f0efeb]/95 py-2 backdrop-blur-xl shadow-[0_12px_30px_rgba(15,23,42,0.08)] max-[640px]:top-[72px]";
+
+
 const controlBaseClassName =
-  "inline-flex min-h-9 items-center gap-2 border border-slate-300 bg-white px-3 py-2 text-[13px] font-medium leading-none text-slate-700 transition duration-200 hover:border-slate-500 hover:text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-300";
+  "inline-flex min-h-11 items-center justify-between gap-5 border border-slate-300 bg-white px-5 py-2 text-[14px] font-medium leading-none text-slate-700 transition duration-200 hover:border-slate-500 hover:text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-300";
 const controlActiveClassName =
   "border-slate-500 bg-stone-200 text-stone-700 shadow-[inset_0_0_0_1px_rgba(37,99,235,0.15)]";
 const menuClassName =
@@ -120,7 +126,7 @@ export default function FilterBar({
 
   return (
     <div className={stickyPanelClassName}>
-      <div className={`${shellClassName} py-2`} ref={filterRef}>
+      <div className={`${shellClassName} py-1`} ref={filterRef}>
         {hasActiveFilters && (
           <div className="mb-3 flex items-center justify-end text-sm text-slate-500">
             <button
@@ -140,18 +146,30 @@ export default function FilterBar({
           </div>
         )}
 
-        <div className="mb-2.5">
+        <div className="relative mb-2.5">
+          <svg
+            className="pointer-events-none absolute left-4 top-1/2 size-5 -translate-y-1/2 text-slate-700"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.8"
+            aria-hidden="true"
+          >
+            <circle cx="11" cy="11" r="7" />
+            <path d="m16.5 16.5 4 4" />
+          </svg>
           <input
             type="text"
-            className="min-h-10 w-auto min-w-3/4 border border-slate-300 bg-white px-3.5 text-sm text-slate-800 transition duration-200 placeholder:text-slate-400 focus:border-blue-300 focus:outline-none focus:ring-4 focus:ring-blue-300/20"
+            className="min-h-13 w-full border border-slate-300 bg-white pl-13 pr-4 text-sm text-slate-800 transition duration-200 placeholder:text-slate-400 focus:border-blue-300 focus:outline-none focus:ring-4 focus:ring-blue-300/20"
             placeholder="Rechercher un projet, client, techno..."
             value={searchQuery}
             onChange={(event) => onSearchChange(event.target.value)}
           />
         </div>
 
-        <div className="flex flex-wrap items-center gap-2 p-2">
-          J'ai réalisé des
+        <div className="flex flex-wrap items-center gap-3 w-fit mx-auto">
+
+          <span>J'ai réalisé des</span>
           {/*Types Filter*/}
 
           <div
@@ -196,9 +214,8 @@ export default function FilterBar({
               </div>
             )}
           </div>
-          pour le secteur
           {/*Secteur Filter*/}
-
+          <span>pour le secteur</span>
           <div
             className="relative"
             onMouseEnter={clearCloseTimeout}
@@ -241,8 +258,9 @@ export default function FilterBar({
               </div>
             )}
           </div>
-          avec
           {/*Tools Filter*/}
+          <span>avec </span>
+
           <div
             className="relative"
             onMouseEnter={clearCloseTimeout}
@@ -285,9 +303,9 @@ export default function FilterBar({
             )}
           </div>
 
-          en utilisant
           {/*Technologies Filter*/}
 
+          <span>en utilisant </span>
           <div
             className="relative"
             onMouseEnter={clearCloseTimeout}

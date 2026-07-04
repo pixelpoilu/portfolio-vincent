@@ -14,6 +14,7 @@ import FilterBar from "../components/FilterBar";
 import projectsData from "../data/project-prod.json";
 import PageTransition from "../components/PageTransition";
 import ProjectCard from "../components/ProjectCard";
+import PortfolioHero from "../components/PortfolioHero";
 import Footer from "../components/Footer";
 import type { Project, ProjectMedia } from "../types/Project";
 import { hasCollection, type ProjectCollectionKey } from "../utils/projectCollection";
@@ -105,6 +106,22 @@ const TYPE_PRIORITY = [
   "ScreenSavers",
 ];
 
+/*
+const TYPE_PRIORITY = [
+  "Création de site",
+  "Refonte",
+  "Plateforme métier",
+  "Application web",
+  "Site corporate",
+  "Landing page",
+  "Cartes interactives",
+  "Supports print",
+  "Jeux interactifs",
+  "Brochures Online",
+  "Pubs on line",
+  "Newsletters",
+];
+*/
 const TOOL_PRIORITY = [
   "WordPress",
   "Visual Studio Code",
@@ -416,6 +433,17 @@ export default function Projects({
   );
 
   const displayProjectCount = Math.min(filteredProjects.length, MAX_VISIBLE_PROJECTS);
+  const heroProjects = useMemo(
+    () =>
+      [...publishedProjects]
+        .sort((a, b) => {
+          const orderA = Number.isFinite(a.order) ? a.order : Number.NEGATIVE_INFINITY;
+          const orderB = Number.isFinite(b.order) ? b.order : Number.NEGATIVE_INFINITY;
+          return orderB - orderA;
+        })
+        .slice(0, 9),
+    [publishedProjects]
+  );
 
   useEffect(() => {
     const mediaQuery = window.matchMedia("(max-width: 640px)");
@@ -475,7 +503,7 @@ export default function Projects({
   );
 
   useEffect(() => {
-    const projectsToLoad = visibleProjects.filter(
+    const projectsToLoad = [...heroProjects, ...visibleProjects].filter(
       (project) =>
         project.portfolio_image &&
         !thumbnailSrcByProjectId[project.id] &&
@@ -531,7 +559,7 @@ export default function Projects({
 
     const timeoutId = globalThis.setTimeout(loadDeferredThumbnails, 180);
     return () => globalThis.clearTimeout(timeoutId);
-  }, [thumbnailSrcByProjectId, visibleProjects]);
+  }, [heroProjects, thumbnailSrcByProjectId, visibleProjects]);
 
   useEffect(() => {
     const sentinel = loadMoreRef.current;
@@ -850,14 +878,18 @@ export default function Projects({
     animate: { opacity: 1, x: 0 },
     exit: { opacity: 0, x: transitionDirection * -140 },
   };
-  const introCopy =
-    collectionKey === "portfolio"
-      ? "Découvrez une sélection de projets sur-mesure, conçus pour des marques qui veulent se distinguer."
-      : "Plongez dans les études de cas pour comprendre la démarche, les choix et les résultats.";
-
   return (
     <PageTransition>
+
       <div className="site-page">
+        {collectionKey === "portfolio" && (
+          <PortfolioHero
+            projects={heroProjects}
+            thumbnails={thumbnailSrcByProjectId}
+            onProjectClick={openProjectSlideshow}
+          />
+        )}
+        <div id="screenPortfolio">&nbsp;</div>
         <FilterBar
           sectors={availableSectors}
           types={availableTypes}
@@ -873,16 +905,11 @@ export default function Projects({
           onToolChange={handleToolChange}
           onTechChange={handleTechChange}
           onSearchChange={handleSearchChange}
+
         />
 
-        <section className="mx-auto grid w-full max-w-287.5 gap-8 px-4 py-12 sm:px-6">
-          <div className="flex flex-col gap-3 text-slate-500 md:flex-row md:items-end md:justify-between">
-            <div className="max-w-3xl text-[15px] leading-[1.6] text-[#555]">
-              <p>{introCopy}</p>
-            </div>
-          </div>
-
-          <motion.div layout className="projects-grid">
+        <section className="mx-auto grid w-full max-w-287.5 gap-8 px-4 py-12 sm:px-6 min-h-screen" >
+          <motion.div layout className="projects-grid" >
             <AnimatePresence mode="popLayout">
               {visibleProjects.map((project, index) => (
                 <motion.div
