@@ -133,6 +133,11 @@
   object-fit: cover;
 }
 
+.portfolio-screen-anchor {
+  height: 1px;
+  scroll-margin-top: 72px;
+}
+
 .portfolio-hero__tile img {
   transition: transform 450ms cubic-bezier(0.2, 0.8, 0.2, 1), filter 450ms ease;
 }

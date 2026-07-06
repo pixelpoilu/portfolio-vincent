@@ -9,6 +9,7 @@ const DeferredFooter = lazy(() => import("./Footer"));
 
 const dilitrustCaseStudyPath = "/etudes-de-cas/refonte-du-site-web-dilitrust";
 const docbikerCaseStudyPath = "/etudes-de-cas/site-internet-doc-biker";
+const locaboatCaseStudyPath = "/etudes-de-cas/site-internet-locaboat";
 
 export default function Hero() {
   const [isPortraitLoaded, setIsPortraitLoaded] = useState(false);
@@ -18,8 +19,12 @@ export default function Hero() {
   useEffect(() => {
     // With SSR hydration, the eager image can finish loading before React has
     // attached onLoad. In that case no event reaches the component.
-    if (portraitRef.current?.complete) {
-      setIsPortraitLoaded(true);
+    const portraitImage = portraitRef.current;
+    if (portraitImage?.complete) {
+      const timeoutId = globalThis.setTimeout(() => {
+        setIsPortraitLoaded(true);
+      }, 0);
+      return () => globalThis.clearTimeout(timeoutId);
     }
   }, []);
 
@@ -101,7 +106,7 @@ export default function Hero() {
                 DOC-BIKER
               </Link>
               <Link
-                to="/etudes-de-cas/site-internet-locaboat"
+                to={locaboatCaseStudyPath}
                 className="inline-flex items-center rounded-full border bg-white border-black/15 px-3 py-1.5 text-[0.74rem] uppercase tracking-[0.08em] text-[#222] transition duration-300 hover:border-[#222] hover:bg-[#222] hover:text-white max-[380px]:px-2 "
                 style={{ fontFamily: "var(--font-btn)" }}
               >

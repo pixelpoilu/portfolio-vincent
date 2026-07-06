@@ -63,24 +63,6 @@ import GalleryUxAdminPneuDetail from "../assets/images/projects/rea_web_docbiker
 import GalleryUxAdminPneuDetailThumb from "../assets/images/projects/rea_web_docbiker/2017_gallery_ux_admin_pneus_n2_thumb.webp";
 
 
-
-
-/*
-import GalleryUxFranchise from "../assets/images/projects/rea_web_docbiker/gallery_ux_franchise.webp";
-import GalleryUxFranchiseThumb from "../assets/images/projects/rea_web_docbiker/gallery_ux_franchise_thumb.webp";
-import GalleryUxFranchise from "../assets/images/projects/rea_web_docbiker/gallery_ux_franchise.webp";
-import GalleryUxFranchiseThumb from "../assets/images/projects/rea_web_docbiker/gallery_ux_franchise_thumb.webp";
-import centreDetailVisual from "../assets/images/projects/rea_web_docbiker/fiche_centre.webp";
-import centerMapVisual from "../assets/images/projects/rea_web_docbiker/carte_centres.webp";
-import quoteVisual from "../assets/images/projects/rea_web_docbiker/devis.webp";
-import packagesVisual from "../assets/images/projects/rea_web_docbiker/forfaits.webp";
-import backofficeVisual from "../assets/images/projects/rea_web_docbiker/capture_backoffice.webp";
-import adminVisual from "../assets/images/projects/rea_web_docbiker/admin.webp";
-import mobileSearchVisual from "../assets/images/projects/rea_web_docbiker/mobile01.webp";
-
-
-*/
-
 import networkVisual from "../assets/images/projects/rea_web_docbiker/reseau_de_communication_siteweb_centres_via_ecrans-2026-04-26-1202.webp";
 import projectsData from "../data/project-prod.json";
 

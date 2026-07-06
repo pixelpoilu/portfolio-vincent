@@ -866,6 +866,76 @@ export default function Projects({
 
     requestVideoPlayback();
   }, [currentSlide?.kind, currentSlide?.src, requestVideoPlayback]);
+
+  useEffect(() => {
+    if (collectionKey !== "portfolio") return;
+
+    let scrollLocked = false;
+    let unlockTimeout: number | undefined;
+
+    const handleWheel = (event: WheelEvent) => {
+      if (
+        scrollLocked ||
+        Math.abs(event.deltaY) < 12 ||
+        event.ctrlKey ||
+        document.querySelector(".portfolio-slideshow-overlay")
+      ) {
+        return;
+      }
+
+      const eventTarget = event.target;
+      if (
+        eventTarget instanceof Element &&
+        eventTarget.closest("input, select, textarea, [role='dialog']")
+      ) {
+        return;
+      }
+
+      const portfolioStart = document.getElementById("screenPortfolio");
+      if (!portfolioStart) return;
+
+      const targetY =
+        portfolioStart.getBoundingClientRect().top + window.scrollY - 72;
+      const isBeforeProjects = window.scrollY < targetY - 8;
+      const isAtProjectsStart =
+        window.scrollY >= 8 && window.scrollY <= targetY + 120;
+      const shouldShowProjects = event.deltaY > 0 && isBeforeProjects;
+      const shouldShowHero = event.deltaY < 0 && isAtProjectsStart;
+
+      if (!shouldShowProjects && !shouldShowHero) return;
+
+      event.preventDefault();
+      scrollLocked = true;
+
+      const reduceMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)",
+      ).matches;
+
+      if (shouldShowProjects) {
+        portfolioStart.scrollIntoView({
+          behavior: reduceMotion ? "auto" : "smooth",
+          block: "start",
+        });
+      } else {
+        window.scrollTo({
+          top: 0,
+          behavior: reduceMotion ? "auto" : "smooth",
+        });
+      }
+
+      unlockTimeout = window.setTimeout(() => {
+        scrollLocked = false;
+      }, reduceMotion ? 100 : 900);
+    };
+
+    window.addEventListener("wheel", handleWheel, { passive: false });
+
+    return () => {
+      window.removeEventListener("wheel", handleWheel);
+      if (unlockTimeout !== undefined) window.clearTimeout(unlockTimeout);
+    };
+  }, [collectionKey]);
+
   const slideMotion = {
     initial: { opacity: 0, x: transitionDirection * 140 },
     animate: { opacity: 1, x: 0 },
@@ -880,7 +950,7 @@ export default function Projects({
             onProjectClick={openProjectSlideshow}
           />
         )}
-        <div id="screenPortfolio">&nbsp;</div>
+        <div id="screenPortfolio" className="portfolio-screen-anchor" aria-hidden="true" />
         <FilterBar
           sectors={availableSectors}
           types={availableTypes}

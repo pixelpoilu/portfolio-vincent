@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "react-router dev",
     "devhost": "react-router dev --host",
-    "build": "tsc -b && react-router build",
+    "build": "tsc -b && react-router build && node scripts/convert-to-webp.js",
     "lint1": "eslint .",
     "lint2": "eslint src --ext js,jsx,ts,tsx",
     "lint": "eslint -- --fix",
