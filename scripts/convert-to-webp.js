@@ -2,11 +2,14 @@ import { readdir, readFile, rename, rm, stat, writeFile } from "node:fs/promises
 import { basename, extname, join } from "node:path";
 import sharp from "sharp";
 
-const outputDirectory = join(process.cwd(), "dist", "client");
+const outputDirectory = process.argv[2]
+  ? join(process.cwd(), process.argv[2])
+  : join(process.cwd(), "dist", "client");
 const textExtensions = new Set([
   ".css", ".html", ".js", ".json", ".map", ".mjs",
   ".svg", ".txt", ".webmanifest", ".xml",
 ]);
+const convertibleExtensions = new Set([".png", ".jpg", ".jpeg"]);
 
 async function listFiles(directory) {
   const entries = await readdir(directory, { withFileTypes: true });
@@ -39,26 +42,31 @@ try {
 }
 
 const files = await listFiles(outputDirectory);
-const pngFiles = files.filter((file) => extname(file).toLowerCase() === ".png");
-const pngReplacements = pngFiles.map((file) => {
-  const pngName = basename(file);
-  return [pngName, pngName.replace(/\.png$/i, ".webp")];
+const imageFiles = files.filter((file) =>
+  convertibleExtensions.has(extname(file).toLowerCase()),
+);
+const imageReplacements = imageFiles.map((file) => {
+  const imageName = basename(file);
+  return [imageName, imageName.replace(/\.(?:png|jpe?g)$/i, ".webp")];
 });
+const convertedCounts = { png: 0, jpg: 0, jpeg: 0 };
 let originalBytes = 0;
 let webpBytes = 0;
 
-await runWithConcurrency(pngFiles, 4, async (pngFile) => {
-  const webpFile = pngFile.replace(/\.png$/i, ".webp");
+await runWithConcurrency(imageFiles, 4, async (imageFile) => {
+  const sourceExtension = extname(imageFile).toLowerCase().slice(1);
+  const webpFile = imageFile.replace(/\.(?:png|jpe?g)$/i, ".webp");
   const temporaryFile = `${webpFile}.tmp`;
-  const sourceStats = await stat(pngFile);
+  const sourceStats = await stat(imageFile);
 
-  await sharp(pngFile)
+  await sharp(imageFile)
     .webp({ quality: 82, alphaQuality: 90, effort: 5 })
     .toFile(temporaryFile);
   await rm(webpFile, { force: true });
   await rename(temporaryFile, webpFile);
-  await rm(pngFile);
+  await rm(imageFile);
 
+  convertedCounts[sourceExtension] += 1;
   originalBytes += sourceStats.size;
   webpBytes += (await stat(webpFile)).size;
 });
@@ -70,8 +78,8 @@ let updatedFiles = 0;
 
 await runWithConcurrency(textFiles, 8, async (file) => {
   const content = await readFile(file, "utf8");
-  const updatedContent = pngReplacements.reduce(
-    (result, [pngName, webpName]) => result.replaceAll(pngName, webpName),
+  const updatedContent = imageReplacements.reduce(
+    (result, [imageName, webpName]) => result.replaceAll(imageName, webpName),
     content,
   );
   if (updatedContent !== content) {
@@ -83,6 +91,7 @@ await runWithConcurrency(textFiles, 8, async (file) => {
 const savedBytes = originalBytes - webpBytes;
 const savedPercent = originalBytes === 0 ? 0 : (savedBytes / originalBytes) * 100;
 console.log(
-  `[webp] ${pngFiles.length} PNG convertis, ${updatedFiles} fichiers mis à jour, ` +
+  `[webp] ${convertedCounts.png} PNG, ${convertedCounts.jpg + convertedCounts.jpeg} JPG/JPEG convertis, ` +
+    `${updatedFiles} fichiers mis à jour, ` +
     `${(savedBytes / 1024 / 1024).toFixed(2)} Mo économisés (${savedPercent.toFixed(1)} %).`,
 );

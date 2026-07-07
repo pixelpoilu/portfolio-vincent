@@ -21,7 +21,7 @@ export function Layout({ children }: { children: ReactNode }) {
           href="https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&family=Inter:wght@300;400;500&family=Manrope:wght@400;500;600;700&family=Playfair+Display:wght@500;600&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
           rel="stylesheet"
         />
-        <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <Meta />
         <Links />
       </head>

@@ -2,11 +2,10 @@ import { lazy, Suspense } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 import FloatingPageActions from "./components/FloatingPageActions";
 import Navbar from "./components/Navbar";
-import Home from "./pages/Home";
+import PortfolioHome from "./pages/PortfolioHome";
 import Projects from "./pages/Projects";
 
 const CaseStudies = lazy(() => import("./pages/CaseStudies"));
-const CaseStudiesConcepts = lazy(() => import("./pages/CaseStudiesConcepts"));
 const ProjectDetail = lazy(() => import("./pages/ProjectDetail"));
 const CaseStudyEntry = lazy(() => import("./pages/CaseStudyEntry"));
 const Contact = lazy(() => import("./pages/Contact"));
@@ -19,11 +18,10 @@ function Layout() {
       <Navbar />
       <Suspense fallback={<div className="site-page" />}>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<PortfolioHome />} />
           <Route path="/portfolio" element={<Projects />} />
           <Route path="/portfolio/:slug" element={<ProjectDetail />} />
           <Route path="/etudes-de-cas" element={<CaseStudies />} />
-          <Route path="/etudes-de-cas-propositions" element={<CaseStudiesConcepts />} />
           <Route
             path="/dt"
             element={<Navigate to={dilitrustCaseStudyPath} replace />}

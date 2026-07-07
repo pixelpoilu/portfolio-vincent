@@ -26,7 +26,7 @@ Sitemap: ${SITE_URL}/sitemap.xml
 
 export default {
   appDirectory: "src",
-  buildDirectory: "dist",
+  buildDirectory: "dist/portfolio-build",
   ssr: false,
   future: {
     v8_middleware: true,

@@ -39,11 +39,13 @@
         "medias": [
             {
                 "file": "maaf_site_01.jpg",
+                "caption": "Home Page - Montage du Mini-Site dédié au Produit Pack Maaf",
                 "width": 741,
                 "height": 460
             },
             {
                 "file": "maaf_site_02.jpg",
+                "caption": "Page de détail",
                 "width": 740,
                 "height": 460
             },
@@ -105,16 +107,19 @@
         "medias": [
             {
                 "file": "marsans_site_01.jpg",
+                "caption": "Home Page - Réalisation et intégration depuis maquette Photoshop",
                 "width": 819,
                 "height": 600
             },
             {
                 "file": "marsans_site_02.jpg",
+                "caption": "Page intérieure - Réalisation et intégration de la navigation et du contenu depuis maquette Photoshop",
                 "width": 819,
                 "height": 957
             },
             {
                 "file": "marsans_site_03.jpg",
+                "caption": "Page de détail - Réalisation et intégration depuis maquette Photoshop",
                 "width": 819,
                 "height": 957
             }
@@ -173,16 +178,19 @@
         "medias": [
             {
                 "file": "liban_site_00.jpg",
+                "caption": "Page d'accueil - Réalisation et intégration depuis maquette Photoshop",
                 "width": 824,
                 "height": 628
             },
             {
                 "file": "liban_site_01.jpg",
+                "caption": "Page d'accueil n°2 - Réalisation d'un affichage dynamique",
                 "width": 837,
                 "height": 696
             },
             {
                 "file": "liban_site_03.jpg",
+                "caption": "Page intérieure - Réalisation et intégration depuis maquette Photoshop",
                 "width": 837,
                 "height": 696
             }
@@ -246,18 +254,19 @@
             },
             {
                 "file": "locaboat_ind_01.jpg",
+                "caption": "Page de présentation des Pénichettes à vendre - Réalisation et intégration depuis maquette Photoshop",
                 "width": 812,
                 "height": 1007
             },
             {
                 "file": "locaboat_ind_04.jpg",
-                "caption": "Liste des Ports Locaboat",
+                "caption": "Liste des Ports Locaboat - intégration des données dynamiques",
                 "width": 812,
                 "height": 1007
             },
             {
                 "file": "locaboat_ind_03.jpg",
-                "caption": "Présentation de port Locaboat",
+                "caption": "Présentation de port Locaboat - réalisation d'une carte interactive, reliée aux bases Locaboat ",
                 "width": 812,
                 "height": 1007
             },
@@ -269,7 +278,7 @@
             },
             {
                 "file": "locaboat-industries_virtual.mp4",
-                "caption": "Visite 3D d'une pénichette"
+                "caption": "Visite 3D d'une pénichette, modélisation 3D réalisée, intégration dans Flash"
             },
             {
                 "file": "locaboat_3D_07.jpg",
@@ -297,7 +306,7 @@
             },
             {
                 "file": "locaboat_ind_admin_01.jpg",
-                "caption": "Interface d'administration",
+                "caption": "Réalisation complète de l'applicatif d'administration",
                 "width": 889,
                 "height": 853
             }
@@ -354,21 +363,25 @@
         "medias": [
             {
                 "file": "croatie_site_01.jpg",
+                "caption": "Page d'accueil - Réalisation et intégration depuis maquette Photoshop",
                 "width": 691,
                 "height": 460
             },
             {
                 "file": "croatie_site_02.jpg",
+                "caption": "Page intérieure - Réalisation et intégration depuis maquette Photoshop",
                 "width": 759,
                 "height": 472
             },
             {
                 "file": "croatie_site_03.jpg",
+                "caption": "Page de destination - Réalisation et intégration depuis maquette Photoshop",
                 "width": 744,
                 "height": 468
             },
             {
                 "file": "croatie_site_04.jpg",
+                "caption": "Page de demande de brochure - Réalisation,  intégration depuis maquette Photoshop, création du formulaire de contact",
                 "width": 745,
                 "height": 468
             }
@@ -430,31 +443,37 @@
         "medias": [
             {
                 "file": "01.jpg",
+                "caption": "Animation d'accueil - Réalisation et montage Flash",
                 "width": 796,
                 "height": 472
             },
             {
                 "file": "02.jpg",
+                "caption": "Animation d'accueil - Réalisation et montage Flash",
                 "width": 796,
                 "height": 472
             },
             {
                 "file": "03.jpg",
+                "caption": "Animation d'accueil - Réalisation et montage Flash",
                 "width": 796,
                 "height": 472
             },
             {
                 "file": "04.jpg",
+                "caption": "Écran agence - Réalisation et montage Flash",
                 "width": 796,
                 "height": 472
             },
             {
                 "file": "05.jpg",
+                "caption": "Écran clients - Réalisation et montage Flash",
                 "width": 796,
                 "height": 472
             },
             {
                 "file": "06.jpg",
+                "caption": "Écran identité - Réalisation et montage Flash",
                 "width": 796,
                 "height": 472
             }
@@ -509,21 +528,25 @@
         "medias": [
             {
                 "file": "01.jpg",
+                "caption": "Animation d'accueil - Réalisation et montage Flash",
                 "width": 796,
                 "height": 472
             },
             {
                 "file": "02.jpg",
+                "caption": "Ècran d'accueil - Réalisation et montage Flash",
                 "width": 796,
                 "height": 472
             },
             {
                 "file": "03.jpg",
+                "caption": "Ècran contenus - Réalisation et montage Flash",
                 "width": 796,
                 "height": 472
             },
             {
                 "file": "04.jpg",
+                "caption": "Ècran activités - Réalisation et montage Flash",
                 "width": 796,
                 "height": 472
             }
@@ -580,26 +603,31 @@
         "medias": [
             {
                 "file": "lorenove_site_01.jpg",
+                "caption": "Page d'accueil - Réalisation et intégration depuis maquette Photoshop",
                 "width": 812,
                 "height": 780
             },
             {
                 "file": "lorenove_site_02.jpg",
+                "caption": "Page produits - Réalisation et intégration depuis maquette Photoshop",
                 "width": 812,
                 "height": 920
             },
             {
                 "file": "lorenove_site_03.jpg",
+                "caption": "Page implantations - Réalisation et intégration depuis maquette Photoshop",
                 "width": 812,
                 "height": 920
             },
             {
                 "file": "lorenove_site_04.jpg",
+                "caption": "Page engagements - Réalisation et intégration depuis maquette Photoshop",
                 "width": 812,
                 "height": 920
             },
             {
                 "file": "lorenove_site_05.jpg",
+                "caption": "Page corporate - Réalisation et intégration depuis maquette Photoshop",
                 "width": 812,
                 "height": 920
             }
@@ -658,38 +686,51 @@
         "medias": [
             {
                 "file": "01.jpg",
+                "caption": "Page d'accueil n°1 - Principe de Home dynamique - Réalisation et intégration depuis maquette Photoshop",
                 "width": 727,
                 "height": 395
             },
             {
                 "file": "02.jpg",
+                "caption": "Page d'accueil n°2 - Principe de Home dynamique - Réalisation et intégration depuis maquette Photoshop",
                 "width": 732,
                 "height": 397
             },
             {
                 "file": "03.jpg",
+                "caption": "Page d'accueil n°3 - Principe de Home dynamique - Réalisation et intégration depuis maquette Photoshop",
                 "width": 736,
                 "height": 399
             },
             {
                 "file": "04.jpg",
+                "caption": "Page d'accueil n°4 - Principe de Home dynamique - Réalisation et intégration depuis maquette Photoshop",
                 "width": 738,
                 "height": 401
             },
             {
                 "file": "05.jpg",
+                "caption": "Page d'accueil n°5 - Principe de Home dynamique - Réalisation et intégration depuis maquette Photoshop",
+                "width": 748,
+                "height": 406
+            },
+            {
+                "file": "07.jpg",
+                "caption": "Page Destination - Réalisation et intégration depuis maquette Photoshop",
+                "width": 757,
+                "height": 410
+            },
+            {
+                "file": "05.jpg",
+                "caption": "Page d'accueil n°5 - Principe de Home dynamique - Réalisation et intégration depuis maquette Photoshop",
                 "width": 748,
                 "height": 406
             },
             {
                 "file": "06.jpg",
+                "caption": "Page Destination - Réalisation et intégration depuis maquette Photoshop",
                 "width": 614,
                 "height": 472
-            },
-            {
-                "file": "07.jpg",
-                "width": 757,
-                "height": 410
             }
         ],
         "missions": [
@@ -750,51 +791,61 @@
         "medias": [
             {
                 "file": "10-18_interface.mp4",
+                "caption": "Interface du jeu concours - Réalisation, modélisation et montage Flash depuis maquettes statiques",
                 "width": 687,
                 "height": 471
             },
             {
                 "file": "01.jpg",
+                "caption": "Interface du jeu concours - captures d'écran de l'interface du jeu concours",
                 "width": 687,
                 "height": 471
             },
             {
                 "file": "02.jpg",
+                "caption": "Interface du jeu concours - captures d'écran de l'interface du jeu concours",
                 "width": 687,
                 "height": 471
             },
             {
                 "file": "03.jpg",
+                "caption": "Exemple de jeu  - Réalisation, modélisation et montage HTML depuis maquettes statiques et briefs",
                 "width": 561,
                 "height": 472
             },
             {
                 "file": "04.jpg",
+                "caption": "Exemple de jeu  - Réalisation, modélisation et montage HTML / Javascript depuis maquettes statiques et briefs",
                 "width": 640,
                 "height": 472
             },
             {
                 "file": "06.jpg",
+                "caption": "Interface du jeu concours - espace privé - conception - réalisation en Flash depuis maquettes et briefs",
                 "width": 687,
                 "height": 471
             },
             {
                 "file": "07.jpg",
+                "caption": "Interface du jeu concours - exemple de jeu - conception - réalisation en Flash depuis maquettes et briefs",
                 "width": 587,
                 "height": 471
             },
             {
                 "file": "08.jpg",
+                "caption": "Interface du jeu concours exemple de navigation - conception - réalisation en Flash depuis maquettes et briefs",
                 "width": 567,
                 "height": 471
             },
             {
                 "file": "09.jpg",
+                "caption": "Interface du jeu concours exemple de page contenu - conception - réalisation en Flash / html depuis maquettes et briefs",
                 "width": 563,
                 "height": 472
             },
             {
                 "file": "10.jpg",
+                "caption": "Interface du jeu concours exemple de page jeu - conception - réalisation en Flash depuis maquettes et briefs",
                 "width": 606,
                 "height": 472
             }
@@ -852,44 +903,57 @@
         "medias": [
             {
                 "file": "skillmen_site_01.jpg",
+                "caption": "Animation d'accueil - Réalisation en Flash depuis story board et maquettes statiques",
                 "width": 838,
                 "height": 667
             },
-            "skillmen_and_board_website_intro_anim.mp4",
+            {
+                "file": "skillmen_and_board_website_intro_anim.mp4",
+                "caption": "Animation d'accueil - Réalisation en Flash depuis story board et maquettes statiques",
+                "width": 687,
+                "height": 471
+            },
             {
                 "file": "skillmen_site_02.jpg",
+                "caption": "Page d'accueil - Réalisation depuis maquettes statiques",
                 "width": 838,
                 "height": 667
             },
             {
                 "file": "skillmen_site_03.jpg",
+                "caption": "Page intérieure - Réalisation depuis maquettes statiques",
                 "width": 838,
                 "height": 667
             },
             {
                 "file": "skillmen_site_04.jpg",
+                "caption": "Page intérieure - Réalisation depuis maquettes statiques",
                 "width": 838,
-                "height": 1035
+                "height": 667
             },
             {
                 "file": "skillmen_site_05.jpg",
+                "caption": "Page intérieure - Réalisation depuis maquettes statiques",
                 "width": 838,
-                "height": 1035
+                "height": 667
             },
             {
                 "file": "skillmen_site_06.jpg",
+                "caption": "Page identité - Réalisation depuis maquettes statiques",
                 "width": 838,
-                "height": 1035
+                "height": 667
             },
             {
                 "file": "skillmen_site_07.jpg",
+                "caption": "Page intérieure - Réalisation depuis maquettes statiques",
                 "width": 838,
-                "height": 1035
+                "height": 667
             },
             {
                 "file": "skillmen_site_08.jpg",
+                "caption": "Page intérieure - Réalisation depuis maquettes statiques",
                 "width": 838,
-                "height": 1035
+                "height": 667
             }
         ],
         "missions": [
@@ -930,29 +994,36 @@
             "JavaScript / jQuery"
         ],
         "image": "rea_pub_esselte_diapo.jpg",
-        "masonry_0": "",
-        "masonry_1": "",
+        "masonry_0": "manson_0_esselte.png",
+        "masonry_1": "manson_1_esselte.png",
         "case_image": [],
-        "portfolio_image": "",
+        "portfolio_image": "manson_0_esselte.png",
         "mediapath": "rea_pub_esselte",
         "thumb": "rea_pub_esselte_thumb.jpg",
         "medias": [
             {
                 "file": "01.jpg",
+                "caption": "Animation d'accueil - Réalisation et montage Flash depuis maquettes statiques et briefs",
                 "width": 830,
                 "height": 519
             },
             {
                 "file": "02.jpg",
+                "caption": "Animation d'accueil - Réalisation et montage Flash depuis maquettes statiques et briefs",
                 "width": 830,
                 "height": 519
             },
-            "esselte_voeux_rectangle.mp4"
+            {
+                "file": "esselte_voeux_rectangle.mp4",
+                "caption": "Carte de voeux - animation complète - Réalisation et montage Flash depuis maquettes statiques et briefs",
+                "width": 830,
+                "height": 519
+            }
         ],
         "missions": [
             ""
         ],
-        "status": "draft",
+        "status": "published",
         "order": 12,
         "caseorder": 0,
         "collection": [
@@ -993,19 +1064,25 @@
         "mediapath": "rea_pub_wanadoo",
         "thumb": "rea_pub_wanadoo_thumb.jpg",
         "medias": [
-            "wanadoo_extense_2.mp4",
+            {
+                "file": "wanadoo_extense_2.mp4",
+                "caption": "Animation Flash - Réalisation et montage Flash depuis maquettes statiques et briefs"
+            },
             {
                 "file": "wanadoo_flash_01.jpg",
+                "caption": "Animation Flash - Intégration dans l'interface client",
                 "width": 862,
                 "height": 661
             },
             {
                 "file": "wanadoo_flash_02.jpg",
+                "caption": "Animation Flash - Intégration dans l'interface client",
                 "width": 862,
                 "height": 661
             },
             {
                 "file": "wanadoo_flash_03.jpg",
+                "caption": "Page Pack - réalisation depuis maquettes statiques,  intégration,  dans l'interface client",
                 "width": 862,
                 "height": 661
             }
@@ -1013,7 +1090,7 @@
         "missions": [
             ""
         ],
-        "status": "draft",
+        "status": "published",
         "order": 13,
         "caseorder": 0,
         "collection": [
@@ -1113,16 +1190,19 @@
         "medias": [
             {
                 "file": "01.jpg",
+                "caption": "Page d'accueil - Réalisation et intégration depuis maquette Photoshop",
                 "width": 796,
                 "height": 472
             },
             {
                 "file": "02.jpg",
+                "caption": "Page intérieure - Réalisation et intégration depuis maquette Photoshop",
                 "width": 796,
                 "height": 472
             },
             {
                 "file": "03.jpg",
+                "caption": "Page intérieure - Réalisation et intégration depuis maquette Photoshop",
                 "width": 796,
                 "height": 472
             }
@@ -1170,22 +1250,40 @@
         "medias": [
             {
                 "file": "01.jpg",
+                "caption": "Campagne Matiz Ice Cream - Détail des formats déclinés",
                 "width": 796,
                 "height": 472
             },
-            "daewoo_matiz_ice_cream.mp4",
+            {
+                "file": "daewoo_matiz_ice_cream.mp4",
+                "caption": "Campagne Matiz Ice Cream - Conception Flash depuis maquette statique et brief",
+                "width": 796,
+                "height": 472
+            },
             {
                 "file": "02.jpg",
+                "caption": "Campagne Kalos - Détail des formats déclinés",
                 "width": 796,
                 "height": 472
             },
-            "daewoo_paquerettes.mp4",
+            {
+                "file": "daewoo_paquerettes.mp4",
+                "caption": "Campagne Kalos - Conception Flash depuis maquette statique et brief",
+                "width": 796,
+                "height": 472
+            },
             {
                 "file": "03.jpg",
+                "caption": "Campagne Lacetti - Détail des formats déclinés",
                 "width": 796,
                 "height": 472
             },
-            "daewoo_lacetti_post_it.mp4"
+            {
+                "file": "daewoo_lacetti_post_it.mp4",
+                "caption": "Campagne Lacetti - Conception Flash depuis maquette statique et brief",
+                "width": 796,
+                "height": 472
+            }
         ],
         "missions": [
             ""
@@ -1288,6 +1386,7 @@
         "medias": [
             {
                 "file": "01_big.jpg",
+                "caption": "Page d'accueil - Réalisation et intégration depuis maquette Photoshop",
                 "width": 942,
                 "height": 674
             }
@@ -1348,36 +1447,43 @@
         "medias": [
             {
                 "file": "01.jpg",
+                "caption": "Animation d'accueil - Réalisation en Flash depuis story board et maquettes statiques",
                 "width": 796,
                 "height": 472
             },
             {
                 "file": "02.jpg",
+                "caption": "Animation d'accueil - Réalisation en Flash depuis story board et maquettes statiques",
                 "width": 796,
                 "height": 472
             },
             {
                 "file": "03.jpg",
+                "caption": "Ècran d'accueil - Réalisation en Flash depuis story board et maquettes statiques",
                 "width": 796,
                 "height": 472
             },
             {
                 "file": "04.jpg",
+                "caption": "Carte interactive - Réalisation en full Flash depuis story board et briefs, intégration de contenus multimédia et vidéos",
                 "width": 796,
                 "height": 472
             },
             {
                 "file": "05.jpg",
+                "caption": "Bloc contenu Flash - Réalisation en Flash depuis maquettes statiques",
                 "width": 796,
                 "height": 472
             },
             {
                 "file": "06.jpg",
+                "caption": "Bloc contenu Flash - Réalisation en Flash depuis maquettes statiques",
                 "width": 796,
                 "height": 472
             },
             {
                 "file": "07.jpg",
+                "caption": "Carte interactive, exemple de navigation - Réalisation en full Flash depuis story board et briefs, intégration de contenus multimédia et vidéos",
                 "width": 796,
                 "height": 472
             }
@@ -1420,18 +1526,18 @@
             "Flex"
         ],
         "image": "rea_web_bol_diapo.png",
-        "masonry_0": "",
-        "masonry_1": "",
+        "masonry_0": "rea_web_bol_diapo.png",
+        "masonry_1": "rea_web_bol_diapo.png",
         "case_image": [],
-        "portfolio_image": "",
+        "portfolio_image": "brochure01.png",
         "mediapath": "rea_web_bol",
-        "thumb": "rea_web_bol_thumb.jpg",
+        "thumb": "rea_web_bol_diapo.png",
         "medias": [
             {
                 "file": "brochure01.png",
                 "caption": "Première page",
                 "width": 912,
-                "height": 540
+                "height": 840
             },
             {
                 "file": "brochure02.png",
@@ -1483,7 +1589,9 @@
         "status": "published",
         "order": 20,
         "caseorder": 1,
-        "collection": [],
+        "collection": [
+            "portfolio"
+        ],
         "longtext": "<div class=\"project-longtext-block\"><div class=\"project-longtext-copy\"><h3>Vue d'ensemble</h3><p><strong>Divers clients</strong> est un projet de type Applicatif propriétaire r&eacute;alis&eacute; en 2005. Cette r&eacute;alisation s'inscrit dans le secteur Communication avec une attention particuli&egrave;re port&eacute;e &agrave; la clart&eacute; du parcours, &agrave; la qualit&eacute; visuelle et &agrave; la mise en valeur du contenu.</p><p>Réalisation d&#39;une application de lecture de Brochure en ligne</p><p>Dans le cadre de développement de sites internets plaquettes, de nombreux projets nécéssitent une présentation de brochure à consulter en ligne.</p><p>J&#39;ai donc conçu un petit module de lecture de brochure en ligne, permettant d&#39;afficher des PDF de manière interactive et conviviale. L&#39;application a été développée en Flash, offrant une expérience utilisateur fluide et immersive pour la consultation de brochures en ligne.</p></div><figure class=\"project-longtext-hero\"><picture><source media=\"(min-width: 1180px)\" srcset=\"{{image}}\"><img src=\"{{masonry_1}}\" alt=\"Brochure interactive - visuel principal\" loading=\"lazy\"></picture><figcaption>Brochure interactive : synth&egrave;se visuelle du projet et de ses principaux &eacute;crans.</figcaption></figure><div class=\"project-longtext-gallery\"><figure><picture><img src=\"{{media:0}}\" alt=\"Brochure interactive - vue 1\" loading=\"lazy\"></picture><figcaption>Première page</figcaption></figure><figure><picture><img src=\"{{media:1}}\" alt=\"Brochure interactive - vue 2\" loading=\"lazy\"></picture><figcaption>Animation de page, torsion, effets de profondeur, ombres portées</figcaption></figure></div><div class=\"project-longtext-meta\"><div class=\"project-longtext-copy\"><h3>Missions</h3><ul><li>Développement d&#39;une application flash de lecture de brochure en ligne pour la présentation de PDF de manière interactive et conviviale</li><li>Réutilisation du principe sur plusieurs borchures et projets</li></ul></div><div class=\"project-longtext-copy\"><h3>Outils</h3><ul><li>Flex</li><li>Eclipse</li></ul></div><div class=\"project-longtext-copy\"><h3>Technologies</h3><ul><li>ActionScript</li></ul></div></div></div>"
     },
     {
@@ -2506,67 +2614,81 @@
         "medias": [
             {
                 "file": "gauloises.mp4",
-                "caption": "Parcours interactif de l'application"
+                "caption": "Parcours interactif de l'application - Réalisation complète à partir des maquettes Photoshop",
+                "width": 496,
+                "height": 480
             },
             {
                 "file": "01.jpg",
+                "caption": "Ècran d'accueil de l'applicatif : Contenus entièrement administrables via un CMS propriétaire",
                 "width": 796,
-                "height": 472
+                "height": 580
             },
             {
                 "file": "02.jpg",
+                "caption": "Page de catégories : Contenus entièrement administrables via un CMS propriétaire",
                 "width": 796,
-                "height": 472
+                "height": 580
             },
             {
                 "file": "03.jpg",
+                "caption": "Page de navigation 'mosaïques'  : Programmation flash, animations fluides à partir d'une prise de brief et de maquettes Photoshop.",
                 "width": 796,
-                "height": 472
+                "height": 580
             },
             {
                 "file": "04.jpg",
+                "caption": "Page de détail d'article : Création d'une navigation interne à chaque article",
                 "width": 796,
-                "height": 472
+                "height": 580
             },
             {
                 "file": "06.jpg",
+                "caption": "Page de détail d'article : Focus matière de l'article",
                 "width": 796,
-                "height": 472
+                "height": 580
             },
             {
                 "file": "07.jpg",
+                "caption": "Page de détail d'article : Exemple d'article à deux versions",
                 "width": 796,
-                "height": 472
+                "height": 580
             },
             {
                 "file": "08.jpg",
+                "caption": "Page de détail d'article : Exemple d'article à deux versions",
                 "width": 796,
-                "height": 472
+                "height": 580
             },
             {
                 "file": "09.jpg",
+                "caption": "Page de détail d'article : Exemple d'article à plusiers vues",
                 "width": 796,
-                "height": 472
+                "height": 580
             },
             {
                 "file": "10.jpg",
+                "caption": "Accueil Back Office : Réalisation complète",
                 "width": 796,
-                "height": 472
+                "height": 580
             },
             {
                 "file": "11.jpg",
+                "caption": "Back Office : Gestion des catégories et des articles",
                 "width": 796,
-                "height": 472
+                "height": 580
             },
             {
                 "file": "12.jpg",
+                "caption": "Back Office : Gestion des affichage d'articles",
                 "width": 796,
-                "height": 472
+                "height": 580
             },
             {
                 "file": "13.jpg",
+                "caption": "Back Office : Édition d'un article",
                 "width": 796,
-                "height": 472
+                "height": 580
             }
         ],
         "missions": [
@@ -2976,44 +3098,51 @@
         "medias": [
             {
                 "file": "01.jpg",
+                "caption": "Pre-home : Page de choix de la langue",
                 "width": 796,
-                "height": 472
+                "height": 580
             },
             {
                 "file": "02.jpg",
+                "caption": "Page d'accueil FR du site (réalisation complète à partir de maquettes photoshop)",
                 "width": 796,
-                "height": 472
+                "height": 580
             },
             {
                 "file": "03.jpg",
+                "caption": "Actus FR du site (réalisation complète à partir de maquettes photoshop)",
                 "width": 796,
-                "height": 472
+                "height": 580
             },
             {
                 "file": "04.jpg",
+                "caption": "Page intérieure (réalisation complète à partir de maquettes photoshop)",
                 "width": 796,
-                "height": 472
+                "height": 580
             },
             {
                 "file": "05.jpg",
+                "caption": "Page intérieure (réalisation complète à partir de maquettes photoshop)",
                 "width": 796,
-                "height": 472
+                "height": 580
             },
             {
                 "file": "06.jpg",
+                "caption": "Page intérieure (réalisation complète à partir de maquettes photoshop)",
                 "width": 796,
-                "height": 472
+                "height": 580
             },
             {
                 "file": "07.jpg",
+                "caption": "Page espace client (réalisation complète à partir de maquettes photoshop)",
                 "width": 796,
-                "height": 472
+                "height": 580
             },
             {
                 "file": "08.jpg",
                 "caption": "Interface d'administration dédiée",
                 "width": 796,
-                "height": 472
+                "height": 580
             }
         ],
         "missions": [
@@ -3616,27 +3745,37 @@
         "medias": [
             {
                 "file": "01.png",
+                "caption": "Animation de la Home Page",
                 "width": 1699,
                 "height": 1007
             },
-            "lfdd_bis.mp4",
+            {
+                "file": "lfdd_bis.mp4",
+                "caption": "Exemple de navigation dans le site - conception et réalisation d'une interface fluide et animée en Flash",
+                "width": 1699,
+                "height": 1007
+            },
             {
                 "file": "02.jpg",
+                "caption": "Page d'accueil - Site Internet LA FABRIQUE DU DESIGN",
                 "width": 796,
                 "height": 472
             },
             {
                 "file": "03.jpg",
+                "caption": "Page corporate - Réalisation Flash et intégration depuis maquette Photoshop",
                 "width": 796,
                 "height": 472
             },
             {
                 "file": "04.jpg",
+                "caption": "Page Portfolio - Site Internet LA FABRIQUE DU DESIGN",
                 "width": 796,
                 "height": 472
             },
             {
                 "file": "05.jpg",
+                "caption": "Page Presse - Site Internet LA FABRIQUE DU DESIGN",
                 "width": 796,
                 "height": 472
             }
@@ -3923,66 +4062,79 @@
         "medias": [
             {
                 "file": "01.jpg",
+                "caption": "Pre-Home - Choix de langue et texte de référencement (très efficace à l'époque)",
                 "width": 796,
-                "height": 472
+                "height": 590
             },
             {
                 "file": "home.jpg",
+                "caption": "Home Page - Intégration / Réalisation à partir de maquettes Photoshop",
                 "width": 1116,
-                "height": 711
+                "height": 590
             },
             {
                 "file": "02.jpg",
+                "caption": "Home Page - Focus sur le Diaporama - Intégration / Réalisation à partir de maquettes Photoshop",
                 "width": 796,
-                "height": 472
+                "height": 590
             },
             {
                 "file": "03.jpg",
+                "caption": "Home Page - Focus sur le Top Menu - Intégration / Réalisation à partir de maquettes Photoshop",
                 "width": 796,
-                "height": 472
+                "height": 590
             },
             {
                 "file": "04.jpg",
+                "caption": "Home Page - Focus sur les Actus - Intégration / Réalisation à partir de maquettes Photoshop",
                 "width": 796,
-                "height": 472
+                "height": 590
             },
             {
                 "file": "05.jpg",
+                "caption": "Page Solutions - Focus sur les Catégories - Intégration / Réalisation à partir de maquettes Photoshop",
                 "width": 796,
-                "height": 472
+                "height": 590
             },
             {
                 "file": "06.jpg",
+                "caption": "Page Solutions - Focus sur les Niveaux de contenus - Intégration / Réalisation à partir de maquettes Photoshop",
                 "width": 796,
                 "height": 472
             },
             {
                 "file": "07.jpg",
+                "caption": "Page Corporate - Focus sur les sous-rubriques - Intégration / Réalisation à partir de maquettes Photoshop",
                 "width": 796,
                 "height": 472
             },
             {
                 "file": "08.jpg",
+                "caption": "Page Corporate - Focus sur les actus - Intégration / Réalisation à partir de maquettes Photoshop",
                 "width": 796,
                 "height": 472
             },
             {
                 "file": "09.jpg",
+                "caption": "Page Solutions - Focus sur les options - Intégration / Réalisation à partir de maquettes Photoshop",
                 "width": 796,
                 "height": 472
             },
             {
                 "file": "10.jpg",
+                "caption": "Aperçu de l'administration - déployé depuis mon CMS propriétaire",
                 "width": 796,
-                "height": 472
+                "height": 550
             },
             {
                 "file": "11.jpg",
+                "caption": "Accueil de l'administration - déployé depuis mon CMS propriétaire",
                 "width": 796,
                 "height": 472
             },
             {
                 "file": "12.jpg",
+                "caption": "Aperçu de l'administration d'un produit - déployé depuis mon CMS propriétaire",
                 "width": 796,
                 "height": 472
             }
@@ -4008,7 +4160,7 @@
             "Sites statiques",
             "Sites from scratch"
         ],
-        "description": "Ècosystème dédié à une radio libre associative 100% digitale",
+        "description": "Ècosystème dédié à une radio libre associative - Design & Intégration réalisés entièrement par mes soins ",
         "link": "www.mauriceradiolibre.com",
         "secteur": "Loisirs-Musique",
         "Contexte": "",
@@ -4194,23 +4346,27 @@
         "medias": [
             {
                 "file": "rea_web_netseenergy_item.jpg",
+                "caption": "Site Internet EDF - NETSEENERGY : synthèse visuelle du projet et de ses principaux écrans - Création d'un thème Joomla",
                 "width": 600,
-                "height": 455
+                "height": 580
             },
             {
                 "file": "01.jpg",
+                "caption": "Site Internet EDF - NETSEENERGY : Page Offres - développement du thème Joomla propriétaire",
                 "width": 647,
-                "height": 420
+                "height": 580
             },
             {
                 "file": "02.jpg",
+                "caption": "Site Internet EDF - NETSEENERGY : Développement de modules explicatifs",
                 "width": 647,
-                "height": 420
+                "height": 580
             },
             {
                 "file": "03.jpg",
+                "caption": "Site Internet EDF - NETSEENERGY : Page intérieure - développement du thème Joomla propriétaire",
                 "width": 647,
-                "height": 420
+                "height": 580
             }
         ],
         "missions": [
@@ -4470,7 +4626,7 @@
         "medias": [
             {
                 "file": "new_docbiker_trsp.webp",
-                "caption": "Refonte complète.",
+                "caption": "Refonte complète. Réalisation d'un thème Joomla sur mesure (d'après maquettes Photoshop), pensée pour le parcours utilisateur et l'exploitation quotidienne.",
                 "width": 912,
                 "height": 540
             },
@@ -4482,7 +4638,7 @@
             },
             {
                 "file": "screen-reseaul-gallery_03.png",
-                "caption": "Réseau d'écrans dans tous les centres pilotés via une app web",
+                "caption": "Réseau d'écrans dans tous les centres pilotés via une app web (entièrement développée par mes soins) pour synchroniser les visuels entre le site et les magasins.",
                 "width": 843,
                 "height": 495
             },
@@ -4757,41 +4913,49 @@
         "medias": [
             {
                 "file": "desktop_home.png",
+                "caption": "Page d'accueil - adaptation du thème WordPress à la maquette Photoshop, création du principe de navigation 'par cartes'",
                 "width": 912,
                 "height": 540
             },
             {
                 "file": "desktop_valeurs.png",
+                "caption": "Page 'Valeurs' - adaptation du thème WordPress à la maquette Photoshop",
                 "width": 912,
                 "height": 540
             },
             {
                 "file": "desktop_fondateur.png",
+                "caption": "Page 'Fondateur' - adaptation du thème WordPress à la maquette Photoshop",
                 "width": 912,
                 "height": 540
             },
             {
                 "file": "desktop_team.png",
+                "caption": "Page 'Équipe' - adaptation du thème WordPress à la maquette Photoshop",
                 "width": 912,
                 "height": 540
             },
             {
                 "file": "desktop_client.png",
+                "caption": "Page 'Espace Client' - adaptation du thème WordPress à la maquette Photoshop, création d'un espace client sécurisé avec accès par identifiant et mot de passe",
                 "width": 912,
                 "height": 540
             },
             {
                 "file": "desktop_contact.png",
+                "caption": "Page 'Contact' - adaptation du thème WordPress à la maquette Photoshop, création du formulaire administrable et de la carte Google Maps",
                 "width": 912,
                 "height": 540
             },
             {
                 "file": "desktop_footer.png",
+                "caption": "Footer - adaptation du thème WordPress à la maquette Photoshop, création d'un footer administrable ",
                 "width": 912,
                 "height": 540
             },
             {
                 "file": "ilexen_mobile.png",
+                "caption": "Version mobile - adaptation du thème WordPress à la maquette Photoshop, création d'une version mobile optimisée pour les smartphones",
                 "width": 912,
                 "height": 540
             }
@@ -4849,25 +5013,25 @@
         "medias": [
             {
                 "file": "1iphone_pc_big.png",
-                "caption": "Acceuil",
+                "caption": "Page d'accueil - adaptation du thème à la maquette Photoshop, déclinaison smartphone",
                 "width": 912,
                 "height": 540
             },
             {
                 "file": "ipad_phone.png",
-                "caption": "Page intérieure",
+                "caption": "Page intérieure, adaptation du thème aux maquettes Photoshop pour tablettes et smartphones",
                 "width": 990,
                 "height": 600
             },
             {
                 "file": "ipad_flotte.png",
-                "caption": "Page flotte",
+                "caption": "Page flotte, adaptation du thème aux maquettes Photoshop pour tablettes et smartphones",
                 "width": 990,
                 "height": 600
             },
             {
                 "file": "ipad_search.png",
-                "caption": "Module de recherche",
+                "caption": "Module de recherche, adaptation du thème aux maquettes Photoshop pour tablettes et smartphones",
                 "width": 990,
                 "height": 600
             }

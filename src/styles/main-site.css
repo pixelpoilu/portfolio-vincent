@@ -1,0 +1,214 @@
+.main-site-hero {
+  min-height: 100svh;
+  background: #f1efee;
+  color: #1f1f1f;
+}
+
+.main-site-hero__shell {
+  display: grid;
+  width: min(1180px, calc(100% - 3rem));
+  min-height: 100svh;
+  margin-inline: auto;
+  grid-template-rows: auto 1fr auto;
+  padding-block: clamp(1.5rem, 4vw, 3rem);
+}
+
+.main-site-hero__identity {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.main-site-hero__logo {
+  width: 5.4rem;
+  height: 3.5rem;
+  fill: currentColor;
+}
+
+.main-site-hero__name,
+.main-site-hero__role {
+  margin: 0;
+}
+
+.main-site-hero__name {
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.main-site-hero__role,
+.main-site-card__label,
+.main-site-login label > span,
+.main-site-hero__footer {
+  color: #77736f;
+  font-size: 0.68rem;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.main-site-hero__choices {
+  display: grid;
+  align-self: center;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border-top: 1px solid rgba(31, 31, 31, 0.2);
+  border-bottom: 1px solid rgba(31, 31, 31, 0.2);
+}
+
+.main-site-card {
+  min-height: min(54svh, 34rem);
+  padding: clamp(1.5rem, 3vw, 3rem);
+}
+
+.main-site-card--portfolio {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: clamp(1rem, 3vw, 2.5rem);
+  color: inherit;
+  text-decoration: none;
+  transition: background-color 350ms ease, color 350ms ease;
+}
+
+.main-site-card--portfolio:hover,
+.main-site-card--portfolio:focus-visible {
+  background: #222;
+  color: #f1efee;
+}
+
+.main-site-card--members {
+  display: grid;
+  align-content: center;
+  gap: clamp(2rem, 4vw, 4rem);
+  border-left: 1px solid rgba(31, 31, 31, 0.2);
+}
+
+.main-site-card__heading {
+  display: flex;
+  align-items: flex-start;
+  gap: clamp(1rem, 3vw, 2.5rem);
+}
+
+.main-site-card__index {
+  padding-top: 0.45rem;
+  color: #8d8985;
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+}
+
+.main-site-card__content {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.main-site-card__content strong {
+  max-width: 9ch;
+  font-family: var(--font-hero);
+  font-size: clamp(2.4rem, 5vw, 5.2rem);
+  font-weight: 500;
+  line-height: 0.95;
+  letter-spacing: -0.045em;
+}
+
+.main-site-card__arrow {
+  align-self: end;
+  font-size: clamp(2rem, 4vw, 4rem);
+  font-weight: 200;
+}
+
+.main-site-login {
+  display: grid;
+  gap: 1.2rem;
+  width: min(100%, 27rem);
+  margin-left: auto;
+}
+
+.main-site-login label {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.main-site-login input {
+  width: 100%;
+  border: 0;
+  border-bottom: 1px solid rgba(31, 31, 31, 0.35);
+  border-radius: 0;
+  background: transparent;
+  padding: 0.65rem 0;
+  color: inherit;
+  outline: none;
+  transition: border-color 200ms ease;
+}
+
+.main-site-login input:focus {
+  border-color: #1f1f1f;
+}
+
+.main-site-login button {
+  display: flex;
+  min-height: 3rem;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #1f1f1f;
+  background: transparent;
+  padding: 0.7rem 1rem;
+  color: inherit;
+  cursor: pointer;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: background-color 250ms ease, color 250ms ease;
+}
+
+.main-site-login button:hover,
+.main-site-login button:focus-visible {
+  background: #1f1f1f;
+  color: #f1efee;
+}
+
+.main-site-login__message {
+  min-height: 1.2rem;
+  margin: 0;
+  color: #686460;
+  font-size: 0.76rem;
+}
+
+.main-site-hero__footer {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 1.5rem;
+}
+
+@media (max-width: 760px) {
+  .main-site-hero__shell {
+    width: min(100% - 2rem, 36rem);
+  }
+
+  .main-site-hero__choices {
+    grid-template-columns: 1fr;
+    margin-block: 2.5rem;
+  }
+
+  .main-site-card {
+    min-height: auto;
+    padding-block: 2.5rem;
+  }
+
+  .main-site-card--portfolio {
+    min-height: 15rem;
+  }
+
+  .main-site-card--members {
+    border-top: 1px solid rgba(31, 31, 31, 0.2);
+    border-left: 0;
+  }
+
+  .main-site-login {
+    margin-left: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .main-site-card--portfolio,
+  .main-site-login button {
+    transition: none;
+  }
+}

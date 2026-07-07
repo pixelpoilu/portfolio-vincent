@@ -5,12 +5,16 @@
   "type": "module",
   "scripts": {
     "dev": "react-router dev",
+    "dev:portfolio": "react-router dev",
+    "dev:home": "vite --config vite.home.config.ts",
     "devhost": "react-router dev --host",
-    "build": "tsc -b && react-router build && node scripts/convert-to-webp.js",
+    "build": "npm run build:portfolio && npm run build:home && node scripts/finalize-production.js",
+    "build:portfolio": "tsc -b && react-router build && node scripts/convert-to-webp.js dist/portfolio-build/client",
+    "build:home": "vite build --config vite.home.config.ts",
     "lint1": "eslint .",
     "lint2": "eslint src --ext js,jsx,ts,tsx",
     "lint": "eslint -- --fix",
-    "preview": "vite preview --outDir dist/client",
+    "preview": "vite preview --config vite.home.config.ts --outDir ../dist/client",
     "savegit": "git add . && git commit -m \"Sauvegarde du jour\" && git push",
     "typecheck": "tsc --noEmit",
     "check": "npm run eslint && npm run typecheck && npm run build && npx knip"
